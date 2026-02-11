@@ -1,0 +1,431 @@
+{
+  "source": {
+    "title": "LARN - Livelli di Assunzione di Riferimento di Nutrienti ed energia per la popolazione italiana - V Revisione - Standard quantitativi delle porzioni",
+    "publisher": "SINU",
+    "edition_date": "2024-06",
+    "tables_used": ["Tabella 2", "Note Tabella 2"],
+    "citation": "SINU 2024, LARN V Revisione - Standard quantitativi delle porzioni"
+  },
+  "units": {
+    "mass": "g",
+    "volume": "mL"
+  },
+  "general_rules": {
+    "default_reference": "raw_edible_net_of_waste",
+    "exceptions": [
+      "bread_and_bakery_as_sold",
+      "milk_and_dairy_as_sold",
+      "some_sweets_as_sold",
+      "canned_fish_drained_weight"
+    ],
+    "multipliers_allowed": [0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 3.0]
+  },
+  "food_groups": [
+    {
+      "group_id": "milk_dairy",
+      "group_name_it": "Latte e derivati",
+      "items": [
+        {
+          "item_id": "milk",
+          "name_it": "Latte",
+          "portion": { "value": 125, "unit": "mL" },
+          "practical_units_it": ["1 bicchiere piccolo", "1/2 tazza media"]
+        },
+        {
+          "item_id": "yogurt_fermented_milks",
+          "name_it": "Yogurt e altri latti fermentati",
+          "portion": { "value": 125, "unit": "g" },
+          "practical_units_it": ["1 vasetto standard"]
+        },
+        {
+          "item_id": "fresh_cheeses_le_25_fat",
+          "name_it": "Formaggi freschi (≤25% di grassi)",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": [
+            "1 mozzarella piccola",
+            "4 ciliegine di mozzarella",
+            "4 fettine tipo formaggio fuso",
+            "2 e 1/2 cucchiai di formaggio spalmabile"
+          ],
+          "notes": ["Per la ricotta: porzione dedicata"]
+        },
+        {
+          "item_id": "other_cheeses_ge_25_fat",
+          "name_it": "Altri formaggi (≥25% di grassi)",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": [
+            "2 fettine tipo formaggio fuso",
+            "2 e 1/2 cubetti di parmigiano",
+            "2 cucchiai di formaggio cremoso",
+            "2 e 1/2 formaggini"
+          ],
+          "notes": ["Formaggio grattugiato: uso abituale 10 g (1 cucchiaio) = 1/5 porzione"]
+        },
+        {
+          "item_id": "ricotta",
+          "name_it": "Ricotta",
+          "portion": { "value": 150, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "grated_cheese",
+          "name_it": "Formaggio grattugiato",
+          "portion": { "value": 10, "unit": "g" },
+          "practical_units_it": ["1 cucchiaio"],
+          "portion_equivalence": { "as_fraction_of": "other_cheeses_ge_25_fat", "fraction": 0.2 }
+        }
+      ]
+    },
+    {
+      "group_id": "meat_fish_eggs",
+      "group_name_it": "Carne, pesce, uova",
+      "items": [
+        {
+          "item_id": "white_meat_fresh",
+          "name_it": "Carne “bianca” fresca/surgelata (pollo, tacchino, coniglio)",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": ["1 fetta di petto di pollo o tacchino", "1 piccola coscia di pollo"]
+        },
+        {
+          "item_id": "red_meat_fresh",
+          "name_it": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": ["1 fettina", "1 svizzera (hamburger)", "4-5 pezzi di spezzatino", "1 salsiccia"]
+        },
+        {
+          "item_id": "other_meats_offal",
+          "name_it": "Altre carni e frattaglie",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": ["1 fetta di petto di anatra", "1 fetta di carne di cervo", "5-6 pezzi di trippa", "1 fetta di fegato"]
+        },
+        {
+          "item_id": "cold_cuts",
+          "name_it": "Salumi",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": ["3-4 fette medie di prosciutto", "5-6 fette medie di salame o bresaola", "2 fette medie di mortadella"]
+        },
+        {
+          "item_id": "jellied_meat",
+          "name_it": "Carne in gelatina",
+          "portion": { "value": 70, "unit": "g" },
+          "practical_units_it": ["1 scatola piccola"]
+        },
+        {
+          "item_id": "fish_fresh_frozen",
+          "name_it": "Pesce, molluschi, crostacei freschi/surgelati",
+          "portion": { "value": 150, "unit": "g" },
+          "practical_units_it": ["1 pesce piccolo", "1 filetto medio", "25 cozze", "3 gamberoni", "20 gamberetti"]
+        },
+        {
+          "item_id": "fish_preserved_drained",
+          "name_it": "Pesce, molluschi, crostacei conservati (peso sgocciolato)",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": ["1 scatola piccola di tonno sgocciolato", "4-5 fette sottili di salmone affumicato"],
+          "notes": ["Peso sgocciolato"]
+        },
+        {
+          "item_id": "eggs",
+          "name_it": "Uova",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": ["1 uovo di gallina medio"]
+        }
+      ]
+    },
+    {
+      "group_id": "legumes",
+      "group_name_it": "Legumi",
+      "items": [
+        {
+          "item_id": "legumes_fresh_canned",
+          "name_it": "Legumi freschi o in scatola",
+          "portion": { "value": 150, "unit": "g" },
+          "practical_units_it": ["1/2 piatto", "1 scatola piccola", "7-8 cucchiai"]
+        },
+        {
+          "item_id": "legumes_dry",
+          "name_it": "Legumi secchi",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": ["3-4 cucchiai"]
+        },
+        {
+          "item_id": "legume_flours",
+          "name_it": "Farine di legumi",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "legume_pasta_100",
+          "name_it": "Pasta 100% legumi",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": [],
+          "notes": ["Diversa dalla pasta di semola (80 g)"]
+        }
+      ]
+    },
+    {
+      "group_id": "cereals_tubers",
+      "group_name_it": "Cereali e derivati, pseudocereali e tuberi",
+      "items": [
+        {
+          "item_id": "pasta_rice_cereals_dry",
+          "name_it": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
+          "portion": { "value": 80, "unit": "g" },
+          "practical_units_it": ["circa 50 penne/fusilli", "6-8 cucchiai di pastina", "4 cucchiai di riso/farro/orzo/quinoa", "6-8 cucchiai di farina"]
+        },
+        {
+          "item_id": "bread",
+          "name_it": "Pane",
+          "portion": { "value": 50, "unit": "g" },
+          "practical_units_it": ["1 panino piccolo", "1 rosetta/michetta piccola", "1 fetta media di pagnotta/filone", "1/5 baguette", "1/2 piadina", "1 chapati piccolo", "1 pane arabo piccolo", "1 tortilla media"]
+        },
+        {
+          "item_id": "bread_substitutes",
+          "name_it": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
+          "portion": { "value": 30, "unit": "g" },
+          "practical_units_it": ["5 crackers", "1 frisella", "3-4 tarallini", "3-4 gallette"]
+        },
+        {
+          "item_id": "sweet_bakery",
+          "name_it": "Prodotti da forno dolci (brioche, croissant, biscotti, merendine, barrette, ecc.)",
+          "portion": { "value": 30, "unit": "g" },
+          "practical_units_it": ["1 brioche piccola o 1/2 grande", "2-3 biscotti frollini", "4-5 biscotti secchi", "1 merendina", "1 barretta"]
+        },
+        {
+          "item_id": "breakfast_cereals_rusks",
+          "name_it": "Cereali per la colazione e fette biscottate",
+          "portion": { "value": 30, "unit": "g" },
+          "practical_units_it": ["6-8 cucchiai fiocchi di mais", "3 cucchiai muesli", "3-4 fette biscottate"]
+        },
+        {
+          "item_id": "potatoes",
+          "name_it": "Patate e altri tuberi",
+          "portion": { "value": 200, "unit": "g" },
+          "practical_units_it": ["2 patate piccole"]
+        },
+        {
+          "item_id": "gnocchi_potato",
+          "name_it": "Gnocchi di patate",
+          "portion": { "value": 200, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "cassava",
+          "name_it": "Manioca (cassava)",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "pizza_margherita",
+          "name_it": "Pizza (tipo margherita)",
+          "portion": { "value": 200, "unit": "g" },
+          "practical_units_it": ["circa 1/2 pizza margherita"],
+          "notes": ["Pizza bianca e focaccia: 50 g"]
+        },
+        {
+          "item_id": "fresh_pasta",
+          "name_it": "Pasta fresca (es. tagliatelle all’uovo)",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "filled_pasta",
+          "name_it": "Pasta ripiena (es. ravioli, tortellini)",
+          "portion": { "value": 125, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "lasagna_recipe",
+          "name_it": "Lasagna (ricetta)",
+          "portion": { "value": 250, "unit": "g" },
+          "practical_units_it": []
+        }
+      ]
+    },
+    {
+      "group_id": "vegetables",
+      "group_name_it": "Verdure e ortaggi",
+      "items": [
+        {
+          "item_id": "leafy_salads",
+          "name_it": "Insalate a foglia",
+          "portion": { "value": 80, "unit": "g" },
+          "practical_units_it": ["1 scodella grande"]
+        },
+        {
+          "item_id": "vegetables_other",
+          "name_it": "Verdure e ortaggi",
+          "portion": { "value": 200, "unit": "g" },
+          "practical_units_it": ["2-3 pomodori", "3-4 carote", "1 peperone", "1 finocchio", "2 carciofi", "2-3 zucchine", "7-10 ravanelli", "1-2 cipolle", "1/2 piatto di verdure cotte"]
+        }
+      ]
+    },
+    {
+      "group_id": "fruit",
+      "group_name_it": "Frutta",
+      "items": [
+        {
+          "item_id": "fresh_fruit",
+          "name_it": "Frutta fresca",
+          "portion": { "value": 150, "unit": "g" },
+          "practical_units_it": ["1 frutto medio", "2-3 frutti piccoli"]
+        },
+        {
+          "item_id": "dried_fruit",
+          "name_it": "Frutta secca disidratata (uvetta, fichi, datteri, ecc.)",
+          "portion": { "value": 30, "unit": "g" },
+          "practical_units_it": ["3 albicocche/fichi secchi/datteri", "2 cucchiai rasi di uvetta", "2 prugne secche"]
+        }
+      ]
+    },
+    {
+      "group_id": "nuts_seeds",
+      "group_name_it": "Frutta secca a guscio e semi oleosi",
+      "items": [
+        {
+          "item_id": "nuts_seeds_mix",
+          "name_it": "Noci, nocciole, pistacchi, mandorle, semi oleosi",
+          "portion": { "value": 30, "unit": "g" },
+          "practical_units_it": ["7-8 noci", "15-20 mandorle/nocciole", "3 cucchiai rasi di arachidi/pinoli/semi"]
+        }
+      ]
+    },
+    {
+      "group_id": "fats_condiments",
+      "group_name_it": "Grassi da condimento, condimenti e sughi",
+      "items": [
+        {
+          "item_id": "oils",
+          "name_it": "Oli (EVO, semi, mais, ecc.)",
+          "portion": { "value": 9, "unit": "g", "alt": { "value": 10, "unit": "mL" } },
+          "practical_units_it": ["1 cucchiaio"]
+        },
+        {
+          "item_id": "butter_lard",
+          "name_it": "Burro, strutto e lardo",
+          "portion": { "value": 10, "unit": "g" },
+          "practical_units_it": ["1/2 noce", "1 unità confezione alberghiera", "1 fetta sottile"]
+        },
+        {
+          "item_id": "pesto",
+          "name_it": "Pesto",
+          "portion": { "value": 40, "unit": "g" },
+          "practical_units_it": ["2 cucchiai"]
+        },
+        {
+          "item_id": "ready_sauces",
+          "name_it": "Sughi pronti (ragù, arrabbiata, ecc.)",
+          "portion": { "value": 90, "unit": "g" },
+          "practical_units_it": ["4 cucchiai"]
+        },
+        {
+          "item_id": "variable_fat_dressings",
+          "name_it": "Panna/besciamella/dressing variabili",
+          "portion_definition": "quantità equivalente a 9 g di grasso",
+          "notes": ["Non esiste una porzione unica: esprimere come equivalente a 9 g di grasso"]
+        }
+      ]
+    },
+    {
+      "group_id": "water_and_beverages",
+      "group_name_it": "Acqua e bevande",
+      "items": [
+        {
+          "item_id": "water",
+          "name_it": "Acqua",
+          "portion": { "value": 200, "unit": "mL" },
+          "practical_units_it": ["1 bicchiere medio (da acqua)"]
+        },
+        {
+          "item_id": "unsweetened_drinks",
+          "name_it": "Spremute/succhi 100%/tè/tisane non zuccherate",
+          "portion": { "value": 200, "unit": "mL" },
+          "practical_units_it": ["1 bicchiere medio", "1 brick piccolo", "1 bottiglietta media"]
+        },
+        {
+          "item_id": "sugary_soft_drinks",
+          "name_it": "Bibite zuccherate (con zuccheri aggiunti)",
+          "portion": { "value": 150, "unit": "mL" },
+          "practical_units_it": ["1 bicchiere di plastica medio", "1 lattina piccola"]
+        },
+        {
+          "item_id": "espresso",
+          "name_it": "Caffè espresso",
+          "portion": { "value": 30, "unit": "mL" },
+          "practical_units_it": ["1 tazzina tipo bar"]
+        },
+        {
+          "item_id": "moka_coffee_orzo",
+          "name_it": "Caffè moka / orzo",
+          "portion": { "value": 50, "unit": "mL" },
+          "practical_units_it": ["1 tazzina tipo moka"]
+        },
+        {
+          "item_id": "wine",
+          "name_it": "Vino",
+          "portion": { "value": 125, "unit": "mL" },
+          "practical_units_it": ["1 bicchiere da vino"]
+        },
+        {
+          "item_id": "beer",
+          "name_it": "Birra",
+          "portion": { "value": 330, "unit": "mL" },
+          "practical_units_it": ["1 lattina media"]
+        },
+        {
+          "item_id": "aperitifs_vermouth",
+          "name_it": "Vermouth/porto/aperitivi",
+          "portion": { "value": 75, "unit": "mL" },
+          "practical_units_it": ["1 bicchierino da vermouth"]
+        },
+        {
+          "item_id": "spirits",
+          "name_it": "Superalcolici",
+          "portion": { "value": 40, "unit": "mL" },
+          "practical_units_it": ["1 bicchierino da superalcolico"]
+        }
+      ]
+    },
+    {
+      "group_id": "sweets_snacks",
+      "group_name_it": "Dolciumi e snack salati",
+      "items": [
+        {
+          "item_id": "sugar_honey_candies",
+          "name_it": "Zucchero/miele/caramelle",
+          "portion": { "value": 5, "unit": "g" },
+          "practical_units_it": ["1 cucchiaino raso", "1-2 caramelle medie"]
+        },
+        {
+          "item_id": "jam",
+          "name_it": "Marmellata",
+          "portion": { "value": 10, "unit": "g" },
+          "practical_units_it": ["1 cucchiaino colmo"]
+        },
+        {
+          "item_id": "cakes_icecream",
+          "name_it": "Torte e gelati",
+          "portion": { "value": 70, "unit": "g" },
+          "practical_units_it": ["1 fetta", "1 coppetta"]
+        },
+        {
+          "item_id": "puddings_sorbets",
+          "name_it": "Budini e sorbetti",
+          "portion": { "value": 100, "unit": "g" },
+          "practical_units_it": []
+        },
+        {
+          "item_id": "chocolate_spreads",
+          "name_it": "Cioccolato/cioccolatini/creme spalmabili",
+          "portion": { "value": 10, "unit": "g" },
+          "practical_units_it": ["1 quadretto", "1 cioccolatino", "1 cucchiaino colmo"]
+        },
+        {
+          "item_id": "salty_snacks",
+          "name_it": "Snack salati (patatine, pop-corn, salatini)",
+          "portion": { "value": 25, "unit": "g" },
+          "practical_units_it": ["1 bustina monoporzione"]
+        }
+      ]
+    }
+  ]
+}

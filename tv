@@ -1,0 +1,92 @@
+#!/bin/bash
+# Training Vantage CLI - Main dispatcher
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPTS_DIR="$SCRIPT_DIR/scripts"
+
+# Colors
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Help
+show_help() {
+    cat << EOF
+╔═══════════════════════════════════════════════════════════════════╗
+║                    TRAINING VANTAGE CLI v1.0                      ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+USAGE: tv <command> [args]
+
+COMANDI DISPONIBILI (Priorità 1 — Tracking base):
+
+  weigh <peso> <bf%> [note]
+      Registra pesata, calcola FFM/BMR, aggiorna composition.json
+      Esempio: tv weigh 68.5 13.1 "Dopo settimana scarico"
+
+  status
+      Mostra stato attuale: ultima pesata, zone, prossima gara, alerts
+      Esempio: tv status
+
+  zones [test_time] [note]
+      Mostra zone attuali o ricalcola da nuovo test 5km
+      Esempio: tv zones              # mostra attuali
+      Esempio: tv zones 18:26        # ricalcola da test
+      Esempio: tv zones 17:55 "Gara Roma-Ostia"
+
+COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
+
+  plan <categoria>
+      Genera piano nutrizionale quantitativo per categoria
+      Categorie: rest, forza, easy-run, qualita, tempo, lungo, pizza-day, domenica
+      Esempio: tv plan forza
+      Esempio: tv plan --all         # rigenera tutti gli 8 piani
+
+COMANDI DISPONIBILI (Priorità 3 — Running):
+
+  week <N>
+      Mostra piano running per settimana N (W1-W20)
+      Esempio: tv week 1
+      Esempio: tv week 20
+
+COMANDI IN SVILUPPO (Priorità 4):
+
+  food add            - Aggiunge alimento a food-db (da implementare)
+  analyze <file.csv>  - Analizza export Garmin (da implementare)
+
+Per maggiori informazioni: cat CLAUDE.md
+EOF
+}
+
+# Dispatch command
+case "$1" in
+    weigh)
+        shift
+        python3 "$SCRIPTS_DIR/weigh.py" "$@"
+        ;;
+    status)
+        shift
+        python3 "$SCRIPTS_DIR/status.py" "$@"
+        ;;
+    zones)
+        shift
+        python3 "$SCRIPTS_DIR/zones.py" "$@"
+        ;;
+    plan)
+        shift
+        python3 "$SCRIPTS_DIR/plan.py" "$@"
+        ;;
+    week)
+        shift
+        python3 "$SCRIPTS_DIR/week.py" "$@"
+        ;;
+    help|--help|-h|"")
+        show_help
+        ;;
+    *)
+        echo -e "${RED}Comando non riconosciuto: $1${NC}"
+        echo "Usa 'tv help' per la lista dei comandi disponibili"
+        exit 1
+        ;;
+esac

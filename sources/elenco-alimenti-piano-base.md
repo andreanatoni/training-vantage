@@ -1,0 +1,52 @@
+# Elenco alimenti estratti dal Piano Base
+
+Totale unici: **47**
+
+- banana
+- bresaola
+- burro d'arachidi
+- Caffè
+- carote
+- ciambellone
+- Crackers integrali
+- fesa tacchino
+- Fette biscottate
+- Fiocchi d'avena
+- Formaggio spalmabile
+- Hummus di ceci
+- Hummus di fagioli
+- Mandorle
+- Manzo magro
+- Marmellata
+- Mela
+- Merluzzo
+- Miele
+- Mozzarella di bufala
+- Nocciole
+- noci
+- Olio EVO
+- Oro Saiwa
+- Pane integrale
+- Parmigiano
+- Passata di pomodoro
+- Pasta di semola
+- Patate
+- Pera
+- Pesce spada
+- Piselli
+- Plum Cake
+- Petto di Pollo
+- Prosciutto crudo
+- Riso basmati
+- Salmone
+- Pane bianco
+- Tacchino
+- Tonno in scatola
+- Tonno tagliata
+- Tortellini vitello
+- Uova
+- Vitello
+- Yogurt greco 0%
+- Yogurt magro 0.1%
+- Zenzero grattuggiato
+- Zucchine

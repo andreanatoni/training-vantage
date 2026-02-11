@@ -1,0 +1,15 @@
+{
+  "current_levels": {
+    "ab_wheel": "not_started",
+    "push_up": "not_started",
+    "pogo_jump": "not_started",
+    "skip": "not_started",
+    "bulgarian_split_squat": "not_started",
+    "single_leg_deadlift": "not_started",
+    "calf_raise": "not_started",
+    "goblet_squat": "not_started"
+  },
+  "first_session_planned": "2026-02-12",
+  "history": [],
+  "progression_log": []
+}

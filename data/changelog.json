@@ -1,0 +1,51 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-02-11T18:00:00Z",
+      "command": "bootstrap",
+      "trigger": "initial setup",
+      "files_created": [
+        "data/composition.json",
+        "data/zones.json",
+        "data/strength-progress.json",
+        "data/changelog.json",
+        "knowledge/linee-guida.md",
+        "knowledge/food-db.md",
+        "knowledge/opzioni-raccomandate.md",
+        "knowledge/piano-base.md"
+      ],
+      "notes": "Bootstrap iniziale da PRD v1. 7 misurazioni composizione, 3 test 5km, zone W20."
+    },
+    {
+      "timestamp": "2026-02-11T14:11:59.392316",
+      "command": "weigh",
+      "details": {
+        "date": "2026-02-11",
+        "weight": 68.5,
+        "bf_pct": 13.0,
+        "ffm": 59.595,
+        "bmr": 1657
+      }
+    },
+    {
+      "timestamp": "2026-02-11T14:13:35.706316",
+      "command": "zones",
+      "details": {
+        "test_date": "2026-02-11",
+        "test_time": "18:00",
+        "pace": "3:36",
+        "delta_seconds": -27
+      }
+    },
+    {
+      "timestamp": "2026-02-11T14:20:25.231897",
+      "command": "zones",
+      "details": {
+        "test_date": "2026-02-11",
+        "test_time": "18:27",
+        "pace": "3:41",
+        "delta_seconds": 27
+      }
+    }
+  ]
+}
