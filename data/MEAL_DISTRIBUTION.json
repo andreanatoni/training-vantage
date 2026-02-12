@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "name": "MEAL_DISTRIBUTION",
+    "purpose": "Distribuzione percentuale macro giornalieri nei pasti",
+    "version": "v2",
+    "last_updated": "2026-02-12",
+    "notes": "3 distribuzioni base (standard, rest_like, lungo_like). Percentuali sommano ESATTAMENTE a 100 per ogni nutriente.",
+    "changes_v2": "Aggiunto P_floor_g (protein floor) per ogni meal_slot. Colazione/pranzo/cena: 20-25g, snack: 15g, recovery: 20g."
+  },
+  "distributions": [
+    {
+      "id": "standard",
+      "name": "Distribuzione standard",
+      "description": "Per forza, easy_run, qualità, tempo, pizza_day",
+      "meal_slots": [
+        {
+          "id": "colazione",
+          "name": "Colazione",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "07:00-08:00",
+          "kcal_pct": 20.0,
+          "P_pct": 20.0,
+          "CHO_pct": 23.0,
+          "F_pct": 15.0,
+          "Fibre_pct": 25.0,
+          "P_floor_g": 20,
+          "notes": "Colazione equilibrata"
+        },
+        {
+          "id": "spuntino_mattina",
+          "name": "Spuntino mattina",
+          "context": "snack",
+          "slot_kind": "regular",
+          "timing": "10:30-11:00",
+          "kcal_pct": 10.0,
+          "P_pct": 12.0,
+          "CHO_pct": 10.0,
+          "F_pct": 10.0,
+          "Fibre_pct": 10.0,
+          "P_floor_g": 15,
+          "notes": "Snack leggero"
+        },
+        {
+          "id": "pranzo",
+          "name": "Pranzo",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "13:00-14:00",
+          "kcal_pct": 35.0,
+          "P_pct": 35.0,
+          "CHO_pct": 35.0,
+          "F_pct": 35.0,
+          "Fibre_pct": 35.0,
+          "P_floor_g": 25,
+          "notes": "Pasto principale"
+        },
+        {
+          "id": "spuntino_pomeriggio",
+          "name": "Spuntino pomeriggio",
+          "context": "snack",
+          "slot_kind": "regular",
+          "timing": "16:30-17:00",
+          "kcal_pct": 10.0,
+          "P_pct": 12.0,
+          "CHO_pct": 10.0,
+          "F_pct": 10.0,
+          "Fibre_pct": 10.0,
+          "P_floor_g": 15,
+          "notes": "Pre-workout o snack"
+        },
+        {
+          "id": "cena",
+          "name": "Cena",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "20:00-21:00",
+          "kcal_pct": 25.0,
+          "P_pct": 21.0,
+          "CHO_pct": 22.0,
+          "F_pct": 30.0,
+          "Fibre_pct": 20.0,
+          "P_floor_g": 25,
+          "notes": "Cena più leggera, grassi più alti per sazietà"
+        }
+      ]
+    },
+    {
+      "id": "rest_like",
+      "name": "Distribuzione rest day",
+      "description": "Per rest (riposo completo)",
+      "meal_slots": [
+        {
+          "id": "colazione",
+          "name": "Colazione",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "07:30-08:30",
+          "kcal_pct": 22.0,
+          "P_pct": 22.0,
+          "CHO_pct": 25.0,
+          "F_pct": 18.0,
+          "Fibre_pct": 28.0,
+          "P_floor_g": 20,
+          "notes": "Colazione più abbondante (nessuna fretta pre-workout)"
+        },
+        {
+          "id": "spuntino_mattina",
+          "name": "Spuntino mattina",
+          "context": "snack",
+          "slot_kind": "regular",
+          "timing": "10:30-11:00",
+          "kcal_pct": 8.0,
+          "P_pct": 10.0,
+          "CHO_pct": 8.0,
+          "F_pct": 8.0,
+          "Fibre_pct": 8.0,
+          "P_floor_g": 15,
+          "notes": "Snack leggero"
+        },
+        {
+          "id": "pranzo",
+          "name": "Pranzo",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "13:00-14:00",
+          "kcal_pct": 32.0,
+          "P_pct": 33.0,
+          "CHO_pct": 32.0,
+          "F_pct": 32.0,
+          "Fibre_pct": 32.0,
+          "P_floor_g": 25,
+          "notes": "Pasto principale"
+        },
+        {
+          "id": "spuntino_pomeriggio",
+          "name": "Spuntino pomeriggio",
+          "context": "snack",
+          "slot_kind": "regular",
+          "timing": "16:30-17:00",
+          "kcal_pct": 12.0,
+          "P_pct": 13.0,
+          "CHO_pct": 12.0,
+          "F_pct": 12.0,
+          "Fibre_pct": 12.0,
+          "P_floor_g": 15,
+          "notes": "Snack moderato"
+        },
+        {
+          "id": "cena",
+          "name": "Cena",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "20:00-21:00",
+          "kcal_pct": 26.0,
+          "P_pct": 22.0,
+          "CHO_pct": 23.0,
+          "F_pct": 30.0,
+          "Fibre_pct": 20.0,
+          "P_floor_g": 25,
+          "notes": "Cena rilassata, grassi alti"
+        }
+      ]
+    },
+    {
+      "id": "lungo_like",
+      "name": "Distribuzione long run",
+      "description": "Per lungo, domenica (long run + recovery)",
+      "meal_slots": [
+        {
+          "id": "colazione",
+          "name": "Colazione pre-lungo",
+          "context": "meal",
+          "slot_kind": "pre_run",
+          "timing": "06:00-06:30",
+          "kcal_pct": 25.0,
+          "P_pct": 15.0,
+          "CHO_pct": 30.0,
+          "F_pct": 10.0,
+          "Fibre_pct": 15.0,
+          "P_floor_g": 20,
+          "notes": "Colazione abbondante CHO per lungo, fibre basse per digeribilità"
+        },
+        {
+          "id": "post_lungo",
+          "name": "Recovery post-lungo",
+          "context": "snack",
+          "slot_kind": "post_run",
+          "timing": "10:30-11:00",
+          "kcal_pct": 15.0,
+          "P_pct": 20.0,
+          "CHO_pct": 18.0,
+          "F_pct": 10.0,
+          "Fibre_pct": 15.0,
+          "P_floor_g": 20,
+          "notes": "Recovery window: P + CHO immediato"
+        },
+        {
+          "id": "pranzo",
+          "name": "Pranzo post-lungo",
+          "context": "meal",
+          "slot_kind": "recovery",
+          "timing": "13:00-14:00",
+          "kcal_pct": 30.0,
+          "P_pct": 32.0,
+          "CHO_pct": 28.0,
+          "F_pct": 30.0,
+          "Fibre_pct": 35.0,
+          "P_floor_g": 25,
+          "notes": "Pasto completo per recupero"
+        },
+        {
+          "id": "spuntino_pomeriggio",
+          "name": "Spuntino pomeriggio",
+          "context": "snack",
+          "slot_kind": "regular",
+          "timing": "16:30-17:00",
+          "kcal_pct": 10.0,
+          "P_pct": 12.0,
+          "CHO_pct": 10.0,
+          "F_pct": 15.0,
+          "Fibre_pct": 10.0,
+          "P_floor_g": 15,
+          "notes": "Snack moderato"
+        },
+        {
+          "id": "cena",
+          "name": "Cena post-lungo",
+          "context": "meal",
+          "slot_kind": "regular",
+          "timing": "20:00-21:00",
+          "kcal_pct": 20.0,
+          "P_pct": 21.0,
+          "CHO_pct": 14.0,
+          "F_pct": 35.0,
+          "Fibre_pct": 25.0,
+          "P_floor_g": 25,
+          "notes": "Cena più leggera, già recuperato a pranzo"
+        }
+      ]
+    }
+  ]
+}

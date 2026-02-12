@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "name": "DAY_PROFILES",
+    "purpose": "Macro totali giornalieri per ogni tipo di allenamento",
+    "version": "v1",
+    "user": "Andrea",
+    "last_updated": "2026-02-12",
+    "bmr": 1656,
+    "current_weight_kg": 68.65,
+    "current_bf_pct": 13.2,
+    "current_ffm_kg": 59.57,
+    "notes": "Ogni profilo specifica distribution_id per evitare duplicazione"
+  },
+  "profiles": [
+    {
+      "id": "rest",
+      "name": "Giorno di riposo",
+      "description": "Nessun allenamento, focus recupero",
+      "distribution_id": "rest_like",
+      "totals_daily": {
+        "kcal": 2200,
+        "P": 140,
+        "CHO": 220,
+        "F": 70,
+        "Fibre": 30
+      },
+      "priority": "P > F > CHO",
+      "notes": "Kcal moderate, proteine alte per recupero, CHO ridotti"
+    },
+    {
+      "id": "forza",
+      "name": "Giorno forza (palestra)",
+      "description": "Seduta forza + eventuale corsa facile breve",
+      "distribution_id": "standard",
+      "totals_daily": {
+        "kcal": 2400,
+        "P": 150,
+        "CHO": 250,
+        "F": 75,
+        "Fibre": 32
+      },
+      "priority": "P > CHO > F",
+      "notes": "Proteine alte per sintesi proteica, CHO moderati"
+    },
+    {
+      "id": "easy_run",
+      "name": "Corsa facile",
+      "description": "Easy run 8-12 km Z2",
+      "distribution_id": "standard",
+      "totals_daily": {
+        "kcal": 2500,
+        "P": 145,
+        "CHO": 280,
+        "F": 70,
+        "Fibre": 32
+      },
+      "priority": "CHO > P > F",
+      "notes": "CHO moderati, volume non altissimo"
+    },
+    {
+      "id": "qualita",
+      "name": "Giorno qualità",
+      "description": "Ripetute/fartlek intensi",
+      "distribution_id": "standard",
+      "totals_daily": {
+        "kcal": 2650,
+        "P": 150,
+        "CHO": 310,
+        "F": 72,
+        "Fibre": 33
+      },
+      "priority": "CHO > P > F",
+      "notes": "CHO alti per intensità, P per recupero muscolare"
+    },
+    {
+      "id": "tempo",
+      "name": "Giorno tempo run",
+      "description": "Tempo run medio-lungo",
+      "distribution_id": "standard",
+      "totals_daily": {
+        "kcal": 2700,
+        "P": 145,
+        "CHO": 330,
+        "F": 70,
+        "Fibre": 34
+      },
+      "priority": "CHO > P > F",
+      "notes": "CHO alti, volume significativo"
+    },
+    {
+      "id": "lungo",
+      "name": "Lungo domenicale",
+      "description": "Long run 18-25 km",
+      "distribution_id": "lungo_like",
+      "totals_daily": {
+        "kcal": 3000,
+        "P": 150,
+        "CHO": 400,
+        "F": 75,
+        "Fibre": 36
+      },
+      "priority": "CHO > P > F",
+      "notes": "CHO massimi per volume alto, grassi stabili"
+    },
+    {
+      "id": "pizza_day",
+      "name": "Pizza day (refeed)",
+      "description": "Giorno refeed strategico post lungo",
+      "distribution_id": "standard",
+      "totals_daily": {
+        "kcal": 3200,
+        "P": 140,
+        "CHO": 450,
+        "F": 85,
+        "Fibre": 35
+      },
+      "priority": "CHO > F > P",
+      "notes": "CHO altissimi per ricarica glicogeno, relax psicologico"
+    },
+    {
+      "id": "domenica",
+      "name": "Domenica post-lungo",
+      "description": "Lungo + recupero sociale",
+      "distribution_id": "lungo_like",
+      "totals_daily": {
+        "kcal": 3100,
+        "P": 148,
+        "CHO": 420,
+        "F": 78,
+        "Fibre": 36
+      },
+      "priority": "CHO > P > F",
+      "notes": "Simile a lungo ma con flessibilità sociale (pranzo famiglia, etc)"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Training Vantage
+Version: 2.0
+Status: FROZEN
+Date: 2026-02-12

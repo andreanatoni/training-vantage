@@ -1,0 +1,37 @@
+{
+  "test_name": "snack_context_dependent",
+  "description": "Test context-dependent limits: SNACK con prosciutto (snack_max 40g vs meal_max 120g)",
+  "input": {
+    "target": {
+      "kcal": 250,
+      "P": 18,
+      "CHO": 20,
+      "F": 10,
+      "Fibre": 3
+    },
+    "meal_context": "snack",
+    "allowed_food_db_ids": [
+      "prosciutto_crudo",
+      "pane_integrale",
+      "formaggio_spalmabile_light"
+    ]
+  },
+  "expected": {
+    "realistic_must_respect": {
+      "prosciutto_crudo": {
+        "max_qty": 40,
+        "reason": "snack_max_qty_g (NOT meal_max 120g)"
+      },
+      "formaggio_spalmabile_light": {
+        "max_qty": 50,
+        "reason": "snack_max_qty_g"
+      }
+    },
+    "unconstrained_can_violate": [
+      "prosciutto_crudo",
+      "formaggio_spalmabile_light"
+    ],
+    "violations_must_be_marked": true
+  },
+  "notes": "Test critico per context-dependent: realistic DEVE rispettare snack_max (40g prosciutto, 50g spalmabile). Unconstrained PUÒ violare ma DEVE marcare violations."
+}

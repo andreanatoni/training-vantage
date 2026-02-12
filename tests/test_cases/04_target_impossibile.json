@@ -1,0 +1,34 @@
+{
+  "test_name": "target_impossibile",
+  "description": "Test failure mode: target matematicamente impossibile (200 kcal, 50g P)",
+  "input": {
+    "target": {
+      "kcal": 200,
+      "P": 50,
+      "CHO": 10,
+      "F": 5,
+      "Fibre": 3
+    },
+    "meal_context": "meal",
+    "allowed_food_db_ids": [
+      "yogurt_magro_0_1",
+      "fette_biscottate",
+      "marmellata"
+    ]
+  },
+  "expected": {
+    "realistic_will_fail": {
+      "P_gap_pct": "> 30%",
+      "reason": "yogurt_magro fornisce solo 4g P/100g, servirebbero 1250g → sfora budget kcal massivamente"
+    },
+    "unconstrained_will_fail": {
+      "same_reason": true
+    },
+    "notes_must_explain": [
+      "Target P non raggiunto",
+      "Causa strutturale (vincolo matematico)",
+      "Soluzione alternativa (es: sostituire con yogurt_greco_0)"
+    ]
+  },
+  "notes": "Test failure mode: sistema DEVE fallire gracefully, spiegare perché (vincolo strutturale), proporre soluzione (yogurt greco). NO giudizi tipo 'troppo ambizioso'."
+}

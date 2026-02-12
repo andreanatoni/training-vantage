@@ -266,6 +266,12 @@
             "food_db_name": "Formaggio spalmabile light",
             "larn_portion_id": "formaggi_freschi",
             "note": "Per uso a cucchiaio, consenti multipli frazionari (es. 0.25×=25 g)."
+        },
+        {
+            "food_db_id": "crackers_integrali",
+            "food_db_name": "Crackers integrali",
+            "larn_portion_id": "sostituti_pane",
+            "note": "Porzione LARN 30g = circa 5 crackers."
         }
     ]
 }

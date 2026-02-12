@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "name": "REALISM_RULES",
+    "purpose": "Soft constraints per realismo pratico (volume, praticità, pattern)",
+    "version": "v1",
+    "last_updated": "2026-02-12",
+    "notes": "Penalty soft: influenzano scoring senza proibire soluzioni. Apply only in realistic mode.",
+    "penalty_calibration": {
+      "rationale": "Penalty weights (0.8 per item, 0.6 per total) calibrated to guide solver without prohibiting solutions.",
+      "impact_range": "At 600g single item: penalty ~1.6. At 800g total: penalty ~1.2. Max penalty ~3-4 in extreme cases.",
+      "why_these_values": "0.8 and 0.6 are strong enough to prefer fiber-dense alternatives (avena/fruit/nuts) over excessive veg, but weak enough to allow high veg when necessary (no alternatives available).",
+      "comparison_to_macro_error": "Typical macro error ~2-5, so penalty 1-2 is significant but not dominant.",
+      "tuning_note": "If solver still picks 600g+ veg when alternatives exist, increase weights. If solver avoids veg too aggressively, decrease."
+    }
+  },
+  "rules": {
+    "volume_penalty_enabled": true,
+    "veg_soft_cap_item_g": 400,
+    "veg_soft_cap_total_g": 600,
+    "veg_penalty_per_100g_over_item": 0.8,
+    "veg_penalty_per_100g_over_total": 0.6,
+    "apply_only_in_mode": "realistic",
+    "groups_considered_veg": [
+      "veg"
+    ],
+    "exclude_ingredients_from_volume": true,
+    "notes_rules": {
+      "volume_penalty_enabled": "Se true, applica penalty volume veg in realistic mode",
+      "veg_soft_cap_item_g": "Singolo item veg > 400g → penalty",
+      "veg_soft_cap_total_g": "Totale veg nel pasto > 600g → penalty",
+      "veg_penalty_per_100g_over_item": "Penalty per ogni 100g oltre cap singolo item (score space)",
+      "veg_penalty_per_100g_over_total": "Penalty per ogni 100g oltre cap totale (score space)",
+      "exclude_ingredients_from_volume": "Se true, is_ingredient items (es. passata) non contano per volume"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "test_name": "ingredient_mode",
+  "description": "Test is_ingredient=true: passata NON usa 200g×multiplier, usa step libero 20g",
+  "input": {
+    "target": {
+      "kcal": 650,
+      "P": 35,
+      "CHO": 85,
+      "F": 18,
+      "Fibre": 10
+    },
+    "meal_context": "meal",
+    "allowed_food_db_ids": [
+      "pasta_secca_di_semola",
+      "ragu_di_vitello_40_vitello_60_passata",
+      "passata_di_pomodoro",
+      "olio_evo",
+      "zucchine_crude"
+    ]
+  },
+  "expected": {
+    "passata_behavior": {
+      "is_ingredient": true,
+      "multiplier": null,
+      "qty_must_be_multiple_of": 20,
+      "realistic_max": 100,
+      "unconstrained_max": 200,
+      "invalid_quantities": [83, 156, 200]
+    },
+    "realistic_must_respect": {
+      "passata_di_pomodoro": 100,
+      "olio_evo": 15
+    }
+  },
+  "notes": "Test critico per ingredient mode: passata DEVE usare quantità discrete (20, 40, 60, 80, 100) NON 200×multiplier. Multiplier deve essere null. Olio max 15g."
+}

@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "name": "MEAL_TEMPLATES",
+    "purpose": "Regole strutturali per validare composizione pasti logica",
+    "version": "v1.1",
+    "last_updated": "2026-02-12",
+    "notes": "VALIDATION-ONLY: non genera alimenti, valida solo allowed_foods_per_meal. v1.1: aggiunto support per forbidden_food_ids (blocchi hard specifici) + sweetener group."
+  },
+  "templates": [
+    {
+      "meal_id": "colazione",
+      "name": "Colazione",
+      "rules": {
+        "min_items": 2,
+        "max_items": 6,
+        "required_groups": ["carb", "protein"],
+        "optional_groups": ["fat", "fruit", "sweetener", "beverage"],
+        "forbidden_groups": ["veg"],
+        "forbidden_food_ids": ["pasta_secca_di_semola", "riso_basmati_crudo", "tortellini_vitello"],
+        "max_per_group": {
+          "fat": 2,
+          "protein": 2,
+          "carb": 2,
+          "fruit": 2,
+          "sweetener": 1,
+          "beverage": 1
+        },
+        "notes": "Colazione classica: carb + protein obbligatori, no verdure, no pasta/riso (forbidden_food_ids hard block)"
+      }
+    },
+    {
+      "meal_id": "pranzo",
+      "name": "Pranzo",
+      "rules": {
+        "min_items": 3,
+        "max_items": 6,
+        "required_groups": ["protein", "veg"],
+        "optional_groups": ["carb", "fat", "fruit"],
+        "forbidden_groups": [],
+        "forbidden_food_ids": [],
+        "max_per_group": {
+          "fat": 2,
+          "protein": 2,
+          "carb": 2,
+          "veg": 3
+        },
+        "notes": "Pasto completo: protein + veg obbligatori, carb opzionale"
+      }
+    },
+    {
+      "meal_id": "cena",
+      "name": "Cena",
+      "rules": {
+        "min_items": 3,
+        "max_items": 6,
+        "required_groups": ["protein", "veg"],
+        "optional_groups": ["carb", "fat"],
+        "forbidden_groups": [],
+        "forbidden_food_ids": [],
+        "max_per_group": {
+          "fat": 2,
+          "protein": 2,
+          "carb": 2,
+          "veg": 3
+        },
+        "notes": "Come pranzo: protein + veg obbligatori"
+      }
+    },
+    {
+      "meal_id": "spuntino_mattina",
+      "name": "Spuntino mattina",
+      "rules": {
+        "min_items": 1,
+        "max_items": 3,
+        "required_groups": [],
+        "optional_groups": ["protein", "carb", "fat", "fruit", "sweetener"],
+        "forbidden_groups": [],
+        "forbidden_food_ids": [],
+        "max_per_group": {
+          "fat": 1,
+          "protein": 2,
+          "carb": 2,
+          "fruit": 1,
+          "sweetener": 1
+        },
+        "notes": "Snack flessibile, no obblighi ma max 1 fat"
+      }
+    },
+    {
+      "meal_id": "spuntino_pomeriggio",
+      "name": "Spuntino pomeriggio",
+      "rules": {
+        "min_items": 1,
+        "max_items": 3,
+        "required_groups": [],
+        "optional_groups": ["protein", "carb", "fat", "fruit", "sweetener"],
+        "forbidden_groups": [],
+        "forbidden_food_ids": [],
+        "max_per_group": {
+          "fat": 1,
+          "protein": 2,
+          "carb": 2,
+          "fruit": 1,
+          "sweetener": 1
+        },
+        "notes": "Come spuntino mattina"
+      }
+    },
+    {
+      "meal_id": "post_lungo",
+      "name": "Recovery post-lungo",
+      "rules": {
+        "min_items": 2,
+        "max_items": 4,
+        "required_groups": ["protein", "carb"],
+        "optional_groups": ["fat", "fruit", "sweetener"],
+        "forbidden_groups": ["veg"],
+        "forbidden_food_ids": [],
+        "max_per_group": {
+          "fat": 1,
+          "protein": 2,
+          "carb": 2,
+          "fruit": 1,
+          "sweetener": 1
+        },
+        "notes": "Recovery window: P + CHO obbligatori, no veg (digeribilità)"
+      }
+    }
+  ]
+}

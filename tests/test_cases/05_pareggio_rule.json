@@ -1,0 +1,29 @@
+{
+  "test_name": "pareggio_rule",
+  "description": "Test +5% pareggio: se realistic aumenta errore <5% rispetto a unconstrained → raccomanda realistic",
+  "input": {
+    "target": {
+      "kcal": 350,
+      "P": 20,
+      "CHO": 45,
+      "F": 10,
+      "Fibre": 6
+    },
+    "meal_context": "meal",
+    "allowed_food_db_ids": [
+      "yogurt_greco_0",
+      "fette_biscottate",
+      "miele"
+    ]
+  },
+  "expected": {
+    "unconstrained_vs_realistic": {
+      "unconstrained_is_better": true,
+      "but_difference_is_small": "< 5%",
+      "recommendation_should_be": "best_match_realistic",
+      "reason": "Pareggio: praticità vince quando delta simile"
+    },
+    "notes_must_mention": "Versione realistic raccomandata: delta simile a unconstrained, quantità più pratiche."
+  },
+  "notes": "Test +5% pareggio rule: anche se unconstrained è matematicamente migliore, se differenza <5% allora realistic vince (quantità pratiche: 170g yogurt vs 156.2g)."
+}

@@ -1,0 +1,42 @@
+{
+  "test_name": "colazione_standard",
+  "description": "Test baseline: COLAZIONE 450 kcal con 5 alimenti standard",
+  "input": {
+    "target": {
+      "kcal": 450,
+      "P": 25,
+      "CHO": 60,
+      "F": 12,
+      "Fibre": 8
+    },
+    "meal_context": "meal",
+    "allowed_food_db_ids": [
+      "caffe_espresso",
+      "fette_biscottate",
+      "marmellata",
+      "yogurt_greco_0",
+      "mandorle"
+    ]
+  },
+  "expected": {
+    "realistic_should_have": [
+      "yogurt_greco_0",
+      "fette_biscottate",
+      "marmellata",
+      "mandorle"
+    ],
+    "realistic_should_not_exceed": {
+      "yogurt_greco_0": 170,
+      "marmellata": 40,
+      "mandorle": 30
+    },
+    "totals_tolerance": {
+      "kcal_pct": 5.0,
+      "P_pct": 10.0,
+      "CHO_pct": 10.0,
+      "F_pct": 15.0
+    },
+    "recommendation": "best_match_realistic"
+  },
+  "notes": "Caso base: dovrebbe trovare soluzione ottimale con quantità pratiche (170g yogurt, 30g fette, 20g marmellata, 15g mandorle). Caffe può essere escluso (opzione 0)."
+}
