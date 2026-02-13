@@ -16,211 +16,42 @@
     "rules": {
       "use_only_food_db_for_nutrition": true,
       "if_food_missing_fail": true
-    }
+    },
+    "last_updated": "2026-02-13",
+    "total_foods": 50
   },
   "foods": [
     {
-      "id": "caffe_espresso",
-      "name": "Caffè espresso",
+      "id": "banana",
+      "name": "Banana",
       "reference": {
-        "amount": 50.0,
-        "unit": "mL",
-        "label": "50 ml"
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
       },
       "nutrients_per_reference": {
-        "kcal": 2.0,
-        "P": 0.1,
-        "CHO": 0.3,
-        "F": 0.0,
-        "Fibre": 0.0
+        "kcal": 89.0,
+        "P": 1.1,
+        "CHO": 23.0,
+        "F": 0.3,
+        "Fibre": 2.6
       },
       "data_source": "USDA"
     },
     {
-      "id": "fette_biscottate",
-      "name": "Fette biscottate",
+      "id": "bresaola",
+      "name": "Bresaola",
       "reference": {
         "amount": 100.0,
         "unit": "g",
         "label": "100 g"
       },
       "nutrients_per_reference": {
-        "kcal": 387.0,
-        "P": 11.3,
-        "CHO": 75.0,
-        "F": 6.0,
-        "Fibre": 3.5
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "oro_saiwa",
-      "name": "Oro Saiwa",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 442.0,
-        "P": 10.7,
-        "CHO": 74.8,
-        "F": 10.8,
-        "Fibre": 1.8
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "pane_integrale",
-      "name": "Pane integrale",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 224.0,
-        "P": 8.5,
-        "CHO": 44.1,
-        "F": 1.3,
-        "Fibre": 6.5
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "pane_bianco",
-      "name": "Pane bianco",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 268.0,
-        "P": 8.1,
-        "CHO": 59.5,
-        "F": 0.5,
-        "Fibre": 3.8
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "marmellata",
-      "name": "Marmellata",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 250.0,
-        "P": 0.4,
-        "CHO": 61.0,
-        "F": 0.1,
-        "Fibre": 1.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "plum_cake_senza_latte_burro",
-      "name": "Plum cake (senza latte/burro)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 376.0,
-        "P": 7.0,
-        "CHO": 56.0,
-        "F": 14.0,
-        "Fibre": 1.7
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "yogurt_magro_0_1",
-      "name": "Yogurt magro 0.1%",
-      "reference": {
-        "amount": 125.0,
-        "unit": "g",
-        "label": "125 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 55.0,
-        "P": 5.0,
-        "CHO": 7.0,
-        "F": 0.2,
+        "kcal": 151.0,
+        "P": 33.1,
+        "CHO": 0.0,
+        "F": 2.0,
         "Fibre": 0.0
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "yogurt_greco_0",
-      "name": "Yogurt greco 0%",
-      "reference": {
-        "amount": 170.0,
-        "unit": "g",
-        "label": "170 g vasetto",
-        "note": "vasetto"
-      },
-      "nutrients_per_reference": {
-        "kcal": 100.0,
-        "P": 17.0,
-        "CHO": 6.0,
-        "F": 0.0,
-        "Fibre": 0.0
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "mandorle",
-      "name": "Mandorle",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 604.0,
-        "P": 20.0,
-        "CHO": 19.0,
-        "F": 52.0,
-        "Fibre": 12.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "noci",
-      "name": "Noci",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 689.0,
-        "P": 14.3,
-        "CHO": 13.7,
-        "F": 68.1,
-        "Fibre": 6.7
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "nocciole",
-      "name": "Nocciole",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 655.0,
-        "P": 14.1,
-        "CHO": 17.6,
-        "F": 63.5,
-        "Fibre": 9.7
       },
       "data_source": "CREA"
     },
@@ -242,480 +73,19 @@
       "data_source": "Etichetta"
     },
     {
-      "id": "prosciutto_crudo",
-      "name": "Prosciutto crudo",
+      "id": "caffe_espresso",
+      "name": "Caffè espresso",
       "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
+        "amount": 50.0,
+        "unit": "mL",
+        "label": "50 ml"
       },
       "nutrients_per_reference": {
-        "kcal": 268.0,
-        "P": 26.0,
-        "CHO": 0.0,
-        "F": 18.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "bresaola",
-      "name": "Bresaola",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 151.0,
-        "P": 33.1,
-        "CHO": 0.0,
-        "F": 2.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "fesa_tacchino_affettato",
-      "name": "Fesa tacchino (affettato)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 103.0,
-        "P": 20.0,
-        "CHO": 2.0,
-        "F": 1.5,
-        "Fibre": 0.0
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "tacchino_fesa_cotto_al_forno",
-      "name": "Tacchino, fesa (cotto al forno)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 135.0,
-        "P": 29.0,
-        "CHO": 0.0,
-        "F": 2.0,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "formaggio_spalmabile_light",
-      "name": "Formaggio spalmabile light",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 160.0,
-        "P": 12.0,
-        "CHO": 4.0,
-        "F": 10.0,
-        "Fibre": 0.0
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "crackers_integrali",
-      "name": "Crackers integrali",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 430.0,
-        "P": 10.0,
-        "CHO": 64.0,
-        "F": 14.0,
-        "Fibre": 6.5
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "mela",
-      "name": "Mela",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 52.0,
-        "P": 0.3,
-        "CHO": 14.0,
-        "F": 0.2,
-        "Fibre": 2.4
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "pera",
-      "name": "Pera",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 57.0,
-        "P": 0.4,
-        "CHO": 15.0,
-        "F": 0.1,
-        "Fibre": 3.1
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "banana",
-      "name": "Banana",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 89.0,
-        "P": 1.1,
-        "CHO": 23.0,
-        "F": 0.3,
-        "Fibre": 2.6
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "miele",
-      "name": "Miele",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 304.0,
-        "P": 0.3,
-        "CHO": 82.4,
+        "kcal": 2.0,
+        "P": 0.1,
+        "CHO": 0.3,
         "F": 0.0,
         "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "pasta_secca_di_semola",
-      "name": "Pasta secca (di semola)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 353.0,
-        "P": 12.5,
-        "CHO": 72.0,
-        "F": 1.5,
-        "Fibre": 3.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "riso_basmati_crudo",
-      "name": "Riso basmati (crudo)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 360.0,
-        "P": 7.5,
-        "CHO": 79.0,
-        "F": 0.9,
-        "Fibre": 0.9
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "tortellini_vitello",
-      "name": "Tortellini vitello",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 294.0,
-        "P": 12.0,
-        "CHO": 45.0,
-        "F": 8.0,
-        "Fibre": 2.0
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "tonno_al_naturale_drenato",
-      "name": "Tonno al naturale (drenato)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g drenato",
-        "note": "drenato"
-      },
-      "nutrients_per_reference": {
-        "kcal": 116.0,
-        "P": 26.0,
-        "CHO": 0.0,
-        "F": 1.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "ragù_di_vitello_40_vitello_60_passata",
-      "name": "Ragù di vitello (40% vitello / 60% passata)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 120.0,
-        "P": 12.0,
-        "CHO": 6.0,
-        "F": 6.0,
-        "Fibre": 1.5
-      },
-      "data_source": "Etichetta"
-    },
-    {
-      "id": "pollo_petto_cotto_in_padella",
-      "name": "Pollo petto (cotto in padella)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 165.0,
-        "P": 31.0,
-        "CHO": 0.0,
-        "F": 3.6,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "manzo_magro_fesa_crudo",
-      "name": "Manzo magro (fesa, crudo)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 133.0,
-        "P": 21.0,
-        "CHO": 0.0,
-        "F": 5.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "vitello_filetto_cotto_in_padella",
-      "name": "Vitello (filetto, cotto in padella)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 180.0,
-        "P": 29.0,
-        "CHO": 0.0,
-        "F": 7.0,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "salmone",
-      "name": "Salmone",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 208.0,
-        "P": 20.0,
-        "CHO": 0.0,
-        "F": 13.0,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "merluzzo_surgelato_cotto_al_forno",
-      "name": "Merluzzo (surgelato, cotto al forno)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 82.0,
-        "P": 18.0,
-        "CHO": 0.0,
-        "F": 0.7,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "tonno_tagliata_fresco",
-      "name": "Tonno tagliata (fresco)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 144.0,
-        "P": 23.0,
-        "CHO": 0.0,
-        "F": 4.9,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "pesce_spada",
-      "name": "Pesce spada",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 172.0,
-        "P": 23.0,
-        "CHO": 0.0,
-        "F": 8.0,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "uova_intere_gallina",
-      "name": "Uova intere (gallina)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 143.0,
-        "P": 12.6,
-        "CHO": 1.1,
-        "F": 9.5,
-        "Fibre": 0.0
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "mozzarella_di_bufala",
-      "name": "Mozzarella di bufala",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 280.0,
-        "P": 18.0,
-        "CHO": 1.0,
-        "F": 23.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "parmigiano_reggiano",
-      "name": "Parmigiano Reggiano",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 402.0,
-        "P": 33.0,
-        "CHO": 0.0,
-        "F": 30.0,
-        "Fibre": 0.0
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "passata_di_pomodoro",
-      "name": "Passata di pomodoro",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 30.0,
-        "P": 1.5,
-        "CHO": 5.0,
-        "F": 0.2,
-        "Fibre": 1.5
-      },
-      "data_source": "CREA"
-    },
-    {
-      "id": "piselli_in_scatola_scolati",
-      "name": "Piselli (in scatola, scolati)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g scolati",
-        "note": "scolati"
-      },
-      "nutrients_per_reference": {
-        "kcal": 81.0,
-        "P": 5.4,
-        "CHO": 14.0,
-        "F": 0.4,
-        "Fibre": 5.1
-      },
-      "data_source": "USDA"
-    },
-    {
-      "id": "zucchine_crude",
-      "name": "Zucchine (crude)",
-      "reference": {
-        "amount": 100.0,
-        "unit": "g",
-        "label": "100 g"
-      },
-      "nutrients_per_reference": {
-        "kcal": 17.0,
-        "P": 1.2,
-        "CHO": 3.1,
-        "F": 0.3,
-        "Fibre": 1.0
       },
       "data_source": "USDA"
     },
@@ -737,36 +107,87 @@
       "data_source": "USDA"
     },
     {
-      "id": "patate_senza_buccia_bollite",
-      "name": "Patate (senza buccia, bollite)",
+      "id": "crackers_integrali",
+      "name": "Crackers integrali",
       "reference": {
         "amount": 100.0,
         "unit": "g",
         "label": "100 g"
       },
       "nutrients_per_reference": {
-        "kcal": 87.0,
-        "P": 1.9,
-        "CHO": 20.1,
-        "F": 0.1,
-        "Fibre": 1.8
+        "kcal": 430.0,
+        "P": 10.0,
+        "CHO": 64.0,
+        "F": 14.0,
+        "Fibre": 6.5
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "fesa_tacchino_affettato",
+      "name": "Fesa tacchino (affettato)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 103.0,
+        "P": 20.0,
+        "CHO": 2.0,
+        "F": 1.5,
+        "Fibre": 0.0
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "fette_biscottate",
+      "name": "Fette biscottate",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 387.0,
+        "P": 11.3,
+        "CHO": 75.0,
+        "F": 6.0,
+        "Fibre": 3.5
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "fiocchi_d_avena",
+      "name": "Fiocchi d'avena",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 379.0,
+        "P": 13.2,
+        "CHO": 67.7,
+        "F": 6.5,
+        "Fibre": 10.1
       },
       "data_source": "USDA"
     },
     {
-      "id": "vellutata_zucchine_carote",
-      "name": "Vellutata zucchine/carote",
+      "id": "formaggio_spalmabile_light",
+      "name": "Formaggio spalmabile light",
       "reference": {
         "amount": 100.0,
         "unit": "g",
         "label": "100 g"
       },
       "nutrients_per_reference": {
-        "kcal": 42.0,
-        "P": 1.2,
-        "CHO": 5.6,
-        "F": 1.6,
-        "Fibre": 1.3
+        "kcal": 160.0,
+        "P": 12.0,
+        "CHO": 4.0,
+        "F": 10.0,
+        "Fibre": 0.0
       },
       "data_source": "Etichetta"
     },
@@ -805,6 +226,159 @@
       "data_source": "USDA"
     },
     {
+      "id": "mandorle",
+      "name": "Mandorle",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 604.0,
+        "P": 20.0,
+        "CHO": 19.0,
+        "F": 52.0,
+        "Fibre": 12.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "manzo_magro_fesa_crudo",
+      "name": "Manzo magro (fesa, crudo)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 133.0,
+        "P": 21.0,
+        "CHO": 0.0,
+        "F": 5.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "marmellata",
+      "name": "Marmellata",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 250.0,
+        "P": 0.4,
+        "CHO": 61.0,
+        "F": 0.1,
+        "Fibre": 1.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "mela",
+      "name": "Mela",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 52.0,
+        "P": 0.3,
+        "CHO": 14.0,
+        "F": 0.2,
+        "Fibre": 2.4
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "merluzzo_surgelato_cotto_al_forno",
+      "name": "Merluzzo (surgelato, cotto al forno)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 82.0,
+        "P": 18.0,
+        "CHO": 0.0,
+        "F": 0.7,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "miele",
+      "name": "Miele",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 304.0,
+        "P": 0.3,
+        "CHO": 82.4,
+        "F": 0.0,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "mozzarella_di_bufala",
+      "name": "Mozzarella di bufala",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 280.0,
+        "P": 18.0,
+        "CHO": 1.0,
+        "F": 23.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "nocciole",
+      "name": "Nocciole",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 655.0,
+        "P": 14.1,
+        "CHO": 17.6,
+        "F": 63.5,
+        "Fibre": 9.7
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "noci",
+      "name": "Noci",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 689.0,
+        "P": 14.3,
+        "CHO": 13.7,
+        "F": 68.1,
+        "Fibre": 6.7
+      },
+      "data_source": "CREA"
+    },
+    {
       "id": "olio_evo",
       "name": "Olio EVO",
       "reference": {
@@ -820,6 +394,451 @@
         "Fibre": 0.0
       },
       "data_source": "USDA"
+    },
+    {
+      "id": "oro_saiwa",
+      "name": "Oro Saiwa",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 442.0,
+        "P": 10.7,
+        "CHO": 74.8,
+        "F": 10.8,
+        "Fibre": 1.8
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "pane_bianco",
+      "name": "Pane bianco",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 268.0,
+        "P": 8.1,
+        "CHO": 59.5,
+        "F": 0.5,
+        "Fibre": 3.8
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "pane_integrale",
+      "name": "Pane integrale",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 224.0,
+        "P": 8.5,
+        "CHO": 44.1,
+        "F": 1.3,
+        "Fibre": 6.5
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "parmigiano_reggiano",
+      "name": "Parmigiano Reggiano",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 402.0,
+        "P": 33.0,
+        "CHO": 0.0,
+        "F": 30.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "passata_di_pomodoro",
+      "name": "Passata di pomodoro",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 30.0,
+        "P": 1.5,
+        "CHO": 5.0,
+        "F": 0.2,
+        "Fibre": 1.5
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "pasta_secca_di_semola",
+      "name": "Pasta secca (di semola)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 353.0,
+        "P": 12.5,
+        "CHO": 72.0,
+        "F": 1.5,
+        "Fibre": 3.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "patate_senza_buccia_bollite",
+      "name": "Patate (senza buccia, bollite)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 87.0,
+        "P": 1.9,
+        "CHO": 20.1,
+        "F": 0.1,
+        "Fibre": 1.8
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "pera",
+      "name": "Pera",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 57.0,
+        "P": 0.4,
+        "CHO": 15.0,
+        "F": 0.1,
+        "Fibre": 3.1
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "pesce_spada",
+      "name": "Pesce spada",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 172.0,
+        "P": 23.0,
+        "CHO": 0.0,
+        "F": 8.0,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "piselli_in_scatola_scolati",
+      "name": "Piselli (in scatola, scolati)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g scolati",
+        "note": "scolati"
+      },
+      "nutrients_per_reference": {
+        "kcal": 81.0,
+        "P": 5.4,
+        "CHO": 14.0,
+        "F": 0.4,
+        "Fibre": 5.1
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "plum_cake_senza_latte_burro",
+      "name": "Plum cake (senza latte/burro)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 376.0,
+        "P": 7.0,
+        "CHO": 56.0,
+        "F": 14.0,
+        "Fibre": 1.7
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "pollo_petto_cotto_in_padella",
+      "name": "Pollo petto (cotto in padella)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 165.0,
+        "P": 31.0,
+        "CHO": 0.0,
+        "F": 3.6,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "prosciutto_crudo",
+      "name": "Prosciutto crudo",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 268.0,
+        "P": 26.0,
+        "CHO": 0.0,
+        "F": 18.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "ragù_di_vitello_40_vitello_60_passata",
+      "name": "Ragù di vitello (40% vitello / 60% passata)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 120.0,
+        "P": 12.0,
+        "CHO": 6.0,
+        "F": 6.0,
+        "Fibre": 1.5
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "riso_basmati_crudo",
+      "name": "Riso basmati (crudo)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 360.0,
+        "P": 7.5,
+        "CHO": 79.0,
+        "F": 0.9,
+        "Fibre": 0.9
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "salmone",
+      "name": "Salmone",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 208.0,
+        "P": 20.0,
+        "CHO": 0.0,
+        "F": 13.0,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "tacchino_fesa_cotto_al_forno",
+      "name": "Tacchino, fesa (cotto al forno)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 135.0,
+        "P": 29.0,
+        "CHO": 0.0,
+        "F": 2.0,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "tonno_al_naturale_drenato",
+      "name": "Tonno al naturale (drenato)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g drenato",
+        "note": "drenato"
+      },
+      "nutrients_per_reference": {
+        "kcal": 116.0,
+        "P": 26.0,
+        "CHO": 0.0,
+        "F": 1.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA"
+    },
+    {
+      "id": "tonno_sott_olio_sgocciolato",
+      "name": "Tonno sott'olio (sgocciolato)",
+      "reference": {
+        "amount": 80.0,
+        "unit": "g",
+        "label": "80 g (1 scatoletta)"
+      },
+      "nutrients_per_reference": {
+        "kcal": 153.6,
+        "P": 20.2,
+        "CHO": 0.0,
+        "F": 8.1,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA - AlimentiNUTrizione"
+    },
+    {
+      "id": "tonno_tagliata_fresco",
+      "name": "Tonno tagliata (fresco)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 144.0,
+        "P": 23.0,
+        "CHO": 0.0,
+        "F": 4.9,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "tortellini_vitello",
+      "name": "Tortellini vitello",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 294.0,
+        "P": 12.0,
+        "CHO": 45.0,
+        "F": 8.0,
+        "Fibre": 2.0
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "uova_intere_gallina",
+      "name": "Uova intere (gallina)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 143.0,
+        "P": 12.6,
+        "CHO": 1.1,
+        "F": 9.5,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "vellutata_zucchine_carote",
+      "name": "Vellutata zucchine/carote",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 42.0,
+        "P": 1.2,
+        "CHO": 5.6,
+        "F": 1.6,
+        "Fibre": 1.3
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "vitello_filetto_cotto_in_padella",
+      "name": "Vitello (filetto, cotto in padella)",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 180.0,
+        "P": 29.0,
+        "CHO": 0.0,
+        "F": 7.0,
+        "Fibre": 0.0
+      },
+      "data_source": "USDA"
+    },
+    {
+      "id": "yogurt_greco_0",
+      "name": "Yogurt greco 0%",
+      "reference": {
+        "amount": 170.0,
+        "unit": "g",
+        "label": "170 g vasetto",
+        "note": "vasetto"
+      },
+      "nutrients_per_reference": {
+        "kcal": 100.0,
+        "P": 17.0,
+        "CHO": 6.0,
+        "F": 0.0,
+        "Fibre": 0.0
+      },
+      "data_source": "Etichetta"
+    },
+    {
+      "id": "yogurt_magro_0_1",
+      "name": "Yogurt magro 0.1%",
+      "reference": {
+        "amount": 125.0,
+        "unit": "g",
+        "label": "125 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 55.0,
+        "P": 5.0,
+        "CHO": 7.0,
+        "F": 0.2,
+        "Fibre": 0.0
+      },
+      "data_source": "Etichetta"
     },
     {
       "id": "zenzero_fresco",
@@ -839,19 +858,19 @@
       "data_source": "USDA"
     },
     {
-      "id": "fiocchi_d_avena",
-      "name": "Fiocchi d'avena",
+      "id": "zucchine_crude",
+      "name": "Zucchine (crude)",
       "reference": {
         "amount": 100.0,
         "unit": "g",
         "label": "100 g"
       },
       "nutrients_per_reference": {
-        "kcal": 379.0,
-        "P": 13.2,
-        "CHO": 67.7,
-        "F": 6.5,
-        "Fibre": 10.1
+        "kcal": 17.0,
+        "P": 1.2,
+        "CHO": 3.1,
+        "F": 0.3,
+        "Fibre": 1.0
       },
       "data_source": "USDA"
     }

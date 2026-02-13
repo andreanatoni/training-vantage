@@ -7,24 +7,25 @@
 
 ## Executive Summary
 
-**Stato Complessivo**: ~60% completo (+30% da Phase 1)
+**Stato Complessivo**: ~70% completo (+10% da Phase 2)
 
 Il progetto Training Vantage è un CLI tool completo per gestione running + nutrizione + composizione corporea. Attualmente sono completate:
 - **Meal planning system** (v2.0 FROZEN) - 30%
 - **Tracking base** (v2.1 COMPLETE) - 30%
+- **Plans export** (v2.1 COMPLETE) - 10%
 
 **Componenti completate**:
 - ✅ Meal planning system (v2.0 FROZEN)
 - ✅ CLI per generazione piani nutrizionali
 - ✅ Data validation layer
-- ✅ Tracking composizione corporea (v2.1 NEW)
-- ✅ Tracking zone running (v2.1 NEW)
-- ✅ Dashboard status (v2.1 NEW)
-- ✅ Test suite completa (52/52)
+- ✅ Tracking composizione corporea (v2.1)
+- ✅ Tracking zone running (v2.1)
+- ✅ Dashboard status (v2.1)
+- ✅ Plans export markdown (v2.1 NEW)
+- ✅ Command /plan all (v2.1 NEW)
+- ✅ Test suite completa (59/59)
 
 **Componenti mancanti** (priorità dal PRD):
-- ❌ Tracking composizione corporea (`/weigh`, `/status`)
-- ❌ Gestione zone running (`/zones`, `/test`)
 - ❌ Piano running (stagionale, blocchi, settimanale)
 - ❌ Analisi workout Garmin
 - ❌ Progressione forza

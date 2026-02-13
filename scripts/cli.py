@@ -39,6 +39,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from scripts.plan_builder import PlanBuilder
 from scripts.data_validator import validate_all
 from scripts import tracking
+from scripts.category_plan_generator import CategoryPlanGenerator
+from scripts.markdown_exporter import MarkdownExporter
 
 
 def print_banner(profile_id: str):
@@ -432,6 +434,77 @@ def cmd_plan(
     return 0
 
 
+def cmd_plan_all() -> int:
+    """
+    Plan all command: regenerate all 8 category plans
+
+    Returns:
+        Exit code (0=success, 1=error)
+    """
+    base_dir = Path(__file__).parent.parent
+    data_dir = base_dir / 'data'
+    piano_base_path = base_dir / 'sources' / 'piano_base_ottimizzato.md'
+    output_dir = base_dir / 'plans' / 'nutrition'
+
+    # All categories
+    categories = ['rest', 'forza', 'easy_run', 'qualita', 'tempo', 'lungo', 'pizza_day', 'domenica']
+
+    print("=" * 80)
+    print("GENERATING ALL NUTRITION PLANS")
+    print("=" * 80)
+    print(f"\nCategories: {len(categories)}")
+    print(f"Output: {output_dir}")
+    print()
+
+    # Initialize generators
+    try:
+        plan_gen = CategoryPlanGenerator(data_dir, piano_base_path)
+        exporter = MarkdownExporter()
+    except Exception as e:
+        print(f"❌ ERROR: Failed to initialize generators: {e}")
+        return 1
+
+    # Generate plans
+    success_count = 0
+    failed = []
+
+    for idx, category_id in enumerate(categories, 1):
+        print(f"[{idx}/{len(categories)}] Generating {category_id}...", end=' ', flush=True)
+
+        try:
+            # Generate plan
+            plan = plan_gen.generate_category_plan(category_id)
+
+            # Export to markdown
+            output_path = output_dir / f"{category_id}.md"
+            exporter.export_plan(plan, output_path)
+
+            # Get file size
+            size_kb = output_path.stat().st_size / 1024
+
+            print(f"✅ ({size_kb:.1f} KB, {sum(len(m['options']) for m in plan['meals'].values())} options)")
+            success_count += 1
+
+        except Exception as e:
+            print(f"❌ FAILED: {e}")
+            failed.append((category_id, str(e)))
+
+    print()
+    print("=" * 80)
+    print("SUMMARY")
+    print("=" * 80)
+    print(f"✅ Success: {success_count}/{len(categories)}")
+
+    if failed:
+        print(f"❌ Failed:  {len(failed)}")
+        for cat_id, error in failed:
+            print(f"   - {cat_id}: {error}")
+        return 1
+    else:
+        print("🎉 All plans generated successfully!")
+        return 0
+
+
 def print_usage():
     """Print usage information"""
     print(__doc__)
@@ -809,9 +882,14 @@ def main():
             print("❌ ERROR: Missing profile_id")
             print()
             print("Usage: python3 scripts/cli.py plan <profile_id> [options]")
+            print("       python3 scripts/cli.py plan all")
             return 1
 
         profile_id = sys.argv[2]
+
+        # Check for /plan all command
+        if profile_id == 'all':
+            return cmd_plan_all()
 
         # Parse options
         mode = 'recommended'

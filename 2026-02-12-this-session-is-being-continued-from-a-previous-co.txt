@@ -1,659 +1,208 @@
 
-           Claude Code v2.1.39
- ▐▛███▜▌   Sonnet 4.5 · Claude Pro
-▝▜█████▛▘  ~/Desktop/projects/training-vantage
-  ▘▘ ▝▝    Opus 4.6 is here · $50 free extra usage · /extra-usage to enable
+ ▐▛███▜▌   Claude Code v2.1.39
+▝▜█████▛▘  Sonnet 4.5 · Claude Pro
+  ▘▘ ▝▝    ~/Desktop/projects/training-vantage
 
 ✻ Conversation compacted (ctrl+o for history)
 
-  ⎿  Read scripts/extract_from_stale.py (258 lines)
-  ⎿  Read scripts/standard_portions.py (155 lines)
-  ⎿  Read scripts/plan_advanced.py (184 lines)
-  ⎿  Read tv (93 lines)
-  ⎿  Read scripts/week.py (152 lines)
-  ⎿  You've hit your limit · resets 6pm (Europe/Rome)
-     /upgrade or /extra-usage to finish what you’re working on.
+  ⎿  Referenced file scripts/plan_builder.py
+  ⎿  Referenced file scripts/meal_balancer.py
+  ⎿  Read data/REALISM_RULES.json (29 lines)
+  ⎿  Read tests/demo_volume_penalty.py (178 lines)
+  ⎿  Read tests/test_plan_builder.py (271 lines)
 
-✻ Brewed for 3m 3s
+⏺ I'll complete the refactor verification by running all test suites, then
+  document the penalty calibration and add the architectural test.
 
-❯ riprendi 
+  Let me start by running all test suites to verify the refactor maintains all
+  22/22 tests passing:
 
-⏺ Perfetto! Continuo con l'implementazione dell'Option A: rigenerare tutti gli 8
-   piani nutrizionali completi estraendo dai piani STALE validati.
+⏺ Bash(python3 tests/run_regression_tests.py)
+  ⎿  📂 Loading meal balancer data...
+     ✅ Data loaded
+     … +29 lines (ctrl+o to expand)
 
-  Creo lo script per generare i piani completi con TUTTE le opzioni:
+⏺ Bash(python3 tests/test_plan_builder.py)
+  ⎿  ======================================================================
+     ==========
+     🧪 PLAN BUILDER TEST SUITE
+     … +75 lines (ctrl+o to expand)
 
-⏺ Write(scripts/generate_complete_plans.py)
-  ⎿  Wrote 209 lines to scripts/generate_complete_plans.py
-     #!/usr/bin/env python3
-     """
-     Genera piani nutrizionali completi da piani STALE esistenti.
+⏺ Bash(python3 tests/test_meal_templates.py)
+  ⎿  ======================================================================
+     ==========
+     🧪 MEAL TEMPLATE VALIDATION TEST SUITE (Stress Test #3)
+     … +49 lines (ctrl+o to expand)
 
-     Estrae tutte le opzioni validate dai piani esistenti, scala per nuovo 
-     BMR,
-     ricalcola totali, genera markdown completo.
-     """
+⏺ Bash(python3 tests/test_template_fixes.py)
+  ⎿  ======================================================================
+     ==========
+     🧪 MEAL TEMPLATE FIXES TEST SUITE (v1.1)
+     … +38 lines (ctrl+o to expand)
 
-     from pathlib import Path
-     from datetime import datetime
-     … +199 lines (ctrl+o to expand)
+⏺ Bash(python3 tests/test_volume_penalty.py)
+  ⎿  ======================================================================
+     ==========
+     🧪 VOLUME PENALTY TEST SUITE (Stress Test #2)
+     … +38 lines (ctrl+o to expand)
 
-⏺ Ora eseguo lo script per rigenerare tutti i piani completi:
+⏺ Perfect! All 22/22 tests pass after the refactor. The callback pattern
+  successfully moved all volume penalty logic to the orchestrator layer while
+  keeping the solver frozen.
 
-⏺ Bash(python3 scripts/generate_complete_plans.py)
-  ⎿  ╔═══════════════════════════════════════════════════════════════════╗
-     ║           RIGENERAZIONE PIANI NUTRIZIONALI COMPLETI               ║
-     ╚═══════════════════════════════════════════════════════════════════╝
-     … +25 lines (ctrl+o to expand)
-
-⏺ Perfetto! Tutti gli 8 piani sono stati rigenerati con successo. Ora verifico
-  che il piano forza sia completo con TUTTE le opzioni:
-
-⏺ Searched for 1 pattern, read 3 files (ctrl+o to expand)
-
-⏺ Bash(python3 << 'EOF'
-      from scripts.food_db import FoodDB…)
-  ⎿  Pasta secca                    → False
-     Pasta secca (di semola)        → True
-     Tonno al naturale              → False
-     … +3 lines (ctrl+o to expand)
-
-⏺ Update(scripts/extract_from_stale.py)
-  ⎿  Added 34 lines, removed 12 lines
-      187                                                                
-      188          return plan_data                                      
-      189                                                                
-      190 +    def _find_food_name(self, ingredient_name):               
-      191 +        """Trova nome alimento nel food-db (con fuzzy         
-          +matching se necessario)"""                                    
-      192 +        # Prova match esatto                                  
-      193 +        if self.food_db.get(ingredient_name):                 
-      194 +            return ingredient_name                            
-      195 +                                                              
-      196 +        # Prova ricerca parziale                              
-      197 +        results =                                             
-          +self.food_db.search(ingredient_name.lower())                  
-      198 +        if results:                                           
-      199 +            # Restituisci primo match                         
-      200 +            return results[0]['name']                         
-      201 +                                                              
-      202 +        return None                                           
-      203 +                                                              
-      204      def _recalculate_totals(self, ingredients):               
-      205          """Ricalcola totali da ingredienti"""                 
-      206          total_kcal = 0                                        
-     ...
-      196                                                                
-      197          for ing in ingredients:                               
-      198              if ing['type'] == 'single':                       
-      199 -                nutrients =                                   
-          -self.food_db.calculate_nutrients(ing['name'], ing['amount'])  
-      200 -                if nutrients:                                 
-      201 -                    total_kcal += nutrients['kcal']           
-      202 -                    total_protein += nutrients['protein']     
-      203 -                    total_fat += nutrients['fat']             
-      204 -                    total_cho += nutrients['cho']             
-      199 +                # Trova nome esatto nel food-db               
-      200 +                food_name = self._find_food_name(ing['name']) 
-      201 +                                                              
-      202 +                if food_name:                                 
-      203 +                    nutrients =                               
-          +self.food_db.calculate_nutrients(food_name, ing['amount'])    
-      204 +                    if nutrients:                             
-      205 +                        total_kcal += nutrients['kcal']       
-      206 +                        total_protein += nutrients['protein'] 
-      207 +                        total_fat += nutrients['fat']         
-      208 +                        total_cho += nutrients['cho']         
-      209 +                                                              
-      210              elif ing['type'] == 'alternatives':               
-      211                  # Usa primo alternativo per calcolo           
-      212                  first_alt = ing['items'][0]                   
-      213 -                nutrients =                                   
-          -self.food_db.calculate_nutrients(first_alt, ing['amount'])    
-      214 -                if nutrients:                                 
-      215 -                    total_kcal += nutrients['kcal']           
-      216 -                    total_protein += nutrients['protein']     
-      217 -                    total_fat += nutrients['fat']             
-      218 -                    total_cho += nutrients['cho']             
-      213 +                food_name = self._find_food_name(first_alt)   
-      214                                                                
-      215 +                if food_name:                                 
-      216 +                    nutrients =                               
-          +self.food_db.calculate_nutrients(food_name, ing['amount'])    
-      217 +                    if nutrients:                             
-      218 +                        total_kcal += nutrients['kcal']       
-      219 +                        total_protein += nutrients['protein'] 
-      220 +                        total_fat += nutrients['fat']         
-      221 +                        total_cho += nutrients['cho']         
-      222 +                                                              
-      223          return {                                              
-      224              'kcal': round(total_kcal, 0),                     
-      225              'protein': round(total_protein, 1),               
-
-⏺ Ora rigenero i piani con il fix per il matching dei nomi:
-
-⏺ Bash(python3 scripts/generate_complete_plans.py)
-  ⎿  ╔═══════════════════════════════════════════════════════════════════╗
-     ║           RIGENERAZIONE PIANI NUTRIZIONALI COMPLETI               ║
-     ╚═══════════════════════════════════════════════════════════════════╝
-     … +25 lines (ctrl+o to expand)
+  Now I'll document the penalty weight calibration and add the architectural
+  verification test.
 
 ⏺ Read 1 file (ctrl+o to expand)
 
-⏺ Bash(python3 << 'EOF'
-      from scripts.food_db import FoodDB…)
-  ⎿  Error: Exit code 1
-     Traceback (most recent call last):
-       File "<stdin>", line 22, in <module>
-     TypeError: 'NoneType' object is not subscriptable
+⏺ Update(data/REALISM_RULES.json)
+  ⎿  Added 8 lines, removed 1 line
+       4      "purpose": "Soft constraints per realismo pratico (volume, 
+          praticità, pattern)",
+       5      "version": "v1",
+       6      "last_updated": "2026-02-12",
+       7 -    "notes": "Penalty soft: influenzano scoring senza proibire 
+         -soluzioni. Apply only in realistic mode."                      
+       7 +    "notes": "Penalty soft: influenzano scoring senza proibire 
+         +soluzioni. Apply only in realistic mode.",                     
+       8 +    "penalty_calibration": {                                   
+       9 +      "rationale": "Penalty weights (0.8 per item, 0.6 per tota
+         +l) calibrated to guide solver without prohibiting solutions.", 
+      10 +      "impact_range": "At 600g single item: penalty ~1.6. At 80
+         +0g total: penalty ~1.2. Max penalty ~3-4 in extreme cases.",   
+      11 +      "why_these_values": "0.8 and 0.6 are strong enough to pre
+         +fer fiber-dense alternatives (avena/fruit/nuts) over excessive 
+         +veg, but weak enough to allow high veg when necessary (no alter
+         +natives available).",                                          
+      12 +      "comparison_to_macro_error": "Typical macro error ~2-5, s
+         +o penalty 1-2 is significant but not dominant.",               
+      13 +      "tuning_note": "If solver still picks 600g+ veg when alte
+         +rnatives exist, increase weights. If solver avoids veg too aggr
+         +essively, decrease."                                           
+      14 +    }                                                          
+      15    },
+      16    "rules": {
+      17      "volume_penalty_enabled": true,
 
-     Search 'pollo piastra': 0 results
+⏺ Now I'll create the architectural verification test to ensure meal_balancer.py
+   doesn't reference REALISM_RULES:
 
-     Pollo petto 118g: 27.5g P, 118 kcal
+⏺ Write(tests/test_solver_frozen.py)
+  ⎿  Wrote 115 lines to tests/test_solver_frozen.py
+       1 #!/usr/bin/env python3
+       2 """
+       3 Architectural Test: Verify Solver Remains Frozen
+       4 
+       5 This test ensures meal_balancer.py (solver layer) does NOT refer
+         ence
+       6 REALISM_RULES.json or other orchestrator-level configuration.
+       7 
+       8 WHY: Stress Test #2 required volume penalty WITHOUT modifying th
+         e solver.
+       9 The refactor moved all penalty logic to plan_builder.py (orchest
+         rator) using
+      10 a callback pattern. This test prevents regression.
+     … +105 lines (ctrl+o to expand)
 
-     Search 'riso basmati': 1 results
-     … +1 line (ctrl+o to see all)
+⏺ Bash(python3 tests/test_solver_frozen.py)
+  ⎿  ======================================================================
+     ==========
+     🏗️  ARCHITECTURAL VERIFICATION TEST SUITE
+     … +22 lines (ctrl+o to expand)
 
-⏺ Searched for 1 pattern (ctrl+o to expand)
+⏺ Excellent! Now let me verify the volume penalty demo still works correctly
+  with the refactored architecture:
 
-⏺ Update(scripts/extract_from_stale.py)
-  ⎿  Added 35 lines
-      19  class StalePlanParser:                                         
-      20      """Parser per piani STALE completi"""                      
-      21                                                                 
-      22 +    # Mapping nomi piani STALE → nomi food-db                  
-      23 +    NAME_MAPPING = {                                           
-      24 +        'Pasta secca': 'Pasta secca (di semola)',              
-      25 +        'Tonno al naturale': 'Tonno al naturale (drenato)',    
-      26 +        'Pollo piastra': 'Pollo petto (cotto in padella)',     
-      27 +        'Pollo alla piastra': 'Pollo petto (cotto in           
-         +padella)',                                                     
-      28 +        'Pollo': 'Pollo petto (cotto in padella)',             
-      29 +        'Zucchine': 'Zucchine (crude)',                        
-      30 +        'Carote': 'Carote (crude)',                            
-      31 +        'Passatina di pomodoro': 'Passata di pomodoro',        
-      32 +        'Passatina pomodoro': 'Passata di pomodoro',           
-      33 +        'Riso basmati (crudo)': 'Riso basmati',                
-      34 +        'Patate lesse': 'Patate (senza buccia, bollite)',      
-      35 +        'Patate': 'Patate (senza buccia, bollite)',            
-      36 +        'Merluzzo': 'Merluzzo (surgelato, cotto al forno)',    
-      37 +        'Fesa tacchino': 'Fesa tacchino (affettato)',          
-      38 +        'Tonno in scatola': 'Tonno al naturale (drenato)',     
-      39 +        'Tonno tagliata': 'Tonno tagliata (fresco)',           
-      40 +        'Vitello': 'Vitello (filetto, cotto in padella)',      
-      41 +        'Tacchino': 'Tacchino, fesa (cotto al forno)',         
-      42 +        'Uova': 'Uova intere (gallina)',                       
-      43 +        'Uova strapazzate': 'Uova intere (gallina)',           
-      44 +        'Piselli': 'Piselli (in scatola, scolati)',            
-      45 +        'Ragù di vitello': 'Ragù di vitello (40% vitello / 60% 
-         + passata)',                                                    
-      46 +        'Zenzero grattuggiato': 'Zenzero fresco',              
-      47 +        'Zenzero': 'Zenzero fresco',                           
-      48 +        'Parmigiano grattugiato': 'Parmigiano Reggiano',       
-      49 +        'Parmigiano': 'Parmigiano Reggiano',                   
-      50 +        'Formaggio spalmabile (Philadelphia Light)':           
-         +'Formaggio spalmabile light',                                  
-      51 +        'Yogurt greco': 'Yogurt greco 0%',                     
-      52 +        'Plum cake': 'Plum cake (senza latte/burro)',          
-      53 +        'Ciambellone': 'Plum cake (senza latte/burro)',        
-      54 +        'Ciambellone (senza latte/burro)': 'Plum cake (senza   
-         +latte/burro)',                                                 
-      55 +    }                                                          
-      56 +                                                               
-      57      def __init__(self):                                        
-      58          self.food_db = FoodDB()                                
-      59                                                                 
+⏺ Bash(python3 tests/demo_volume_penalty.py)
+  ⎿  ======================================================================
+     ==========
+     🎬 VOLUME PENALTY DEMO: BEFORE vs AFTER
+     … +27 lines (ctrl+o to expand)
 
-⏺ Update(scripts/extract_from_stale.py)
-  ⎿  Added 6 lines, removed 2 lines
-      224                                                                
-      225      def _find_food_name(self, ingredient_name):               
-      226          """Trova nome alimento nel food-db (con fuzzy         
-           matching se necessario)"""                                    
-      227 -        # Prova match esatto                                  
-      227 +        # 1. Prova mapping esplicito                          
-      228 +        if ingredient_name in self.NAME_MAPPING:              
-      229 +            return self.NAME_MAPPING[ingredient_name]         
-      230 +                                                              
-      231 +        # 2. Prova match esatto                               
-      232          if self.food_db.get(ingredient_name):                 
-      233              return ingredient_name                            
-      234                                                                
-      235 -        # Prova ricerca parziale                              
-      235 +        # 3. Prova ricerca parziale                           
-      236          results =                                             
-           self.food_db.search(ingredient_name.lower())                  
-      237          if results:                                           
-      238              # Restituisci primo match                         
+⏺ Perfect! Let me create a comprehensive summary of the completed refactor:
 
-⏺ Bash(python3 scripts/generate_complete_plans.py 2>&1 | tail -20)
-  ⎿  Scaling: BMR 1690 → 1657 (ratio: 0.980)
-       ✅ rest: 23 opzioni totali
-          Scaled: BMR 1690 → 1657 (ratio 0.980)
-     … +16 lines (ctrl+o to expand)
+⏺ Write(docs/STRESS_TEST_2_COMPLETE.md)
+  ⎿  Wrote 208 lines to docs/STRESS_TEST_2_COMPLETE.md
+       1 # Stress Test #2: Fibre vs Volume (COMPLETE) ✅
+       2 
+       3 ## Status: ARCHITECTURALLY COMPLETE
+       4 
+       5 Date: 2026-02-12
+       6 Version: v1.0 (refactored)
+       7 
+       8 ---
+       9 
+      10 ## Summary
+     … +198 lines (ctrl+o to expand)
 
-⏺ Searched for 1 pattern (ctrl+o to expand)
+⏺ ✅ Refactor COMPLETE - Stress Test #2 Architecturally Sound
 
-⏺ Bash(python3 << 'EOF'
-      from scripts.extract_from_stale import StalePlanParser…)
-  ⎿  Error: Exit code 1
-     Traceback (most recent call last):
-       File "<stdin>", line 1, in <module>
-       File "/Users/andreanatoni/Desktop/projects/training-vantage/scripts/extra
-     ct_from_stale.py", line 14, in <module>
-         from food_db import FoodDB
-     ModuleNotFoundError: No module named 'food_db'
+  All 23/23 tests pass after moving volume penalty logic from solver to
+  orchestrator:
 
-⏺ Bash(cd scripts && python3 << 'EOF'
-      from extract_from_stale import StalePlanParser…)
-  ⎿  Riso basmati (crudo)           → Riso basmati
+  Test Results
 
-     Pollo piastra                  → Pollo petto (cotto in padella)
-     … +13 lines (ctrl+o to expand)
+  - Meal Balancer v1.0: 5/5 ✅ (solver unchanged, regression tests pass)
+  - Plan Builder: 3/3 ✅ (distribution math, context propagation)
+  - Meal Templates: 6/6 ✅ (required/forbidden groups)
+  - Template Fixes v1.1: 4/4 ✅ (sweetener group, forbidden_food_ids)
+  - Volume Penalty: 4/4 ✅ (prefers fiber-dense, excludes ingredients)
+  - Architectural Verification: 1/1 ✅ (NEW - verifies solver is clean)
 
-⏺ Bash(cd scripts && python3 << 'EOF'
-      from food_db import FoodDB…)
-  ⎿  Error: Exit code 1
-     (eval):cd:1: no such file or directory: scripts
+  What Changed
 
-⏺ Bash(python3 << 'EOF'
-      import sys…)
-  ⎿  Alimenti con 'riso':
-       - Riso basmati (crudo)
+  Before (❌ violation):
+  - meal_balancer.py had calculate_volume_penalty() method
+  - Solver referenced REALISM_RULES.json directly
+  - Mixed orchestration logic into solver layer
 
-     db.get('Riso basmati'): False
+  After (✅ correct):
+  - meal_balancer.py accepts optional extra_penalty_fn callback
+  - plan_builder.py contains all volume penalty logic via
+  create_volume_penalty_fn()
+  - Clean architectural separation maintained
 
-⏺ Update(scripts/extract_from_stale.py)
-  ⎿  Added 1 line, removed 1 line
-      30          'Carote': 'Carote (crude)',                            
-      31          'Passatina di pomodoro': 'Passata di pomodoro',        
-      32          'Passatina pomodoro': 'Passata di pomodoro',           
-      33 -        'Riso basmati (crudo)': 'Riso basmati',                
-      33 +        'Riso basmati': 'Riso basmati (crudo)',                
-      34          'Patate lesse': 'Patate (senza buccia, bollite)',      
-      35          'Patate': 'Patate (senza buccia, bollite)',            
-      36          'Merluzzo': 'Merluzzo (surgelato, cotto al forno)',    
+  Architectural Test (NEW)
 
-⏺ Bash(python3 scripts/generate_complete_plans.py 2>&1 | grep -A 3 "forza")
-  ⎿  No matches found
+  Created tests/test_solver_frozen.py to prevent regression:
+  ✅ Solver is clean
+     - No REALISM_RULES references
+     - No volume_penalty logic
+     - Callback pattern (extra_penalty_fn) present
+     - Architectural separation maintained
 
-⏺ Bash(python3 scripts/generate_complete_plans.py)
-  ⎿  Error: Exit code 2
-     /Library/Developer/CommandLineTools/usr/bin/python3: can't open file 
-     '/Users/andreanatoni/Desktop/projects/training-vantage/scripts/scripts/gene
-     rate_complete_plans.py': [Errno 2] No such file or directory
+  Penalty Calibration Documented
 
-⏺ Bash(pwd && ls scripts/*.py | head -5)
-  ⎿  /Users/andreanatoni/Desktop/projects/training-vantage/scripts
-     (eval):1: no matches found: scripts/*.py
+  Added to REALISM_RULES.json:
+  - Why 0.8 and 0.6: Strong enough to prefer fiber-dense alternatives, weak
+  enough to allow high veg when necessary
+  - Impact range: At 600g single item → penalty ~1.6, at 800g total → penalty
+  ~1.2
+  - Comparison: Typical macro error ~2-5, so penalty is significant but not
+  dominant
+  - Tuning guidance: Increase if solver picks 600g+ veg with alternatives,
+  decrease if avoids veg too aggressively
 
-⏺ Bash(cd /Users/andreanatoni/Desktop/projects/training-vantage && python3
-      scripts/generate_complete_plans.py)
-  ⎿  ╔═══════════════════════════════════════════════════════════════════╗
-     ║           RIGENERAZIONE PIANI NUTRIZIONALI COMPLETI               ║
-     ╚═══════════════════════════════════════════════════════════════════╝
-     … +25 lines (ctrl+o to expand)
+  Files
 
-⏺ Searched for 3 patterns, read 1 file (ctrl+o to expand)
+  Created:
+  - data/REALISM_RULES.json (penalty configuration + calibration docs)
+  - tests/test_volume_penalty.py (4 behavior tests)
+  - tests/test_solver_frozen.py (architectural verification)
+  - docs/STRESS_TEST_2_COMPLETE.md (comprehensive documentation)
 
-⏺ Perfetto! I piani sono stati rigenerati correttamente con TUTTE le opzioni.
-  Ora testo il comando tv plan per verificare che funzioni con i nuovi piani
-  completi:
+  Modified:
+  - scripts/meal_balancer.py - Added callback parameter (backward compatible)
+  - scripts/plan_builder.py - Added volume penalty orchestration
 
-⏺ Bash(./tv plan forza 2>&1 | head -50)
-  ⎿  Generazione piano forza...
-     ✓ Piano forza: 2485 kcal → /Users/andreanatoni/Desktop/projects/traini
-     ng-vantage/plans/nutrition/forza.md
+  ---
+  Stress Test #2: ARCHITECTURALLY COMPLETE 🎉
 
-⏺ Read 1 file (ctrl+o to expand)
+  The callback pattern is now established for future soft constraints (variety
+  penalty, must-include foods, pairing rules, etc.) without ever touching the
+  solver again.
 
-⏺ Vedo che plan.py sovrascrive i piani completi con versioni semplificate. Devo
-  aggiornare plan.py per usare la logica completa di estrazione dai piani STALE:
+✻ Brewed for 6m 40s
 
-⏺ Write(scripts/plan.py)
-  ⎿  Added 170 lines, removed 35 lines
-        2  """                                                           
-        3  /tv plan <categoria> [--all]                                  
-        4                                                                
-        5 -Genera piano nutrizionale quantitativo per categoria.         
-        5 +Genera piano nutrizionale completo per categoria estraendo    
-          +dai piani STALE validati.                                     
-        6  """                                                           
-        7                                                                
-        8  import sys                                                    
-        9  import json                                                   
-       10  from pathlib import Path                                      
-       11  from datetime import datetime                                 
-       12 -from plan_calculator import PlanCalculator                    
-       12 +from extract_from_stale import StalePlanParser                
-       13                                                                
-       14 +SOURCES_DIR = Path(__file__).parent.parent / "sources"        
-       15  PLANS_DIR = Path(__file__).parent.parent / "plans" /          
-           "nutrition"                                                   
-       16  DATA_DIR = Path(__file__).parent.parent / "data"              
-       17 +COMPOSITION_FILE = DATA_DIR / "composition.json"              
-       18  CHANGELOG_FILE = DATA_DIR / "changelog.json"                  
-       19                                                                
-       20 -VALID_CATEGORIES = ['rest', 'forza', 'easy-run', 'qualita',   
-          -'tempo', 'lungo', 'pizza-day', 'domenica']                    
-       20 +# Mapping categoria → file sorgente STALE                     
-       21 +CATEGORY_SOURCES = {                                          
-       22 +    'forza': 'piano_forza.md',                                
-       23 +    'easy-run': 'piano_easy_run.md',                          
-       24 +    'qualita': 'piano_qualita.md',                            
-       25 +    'tempo': 'piano_tempo.md',                                
-       26 +    'lungo': 'piano_lungo.md',                                
-       27 +    'rest': 'piano_rest.md',                                  
-       28 +    'pizza-day': 'piano_pizza_day.md',                        
-       29 +    'domenica': 'piano_domenica.md'                           
-       30 +}                                                             
-       31                                                                
-       32 +VALID_CATEGORIES = list(CATEGORY_SOURCES.keys())              
-       33                                                                
-       34 -def generate_plan_markdown(plan):                             
-       35 -    """Genera piano markdown"""                               
-       36 -    md = [f"<!-- META\ngenerated:                             
-          -{datetime.now().strftime('%Y-%m-%d')}\nffm:                   
-          -{plan['ffm']:.2f}\nbmr: {plan['bmr']}\ntarget_kcal:           
-          -{plan['target_kcal']}\nstatus: CURRENT\n-->", ""]             
-       34                                                                
-       35 -    cat_display = plan['category'].upper().replace('-', ' ')  
-       36 -    md.append(f"# PIANO {cat_display}\n")                     
-       37 -    md.append(f"**Generato**:                                 
-          -{datetime.now().strftime('%Y-%m-%d %H:%M')}")                 
-       38 -    md.append(f"**FFM**: {plan['ffm']:.2f}kg | **BMR**:       
-          -{plan['bmr']} kcal\n")                                        
-       35 +def get_current_bmr():                                        
-       36 +    """Ottieni BMR attuale da composition.json"""             
-       37 +    with open(COMPOSITION_FILE, 'r') as f:                    
-       38 +        data = json.load(f)                                   
-       39 +    latest = data['measurements'][-1]                         
-       40 +    return int(latest['bmr'])                                 
-       41                                                                
-       42 -    md.append("## Target Giornaliero\n")                      
-       43 -    md.append(f"**Kcal totali**: {plan['target_kcal']} kcal") 
-       44 -    md.append(f"**Proteine**:                                 
-          -{plan['target_macros']['protein']}g")                         
-       45 -    md.append(f"**Grassi**: {plan['target_macros']['fat']}g") 
-       46 -    md.append(f"**Carboidrati**:                              
-          -{plan['target_macros']['cho']}g\n")                           
-       42                                                                
-       43 -    md.append("## Pasti\n")                                   
-       44 -    for meal_name, meal_data in plan['meals'].items():        
-       45 -        md.append(f"### {meal_name}\n**Target**:              
-          -{meal_data['target_kcal']} kcal\n**Opzione**:                 
-          -{meal_data['option_name']}\n")                                
-       43 +def format_ingredient_line(ing_data):                         
-       44 +    """Formatta linea ingrediente"""                          
-       45 +    if ing_data['type'] == 'single':                          
-       46 +        return f"- {ing_data['name']}:                        
-          +{ing_data['amount']:.0f} {ing_data['unit']}"                  
-       47 +    elif ing_data['type'] == 'alternatives':                  
-       48 +        items_str = ' OR '.join(ing_data['items'])            
-       49 +        return f"- {items_str}: {ing_data['amount']:.0f}      
-          +{ing_data['unit']}"                                           
-       50                                                                
-       51 -    return '\n'.join(md)                                      
-       51                                                                
-       52 +def generate_plan_markdown(category, plan_data, current_bmr): 
-       53 +    """Genera markdown completo per un piano"""               
-       54 +    lines = []                                                
-       55                                                                
-       56 -def generate_plan(category):                                  
-       57 -    """Genera piano"""                                        
-       58 -    print(f"Generazione piano {category}...")                 
-       59 -    calc = PlanCalculator()                                   
-       60 -    plan = calc.generate_plan_summary(category)               
-       61 -    plan_md = generate_plan_markdown(plan)                    
-       56 +    # META comment                                            
-       57 +    lines.append(f"<!-- META")                                
-       58 +    lines.append(f"Generated:                                 
-          +{datetime.now().strftime('%Y-%m-%d')}")                       
-       59 +    lines.append(f"FFM: {plan_data.get('ffm', 'N/A')} kg")    
-       60 +    lines.append(f"BMR: {current_bmr} kcal")                  
-       61 +    lines.append(f"Status: CURRENT")                          
-       62 +    lines.append(f"-->")                                      
-       63 +    lines.append("")                                          
-       64                                                                
-       65 -    filepath = PLANS_DIR / f"{category}.md"                   
-       66 -    with open(filepath, 'w') as f:                            
-       67 -        f.write(plan_md)                                      
-       65 +    # Header                                                  
-       66 +    category_titles = {                                       
-       67 +        'forza': 'FORZA',                                     
-       68 +        'easy-run': 'EASY RUN',                               
-       69 +        'qualita': 'QUALITÀ',                                 
-       70 +        'tempo': 'TEMPO RUN',                                 
-       71 +        'lungo': 'LUNGO',                                     
-       72 +        'rest': 'REST DAY',                                   
-       73 +        'pizza-day': 'PIZZA DAY',                             
-       74 +        'domenica': 'DOMENICA'                                
-       75 +    }                                                         
-       76                                                                
-       77 -    print(f"✓ Piano {category}: {plan['target_kcal']} kcal →  
-          -{filepath}")                                                  
-       77 +    lines.append(f"# Piano {category_titles.get(category,     
-          +category.upper())}")                                          
-       78 +    lines.append("")                                          
-       79 +    lines.append(f"**Target giornaliero**:                    
-          +{plan_data['target_kcal']} kcal")                             
-       80 +    lines.append("")                                          
-       81                                                                
-       82 +    # Per ogni pasto                                          
-       83 +    meal_icons = {                                            
-       84 +        'COLAZIONE': '☕',                                    
-       85 +        'SPUNTINO MATTINA': '🍎',                             
-       86 +        'PRANZO': '🍝',                                       
-       87 +        'SPUNTINO POMERIGGIO': '🥜',                          
-       88 +        'SPUNTINO SERA': '🍌',                                
-       89 +        'CENA': '🍖'                                          
-       90 +    }                                                         
-       91                                                                
-       92 +    for meal_name, meal_data in plan_data['meals'].items():   
-       93 +        icon = meal_icons.get(meal_name, '🍽️')                
-       94 +                                                              
-       95 +        lines.append(f"# {icon} {meal_name}")                 
-       96 +        lines.append("")                                      
-       97 +                                                              
-       98 +        # Target pasto                                        
-       99 +        target = meal_data['target']                          
-      100 +        lines.append(f"**Target**: {target['kcal']} kcal |    
-          +{target['protein']}g P | {target['fat']}g F |                 
-          +{target['cho']}g CHO")                                        
-      101 +        lines.append("")                                      
-      102 +                                                              
-      103 +        # Opzioni                                             
-      104 +        for idx, option in enumerate(meal_data['options'],    
-          +1):                                                           
-      105 +            lines.append(f"### Opzione {idx} -                
-          +{option['name']}")                                            
-      106 +            lines.append("")                                  
-      107 +                                                              
-      108 +            # Ingredienti                                     
-      109 +            for ing in option['ingredients']:                 
-      110 +                lines.append(format_ingredient_line(ing))     
-      111 +            lines.append("")                                  
-      112 +                                                              
-      113 +            # Totali                                          
-      114 +            if option['totals']:                              
-      115 +                tot = option['totals']                        
-      116 +                lines.append(f"**Totali**: {tot['kcal']:.0f}  
-          +kcal | {tot['protein']:.1f}g P | {tot['fat']:.1f}g F |        
-          +{tot['cho']:.1f}g CHO")                                       
-      117 +                lines.append("")                              
-      118 +                                                              
-      119 +            # Swap                                            
-      120 +            if option['swap']:                                
-      121 +                lines.append(f"**Swap**: {option['swap']}")   
-      122 +                lines.append("")                              
-      123 +                                                              
-      124 +            # Quando                                          
-      125 +            if option['quando']:                              
-      126 +                lines.append(f"**Quando**:                    
-          +{option['quando']}")                                          
-      127 +                lines.append("")                              
-      128 +                                                              
-      129 +    return '\n'.join(lines)                                   
-      130 +                                                              
-      131 +                                                              
-      132 +def generate_plan(category, silent=False):                    
-      133 +    """Genera piano completo per categoria"""                 
-      134 +    # Trova file sorgente                                     
-      135 +    source_file = CATEGORY_SOURCES.get(category)              
-      136 +                                                              
-      137 +    if not source_file:                                       
-      138 +        print(f"❌ Categoria {category} non trovata in        
-          +mapping")                                                     
-      139 +        return False                                          
-      140 +                                                              
-      141 +    source_path = SOURCES_DIR / source_file                   
-      142 +                                                              
-      143 +    if not source_path.exists():                              
-      144 +        print(f"❌ File sorgente non trovato: {source_path}") 
-      145 +        return False                                          
-      146 +                                                              
-      147 +    # Parse e scala                                           
-      148 +    parser = StalePlanParser()                                
-      149 +    plan_data = parser.parse_plan_file(source_path)           
-      150 +                                                              
-      151 +    old_bmr = plan_data['bmr']                                
-      152 +    current_bmr = get_current_bmr()                           
-      153 +                                                              
-      154 +    if not old_bmr:                                           
-      155 +        print(f"❌ BMR non trovato nel piano STALE")          
-      156 +        return False                                          
-      157 +                                                              
-      158 +    plan_scaled = parser.scale_plan(plan_data, current_bmr)   
-      159 +                                                              
-      160 +    # Genera markdown                                         
-      161 +    markdown = generate_plan_markdown(category, plan_scaled,  
-          +current_bmr)                                                  
-      162 +                                                              
-      163 +    # Salva                                                   
-      164 +    output_file = PLANS_DIR / f"{category}.md"                
-      165 +    with open(output_file, 'w', encoding='utf-8') as f:       
-      166 +        f.write(markdown)                                     
-      167 +                                                              
-      168 +    # Report                                                  
-      169 +    num_options = sum(len(meal['options']) for meal in        
-          +plan_scaled['meals'].values())                                
-      170 +                                                              
-      171 +    if not silent:                                            
-      172 +        print(f"✓ Piano {category}:                           
-          +{plan_scaled['target_kcal']} kcal | {num_options} opzioni →   
-          +{output_file}")                                               
-      173 +                                                              
-      174 +    return True                                               
-      175 +                                                              
-      176 +                                                              
-      177  def generate_all():                                           
-      178 -    """Rigenera tutti"""                                      
-      179 -    print("Rigenerazione tutti i piani...\n")                 
-      180 -    for cat in VALID_CATEGORIES:                              
-      181 -        generate_plan(cat)                                    
-      182 -    print("\n✓ Tutti gli 8 piani rigenerati")                 
-      178 +    """Rigenera tutti gli 8 piani"""                          
-      179 +    print("╔═════════════════════════════════════════════════ 
-          +══════════════════╗")                                         
-      180 +    print("║           RIGENERAZIONE PIANI NUTRIZIONALI       
-          +COMPLETI               ║")                                    
-      181 +    print("╚═════════════════════════════════════════════════ 
-          +══════════════════╝")                                         
-      182 +    print()                                                   
-      183                                                                
-      184 +    current_bmr = get_current_bmr()                           
-      185 +    print(f"BMR attuale: {current_bmr} kcal (da               
-          +composition.json)")                                           
-      186 +    print()                                                   
-      187                                                                
-      188 +    success_count = 0                                         
-      189 +    for category in VALID_CATEGORIES:                         
-      190 +        if generate_plan(category, silent=False):             
-      191 +            success_count += 1                                
-      192 +                                                              
-      193 +    print()                                                   
-      194 +    print("─" * 70)                                           
-      195 +    print(f"Completato:                                       
-          +{success_count}/{len(VALID_CATEGORIES)} piani generati con    
-          +successo")                                                    
-      196 +    print()                                                   
-      197 +                                                              
-      198 +                                                              
-      199  if __name__ == '__main__':                                    
-      200      if len(sys.argv) < 2 or sys.argv[1] not in                
-           VALID_CATEGORIES + ['--all']:                                 
-      201 -        print(f"Usage: plan.py <categoria> | --all            
-          -\nCategorie: {', '.join(VALID_CATEGORIES)}")                  
-      201 +        print(f"Usage: plan.py <categoria> | --all")          
-      202 +        print(f"Categorie: {', '.join(VALID_CATEGORIES)}")    
-      203          sys.exit(1)                                           
-      204                                                                
-      205      if sys.argv[1] == '--all':                                
-
-⏺ Ora testo il comando aggiornato:
-
-⏺ Bash(./tv plan easy-run)
-  ⎿  Scaling: BMR 1690 → 1657 (ratio: 0.980)
-     ✓ Piano easy-run: 2514 kcal | 27 opzioni → /Users/andreanatoni/Desktop
-     /projects/training-vantage/plans/nutrition/easy-run.md
-
-⏺ Bash(./tv plan --all)
-  ⎿  ╔═══════════════════════════════════════════════════════════════════╗
-     ║           RIGENERAZIONE PIANI NUTRIZIONALI COMPLETI               ║
-     ╚═══════════════════════════════════════════════════════════════════╝
-     … +21 lines (ctrl+o to expand)
-
-⏺ Read 1 file (ctrl+o to expand)
-
-⏺ Perfetto! Option A completata con successo. Ecco il riepilogo:
-
-  ✅ Completato
-
-  Rigenerati tutti gli 8 piani nutrizionali completi estraendo dai piani STALE
-  validati:
-  ┌───────────┬─────────────┬────────────────┬────────┐
-  │   Piano   │ Target kcal │ Opzioni totali │ Status │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ forza     │ 2460        │ 27             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ easy-run  │ 2514        │ 27             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ qualita   │ 2598        │ 27             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ tempo     │ 2514        │ 27             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ lungo     │ 2676        │ 19             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ rest      │ 2117        │ 23             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ pizza-day │ 2514        │ 23             │ ✅     │
-  ├───────────┼─────────────┼────────────────┼────────┤
-  │ domenica  │ 2161        │ 17             │ ✅     │
-  └───────────┴─────────────┴────────────────┴────────┘
-  Cosa è stato fatto
-
-  1. Creato extract_from_stale.py - Parser completo per piani STALE:
-    - Estrae TUTTE le opzioni (non solo la prima)
-    - Scala ingredienti con ratio BMR (1657/1690 = 0.980)
-    - Ricalcola totali usando food-db.md
-    - Preserva swap, quando, e alternative OR
-    - Mapping nomi per match corretto (es. "Pollo piastra" → "Pollo petto (cotto
-   in padella)")
-  2. Aggiornato plan.py - Integrata logica completa:
-    - tv plan forza → genera piano completo con 27 opzioni
-    - tv plan --all → rigenera tutti gli 8 piani completi
-    - META comment con BMR attuale e status CURRENT
-  3. Verificato correttezza:
-    - Ingredienti scalati correttamente (es. 100ml→98ml, 50g→49g)
-    - Totali ricalcolati accuratamente (es. Riso+pollo: 658 kcal | 41.2g P ✓)
-    - Tutte le opzioni preservate da piani STALE
-
-  File creati/modificati
-
-  - ✅ scripts/extract_from_stale.py - Parser con fuzzy matching e NAME_MAPPING
-  - ✅ scripts/plan.py - Aggiornato per usare logica completa
-  - ✅ plans/nutrition/*.md - Tutti gli 8 piani rigenerati
-  - 📝 scripts/generate_complete_plans.py - Può essere rimosso (logica ora in
-  plan.py)
-
-✻ Crunched for 5m 22s
+❯ /copy 
+  ⎿  Copied to clipboard (2395 characters, 60 lines)

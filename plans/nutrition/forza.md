@@ -1,356 +1,431 @@
 <!-- META
-Generated: 2026-02-11
-FFM: 61.13 kg
-BMR: 1657 kcal
-Status: CURRENT
+categoria: forza
+generato: 2026-02-13
+ffm: 59.59
+peso: 68.50
+bmr: 1657
 -->
 
-# Piano FORZA
+# Piano Nutrizionale: FORZA
 
-**Target giornaliero**: 2460 kcal
+**Categoria**: Giorno forza (palestra)
+**Target giornaliero**: 2400 kcal | 150g P | 250g CHO | 75g F
 
-# ☕ COLAZIONE
+---
 
-**Target**: 443 kcal | 25g P | 11g F | 59g CHO
+## COLAZIONE - 07:30–08:30 (dopo yoga mattutino 07:00–07:20)
 
-### Opzione 1 - Dolce classica con fette biscottate
+**Target**: 480 kcal | 30.0g P | 57.5g CHO | 11.2g F
 
-- Caffè espresso: 98 ml
-- Fette biscottate: 49 g
-- Marmellata: 24 g
-- Yogurt magro 0.1%: 123 g
-- Mandorle: 12 g
+### Opzione 1 (a) - Dolce classica con fette biscottate (yogurt magro + mandorle)
 
-**Totali**: 374 kcal | 14.2g P | 9.5g F | 59.7g CHO
+- Caffè espresso: 150.0g
+- Fette biscottate: 60.0g
+- Yogurt magro 0.1%: 312.5g
+- Mandorle: 15.0g OR Noci 11.5g OR Nocciole 12.3g
 
-**Swap**: Fette 50g ↔ Pane integrale 55g | Mandorle ↔ Noci 12g ↔ Nocciole 10g
+**Totali**: 466 kcal | 22.6g P | 66.2g CHO | 11.9g F | 3.9g Fibre
+**Delta**: kcal -2.9% | P -24.7% | CHO +15.1% | F +5.8%
 
-**Quando**: Colazione veloce, digeribile, ottima pre-forza.
+**Quando usarla**: Giorni normali, grassi buoni da mandorle
 
-### Opzione 2 - Dolce con pane e frutta secca
+---
 
-- Pane integrale: 59 g
-- Marmellata: 29 g
-- Yogurt magro 0.1%: 123 g
-- Mandorle: 12 g
+### Opzione 2 (b) - Dolce classica con fette biscottate (yogurt greco (boost proteico))
 
-**Totali**: 324 kcal | 13.5g P | 7.4g F | 51.1g CHO
+- Caffè espresso: 150.0g
+- Fette biscottate: 90.0g
+- Yogurt greco 0%: 187.5g
 
-**Swap**: Mandorle ↔ Noci 12g ↔ Nocciole 10g
+**Totali**: 465 kcal | 29.2g P | 75.0g CHO | 5.4g F | 3.1g Fibre
+**Delta**: kcal -3.2% | P -2.7% | CHO +30.4% | F -52.0%
 
-**Quando**: Maggiore sazietà, ideale per giorni con pranzo tardivo.
+**Quando usarla**: Pizza day o quando serve max proteine senza grassi
 
-### Opzione 3 - Salata completa
+---
 
-- Pane integrale: 74 g
-- Prosciutto crudo: 34 g
-- Formaggio spalmabile light: 24 g
-- Caffè espresso: 98 ml
+### Opzione 3 (a) - Dolce con pane e frutta secca (yogurt magro + mandorle)
 
-**Totali**: 289 kcal | 17.9g P | 9.0g F | 33.8g CHO
+- Pane integrale: 75.0g
+- Marmellata: 5.0g
+- Yogurt magro 0.1%: 312.5g
+- Mandorle: 15.0g OR Noci 11.5g OR Nocciole 12.3g
+- Mandorle: 15.0g OR Noci 11.5g
 
-**Swap**: Prosciutto 35g ↔ Bresaola 30g ↔ Fesa tacchino 40g
+**Totali**: 454 kcal | 23.4g P | 57.9g CHO | 13.2g F | 7.6g Fibre
+**Delta**: kcal -5.4% | P -22.0% | CHO +0.7% | F +17.3%
 
-**Quando**: Massimo apporto proteico pre-forza, variante salata.
+**Quando usarla**: Giorni normali, grassi buoni da mandorle
 
-### Opzione 4 - Dolce con torta homemade
+---
 
-- Plum cake (senza latte/burro): 74 g
-- Yogurt magro 0.1%: 123 g
-- Mandorle: 8 g
-- Caffè espresso: 98 ml
+### Opzione 4 (b) - Dolce con pane e frutta secca (yogurt greco (boost proteico))
 
-**Totali**: 364 kcal | 12.6g P | 11.2g F | 54.0g CHO
+- Pane integrale: 100.0g
+- Marmellata: 10.0g
+- Yogurt greco 0%: 170.0g
+- Mandorle: 20.0g OR Noci 15.3g
 
-**Swap**: Plum cake ↔ Ciambellone (stesse grammature)
+**Totali**: 470 kcal | 29.5g P | 60.0g CHO | 11.7g F | 9.0g Fibre
+**Delta**: kcal -2.1% | P -1.7% | CHO +4.3% | F +4.0%
 
-**Quando**: Weekend, comfort food sano pre-allenamento.
+**Quando usarla**: Pizza day o quando serve max proteine senza grassi
 
-### Opzione 5 - Dolce con biscotti e burro d'arachidi
+---
 
-- Oro Saiwa: 44 g
-- Burro d'arachidi: 15 g
-- Yogurt magro 0.1%: 123 g
-- Caffè espresso: 98 ml
-- Oro Saiwa: 44 g
+### Opzione 5 - Salata completa
 
-**Totali**: 537 kcal | 19.1g P | 17.6g F | 75.2g CHO
+- Pane integrale: 125.0g
+- Prosciutto crudo: 75.0g OR Bresaola 58.9g OR Fesa tacchino (affettato) 97.5g
 
-**Quando**: Massima versatilità dolce, ottima palatabilità.
+**Totali**: 481 kcal | 30.1g P | 55.1g CHO | 15.1g F | 8.1g Fibre
+**Delta**: kcal +0.2% | P +0.3% | CHO -4.2% | F +34.2%
 
-# 🍎 SPUNTINO MATTINA
+**Quando usarla**: Variante salata per chi preferisce iniziare la giornata con proteine animali. Maggiore apporto proteico.
 
-**Target**: 197 kcal | 11g P | 4g F | 26g CHO
+---
+
+### Opzione 6 (a) - Dolce con torta homemade (yogurt magro + mandorle)
+
+- Plum cake (senza latte/burro): 75.0g OR Plum cake (senza latte/burro) 75.0g
+- Yogurt magro 0.1%: 312.5g
+- Caffè espresso: 150.0g
+
+**Totali**: 426 kcal | 18.1g P | 60.4g CHO | 11.0g F | 1.3g Fibre
+**Delta**: kcal -11.4% | P -39.7% | CHO +5.0% | F -2.2%
+
+**Quando usarla**: Giorni normali, grassi buoni da mandorle
+
+---
+
+### Opzione 7 (b) - Dolce con torta homemade (yogurt greco (boost proteico))
+
+- Plum cake (senza latte/burro): 90.0g OR Plum cake (senza latte/burro) 90.0g
+- Yogurt greco 0%: 250.0g
+
+**Totali**: 486 kcal | 31.3g P | 59.2g CHO | 12.6g F | 1.5g Fibre
+**Delta**: kcal +1.1% | P +4.3% | CHO +3.0% | F +12.0%
+
+**Quando usarla**: Pizza day o quando serve max proteine senza grassi
+
+---
+
+### Opzione 8 - Dolce con biscotti e burro d'arachidi
+
+- Oro Saiwa: 90.0g
+- Yogurt magro 0.1%: 170.0g
+- Caffè espresso: 150.0g
+
+**Totali**: 479 kcal | 16.7g P | 77.7g CHO | 10.0g F | 1.6g Fibre
+**Delta**: kcal -0.3% | P -44.3% | CHO +35.1% | F -11.1%
+
+**Quando usarla**: Massima versatilità dolce. Il burro d'arachidi aggiunge proteine e grassi buoni. Ottima palatabilità.
+
+
+## SPUNTINO AM - 10:30–11:00 (gestione fame pre-pranzo)
+
+**Target**: 240 kcal | 18.0g P | 25.0g CHO | 7.5g F
 
 ### Opzione 1 - Frutta + fonte proteica/lipidica
 
-- Mela: 118 g
-- Mandorle: 10 g
+- Mela: 150.0g OR Banana 91.3g
+- Mandorle: 20.0g OR Noci 15.3g OR Burro d'arachidi 20.8g
 
-**Totali**: 113 kcal | 2.4g P | 5.4g F | 12.3g CHO
+**Totali**: 199 kcal | 4.5g P | 24.8g CHO | 10.7g F | 6.0g Fibre
+**Delta**: kcal -17.2% | P -75.0% | CHO -0.8% | F +42.7%
 
-**Swap**: Mela 120g ↔ Banana 100g | Mandorle ↔ Noci ↔ Burro d'arachidi
+**Quando usarla**: - Massima praticità (grab-and-go)
+- Giorni normali con colazione regolare
+- Zero preparazione, ottima portabilità
 
-**Quando**: Grab-and-go, zero preparazione, ottima portabilità.
+---
 
-### Opzione 2 - Yogurt dolce completo
+### Opzione 2 (a) - Yogurt dolce completo (yogurt magro + mandorle)
 
-- Yogurt magro 0.1%: 123 g
-- Banana: 98 g
-- Miele: 8 g
+- Yogurt magro 0.1%: 312.5g
+- Mandorle: 15.0g OR Noci 11.5g OR Nocciole 12.3g
+- Miele: 5.0g
 
-**Totali**: 149 kcal | 7.0g P | 0.4g F | 30.8g CHO
+**Totali**: 243 kcal | 15.5g P | 24.5g CHO | 8.3g F | 1.8g Fibre
+**Delta**: kcal +1.4% | P -13.9% | CHO -2.0% | F +10.7%
 
-**Swap**: Banana 100g ↔ Mela 120g
+**Quando usarla**: Giorni normali, grassi buoni da mandorle
 
-**Quando**: Spuntino strutturato, maggiore sazietà fino a pranzo.
+---
 
-### Opzione 3 - Crackers + proteine
+### Opzione 3 (b) - Yogurt dolce completo (yogurt greco (boost proteico))
 
-- Crackers integrali: 20 g
-- Bresaola: 24 g
-- Mela: 78 g
+- Yogurt greco 0%: 170.0g
+- Banana: 75.0g OR Mela 123.2g
+- Miele: 5.0g
 
-**Totali**: 150 kcal | 10.7g P | 2.7g F | 20.0g CHO
+**Totali**: 182 kcal | 17.8g P | 27.4g CHO | 0.2g F | 2.0g Fibre
+**Delta**: kcal -24.2% | P -1.1% | CHO +9.6% | F -97.3%
 
-**Swap**: Bresaola 25g ↔ Prosciutto 20g ↔ Formaggio spalmabile 15g
+**Quando usarla**: Pizza day o quando serve max proteine senza grassi
 
-**Quando**: Variante salata, flessibilità proteica, ottima per giorni FORZA.
+---
 
-### Opzione 4 - Yogurt salato proteico
+### Opzione 4 - Crackers + proteine
 
-- Yogurt magro 0.1%: 123 g
-- Bresaola: 20 g
-- Crackers integrali: 12 g
+- Crackers integrali: 40.0g
+- Bresaola: 40.0g OR Prosciutto crudo 50.9g
 
-**Totali**: 128 kcal | 13.7g P | 1.8g F | 14.8g CHO
+**Totali**: 232 kcal | 17.2g P | 25.6g CHO | 6.4g F | 2.6g Fibre
+**Delta**: kcal -3.2% | P -4.4% | CHO +2.4% | F -14.7%
 
-**Swap**: Bresaola 20g ↔ Prosciutto crudo 15g
+**Quando usarla**: - Variante salata per chi non ama dolce a metà mattina
+- Flessibilità proteica in base a disponibilità
+- Ottima per giorni FORZA/QUALITÀ
 
-**Quando**: Massimo boost proteico, giorni FORZA con alto fabbisogno.
+---
 
-# 🍝 PRANZO
+### Opzione 5 (a) - Yogurt salato proteico (yogurt magro + mandorle)
 
-**Target**: 836 kcal | 48g P | 21g F | 112g CHO
+- Yogurt magro 0.1%: 312.5g
+- Mandorle: 15.0g OR Noci 11.5g OR Nocciole 12.3g
+- Bresaola: 12.5g
+
+**Totali**: 247 kcal | 19.6g P | 20.4g CHO | 8.6g F | 1.8g Fibre
+**Delta**: kcal +2.9% | P +8.9% | CHO -18.4% | F +14.7%
+
+**Quando usarla**: Giorni normali, grassi buoni da mandorle
+
+---
+
+### Opzione 6 (b) - Yogurt salato proteico (yogurt greco (boost proteico))
+
+- Yogurt greco 0%: 170.0g
+- Bresaola: 10.0g
+
+**Totali**: 115 kcal | 20.3g P | 6.0g CHO | 0.2g F | 0.0g Fibre
+**Delta**: kcal -52.0% | P +12.8% | CHO -76.0% | F -97.3%
+
+**Quando usarla**: Pizza day o quando serve max proteine senza grassi
+
+
+## PRANZO - 13:00–13:30
+
+**Target**: 840 kcal | 52.5g P | 87.5g CHO | 26.2g F
 
 ### Opzione 1 - Pasta al tonno
 
-- Pasta secca: 98 g
-- Tonno al naturale: 78 g
-- Zucchine: 147 g
-- Olio EVO: 12 g
-- Zenzero fresco: 3 g
-- Mela: 147 g
+- Pasta secca (di semola): 120.0g
+- Zucchine (crude): 600.0g OR Carote (crude) 248.8g
 
-**Totali**: 610 kcal | 35.4g P | 13.3g F | 88.4g CHO
+**Totali**: 526 kcal | 22.2g P | 105.0g CHO | 3.6g F | 9.6g Fibre
+**Delta**: kcal -37.4% | P -57.7% | CHO +20.0% | F -86.3%
 
-**Swap**: Zucchine 150g ↔ Carote 120g | Tonno naturale+olio ↔ Tonno sott'olio
+**Quando usarla**: Pranzo completo bilanciato, ottimo apporto omega-3, zenzero per digestione.
 
-**Quando**: Pranzo bilanciato, omega-3, zenzero per digestione pre-forza.
+---
 
 ### Opzione 2 - Pasta al ragù
 
-- Pasta secca: 98 g
-- Ragù di vitello: 137 g
-- Zucchine: 147 g
-- Olio EVO: 10 g
-- Banana: 118 g
+- Pasta secca (di semola): 120.0g
+- Ragù di vitello (40% vitello / 60% passata): 270.0g
+- Olio EVO: 9.0g
 
-**Totali**: 622 kcal | 31.2g P | 13.4g F | 96.7g CHO
+**Totali**: 827 kcal | 47.4g P | 102.6g CHO | 27.0g F | 7.7g Fibre
+**Delta**: kcal -1.5% | P -9.7% | CHO +17.3% | F +2.9%
 
-**Swap**: Zucchine 150g ↔ Carote 120g
+**Quando usarla**: Comfort food, pranzo sostanzioso, buon apporto proteico da carne magra.
 
-**Quando**: Comfort food, sostanzioso, ottimo apporto proteico pre-forza.
+---
 
 ### Opzione 3 - Riso con proteine
 
-- Riso basmati (crudo): 88 g
-- Pollo piastra: 118 g
-- Piselli: 78 g
-- Zucchine: 98 g
-- Olio EVO: 10 g
-- Mela: 118 g
+- Riso basmati (crudo): 120.0g
+- Pollo petto (cotto in padella): 150.0g OR Salmone 232.5g OR Pesce spada 202.2g OR Uova intere (gallina) 369.0g
+- Olio EVO: 15.0g
 
-**Totali**: 658 kcal | 41.2g P | 13.0g F | 95.3g CHO
+**Totali**: 812 kcal | 55.5g P | 94.8g CHO | 21.5g F | 1.1g Fibre
+**Delta**: kcal -3.3% | P +5.7% | CHO +8.3% | F -18.1%
 
-**Swap**: Pollo 120g ↔ Salmone 100g ↔ Pesce spada 110g ↔ Uova 90g
+**Quando usarla**: 4 scelte proteiche, massima flessibilità. Con uova = preparazione velocissima.
 
-**Quando**: 4 scelte proteiche, massima flessibilità pre-forza.
+---
 
 ### Opzione 4 - Tortellini carne
 
-- Tortellini vitello: 123 g
-- Parmigiano: 12 g
-- Zucchine: 147 g
-- Olio EVO: 10 g
-- Banana: 128 g
+- Zucchine (crude): 600.0g OR Carote (crude) 248.8g
+- Olio EVO: 27.5g
+- Mela: 450.0g
 
-**Totali**: 652 kcal | 25.3g P | 23.0g F | 87.0g CHO
+**Totali**: 579 kcal | 8.5g P | 81.6g CHO | 30.2g F | 16.8g Fibre
+**Delta**: kcal -31.1% | P -83.8% | CHO -6.7% | F +15.0%
 
-**Swap**: Zucchine 150g ↔ Carote 120g
+**Quando usarla**: - Pranzo velocissimo (2 min cottura)
+- Consigliato giorni FORZA/EASY
+- Comfort food, alta digeribilità
 
-**Quando**: Velocissimo (2 min), comfort food, alta digeribilità pre-forza.
+---
 
 ### Opzione 5 - Pasta semplice
 
-- Pasta secca: 98 g
-- Olio EVO: 12 g
-- Parmigiano: 15 g
-- Passata pomodoro: 49 g
-- Zucchine: 147 g
-- Mela: 137 g
+- Pasta secca (di semola): 120.0g
+- Parmigiano Reggiano: 100.0g
+- Zucchine (crude): 50.0g OR Carote (crude) 20.7g
 
-**Totali**: 583 kcal | 20.5g P | 17.5g F | 87.4g CHO
+**Totali**: 834 kcal | 48.6g P | 87.9g CHO | 31.9g F | 4.1g Fibre
+**Delta**: kcal -0.7% | P -7.4% | CHO +0.5% | F +21.5%
 
-**Quando**: Pranzo leggero, digestione facile, giorni stomaco sensibile.
+**Quando usarla**: Pranzo leggero, digestione facile, giorni con stomaco sensibile.
+
+---
 
 ### Opzione 6 - Piatto proteico veloce
 
-- Mozzarella bufala: 88 g
-- Prosciutto crudo: 39 g
-- Scaglie grana: 8 g
-- Pane integrale: 78 g
-- Zucchine (friggitrice): 118 g
-- Olio EVO: 10 g
-- Banana: 98 g
+- Zucchine (crude): 600.0g
+- Pane integrale: 100.0g
+- Mela: 190.0g
 
-**Totali**: 426 kcal | 18.4g P | 16.2g F | 51.7g CHO
+**Totali**: 425 kcal | 16.3g P | 89.3g CHO | 3.5g F | 17.1g Fibre
+**Delta**: kcal -49.4% | P -69.0% | CHO +2.1% | F -86.7%
 
-**Swap**: Prosciutto 40g ↔ Bresaola 50g | Zucchine ↔ Carote
+**Quando usarla**: - Poco tempo disponibile (zero cottura complessa)
+- Alternativa "fredda" ai pranzi tradizionali
+- Estate o quando vuoi variare da pasta/riso
 
-**Quando**: Zero cottura complessa, alternativa "fredda", estate.
 
-# 🥜 SPUNTINO POMERIGGIO
+## SPUNTINO PM - 16:00–16:30 (pre-allenamento 18:00–19:30)
 
-**Target**: 369 kcal | 21g P | 9g F | 50g CHO
+**Target**: 240 kcal | 18.0g P | 25.0g CHO | 7.5g F
 
-### Opzione 1 - Frutta + yogurt + frutta secca ⭐ FORZA
+### Opzione 1 - Frutta + yogurt + frutta secca
 
-- Banana: 118 g
-- Yogurt magro 0.1%: 123 g
-- Mandorle: 15 g
+- Banana: 110.0g OR Mela 180.7g
+- Mandorle: 15.0g OR Noci 11.5g
 
-**Totali**: 233 kcal | 10.4g P | 8.6g F | 28.6g CHO
+**Totali**: 188 kcal | 4.2g P | 28.2g CHO | 8.1g F | 4.7g Fibre
+**Delta**: kcal -21.5% | P -76.7% | CHO +12.8% | F +8.0%
 
-**Quando**: FORZA - massimo boost proteico pre-workout, completezza nutrizionale.
+**Quando usarla**: - Giorni FORZA (Mar/Gio) - massimo boost proteico pre-workout
+- Giorni EASY (Lun) - se pranzo leggero
+- Massima sazietà e completezza nutrizionale
+
+---
 
 ### Opzione 2 - Frutta + burro d'arachidi
 
-- Banana: 128 g
-- Burro d'arachidi: 18 g
+- Banana: 110.0g OR Mela 180.7g
+- Burro d'arachidi: 15.0g
 
-**Totali**: 207 kcal | 5.9g P | 9.9g F | 23.6g CHO
+**Totali**: 186 kcal | 5.0g P | 28.3g CHO | 7.8g F | 3.8g Fibre
+**Delta**: kcal -22.5% | P -72.2% | CHO +13.2% | F +4.0%
 
-**Quando**: Preparazione veloce, buon bilanciamento macro.
+**Quando usarla**: - Tutti i tipi di allenamento
+- Preparazione veloce (2 min)
+- Buon bilanciamento CHO + proteine + grassi
+
+---
 
 ### Opzione 3 - Frutta + frutta secca
 
-- Banana: 137 g
-- Mandorle: 20 g
+- Banana: 110.0g OR Mela 180.7g
+- Mandorle: 15.0g OR Noci 11.5g
 
-**Totali**: 227 kcal | 5.9g P | 11.2g F | 24.8g CHO
+**Totali**: 188 kcal | 4.2g P | 28.2g CHO | 8.1g F | 4.7g Fibre
+**Delta**: kcal -21.5% | P -76.7% | CHO +12.8% | F +8.0%
 
-**Quando**: Grab-and-go, no latticini, più leggera dell'opzione 1.
+**Quando usarla**: - Tutti i tipi di allenamento
+- Massima velocità (grab-and-go)
+- Più leggera dell'opzione 1 (no latticini)
 
-### Opzione 4 - Crackers + affettati ⭐ FORZA
+---
 
-- Crackers integrali: 44 g
-- Prosciutto crudo: 49 g
+### Opzione 4 - Crackers + affettati
 
-**Totali**: 287 kcal | 18.5g P | 11.3g F | 27.2g CHO
+- Crackers integrali: 40.0g
+- Prosciutto crudo: 25.0g OR Bresaola 19.6g
 
-**Quando**: FORZA - proteine nobili pre-workout, digestione veloce.
+**Totali**: 239 kcal | 10.5g P | 25.6g CHO | 10.1g F | 2.6g Fibre
+**Delta**: kcal -0.4% | P -41.7% | CHO +2.4% | F +34.7%
 
-### Opzione 5 - Pre-workout leggero
+**Quando usarla**: - Giorni FORZA (Mar/Gio) - proteine nobili pre-workout
+- Alternativa salata se non gradisci dolce
+- Proteine magre, digestione veloce
 
-- Banana: 157 g
-- Crackers integrali: 24 g
-- Miele: 5 g
+---
 
-**Totali**: 233 kcal | 4.8g P | 3.3g F | 46.3g CHO
+### Opzione 5 - Pre-workout leggero (solo CHO)
 
-**Quando**: Solo se stomaco sensibile o tendenza a pesantezza pre-forza.
+- Crackers integrali: 45.0g OR Fette biscottate 50.0g
 
-# 🍌 SPUNTINO SERA
+**Totali**: 194 kcal | 4.5g P | 28.8g CHO | 6.3g F | 2.9g Fibre
+**Delta**: kcal -19.4% | P -75.0% | CHO +15.2% | F -16.0%
 
-**Target**: 98 kcal | 5g P | 2g F | 12g CHO
+**Quando usarla**: - Giorni QUALITÀ (Mer) - allenamento intenso
+- Giorni LUNGO (Sab) - massima energia senza appesantire
+- Giorni TEMPO (Ven) - leggerezza digestiva
+- Stomaco sensibile o tendenza a pesantezza
 
-### Opzione 1 - Mini emergenza
 
-- Banana: 98 g
+## CENA - 20:15–20:45
 
-**Totali**: 74 kcal | 1.2g P | 0.3g F | 17.1g CHO
-
-**Quando**: Gap 45min-1h fino a cena, solo tamponare fame.
-
-### Opzione 2 - Dolce recupero
-
-- Banana: 78 g
-- Yogurt magro 0.1%: 59 g
-
-**Totali**: 84 kcal | 3.7g P | 0.2g F | 17.1g CHO
-
-**Quando**: Gap 1h-1h30, allenamento intenso, vero recupero.
-
-### Opzione 3 - Salata recupero
-
-- Bresaola: 29 g
-- Crackers integrali: 8 g
-
-**Totali**: 76 kcal | 10.6g P | 1.5g F | 4.9g CHO
-
-**Quando**: Post-FORZA, focus proteine per recupero muscolare.
-
-# 🍖 CENA
-
-**Target**: 640 kcal | 37g P | 16g F | 86g CHO
+**Target**: 600 kcal | 31.5g P | 55.0g CHO | 22.5g F
 
 ### Opzione 1 - Carne + patate/pane + verdure
 
-- Patate lesse: 216 g
-- Zucchine: 196 g
-- Olio EVO: 10 g
+- Pollo petto (cotto in padella): 75.0g OR Tacchino, fesa (cotto al forno) 80.2g OR Vitello (filetto, cotto in padella) 80.2g OR Manzo magro (fesa, crudo) 110.7g
+- Patate (senza buccia, bollite): 250.0g
+- Zucchine (crude): 300.0g OR Carote (crude) 124.4g
+- Olio EVO: 15.0g
 
-**Totali**: 279 kcal | 6.8g P | 10.2g F | 39.8g CHO
+**Totali**: 525 kcal | 31.6g P | 59.5g CHO | 18.9g F | 7.5g Fibre
+**Delta**: kcal -12.5% | P +0.3% | CHO +8.2% | F -16.0%
 
-**Swap**: Pollo 130g ↔ Tacchino 120g ↔ Vitello 130g ↔ Manzo 140g
+**Quando usarla**: Cena classica bilanciata, 4 scelte proteiche in base a disponibilità/preferenza.
 
-**Quando**: Cena classica post-forza, recovery muscolare ottimale.
+---
 
 ### Opzione 2 - Pesce + patate/pane + verdure
 
-- Patate lesse: 216 g
-- Zucchine: 196 g
-- Olio EVO: 10 g
+- Salmone: 150.0g OR Pesce spada 130.4g OR Merluzzo (surgelato, cotto al forno) 166.7g OR Tonno tagliata (fresco) 130.4g
+- Patate (senza buccia, bollite): 250.0g
+- Zucchine (crude): 150.0g OR Carote (crude) 62.2g
+- Olio EVO: 5.0g
 
-**Totali**: 279 kcal | 6.8g P | 10.2g F | 39.8g CHO
+**Totali**: 599 kcal | 36.5g P | 54.9g CHO | 25.2g F | 6.0g Fibre
+**Delta**: kcal -0.1% | P +15.9% | CHO -0.2% | F +12.0%
 
-**Swap**: Salmone ↔ Pesce spada ↔ Merluzzo ↔ Tonno tagliata
+**Quando usarla**: Cena con pesce, 4 scelte in base a gusto/disponibilità. Ottimo apporto omega-3.
 
-**Quando**: Omega-3 post-forza, varietà pesce per gusto/disponibilità.
+---
 
 ### Opzione 3 - Uova + pane + verdure/vellutata
 
-- Uova: 108 g
-- Pane integrale: 98 g
-- Zucchine cotte: 196 g
-- Olio EVO: 10 g
+- Uova intere (gallina): 150.0g
+- Pane integrale: 125.0g
+- Olio EVO: 7.5g
 
-**Totali**: 446 kcal | 21.7g P | 20.5g F | 43.2g CHO
+**Totali**: 561 kcal | 29.5g P | 56.8g CHO | 23.4g F | 8.1g Fibre
+**Delta**: kcal -6.5% | P -6.3% | CHO +3.3% | F +4.0%
 
-**Swap**: Verdure solide ↔ Vellutata 250g
+**Quando usarla**: Cena veloce ed economica, proteine complete da uova. Vellutata per comfort food/inverno.
 
-**Quando**: Veloce, economica, vellutata per comfort food post-forza.
+---
 
 ### Opzione 4 - Hummus + pane + verdure
 
-- Hummus ceci: 118 g
-- Pane integrale: 88 g
-- Zucchine: 196 g
-- Olio EVO: 10 g
+- Hummus di ceci (solo ceci frullati): 225.0g OR Hummus di fagioli (solo fagioli frullati) 230.2g
+- Zucchine (crude): 500.0g OR Carote (crude) 207.3g
+- Olio EVO: 15.0g
 
-**Totali**: 317 kcal | 10.4g P | 11.1g F | 42.2g CHO
+**Totali**: 587 kcal | 26.0g P | 77.2g CHO | 22.4g F | 22.1g Fibre
+**Delta**: kcal -2.2% | P -17.5% | CHO +40.4% | F -0.4%
 
-**Swap**: Hummus ceci 120g ↔ Hummus fagioli 130g
+**Quando usarla**: Cena vegetariana, alta fibra, proteine vegetali complete.
 
-**Quando**: Vegetariana, alta fibra, proteine vegetali complete.
+
+---
+
+## TOTALI GIORNALIERI
+
+| Nutriente | Target |
+|-----------|--------|
+| Kcal | 2400 |
+| Proteine | 150g |
+| Carboidrati | 250g |
+| Grassi | 75g |
+| Fibre | 32g |

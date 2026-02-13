@@ -33,6 +33,58 @@ python3 scripts/cli.py <command> [options]
 
 Generate meal plan for a specific day profile.
 
+### `plan all`
+
+**NEW in v2.1** - Regenerate all 8 nutrition plans and save as markdown files.
+
+**Syntax:**
+```bash
+python3 scripts/cli.py plan all
+```
+
+**What it does:**
+- Generates optimized meal plans for all 8 categories (rest, forza, easy_run, qualita, tempo, lungo, pizza_day, domenica)
+- Each plan contains multiple options per meal with:
+  - Grammature ottimizzate dal meal balancer
+  - Swap alternatives (iso-proteico, iso-grassi, iso-CHO, iso-calorico)
+  - Yogurt special case (2 variants: magro+mandorle vs greco)
+- Exports to `plans/nutrition/{category}.md`
+- Total generation time: ~2-3 minutes (~184 meal balancer calls)
+
+**Output example:**
+```
+================================================================================
+GENERATING ALL NUTRITION PLANS
+================================================================================
+
+Categories: 8
+Output: plans/nutrition
+
+[1/8] Generating rest... ✅ (12.1 KB, 29 options)
+[2/8] Generating forza... ✅ (11.8 KB, 27 options)
+[3/8] Generating easy_run... ✅ (11.9 KB, 28 options)
+[4/8] Generating qualita... ✅ (12.0 KB, 29 options)
+[5/8] Generating tempo... ✅ (12.1 KB, 28 options)
+[6/8] Generating lungo... ✅ (9.8 KB, 24 options)
+[7/8] Generating pizza_day... ✅ (11.7 KB, 27 options)
+[8/8] Generating domenica... ✅ (9.9 KB, 24 options)
+
+================================================================================
+SUMMARY
+================================================================================
+✅ Success: 8/8
+🎉 All plans generated successfully!
+```
+
+**When to use:**
+- After updating composition (FFM/peso changed significantly)
+- After modifying FOOD_DB or piano_base
+- To regenerate all plans with updated macro targets
+
+---
+
+### `plan <profile_id>` (original command)
+
 **Syntax:**
 ```bash
 python3 scripts/cli.py plan <profile_id> [options]
