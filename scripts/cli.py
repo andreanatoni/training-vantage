@@ -41,6 +41,7 @@ from scripts.data_validator import validate_all
 from scripts import tracking
 from scripts.category_plan_generator import CategoryPlanGenerator
 from scripts.markdown_exporter import MarkdownExporter
+from scripts.generation_logger import get_logger, reset_logger
 
 
 def print_banner(profile_id: str):
@@ -444,7 +445,11 @@ def cmd_plan_all() -> int:
     base_dir = Path(__file__).parent.parent
     data_dir = base_dir / 'data'
     piano_base_path = base_dir / 'sources' / 'piano_base_ottimizzato.md'
-    output_dir = base_dir / 'plans' / 'nutrition'
+
+    # Create timestamped output directory (YYYY-MM-DD)
+    from datetime import datetime
+    timestamp = datetime.now().strftime('%Y-%m-%d')
+    output_dir = base_dir / 'plans' / 'nutrition' / timestamp
 
     # All categories
     categories = ['rest', 'forza', 'easy_run', 'qualita', 'tempo', 'lungo', 'pizza_day', 'domenica']
@@ -456,12 +461,17 @@ def cmd_plan_all() -> int:
     print(f"Output: {output_dir}")
     print()
 
+    # Reset logger for this generation
+    reset_logger()
+    logger = get_logger()
+
     # Initialize generators
     try:
         plan_gen = CategoryPlanGenerator(data_dir, piano_base_path)
         exporter = MarkdownExporter()
     except Exception as e:
         print(f"❌ ERROR: Failed to initialize generators: {e}")
+        logger.error(f"Failed to initialize generators: {e}")
         return 1
 
     # Generate plans
@@ -499,6 +509,21 @@ def cmd_plan_all() -> int:
         print(f"❌ Failed:  {len(failed)}")
         for cat_id, error in failed:
             print(f"   - {cat_id}: {error}")
+
+    # Generate report (always, even with 0 issues)
+    report_path = output_dir / 'generation_report.md'
+    logger.generate_report(report_path)
+
+    print()
+    print(f"📄 Report saved: {report_path}")
+
+    if logger.has_issues():
+        print(f"   ⚠️  Warnings: {len(logger.warnings)}")
+        print(f"   ❌ Errors: {len(logger.errors)}")
+    else:
+        print(f"   ✅ No warnings or errors!")
+
+    if failed:
         return 1
     else:
         print("🎉 All plans generated successfully!")

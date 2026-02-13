@@ -71,6 +71,9 @@ INGREDIENT_MAPPING = {
     "Formaggio spalmabile": "formaggio_spalmabile_light",
     "Parmigiano": "parmigiano_reggiano",
     "Parmigiano grattugiato": "parmigiano_reggiano",
+    "Parmigiano reggiano": "parmigiano_reggiano",
+    "Grana padano": "grana_padano",
+    "Grana Padano": "grana_padano",
     "Mozzarella di bufala": "mozzarella_di_bufala",
 
     # Proteine Vegetali
@@ -95,6 +98,7 @@ INGREDIENT_MAPPING = {
     "Passatina di pomodoro": "passata_di_pomodoro",
     "Vellutata zucchine e carote": "vellutata_zucchine_carote",
     "Vellutata di zucchine e carote": "vellutata_zucchine_carote",
+    "Minestrone": "minestrone",
 
     # Condimenti/Extra
     "Zenzero grattuggiato": "zenzero_fresco",
@@ -139,6 +143,9 @@ INGREDIENT_CATEGORIES = {
     "uova_intere_gallina": "protein",
     "yogurt_magro_0_1": "protein",
     "yogurt_greco_0": "protein",
+    "parmigiano_reggiano": "protein",
+    "grana_padano": "protein",
+    "mozzarella_di_bufala": "protein",
     "hummus_di_ceci_solo_ceci_frullati": "protein",
     "hummus_di_fagioli_solo_fagioli_frullati": "protein",
 
@@ -155,6 +162,7 @@ INGREDIENT_CATEGORIES = {
     "piselli_in_scatola_scolati": "veg",
     "passata_di_pomodoro": "veg",
     "vellutata_zucchine_carote": "veg",
+    "minestrone": "veg",
 
     # Frutta (swap iso-CHO)
     "mela": "fruit",
@@ -179,21 +187,30 @@ def map_ingredient_to_food_id(ingredient_name: str) -> Optional[str]:
     Returns:
         food_db_id se trovato, None altrimenti
     """
-    # Normalizza nome (trim, lowercase per matching)
+    import re
+
+    # Normalizza nome (trim)
     name_normalized = ingredient_name.strip()
 
-    # Exact match
+    # Remove parenthetical notes (es: "Mandorle (solo se...)" → "Mandorle")
+    clean_name = re.sub(r'\s*\([^)]*\)', '', name_normalized).strip()
+
+    # Exact match (original)
     if name_normalized in INGREDIENT_MAPPING:
         return INGREDIENT_MAPPING[name_normalized]
 
-    # Case-insensitive match
+    # Exact match (cleaned)
+    if clean_name in INGREDIENT_MAPPING:
+        return INGREDIENT_MAPPING[clean_name]
+
+    # Case-insensitive match (cleaned)
     for key, value in INGREDIENT_MAPPING.items():
-        if key.lower() == name_normalized.lower():
+        if key.lower() == clean_name.lower():
             return value
 
     # Partial match (es: "Yogurt" matches "Yogurt magro 0.1%")
     for key, value in INGREDIENT_MAPPING.items():
-        if name_normalized.lower() in key.lower():
+        if clean_name.lower() in key.lower():
             return value
 
     # Not found
@@ -213,52 +230,6 @@ def get_ingredient_category(food_db_id: str) -> str:
     return INGREDIENT_CATEGORIES.get(food_db_id, "other")
 
 
-def is_yogurt_special_case(ingredient_name: str) -> bool:
-    """
-    Verifica se ingrediente è caso speciale yogurt
-
-    Args:
-        ingredient_name: Nome ingrediente
-
-    Returns:
-        True se "Yogurt (vedi gestione yogurt)"
-    """
-    return "vedi gestione yogurt" in ingredient_name.lower()
-
-
-def get_yogurt_variants() -> List[Dict[str, any]]:
-    """
-    Restituisce le 2 varianti yogurt per caso speciale
-
-    Returns:
-        Lista con 2 varianti:
-        [
-            {'variant': 'magro', 'yogurt_id': 'yogurt_magro_0_1', 'add_nuts': True},
-            {'variant': 'greco', 'yogurt_id': 'yogurt_greco_0', 'add_nuts': False}
-        ]
-    """
-    return [
-        {
-            'variant': 'magro',
-            'name': 'yogurt magro + mandorle',
-            'yogurt_id': 'yogurt_magro_0_1',
-            'yogurt_qty_g': 125,
-            'add_nuts': True,
-            'nuts_id': 'mandorle',
-            'nuts_qty_g': 15,
-            'when': 'Giorni normali, grassi buoni da mandorle'
-        },
-        {
-            'variant': 'greco',
-            'name': 'yogurt greco (boost proteico)',
-            'yogurt_id': 'yogurt_greco_0',
-            'yogurt_qty_g': 170,
-            'add_nuts': False,
-            'when': 'Pizza day o quando serve max proteine senza grassi'
-        }
-    ]
-
-
 # Missing foods in FOOD_DB (to be added if needed)
 MISSING_FOODS = [
     # All required foods are now present
@@ -271,7 +242,7 @@ if __name__ == '__main__':
         "Caffè",
         "Pasta",
         "Pollo alla piastra",
-        "Yogurt (vedi gestione yogurt)",
+        "Yogurt greco 0%",
         "Prosciutto crudo",
         "Tonno al naturale",
         "Zucchine",
@@ -291,11 +262,6 @@ if __name__ == '__main__':
             print(f"{ing:40} → {food_id:40} [{category}]")
         else:
             print(f"{ing:40} → NOT FOUND")
-
-        if is_yogurt_special_case(ing):
-            print(f"  ⚠️  SPECIAL CASE: Yogurt - requires 2 variants")
-            for variant in get_yogurt_variants():
-                print(f"    - {variant['variant']}: {variant['name']}")
 
     print("\n" + "=" * 80)
     print("Missing foods in FOOD_DB:")

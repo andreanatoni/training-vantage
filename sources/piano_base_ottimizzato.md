@@ -34,7 +34,7 @@ Opzione 1 - Carne + patate + verdure
 - Bevanda: Caffè
 - CHO: Fette biscottate
 - Dolce: Marmellata
-- Proteine: Yogurt (vedi gestione yogurt)
+- Proteine: Yogurt greco 0%
 
 **Quando usarla**: Colazione veloce, digeribile, ottima per giorni con allenamento mattutino successivo.
 
@@ -44,7 +44,7 @@ Opzione 1 - Carne + patate + verdure
 **Ingredienti:**
 - CHO: Pane integrale
 - Dolce: Marmellata
-- Proteine: Yogurt (vedi gestione yogurt)
+- Proteine: Yogurt greco 0%
 - Grassi: Mandorle OR Noci
 
 **Quando usarla**: Maggiore sazietà grazie a pane integrale e frutta secca. Ideale per giorni con pranzo tardivo.
@@ -65,7 +65,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 4 - Dolce con torta homemade
 **Ingredienti:**
 - CHO: Plum cake OR Ciambellone (senza latte/burro)
-- Proteine: Yogurt (vedi gestione yogurt)
+- Proteine: Yogurt greco 0%
 - Bevanda: Caffè
 
 **Quando usarla**: Weekend o quando hai preparato torta in anticipo. Comfort food sano.
@@ -76,30 +76,11 @@ Opzione 1 - Carne + patate + verdure
 **Ingredienti:**
 - CHO: Oro Saiwa
 - Dolce: Marmellata OR Burro d'arachidi
-- Proteine: Yogurt magro 0.1%
+- Proteine: Yogurt greco 0%
 - Grassi: Mandorle (solo se marmellata, non con burro d'arachidi)
 - Bevanda: Caffè
 
 **Quando usarla**: Massima versatilità dolce. Il burro d'arachidi aggiunge proteine e grassi buoni. Ottima palatabilità.
-
----
-
-## 📋 Gestione Yogurt - Quale e quando
-
-### Yogurt MAGRO 0.1% (125g) + compensazione frutta secca (DEFAULT)
-**Uso**: 5-6 giorni/settimana
-**Compensazione**: Mandorle 15g OR Noci 15g OR Nocciole 15g OR Fiocchi d'avena 20g
-**Vantaggi**: Palatabilità, grassi buoni (omega-3/6), maggiore sazietà
-**Quando**: Tutti i giorni normali (REST, FORZA, EASY, QUALITÀ, LUNGO, DOMENICA)
-
-### Yogurt GRECO 0% (170g vasetto) (SPECIFICO)
-**Uso**: 1-2 giorni/settimana
-**Compensazione**: Nessuna necessaria
-**Vantaggi**: Massimo apporto proteico (~18g), zero grassi
-**Quando**: 
-1. **PIZZA DAY** (priorità assoluta - risparmio grassi per pizza serale)
-2. Giorni dove serve boost proteico senza grassi aggiuntivi
-3. Occasionalmente se preferisci consistenza/sapore
 
 ---
 
@@ -139,7 +120,7 @@ Opzione 1 - Carne + patate + verdure
 
 ### Opzione 2 - Yogurt dolce completo
 **Ingredienti:**
-- Proteine: Yogurt (vedi gestione yogurt)
+- Proteine: Yogurt greco 0%
 - Frutta: Banana OR Mela
 - Dolce: Miele
 
@@ -165,7 +146,7 @@ Opzione 1 - Carne + patate + verdure
 
 ### Opzione 4 - Yogurt salato proteico
 **Ingredienti:**
-- Proteine: Yogurt (vedi gestione yogurt)
+- Proteine: Yogurt greco 0%
 - Proteine: Bresaola OR Prosciutto crudo (20-30g)
 - CHO: Crackers integrali (10-15g)
 
@@ -196,7 +177,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 1 - Pasta al tonno
 **Ingredienti:**
 - CHO: Pasta
-- Proteine: Tonno in scatola 70-80g (al naturale OR sott'olio)
+- Proteine: Tonno al naturale OR Tonno sott'olio
 - Verdure: Zucchine OR Carote
 - Grassi: Olio EVO (solo se tonno al naturale)
 - Extra: Zenzero grattuggiato
@@ -226,7 +207,7 @@ Opzione 1 - Carne + patate + verdure
 **Ingredienti:**
 - CHO: Riso basmati
 - Proteine: Pollo alla piastra OR Salmone OR Pesce spada OR Uova strapazzate
-- Verdure: Piselli + (Zucchine OR Carote)
+- Verdure: Piselli OR Zucchine OR Carote
 - Grassi: Olio EVO
 - Frutta: A scelta
 
@@ -241,8 +222,8 @@ Opzione 1 - Carne + patate + verdure
 
 ### Opzione 4 - Tortellini carne
 **Ingredienti:**
-- CHO: Tortellini vitello 125g (es. Conad "Sfoglia Sottile")
-- Proteine: Parmigiano grattugiato 1 cucchiaio (~10g)
+- CHO: Tortellini vitello
+- Proteine: Parmigiano reggiano
 - Verdure: Zucchine OR Carote
 - Grassi: Olio EVO
 - Frutta: A scelta
@@ -273,7 +254,9 @@ Opzione 1 - Carne + patate + verdure
 
 ### Opzione 6 - Piatto proteico veloce
 **Ingredienti:**
-- Proteine: Mozzarella di bufala 125g + (Prosciutto crudo OR Bresaola + Scaglie di grana)
+- Proteine: Mozzarella di bufala
+- Proteine: Prosciutto crudo OR Bresaola
+- Proteine: Grana padano
 - Verdure: Zucchine OR Carote (friggitrice ad aria senza olio)
 - CHO: Pane integrale
 - Grassi: Olio EVO (a crudo su verdure/mozzarella)
@@ -307,7 +290,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 1 - Frutta + yogurt + frutta secca
 **Ingredienti:**
 - Frutta: Banana OR Mela
-- Proteine: Yogurt (magro 0.1% OR greco 0%)
+- Proteine: Yogurt greco 0%
 - Grassi: Mandorle OR Noci
 
 **Timing**: 2h prima allenamento (16:00)
@@ -417,7 +400,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 2 - Dolce recupero
 **Ingredienti:**
 - Frutta: Banana OR Mela OR Pera
-- Proteine: Yogurt (magro 0.1% OR greco 0%)
+- Proteine: Yogurt greco 0%
 
 **Timing**: Entro 30-45 min post-allenamento
 **Quando usarla**: 
@@ -449,7 +432,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 1 - Carne + patate/pane + verdure
 **Ingredienti:**
 - Proteine: Pollo alla piastra OR Tacchino OR Vitello OR Manzo magro
-- CHO: Patate lesse OR Patate al forno senza olio | SWAP: Pane integrale
+- CHO: Patate lesse OR Patate al forno senza olio OR Pane integrale
 - Verdure: Zucchine OR Carote
 - Grassi: Olio EVO
 
@@ -466,7 +449,7 @@ Opzione 1 - Carne + patate + verdure
 ### Opzione 2 - Pesce + patate/pane + verdure
 **Ingredienti:**
 - Proteine: Salmone OR Pesce spada OR Merluzzo OR Tonno tagliata
-- CHO: Patate lesse OR Patate al forno senza olio | SWAP: Pane integrale
+- CHO: Patate lesse OR Patate al forno senza olio OR Pane integrale
 - Verdure: Zucchine OR Carote
 - Grassi: Olio EVO
 
@@ -479,19 +462,18 @@ Opzione 1 - Carne + patate + verdure
 
 ---
 
-### Opzione 3 - Uova + pane + verdure/vellutata
+### Opzione 3 - Uova + pane + verdure/minestrone
 **Ingredienti:**
 - Proteine: Uova
 - CHO: Pane integrale
-- Verdure: (Zucchine OR Carote) cotte OPPURE Vellutata di zucchine e carote
+- Verdure: Zucchine OR Carote OR Minestrone
 - Grassi: Olio EVO
 
 **Note preparazione**:
 - Verdure solide: Cotte al vapore/saltate/friggitrice ad aria
-- Vellutata: SOLO zucchine e carote (NO vellutata di zucca con uova)
-- Vellutata condimento: Olio EVO a crudo + eventualmente crostini di pane dosati
+- Minestrone: Verdure miste cotte, condimento con Olio EVO a crudo
 
-**Quando usarla**: Cena veloce ed economica, proteine complete da uova. Vellutata per comfort food/inverno.
+**Quando usarla**: Cena veloce ed economica, proteine complete da uova. Minestrone per comfort food/inverno.
 
 ---
 

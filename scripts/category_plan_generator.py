@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.piano_base_parser import parse_piano_base
 from scripts.option_generator import OptionGenerator
+from scripts.generation_logger import get_logger
 
 
 class CategoryPlanGenerator:
@@ -107,7 +108,16 @@ class CategoryPlanGenerator:
                     )
                     options.extend(variants)
                 except Exception as e:
-                    print(f"⚠️  Warning: Failed to generate option '{option['title']}' for meal '{meal_id}': {e}")
+                    error_msg = f"Failed to generate option '{option['title']}' for meal '{meal_id}': {e}"
+                    print(f"⚠️  Warning: {error_msg}")
+
+                    # Log to report
+                    logger = get_logger()
+                    logger.error(error_msg, {
+                        'category': category_id,
+                        'meal': meal_id,
+                        'option': option['title']
+                    })
                     continue
 
             meals[meal_id] = {

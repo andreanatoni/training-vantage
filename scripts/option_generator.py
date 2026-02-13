@@ -17,12 +17,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.ingredient_mapper import (
     map_ingredient_to_food_id,
-    get_ingredient_category,
-    is_yogurt_special_case,
-    get_yogurt_variants
+    get_ingredient_category
 )
 from scripts.swap_calculator import SwapCalculator
 from scripts.meal_balancer import MealBalancerData, MealBalancer
+from scripts.generation_logger import get_logger
 
 
 class OptionGenerator:
@@ -76,19 +75,9 @@ class OptionGenerator:
                 ...
             ]
         """
-        # Check for yogurt special case
-        has_yogurt_special = any(
-            is_yogurt_special_case(ing['name'])
-            for ing in option['ingredients']
-        )
-
-        if has_yogurt_special:
-            # Generate 2 variants (yogurt magro + mandorle, yogurt greco)
-            return self._generate_yogurt_variants(option, meal_target, meal_context)
-        else:
-            # Generate single variant
-            variant = self._generate_single_variant(option, meal_target, meal_context, variant_id='main')
-            return [variant]
+        # Generate single variant
+        variant = self._generate_single_variant(option, meal_target, meal_context, variant_id='main')
+        return [variant]
 
     def _generate_single_variant(
         self,
@@ -121,7 +110,15 @@ class OptionGenerator:
             food_id = map_ingredient_to_food_id(ing['name'])
 
             if not food_id:
-                print(f"⚠️  Warning: Ingredient '{ing['name']}' not found in mapping, skipping")
+                warning_msg = f"Ingredient '{ing['name']}' not found in mapping, skipping"
+                print(f"⚠️  Warning: {warning_msg}")
+
+                # Log to report
+                logger = get_logger()
+                logger.warning(warning_msg, {
+                    'ingredient': ing['name'],
+                    'category': ing.get('category', 'Unknown')
+                })
                 continue
 
             allowed_foods.append(food_id)
@@ -179,6 +176,10 @@ class OptionGenerator:
                     print(f"⚠️  Warning: Alternative '{alt_name}' not found in mapping, skipping")
                     continue
 
+                # Skip if alternative is the same food as base (dedup)
+                if alt_food_id == food_id:
+                    continue
+
                 try:
                     swap_result = self.swap_calc.calculate_swap(
                         food_id,
@@ -225,70 +226,6 @@ class OptionGenerator:
             'when': option['when']
         }
 
-    def _generate_yogurt_variants(
-        self,
-        option: Dict[str, Any],
-        meal_target: Dict[str, float],
-        meal_context: str
-    ) -> List[Dict[str, Any]]:
-        """
-        Genera 2 varianti per caso speciale yogurt
-
-        Returns:
-            [variant_a, variant_b]
-        """
-        yogurt_variants = get_yogurt_variants()
-        results = []
-
-        for idx, yogurt_config in enumerate(yogurt_variants):
-            variant_letter = chr(ord('a') + idx)  # 'a', 'b'
-
-            # Build modified ingredients list
-            modified_ingredients = []
-
-            for ing in option['ingredients']:
-                if is_yogurt_special_case(ing['name']):
-                    # Replace yogurt special with specific variant
-                    # Map food_id back to a name for mapping
-                    yogurt_name = 'Yogurt magro 0.1%' if yogurt_config['variant'] == 'magro' else 'Yogurt greco 0%'
-
-                    modified_ingredients.append({
-                        'name': yogurt_name,
-                        'category': 'Proteine',
-                        'alternatives': []
-                    })
-
-                    # Add nuts if needed
-                    if yogurt_config['add_nuts']:
-                        modified_ingredients.append({
-                            'name': 'Mandorle',
-                            'category': 'Grassi',
-                            'alternatives': ['Noci', 'Nocciole']
-                        })
-                else:
-                    # Keep ingredient as is
-                    modified_ingredients.append(ing)
-
-            # Generate variant
-            try:
-                variant = self._generate_single_variant(
-                    option,
-                    meal_target,
-                    meal_context,
-                    variant_id=variant_letter,
-                    override_ingredients=modified_ingredients
-                )
-
-                # Update title and when
-                variant['title'] = f"{option['title']} ({yogurt_config['name']})"
-                variant['when'] = yogurt_config['when']
-
-                results.append(variant)
-            except Exception as e:
-                print(f"⚠️  Warning: Failed to generate yogurt variant '{variant_letter}': {e}")
-                continue
-
-        return results
 
 
 if __name__ == '__main__':
