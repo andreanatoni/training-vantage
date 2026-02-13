@@ -141,6 +141,15 @@
       "bmr": 1657,
       "source": "manual_input",
       "note": "Test bootstrap"
+    },
+    {
+      "date": "2026-02-12",
+      "weight": 68.5,
+      "bf_pct": 13.0,
+      "ffm": 59.59,
+      "bmr": 1657,
+      "source": "manual_cli",
+      "note": "Test tracking implementation"
     }
   ]
 }

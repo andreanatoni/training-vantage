@@ -3,12 +3,15 @@
 Training Vantage CLI v2.0
 
 Usage:
-    python3 scripts/cli.py plan <day_profile_id> [options]
+    python3 scripts/cli.py <command> [arguments] [options]
 
 Commands:
-    plan <profile_id>    Generate day plan for profile
+    plan <profile_id>         Generate day plan for profile
+    weigh <peso> <bf%>        Register weight measurement
+    status                    Show current status dashboard
+    zones [test_time]         Show/update running zones
 
-Options:
+Options (plan command):
     --mode <mode>        Output mode: realistic|unconstrained|recommended (default: recommended)
     --json              Output plan as JSON instead of formatted text
     --debug             Show detailed stacktrace on errors
@@ -16,14 +19,17 @@ Options:
 Examples:
     python3 scripts/cli.py plan rest
     python3 scripts/cli.py plan lungo --mode realistic
-    python3 scripts/cli.py plan easy_run --json
+    python3 scripts/cli.py weigh 68.5 13.0
+    python3 scripts/cli.py status
+    python3 scripts/cli.py zones
+    python3 scripts/cli.py zones 18:27
 """
 
 import sys
 import json
 import traceback
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from contextlib import redirect_stdout
 from io import StringIO
 
@@ -32,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.plan_builder import PlanBuilder
 from scripts.data_validator import validate_all
+from scripts import tracking
 
 
 def print_banner(profile_id: str):
@@ -430,6 +437,329 @@ def print_usage():
     print(__doc__)
 
 
+# ============================================================================
+# TRACKING COMMANDS
+# ============================================================================
+
+def cmd_weigh(peso: float, bf_pct: float, note: str = "") -> int:
+    """
+    Weigh command: register new measurement
+
+    Args:
+        peso: Weight in kg
+        bf_pct: Body fat percentage
+        note: Optional note
+
+    Returns:
+        Exit code (0=success, 1=error)
+    """
+    base_dir = Path(__file__).parent.parent
+    data_dir = base_dir / 'data'
+
+    try:
+        result = tracking.add_measurement(data_dir, peso, bf_pct, note)
+    except Exception as e:
+        print(f"❌ ERROR: Failed to register measurement: {e}")
+        return 1
+
+    # Print results
+    measurement = result['measurement']
+    previous = result['previous']
+    analysis = result['analysis']
+
+    print("=" * 80)
+    print("📊 NUOVA PESATA")
+    print("=" * 80)
+    print()
+
+    print(f"Data: {measurement['date']}")
+    print(f"Peso: {measurement['weight']:.2f} kg")
+    print(f"BF%: {measurement['bf_pct']:.1f}%")
+    print(f"FFM: {measurement['ffm']:.2f} kg")
+    print(f"BMR: {measurement['bmr']} kcal")
+    if note:
+        print(f"Note: {note}")
+    print()
+
+    # Show delta if previous exists
+    if previous and analysis['delta']:
+        delta = analysis['delta']
+        print("=" * 80)
+        print(f"📈 TREND (vs {previous['date']}, {delta['days']} giorni)")
+        print("=" * 80)
+        print()
+
+        print(f"  Peso:  {delta['weight_kg']:+.2f} kg ({delta['weight_pct']:+.2f}%, {delta['weight_pct_week']:+.2f}%/sett)")
+        print(f"  BF%:   {delta['bf_pct']:+.1f}%")
+        print(f"  FFM:   {delta['ffm_kg']:+.2f} kg")
+        print(f"  BMR:   {delta['bmr_kcal']:+d} kcal")
+        print()
+
+    # Show alerts
+    if analysis['alerts']:
+        print("=" * 80)
+        print("⚠️  ALERTS")
+        print("=" * 80)
+        print()
+
+        for alert in analysis['alerts']:
+            level = alert['level']
+            message = alert['message']
+
+            if level == 'RED':
+                print(f"  🔴 {message}")
+            elif level == 'WARNING':
+                print(f"  ⚠️  {message}")
+            else:
+                print(f"  ℹ️  {message}")
+
+        print()
+
+    # Plan regeneration recommendation
+    if analysis.get('needs_plan_regeneration'):
+        print("=" * 80)
+        print("💡 AZIONE SUGGERITA")
+        print("=" * 80)
+        print()
+        print("  Delta BMR significativo → considera rigenerazione piani nutrizionali")
+        print("  Comando: python3 scripts/cli.py plan all")
+        print()
+
+    print("=" * 80)
+    print("✅ Pesata registrata con successo")
+    print("=" * 80)
+
+    return 0
+
+
+def cmd_status() -> int:
+    """
+    Status command: show dashboard
+
+    Returns:
+        Exit code (0=success, 1=error)
+    """
+    base_dir = Path(__file__).parent.parent
+    data_dir = base_dir / 'data'
+
+    try:
+        status = tracking.get_status(data_dir)
+    except Exception as e:
+        print(f"❌ ERROR: Failed to get status: {e}")
+        return 1
+
+    print("=" * 80)
+    print("📊 TRAINING VANTAGE - STATUS DASHBOARD")
+    print("=" * 80)
+    print()
+
+    # Composition
+    if status.get('composition'):
+        comp = status['composition']
+        latest = comp['latest']
+        analysis = comp['analysis']
+
+        print("🏋️  COMPOSIZIONE CORPOREA")
+        print("─" * 80)
+        print()
+
+        print(f"  Ultima pesata: {latest['date']}")
+        print(f"  Peso: {latest['weight']:.2f} kg | BF: {latest['bf_pct']:.1f}% | FFM: {latest['ffm']:.2f} kg")
+        print(f"  BMR: {latest['bmr']} kcal")
+        print()
+
+        if analysis['delta']:
+            delta = analysis['delta']
+            print(f"  Trend ({delta['days']} giorni):")
+            print(f"    Peso: {delta['weight_kg']:+.2f} kg ({delta['weight_pct_week']:+.2f}%/sett)")
+            print(f"    FFM: {delta['ffm_kg']:+.2f} kg")
+            print()
+
+    else:
+        print("🏋️  COMPOSIZIONE CORPOREA")
+        print("─" * 80)
+        print()
+        print("  ⚠️  Nessuna misurazione registrata")
+        print("  Usa: python3 scripts/cli.py weigh <peso> <bf%>")
+        print()
+
+    # Zones
+    if status.get('zones'):
+        zones_info = status['zones']
+        current = zones_info['current']
+        last_test = zones_info['last_test']
+
+        print("🏃 ZONE RUNNING")
+        print("─" * 80)
+        print()
+
+        print(f"  Ultimo test: {current['test_date']}")
+        print(f"  Tempo 5km: {current['test_time']} (pace {current['test_pace']}/km)")
+        print()
+
+        print("  Zone:")
+        for zone_id in ['Z1', 'Z2', 'Z3', 'Z4', 'Z5', 'Z6', 'Z7', 'Z8']:
+            zone = current['zones'][zone_id]
+            if zone['to']:
+                print(f"    {zone_id}: {zone['from']}-{zone['to']} ({zone['name']})")
+            else:
+                print(f"    {zone_id}: {zone['from']}+ ({zone['name']})")
+        print()
+
+    else:
+        print("🏃 ZONE RUNNING")
+        print("─" * 80)
+        print()
+        print("  ⚠️  Nessun test registrato")
+        print("  Usa: python3 scripts/cli.py zones <tempo_test>")
+        print()
+
+    # Alerts
+    if status['alerts']:
+        print("⚠️  ALERTS ATTIVI")
+        print("─" * 80)
+        print()
+
+        for alert in status['alerts']:
+            level = alert['level']
+            message = alert['message']
+
+            if level == 'RED':
+                print(f"  🔴 {message}")
+            elif level == 'WARNING':
+                print(f"  ⚠️  {message}")
+            else:
+                print(f"  ℹ️  {message}")
+
+        print()
+
+    print("=" * 80)
+
+    return 0
+
+
+def cmd_zones(test_time: Optional[str] = None, hr_avg: Optional[int] = None, note: str = "") -> int:
+    """
+    Zones command: show or update zones
+
+    Args:
+        test_time: Test time "MM:SS" (optional, if provided updates zones)
+        hr_avg: Average HR during test (optional)
+        note: Test note (optional)
+
+    Returns:
+        Exit code (0=success, 1=error)
+    """
+    base_dir = Path(__file__).parent.parent
+    data_dir = base_dir / 'data'
+
+    # If no test_time, just show current zones
+    if not test_time:
+        try:
+            current_zones = tracking.get_current_zones(data_dir)
+        except Exception as e:
+            print(f"❌ ERROR: Failed to load zones: {e}")
+            return 1
+
+        if not current_zones:
+            print("⚠️  Nessun test registrato")
+            print()
+            print("Per calcolare le zone, registra un test 5km:")
+            print("  python3 scripts/cli.py zones <tempo_test>")
+            print()
+            print("Esempio:")
+            print("  python3 scripts/cli.py zones 18:27")
+            return 1
+
+        # Display current zones
+        print("=" * 80)
+        print("🏃 ZONE RUNNING ATTUALI")
+        print("=" * 80)
+        print()
+
+        print(f"Test: {current_zones['test_date']}")
+        print(f"Tempo 5km: {current_zones['test_time']} (pace {current_zones['test_pace']}/km)")
+        print()
+
+        print("Zone:")
+        print("─" * 80)
+        for zone_id in ['Z1', 'Z2', 'Z3', 'Z4', 'Z5', 'Z6', 'Z7', 'Z8']:
+            zone = current_zones['zones'][zone_id]
+            if zone['to']:
+                print(f"  {zone_id}: {zone['from']}-{zone['to']} min/km  ({zone['name']})")
+            else:
+                print(f"  {zone_id}: {zone['from']}+ min/km  ({zone['name']})")
+
+        print("=" * 80)
+        return 0
+
+    # Update zones from new test
+    try:
+        result = tracking.update_zones(data_dir, test_time, hr_avg, note)
+    except Exception as e:
+        print(f"❌ ERROR: Failed to update zones: {e}")
+        traceback.print_exc()
+        return 1
+
+    new_zones = result['new_zones']
+    previous_zones = result['previous_zones']
+
+    print("=" * 80)
+    print("🏃 ZONE AGGIORNATE DA NUOVO TEST")
+    print("=" * 80)
+    print()
+
+    print(f"Data test: {new_zones['test_date']}")
+    print(f"Tempo 5km: {new_zones['test_time']} (pace {new_zones['test_pace']}/km)")
+    if note:
+        print(f"Note: {note}")
+    print()
+
+    # Show new zones
+    print("NUOVE ZONE:")
+    print("─" * 80)
+    for zone_id in ['Z1', 'Z2', 'Z3', 'Z4', 'Z5', 'Z6', 'Z7', 'Z8']:
+        zone = new_zones['zones'][zone_id]
+        if zone['to']:
+            print(f"  {zone_id}: {zone['from']}-{zone['to']} min/km  ({zone['name']})")
+        else:
+            print(f"  {zone_id}: {zone['from']}+ min/km  ({zone['name']})")
+    print()
+
+    # Compare with previous if exists
+    if previous_zones:
+        print("CONFRONTO CON TEST PRECEDENTE:")
+        print("─" * 80)
+
+        prev_test_date = previous_zones['test_date']
+        prev_test_time = previous_zones['test_time']
+        prev_pace = previous_zones['test_pace']
+
+        # Calculate delta
+        new_time_seconds = tracking.parse_time(new_zones['test_time'])
+        prev_time_seconds = tracking.parse_time(prev_test_time)
+        delta_seconds = new_time_seconds - prev_time_seconds
+        delta_sign = "+" if delta_seconds > 0 else ""
+
+        print(f"  Test precedente: {prev_test_date} - {prev_test_time} (pace {prev_pace}/km)")
+        print(f"  Delta tempo: {delta_sign}{delta_seconds}s")
+
+        if delta_seconds < 0:
+            print(f"  🎉 Miglioramento di {abs(delta_seconds)}s!")
+        elif delta_seconds > 0:
+            print(f"  ⚠️  Peggioramento di {delta_seconds}s")
+        else:
+            print(f"  ➡️  Tempo invariato")
+
+        print()
+
+    print("=" * 80)
+    print("✅ Zone aggiornate con successo")
+    print("=" * 80)
+
+    return 0
+
+
 def main():
     """Main CLI entry point"""
     if len(sys.argv) < 2:
@@ -438,7 +768,43 @@ def main():
 
     command = sys.argv[1]
 
-    if command == 'plan':
+    # Tracking commands
+    if command == 'weigh':
+        if len(sys.argv) < 4:
+            print("❌ ERROR: Missing arguments")
+            print()
+            print("Usage: python3 scripts/cli.py weigh <peso> <bf%> [note]")
+            print()
+            print("Example:")
+            print("  python3 scripts/cli.py weigh 68.5 13.0")
+            print("  python3 scripts/cli.py weigh 68.5 13.0 \"Post gara\"")
+            return 1
+
+        try:
+            peso = float(sys.argv[2])
+            bf_pct = float(sys.argv[3])
+            note = sys.argv[4] if len(sys.argv) > 4 else ""
+
+            return cmd_weigh(peso, bf_pct, note)
+        except ValueError:
+            print("❌ ERROR: Invalid arguments. Peso and BF% must be numbers.")
+            return 1
+
+    elif command == 'status':
+        return cmd_status()
+
+    elif command == 'zones':
+        # Optional: test time argument
+        test_time = sys.argv[2] if len(sys.argv) > 2 else None
+
+        # Optional: note (for when updating zones)
+        note = ""
+        if test_time and len(sys.argv) > 3:
+            note = sys.argv[3]
+
+        return cmd_zones(test_time, note=note)
+
+    elif command == 'plan':
         if len(sys.argv) < 3:
             print("❌ ERROR: Missing profile_id")
             print()
