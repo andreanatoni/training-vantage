@@ -42,6 +42,8 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
       Categorie: rest, forza, easy-run, qualita, tempo, lungo, pizza-day, domenica
       Esempio: tv plan forza
       Esempio: tv plan --all         # rigenera tutti gli 8 piani
+      Esempio: tv plan week 2026-W11 # genera piano nutrizione per tutta la settimana dal running_plan
+      Esempio: tv plan month 2026-03 # genera piano nutrizione per il mese dal running_plan
 
 COMANDI DISPONIBILI (Priorità 3 — Running):
 
@@ -50,10 +52,67 @@ COMANDI DISPONIBILI (Priorità 3 — Running):
       Esempio: tv week 1
       Esempio: tv week 20
 
-COMANDI IN SVILUPPO (Priorità 4):
+  running generate --from YYYY-MM-DD --to YYYY-MM-DD [--goal-race YYYY-MM-DD]
+      Genera piano running periodizzato per finestra temporale (mesi o blocchi lunghi)
+      Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
+      Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18 --enforce-tid
 
-  food add            - Aggiunge alimento a food-db (da implementare)
-  analyze <file.csv>  - Analizza export Garmin (da implementare)
+  running week <N>
+      Mostra dettaglio settimana N dal file data/running_plan.json
+      Esempio: tv running week 3
+
+  running month <YYYY-MM>
+      Mostra riepilogo mensile volumi/day-type dal piano generato
+      Esempio: tv running month 2026-04
+
+  running summary
+      Mostra riepilogo periodo completo (mensili + taper preview)
+      Esempio: tv running summary
+
+COMANDI DISPONIBILI (Utility):
+
+  food add <args...>
+      Aggiunge alimento a knowledge/food-db.md + data/FOOD_DB.json + data/FOOD_DB_TO_LARN_MAPPING.json
+      Sintassi 1: tv food add "<nome>" <riferimento> <kcal> <proteine> <cho> <grassi> <fibre> [fonte]
+      Sintassi 2: tv food add <url_crea>
+      Sintassi replace: tv food add --replace "<nome_o_id_esistente>" <argomenti>
+      Esempio: tv food add "Gallette riso" "100 g" 387 7.4 81.0 2.8 3.5 CREA
+      Esempio: tv food add https://www.alimentinutrizione.it/tabelle-nutrizionali/150030
+      Esempio: tv food add --replace "Yogurt greco 0%" https://www.alimentinutrizione.it/tabelle-nutrizionali/150030
+
+  food sync
+      Rigenera knowledge/food-db.md da data/FOOD_DB.json e valida mapping
+      Esempio: tv food sync
+
+  food check
+      Valida coerenza FOOD_DB / mapping senza scrivere file
+      Esempio: tv food check
+
+  food crawl-index
+      Estrae indice alfabetico CREA (nome + url + id) in data/CREA_INDEX.json
+      Esempio: tv food crawl-index
+
+  food import-crea <args...>
+      Importa alimenti da CREA in FOOD_DB (uno, lista o tutti da indice)
+      Esempio: tv food import-crea --id 150030
+      Esempio: tv food import-crea --ids 150030,120010 --replace-existing
+      Esempio: tv food import-crea --all --limit 50
+
+  food rebuild-from-crea
+      Backup + rebuild completo FOOD_DB, mapping e markdown da data/CREA_INDEX.json
+      Esempio: tv food rebuild-from-crea
+
+  food extract-portions
+      Estrae tabelle porzioni dal PDF LARN in data/PORTION_STANDARDS.json
+      Esempio: tv food extract-portions
+
+  analyze <file.csv>
+      Analizza export Garmin CSV (distanza/tempo/passo/FC medi)
+      Esempio: tv analyze sources/storico.csv
+
+  load import <workouts.csv>
+      Importa export TrainingPeaks FUTURO (planned) in data/training_load.json
+      Esempio: tv load import sources/workouts-2.csv
 
 Per maggiori informazioni: cat CLAUDE.md
 EOF
@@ -80,6 +139,54 @@ case "$1" in
     week)
         shift
         python3 "$SCRIPTS_DIR/week.py" "$@"
+        ;;
+    running)
+        shift
+        python3 "$SCRIPTS_DIR/running_plan.py" "$@"
+        ;;
+    food)
+        shift
+        if [ "$1" = "add" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/food_add.py" "$@"
+        elif [ "$1" = "sync" ]; then
+            python3 "$SCRIPTS_DIR/sync_food_db.py"
+        elif [ "$1" = "check" ]; then
+            python3 "$SCRIPTS_DIR/sync_food_db.py" --check
+        elif [ "$1" = "crawl-index" ]; then
+            python3 "$SCRIPTS_DIR/crea_import.py" crawl-index
+        elif [ "$1" = "import-crea" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/crea_import.py" import-crea "$@"
+        elif [ "$1" = "rebuild-from-crea" ]; then
+            python3 "$SCRIPTS_DIR/rebuild_food_db_from_crea.py"
+        elif [ "$1" = "extract-portions" ]; then
+            python3 "$SCRIPTS_DIR/extract_standard_portions.py"
+        else
+            echo -e "${RED}Uso non valido. Esempi:${NC} tv food add \"Nome\" \"100 g\" 100 10 10 5 2 CREA"
+            echo "                           tv food add https://www.alimentinutrizione.it/tabelle-nutrizionali/150030"
+            echo "                           tv food sync"
+            echo "                           tv food check"
+            echo "                           tv food crawl-index"
+            echo "                           tv food import-crea --id 150030"
+            echo "                           tv food rebuild-from-crea"
+            echo "                           tv food extract-portions"
+            exit 1
+        fi
+        ;;
+    analyze)
+        shift
+        python3 "$SCRIPTS_DIR/analyze.py" "$@"
+        ;;
+    load)
+        shift
+        if [ "$1" = "import" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/import_training_load.py" "$@"
+        else
+            echo -e "${RED}Uso non valido. Esempio:${NC} tv load import sources/workouts-2.csv"
+            exit 1
+        fi
         ;;
     help|--help|-h|"")
         show_help

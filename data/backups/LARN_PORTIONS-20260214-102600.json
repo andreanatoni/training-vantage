@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "name": "LARN_PORTIONS",
+    "source_of_truth": "Standard-Quantitativi-delle-Porzioni.pdf (Tabella 2)",
+    "units": [
+      "g",
+      "mL"
+    ],
+    "version": "v1",
+    "rules": {
+      "quantities_are_multiples_of_portion": true,
+      "food_db_is_only_nutrition_source": true
+    }
+  },
+  "portions": [
+    {
+      "id": "latte",
+      "group": "LATTE_E_DERIVATI",
+      "item": "latte",
+      "standard": {
+        "qty": 125,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchiere piccolo",
+        "1/2 tazza media"
+      ]
+    },
+    {
+      "id": "yogurt",
+      "group": "LATTE_E_DERIVATI",
+      "item": "yogurt e altri latti fermentati",
+      "standard": {
+        "qty": 125,
+        "unit": "g"
+      },
+      "practical": [
+        "1 vasetto standard"
+      ]
+    },
+    {
+      "id": "formaggi_freschi",
+      "group": "LATTE_E_DERIVATI",
+      "item": "formaggi freschi (≤25% grassi)",
+      "standard": {
+        "qty": 100,
+        "unit": "g"
+      },
+      "practical": [
+        "1 mozzarella piccola",
+        "4 ciliegine di mozzarella",
+        "4 fettine tipo formaggio fuso",
+        "2.5 cucchiai formaggio spalmabile"
+      ],
+      "special_cases": [
+        {
+          "item": "ricotta",
+          "standard": {
+            "qty": 150,
+            "unit": "g"
+          },
+          "note": "nota 3"
+        }
+      ]
+    },
+    {
+      "id": "formaggi_grassi",
+      "group": "LATTE_E_DERIVATI",
+      "item": "altri formaggi (≥25% grassi)",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "2 fettine tipo formaggio fuso",
+        "2.5 cubetti parmigiano",
+        "2 cucchiai formaggio cremoso",
+        "2.5 formaggini"
+      ],
+      "special_cases": [
+        {
+          "item": "formaggio grattugiato",
+          "usage_qty": {
+            "qty": 10,
+            "unit": "g"
+          },
+          "portion_fraction_of_standard": 0.2,
+          "note": "nota 4"
+        }
+      ]
+    },
+    {
+      "id": "carne_bianca",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "carne “bianca” fresca/surgelata",
+      "standard": {
+        "qty": 100,
+        "unit": "g"
+      },
+      "practical": [
+        "1 fetta petto pollo/tacchino",
+        "1 piccola coscia di pollo"
+      ]
+    },
+    {
+      "id": "carne_rossa",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "carne “rossa” fresca/surgelata",
+      "standard": {
+        "qty": 100,
+        "unit": "g"
+      },
+      "practical": [
+        "1 fettina",
+        "1 svizzera (hamburger)",
+        "4-5 pezzi spezzatino",
+        "1 salsiccia"
+      ]
+    },
+    {
+      "id": "altre_carni_frattaglie",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "altre carni e frattaglie",
+      "standard": {
+        "qty": 100,
+        "unit": "g"
+      },
+      "practical": [
+        "1 fetta petto anatra",
+        "1 fetta cervo",
+        "5-6 pezzi trippa",
+        "1 fetta fegato"
+      ]
+    },
+    {
+      "id": "salumi",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "salumi",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "3-4 fette medie prosciutto",
+        "5-6 fette medie salame/bresaola",
+        "2 fette medie mortadella"
+      ]
+    },
+    {
+      "id": "carne_gelatina",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "carne in gelatina",
+      "standard": {
+        "qty": 70,
+        "unit": "g"
+      },
+      "practical": [
+        "1 scatola piccola"
+      ]
+    },
+    {
+      "id": "pesce_fresco",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "pesce/molluschi/crostacei freschi o surgelati",
+      "standard": {
+        "qty": 150,
+        "unit": "g"
+      },
+      "practical": [
+        "1 pesce piccolo",
+        "1 filetto medio",
+        "25 cozze",
+        "3 gamberoni",
+        "20 gamberetti"
+      ]
+    },
+    {
+      "id": "pesce_conservato",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "pesce/molluschi/crostacei conservati",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "1 scatola piccola tonno sgocciolato",
+        "4-5 fette sottili salmone affumicato"
+      ],
+      "note": "peso sgocciolato (nota 6)"
+    },
+    {
+      "id": "uovo",
+      "group": "CARNE_PESCE_UOVA",
+      "item": "uova",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "1 uovo di gallina"
+      ]
+    },
+    {
+      "id": "legumi_freschi_scatola",
+      "group": "LEGUMI",
+      "item": "legumi freschi o in scatola",
+      "standard": {
+        "qty": 150,
+        "unit": "g"
+      },
+      "practical": [
+        "1/2 piatto",
+        "1 scatola piccola",
+        "7-8 cucchiai"
+      ]
+    },
+    {
+      "id": "legumi_secchi",
+      "group": "LEGUMI",
+      "item": "legumi secchi",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "3-4 cucchiai"
+      ]
+    },
+    {
+      "id": "cereali_base",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
+      "standard": {
+        "qty": 80,
+        "unit": "g"
+      },
+      "practical": [
+        "~50 penne/fusilli",
+        "6-8 cucchiai pastina",
+        "4 cucchiai riso/farro/orzo/quinoa",
+        "6-8 cucchiai farina"
+      ],
+      "variants": [
+        {
+          "id": "pasta_fresca",
+          "item": "pasta fresca all’uovo",
+          "standard": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "note": "nota 8"
+        },
+        {
+          "id": "pasta_ripiena",
+          "item": "pasta ripiena (ravioli/tortellini)",
+          "standard": {
+            "qty": 125,
+            "unit": "g"
+          },
+          "note": "nota 8"
+        },
+        {
+          "id": "lasagna_ricetta",
+          "item": "lasagna (ricetta)",
+          "standard": {
+            "qty": 250,
+            "unit": "g"
+          },
+          "note": "nota 8"
+        },
+        {
+          "id": "pasta_legumi_100",
+          "item": "pasta 100% legumi",
+          "standard": {
+            "qty": 50,
+            "unit": "g"
+          },
+          "note": "nota 8"
+        },
+        {
+          "id": "minestra_brodo_semolino",
+          "item": "minestre in brodo / semolino",
+          "portion_multiplier_suggested": 0.5,
+          "note": "nota 8"
+        }
+      ]
+    },
+    {
+      "id": "pane",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "pane",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "practical": [
+        "1 panino piccolo",
+        "1 piccola rosetta/michetta",
+        "1 fetta media filone",
+        "1/5 baguette",
+        "1/2 ciabattina/francesino/ferrarese",
+        "1/2 piadina",
+        "1 chapati piccolo",
+        "1 pane arabo piccolo",
+        "1 tortilla media"
+      ]
+    },
+    {
+      "id": "sostituti_pane",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
+      "standard": {
+        "qty": 30,
+        "unit": "g"
+      },
+      "practical": [
+        "5 crackers",
+        "1 frisella",
+        "3-4 tarallini",
+        "3-4 gallette"
+      ]
+    },
+    {
+      "id": "prodotti_forno_dolci",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "prodotti da forno dolci (brioche, biscotti, merendine, barrette, ecc.)",
+      "standard": {
+        "qty": 30,
+        "unit": "g"
+      },
+      "practical": [
+        "1 brioche piccola o 1/2 grande",
+        "2-3 biscotti frollini",
+        "4-5 biscotti secchi",
+        "1 merendina",
+        "1 barretta"
+      ]
+    },
+    {
+      "id": "cereali_colazione_fette",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "cereali per colazione e fette biscottate",
+      "standard": {
+        "qty": 30,
+        "unit": "g"
+      },
+      "practical": [
+        "6-8 cucchiai fiocchi di mais",
+        "5-6 cucchiai cereali in fiocchi più pesanti",
+        "3 cucchiai muesli",
+        "3-4 fette biscottate"
+      ]
+    },
+    {
+      "id": "patate_tuberi",
+      "group": "CEREALI_PSEUDOCEREALI_TUBERI",
+      "item": "patate e altri tuberi",
+      "standard": {
+        "qty": 200,
+        "unit": "g"
+      },
+      "practical": [
+        "2 patate piccole"
+      ],
+      "variants": [
+        {
+          "id": "gnocchi_patate",
+          "item": "gnocchi di patate",
+          "standard": {
+            "qty": 200,
+            "unit": "g"
+          },
+          "note": "nota 9"
+        },
+        {
+          "id": "manioca_cassava",
+          "item": "manioca (cassava)",
+          "standard": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "note": "nota 9"
+        }
+      ]
+    },
+    {
+      "id": "insalata_foglia",
+      "group": "VERDURE_E_ORTAGGI",
+      "item": "insalate a foglia",
+      "standard": {
+        "qty": 80,
+        "unit": "g"
+      },
+      "practical": [
+        "1 scodella grande"
+      ]
+    },
+    {
+      "id": "verdure_ortaggi",
+      "group": "VERDURE_E_ORTAGGI",
+      "item": "verdure e ortaggi",
+      "standard": {
+        "qty": 200,
+        "unit": "g"
+      },
+      "practical": [
+        "2-3 pomodori",
+        "3-4 carote",
+        "1 peperone",
+        "1 finocchio",
+        "2 carciofi",
+        "2-3 zucchine",
+        "7-10 ravanelli",
+        "1-2 cipolle",
+        "1/2 piatto verdure cotte (spinaci/bieta/broccoli/cavolfiore/melanzane, ecc.)"
+      ]
+    },
+    {
+      "id": "frutta_fresca",
+      "group": "FRUTTA",
+      "item": "frutta fresca",
+      "standard": {
+        "qty": 150,
+        "unit": "g"
+      },
+      "practical": [
+        "1 frutto medio (mela/pera/arancia)",
+        "2-3 frutti piccoli (albicocche/susine/mandarini)"
+      ]
+    },
+    {
+      "id": "frutta_disidratata",
+      "group": "FRUTTA",
+      "item": "frutta secca disidratata",
+      "standard": {
+        "qty": 30,
+        "unit": "g"
+      },
+      "practical": [
+        "3 albicocche/fichi/datteri secchi",
+        "2 cucchiai rasi uvetta",
+        "2 prugne secche"
+      ]
+    },
+    {
+      "id": "frutta_guscio_semi",
+      "group": "FRUTTA_SECCA_GUSCIO_SEMI",
+      "item": "noci/nocciole/pistacchi/mandorle/semi",
+      "standard": {
+        "qty": 30,
+        "unit": "g"
+      },
+      "practical": [
+        "7-8 noci",
+        "15-20 mandorle/nocciole",
+        "3 cucchiai rasi arachidi/pinoli/semi di girasole"
+      ]
+    },
+    {
+      "id": "olio",
+      "group": "GRASSI_DA_CONDIMENTO",
+      "item": "oli (EVO, semi, mais, ecc.)",
+      "standard": {
+        "qty": 9,
+        "unit": "g"
+      },
+      "practical": [
+        "1 cucchiaio (10 mL)"
+      ]
+    },
+    {
+      "id": "burro_strutto_lardo",
+      "group": "GRASSI_DA_CONDIMENTO",
+      "item": "burro/strutto/lardo",
+      "standard": {
+        "qty": 10,
+        "unit": "g"
+      },
+      "practical": [
+        "1/2 noce",
+        "1 unità alberghiera",
+        "1 fetta sottile"
+      ]
+    },
+    {
+      "id": "pesto",
+      "group": "CONDIMENTI_E_SUGHI",
+      "item": "pesto",
+      "standard": {
+        "qty": 40,
+        "unit": "g"
+      },
+      "practical": [
+        "2 cucchiai"
+      ]
+    },
+    {
+      "id": "sugo_pronto",
+      "group": "CONDIMENTI_E_SUGHI",
+      "item": "sughi pronti (arrabbiata, ragù, ecc.)",
+      "standard": {
+        "qty": 90,
+        "unit": "g"
+      },
+      "practical": [
+        "4 cucchiai"
+      ]
+    },
+    {
+      "id": "acqua",
+      "group": "ACQUA",
+      "item": "acqua",
+      "standard": {
+        "qty": 200,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchiere medio"
+      ]
+    },
+    {
+      "id": "bevande_non_zuccherate",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item": "spremute/succhi 100%/tè/tisane/bibite non zuccherate",
+      "standard": {
+        "qty": 200,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchiere medio",
+        "1 brick piccolo"
+      ]
+    },
+    {
+      "id": "bibite_zuccherate",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item": "bibite zuccherate",
+      "standard": {
+        "qty": 150,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchiere di plastica medio",
+        "1 lattina piccola"
+      ]
+    },
+    {
+      "id": "caffe_bar_espresso",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item": "caffè espresso (tazzina da bar)",
+      "standard": {
+        "qty": 30,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 tazzina da bar"
+      ]
+    },
+    {
+      "id": "caffe_moka_orzo",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item": "caffè moka / orzo",
+      "standard": {
+        "qty": 50,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 tazzina moka"
+      ]
+    },
+    {
+      "id": "vino",
+      "group": "BEVANDE_ALCOLICHE",
+      "item": "vino",
+      "standard": {
+        "qty": 125,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchiere da vino"
+      ]
+    },
+    {
+      "id": "birra",
+      "group": "BEVANDE_ALCOLICHE",
+      "item": "birra",
+      "standard": {
+        "qty": 330,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 lattina media"
+      ]
+    },
+    {
+      "id": "vermouth_aperitivi",
+      "group": "BEVANDE_ALCOLICHE",
+      "item": "vermouth/porto/aperitivi",
+      "standard": {
+        "qty": 75,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchierino da vermouth"
+      ]
+    },
+    {
+      "id": "superalcolici",
+      "group": "BEVANDE_ALCOLICHE",
+      "item": "superalcolici",
+      "standard": {
+        "qty": 40,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 bicchierino"
+      ]
+    },
+    {
+      "id": "zucchero_miele_caramelle",
+      "group": "DOLCIUMI",
+      "item": "zucchero/miele/caramelle",
+      "standard": {
+        "qty": 5,
+        "unit": "g"
+      },
+      "practical": [
+        "1 cucchiaino raso",
+        "1-2 caramelle medie"
+      ]
+    },
+    {
+      "id": "marmellata",
+      "group": "DOLCIUMI",
+      "item": "marmellata",
+      "standard": {
+        "qty": 10,
+        "unit": "g"
+      },
+      "practical": [
+        "1 cucchiaino colmo"
+      ]
+    },
+    {
+      "id": "torte_gelati",
+      "group": "DOLCIUMI",
+      "item": "torte/gelati",
+      "standard": {
+        "qty": 70,
+        "unit": "g"
+      },
+      "practical": [
+        "1 fetta",
+        "1 coppetta"
+      ],
+      "special_cases": [
+        {
+          "item": "budini e sorbetti",
+          "standard": {
+            "qty": 100,
+            "unit": "g"
+          },
+          "note": "nota 11"
+        }
+      ]
+    },
+    {
+      "id": "cioccolato_creme_spalmabili",
+      "group": "DOLCIUMI",
+      "item": "cioccolato/cioccolatini/creme spalmabili",
+      "standard": {
+        "qty": 10,
+        "unit": "g"
+      },
+      "practical": [
+        "1 quadretto",
+        "1 cioccolatino",
+        "1 cucchiaino colmo"
+      ]
+    },
+    {
+      "id": "snack_salati",
+      "group": "SNACK_SALATI",
+      "item": "patatine/pop-corn/salatini",
+      "standard": {
+        "qty": 25,
+        "unit": "g"
+      },
+      "practical": [
+        "1 bustina monoporzione"
+      ]
+    },
+    {
+      "id": "pizza_margherita",
+      "group": "EXTRA",
+      "item": "pizza tipo margherita",
+      "standard": {
+        "qty": 200,
+        "unit": "g"
+      },
+      "practical": [
+        "circa 1/2 pizza margherita"
+      ],
+      "note": "nota 7"
+    },
+    {
+      "id": "pizza_bianca_focaccia",
+      "group": "EXTRA",
+      "item": "pizza bianca / focaccia",
+      "standard": {
+        "qty": 50,
+        "unit": "g"
+      },
+      "note": "nota 7"
+    }
+  ]
+}

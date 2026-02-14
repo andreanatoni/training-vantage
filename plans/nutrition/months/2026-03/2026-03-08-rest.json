@@ -1,0 +1,938 @@
+{
+  "meta": {
+    "generated_at": "2026-02-14",
+    "category": "rest",
+    "status": "CURRENT"
+  },
+  "inputs": {
+    "weight_kg": 68.5,
+    "ffm_kg": 59.59,
+    "bmr_kcal": 1657
+  },
+  "engine": {
+    "config_version": "v1.0",
+    "day_profile": "rest",
+    "deficit_pct": 0.135,
+    "training_cost_kcal": 0,
+    "training_cost_source": "running_plan_day",
+    "phase": null,
+    "workout_label": null,
+    "session_date": "2026-03-08",
+    "ea_value_kcal_per_kg_ffm": 30.71,
+    "ea_guard_applied": false
+  },
+  "plan": {
+    "ffm": 59.59,
+    "bmr": 1690,
+    "target_kcal": 1830,
+    "meals": {
+      "COLAZIONE": {
+        "target": {
+          "kcal": 366,
+          "protein": 22,
+          "fat": 10,
+          "cho": 46
+        },
+        "options": [
+          {
+            "name": "Dolce classica con fette biscottate",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 84.7,
+                "unit": "ml"
+              },
+              {
+                "type": "single",
+                "name": "Fette biscottate",
+                "amount": 38.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 18.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 7.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 238.0,
+              "protein": 6.1,
+              "fat": 6.5,
+              "cho": 39.9
+            },
+            "swap": "Fette 45g ↔ Pane integrale 50g | Mandorle ↔ Noci 9g ↔ Nocciole 7g",
+            "quando": "Colazione rilassante rest day, energia equilibrata."
+          },
+          {
+            "name": "Dolce con pane e frutta secca",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 45.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 22.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 7.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 98.0,
+              "protein": 1.8,
+              "fat": 4.2,
+              "cho": 13.2
+            },
+            "swap": "Mandorle ↔ Noci 9g ↔ Nocciole 7g",
+            "quando": "Sazietà prolungata rest day, maggiore fibra."
+          },
+          {
+            "name": "Salata completa",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 57.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 26.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Formaggio spalmabile light",
+                "amount": 16.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 84.7,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 81.0,
+              "protein": 6.7,
+              "fat": 6.0,
+              "cho": 0.0
+            },
+            "swap": "Prosciutto 31g ↔ Bresaola 26g ↔ Fesa tacchino 35g",
+            "quando": "Massimo apporto proteico rest day, variante salata."
+          },
+          {
+            "name": "Dolce con torta homemade",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Plum cake (senza latte/burro)",
+                "amount": 57.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 5.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 84.7,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 32.0,
+              "protein": 1.1,
+              "fat": 2.8,
+              "cho": 0.2
+            },
+            "swap": "Plum cake ↔ Ciambellone (stesse grammature)",
+            "quando": "Weekend rest, comfort food rilassante."
+          },
+          {
+            "name": "Dolce con biscotti e burro d'arachidi",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Oro Saiwa",
+                "amount": 33.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Burro d'arachidi",
+                "amount": 10.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 84.7,
+                "unit": "ml"
+              },
+              {
+                "type": "single",
+                "name": "Oro Saiwa",
+                "amount": 33.9,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 64.0,
+              "protein": 2.5,
+              "fat": 5.5,
+              "cho": 0.8
+            },
+            "swap": null,
+            "quando": "Versatilità dolce rest day, energia concentrata."
+          }
+        ]
+      },
+      "SPUNTINO MATTINA": {
+        "target": {
+          "kcal": 146,
+          "protein": 8,
+          "fat": 3,
+          "cho": 18
+        },
+        "options": [
+          {
+            "name": "Frutta + fonte proteica/lipidica",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 93.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 6.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 106.0,
+              "protein": 2.0,
+              "fat": 3.9,
+              "cho": 15.1
+            },
+            "swap": "Mela 110g ↔ Banana 95g | Mandorle ↔ Noci ↔ Burro d'arachidi",
+            "quando": "Grab-and-go rest day, zero stress preparazione."
+          },
+          {
+            "name": "Yogurt dolce completo",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 80.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 5.1,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 16.0,
+              "protein": 0.0,
+              "fat": 0.0,
+              "cho": 4.1
+            },
+            "swap": "Banana 95g ↔ Mela 110g",
+            "quando": "Spuntino strutturato rest day, dolcezza naturale."
+          },
+          {
+            "name": "Crackers + proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 15.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 16.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 59.3,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 66.0,
+              "protein": 5.9,
+              "fat": 0.4,
+              "cho": 9.5
+            },
+            "swap": "Bresaola 20g ↔ Prosciutto 16g ↔ Formaggio spalmabile 12g",
+            "quando": "Variante salata rest day, proteine moderate."
+          },
+          {
+            "name": "Yogurt salato proteico",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 13.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 21.0,
+              "protein": 4.5,
+              "fat": 0.3,
+              "cho": 0.1
+            },
+            "swap": "Bresaola 16g ↔ Prosciutto crudo 13g",
+            "quando": "Boost proteico leggero rest day."
+          }
+        ]
+      },
+      "PRANZO": {
+        "target": {
+          "kcal": 695,
+          "protein": 41,
+          "fat": 16,
+          "cho": 87
+        },
+        "options": [
+          {
+            "name": "Pasta al tonno",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 78.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Tonno al naturale",
+                "amount": 63.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 122.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zenzero fresco",
+                "amount": 2.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 114.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 78.0,
+              "protein": 0.6,
+              "fat": 0.2,
+              "cho": 18.2
+            },
+            "swap": "Zucchine 145g ↔ Carote 115g | Tonno naturale+olio ↔ Tonno sott'olio",
+            "quando": "Pranzo bilanciato rest day, omega-3 recovery."
+          },
+          {
+            "name": "Pasta al ragù",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 78.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Ragù di vitello",
+                "amount": 110.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 122.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 97.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Zucchine 145g ↔ Carote 115g",
+            "quando": "Comfort food rest day, sostanzioso rilassante."
+          },
+          {
+            "name": "Riso con proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Riso basmati (crudo)",
+                "amount": 69.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pollo piastra",
+                "amount": 93.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Piselli",
+                "amount": 63.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 80.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 93.3,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 63.0,
+              "protein": 0.5,
+              "fat": 0.2,
+              "cho": 14.8
+            },
+            "swap": "Pollo 110g ↔ Salmone 90g ↔ Pesce spada 100g ↔ Uova 82g",
+            "quando": "4 scelte proteiche rest day, flessibilità totale."
+          },
+          {
+            "name": "Tortellini carne",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Tortellini vitello",
+                "amount": 97.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 8.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 122.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 101.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Zucchine 145g ↔ Carote 115g",
+            "quando": "Velocissimo rest day, comfort food rilassante."
+          },
+          {
+            "name": "Pasta semplice",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 78.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 11.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Passata pomodoro",
+                "amount": 38.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 122.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 106.0,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 72.0,
+              "protein": 0.5,
+              "fat": 0.2,
+              "cho": 16.9
+            },
+            "swap": null,
+            "quando": "Leggero rest day, digestione facile rilassante."
+          },
+          {
+            "name": "Piatto proteico veloce",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mozzarella bufala",
+                "amount": 69.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 32.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Scaglie grana",
+                "amount": 5.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 61.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine (friggitrice)",
+                "amount": 97.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 78.0,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 100.0,
+              "protein": 8.2,
+              "fat": 7.4,
+              "cho": 0.0
+            },
+            "swap": "Prosciutto 38g ↔ Bresaola 48g | Zucchine ↔ Carote",
+            "quando": "Zero cottura rest day, alternativa fresca."
+          }
+        ]
+      },
+      "SPUNTINO POMERIGGIO": {
+        "target": {
+          "kcal": 146,
+          "protein": 8,
+          "fat": 3,
+          "cho": 18
+        },
+        "options": [
+          {
+            "name": "Frutta + fonte proteica/lipidica",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 93.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 6.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 106.0,
+              "protein": 2.0,
+              "fat": 3.9,
+              "cho": 15.1
+            },
+            "swap": null,
+            "quando": "Spuntino leggero rest day, energia dolce."
+          },
+          {
+            "name": "Yogurt dolce completo",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 80.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 5.1,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 16.0,
+              "protein": 0.0,
+              "fat": 0.0,
+              "cho": 4.1
+            },
+            "swap": null,
+            "quando": "Spuntino strutturato rest day, completezza."
+          },
+          {
+            "name": "Crackers + proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 15.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 16.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 59.3,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 66.0,
+              "protein": 5.9,
+              "fat": 0.4,
+              "cho": 9.5
+            },
+            "swap": null,
+            "quando": "Variante salata rest day, proteine moderate."
+          },
+          {
+            "name": "Yogurt salato proteico",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 106.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 13.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 21.0,
+              "protein": 4.5,
+              "fat": 0.3,
+              "cho": 0.1
+            },
+            "swap": null,
+            "quando": "Boost proteico leggero pomeriggio rest."
+          }
+        ]
+      },
+      "CENA": {
+        "target": {
+          "kcal": 476,
+          "protein": 28,
+          "fat": 11,
+          "cho": 64
+        },
+        "options": [
+          {
+            "name": "Carne + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 169.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 152.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Pollo 115g ↔ Tacchino 105g ↔ Vitello 115g ↔ Manzo 125g",
+            "quando": "Cena classica rest day, maggiore di giorni allenamento."
+          },
+          {
+            "name": "Pesce + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 169.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 152.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Salmone ↔ Pesce spada ↔ Merluzzo ↔ Tonno tagliata",
+            "quando": "Omega-3 rest day, recovery settimanale generale."
+          },
+          {
+            "name": "Uova + pane + verdure/vellutata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Uova",
+                "amount": 80.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 76.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine cotte",
+                "amount": 152.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Verdure solide ↔ Vellutata 230g",
+            "quando": "Cena veloce rest day, vellutata comfort serale."
+          },
+          {
+            "name": "Hummus + pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Hummus ceci",
+                "amount": 88.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 66.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 152.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 8.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Hummus ceci 105g ↔ Hummus fagioli 110g",
+            "quando": "Vegetariana rest day, alta fibra, digestione leggera."
+          }
+        ]
+      }
+    }
+  }
+}

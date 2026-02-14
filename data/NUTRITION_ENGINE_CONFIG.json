@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "updated_at": "2026-02-14",
+    "owner": "training-vantage",
+    "description": "Config centrale del motore nutrizionale periodizzato"
+  },
+  "strategy": {
+    "mode": "performance_plus_recomposition",
+    "priority_order": [
+      "performance",
+      "adherence",
+      "macro_precision"
+    ],
+    "target_fat_loss_kg_per_week": {
+      "min": 0.2,
+      "max": 0.4
+    }
+  },
+  "energy_availability": {
+    "formula": "EA=(energy_intake_kcal-training_cost_kcal)/ffm_kg",
+    "hard_floor_kcal_per_kg_ffm": 30,
+    "target_min_kcal_per_kg_ffm": 35,
+    "warn_below_kcal_per_kg_ffm": 40
+  },
+  "macros": {
+    "protein": {
+      "basis": "ffm_kg",
+      "target_g_per_kg": 2.2,
+      "min_g_per_kg": 2.0,
+      "max_g_per_kg": 2.4
+    },
+    "fat": {
+      "min_g_per_kg_body_weight": 0.8,
+      "min_pct_kcal": 25
+    }
+  },
+  "day_profiles": {
+    "rest": {
+      "deficit_pct_range": [
+        0.12,
+        0.15
+      ],
+      "training_cost_kcal_estimate": 0,
+      "carb_g_per_kg_body_weight_range": [
+        3.0,
+        4.0
+      ]
+    },
+    "easy": {
+      "deficit_pct_range": [
+        0.08,
+        0.12
+      ],
+      "training_cost_kcal_estimate": 450,
+      "carb_g_per_kg_body_weight_range": [
+        4.0,
+        5.0
+      ]
+    },
+    "qualita": {
+      "deficit_pct_range": [
+        0.0,
+        0.05
+      ],
+      "training_cost_kcal_estimate": 700,
+      "carb_g_per_kg_body_weight_range": [
+        5.0,
+        7.0
+      ]
+    },
+    "lungo": {
+      "deficit_pct_range": [
+        0.0,
+        0.05
+      ],
+      "training_cost_kcal_estimate": 1000,
+      "carb_g_per_kg_body_weight_range": [
+        6.0,
+        8.0
+      ]
+    },
+    "forza": {
+      "deficit_pct_range": [
+        0.05,
+        0.08
+      ],
+      "training_cost_kcal_estimate": 400,
+      "carb_g_per_kg_body_weight_range": [
+        4.0,
+        5.0
+      ]
+    },
+    "progressivo": {
+      "deficit_pct_range": [
+        0.05,
+        0.08
+      ],
+      "training_cost_kcal_estimate": 650,
+      "carb_g_per_kg_body_weight_range": [
+        5.0,
+        6.0
+      ]
+    }
+  },
+  "category_to_day_profile": {
+    "rest": "rest",
+    "easy-run": "easy",
+    "qualita": "qualita",
+    "tempo": "progressivo",
+    "lungo": "lungo",
+    "forza": "forza",
+    "pizza-day": "rest",
+    "domenica": "rest"
+  },
+  "generation": {
+    "macro_tolerance_pct_per_meal": 10,
+    "rounding": {
+      "kcal_step": 5,
+      "grams_step": 1
+    }
+  }
+}

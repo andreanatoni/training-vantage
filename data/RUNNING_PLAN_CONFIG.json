@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "updated_at": "2026-02-14"
+  },
+  "defaults": {
+    "session_days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "session_types_by_day": {
+      "Monday": "easy",
+      "Tuesday": "forza",
+      "Wednesday": "qualita",
+      "Thursday": "forza",
+      "Friday": "progressivo",
+      "Saturday": "lungo"
+    },
+    "weekly_km": {
+      "start": 36.0,
+      "peak": 58.0,
+      "max_increase_pct": 0.1,
+      "deload_every_n_weeks": 4,
+      "deload_drop_pct": 0.18
+    },
+    "session_shares": {
+      "easy": 0.2,
+      "qualita": 0.26,
+      "progressivo": 0.22,
+      "lungo": 0.32
+    },
+    "taper": {
+      "weeks": 2,
+      "drop_pct_week_minus_2": 0.2,
+      "drop_pct_week_minus_1": 0.35
+    },
+    "intensity_distribution": {
+      "build": {
+        "target_low_pct": 0.8,
+        "target_high_pct": 0.2,
+        "max_moderate_pct": 0.1,
+        "min_high_pct": 0.15
+      },
+      "specific": {
+        "target_low_pct": 0.75,
+        "target_high_pct": 0.2,
+        "max_moderate_pct": 0.15,
+        "min_high_pct": 0.15
+      },
+      "taper": {
+        "target_low_pct": 0.85,
+        "target_high_pct": 0.1,
+        "max_moderate_pct": 0.1,
+        "min_high_pct": 0.05
+      },
+      "race": {
+        "target_low_pct": 0.8,
+        "target_high_pct": 0.15,
+        "max_moderate_pct": 0.1,
+        "min_high_pct": 0.05
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "generated_at": "2026-02-14T23:07:54.587703",
+    "source_file": "sources/workouts-2.csv",
+    "mode": "planned_only",
+    "weight_used_kg": 68.5
+  },
+  "assumptions": {
+    "energy_model": "MET * body_weight_kg * planned_duration_h",
+    "met_by_day_type": {
+      "rest": 0.0,
+      "easy": 9.0,
+      "qualita": 11.5,
+      "lungo": 9.5,
+      "forza": 6.0,
+      "progressivo": 10.5
+    }
+  },
+  "summary": {
+    "sessions_count": 4,
+    "date_range": {
+      "from": "2026-02-16",
+      "to": "2026-02-22"
+    },
+    "planned_distance_km": 46.88,
+    "planned_duration_h": 3.73,
+    "estimated_energy_kcal": 2518
+  },
+  "profile_costs_kcal": {
+    "rest": null,
+    "easy": 639.0,
+    "qualita": 356.0,
+    "lungo": 868.0,
+    "forza": null,
+    "progressivo": 655.0
+  },
+  "weeks": [
+    {
+      "iso_week": "2026-W08",
+      "start_date": "2026-02-16",
+      "end_date": "2026-02-22",
+      "sessions_count": 4,
+      "planned_distance_km": 46.88,
+      "planned_duration_h": 3.73,
+      "estimated_energy_kcal": 2518,
+      "day_type_counts": {
+        "easy": 1,
+        "qualita": 1,
+        "progressivo": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 639.0,
+        "qualita": 356.0,
+        "progressivo": 655.0,
+        "lungo": 868.0
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "session_id": "s001",
+      "date": "2026-02-16",
+      "iso_week": "2026-W08",
+      "title": "13x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.036,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 639
+    },
+    {
+      "session_id": "s002",
+      "date": "2026-02-18",
+      "iso_week": "2026-W08",
+      "title": "5x1km RM + Rec 1'30\"",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.451,
+      "planned_distance_km": 6.275,
+      "estimated_energy_kcal": 356
+    },
+    {
+      "session_id": "s003",
+      "date": "2026-02-20",
+      "iso_week": "2026-W08",
+      "title": "3L+3x(1L+1M+1TR)",
+      "workout_type": "Run",
+      "day_type": "progressivo",
+      "planned_duration_h": 0.911,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 655
+    },
+    {
+      "session_id": "s004",
+      "date": "2026-02-22",
+      "iso_week": "2026-W08",
+      "title": "1h20' L",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.333,
+      "planned_distance_km": 15.6,
+      "estimated_energy_kcal": 868
+    }
+  ]
+}

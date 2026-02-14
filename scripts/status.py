@@ -11,6 +11,7 @@ Mostra stato attuale del programma:
 """
 
 import json
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -112,7 +113,7 @@ def get_composition_trend(data):
 
 
 def check_stale_plans():
-    """Verifica piani nutrizionali STALE"""
+    """Verifica piani nutrizionali STALE confrontando META con composition.json"""
     plans_dir = Path(__file__).parent.parent / "plans" / "nutrition"
 
     if not plans_dir.exists():
@@ -120,14 +121,38 @@ def check_stale_plans():
 
     stale = []
     comp_data = load_json(COMP_FILE)
-    current_ffm = comp_data['measurements'][-1]['ffm']
+    latest = comp_data['measurements'][-1]
+    current_ffm = float(latest['ffm'])
+    current_bmr = int(latest['bmr'])
 
     for plan_file in plans_dir.glob("*.md"):
-        # Leggi META comment
-        with open(plan_file, 'r') as f:
+        with open(plan_file, 'r', encoding='utf-8') as f:
             content = f.read()
-            if 'STALE' in content:
-                stale.append(plan_file.stem)
+
+        # Compatibilità con vecchio marker esplicito
+        if 'Status: STALE' in content:
+            stale.append(f"{plan_file.stem} (status marker)")
+            continue
+
+        ffm_match = re.search(r'^\s*FFM:\s*([0-9]+(?:\.[0-9]+)?)\s*kg\s*$', content, re.MULTILINE)
+        bmr_match = re.search(r'^\s*BMR:\s*([0-9]+)\s*kcal\s*$', content, re.MULTILINE)
+
+        # Se META mancante non possiamo garantire allineamento -> consideriamo STALE
+        if not ffm_match or not bmr_match:
+            stale.append(f"{plan_file.stem} (missing META)")
+            continue
+
+        plan_ffm = float(ffm_match.group(1))
+        plan_bmr = int(bmr_match.group(1))
+
+        ffm_mismatch = abs(plan_ffm - current_ffm) > 0.01
+        bmr_mismatch = plan_bmr != current_bmr
+
+        if ffm_mismatch or bmr_mismatch:
+            stale.append(
+                f"{plan_file.stem} (META FFM {plan_ffm:.2f} vs {current_ffm:.2f}, "
+                f"BMR {plan_bmr} vs {current_bmr})"
+            )
 
     return stale
 
@@ -224,7 +249,9 @@ def status():
         print()
 
         if stale_plans:
-            print("  Piani STALE:", ", ".join(stale_plans))
+            print("  Piani STALE:")
+            for plan in stale_plans:
+                print(f"   - {plan}")
             print()
 
     # Footer

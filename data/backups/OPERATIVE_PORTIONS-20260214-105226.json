@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "name": "OPERATIVE_PORTIONS",
+    "purpose": "Porzioni operative SOLO per alimenti senza porzione LARN univoca nella Tabella 2. Non contengono nutrienti: i nutrienti restano SOLO in FOOD_DB.",
+    "rules": {
+      "nutrition_source_must_be_food_db": true,
+      "use_operational_only_if_larn_missing": true,
+      "quantities_are_multiples_of_operational_portion": true
+    },
+    "units": ["g", "mL"],
+    "version": "v1"
+  },
+  "portions": [
+    {
+      "id": "op_burro_arachidi",
+      "group": "OPERATIVE",
+      "item": "Burro d'arachidi",
+      "standard": { "qty": 15, "unit": "g" },
+      "practical": ["1 cucchiaio raso (indicativo)"],
+      "allowed_multipliers": [0.5, 1, 1.5, 2],
+      "notes": [
+        "Scelta operativa: 15 g è una porzione pratica per creme spalmabili.",
+        "Macro sempre calcolati da FOOD_DB."
+      ]
+    },
+    {
+      "id": "op_passata_pomodoro",
+      "group": "OPERATIVE",
+      "item": "Passata di pomodoro",
+      "standard": { "qty": 200, "unit": "g" },
+      "practical": ["~1 piatto di salsa semplice / base sugo (indicativo)"],
+      "allowed_multipliers": [0.5, 1, 1.5, 2],
+      "notes": [
+        "Scelta operativa: non esiste una porzione LARN univoca (può essere sugo o verdura).",
+        "Qui la trattiamo come 'quota verdura/salsa' con base 200 g.",
+        "Macro sempre calcolati da FOOD_DB."
+      ]
+    },
+    {
+      "id": "op_vellutata",
+      "group": "OPERATIVE",
+      "item": "Vellutata (zucchine/carote o simili)",
+      "standard": { "qty": 300, "unit": "g" },
+      "practical": ["1 scodella media (indicativo)"],
+      "allowed_multipliers": [0.5, 1, 1.5],
+      "notes": [
+        "Scelta operativa: preparazione composita, porzione pratica 'da scodella'.",
+        "Macro sempre calcolati da FOOD_DB."
+      ]
+    },
+    {
+      "id": "op_zenzero",
+      "group": "OPERATIVE",
+      "item": "Zenzero fresco",
+      "standard": { "qty": 5, "unit": "g" },
+      "practical": ["1 pezzetto/grattugiata (indicativo)"],
+      "allowed_multipliers": [1, 2],
+      "max_qty": { "qty": 10, "unit": "g" },
+      "notes": [
+        "Condimento: si usa in quantità piccole.",
+        "Cap duro: max 10 g.",
+        "Macro sempre calcolati da FOOD_DB."
+      ]
+    }
+  ]
+}

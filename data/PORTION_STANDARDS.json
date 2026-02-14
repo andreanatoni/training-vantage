@@ -1,0 +1,1750 @@
+{
+  "meta": {
+    "source_pdf": "sources/Standard-Quantitativi-delle-Porzioni.pdf",
+    "generated_at": "2026-02-14T23:07:54.515593",
+    "tables_extracted": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "table_1_definitions": [
+    {
+      "term": "Porzione standard (serving size) definita dalla comunità tecnico/scientifica",
+      "description": "■ Quantità standard di alimento definita dalla comunità scientifica per la popolazione sana in considerazione del contenuto in energia e ■ nutrienti e della tradizione alimentare italiana. è di dimensioni ragionevoli a soddisfare le aspettative edonistiche e di ■ salute del consumatore. viene normalmente espressa in g (o mL), ma anche in unità naturali (ad esempio, frutto medio, fetta di pane, fetta di prosciutto, ecc.) o commerciali effettivamente visualizzabili (scatoletta, brick, ecc.) qualora coincidano oppure in unità di misura casalinghe di uso ■ comune (ad esempio, cucchiaio, mestolo, bicchiere, tazza, ecc.). non coincide necessariamente con la singola unità (ad esempio, una mela, una lattina, una tazzina, ecc.), ma può essere costituita da unità multiple o frazioni di essa (ad esempio, 3-4 biscotti, 2 cucchiaini ■ di marmellata, ½ panino, ecc.). standard di riferimento in base al quale definire le diete destinate alle varie fasce d’età o a gruppi con esigenze nutrizionali specifiche (ad ■ esempio, gravidanza, allattamento, ecc.). la porzione standard non è una raccomandazione della quantità da consumare (definita invece sulla base delle frequenze di consumo e delle indicazioni per la prevenzione).",
+      "bullets": [
+        "Quantità standard di alimento definita dalla comunità scientifica per la popolazione sana in considerazione del contenuto in energia e",
+        "Nutrienti e della tradizione alimentare italiana. è di dimensioni ragionevoli a soddisfare le aspettative edonistiche e di",
+        "Salute del consumatore. viene normalmente espressa in g (o mL), ma anche in unità naturali (ad esempio, frutto medio, fetta di pane, fetta di prosciutto, ecc.) o commerciali effettivamente visualizzabili (scatoletta, brick, ecc.) qualora coincidano oppure in unità di misura casalinghe di uso",
+        "Comune (ad esempio, cucchiaio, mestolo, bicchiere, tazza, ecc.). non coincide necessariamente con la singola unità (ad esempio, una mela, una lattina, una tazzina, ecc.), ma può essere costituita da unità multiple o frazioni di essa (ad esempio, 3-4 biscotti, 2 cucchiaini",
+        "Di marmellata, ½ panino, ecc.). standard di riferimento in base al quale definire le diete destinate alle varie fasce d’età o a gruppi con esigenze nutrizionali specifiche (ad",
+        "Esempio, gravidanza, allattamento, ecc.). la porzione standard non è una raccomandazione della quantità da consumare (definita invece sulla base delle frequenze di consumo e delle indicazioni per la prevenzione)."
+      ]
+    },
+    {
+      "term": "Porzione consumata (portion) scelta dal consumatore",
+      "description": "■ Quantità di alimento che il singolo individuo consuma come pasto o ■ snack. è soggettiva e variabile e può essere ovviamente maggiore o minore della porzione standard.",
+      "bullets": [
+        "Quantità di alimento che il singolo individuo consuma come pasto o",
+        "Snack. è soggettiva e variabile e può essere ovviamente maggiore o minore della porzione standard."
+      ]
+    },
+    {
+      "term": "Porzione indicativa (per l’età evolutiva) (suggested portion size for pediatric ages) definita dalla comunità tecnico/scientifica",
+      "description": "■ Quantità di alimento suggerita per l’età evolutiva, espressa in g (o ■ mL) e come multiplo della porzione standard. utilizzata in combinazione con le frequenze di consumo per la costruzione di menu.",
+      "bullets": [
+        "Quantità di alimento suggerita per l’età evolutiva, espressa in g (o",
+        "ML) e come multiplo della porzione standard. utilizzata in combinazione con le frequenze di consumo per la costruzione di menu."
+      ]
+    },
+    {
+      "term": "Unità di vendita (single item) definita dal produttore",
+      "description": "■ ■ Quantità presente in un prodotto alimentare preconfezionato. può corrispondere ad una porzione standard, a un suo multiplo o una ■ sua frazione. una confezione può contenere singole monoporzioni la cui quantità, scelta dal produttore, spesso non coincide con la porzione standard.",
+      "bullets": [
+        "Quantità presente in un prodotto alimentare preconfezionato. può corrispondere ad una porzione standard, a un suo multiplo o una",
+        "Sua frazione. una confezione può contenere singole monoporzioni la cui quantità, scelta dal produttore, spesso non coincide con la porzione standard."
+      ]
+    }
+  ],
+  "table_2_standard_portions": [
+    {
+      "group": "Latte e derivati",
+      "food": "Latte",
+      "portion_standard": "125 mL",
+      "practical_unit": "1 Bicchiere piccolo, ½ tazza media"
+    },
+    {
+      "group": "Latte e derivati",
+      "food": "Yogurt e altri latti fermentati",
+      "portion_standard": "125 g",
+      "practical_unit": "1 Vasetto standard"
+    },
+    {
+      "group": "Latte e derivati",
+      "food": "Formaggi freschi (≤25% di grassi)",
+      "portion_standard": "100 g",
+      "practical_unit": "1 Mozzarella piccola, 4 ciliegine di mozzarella, 4 fettine tipo formaggio fuso, 2 e ½ cucchiai di formaggio spalmabile"
+    },
+    {
+      "group": "Latte e derivati",
+      "food": "Altri formaggi (≥25% di grassi)",
+      "portion_standard": "50 g",
+      "practical_unit": "2 Fettine tipo formaggio fuso; 2 e ½ cubetti di parmigiano; 2 cucchiai di formaggio cremoso; 2 e ½ formaggini"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Carne “bianca” fresca/ surgelata (pollo, tacchino, coniglio)",
+      "portion_standard": "100 g",
+      "practical_unit": "1 Fetta di petto di pollo o tacchino, 1 piccola coscia di pollo"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
+      "portion_standard": "100 g",
+      "practical_unit": "1 Fettina, 1 svizzera (hamburger), 4-5 pezzi di spezzatino, 1 salsiccia"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Altre carni e frattaglie",
+      "portion_standard": "100 g",
+      "practical_unit": "1 Fetta di petto di anatra, 1 fetta di carne di cervo, 5-6 pezzi di trippa, 1 fetta di fegato"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Salumi",
+      "portion_standard": "50 g",
+      "practical_unit": "3-4 Fette medie di prosciutto, 5-6 fette medie di salame o di bresaola, 2 fette medie di mortadella"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Carne in gelatina",
+      "portion_standard": "70 g",
+      "practical_unit": "1 Scatola piccola"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Pesce, molluschi, crostacei freschi/surgelati",
+      "portion_standard": "150 g",
+      "practical_unit": "1 Pesce piccolo, 1 filetto medio, 25 cozze, 3 gamberoni, 20 gamberetti"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Pesce, molluschi, crostacei conservati",
+      "portion_standard": "50 g",
+      "practical_unit": "1 Scatola piccola di tonno sott’olio o in salamoia sgocciolato, 4-5 fette sottili di salmone affumicato"
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food": "Uova",
+      "portion_standard": "50 g",
+      "practical_unit": "1 Uovo di gallina"
+    },
+    {
+      "group": "Legumi",
+      "food": "Legumi freschi o in scatola",
+      "portion_standard": "150 g",
+      "practical_unit": "½ Piatto, una scatola piccola, 7-8 cucchiai"
+    },
+    {
+      "group": "Legumi",
+      "food": "Legumi secchi",
+      "portion_standard": "50 g",
+      "practical_unit": "3-4 Cucchiai"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
+      "portion_standard": "80 g",
+      "practical_unit": "Circa 50 penne/fusilli, 6-8 cucchiai di pastina, 4 cucchiai di riso/farro/orzo/ quinoa, 6-8 cucchiai di farina"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Pane",
+      "portion_standard": "50 g",
+      "practical_unit": "1 Panino piccolo, 1 piccola rosetta o michetta (vuote), 1 fetta media di pagnotta/filone, 1/5 baguette, ½ ciabattina/francesino/ferrarese, ½ piadina, 1 chapati piccolo (roti), 1 pane arabo piccolo (pita), 1 tortilla media"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
+      "portion_standard": "30 g",
+      "practical_unit": "5 Crackers, 1 frisella, 3-4 tarallini, 3-4 gallette"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Prodotti da forno dolci (brioche, croissant, cornetti, biscotti, merendine, barrette, ecc.)",
+      "portion_standard": "30 g",
+      "practical_unit": "1 Brioche (o croissant) piccola o ½ brioche grande, 2-3 biscotti frollini, 4-5 biscotti secchi, una merendina, una barretta"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Cereali per la colazione e fette biscottate",
+      "portion_standard": "30 g",
+      "practical_unit": "6-8 Cucchiai di fiocchi di mais, 5-6 cucchiai di altri cereali in fiocchi più pesanti, 3 cucchiai di “muesli”, 3-4 fette biscottate"
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food": "Patate e altri tuberi",
+      "portion_standard": "200 g",
+      "practical_unit": "2 Patate piccole"
+    },
+    {
+      "group": "Verdure e ortaggi",
+      "food": "Insalate a foglia",
+      "portion_standard": "80 g",
+      "practical_unit": "1 Scodella grande"
+    },
+    {
+      "group": "Verdure e ortaggi",
+      "food": "Verdure e ortaggi",
+      "portion_standard": "200 g",
+      "practical_unit": "2-3 Pomodori, 3-4 carote, 1 peperone, 1 finocchio, 2 carciofi, 2-3 zucchine, 7-10 ravanelli, 1-2 cipolle, ½ piatto di spinaci, bieta, broccoli, cavolfiore, melanzane, ecc. cotti"
+    },
+    {
+      "group": "Frutta",
+      "food": "Frutta fresca",
+      "portion_standard": "150 g",
+      "practical_unit": "1 Frutto medio (mela, pera, arancia, ecc.), 2-3 frutti piccoli (albicocche, susine, mandarini, ecc.)"
+    },
+    {
+      "group": "Frutta",
+      "food": "Frutta secca disidratata",
+      "portion_standard": "30 g",
+      "practical_unit": "3 Albicocche/fichi secchi/datteri, 2 cucchiai rasi di uvetta, 2 prugne secche, ecc."
+    },
+    {
+      "group": "Frutta secca a guscio e semi oleosi",
+      "food": "Noci, nocciole, pistacchi, mandorle, semi di lino, semi di sesamo, semi di zucca, ecc.",
+      "portion_standard": "30 g",
+      "practical_unit": "7-8 Noci, 15-20 mandorle/nocciole, 3 cucchiai rasi di arachidi o pinoli o semi di girasole, ecc."
+    },
+    {
+      "group": "Grassi da condimento",
+      "food": "Oli (extravergine d’oliva, di semi, di mais ecc.)",
+      "portion_standard": "9 g",
+      "practical_unit": "1 Cucchiaio (10 mL)"
+    },
+    {
+      "group": "Grassi da condimento",
+      "food": "Burro, strutto e lardo",
+      "portion_standard": "10 g",
+      "practical_unit": "½ Noce, 1 unità di confezione alberghiera, 1 fetta sottile"
+    },
+    {
+      "group": "Condimenti e sughi",
+      "food": "Pesto (alla genovese, alla trapanese ecc.)",
+      "portion_standard": "40 g",
+      "practical_unit": "2 Cucchiai"
+    },
+    {
+      "group": "Condimenti e sughi",
+      "food": "Sughi pronti (arrabbiata, ragù, ecc.)",
+      "portion_standard": "90 g",
+      "practical_unit": "4 Cucchiai"
+    },
+    {
+      "group": "Acqua",
+      "food": "Acqua di rubinetto o imbottigliata",
+      "portion_standard": "200 mL",
+      "practical_unit": "1 Bicchiere medio (da acqua)"
+    },
+    {
+      "group": "Bevande analcoliche",
+      "food": "Spremute, succhi di verdura e di frutta 100%, tè, tisane ed altre bibite non zuccherate (senza zuccheri aggiunti)",
+      "portion_standard": "200 mL",
+      "practical_unit": "1 Bicchiere medio (da acqua), 1 brick piccolo o 1 bottiglietta in vetro media"
+    },
+    {
+      "group": "Bevande analcoliche",
+      "food": "Bibite zuccherate (con zuccheri aggiunti)",
+      "portion_standard": "150 mL",
+      "practical_unit": "1 Bicchiere di plastica medio o 1 lattina piccola"
+    },
+    {
+      "group": "Bevande analcoliche",
+      "food": "Caffè/orzo",
+      "portion_standard": "30 mL 50 mL",
+      "practical_unit": "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+    },
+    {
+      "group": "Bevande alcoliche",
+      "food": "Vino",
+      "portion_standard": "125 mL",
+      "practical_unit": "1 Bicchiere (da vino)"
+    },
+    {
+      "group": "Bevande alcoliche",
+      "food": "Birra",
+      "portion_standard": "330 mL",
+      "practical_unit": "1 Lattina media"
+    },
+    {
+      "group": "Bevande alcoliche",
+      "food": "Vermouth/porto/aperitivi",
+      "portion_standard": "75 mL",
+      "practical_unit": "1 Bicchierino da vermouth"
+    },
+    {
+      "group": "Bevande alcoliche",
+      "food": "Superalcolici",
+      "portion_standard": "40 mL",
+      "practical_unit": "1 Bicchierino da superalcolico"
+    },
+    {
+      "group": "Dolciumi",
+      "food": "Zucchero, miele, caramelle",
+      "portion_standard": "5 g",
+      "practical_unit": "1 Cucchiaino raso, 1-2 caramelle medie"
+    },
+    {
+      "group": "Dolciumi",
+      "food": "Marmellata",
+      "portion_standard": "10 g",
+      "practical_unit": "1 Cucchiaino colmo"
+    },
+    {
+      "group": "Dolciumi",
+      "food": "Torte, gelati",
+      "portion_standard": "70 g",
+      "practical_unit": "1 Fetta, 1 coppetta"
+    },
+    {
+      "group": "Dolciumi",
+      "food": "Cioccolato, cioccolatini, creme spalmabili",
+      "portion_standard": "10 g",
+      "practical_unit": "1 Quadretto, 1 cioccolatino, 1 cucchiaino colmo"
+    },
+    {
+      "group": "Snack salati",
+      "food": "Patatine, pop-corn, salatini",
+      "portion_standard": "25 g",
+      "practical_unit": "1 Bustina monoporzione"
+    }
+  ],
+  "table_3_raw_to_cooked": [
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Bollitura",
+      "food": "Carne rossa",
+      "conversion_factor": 0.64,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 64.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Bollitura",
+      "food": "Carne bianca",
+      "conversion_factor": 0.83,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 83.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Vapore",
+      "food": "Carne rossa",
+      "conversion_factor": 0.63,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 63.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Vapore",
+      "food": "Carne bianca",
+      "conversion_factor": 0.62,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 62.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Padella con olio",
+      "food": "Carne rossa",
+      "conversion_factor": 0.79,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 79.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Padella con olio",
+      "food": "Carne bianca",
+      "conversion_factor": 0.84,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 84.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Arrostimento",
+      "food": "Carne rossa",
+      "conversion_factor": 0.8,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 80.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Arrostimento",
+      "food": "Carne bianca",
+      "conversion_factor": 0.79,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 79.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Microonde",
+      "food": "Carne rossa",
+      "conversion_factor": 0.69,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 69.0
+    },
+    {
+      "group": "Carni fresche",
+      "cooking_method": "Microonde",
+      "food": "Carne bianca",
+      "conversion_factor": 0.76,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 76.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Bollitura",
+      "food": "Fresco",
+      "conversion_factor": 0.83,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 124.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Bollitura",
+      "food": "Surgelato",
+      "conversion_factor": 0.85,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 127.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Vapore",
+      "food": "Fresco o surgelato (filetti)",
+      "conversion_factor": 0.84,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 126.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Padella con olio",
+      "food": "Fresco o surgelato",
+      "conversion_factor": 0.64,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 96.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Padella con olio",
+      "food": "Molluschi",
+      "conversion_factor": 0.4,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 60.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Arrostimento",
+      "food": "Fresco",
+      "conversion_factor": 0.72,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 108.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Arrostimento",
+      "food": "Surgelato",
+      "conversion_factor": 0.74,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 111.0
+    },
+    {
+      "group": "Pesce",
+      "cooking_method": "Microonde",
+      "food": "Fresco o surgelato (intero o filetti)",
+      "conversion_factor": 0.79,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 118.0
+    },
+    {
+      "group": "Legumi",
+      "cooking_method": "Bollitura, pressione",
+      "food": "Freschi (fave, piselli)",
+      "conversion_factor": 0.88,
+      "portion_raw_g": 150.0,
+      "portion_cooked_g": 132.0
+    },
+    {
+      "group": "Legumi",
+      "cooking_method": "Bollitura, pressione",
+      "food": "Secchi (ceci, fagioli, lenticchie)",
+      "conversion_factor": 2.7,
+      "portion_raw_g": 50.0,
+      "portion_cooked_g": 135.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Cous cous precotto",
+      "conversion_factor": 2.25,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 180.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Farro perlato",
+      "conversion_factor": 2.28,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 182.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Gnocchi di patate",
+      "conversion_factor": 1.06,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 212.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Orzo perlato",
+      "conversion_factor": 2.67,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 214.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Pasta all’uovo fresca",
+      "conversion_factor": 1.36,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 136.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Pasta all’uovo secca",
+      "conversion_factor": 2.99,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 239.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Pasta di semola corta (es. fusilli, penne, rigatoni)",
+      "conversion_factor": 1.88,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 150.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Pasta di semola lunga (es. spaghetti, linguine)",
+      "conversion_factor": 2.1,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 168.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Farina di mais per polenta istantanea",
+      "conversion_factor": 4.85,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 388.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Riso basmati",
+      "conversion_factor": 3.0,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 240.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Riso brillato",
+      "conversion_factor": 2.6,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 208.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Riso parboiled",
+      "conversion_factor": 2.36,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 189.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Riso venere",
+      "conversion_factor": 2.1,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 168.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Ravioli freschi",
+      "conversion_factor": 1.4,
+      "portion_raw_g": 125.0,
+      "portion_cooked_g": 175.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Quinoa",
+      "conversion_factor": 3.12,
+      "portion_raw_g": 80.0,
+      "portion_cooked_g": 250.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Tortellini freschi",
+      "conversion_factor": 1.92,
+      "portion_raw_g": 125.0,
+      "portion_cooked_g": 240.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Patate",
+      "conversion_factor": 0.94,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 188.0
+    },
+    {
+      "group": "Cereali e derivati, tuberi",
+      "cooking_method": "Bollitura",
+      "food": "Cassava (manioca)",
+      "conversion_factor": 1.17,
+      "portion_raw_g": 100.0,
+      "portion_cooked_g": 117.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "Bollitura",
+      "food": "Diversi tipi di verdure*",
+      "conversion_factor": 0.87,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 174.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "Vapore, pressione",
+      "food": "Brassicaceae (es. broccolo, cavolo, cavolfiore, cavolo rosso, verza)",
+      "conversion_factor": 0.96,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 192.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "Vapore, pressione",
+      "food": "Altre verdure a foglia e a stelo (es. asparagi, spinaci, bietola, sedano, finocchio)",
+      "conversion_factor": 0.86,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 172.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "In padella con olio",
+      "food": "Diversi tipi di verdure*",
+      "conversion_factor": 0.53,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 106.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "Arrostimento",
+      "food": "Diversi tipi di verdure*",
+      "conversion_factor": 0.65,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 130.0
+    },
+    {
+      "group": "Verdure (fresche o surgelate)",
+      "cooking_method": "Microonde",
+      "food": "Diversi tipi di verdure*",
+      "conversion_factor": 0.88,
+      "portion_raw_g": 200.0,
+      "portion_cooked_g": 176.0
+    }
+  ],
+  "table_4_pediatric_portions": [
+    {
+      "group": "Latte e derivati",
+      "food_type": "Latte",
+      "portion_standard": "125 mL",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 1.2
+        },
+        "2-3 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.6
+        },
+        "4-6 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.6
+        },
+        "7-10 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.6
+        },
+        "11-14 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.6
+        },
+        "15-17 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.6
+        }
+      }
+    },
+    {
+      "group": "Latte e derivati",
+      "food_type": "Yogurt e altri latti fermentati",
+      "portion_standard": "125 mL",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 60.0,
+          "multiple_of_standard": 0.5
+        },
+        "2-3 anni": {
+          "portion_g_ml": 60.0,
+          "multiple_of_standard": 0.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Latte e derivati",
+      "food_type": "Formaggi freschi (≤25% di grassi)",
+      "portion_standard": "100 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.3
+        },
+        "4-6 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.4
+        },
+        "7-10 anni": {
+          "portion_g_ml": 70.0,
+          "multiple_of_standard": 0.7
+        },
+        "11-14 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Latte e derivati",
+      "food_type": "Altri formaggi (>25% di grassi)",
+      "portion_standard": "50 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.6
+        },
+        "7-10 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food_type": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
+      "portion_standard": "100 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 35.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 45.0,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.8
+        },
+        "11-14 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food_type": "Carne “bianca” fresca/surgelata (pollo, tacchino, altri volatili, coniglio)",
+      "portion_standard": "100 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 35.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 45.0,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.8
+        },
+        "11-14 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food_type": "Pesce, molluschi, crostacei freschi/surgelati",
+      "portion_standard": "150 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.2
+        },
+        "2-3 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 0.3
+        },
+        "4-6 anni": {
+          "portion_g_ml": 60.0,
+          "multiple_of_standard": 0.4
+        },
+        "7-10 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.5
+        },
+        "11-14 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Carne, pesce, uova",
+      "food_type": "Uova",
+      "portion_standard": "50 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 0.5
+        },
+        "2-3 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "4-6 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Legumi",
+      "food_type": "Legumi freschi o in scatola",
+      "portion_standard": "150 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.2
+        },
+        "2-3 anni": {
+          "portion_g_ml": 45.0,
+          "multiple_of_standard": 0.3
+        },
+        "4-6 anni": {
+          "portion_g_ml": 60.0,
+          "multiple_of_standard": 0.4
+        },
+        "7-10 anni": {
+          "portion_g_ml": 90.0,
+          "multiple_of_standard": 0.6
+        },
+        "11-14 anni": {
+          "portion_g_ml": 120.0,
+          "multiple_of_standard": 0.8
+        },
+        "15-17 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Legumi",
+      "food_type": "Legumi secchi",
+      "portion_standard": "50 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 0.2
+        },
+        "2-3 anni": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 0.3
+        },
+        "4-6 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.4
+        },
+        "7-10 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.6
+        },
+        "11-14 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.8
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Pasta, riso, mais, farro, orzo, quinoa, farine ecc.",
+      "portion_standard": "80 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 0.6
+        },
+        "7-10 anni": {
+          "portion_g_ml": 70.0,
+          "multiple_of_standard": 0.9
+        },
+        "11-14 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.3
+        },
+        "15-17 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.3
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Pane",
+      "portion_standard": "50 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.8
+        },
+        "7-10 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Pizza (tipo margherita)",
+      "portion_standard": "200 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.4
+        },
+        "2-3 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 0.8
+        },
+        "7-10 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 350.0,
+          "multiple_of_standard": 1.8
+        },
+        "15-17 anni": {
+          "portion_g_ml": 350.0,
+          "multiple_of_standard": 1.8
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Sostituti del pane: cracker, grissini, friselle, tarallini, gallette ecc.",
+      "portion_standard": "30 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.7
+        },
+        "4-6 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "11-14 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.7
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Prodotti da forno dolci: brioche, croissant, cornetti, biscotti, merendine, barrette ecc.",
+      "portion_standard": "30 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.7
+        },
+        "4-6 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "11-14 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.7
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Cereali per la colazione e fette biscottate",
+      "portion_standard": "30 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.7
+        },
+        "4-6 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "11-14 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 1.3
+        },
+        "15-17 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 1.7
+        }
+      }
+    },
+    {
+      "group": "Cereali e derivati, pseudocereali e tuberi",
+      "food_type": "Patate e altri tuberi",
+      "portion_standard": "200 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 70.0,
+          "multiple_of_standard": 0.4
+        },
+        "2-3 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 0.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 0.8
+        },
+        "11-14 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Verdure e ortaggi",
+      "food_type": "Insalate a foglia",
+      "portion_standard": "80 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 0.2
+        },
+        "2-3 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.3
+        },
+        "4-6 anni": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 0.6
+        },
+        "11-14 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 0.6
+        },
+        "15-17 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Verdure e ortaggi",
+      "food_type": "Verdure e ortaggi",
+      "portion_standard": "200 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 70.0,
+          "multiple_of_standard": 0.4
+        },
+        "2-3 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 120.0,
+          "multiple_of_standard": 0.6
+        },
+        "7-10 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 0.8
+        },
+        "11-14 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 200.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Frutta",
+      "food_type": "Frutta fresca",
+      "portion_standard": "150 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 70.0,
+          "multiple_of_standard": 0.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 0.7
+        },
+        "11-14 anni": {
+          "portion_g_ml": 120.0,
+          "multiple_of_standard": 0.8
+        },
+        "15-17 anni": {
+          "portion_g_ml": 150.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Frutta secca a guscio e semi oleosi",
+      "food_type": "Noci, nocciole, pistacchi, mandorle, semi di lino, semi di sesamo, semi di zucca ecc.",
+      "portion_standard": "30 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": null,
+          "multiple_of_standard": null
+        },
+        "2-3 anni": {
+          "portion_g_ml": null,
+          "multiple_of_standard": null
+        },
+        "4-6 anni": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.7
+        },
+        "7-10 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Grassi da condimento",
+      "food_type": "Oli (extravergine d’oliva, di semi, di mais ecc.)",
+      "portion_standard": "9 g (10 mL)",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        },
+        "2-3 anni": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        },
+        "4-6 anni": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 9.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Grassi da condimento",
+      "food_type": "Burro",
+      "portion_standard": "10 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "2-3 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "4-6 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Dolciumi",
+      "food_type": "Zucchero/miele",
+      "portion_standard": "5 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": null,
+          "multiple_of_standard": null
+        },
+        "2-3 anni": {
+          "portion_g_ml": 2.5,
+          "multiple_of_standard": 0.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 2.5,
+          "multiple_of_standard": 0.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 2.5,
+          "multiple_of_standard": 0.5
+        },
+        "11-14 anni": {
+          "portion_g_ml": 5.0,
+          "multiple_of_standard": 1.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 5.0,
+          "multiple_of_standard": 1.0
+        }
+      }
+    },
+    {
+      "group": "Dolciumi",
+      "food_type": "Marmellata",
+      "portion_standard": "10 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "2-3 anni": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 1.5
+        },
+        "4-6 anni": {
+          "portion_g_ml": 15.0,
+          "multiple_of_standard": 1.5
+        },
+        "7-10 anni": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 2.5
+        },
+        "11-14 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 3.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 3.0
+        }
+      }
+    },
+    {
+      "group": "Dolciumi",
+      "food_type": "Torte",
+      "portion_standard": "70 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 20.0,
+          "multiple_of_standard": 0.3
+        },
+        "2-3 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.4
+        },
+        "4-6 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 0.4
+        },
+        "7-10 anni": {
+          "portion_g_ml": 50.0,
+          "multiple_of_standard": 0.7
+        },
+        "11-14 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.4
+        },
+        "15-17 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.4
+        }
+      }
+    },
+    {
+      "group": "Dolciumi",
+      "food_type": "Budini/sorbetti",
+      "portion_standard": "100 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 40.0,
+          "multiple_of_standard": 0.4
+        },
+        "2-3 anni": {
+          "portion_g_ml": 80.0,
+          "multiple_of_standard": 0.8
+        },
+        "4-6 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 100.0,
+          "multiple_of_standard": 1.0
+        },
+        "11-14 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.3
+        },
+        "15-17 anni": {
+          "portion_g_ml": 125.0,
+          "multiple_of_standard": 1.3
+        }
+      }
+    },
+    {
+      "group": "Dolciumi",
+      "food_type": "Cioccolato, cioccolatini, creme spalmabili",
+      "portion_standard": "10 g",
+      "age_portions": {
+        "1 anno": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "2-3 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "4-6 anni": {
+          "portion_g_ml": 10.0,
+          "multiple_of_standard": 1.0
+        },
+        "7-10 anni": {
+          "portion_g_ml": 25.0,
+          "multiple_of_standard": 2.5
+        },
+        "11-14 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 3.0
+        },
+        "15-17 anni": {
+          "portion_g_ml": 30.0,
+          "multiple_of_standard": 3.0
+        }
+      }
+    }
+  ],
+  "table_5_household_volumes_ml": [
+    {
+      "container": "Bicchiere",
+      "small_ml": 125.0,
+      "medium_ml": 200.0,
+      "large_ml": 300.0
+    },
+    {
+      "container": "Bicchierino per superalcolici",
+      "small_ml": null,
+      "medium_ml": 40.0,
+      "large_ml": null
+    },
+    {
+      "container": "Bicchierino per vermouth, porto ecc.",
+      "small_ml": null,
+      "medium_ml": 75.0,
+      "large_ml": null
+    },
+    {
+      "container": "Bicchiere di plastica",
+      "small_ml": 50.0,
+      "medium_ml": 150.0,
+      "large_ml": 250.0
+    },
+    {
+      "container": "Bicchiere di carta da bibita",
+      "small_ml": 300.0,
+      "medium_ml": 400.0,
+      "large_ml": 500.0
+    },
+    {
+      "container": "Tazza",
+      "small_ml": 125.0,
+      "medium_ml": 250.0,
+      "large_ml": 350.0
+    },
+    {
+      "container": "Tazzina da caffè",
+      "small_ml": 30.0,
+      "medium_ml": 50.0,
+      "large_ml": 75.0
+    },
+    {
+      "container": "Scodella",
+      "small_ml": 200.0,
+      "medium_ml": 350.0,
+      "large_ml": 500.0
+    },
+    {
+      "container": "Coppetta",
+      "small_ml": 100.0,
+      "medium_ml": 150.0,
+      "large_ml": 200.0
+    },
+    {
+      "container": "Cucchiaio (raso)3",
+      "small_ml": 8.0,
+      "medium_ml": 10.0,
+      "large_ml": 15.0
+    },
+    {
+      "container": "Cucchiaino (raso)4",
+      "small_ml": 3.0,
+      "medium_ml": 5.0,
+      "large_ml": 7.0
+    },
+    {
+      "container": "Mestolo (raso)",
+      "small_ml": 35.0,
+      "medium_ml": 125.0,
+      "large_ml": 200.0
+    },
+    {
+      "container": "Lattina da bibita o da birra",
+      "small_ml": 150.0,
+      "medium_ml": 330.0,
+      "large_ml": 500.0
+    },
+    {
+      "container": "“Brick”5 da succo di frutta/latte",
+      "small_ml": 200.0,
+      "medium_ml": 250.0,
+      "large_ml": 500.0
+    },
+    {
+      "container": "Bottiglietta in vetro per succo di frutta",
+      "small_ml": 125.0,
+      "medium_ml": 200.0,
+      "large_ml": 250.0
+    },
+    {
+      "container": "Vasetto di yogurt monoporzione",
+      "small_ml": 125.0,
+      "medium_ml": 150.0,
+      "large_ml": 200.0
+    }
+  ],
+  "table_6_spoon_weights_g": [
+    {
+      "item": "Cacao in polvere",
+      "level": "Colmo",
+      "tablespoon_g": 9.0,
+      "teaspoon_g": 4.0
+    },
+    {
+      "item": "Cacao in polvere",
+      "level": "Raso",
+      "tablespoon_g": 5.0,
+      "teaspoon_g": 2.0
+    },
+    {
+      "item": "Farina di frumento",
+      "level": "Colmo",
+      "tablespoon_g": 15.0,
+      "teaspoon_g": 7.0
+    },
+    {
+      "item": "Farina di frumento",
+      "level": "Raso",
+      "tablespoon_g": 7.0,
+      "teaspoon_g": 4.0
+    },
+    {
+      "item": "Formaggio grattugiato",
+      "level": "Colmo",
+      "tablespoon_g": 10.0,
+      "teaspoon_g": 4.0
+    },
+    {
+      "item": "Formaggio grattugiato",
+      "level": "Raso",
+      "tablespoon_g": 7.0,
+      "teaspoon_g": 3.0
+    },
+    {
+      "item": "Maionese",
+      "level": "Colmo",
+      "tablespoon_g": 18.0,
+      "teaspoon_g": 9.0
+    },
+    {
+      "item": "Maionese",
+      "level": "Raso",
+      "tablespoon_g": 9.0,
+      "teaspoon_g": 5.0
+    },
+    {
+      "item": "Marmellata",
+      "level": "Colmo",
+      "tablespoon_g": 27.0,
+      "teaspoon_g": 10.0
+    },
+    {
+      "item": "Miele",
+      "level": "Colmo",
+      "tablespoon_g": 22.0,
+      "teaspoon_g": 8.0
+    },
+    {
+      "item": "Miele",
+      "level": "Raso",
+      "tablespoon_g": 14.0,
+      "teaspoon_g": 5.0
+    },
+    {
+      "item": "Olio",
+      "level": "Raso",
+      "tablespoon_g": 9.0,
+      "teaspoon_g": 5.0
+    },
+    {
+      "item": "Panna (da cucina o da montare)",
+      "level": "Raso",
+      "tablespoon_g": 10.0,
+      "teaspoon_g": 5.0
+    },
+    {
+      "item": "Pastina (cruda)",
+      "level": "Colmo",
+      "tablespoon_g": 14.0,
+      "teaspoon_g": 7.0
+    },
+    {
+      "item": "Riso",
+      "level": "Colmo",
+      "tablespoon_g": 17.0,
+      "teaspoon_g": 9.0
+    },
+    {
+      "item": "Riso",
+      "level": "Raso",
+      "tablespoon_g": 10.0,
+      "teaspoon_g": 6.0
+    },
+    {
+      "item": "Sale fino",
+      "level": "Raso",
+      "tablespoon_g": 14.0,
+      "teaspoon_g": 7.0
+    },
+    {
+      "item": "Sale grosso",
+      "level": "Raso",
+      "tablespoon_g": 13.0,
+      "teaspoon_g": 6.0
+    },
+    {
+      "item": "Zucchero semolato",
+      "level": "Colmo",
+      "tablespoon_g": 16.0,
+      "teaspoon_g": 10.0
+    },
+    {
+      "item": "Zucchero semolato",
+      "level": "Raso",
+      "tablespoon_g": 9.0,
+      "teaspoon_g": 5.0
+    }
+  ]
+}

@@ -1,0 +1,4169 @@
+{
+  "meta": {
+    "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/ricerca-per-ordine-alfabetico",
+    "generated_at": "2026-02-13T19:23:30.702658",
+    "count": 832
+  },
+  "items": [
+    {
+      "crea_id": "120010",
+      "name": "Acciuga o alice",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120010"
+    },
+    {
+      "crea_id": "120020",
+      "name": "Acciuga o alice, sott'olio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120020"
+    },
+    {
+      "crea_id": "120030",
+      "name": "Acciuga o alice, sotto sale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120030"
+    },
+    {
+      "crea_id": "005000",
+      "name": "Aglio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005000"
+    },
+    {
+      "crea_id": "005004",
+      "name": "Aglio Bianco Piacentino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005004"
+    },
+    {
+      "crea_id": "005001",
+      "name": "Aglio Rosso di Castelliri",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005001"
+    },
+    {
+      "crea_id": "005002",
+      "name": "Aglio Rosso di Procerno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005002"
+    },
+    {
+      "crea_id": "005003",
+      "name": "Aglio Rosso di Sulmona",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005003"
+    },
+    {
+      "crea_id": "104033",
+      "name": "Agnello, coscio, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104033"
+    },
+    {
+      "crea_id": "104030",
+      "name": "Agnello, coscio, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104030"
+    },
+    {
+      "crea_id": "104043",
+      "name": "Agnello, costoletta, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104043"
+    },
+    {
+      "crea_id": "104040",
+      "name": "Agnello, costoletta, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104040"
+    },
+    {
+      "crea_id": "104029",
+      "name": "Agnello, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104029"
+    },
+    {
+      "crea_id": "104020",
+      "name": "Agnello, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104020"
+    },
+    {
+      "crea_id": "005025",
+      "name": "Agretti, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005025"
+    },
+    {
+      "crea_id": "005010",
+      "name": "Agretti, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005010"
+    },
+    {
+      "crea_id": "007010",
+      "name": "Albicocche, disidratate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007010"
+    },
+    {
+      "crea_id": "007000",
+      "name": "Albicocche, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007000"
+    },
+    {
+      "crea_id": "007020",
+      "name": "Albicocche, sciroppate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007020"
+    },
+    {
+      "crea_id": "007030",
+      "name": "Albicocche, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007030"
+    },
+    {
+      "crea_id": "007700",
+      "name": "Amarene, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007700"
+    },
+    {
+      "crea_id": "008610",
+      "name": "Anacardi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008610"
+    },
+    {
+      "crea_id": "007460",
+      "name": "Ananas, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007460"
+    },
+    {
+      "crea_id": "007470",
+      "name": "Ananas, sciroppato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007470"
+    },
+    {
+      "crea_id": "106010",
+      "name": "Anatra domestica, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106010"
+    },
+    {
+      "crea_id": "120250",
+      "name": "Anguilla d'allevamento, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120250"
+    },
+    {
+      "crea_id": "120230",
+      "name": "Anguilla di fiume",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120230"
+    },
+    {
+      "crea_id": "120240",
+      "name": "Anguilla di mare",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120240"
+    },
+    {
+      "crea_id": "120210",
+      "name": "Anguilla, affumicata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120210"
+    },
+    {
+      "crea_id": "120220",
+      "name": "Anguilla, marinata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120220"
+    },
+    {
+      "crea_id": "115010",
+      "name": "Animelle di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115010"
+    },
+    {
+      "crea_id": "115019",
+      "name": "Animelle di bovini, cotte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115019"
+    },
+    {
+      "crea_id": "007480",
+      "name": "Anona, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007480"
+    },
+    {
+      "crea_id": "008500",
+      "name": "Arachidi, tostate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008500"
+    },
+    {
+      "crea_id": "128050",
+      "name": "Aragosta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/128050"
+    },
+    {
+      "crea_id": "128055",
+      "name": "Aragosta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/128055"
+    },
+    {
+      "crea_id": "008011",
+      "name": "Arance bionde succo, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008011"
+    },
+    {
+      "crea_id": "008001",
+      "name": "Arance bionde, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008001"
+    },
+    {
+      "crea_id": "008005",
+      "name": "Arance Moro, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008005"
+    },
+    {
+      "crea_id": "008012",
+      "name": "Arance rosse succo, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008012"
+    },
+    {
+      "crea_id": "008004",
+      "name": "Arance rosse, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008004"
+    },
+    {
+      "crea_id": "008006",
+      "name": "Arance Sanguinello, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008006"
+    },
+    {
+      "crea_id": "008010",
+      "name": "Arance succo, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008010"
+    },
+    {
+      "crea_id": "008007",
+      "name": "Arance Tarocco, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008007"
+    },
+    {
+      "crea_id": "008002",
+      "name": "Arance Valencia, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008002"
+    },
+    {
+      "crea_id": "008003",
+      "name": "Arance Washington Navel, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008003"
+    },
+    {
+      "crea_id": "008000",
+      "name": "Arance, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008000"
+    },
+    {
+      "crea_id": "401010",
+      "name": "Aranciata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/401010"
+    },
+    {
+      "crea_id": "120300",
+      "name": "Aringa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120300"
+    },
+    {
+      "crea_id": "120310",
+      "name": "Aringa, affumicata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120310"
+    },
+    {
+      "crea_id": "120320",
+      "name": "Aringa, marinata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120320"
+    },
+    {
+      "crea_id": "120330",
+      "name": "Aringa, sotto sale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120330"
+    },
+    {
+      "crea_id": "005030",
+      "name": "Asparagi di bosco, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005030"
+    },
+    {
+      "crea_id": "005045",
+      "name": "Asparagi di campo, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005045"
+    },
+    {
+      "crea_id": "005040",
+      "name": "Asparagi di campo, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005040"
+    },
+    {
+      "crea_id": "005050",
+      "name": "Asparagi di serra, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005050"
+    },
+    {
+      "crea_id": "007490",
+      "name": "Avocado, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007490"
+    },
+    {
+      "crea_id": "207010",
+      "name": "Baba' al rhum",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/207010"
+    },
+    {
+      "crea_id": "007500",
+      "name": "Babaco, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007500"
+    },
+    {
+      "crea_id": "007510",
+      "name": "Banane, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007510"
+    },
+    {
+      "crea_id": "005065",
+      "name": "Barbabietole rosse, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005065"
+    },
+    {
+      "crea_id": "005060",
+      "name": "Barbabietole rosse, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005060"
+    },
+    {
+      "crea_id": "214000",
+      "name": "Barretta al cocco ricoperta di cioccolato, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/214000"
+    },
+    {
+      "crea_id": "006800",
+      "name": "Basilico, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006800"
+    },
+    {
+      "crea_id": "003000",
+      "name": "Bastoncini di crusca di frumento",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/003000"
+    },
+    {
+      "crea_id": "403010",
+      "name": "Bevanda alcolica, Aperitivo a base di vino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/403010"
+    },
+    {
+      "crea_id": "404010",
+      "name": "Bevanda alcolica, Birra chiara",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/404010"
+    },
+    {
+      "crea_id": "408010",
+      "name": "Bevanda alcolica, Brandy",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/408010"
+    },
+    {
+      "crea_id": "408100",
+      "name": "Bevanda alcolica, Grappa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/408100"
+    },
+    {
+      "crea_id": "407010",
+      "name": "Bevanda alcolica, Liquori da dessert",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/407010"
+    },
+    {
+      "crea_id": "407510",
+      "name": "Bevanda alcolica, Marsala all'uovo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/407510"
+    },
+    {
+      "crea_id": "406010",
+      "name": "Bevanda alcolica, Marsala tipico",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/406010"
+    },
+    {
+      "crea_id": "409000",
+      "name": "Bevanda alcolica, Spumante",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/409000"
+    },
+    {
+      "crea_id": "406500",
+      "name": "Bevanda alcolica, Vermouth dolce",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/406500"
+    },
+    {
+      "crea_id": "406510",
+      "name": "Bevanda alcolica, Vermouth secco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/406510"
+    },
+    {
+      "crea_id": "405010",
+      "name": "Bevanda alcolica, Vino da pasto bianco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/405010"
+    },
+    {
+      "crea_id": "405020",
+      "name": "Bevanda alcolica, Vino da pasto rosso",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/405020"
+    },
+    {
+      "crea_id": "408900",
+      "name": "Bevanda alcolica, Whisky",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/408900"
+    },
+    {
+      "crea_id": "401100",
+      "name": "Bevanda tipo cola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/401100"
+    },
+    {
+      "crea_id": "005084",
+      "name": "Bieta, cotta, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005084"
+    },
+    {
+      "crea_id": "005085",
+      "name": "Bieta, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005085"
+    },
+    {
+      "crea_id": "005080",
+      "name": "Bieta, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005080"
+    },
+    {
+      "crea_id": "000960",
+      "name": "Biscotti, alla soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000960"
+    },
+    {
+      "crea_id": "000900",
+      "name": "Biscotti, frollini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000900"
+    },
+    {
+      "crea_id": "000910",
+      "name": "Biscotti, integrali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000910"
+    },
+    {
+      "crea_id": "000970",
+      "name": "Biscotti, integrali, con soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000970"
+    },
+    {
+      "crea_id": "000950",
+      "name": "Biscotti, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000950"
+    },
+    {
+      "crea_id": "000990",
+      "name": "Biscotti, wafers",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000990"
+    },
+    {
+      "crea_id": "120400",
+      "name": "Boga",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120400"
+    },
+    {
+      "crea_id": "120590",
+      "name": "Bottarga, cefalo muggine",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120590"
+    },
+    {
+      "crea_id": "101230",
+      "name": "Bovino adulto o vitellone, copertina di sotto, copertina di spalla, sottospalla e collo, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101230"
+    },
+    {
+      "crea_id": "101150",
+      "name": "Bovino adulto o vitellone, costata, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101150"
+    },
+    {
+      "crea_id": "101160",
+      "name": "Bovino adulto o vitellone, fesa, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101160"
+    },
+    {
+      "crea_id": "101170",
+      "name": "Bovino adulto o vitellone, filetto, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101170"
+    },
+    {
+      "crea_id": "101240",
+      "name": "Bovino adulto o vitellone, geretto anteriore e posteriore, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101240"
+    },
+    {
+      "crea_id": "101180",
+      "name": "Bovino adulto o vitellone, girello, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101180"
+    },
+    {
+      "crea_id": "101190",
+      "name": "Bovino adulto o vitellone, lombata, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101190"
+    },
+    {
+      "crea_id": "101200",
+      "name": "Bovino adulto o vitellone, noce, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101200"
+    },
+    {
+      "crea_id": "101250",
+      "name": "Bovino adulto o vitellone, pancia, biancostato e punta di petto, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101250"
+    },
+    {
+      "crea_id": "101210",
+      "name": "Bovino adulto o vitellone, scamone, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101210"
+    },
+    {
+      "crea_id": "101220",
+      "name": "Bovino adulto o vitellone, sottofesa, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101220"
+    },
+    {
+      "crea_id": "101260",
+      "name": "Bovino adulto o vitellone, spalla, muscolo, girello e fesone, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101260"
+    },
+    {
+      "crea_id": "101120",
+      "name": "Bovino adulto o vitellone, tagli anteriori, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101120"
+    },
+    {
+      "crea_id": "101130",
+      "name": "Bovino adulto o vitellone, tagli posteriori, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101130"
+    },
+    {
+      "crea_id": "110020",
+      "name": "Bresaola della Valtellina IGP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110020"
+    },
+    {
+      "crea_id": "160410",
+      "name": "Brie",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160410"
+    },
+    {
+      "crea_id": "005095",
+      "name": "Broccoletti di rapa, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005095"
+    },
+    {
+      "crea_id": "005090",
+      "name": "Broccoletti di rapa, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005090"
+    },
+    {
+      "crea_id": "005105",
+      "name": "Broccolo a testa, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005105"
+    },
+    {
+      "crea_id": "005110",
+      "name": "Broccolo a testa, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005110"
+    },
+    {
+      "crea_id": "102000",
+      "name": "Bufalo, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/102000"
+    },
+    {
+      "crea_id": "160420",
+      "name": "Burrini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160420"
+    },
+    {
+      "crea_id": "190010",
+      "name": "Burro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/190010"
+    },
+    {
+      "crea_id": "009010",
+      "name": "Burro d'arachidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009010"
+    },
+    {
+      "crea_id": "160430",
+      "name": "Butirro calabro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160430"
+    },
+    {
+      "crea_id": "508010",
+      "name": "Cacao amaro, in polvere",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/508010"
+    },
+    {
+      "crea_id": "160800",
+      "name": "Caciocavallo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160800"
+    },
+    {
+      "crea_id": "160810",
+      "name": "Cacioricotta di capra",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160810"
+    },
+    {
+      "crea_id": "160820",
+      "name": "Caciotta mista",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160820"
+    },
+    {
+      "crea_id": "160830",
+      "name": "Caciotta romana di pecora",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160830"
+    },
+    {
+      "crea_id": "160840",
+      "name": "Caciotta toscana",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160840"
+    },
+    {
+      "crea_id": "160860",
+      "name": "Caciottina fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160860"
+    },
+    {
+      "crea_id": "166010",
+      "name": "Caciottina mista",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166010"
+    },
+    {
+      "crea_id": "160850",
+      "name": "Caciottina vaccina",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160850"
+    },
+    {
+      "crea_id": "508200",
+      "name": "Caffe' tostato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/508200"
+    },
+    {
+      "crea_id": "127100",
+      "name": "Calamaro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127100"
+    },
+    {
+      "crea_id": "127110",
+      "name": "Calamaro surgelato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127110"
+    },
+    {
+      "crea_id": "160870",
+      "name": "Camembert",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160870"
+    },
+    {
+      "crea_id": "204010",
+      "name": "Canditi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/204010"
+    },
+    {
+      "crea_id": "207020",
+      "name": "Cannoli alla crema, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/207020"
+    },
+    {
+      "crea_id": "120290",
+      "name": "Capitone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120290"
+    },
+    {
+      "crea_id": "110100",
+      "name": "Capocollo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110100"
+    },
+    {
+      "crea_id": "110110",
+      "name": "Capocollo di Calabria",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110110"
+    },
+    {
+      "crea_id": "104250",
+      "name": "Capra, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104250"
+    },
+    {
+      "crea_id": "104300",
+      "name": "Capretto, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104300"
+    },
+    {
+      "crea_id": "202010",
+      "name": "Caramelle dure",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/202010"
+    },
+    {
+      "crea_id": "202020",
+      "name": "Caramelle tipo \"mou\"",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/202020"
+    },
+    {
+      "crea_id": "005124",
+      "name": "Carciofi, cotti, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005124"
+    },
+    {
+      "crea_id": "005125",
+      "name": "Carciofi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005125"
+    },
+    {
+      "crea_id": "005120",
+      "name": "Carciofi, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005120"
+    },
+    {
+      "crea_id": "005130",
+      "name": "Carciofi, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005130"
+    },
+    {
+      "crea_id": "005131",
+      "name": "Carciofo Romanesco IGP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005131"
+    },
+    {
+      "crea_id": "005136",
+      "name": "Carciofo, Spinoso sardo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005136"
+    },
+    {
+      "crea_id": "005132",
+      "name": "Carciofo, verde, precoce",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005132"
+    },
+    {
+      "crea_id": "005134",
+      "name": "Carciofo, violetto, precoce",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005134"
+    },
+    {
+      "crea_id": "005195",
+      "name": "Cardi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005195"
+    },
+    {
+      "crea_id": "005140",
+      "name": "Cardi, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005140"
+    },
+    {
+      "crea_id": "113010",
+      "name": "Carne bovina in gelatina, in scatola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/113010"
+    },
+    {
+      "crea_id": "113020",
+      "name": "Carne bovina pressata, in scatola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/113020"
+    },
+    {
+      "crea_id": "005154",
+      "name": "Carote, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005154"
+    },
+    {
+      "crea_id": "005155",
+      "name": "Carote, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005155"
+    },
+    {
+      "crea_id": "005150",
+      "name": "Carote, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005150"
+    },
+    {
+      "crea_id": "120500",
+      "name": "Carpa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120500"
+    },
+    {
+      "crea_id": "008510",
+      "name": "Carrube",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008510"
+    },
+    {
+      "crea_id": "008520",
+      "name": "Castagne",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008520"
+    },
+    {
+      "crea_id": "008521",
+      "name": "Castagne, arrostite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008521"
+    },
+    {
+      "crea_id": "008525",
+      "name": "Castagne, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008525"
+    },
+    {
+      "crea_id": "008530",
+      "name": "Castagne, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008530"
+    },
+    {
+      "crea_id": "103020",
+      "name": "Cavallo, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/103020"
+    },
+    {
+      "crea_id": "103010",
+      "name": "Cavallo, tessuto muscolare e grasso, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/103010"
+    },
+    {
+      "crea_id": "123390",
+      "name": "Caviale, storione",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123390"
+    },
+    {
+      "crea_id": "005164",
+      "name": "Cavolfiore, cotto, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005164"
+    },
+    {
+      "crea_id": "005165",
+      "name": "Cavolfiore, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005165"
+    },
+    {
+      "crea_id": "005160",
+      "name": "Cavolfiore, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005160"
+    },
+    {
+      "crea_id": "005175",
+      "name": "Cavoli di Bruxelles, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005175"
+    },
+    {
+      "crea_id": "005170",
+      "name": "Cavoli di Bruxelles, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005170"
+    },
+    {
+      "crea_id": "005185",
+      "name": "Cavolo broccolo verde ramoso, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005185"
+    },
+    {
+      "crea_id": "005180",
+      "name": "Cavolo broccolo verde ramoso, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005180"
+    },
+    {
+      "crea_id": "005190",
+      "name": "Cavolo cappuccio, rosso, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005190"
+    },
+    {
+      "crea_id": "005205",
+      "name": "Cavolo cappuccio, verde, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005205"
+    },
+    {
+      "crea_id": "005200",
+      "name": "Cavolo cappuccio, verde, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005200"
+    },
+    {
+      "crea_id": "005215",
+      "name": "Cavolo verza, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005215"
+    },
+    {
+      "crea_id": "005210",
+      "name": "Cavolo verza, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005210"
+    },
+    {
+      "crea_id": "004010",
+      "name": "Ceci, in scatola, scolati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004010"
+    },
+    {
+      "crea_id": "004000",
+      "name": "Ceci, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004000"
+    },
+    {
+      "crea_id": "004005",
+      "name": "Ceci, secchi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004005"
+    },
+    {
+      "crea_id": "120510",
+      "name": "Cefalo muggine",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120510"
+    },
+    {
+      "crea_id": "120610",
+      "name": "Cernia surgelata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120610"
+    },
+    {
+      "crea_id": "115110",
+      "name": "Cervello di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115110"
+    },
+    {
+      "crea_id": "108010",
+      "name": "Cervo, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108010"
+    },
+    {
+      "crea_id": "005220",
+      "name": "Cetrioli, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005220"
+    },
+    {
+      "crea_id": "160880",
+      "name": "Cheddar",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160880"
+    },
+    {
+      "crea_id": "119020",
+      "name": "Cheese burger, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119020"
+    },
+    {
+      "crea_id": "119040",
+      "name": "Chicken Nuggets, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119040"
+    },
+    {
+      "crea_id": "110130",
+      "name": "Ciccioli",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110130"
+    },
+    {
+      "crea_id": "005230",
+      "name": "Cicoria, da taglio, coltivata, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005230"
+    },
+    {
+      "crea_id": "005245",
+      "name": "Cicoria, di campo, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005245"
+    },
+    {
+      "crea_id": "005240",
+      "name": "Cicoria, di campo, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005240"
+    },
+    {
+      "crea_id": "005250",
+      "name": "Cicoria, witloof o indivia belga, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005250"
+    },
+    {
+      "crea_id": "007720",
+      "name": "Ciliege, candite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007720"
+    },
+    {
+      "crea_id": "007710",
+      "name": "Ciliege, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007710"
+    },
+    {
+      "crea_id": "203010",
+      "name": "Cioccolato, al latte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/203010"
+    },
+    {
+      "crea_id": "203030",
+      "name": "Cioccolato, al latte con nocciole",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/203030"
+    },
+    {
+      "crea_id": "203020",
+      "name": "Cioccolato, fondente",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/203020"
+    },
+    {
+      "crea_id": "005305",
+      "name": "Cipolle, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005305"
+    },
+    {
+      "crea_id": "005300",
+      "name": "Cipolle, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005300"
+    },
+    {
+      "crea_id": "005315",
+      "name": "Cipolline, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005315"
+    },
+    {
+      "crea_id": "005310",
+      "name": "Cipolline, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005310"
+    },
+    {
+      "crea_id": "008020",
+      "name": "Clementine, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008020"
+    },
+    {
+      "crea_id": "007530",
+      "name": "Cocco, essiccato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007530"
+    },
+    {
+      "crea_id": "007520",
+      "name": "Cocco, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007520"
+    },
+    {
+      "crea_id": "008940",
+      "name": "Cocktail di frutta sciroppata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008940"
+    },
+    {
+      "crea_id": "007040",
+      "name": "Cocomero, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007040"
+    },
+    {
+      "crea_id": "107010",
+      "name": "Coniglio intero, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/107010"
+    },
+    {
+      "crea_id": "107030",
+      "name": "Coniglio, coscio, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/107030"
+    },
+    {
+      "crea_id": "107020",
+      "name": "Coniglio, intero surgelato, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/107020"
+    },
+    {
+      "crea_id": "107019",
+      "name": "Coniglio, intero, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/107019"
+    },
+    {
+      "crea_id": "110150",
+      "name": "Coppa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110150"
+    },
+    {
+      "crea_id": "115120",
+      "name": "Coratella di agnello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115120"
+    },
+    {
+      "crea_id": "115130",
+      "name": "Coratella di vitello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115130"
+    },
+    {
+      "crea_id": "120710",
+      "name": "Coregone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120710"
+    },
+    {
+      "crea_id": "003020",
+      "name": "Corn flakes",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/003020"
+    },
+    {
+      "crea_id": "002500",
+      "name": "Cornetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/002500"
+    },
+    {
+      "crea_id": "120810",
+      "name": "Corvina",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120810"
+    },
+    {
+      "crea_id": "110195",
+      "name": "Cotechino Modena IGP, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110195"
+    },
+    {
+      "crea_id": "110190",
+      "name": "Cotechino, confezionato precotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110190"
+    },
+    {
+      "crea_id": "000046",
+      "name": "Couscous, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000046"
+    },
+    {
+      "crea_id": "000045",
+      "name": "Couscous, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000045"
+    },
+    {
+      "crea_id": "127120",
+      "name": "Cozza o mitilo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127120"
+    },
+    {
+      "crea_id": "001000",
+      "name": "Crackers, al formaggio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001000"
+    },
+    {
+      "crea_id": "001010",
+      "name": "Crackers, alla soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001010"
+    },
+    {
+      "crea_id": "001030",
+      "name": "Crackers, integrali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001030"
+    },
+    {
+      "crea_id": "001020",
+      "name": "Crackers, salati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001020"
+    },
+    {
+      "crea_id": "140100",
+      "name": "Crema di latte, 12% di lipidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/140100"
+    },
+    {
+      "crea_id": "203500",
+      "name": "Crema di nocciole e cacao",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/203500"
+    },
+    {
+      "crea_id": "160890",
+      "name": "Crescenza",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160890"
+    },
+    {
+      "crea_id": "002510",
+      "name": "Croissants",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/002510"
+    },
+    {
+      "crea_id": "208500",
+      "name": "Crostata, con crema al cacao, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/208500"
+    },
+    {
+      "crea_id": "208520",
+      "name": "Crostata, con marmellata di albicocche, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/208520"
+    },
+    {
+      "crea_id": "208510",
+      "name": "Crostata, con marmellata, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/208510"
+    },
+    {
+      "crea_id": "000150",
+      "name": "Crusca di frumento",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000150"
+    },
+    {
+      "crea_id": "115210",
+      "name": "Cuore di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115210"
+    },
+    {
+      "crea_id": "115219",
+      "name": "Cuore di bovini, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115219"
+    },
+    {
+      "crea_id": "115220",
+      "name": "Cuore di equini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115220"
+    },
+    {
+      "crea_id": "115230",
+      "name": "Cuore di ovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115230"
+    },
+    {
+      "crea_id": "115240",
+      "name": "Cuore di pollo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115240"
+    },
+    {
+      "crea_id": "115249",
+      "name": "Cuore di pollo, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115249"
+    },
+    {
+      "crea_id": "115250",
+      "name": "Cuore di suino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115250"
+    },
+    {
+      "crea_id": "115260",
+      "name": "Cuore di tacchino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115260"
+    },
+    {
+      "crea_id": "115269",
+      "name": "Cuore di tacchino, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115269"
+    },
+    {
+      "crea_id": "503010",
+      "name": "Dadi da brodo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/503010"
+    },
+    {
+      "crea_id": "108100",
+      "name": "Daino, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108100"
+    },
+    {
+      "crea_id": "007630",
+      "name": "Datteri, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007630"
+    },
+    {
+      "crea_id": "120910",
+      "name": "Dentice",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120910"
+    },
+    {
+      "crea_id": "120920",
+      "name": "Dentice, surgelato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/120920"
+    },
+    {
+      "crea_id": "161200",
+      "name": "Dolce verde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/161200"
+    },
+    {
+      "crea_id": "161600",
+      "name": "Edam",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/161600"
+    },
+    {
+      "crea_id": "161610",
+      "name": "Emmenthal",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/161610"
+    },
+    {
+      "crea_id": "108510",
+      "name": "Fagiano, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108510"
+    },
+    {
+      "crea_id": "004100",
+      "name": "Fagioli",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004100"
+    },
+    {
+      "crea_id": "004220",
+      "name": "Fagioli dall'occhio, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004220"
+    },
+    {
+      "crea_id": "004110",
+      "name": "Fagioli, Borlotti, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004110"
+    },
+    {
+      "crea_id": "004115",
+      "name": "Fagioli, Borlotti, freschi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004115"
+    },
+    {
+      "crea_id": "004130",
+      "name": "Fagioli, Borlotti, in scatola, scolati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004130"
+    },
+    {
+      "crea_id": "004120",
+      "name": "Fagioli, Borlotti, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004120"
+    },
+    {
+      "crea_id": "004125",
+      "name": "Fagioli, Borlotti, secchi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004125"
+    },
+    {
+      "crea_id": "004210",
+      "name": "Fagioli, Cannellini in scatola, scolati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004210"
+    },
+    {
+      "crea_id": "004200",
+      "name": "Fagioli, Cannellini, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004200"
+    },
+    {
+      "crea_id": "004205",
+      "name": "Fagioli, Cannellini, secchi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004205"
+    },
+    {
+      "crea_id": "004105",
+      "name": "Fagioli, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004105"
+    },
+    {
+      "crea_id": "004305",
+      "name": "Fagiolini a corallo, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004305"
+    },
+    {
+      "crea_id": "004310",
+      "name": "Fagiolini, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004310"
+    },
+    {
+      "crea_id": "004325",
+      "name": "Fagiolini, surgelati, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004325"
+    },
+    {
+      "crea_id": "106020",
+      "name": "Faraona, coscio, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106020"
+    },
+    {
+      "crea_id": "106032",
+      "name": "Faraona, coscio, senza pelle, cotto, allo spiedo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106032"
+    },
+    {
+      "crea_id": "106030",
+      "name": "Faraona, coscio, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106030"
+    },
+    {
+      "crea_id": "106052",
+      "name": "Faraona, petto, senza pelle, cotto, allo spiedo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106052"
+    },
+    {
+      "crea_id": "106050",
+      "name": "Faraona, petto, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106050"
+    },
+    {
+      "crea_id": "000200",
+      "name": "Farina d'avena",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000200"
+    },
+    {
+      "crea_id": "000210",
+      "name": "Farina d'orzo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000210"
+    },
+    {
+      "crea_id": "504010",
+      "name": "Farina di castagne",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/504010"
+    },
+    {
+      "crea_id": "000250",
+      "name": "Farina di frumento, duro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000250"
+    },
+    {
+      "crea_id": "000240",
+      "name": "Farina di frumento, integrale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000240"
+    },
+    {
+      "crea_id": "000230",
+      "name": "Farina di frumento, tipo 0",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000230"
+    },
+    {
+      "crea_id": "000220",
+      "name": "Farina di frumento, tipo 00",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000220"
+    },
+    {
+      "crea_id": "000260",
+      "name": "Farina di mais",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000260"
+    },
+    {
+      "crea_id": "000320",
+      "name": "Farina di manioca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000320"
+    },
+    {
+      "crea_id": "000270",
+      "name": "Farina di riso",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000270"
+    },
+    {
+      "crea_id": "000280",
+      "name": "Farina di segale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000280"
+    },
+    {
+      "crea_id": "000290",
+      "name": "Farina di soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000290"
+    },
+    {
+      "crea_id": "000025",
+      "name": "Farro perlato, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000025"
+    },
+    {
+      "crea_id": "000020",
+      "name": "Farro perlato, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000020"
+    },
+    {
+      "crea_id": "004400",
+      "name": "Fave, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004400"
+    },
+    {
+      "crea_id": "004406",
+      "name": "Fave, fresche, cotte, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004406"
+    },
+    {
+      "crea_id": "004410",
+      "name": "Fave, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004410"
+    },
+    {
+      "crea_id": "004425",
+      "name": "Fave, secche, sgusciate, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004425"
+    },
+    {
+      "crea_id": "004420",
+      "name": "Fave, secche, sgusciate, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004420"
+    },
+    {
+      "crea_id": "504100",
+      "name": "Fecola di patate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/504100"
+    },
+    {
+      "crea_id": "115320",
+      "name": "Fegato di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115320"
+    },
+    {
+      "crea_id": "115329",
+      "name": "Fegato di bovini, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115329"
+    },
+    {
+      "crea_id": "115340",
+      "name": "Fegato di equini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115340"
+    },
+    {
+      "crea_id": "115350",
+      "name": "Fegato di ovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115350"
+    },
+    {
+      "crea_id": "115360",
+      "name": "Fegato di pollo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115360"
+    },
+    {
+      "crea_id": "115369",
+      "name": "Fegato di pollo, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115369"
+    },
+    {
+      "crea_id": "115370",
+      "name": "Fegato di suini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115370"
+    },
+    {
+      "crea_id": "115379",
+      "name": "Fegato di suini, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115379"
+    },
+    {
+      "crea_id": "115380",
+      "name": "Fegato di tacchino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115380"
+    },
+    {
+      "crea_id": "115389",
+      "name": "Fegato di tacchino, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115389"
+    },
+    {
+      "crea_id": "007550",
+      "name": "Feijoa, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007550"
+    },
+    {
+      "crea_id": "162000",
+      "name": "Feta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162000"
+    },
+    {
+      "crea_id": "001500",
+      "name": "Fette biscottate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001500"
+    },
+    {
+      "crea_id": "001510",
+      "name": "Fette biscottate, integrali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001510"
+    },
+    {
+      "crea_id": "007080",
+      "name": "Fichi d'india, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007080"
+    },
+    {
+      "crea_id": "007060",
+      "name": "Fichi, canditi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007060"
+    },
+    {
+      "crea_id": "007050",
+      "name": "Fichi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007050"
+    },
+    {
+      "crea_id": "007053",
+      "name": "Fichi, seccati al forno e mandorlati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007053"
+    },
+    {
+      "crea_id": "007070",
+      "name": "Fichi, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007070"
+    },
+    {
+      "crea_id": "005324",
+      "name": "Finocchi, cotti, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005324"
+    },
+    {
+      "crea_id": "005325",
+      "name": "Finocchi, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005325"
+    },
+    {
+      "crea_id": "005320",
+      "name": "Finocchi, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005320"
+    },
+    {
+      "crea_id": "003030",
+      "name": "Fiocchi d'avena",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/003030"
+    },
+    {
+      "crea_id": "170010",
+      "name": "Fiocchi di formaggio magro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/170010"
+    },
+    {
+      "crea_id": "162010",
+      "name": "Fior di latte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162010"
+    },
+    {
+      "crea_id": "005330",
+      "name": "Fiori di zucca, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005330"
+    },
+    {
+      "crea_id": "005340",
+      "name": "Foglie di rapa, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005340"
+    },
+    {
+      "crea_id": "162020",
+      "name": "Fontina",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162020"
+    },
+    {
+      "crea_id": "162030",
+      "name": "Formaggino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162030"
+    },
+    {
+      "crea_id": "162040",
+      "name": "Formaggino con ridotto contenuto di grasso",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162040"
+    },
+    {
+      "crea_id": "162050",
+      "name": "Formaggio cremoso spalmabile",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162050"
+    },
+    {
+      "crea_id": "170510",
+      "name": "Formaggio cremoso spalmabile, light",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/170510"
+    },
+    {
+      "crea_id": "160400",
+      "name": "Formaggio molle da tavola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/160400"
+    },
+    {
+      "crea_id": "007730",
+      "name": "Fragole, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007730"
+    },
+    {
+      "crea_id": "000030",
+      "name": "Frumento duro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000030"
+    },
+    {
+      "crea_id": "000040",
+      "name": "Frumento tenero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000040"
+    },
+    {
+      "crea_id": "006016",
+      "name": "Funghi coltivati, pleurotes, cotti, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006016"
+    },
+    {
+      "crea_id": "006010",
+      "name": "Funghi coltivati, pleurotes, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006010"
+    },
+    {
+      "crea_id": "006006",
+      "name": "Funghi coltivati, prataioli, cotti, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006006"
+    },
+    {
+      "crea_id": "006000",
+      "name": "Funghi coltivati, prataioli, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006000"
+    },
+    {
+      "crea_id": "006020",
+      "name": "Funghi ovuli, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006020"
+    },
+    {
+      "crea_id": "006030",
+      "name": "Funghi porcini, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006030"
+    },
+    {
+      "crea_id": "106100",
+      "name": "Gallina, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106100"
+    },
+    {
+      "crea_id": "128100",
+      "name": "Gamberi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/128100"
+    },
+    {
+      "crea_id": "128110",
+      "name": "Gamberi sgusciati, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/128110"
+    },
+    {
+      "crea_id": "206260",
+      "name": "Gelato confezionato, biscotto con crema, zabaione e cioccolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206260"
+    },
+    {
+      "crea_id": "206010",
+      "name": "Gelato confezionato, cacao, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206010"
+    },
+    {
+      "crea_id": "206020",
+      "name": "Gelato confezionato, caffè, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206020"
+    },
+    {
+      "crea_id": "206270",
+      "name": "Gelato confezionato, cono con panna e cioccolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206270"
+    },
+    {
+      "crea_id": "206280",
+      "name": "Gelato confezionato, cono con panna, scaglie di cioccolato e noccioline",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206280"
+    },
+    {
+      "crea_id": "206040",
+      "name": "Gelato confezionato, fior di latte, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206040"
+    },
+    {
+      "crea_id": "206050",
+      "name": "Gelato confezionato, fior di latte, ricoperto di sorbetto alla fragola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206050"
+    },
+    {
+      "crea_id": "206710",
+      "name": "Gelato confezionato, ghiacciolo all'arancio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206710"
+    },
+    {
+      "crea_id": "206060",
+      "name": "Gelato confezionato, nocciola, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206060"
+    },
+    {
+      "crea_id": "206080",
+      "name": "Gelato confezionato, panna ricoperta di cioccolato fondente",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206080"
+    },
+    {
+      "crea_id": "206070",
+      "name": "Gelato confezionato, panna, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206070"
+    },
+    {
+      "crea_id": "206800",
+      "name": "Gelato confezionato, sorbetto al limone, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206800"
+    },
+    {
+      "crea_id": "206090",
+      "name": "Gelato confezionato, stracciatella, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206090"
+    },
+    {
+      "crea_id": "206100",
+      "name": "Gelato confezionato, vaniglia, in vaschetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/206100"
+    },
+    {
+      "crea_id": "000330",
+      "name": "Germe di frumento",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000330"
+    },
+    {
+      "crea_id": "005350",
+      "name": "Germogli di soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005350"
+    },
+    {
+      "crea_id": "006591",
+      "name": "Gnocchi di patate, cotti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006591"
+    },
+    {
+      "crea_id": "006590",
+      "name": "Gnocchi di patate, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006590"
+    },
+    {
+      "crea_id": "202500",
+      "name": "Gomme da masticare, lastrine e confetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/202500"
+    },
+    {
+      "crea_id": "162400",
+      "name": "Gorgonzola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162400"
+    },
+    {
+      "crea_id": "162410",
+      "name": "Grana Padano, DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162410"
+    },
+    {
+      "crea_id": "128200",
+      "name": "Granchio, in scatola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/128200"
+    },
+    {
+      "crea_id": "000050",
+      "name": "Grano saraceno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000050"
+    },
+    {
+      "crea_id": "002000",
+      "name": "Grissini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/002000"
+    },
+    {
+      "crea_id": "162420",
+      "name": "Groviera",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/162420"
+    },
+    {
+      "crea_id": "007560",
+      "name": "Guava, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007560"
+    },
+    {
+      "crea_id": "121010",
+      "name": "Halibut",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121010"
+    },
+    {
+      "crea_id": "119050",
+      "name": "Hamburger piccolo, solo carne, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119050"
+    },
+    {
+      "crea_id": "119030",
+      "name": "Hamburger, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119030"
+    },
+    {
+      "crea_id": "005400",
+      "name": "Indivia, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005400"
+    },
+    {
+      "crea_id": "163200",
+      "name": "Italico",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/163200"
+    },
+    {
+      "crea_id": "502260",
+      "name": "Ketchup, salsa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/502260"
+    },
+    {
+      "crea_id": "007570",
+      "name": "Kiwi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007570"
+    },
+    {
+      "crea_id": "007740",
+      "name": "Lamponi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007740"
+    },
+    {
+      "crea_id": "191010",
+      "name": "Lardo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/191010"
+    },
+    {
+      "crea_id": "121100",
+      "name": "Lattarini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121100"
+    },
+    {
+      "crea_id": "132010",
+      "name": "Latte di bufala",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/132010"
+    },
+    {
+      "crea_id": "130010",
+      "name": "Latte di capra",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/130010"
+    },
+    {
+      "crea_id": "131010",
+      "name": "Latte di pecora",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/131010"
+    },
+    {
+      "crea_id": "135510",
+      "name": "Latte di vacca, condensato, zuccherato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135510"
+    },
+    {
+      "crea_id": "135520",
+      "name": "Latte di vacca, evaporato, non zuccherato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135520"
+    },
+    {
+      "crea_id": "135610",
+      "name": "Latte di vacca, in polvere, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135610"
+    },
+    {
+      "crea_id": "135620",
+      "name": "Latte di vacca, in polvere, parzialmente scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135620"
+    },
+    {
+      "crea_id": "135630",
+      "name": "Latte di vacca, in polvere, scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135630"
+    },
+    {
+      "crea_id": "135010",
+      "name": "Latte di vacca, pastorizzato, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135010"
+    },
+    {
+      "crea_id": "135020",
+      "name": "Latte di vacca, pastorizzato, parzialmente scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135020"
+    },
+    {
+      "crea_id": "135030",
+      "name": "Latte di vacca, pastorizzato, scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135030"
+    },
+    {
+      "crea_id": "135810",
+      "name": "Latte di vacca, UHT, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135810"
+    },
+    {
+      "crea_id": "135820",
+      "name": "Latte di vacca, UHT, parzialmente scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/135820"
+    },
+    {
+      "crea_id": "164400",
+      "name": "Latteria",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/164400"
+    },
+    {
+      "crea_id": "005420",
+      "name": "Lattuga, a cappuccio, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005420"
+    },
+    {
+      "crea_id": "005430",
+      "name": "Lattuga, da taglio, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005430"
+    },
+    {
+      "crea_id": "005410",
+      "name": "Lattuga, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005410"
+    },
+    {
+      "crea_id": "005436",
+      "name": "Lattughino IV gamma, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005436"
+    },
+    {
+      "crea_id": "005435",
+      "name": "Lattughino, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005435"
+    },
+    {
+      "crea_id": "202030",
+      "name": "Lenti colorate ripiene di cioccolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/202030"
+    },
+    {
+      "crea_id": "004510",
+      "name": "Lenticchie, in scatola, scolate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004510"
+    },
+    {
+      "crea_id": "004500",
+      "name": "Lenticchie, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004500"
+    },
+    {
+      "crea_id": "004505",
+      "name": "Lenticchie, secche, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004505"
+    },
+    {
+      "crea_id": "503100",
+      "name": "Lievito di birra, compresso",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/503100"
+    },
+    {
+      "crea_id": "008030",
+      "name": "Limoni, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008030"
+    },
+    {
+      "crea_id": "008040",
+      "name": "Limoni, succo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008040"
+    },
+    {
+      "crea_id": "115400",
+      "name": "Lingua di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115400"
+    },
+    {
+      "crea_id": "115409",
+      "name": "Lingua di bovini, cotta, fritta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115409"
+    },
+    {
+      "crea_id": "007580",
+      "name": "Litchi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007580"
+    },
+    {
+      "crea_id": "007090",
+      "name": "Loti o kaki, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007090"
+    },
+    {
+      "crea_id": "121200",
+      "name": "Luccio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121200"
+    },
+    {
+      "crea_id": "109010",
+      "name": "Lumaca, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/109010"
+    },
+    {
+      "crea_id": "004600",
+      "name": "Lupini, ammollati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004600"
+    },
+    {
+      "crea_id": "008620",
+      "name": "Macadamia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008620"
+    },
+    {
+      "crea_id": "105236",
+      "name": "Maiale, bistecca, cotto, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105236"
+    },
+    {
+      "crea_id": "105230",
+      "name": "Maiale, bistecca, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105230"
+    },
+    {
+      "crea_id": "105200",
+      "name": "Maiale, coscio, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105200"
+    },
+    {
+      "crea_id": "105210",
+      "name": "Maiale, lombo, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105210"
+    },
+    {
+      "crea_id": "105600",
+      "name": "Maiale, pesante, coscio, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105600"
+    },
+    {
+      "crea_id": "105700",
+      "name": "Maiale, pesante, lombo, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105700"
+    },
+    {
+      "crea_id": "105800",
+      "name": "Maiale, pesante, spalla, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105800"
+    },
+    {
+      "crea_id": "105220",
+      "name": "Maiale, spalla, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/105220"
+    },
+    {
+      "crea_id": "502760",
+      "name": "Maionese, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/502760"
+    },
+    {
+      "crea_id": "000060",
+      "name": "Mais",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000060"
+    },
+    {
+      "crea_id": "000300",
+      "name": "Mais, amido",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000300"
+    },
+    {
+      "crea_id": "000070",
+      "name": "Mais, dolce, in scatola, sgocciolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000070"
+    },
+    {
+      "crea_id": "008050",
+      "name": "Mandaranci, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008050"
+    },
+    {
+      "crea_id": "008060",
+      "name": "Mandarini, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008060"
+    },
+    {
+      "crea_id": "008540",
+      "name": "Mandorle dolci, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008540"
+    },
+    {
+      "crea_id": "007590",
+      "name": "Mango, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007590"
+    },
+    {
+      "crea_id": "009100",
+      "name": "Margarina, 100% vegetale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009100"
+    },
+    {
+      "crea_id": "009110",
+      "name": "Margarina, 2/3 di grassi animali, 1/3 di grassi vegetali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009110"
+    },
+    {
+      "crea_id": "204500",
+      "name": "Marmellata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/204500"
+    },
+    {
+      "crea_id": "164800",
+      "name": "Mascarpone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/164800"
+    },
+    {
+      "crea_id": "007100",
+      "name": "Melagrane, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007100"
+    },
+    {
+      "crea_id": "005507",
+      "name": "Melanzane, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005507"
+    },
+    {
+      "crea_id": "005506",
+      "name": "Melanzane, cotte, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005506"
+    },
+    {
+      "crea_id": "005500",
+      "name": "Melanzane, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005500"
+    },
+    {
+      "crea_id": "007220",
+      "name": "Mele cotogne, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007220"
+    },
+    {
+      "crea_id": "007190",
+      "name": "Mele, disidratate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007190"
+    },
+    {
+      "crea_id": "007130",
+      "name": "Mele, fresche, annurche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007130"
+    },
+    {
+      "crea_id": "007120",
+      "name": "Mele, fresche, con buccia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007120"
+    },
+    {
+      "crea_id": "007140",
+      "name": "Mele, fresche, deliziose",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007140"
+    },
+    {
+      "crea_id": "007150",
+      "name": "Mele, fresche, golden",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007150"
+    },
+    {
+      "crea_id": "007160",
+      "name": "Mele, fresche, granny smith",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007160"
+    },
+    {
+      "crea_id": "007170",
+      "name": "Mele, fresche, imperatore",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007170"
+    },
+    {
+      "crea_id": "007180",
+      "name": "Mele, fresche, renette",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007180"
+    },
+    {
+      "crea_id": "007110",
+      "name": "Mele, fresche, senza buccia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007110"
+    },
+    {
+      "crea_id": "007230",
+      "name": "Melone, d'estate, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007230"
+    },
+    {
+      "crea_id": "007240",
+      "name": "Melone, d'inverno, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007240"
+    },
+    {
+      "crea_id": "121310",
+      "name": "Melù o pesce molo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121310"
+    },
+    {
+      "crea_id": "121330",
+      "name": "Melù o pesce molo, stoccafisso, ammollato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121330"
+    },
+    {
+      "crea_id": "121320",
+      "name": "Melù o pesce molo, stoccafisso, secco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121320"
+    },
+    {
+      "crea_id": "006810",
+      "name": "Menta, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006810"
+    },
+    {
+      "crea_id": "210030",
+      "name": "Merendine, con marmellata, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210030"
+    },
+    {
+      "crea_id": "210040",
+      "name": "Merendine, farcite con cacao, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210040"
+    },
+    {
+      "crea_id": "210060",
+      "name": "Merendine, tipo brioche, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210060"
+    },
+    {
+      "crea_id": "210050",
+      "name": "Merendine, tipo pan di Spagna, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210050"
+    },
+    {
+      "crea_id": "210070",
+      "name": "Merendine, tipo pasta frolla, industriale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210070"
+    },
+    {
+      "crea_id": "121410",
+      "name": "Merluzzo o nasello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121410"
+    },
+    {
+      "crea_id": "121450",
+      "name": "Merluzzo o nasello, baccalà, ammollato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121450"
+    },
+    {
+      "crea_id": "121440",
+      "name": "Merluzzo o nasello, baccalà, secco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121440"
+    },
+    {
+      "crea_id": "121490",
+      "name": "Merluzzo o nasello, bastoncini di pesce, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121490"
+    },
+    {
+      "crea_id": "121420",
+      "name": "Merluzzo o nasello, surgelato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121420"
+    },
+    {
+      "crea_id": "121424",
+      "name": "Merluzzo o nasello, surgelato, cotto, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121424"
+    },
+    {
+      "crea_id": "121423",
+      "name": "Merluzzo o nasello, surgelato, cotto, in forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121423"
+    },
+    {
+      "crea_id": "121430",
+      "name": "Merluzzo o nasello, surgelato, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121430"
+    },
+    {
+      "crea_id": "210010",
+      "name": "Miele",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210010"
+    },
+    {
+      "crea_id": "000080",
+      "name": "Miglio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000080"
+    },
+    {
+      "crea_id": "000081",
+      "name": "Miglio, decorticato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000081"
+    },
+    {
+      "crea_id": "115500",
+      "name": "Milza di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115500"
+    },
+    {
+      "crea_id": "900010",
+      "name": "Minestre in scatola, crema di asparagi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/900010"
+    },
+    {
+      "crea_id": "900110",
+      "name": "Minestre in scatola, crema di cipolle",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/900110"
+    },
+    {
+      "crea_id": "900210",
+      "name": "Minestre in scatola, crema di funghi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/900210"
+    },
+    {
+      "crea_id": "900310",
+      "name": "Minestre in scatola, crema di pollo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/900310"
+    },
+    {
+      "crea_id": "900410",
+      "name": "Minestre in scatola, crema di pomodori",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/900410"
+    },
+    {
+      "crea_id": "905100",
+      "name": "Minestrone liofilizzato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/905100"
+    },
+    {
+      "crea_id": "905010",
+      "name": "Minestrone, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/905010"
+    },
+    {
+      "crea_id": "007760",
+      "name": "Mirtilli, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007760"
+    },
+    {
+      "crea_id": "007750",
+      "name": "Mora di rovo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007750"
+    },
+    {
+      "crea_id": "121500",
+      "name": "Mormora",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121500"
+    },
+    {
+      "crea_id": "110200",
+      "name": "Mortadella Bologna IGP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110200"
+    },
+    {
+      "crea_id": "110210",
+      "name": "Mortadella di bovini e suini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110210"
+    },
+    {
+      "crea_id": "164810",
+      "name": "Mozzarella di bufala",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/164810"
+    },
+    {
+      "crea_id": "164811",
+      "name": "Mozzarella di bufala campana DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/164811"
+    },
+    {
+      "crea_id": "164820",
+      "name": "Mozzarella di vacca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/164820"
+    },
+    {
+      "crea_id": "003040",
+      "name": "Muesli",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/003040"
+    },
+    {
+      "crea_id": "007250",
+      "name": "Nespole, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007250"
+    },
+    {
+      "crea_id": "008550",
+      "name": "Nocciole, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008550"
+    },
+    {
+      "crea_id": "008560",
+      "name": "Noci",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008560"
+    },
+    {
+      "crea_id": "008580",
+      "name": "Noci pecan",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008580"
+    },
+    {
+      "crea_id": "008570",
+      "name": "Noci, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008570"
+    },
+    {
+      "crea_id": "106150",
+      "name": "Oca, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106150"
+    },
+    {
+      "crea_id": "121600",
+      "name": "Occhiata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121600"
+    },
+    {
+      "crea_id": "009799",
+      "name": "Oli vegetali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009799"
+    },
+    {
+      "crea_id": "009610",
+      "name": "Olio di arachide",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009610"
+    },
+    {
+      "crea_id": "009620",
+      "name": "Olio di cocco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009620"
+    },
+    {
+      "crea_id": "009630",
+      "name": "Olio di colza",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009630"
+    },
+    {
+      "crea_id": "194000",
+      "name": "Olio di fegato di merluzzo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/194000"
+    },
+    {
+      "crea_id": "009640",
+      "name": "Olio di germe di grano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009640"
+    },
+    {
+      "crea_id": "009650",
+      "name": "Olio di girasole",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009650"
+    },
+    {
+      "crea_id": "009660",
+      "name": "Olio di mais",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009660"
+    },
+    {
+      "crea_id": "009670",
+      "name": "Olio di mandorle dolci",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009670"
+    },
+    {
+      "crea_id": "009200",
+      "name": "Olio di oliva",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009200"
+    },
+    {
+      "crea_id": "009210",
+      "name": "Olio di oliva extra vergine",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009210"
+    },
+    {
+      "crea_id": "009680",
+      "name": "Olio di palma",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009680"
+    },
+    {
+      "crea_id": "009690",
+      "name": "Olio di sesamo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009690"
+    },
+    {
+      "crea_id": "009700",
+      "name": "Olio di soia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009700"
+    },
+    {
+      "crea_id": "009710",
+      "name": "Olio di vinacciolo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009710"
+    },
+    {
+      "crea_id": "008850",
+      "name": "Oliva Giarraffa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008850"
+    },
+    {
+      "crea_id": "008840",
+      "name": "Oliva Nocellara del Belice",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008840"
+    },
+    {
+      "crea_id": "008800",
+      "name": "Olive da tavola conservate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008800"
+    },
+    {
+      "crea_id": "008810",
+      "name": "Olive, nere",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008810"
+    },
+    {
+      "crea_id": "008820",
+      "name": "Olive, verdi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008820"
+    },
+    {
+      "crea_id": "008830",
+      "name": "Olive, verdi, in salamoia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008830"
+    },
+    {
+      "crea_id": "121730",
+      "name": "Orata d'allevamento, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121730"
+    },
+    {
+      "crea_id": "121720",
+      "name": "Orata, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121720"
+    },
+    {
+      "crea_id": "121710",
+      "name": "Orata, surgelata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121710"
+    },
+    {
+      "crea_id": "000090",
+      "name": "Orzo perlato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000090"
+    },
+    {
+      "crea_id": "000095",
+      "name": "Orzo perlato, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000095"
+    },
+    {
+      "crea_id": "127130",
+      "name": "Ostrica",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127130"
+    },
+    {
+      "crea_id": "121800",
+      "name": "Pagello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121800"
+    },
+    {
+      "crea_id": "121900",
+      "name": "Pagello bocca d'oro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/121900"
+    },
+    {
+      "crea_id": "122000",
+      "name": "Palombo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122000"
+    },
+    {
+      "crea_id": "110320",
+      "name": "Pancetta arrotolata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110320"
+    },
+    {
+      "crea_id": "110300",
+      "name": "Pancetta magretta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110300"
+    },
+    {
+      "crea_id": "110310",
+      "name": "Pancetta tesa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110310"
+    },
+    {
+      "crea_id": "000500",
+      "name": "Pane al malto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000500"
+    },
+    {
+      "crea_id": "000600",
+      "name": "Pane azzimo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000600"
+    },
+    {
+      "crea_id": "000530",
+      "name": "Pane bianco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000530"
+    },
+    {
+      "crea_id": "000510",
+      "name": "Pane di segale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000510"
+    },
+    {
+      "crea_id": "000550",
+      "name": "Pane di tipo integrale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000550"
+    },
+    {
+      "crea_id": "000540",
+      "name": "Pane di tipo semintegrale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000540"
+    },
+    {
+      "crea_id": "000560",
+      "name": "Pane formato rosetta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000560"
+    },
+    {
+      "crea_id": "216000",
+      "name": "Panettone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/216000"
+    },
+    {
+      "crea_id": "000570",
+      "name": "Pangrattato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000570"
+    },
+    {
+      "crea_id": "000580",
+      "name": "Panini al latte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000580"
+    },
+    {
+      "crea_id": "000590",
+      "name": "Panini all'olio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000590"
+    },
+    {
+      "crea_id": "119070",
+      "name": "Panino con hamburger piccolo, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119070"
+    },
+    {
+      "crea_id": "119060",
+      "name": "Panino, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119060"
+    },
+    {
+      "crea_id": "140400",
+      "name": "Panna da cucina, sterilizzata, 23% di lipidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/140400"
+    },
+    {
+      "crea_id": "140300",
+      "name": "Panna da montare, 35% di lipidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/140300"
+    },
+    {
+      "crea_id": "007600",
+      "name": "Papaia, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007600"
+    },
+    {
+      "crea_id": "507100",
+      "name": "Pappa reale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/507100"
+    },
+    {
+      "crea_id": "166000",
+      "name": "Parmigiano Reggiano DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166000"
+    },
+    {
+      "crea_id": "007610",
+      "name": "Passiflora, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007610"
+    },
+    {
+      "crea_id": "000870",
+      "name": "Pasta all'uovo, secca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000870"
+    },
+    {
+      "crea_id": "000871",
+      "name": "Pasta all'uovo, secca, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000871"
+    },
+    {
+      "crea_id": "217000",
+      "name": "Pasta di mandorle",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/217000"
+    },
+    {
+      "crea_id": "000800",
+      "name": "Pasta di semola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000800"
+    },
+    {
+      "crea_id": "000805",
+      "name": "Pasta di semola, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000805"
+    },
+    {
+      "crea_id": "000850",
+      "name": "Pasta di semola, integrale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000850"
+    },
+    {
+      "crea_id": "000855",
+      "name": "Pasta di semola, integrale, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000855"
+    },
+    {
+      "crea_id": "006584",
+      "name": "Patate novelle, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006584"
+    },
+    {
+      "crea_id": "006585",
+      "name": "Patate novelle, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006585"
+    },
+    {
+      "crea_id": "006580",
+      "name": "Patate novelle, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006580"
+    },
+    {
+      "crea_id": "006505",
+      "name": "Patate, con buccia, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006505"
+    },
+    {
+      "crea_id": "006514",
+      "name": "Patate, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006514"
+    },
+    {
+      "crea_id": "006511",
+      "name": "Patate, cotte, arrosto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006511"
+    },
+    {
+      "crea_id": "006500",
+      "name": "Patate, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006500"
+    },
+    {
+      "crea_id": "006517",
+      "name": "Patate, fritte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006517"
+    },
+    {
+      "crea_id": "006515",
+      "name": "Patate, senza buccia, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006515"
+    },
+    {
+      "crea_id": "006570",
+      "name": "Patatine, fritte, confezionate in busta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006570"
+    },
+    {
+      "crea_id": "119080",
+      "name": "Patatine, fritte, fast food",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/119080"
+    },
+    {
+      "crea_id": "114010",
+      "name": "Patè di coniglio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/114010"
+    },
+    {
+      "crea_id": "114020",
+      "name": "Patè di fegato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/114020"
+    },
+    {
+      "crea_id": "114030",
+      "name": "Patè di pollo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/114030"
+    },
+    {
+      "crea_id": "114040",
+      "name": "Patè di prosciutto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/114040"
+    },
+    {
+      "crea_id": "104610",
+      "name": "Pecora, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/104610"
+    },
+    {
+      "crea_id": "166050",
+      "name": "Pecorino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166050"
+    },
+    {
+      "crea_id": "166060",
+      "name": "Pecorino romano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166060"
+    },
+    {
+      "crea_id": "166070",
+      "name": "Pecorino siciliano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166070"
+    },
+    {
+      "crea_id": "006820",
+      "name": "Pepe nero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006820"
+    },
+    {
+      "crea_id": "006830",
+      "name": "Peperoncini piccanti, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006830"
+    },
+    {
+      "crea_id": "005606",
+      "name": "Peperoni, cotti, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005606"
+    },
+    {
+      "crea_id": "005600",
+      "name": "Peperoni, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005600"
+    },
+    {
+      "crea_id": "005624",
+      "name": "Peperoni, gialli, cotti, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005624"
+    },
+    {
+      "crea_id": "005620",
+      "name": "Peperoni, gialli, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005620"
+    },
+    {
+      "crea_id": "005610",
+      "name": "Peperoni, rossi e gialli, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005610"
+    },
+    {
+      "crea_id": "005634",
+      "name": "Peperoni, rossi, cotti, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005634"
+    },
+    {
+      "crea_id": "005630",
+      "name": "Peperoni, rossi, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005630"
+    },
+    {
+      "crea_id": "005640",
+      "name": "Peperoni, verdi, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005640"
+    },
+    {
+      "crea_id": "007270",
+      "name": "Pere, candite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007270"
+    },
+    {
+      "crea_id": "007261",
+      "name": "Pere, fresche, Abate Fetel",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007261"
+    },
+    {
+      "crea_id": "007262",
+      "name": "Pere, fresche, Coscia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007262"
+    },
+    {
+      "crea_id": "007263",
+      "name": "Pere, fresche, Kaiser",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007263"
+    },
+    {
+      "crea_id": "007264",
+      "name": "Pere, fresche, Max-Red Barlett",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007264"
+    },
+    {
+      "crea_id": "007260",
+      "name": "Pere, fresche, senza buccia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007260"
+    },
+    {
+      "crea_id": "007265",
+      "name": "Pere, fresche, William",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007265"
+    },
+    {
+      "crea_id": "122100",
+      "name": "Pesce gatto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122100"
+    },
+    {
+      "crea_id": "007300",
+      "name": "Pesche, disidratate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007300"
+    },
+    {
+      "crea_id": "007290",
+      "name": "Pesche, fresche, con buccia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007290"
+    },
+    {
+      "crea_id": "007280",
+      "name": "Pesche, fresche, senza buccia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007280"
+    },
+    {
+      "crea_id": "007310",
+      "name": "Pesche, sciroppate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007310"
+    },
+    {
+      "crea_id": "007320",
+      "name": "Pesche, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007320"
+    },
+    {
+      "crea_id": "007330",
+      "name": "Peschenoci, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007330"
+    },
+    {
+      "crea_id": "108520",
+      "name": "Piccione giovane, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108520"
+    },
+    {
+      "crea_id": "008590",
+      "name": "Pinoli",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008590"
+    },
+    {
+      "crea_id": "004700",
+      "name": "Piselli, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004700"
+    },
+    {
+      "crea_id": "004706",
+      "name": "Piselli, freschi, cotti, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004706"
+    },
+    {
+      "crea_id": "004720",
+      "name": "Piselli, in scatola, scolati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004720"
+    },
+    {
+      "crea_id": "004710",
+      "name": "Piselli, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004710"
+    },
+    {
+      "crea_id": "004730",
+      "name": "Piselli, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004730"
+    },
+    {
+      "crea_id": "008600",
+      "name": "Pistacchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008600"
+    },
+    {
+      "crea_id": "008605",
+      "name": "Pistacchio di Bronte DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008605"
+    },
+    {
+      "crea_id": "000700",
+      "name": "Pizza bianca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000700"
+    },
+    {
+      "crea_id": "000710",
+      "name": "Pizza con pomodoro",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000710"
+    },
+    {
+      "crea_id": "000720",
+      "name": "Pizza con pomodoro e mozzarella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000720"
+    },
+    {
+      "crea_id": "000076",
+      "name": "Polenta, cotta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000076"
+    },
+    {
+      "crea_id": "000075",
+      "name": "Polenta, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000075"
+    },
+    {
+      "crea_id": "106273",
+      "name": "Pollo, ala, con pelle, cotta, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106273"
+    },
+    {
+      "crea_id": "106270",
+      "name": "Pollo, ala, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106270"
+    },
+    {
+      "crea_id": "106403",
+      "name": "Pollo, fuso, con pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106403"
+    },
+    {
+      "crea_id": "106400",
+      "name": "Pollo, fuso, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106400"
+    },
+    {
+      "crea_id": "106413",
+      "name": "Pollo, fuso, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106413"
+    },
+    {
+      "crea_id": "106410",
+      "name": "Pollo, fuso, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106410"
+    },
+    {
+      "crea_id": "106203",
+      "name": "Pollo, intero, con pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106203"
+    },
+    {
+      "crea_id": "106251",
+      "name": "Pollo, intero, con pelle, cotto, arrosto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106251"
+    },
+    {
+      "crea_id": "106200",
+      "name": "Pollo, intero, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106200"
+    },
+    {
+      "crea_id": "106213",
+      "name": "Pollo, intero, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106213"
+    },
+    {
+      "crea_id": "106261",
+      "name": "Pollo, intero, senza pelle, cotto, arrosto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106261"
+    },
+    {
+      "crea_id": "106210",
+      "name": "Pollo, intero, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106210"
+    },
+    {
+      "crea_id": "106506",
+      "name": "Pollo, petto, cotto, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106506"
+    },
+    {
+      "crea_id": "106500",
+      "name": "Pollo, petto, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106500"
+    },
+    {
+      "crea_id": "106603",
+      "name": "Pollo, sovracoscia, con pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106603"
+    },
+    {
+      "crea_id": "106600",
+      "name": "Pollo, sovracoscia, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106600"
+    },
+    {
+      "crea_id": "106613",
+      "name": "Pollo, sovracoscia, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106613"
+    },
+    {
+      "crea_id": "106610",
+      "name": "Pollo, sovracoscia, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106610"
+    },
+    {
+      "crea_id": "115600",
+      "name": "Polmone di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115600"
+    },
+    {
+      "crea_id": "127150",
+      "name": "Polpo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127150"
+    },
+    {
+      "crea_id": "006660",
+      "name": "Pomodori, conserva",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006660"
+    },
+    {
+      "crea_id": "006600",
+      "name": "Pomodori, da insalata, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006600"
+    },
+    {
+      "crea_id": "006610",
+      "name": "Pomodori, maturi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006610"
+    },
+    {
+      "crea_id": "006640",
+      "name": "Pomodori, Nerina, rossi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006640"
+    },
+    {
+      "crea_id": "006630",
+      "name": "Pomodori, Nerina, verdi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006630"
+    },
+    {
+      "crea_id": "006670",
+      "name": "Pomodori, passata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006670"
+    },
+    {
+      "crea_id": "006680",
+      "name": "Pomodori, pelati in scatola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006680"
+    },
+    {
+      "crea_id": "006620",
+      "name": "Pomodori, San Marzano, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006620"
+    },
+    {
+      "crea_id": "006690",
+      "name": "Pomodori, succo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006690"
+    },
+    {
+      "crea_id": "006650",
+      "name": "Pomodorini ciliegino, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006650"
+    },
+    {
+      "crea_id": "008070",
+      "name": "Pompelmo, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008070"
+    },
+    {
+      "crea_id": "501200",
+      "name": "Pop corn",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/501200"
+    },
+    {
+      "crea_id": "005655",
+      "name": "Porri, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005655"
+    },
+    {
+      "crea_id": "005650",
+      "name": "Porri, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005650"
+    },
+    {
+      "crea_id": "006840",
+      "name": "Prezzemolo, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006840"
+    },
+    {
+      "crea_id": "110400",
+      "name": "Prosciutto cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110400"
+    },
+    {
+      "crea_id": "110410",
+      "name": "Prosciutto cotto, alta qualità",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110410"
+    },
+    {
+      "crea_id": "110411",
+      "name": "Prosciutto cotto, alta qualità, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110411"
+    },
+    {
+      "crea_id": "110420",
+      "name": "Prosciutto cotto, scelto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110420"
+    },
+    {
+      "crea_id": "110421",
+      "name": "Prosciutto cotto, scelto, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110421"
+    },
+    {
+      "crea_id": "110401",
+      "name": "Prosciutto cotto, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110401"
+    },
+    {
+      "crea_id": "110500",
+      "name": "Prosciutto crudo di Modena DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110500"
+    },
+    {
+      "crea_id": "110501",
+      "name": "Prosciutto crudo di Modena DOP, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110501"
+    },
+    {
+      "crea_id": "110505",
+      "name": "Prosciutto crudo di montagna",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110505"
+    },
+    {
+      "crea_id": "110511",
+      "name": "Prosciutto crudo di Parma DOP, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110511"
+    },
+    {
+      "crea_id": "110515",
+      "name": "Prosciutto crudo di Pietraroja",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110515"
+    },
+    {
+      "crea_id": "110520",
+      "name": "Prosciutto crudo di San Daniele DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110520"
+    },
+    {
+      "crea_id": "110521",
+      "name": "Prosciutto crudo di San Daniele DOP, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110521"
+    },
+    {
+      "crea_id": "110510",
+      "name": "Prosciutto crudo DOP, di Parma",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110510"
+    },
+    {
+      "crea_id": "110525",
+      "name": "Prosciutto crudo, disossato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110525"
+    },
+    {
+      "crea_id": "110526",
+      "name": "Prosciutto crudo, disossato, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110526"
+    },
+    {
+      "crea_id": "110530",
+      "name": "Prosciutto crudo, gambuccio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110530"
+    },
+    {
+      "crea_id": "110535",
+      "name": "Prosciutto crudo, Nazionale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110535"
+    },
+    {
+      "crea_id": "110536",
+      "name": "Prosciutto crudo, Nazionale, sgrassato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110536"
+    },
+    {
+      "crea_id": "166100",
+      "name": "Provolone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166100"
+    },
+    {
+      "crea_id": "007340",
+      "name": "Prugne, fresche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007340"
+    },
+    {
+      "crea_id": "007350",
+      "name": "Prugne, gialle",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007350"
+    },
+    {
+      "crea_id": "007360",
+      "name": "Prugne, rosse",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007360"
+    },
+    {
+      "crea_id": "007370",
+      "name": "Prugne, secche",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007370"
+    },
+    {
+      "crea_id": "108530",
+      "name": "Quaglia, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108530"
+    },
+    {
+      "crea_id": "000097",
+      "name": "Quinoa, cotta, bollita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000097"
+    },
+    {
+      "crea_id": "000096",
+      "name": "Quinoa, cruda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000096"
+    },
+    {
+      "crea_id": "005441",
+      "name": "Radicchio rosso di Treviso IGP, precoce",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005441"
+    },
+    {
+      "crea_id": "005442",
+      "name": "Radicchio rosso di Treviso IGP, tardivo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005442"
+    },
+    {
+      "crea_id": "005443",
+      "name": "Radicchio variegato di Castelfranco IGP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005443"
+    },
+    {
+      "crea_id": "005440",
+      "name": "Radicchio, rosso, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005440"
+    },
+    {
+      "crea_id": "005450",
+      "name": "Radicchio, verde, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005450"
+    },
+    {
+      "crea_id": "109510",
+      "name": "Rana, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/109510"
+    },
+    {
+      "crea_id": "005665",
+      "name": "Rape, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005665"
+    },
+    {
+      "crea_id": "005660",
+      "name": "Rape, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005660"
+    },
+    {
+      "crea_id": "005670",
+      "name": "Ravanelli, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005670"
+    },
+    {
+      "crea_id": "000876",
+      "name": "Ravioli, cotti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000876"
+    },
+    {
+      "crea_id": "000875",
+      "name": "Ravioli, crudi, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000875"
+    },
+    {
+      "crea_id": "122200",
+      "name": "Razza",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122200"
+    },
+    {
+      "crea_id": "115710",
+      "name": "Rene di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115710"
+    },
+    {
+      "crea_id": "007770",
+      "name": "Ribes, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007770"
+    },
+    {
+      "crea_id": "166800",
+      "name": "Ricotta di bufala",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166800"
+    },
+    {
+      "crea_id": "166810",
+      "name": "Ricotta di pecora",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166810"
+    },
+    {
+      "crea_id": "166820",
+      "name": "Ricotta di vacca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166820"
+    },
+    {
+      "crea_id": "000135",
+      "name": "Riso Basmati, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000135"
+    },
+    {
+      "crea_id": "000130",
+      "name": "Riso Basmati, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000130"
+    },
+    {
+      "crea_id": "000145",
+      "name": "Riso Venere, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000145"
+    },
+    {
+      "crea_id": "000140",
+      "name": "Riso Venere, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000140"
+    },
+    {
+      "crea_id": "000100",
+      "name": "Riso, brillato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000100"
+    },
+    {
+      "crea_id": "000105",
+      "name": "Riso, brillato, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000105"
+    },
+    {
+      "crea_id": "000110",
+      "name": "Riso, integrale",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000110"
+    },
+    {
+      "crea_id": "000115",
+      "name": "Riso, integrale, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000115"
+    },
+    {
+      "crea_id": "000120",
+      "name": "Riso, parboiled",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000120"
+    },
+    {
+      "crea_id": "000125",
+      "name": "Riso, parboiled, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000125"
+    },
+    {
+      "crea_id": "003050",
+      "name": "Riso, soffiato, da prima colazione",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/003050"
+    },
+    {
+      "crea_id": "166850",
+      "name": "Robiola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/166850"
+    },
+    {
+      "crea_id": "122300",
+      "name": "Rombo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122300"
+    },
+    {
+      "crea_id": "006850",
+      "name": "Rosmarino, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006850"
+    },
+    {
+      "crea_id": "005460",
+      "name": "Rucola o Ruchetta, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005460"
+    },
+    {
+      "crea_id": "110600",
+      "name": "Salame Brianza",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110600"
+    },
+    {
+      "crea_id": "110620",
+      "name": "Salame Fabriano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110620"
+    },
+    {
+      "crea_id": "110630",
+      "name": "Salame Felino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110630"
+    },
+    {
+      "crea_id": "110640",
+      "name": "Salame Milano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110640"
+    },
+    {
+      "crea_id": "110650",
+      "name": "Salame Napoli",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110650"
+    },
+    {
+      "crea_id": "110660",
+      "name": "Salame nostrano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110660"
+    },
+    {
+      "crea_id": "110670",
+      "name": "Salame ungherese",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110670"
+    },
+    {
+      "crea_id": "110610",
+      "name": "Salami italiani alla cacciatora DOP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110610"
+    },
+    {
+      "crea_id": "122400",
+      "name": "Salmone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122400"
+    },
+    {
+      "crea_id": "122410",
+      "name": "Salmone, affumicato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122410"
+    },
+    {
+      "crea_id": "122430",
+      "name": "Salmone, in salamoia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122430"
+    },
+    {
+      "crea_id": "122500",
+      "name": "Salpa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122500"
+    },
+    {
+      "crea_id": "110730",
+      "name": "Salsiccia di Calabria",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110730"
+    },
+    {
+      "crea_id": "110700",
+      "name": "Salsiccia di fegato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110700"
+    },
+    {
+      "crea_id": "110710",
+      "name": "Salsiccia di suino, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110710"
+    },
+    {
+      "crea_id": "110716",
+      "name": "Salsiccia di suino, fresca, cotta, in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110716"
+    },
+    {
+      "crea_id": "110720",
+      "name": "Salsiccia di suino, secca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110720"
+    },
+    {
+      "crea_id": "006860",
+      "name": "Salvia, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006860"
+    },
+    {
+      "crea_id": "122600",
+      "name": "Sarago",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122600"
+    },
+    {
+      "crea_id": "122700",
+      "name": "Sarda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122700"
+    },
+    {
+      "crea_id": "122800",
+      "name": "Sardine",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122800"
+    },
+    {
+      "crea_id": "122806",
+      "name": "Sardine, fritte",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122806"
+    },
+    {
+      "crea_id": "215000",
+      "name": "Savoiardi, industriali",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/215000"
+    },
+    {
+      "crea_id": "167200",
+      "name": "Scamorza",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/167200"
+    },
+    {
+      "crea_id": "005465",
+      "name": "Scarola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005465"
+    },
+    {
+      "crea_id": "005466",
+      "name": "Scarola IV gamma, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005466"
+    },
+    {
+      "crea_id": "122900",
+      "name": "Scorfano",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/122900"
+    },
+    {
+      "crea_id": "005690",
+      "name": "Sedano rapa, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005690"
+    },
+    {
+      "crea_id": "005684",
+      "name": "Sedano, cotto, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005684"
+    },
+    {
+      "crea_id": "005680",
+      "name": "Sedano, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005680"
+    },
+    {
+      "crea_id": "192010",
+      "name": "Sego di bue",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/192010"
+    },
+    {
+      "crea_id": "000310",
+      "name": "Semola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000310"
+    },
+    {
+      "crea_id": "127160",
+      "name": "Seppia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127160"
+    },
+    {
+      "crea_id": "123000",
+      "name": "Sgombro o maccarello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123000"
+    },
+    {
+      "crea_id": "123010",
+      "name": "Sgombro o maccarello, in salamoia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123010"
+    },
+    {
+      "crea_id": "123100",
+      "name": "Sogliola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123100"
+    },
+    {
+      "crea_id": "123110",
+      "name": "Sogliola, surgelata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123110"
+    },
+    {
+      "crea_id": "509010",
+      "name": "Soia, bevanda",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/509010"
+    },
+    {
+      "crea_id": "004910",
+      "name": "Soia, isolato proteico",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004910"
+    },
+    {
+      "crea_id": "509020",
+      "name": "Soia, salsa",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/509020"
+    },
+    {
+      "crea_id": "004900",
+      "name": "Soia, secca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/004900"
+    },
+    {
+      "crea_id": "509030",
+      "name": "Soia, yogurt",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/509030"
+    },
+    {
+      "crea_id": "110740",
+      "name": "Soppressata di Calabria",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110740"
+    },
+    {
+      "crea_id": "110800",
+      "name": "Speck dell'Alto Adige IGP",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110800"
+    },
+    {
+      "crea_id": "123200",
+      "name": "Spigola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123200"
+    },
+    {
+      "crea_id": "123220",
+      "name": "Spigola d'allevamento, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123220"
+    },
+    {
+      "crea_id": "005704",
+      "name": "Spinaci, cotti, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005704"
+    },
+    {
+      "crea_id": "005705",
+      "name": "Spinaci, cotti, bolliti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005705"
+    },
+    {
+      "crea_id": "005700",
+      "name": "Spinaci, crudi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005700"
+    },
+    {
+      "crea_id": "005710",
+      "name": "Spinaci, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005710"
+    },
+    {
+      "crea_id": "123300",
+      "name": "Storione",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123300"
+    },
+    {
+      "crea_id": "167250",
+      "name": "Stracchino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/167250"
+    },
+    {
+      "crea_id": "193010",
+      "name": "Strutto o sugna",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/193010"
+    },
+    {
+      "crea_id": "108901",
+      "name": "Struzzo, solo tessuto muscolare, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108901"
+    },
+    {
+      "crea_id": "108900",
+      "name": "Struzzo, solo tessuto muscolare, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/108900"
+    },
+    {
+      "crea_id": "008930",
+      "name": "Succo di frutta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/008930"
+    },
+    {
+      "crea_id": "124100",
+      "name": "Suro o sugarello",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124100"
+    },
+    {
+      "crea_id": "106700",
+      "name": "Tacchino intero, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106700"
+    },
+    {
+      "crea_id": "106719",
+      "name": "Tacchino intero, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106719"
+    },
+    {
+      "crea_id": "106710",
+      "name": "Tacchino intero, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106710"
+    },
+    {
+      "crea_id": "106800",
+      "name": "Tacchino, coscio, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106800"
+    },
+    {
+      "crea_id": "106856",
+      "name": "Tacchino, fesa, cotta, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106856"
+    },
+    {
+      "crea_id": "106850",
+      "name": "Tacchino, fesa, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106850"
+    },
+    {
+      "crea_id": "106903",
+      "name": "Tacchino, fuso, con pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106903"
+    },
+    {
+      "crea_id": "106900",
+      "name": "Tacchino, fuso, con pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106900"
+    },
+    {
+      "crea_id": "106913",
+      "name": "Tacchino, fuso, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106913"
+    },
+    {
+      "crea_id": "106910",
+      "name": "Tacchino, fuso, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106910"
+    },
+    {
+      "crea_id": "106963",
+      "name": "Tacchino, sovracoscia, senza pelle, cotto, al forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106963"
+    },
+    {
+      "crea_id": "106960",
+      "name": "Tacchino, sovracoscia, senza pelle, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/106960"
+    },
+    {
+      "crea_id": "167600",
+      "name": "Taleggio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/167600"
+    },
+    {
+      "crea_id": "005470",
+      "name": "Tarassaco o dente di leone, fresco",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005470"
+    },
+    {
+      "crea_id": "006200",
+      "name": "Tartufo, nero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006200"
+    },
+    {
+      "crea_id": "123400",
+      "name": "Tinca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123400"
+    },
+    {
+      "crea_id": "123500",
+      "name": "Tonno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123500"
+    },
+    {
+      "crea_id": "123550",
+      "name": "Tonno in salamoia, sgocciolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123550"
+    },
+    {
+      "crea_id": "123610",
+      "name": "Tonno sott'olio, sgocciolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123610"
+    },
+    {
+      "crea_id": "006596",
+      "name": "Topinambur, cotto, bollito",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006596"
+    },
+    {
+      "crea_id": "202800",
+      "name": "Torrone alla mandorla",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/202800"
+    },
+    {
+      "crea_id": "209010",
+      "name": "Torta margherita",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/209010"
+    },
+    {
+      "crea_id": "000880",
+      "name": "Tortellini, freschi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000880"
+    },
+    {
+      "crea_id": "000885",
+      "name": "Tortellini, freschi, cotti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000885"
+    },
+    {
+      "crea_id": "000890",
+      "name": "Tortellini, secchi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000890"
+    },
+    {
+      "crea_id": "123900",
+      "name": "Triglia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/123900"
+    },
+    {
+      "crea_id": "115800",
+      "name": "Trippa di bovini",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/115800"
+    },
+    {
+      "crea_id": "124000",
+      "name": "Trota",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124000"
+    },
+    {
+      "crea_id": "124050",
+      "name": "Trota iridea d'allevamento, filetti",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124050"
+    },
+    {
+      "crea_id": "124010",
+      "name": "Trota surgelata",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124010"
+    },
+    {
+      "crea_id": "124013",
+      "name": "Trota surgelata, cotta, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124013"
+    },
+    {
+      "crea_id": "124014",
+      "name": "Trota surgelata, cotta, in forno",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/124014"
+    },
+    {
+      "crea_id": "508100",
+      "name": "Tè, foglie",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/508100"
+    },
+    {
+      "crea_id": "180010",
+      "name": "Uova di anatra, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/180010"
+    },
+    {
+      "crea_id": "182010",
+      "name": "Uova di gallina, albume",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/182010"
+    },
+    {
+      "crea_id": "181100",
+      "name": "Uova di gallina, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/181100"
+    },
+    {
+      "crea_id": "181500",
+      "name": "Uova di gallina, intero, congelato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/181500"
+    },
+    {
+      "crea_id": "181117",
+      "name": "Uova di gallina, intero, cotto, a frittata o strapazzato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/181117"
+    },
+    {
+      "crea_id": "181105",
+      "name": "Uova di gallina, intero, cotto, alla coque o sodo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/181105"
+    },
+    {
+      "crea_id": "181600",
+      "name": "Uova di gallina, intero, in polvere",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/181600"
+    },
+    {
+      "crea_id": "183010",
+      "name": "Uova di gallina, tuorlo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/183010"
+    },
+    {
+      "crea_id": "183800",
+      "name": "Uova di gallina, tuorlo, congelato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/183800"
+    },
+    {
+      "crea_id": "183015",
+      "name": "Uova di gallina, tuorlo, cotto, in camicia",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/183015"
+    },
+    {
+      "crea_id": "183900",
+      "name": "Uova di gallina, tuorlo, in polvere",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/183900"
+    },
+    {
+      "crea_id": "185010",
+      "name": "Uova di oca, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/185010"
+    },
+    {
+      "crea_id": "189010",
+      "name": "Uova di tacchina, intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/189010"
+    },
+    {
+      "crea_id": "007390",
+      "name": "Uva, bianca, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007390"
+    },
+    {
+      "crea_id": "007380",
+      "name": "Uva, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007380"
+    },
+    {
+      "crea_id": "007400",
+      "name": "Uva, nera, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007400"
+    },
+    {
+      "crea_id": "007410",
+      "name": "Uva, secca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007410"
+    },
+    {
+      "crea_id": "007420",
+      "name": "Uva, succo, in cartone",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/007420"
+    },
+    {
+      "crea_id": "006990",
+      "name": "Vegetali misti, surgelati",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/006990"
+    },
+    {
+      "crea_id": "101521",
+      "name": "Vitello, filetto, cotto in padella",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101521"
+    },
+    {
+      "crea_id": "101520",
+      "name": "Vitello, filetto, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/101520"
+    },
+    {
+      "crea_id": "127170",
+      "name": "Vongola",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/127170"
+    },
+    {
+      "crea_id": "214500",
+      "name": "Wafer ricoperto di cioccolato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/214500"
+    },
+    {
+      "crea_id": "110906",
+      "name": "Wurstel di puro suino, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110906"
+    },
+    {
+      "crea_id": "110900",
+      "name": "Wurstel di puro suino, crudo",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110900"
+    },
+    {
+      "crea_id": "158000",
+      "name": "Yogurt caprino",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/158000"
+    },
+    {
+      "crea_id": "150500",
+      "name": "Yogurt da latte intero, alla frutta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150500"
+    },
+    {
+      "crea_id": "151000",
+      "name": "Yogurt da latte, parzialmente scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/151000"
+    },
+    {
+      "crea_id": "152000",
+      "name": "Yogurt da latte, scremato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/152000"
+    },
+    {
+      "crea_id": "150030",
+      "name": "Yogurt greco, 0% lipidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150030"
+    },
+    {
+      "crea_id": "150035",
+      "name": "Yogurt greco, 0% lipidi, aromatizzato",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150035"
+    },
+    {
+      "crea_id": "150020",
+      "name": "Yogurt greco, da latte intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150020"
+    },
+    {
+      "crea_id": "150025",
+      "name": "Yogurt greco, da latte magro, alla frutta",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150025"
+    },
+    {
+      "crea_id": "150015",
+      "name": "Yogurt, 0% lipidi",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150015"
+    },
+    {
+      "crea_id": "150010",
+      "name": "Yogurt, da latte intero",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/150010"
+    },
+    {
+      "crea_id": "110950",
+      "name": "Zampone confezionato, precotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110950"
+    },
+    {
+      "crea_id": "110955",
+      "name": "Zampone Modena IGP, cotto",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/110955"
+    },
+    {
+      "crea_id": "005720",
+      "name": "Zucca gialla, fresca",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005720"
+    },
+    {
+      "crea_id": "201500",
+      "name": "Zucchero, saccarosio",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/201500"
+    },
+    {
+      "crea_id": "005741",
+      "name": "Zucchine chiare, cotte, al vapore",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005741"
+    },
+    {
+      "crea_id": "005742",
+      "name": "Zucchine chiare, cotte, in padella grigliate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005742"
+    },
+    {
+      "crea_id": "005740",
+      "name": "Zucchine, chiare",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005740"
+    },
+    {
+      "crea_id": "005744",
+      "name": "Zucchine, chiare, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005744"
+    },
+    {
+      "crea_id": "005735",
+      "name": "Zucchine, cotte, bollite",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005735"
+    },
+    {
+      "crea_id": "005730",
+      "name": "Zucchine, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005730"
+    },
+    {
+      "crea_id": "005754",
+      "name": "Zucchine, scure, cotte, al microonde",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005754"
+    },
+    {
+      "crea_id": "005751",
+      "name": "Zucchine, scure, cotte, al vapore",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005751"
+    },
+    {
+      "crea_id": "005752",
+      "name": "Zucchine, scure, cotte, in padella grigliate",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005752"
+    },
+    {
+      "crea_id": "005750",
+      "name": "Zucchine, scure, crude",
+      "url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/005750"
+    }
+  ]
+}
