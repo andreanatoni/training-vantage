@@ -12,15 +12,15 @@ from copy import deepcopy
 from pathlib import Path
 from datetime import datetime, timedelta
 from extract_from_stale import StalePlanParser
+from athlete_context import DATA_DIR as SHARED_DATA_DIR, athlete_plans_dir, data_file, ensure_athlete_dirs, get_athlete_id
 
 SOURCES_DIR = Path(__file__).parent.parent / "sources"
-PLANS_DIR = Path(__file__).parent.parent / "plans" / "nutrition"
-DATA_DIR = Path(__file__).parent.parent / "data"
-COMPOSITION_FILE = DATA_DIR / "composition.json"
-CHANGELOG_FILE = DATA_DIR / "changelog.json"
-NUTRITION_ENGINE_CONFIG_FILE = DATA_DIR / "NUTRITION_ENGINE_CONFIG.json"
-TRAINING_LOAD_FILE = DATA_DIR / "training_load.json"
-RUNNING_PLAN_FILE = DATA_DIR / "running_plan.json"
+PLANS_DIR = athlete_plans_dir()
+COMPOSITION_FILE = data_file("composition.json")
+CHANGELOG_FILE = data_file("changelog.json")
+NUTRITION_ENGINE_CONFIG_FILE = data_file("NUTRITION_ENGINE_CONFIG.json")
+TRAINING_LOAD_FILE = data_file("training_load.json")
+RUNNING_PLAN_FILE = data_file("running_plan.json")
 
 # Mapping categoria → file sorgente STALE
 CATEGORY_SOURCES = {
@@ -76,10 +76,11 @@ def get_current_body_data():
 def load_nutrition_engine_config():
     """Carica configurazione motore nutrizionale."""
     if not NUTRITION_ENGINE_CONFIG_FILE.exists():
-        raise FileNotFoundError(
-            f"Config non trovato: {NUTRITION_ENGINE_CONFIG_FILE}. "
-            "Crea data/NUTRITION_ENGINE_CONFIG.json."
-        )
+        fallback = SHARED_DATA_DIR / "NUTRITION_ENGINE_CONFIG.json"
+        if fallback.exists():
+            with open(fallback, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        raise FileNotFoundError(f"Config non trovato: {NUTRITION_ENGINE_CONFIG_FILE}.")
     with open(NUTRITION_ENGINE_CONFIG_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
@@ -409,6 +410,7 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
     plan_json_payload = build_plan_json_payload(category, plan_final, body_data, engine_meta)
 
     # Salva markdown + json
+    ensure_athlete_dirs()
     if output_md_file is None:
         output_md_file = PLANS_DIR / f"{category}.md"
     if output_json_file is None:
@@ -437,6 +439,8 @@ def generate_all():
     print("╔═══════════════════════════════════════════════════════════════════╗")
     print("║           RIGENERAZIONE PIANI NUTRIZIONALI COMPLETI               ║")
     print("╚═══════════════════════════════════════════════════════════════════╝")
+    print()
+    print(f"Atleta: {get_athlete_id()}")
     print()
 
     current_bmr = get_current_bmr()
@@ -590,6 +594,7 @@ def generate_week_plan(iso_week):
     summary_json = {
         "meta": {
             "generated_at": datetime.now().isoformat(),
+            "athlete_id": get_athlete_id(),
             "iso_week": iso_week,
             "source_running_plan": str(RUNNING_PLAN_FILE.relative_to(Path(__file__).parent.parent)),
         },
@@ -729,6 +734,7 @@ def generate_month_plan(month_yyyy_mm):
     summary_json = {
         "meta": {
             "generated_at": datetime.now().isoformat(),
+            "athlete_id": get_athlete_id(),
             "month": month_yyyy_mm,
             "source_running_plan": str(RUNNING_PLAN_FILE.relative_to(Path(__file__).parent.parent)),
         },

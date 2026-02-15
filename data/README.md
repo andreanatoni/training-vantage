@@ -9,14 +9,24 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - Rendere i dati validabili, versionabili e rigenerabili da sorgenti note (CREA, PDF LARN, input utente).
 - Separare i file **master** da quelli **derivati**.
 
+## Modalita' Multi-Atleta
+
+- Runtime atleta isolato in `data/athletes/<id>/`.
+- Se non passi `--athlete`, i comandi usano `data/` (atleta `default` legacy).
+- Esempio:
+  - `./tv --athlete mario running setup`
+  - `./tv --athlete mario running generate --from 2026-03-01 --to 2026-06-30`
+  - `./tv --athlete mario plan week 2026-W11`
+
 ## Source of Truth
 
 - Nutrizione:
   - `FOOD_DB.json` = master alimenti e nutrienti.
   - `FOOD_DB_TO_LARN_MAPPING.json` = master mapping verso porzioni.
   - `NUTRITION_ENGINE_CONFIG.json` = centralina strategia nutrizionale (deficit, EA, macro floor, day-profile).
-  - `training_load.json` = carico allenante FUTURO (planned) importato da export TrainingPeaks.
+  - `training_load.json` = carico allenante importato da CSV TrainingPeaks e/o Garmin.
 - Running:
+  - `RUNNING_ATHLETE_PROFILE.json` = profilo atleta raccolto via colloquio setup.
   - `RUNNING_PLAN_CONFIG.json` = regole generator piano running (progressione, deload, taper).
   - `running_plan.json` = piano running periodizzato generato su finestra temporale.
 - Porzioni:
@@ -39,6 +49,7 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `running-log.json`: log running per settimane/sessioni.
 - `training_load.json`: periodi pianificati (durata/distanza) + day-type + costo energetico stimato.
 - `RUNNING_PLAN_CONFIG.json`: configurazione del motore piano running (default volumi e taper).
+- `RUNNING_ATHLETE_PROFILE.json`: output colloquio coach (`tv running setup`) con obiettivi/stato/preferenze.
 - `running_plan.json`: output piano running generato (settimane, sessioni, fase, target km).
 - `strength-progress.json`: progressione forza.
 - `zones.json`: zone di allenamento correnti + storico.
@@ -68,7 +79,7 @@ Comandi principali (dalla root del repo):
 - `crawl-index`: aggiorna indice CREA.
 - `rebuild-from-crea`: ricostruisce DB alimenti da `CREA_INDEX.json` (con backup).
 - `extract-portions`: rigenera `PORTION_STANDARDS.json` dal PDF e pulisce il testo.
-- `load import <csv>`: importa export TrainingPeaks FUTURO (planned) in `training_load.json` e calcola profili energetici per day-type.
+- `load import [--tp ...] [--garmin ...]`: importa uno o piu' CSV TrainingPeaks/Garmin (anche insieme), fa merge per data/seduta e aggiorna `training_load.json` con profili energetici per day-type.
 - `running generate ...`: genera `running_plan.json` su periodi multi-settimana/mensili con logica progressione, scarico e taper.
   - include forza obbligatoria Mar+Gio (`day_type=forza`, km=0)
   - applica pattern 3:1 (ogni 4a settimana scarico) con `test_5k` in seduta qualita'
@@ -76,6 +87,7 @@ Comandi principali (dalla root del repo):
   - periodizza il contenuto sedute per fase (`build/specific/taper/race`), non solo il volume
   - calcola TID settimanale (`low/moderate/high`) con guardrail da `RUNNING_PLAN_CONFIG.json`
   - con flag `--enforce-tid` prova a riallineare automaticamente il mix intensita' riducendo la "zona grigia"
+- `running setup`: colloquio coach interattivo (ispirato a Daniels/Pfitz/Canova/Seiler/Hudson) con richiesta storico CSV (`TrainingPeaks`/`Garmin`) e scrittura profilo/config/report + `training_load.json`.
 - `running month` / `running summary`: analisi operativa dei volumi per controllo periodizzazione.
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
   - `plans/nutrition/<categoria>.md` (versione leggibile)

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-14",
+    "generated_at": "2026-02-15",
     "category": "tempo",
     "status": "CURRENT"
   },
@@ -13,12 +13,12 @@
     "config_version": "v1.0",
     "day_profile": "progressivo",
     "deficit_pct": 0.065,
-    "training_cost_kcal": 432,
+    "training_cost_kcal": 425,
     "training_cost_source": "running_plan_day",
     "phase": "specific",
     "workout_label": "progressivo_chiusura_gara",
     "session_date": "2026-03-27",
-    "ea_value_kcal_per_kg_ffm": 32.19,
+    "ea_value_kcal_per_kg_ffm": 32.3,
     "ea_guard_applied": false
   },
   "plan": {

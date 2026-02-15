@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-14",
+    "generated_at": "2026-02-15",
     "category": "easy-run",
     "status": "CURRENT"
   },
@@ -13,7 +13,7 @@
     "config_version": "v1.0",
     "day_profile": "easy",
     "deficit_pct": 0.1,
-    "training_cost_kcal": 1274,
+    "training_cost_kcal": 1254,
     "training_cost_source": "running_plan_day",
     "phase": "specific",
     "workout_label": "easy_technique",
@@ -24,11 +24,11 @@
   "plan": {
     "ffm": 59.59,
     "bmr": 1690,
-    "target_kcal": 3062,
+    "target_kcal": 3042,
     "meals": {
       "COLAZIONE": {
         "target": {
-          "kcal": 551,
+          "kcal": 547,
           "protein": 30,
           "fat": 13,
           "cho": 73
@@ -40,39 +40,39 @@
               {
                 "type": "single",
                 "name": "Caffè espresso",
-                "amount": 119.4,
+                "amount": 118.6,
                 "unit": "ml"
               },
               {
                 "type": "single",
                 "name": "Fette biscottate",
-                "amount": 65.6,
+                "amount": 65.2,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Marmellata",
-                "amount": 29.8,
+                "amount": 29.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 412.0,
-              "protein": 10.7,
-              "fat": 11.9,
-              "cho": 67.4
+              "kcal": 409.0,
+              "protein": 10.6,
+              "fat": 11.8,
+              "cho": 67.0
             },
             "swap": "Fette 55g ↔ Pane integrale 60g | Mandorle ↔ Noci 12g ↔ Nocciole 10g",
             "quando": "Colazione veloce pre-yoga, digeribile per easy run serale."
@@ -83,33 +83,33 @@
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 77.6,
+                "amount": 77.1,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Marmellata",
-                "amount": 35.8,
+                "amount": 35.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 172.0,
-              "protein": 3.4,
-              "fat": 8.0,
-              "cho": 21.7
+              "kcal": 171.0,
+              "protein": 3.3,
+              "fat": 7.9,
+              "cho": 21.6
             },
             "swap": "Mandorle ↔ Noci 12g ↔ Nocciole 10g",
             "quando": "Maggiore sazietà, ideale per giorni easy run lunghi."
@@ -120,32 +120,32 @@
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 95.5,
+                "amount": 94.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Prosciutto crudo",
-                "amount": 41.8,
+                "amount": 41.5,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Formaggio spalmabile light",
-                "amount": 29.8,
+                "amount": 29.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
-                "amount": 119.4,
+                "amount": 118.6,
                 "unit": "ml"
               }
             ],
             "totals": {
-              "kcal": 129.0,
-              "protein": 10.7,
-              "fat": 9.6,
+              "kcal": 128.0,
+              "protein": 10.6,
+              "fat": 9.5,
               "cho": 0.0
             },
             "swap": "Prosciutto 35g ↔ Bresaola 30g ↔ Fesa tacchino 40g",
@@ -157,32 +157,32 @@
               {
                 "type": "single",
                 "name": "Plum cake (senza latte/burro)",
-                "amount": 95.5,
+                "amount": 94.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
-                "amount": 9.5,
+                "amount": 9.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
-                "amount": 119.4,
+                "amount": 118.6,
                 "unit": "ml"
               }
             ],
             "totals": {
-              "kcal": 60.0,
+              "kcal": 59.0,
               "protein": 2.1,
-              "fat": 5.3,
+              "fat": 5.2,
               "cho": 0.4
             },
             "swap": "Plum cake ↔ Ciambellone (stesse grammature)",
@@ -194,37 +194,37 @@
               {
                 "type": "single",
                 "name": "Oro Saiwa",
-                "amount": 59.7,
+                "amount": 59.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Burro d'arachidi",
-                "amount": 17.9,
+                "amount": 17.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
-                "amount": 119.4,
+                "amount": 118.6,
                 "unit": "ml"
               },
               {
                 "type": "single",
                 "name": "Oro Saiwa",
-                "amount": 59.7,
+                "amount": 59.3,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 112.0,
-              "protein": 4.5,
+              "kcal": 111.0,
+              "protein": 4.4,
               "fat": 9.6,
               "cho": 1.4
             },
@@ -235,7 +235,7 @@
       },
       "SPUNTINO MATTINA": {
         "target": {
-          "kcal": 244,
+          "kcal": 242,
           "protein": 13,
           "fat": 5,
           "cho": 33
@@ -247,7 +247,7 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               },
               {
@@ -261,7 +261,7 @@
               "kcal": 180.0,
               "protein": 3.4,
               "fat": 6.9,
-              "cho": 25.2
+              "cho": 25.0
             },
             "swap": "Mela 130g ↔ Banana 110g | Mandorle ↔ Noci ↔ Burro d'arachidi",
             "quando": "Grab-and-go, praticità massima pre-pranzo."
@@ -272,19 +272,19 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 131.4,
+                "amount": 130.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Miele",
-                "amount": 9.5,
+                "amount": 9.4,
                 "unit": "g"
               }
             ],
@@ -292,7 +292,7 @@
               "kcal": 29.0,
               "protein": 0.1,
               "fat": 0.0,
-              "cho": 7.6
+              "cho": 7.5
             },
             "swap": "Banana 110g ↔ Mela 130g",
             "quando": "Spuntino strutturato, sostiene bene fino a pranzo easy run."
@@ -303,27 +303,27 @@
               {
                 "type": "single",
                 "name": "Crackers integrali",
-                "amount": 26.3,
+                "amount": 26.1,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Bresaola",
-                "amount": 29.8,
+                "amount": 29.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 95.5,
+                "amount": 94.9,
                 "unit": "g"
               }
             ],
             "totals": {
               "kcal": 110.0,
-              "protein": 10.4,
+              "protein": 10.3,
               "fat": 0.8,
-              "cho": 15.3
+              "cho": 15.2
             },
             "swap": "Bresaola 25g ↔ Prosciutto 20g ↔ Formaggio spalmabile 15g",
             "quando": "Variante salata, flessibilità proteica."
@@ -334,25 +334,25 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Bresaola",
-                "amount": 26.3,
+                "amount": 26.1,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Crackers integrali",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               }
             ],
             "totals": {
               "kcal": 40.0,
-              "protein": 8.7,
+              "protein": 8.6,
               "fat": 0.5,
               "cho": 0.1
             },
@@ -363,10 +363,10 @@
       },
       "PRANZO": {
         "target": {
-          "kcal": 1072,
+          "kcal": 1065,
           "protein": 61,
           "fat": 27,
-          "cho": 144
+          "cho": 143
         },
         "options": [
           {
@@ -375,25 +375,25 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 125.3,
+                "amount": 124.5,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Tonno al naturale",
-                "amount": 101.5,
+                "amount": 100.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 191.1,
+                "amount": 189.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Olio EVO",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               },
               {
@@ -405,15 +405,15 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 191.1,
+                "amount": 189.9,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 130.0,
-              "protein": 1.0,
+              "kcal": 129.0,
+              "protein": 0.9,
               "fat": 0.4,
-              "cho": 30.4
+              "cho": 30.2
             },
             "swap": "Zucchine 160g ↔ Carote 130g | Tonno naturale+olio ↔ Tonno sott'olio",
             "quando": "Pranzo bilanciato, omega-3 per easy run, digestione ottima."
@@ -424,19 +424,19 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 125.3,
+                "amount": 124.5,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Ragù di vitello",
-                "amount": 179.2,
+                "amount": 178.0,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 191.1,
+                "amount": 189.9,
                 "unit": "g"
               },
               {
@@ -448,7 +448,7 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               }
             ],
@@ -467,25 +467,25 @@
               {
                 "type": "single",
                 "name": "Riso basmati (crudo)",
-                "amount": 113.4,
+                "amount": 112.7,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Pollo piastra",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Piselli",
-                "amount": 101.5,
+                "amount": 100.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 131.4,
+                "amount": 130.6,
                 "unit": "g"
               },
               {
@@ -497,15 +497,15 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 106.0,
+              "kcal": 105.0,
               "protein": 0.8,
               "fat": 0.3,
-              "cho": 24.7
+              "cho": 24.5
             },
             "swap": "Pollo 125g ↔ Salmone 105g ↔ Pesce spada 115g ↔ Uova 95g",
             "quando": "4 scelte proteiche, flessibilità per easy run."
@@ -516,19 +516,19 @@
               {
                 "type": "single",
                 "name": "Tortellini vitello",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Parmigiano",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 191.1,
+                "amount": 189.9,
                 "unit": "g"
               },
               {
@@ -540,7 +540,7 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 167.2,
+                "amount": 166.1,
                 "unit": "g"
               }
             ],
@@ -559,45 +559,45 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 125.3,
+                "amount": 124.5,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Olio EVO",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Parmigiano",
-                "amount": 17.9,
+                "amount": 17.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Passata pomodoro",
-                "amount": 59.7,
+                "amount": 59.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 191.1,
+                "amount": 189.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 179.2,
+                "amount": 178.0,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 122.0,
+              "kcal": 121.0,
               "protein": 0.9,
               "fat": 0.4,
-              "cho": 28.5
+              "cho": 28.3
             },
             "swap": null,
             "quando": "Leggero, facile digestione pre-easy run."
@@ -608,31 +608,31 @@
               {
                 "type": "single",
                 "name": "Mozzarella bufala",
-                "amount": 113.4,
+                "amount": 112.7,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Prosciutto crudo",
-                "amount": 53.7,
+                "amount": 53.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Scaglie grana",
-                "amount": 9.5,
+                "amount": 9.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 101.5,
+                "amount": 100.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine (friggitrice)",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               },
               {
@@ -644,14 +644,14 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 131.4,
+                "amount": 130.6,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 166.0,
+              "kcal": 165.0,
               "protein": 13.7,
-              "fat": 12.3,
+              "fat": 12.2,
               "cho": 0.1
             },
             "swap": "Prosciutto 45g ↔ Bresaola 55g | Zucchine ↔ Carote",
@@ -661,10 +661,10 @@
       },
       "SPUNTINO POMERIGGIO": {
         "target": {
-          "kcal": 397,
+          "kcal": 394,
           "protein": 22,
           "fat": 10,
-          "cho": 54
+          "cho": 53
         },
         "options": [
           {
@@ -673,26 +673,26 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 131.4,
+                "amount": 130.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 149.3,
+                "amount": 148.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
-                "amount": 14.4,
+                "amount": 14.3,
                 "unit": "g"
               }
             ],
             "totals": {
               "kcal": 90.0,
-              "protein": 3.2,
-              "fat": 8.0,
+              "protein": 3.1,
+              "fat": 7.9,
               "cho": 0.7
             },
             "swap": null,
@@ -704,19 +704,19 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 143.4,
+                "amount": 142.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Burro d'arachidi",
-                "amount": 17.9,
+                "amount": 17.8,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 112.0,
-              "protein": 4.5,
+              "kcal": 111.0,
+              "protein": 4.4,
               "fat": 9.6,
               "cho": 1.4
             },
@@ -729,19 +729,19 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
-                "amount": 20.3,
+                "amount": 20.2,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 128.0,
-              "protein": 4.5,
+              "kcal": 127.0,
+              "protein": 4.4,
               "fat": 11.2,
               "cho": 0.9
             },
@@ -754,20 +754,20 @@
               {
                 "type": "single",
                 "name": "Crackers integrali",
-                "amount": 47.7,
+                "amount": 47.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Prosciutto crudo",
-                "amount": 53.7,
+                "amount": 53.4,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 166.0,
+              "kcal": 165.0,
               "protein": 13.7,
-              "fat": 12.3,
+              "fat": 12.2,
               "cho": 0.1
             },
             "swap": null,
@@ -779,19 +779,19 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 179.2,
+                "amount": 178.0,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Crackers integrali",
-                "amount": 26.3,
+                "amount": 26.1,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Miele",
-                "amount": 6.0,
+                "amount": 5.9,
                 "unit": "g"
               }
             ],
@@ -799,7 +799,7 @@
               "kcal": 18.0,
               "protein": 0.0,
               "fat": 0.0,
-              "cho": 4.8
+              "cho": 4.7
             },
             "swap": null,
             "quando": "Solo CHO se stomaco sensibile pre-easy run."
@@ -808,7 +808,7 @@
       },
       "SPUNTINO SERA": {
         "target": {
-          "kcal": 122,
+          "kcal": 121,
           "protein": 6,
           "fat": 2,
           "cho": 16
@@ -820,7 +820,7 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 119.4,
+                "amount": 118.6,
                 "unit": "g"
               }
             ],
@@ -839,13 +839,13 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 101.5,
+                "amount": 100.8,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 71.6,
+                "amount": 71.1,
                 "unit": "g"
               }
             ],
@@ -864,13 +864,13 @@
               {
                 "type": "single",
                 "name": "Bresaola",
-                "amount": 38.2,
+                "amount": 38.0,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Crackers integrali",
-                "amount": 9.5,
+                "amount": 9.4,
                 "unit": "g"
               }
             ],
@@ -887,10 +887,10 @@
       },
       "CENA": {
         "target": {
-          "kcal": 826,
+          "kcal": 820,
           "protein": 46,
           "fat": 21,
-          "cho": 111
+          "cho": 110
         },
         "options": [
           {
@@ -899,13 +899,13 @@
               {
                 "type": "single",
                 "name": "Patate lesse",
-                "amount": 286.6,
+                "amount": 284.7,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 262.7,
+                "amount": 261.0,
                 "unit": "g"
               },
               {
@@ -930,13 +930,13 @@
               {
                 "type": "single",
                 "name": "Patate lesse",
-                "amount": 286.6,
+                "amount": 284.7,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 262.7,
+                "amount": 261.0,
                 "unit": "g"
               },
               {
@@ -961,19 +961,19 @@
               {
                 "type": "single",
                 "name": "Uova",
-                "amount": 137.4,
+                "amount": 136.5,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 131.4,
+                "amount": 130.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine cotte",
-                "amount": 262.7,
+                "amount": 261.0,
                 "unit": "g"
               },
               {
@@ -998,19 +998,19 @@
               {
                 "type": "single",
                 "name": "Hummus ceci",
-                "amount": 155.3,
+                "amount": 154.3,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 113.4,
+                "amount": 112.7,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 262.7,
+                "amount": 261.0,
                 "unit": "g"
               },
               {

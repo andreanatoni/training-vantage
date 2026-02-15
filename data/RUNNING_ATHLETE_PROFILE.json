@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "updated_at": "2026-02-15T16:17:00.317229"
+  },
+  "athlete": {
+    "name": "Andrea",
+    "current_5k": "18:26",
+    "current_avg_km_per_week": 39.2,
+    "max_recent_km_per_week": 51.5,
+    "sleep_hours": 7.0,
+    "recovery_score": 7,
+    "injury_risk": "low"
+  },
+  "goal": {
+    "race_name": "Maratona Latina",
+    "race_date": "2026-12-06",
+    "target_pace": "4:00/km"
+  },
+  "preferences": {
+    "run_days_per_week": 4,
+    "strength_days_per_week": 2,
+    "long_run_day": "Saturday",
+    "tid_method": "polarized",
+    "aggressiveness": "balanced",
+    "force_twice_non_negotiable": true
+  },
+  "coach_blend_notes": [
+    "Daniels: uso zone/ritmi e lavoro qualità strutturato.",
+    "Pfitzinger: progressione volume + scarico periodico + long run centrale.",
+    "Canova: specificità ritmo gara in fase specific.",
+    "Seiler: guardrail TID per evitare eccesso zona grigia.",
+    "Hudson: margine adattivo su recupero e stress."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "generated_at": "2026-02-15T18:30:04.285753",
+    "athlete_id": "mario",
+    "iso_week": "2026-W11",
+    "source_running_plan": "data/athletes/mario/running_plan.json"
+  },
+  "week": {
+    "iso_week": "2026-W11",
+    "start_date": "2026-03-09",
+    "end_date": "2026-03-15",
+    "phase": "build",
+    "target_km": 44.2
+  },
+  "days": [
+    {
+      "date": "2026-03-09",
+      "weekday": "Monday",
+      "category": "easy-run",
+      "day_type": "easy",
+      "training_cost_kcal": 616,
+      "phase": "build",
+      "workout_label": "easy_aerobic",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-09-easy-run.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-09-easy-run.json"
+    },
+    {
+      "date": "2026-03-10",
+      "weekday": "Tuesday",
+      "category": "forza",
+      "day_type": "forza",
+      "training_cost_kcal": 400,
+      "phase": "build",
+      "workout_label": "forza_base",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-10-forza.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-10-forza.json"
+    },
+    {
+      "date": "2026-03-11",
+      "weekday": "Wednesday",
+      "category": "qualita",
+      "day_type": "qualita",
+      "training_cost_kcal": 805,
+      "phase": "build",
+      "workout_label": "qualita_vo2_threshold",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-11-qualita.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-11-qualita.json"
+    },
+    {
+      "date": "2026-03-12",
+      "weekday": "Thursday",
+      "category": "forza",
+      "day_type": "forza",
+      "training_cost_kcal": 400,
+      "phase": "build",
+      "workout_label": "forza_base",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-12-forza.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-12-forza.json"
+    },
+    {
+      "date": "2026-03-13",
+      "weekday": "Friday",
+      "category": "tempo",
+      "day_type": "progressivo",
+      "training_cost_kcal": 679,
+      "phase": "build",
+      "workout_label": "progressivo_classico",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-13-tempo.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-13-tempo.json"
+    },
+    {
+      "date": "2026-03-14",
+      "weekday": "Saturday",
+      "category": "lungo",
+      "day_type": "lungo",
+      "training_cost_kcal": 994,
+      "phase": "build",
+      "workout_label": "lungo_aerobico",
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-14-lungo.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-14-lungo.json"
+    },
+    {
+      "date": "2026-03-15",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": "build",
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-15-rest.md",
+      "json_file": "plans/nutrition/athletes/mario/weeks/2026-W11/2026-03-15-rest.json"
+    }
+  ]
+}

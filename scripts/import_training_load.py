@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Importa export futuri TrainingPeaks (workouts CSV) e costruisce training_load.json.
+Importa storico/planning da CSV TrainingPeaks e/o Garmin in training_load.json.
 
-Uso:
+Esempi:
   python3 scripts/import_training_load.py sources/workouts-2.csv
+  python3 scripts/import_training_load.py --tp sources/workouts-2.csv
+  python3 scripts/import_training_load.py --garmin sources/garmin-last-year.csv
+  python3 scripts/import_training_load.py --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
 """
 
+import argparse
 import csv
 import json
 import re
@@ -14,12 +18,13 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
+from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
+
 
 ROOT_DIR = Path(__file__).parent.parent
-DATA_DIR = ROOT_DIR / "data"
-COMPOSITION_FILE = DATA_DIR / "composition.json"
-TRAINING_LOAD_FILE = DATA_DIR / "training_load.json"
-CHANGELOG_FILE = DATA_DIR / "changelog.json"
+COMPOSITION_FILE = data_file("composition.json")
+TRAINING_LOAD_FILE = data_file("training_load.json")
+CHANGELOG_FILE = data_file("changelog.json")
 
 
 DAY_TYPES = ["rest", "easy", "qualita", "lungo", "forza", "progressivo"]
@@ -44,6 +49,50 @@ def to_float(value):
         return float(txt)
     except ValueError:
         return 0.0
+
+
+def to_float_locale(value):
+    """Converte numeri con separatori locali/commerciali in float."""
+    if value is None:
+        return 0.0
+    txt = str(value).strip()
+    if not txt:
+        return 0.0
+    txt = txt.replace(" ", "")
+    if "," in txt and "." in txt:
+        if txt.rfind(",") > txt.rfind("."):
+            txt = txt.replace(".", "").replace(",", ".")
+        else:
+            txt = txt.replace(",", "")
+    elif "," in txt:
+        parts = txt.split(",")
+        if len(parts[-1]) == 3 and all(p.isdigit() for p in parts):
+            txt = "".join(parts)
+        else:
+            txt = txt.replace(",", ".")
+    try:
+        return float(txt)
+    except ValueError:
+        return 0.0
+
+
+def parse_hms_to_hours(value):
+    """Converte stringhe HH:MM:SS o MM:SS in ore."""
+    txt = (value or "").strip()
+    if not txt:
+        return 0.0
+    parts = txt.split(":")
+    try:
+        nums = [int(float(p)) for p in parts]
+    except ValueError:
+        return 0.0
+    if len(nums) == 3:
+        h, m, s = nums
+    elif len(nums) == 2:
+        h, m, s = 0, nums[0], nums[1]
+    else:
+        return 0.0
+    return (h * 3600 + m * 60 + s) / 3600.0
 
 
 def get_current_weight_kg():
@@ -88,7 +137,7 @@ def classify_day_type(title, workout_type):
     if re.search(r"\d+h\d*'?\s*l\b", t):
         return "lungo"
 
-    if wt == "run":
+    if wt in {"run", "corsa"}:
         return "easy"
     return "forza"
 
@@ -106,51 +155,264 @@ def estimate_energy_kcal(day_type, duration_h, weight_kg):
     return int(round(met * weight_kg * duration_h))
 
 
-def build_training_load_payload(csv_path):
-    """Parse CSV e costruisce payload training_load."""
+def load_csv_rows(csv_path):
+    """Legge righe CSV restituendo lista dict."""
     rows = []
     with csv_path.open(newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for raw in reader:
             rows.append(raw)
+    return rows
 
+
+def detect_csv_format(rows):
+    """Riconosce formato CSV principale."""
     if not rows:
-        raise ValueError("CSV vuoto, nessun workout trovato.")
+        return "unknown"
+    keys = set(rows[0].keys())
+    if {"WorkoutDay", "Title", "WorkoutType"}.issubset(keys):
+        return "trainingpeaks"
+    if {"Tipo di attività", "Data", "Titolo"}.issubset(keys):
+        return "garmin"
+    return "unknown"
 
-    weight_kg = get_current_weight_kg()
+
+def parse_trainingpeaks_csv(csv_path):
+    """Parsa CSV TrainingPeaks in formato canonico."""
+    rows = load_csv_rows(csv_path)
+    if not rows:
+        raise ValueError(f"CSV vuoto: {csv_path}")
+    if detect_csv_format(rows) != "trainingpeaks":
+        raise ValueError(f"Formato non TrainingPeaks: {csv_path}")
+
     sessions = []
-
     for idx, row in enumerate(rows, 1):
         date = (row.get("WorkoutDay") or "").strip()
         if not date:
             continue
-
-        planned_duration_h = to_float(row.get("PlannedDuration"))
-        planned_distance_km = to_float(row.get("PlannedDistanceInMeters")) / 1000.0
         title = (row.get("Title") or "").strip()
-        workout_type = (row.get("WorkoutType") or "").strip()
+        workout_type = (row.get("WorkoutType") or "").strip() or "Unknown"
+        planned_duration_h = to_float(row.get("PlannedDuration"))
+        if planned_duration_h <= 0:
+            planned_duration_h = to_float(row.get("TimeTotalInHours"))
+        planned_distance_km = to_float(row.get("PlannedDistanceInMeters")) / 1000.0
+        if planned_distance_km <= 0:
+            planned_distance_km = to_float(row.get("DistanceInMeters")) / 1000.0
+        energy_reported = int(round(to_float(row.get("Energy"))))
         day_type = classify_day_type(title, workout_type)
-        estimated_energy_kcal = estimate_energy_kcal(day_type, planned_duration_h, weight_kg)
-
         sessions.append(
             {
-                "session_id": f"s{idx:03d}",
+                "source": "trainingpeaks",
+                "source_session_id": f"tp{idx:04d}",
                 "date": date,
-                "iso_week": iso_week_str(date),
                 "title": title,
-                "workout_type": workout_type or "Unknown",
+                "workout_type": workout_type,
                 "day_type": day_type,
-                "planned_duration_h": round(planned_duration_h, 3),
-                "planned_distance_km": round(planned_distance_km, 3),
-                "estimated_energy_kcal": estimated_energy_kcal,
+                "duration_h": round(planned_duration_h, 3),
+                "distance_km": round(planned_distance_km, 3),
+                "energy_reported_kcal": energy_reported if energy_reported > 0 else None,
+                "if": to_float(row.get("IF")) or None,
+                "tss": to_float(row.get("TSS")) or None,
+                "raw": {"source_file": relpath_or_str(csv_path)},
             }
         )
+    return sessions
 
-    if not sessions:
-        raise ValueError("Nessuna sessione valida con WorkoutDay trovata nel CSV.")
 
-    sessions.sort(key=lambda x: x["date"])
+def parse_garmin_date(value):
+    txt = (value or "").strip()
+    if not txt:
+        return ""
+    try:
+        return datetime.strptime(txt, "%Y-%m-%d %H:%M:%S").date().isoformat()
+    except ValueError:
+        return txt[:10]
 
+
+def parse_garmin_csv(csv_path):
+    """Parsa CSV Garmin (italiano) in formato canonico."""
+    rows = load_csv_rows(csv_path)
+    if not rows:
+        raise ValueError(f"CSV vuoto: {csv_path}")
+    if detect_csv_format(rows) != "garmin":
+        raise ValueError(f"Formato non Garmin: {csv_path}")
+
+    sessions = []
+    for idx, row in enumerate(rows, 1):
+        date = parse_garmin_date(row.get("Data"))
+        if not date:
+            continue
+        title = (row.get("Titolo") or "").strip()
+        workout_type = (row.get("Tipo di attività") or "").strip() or "Unknown"
+        duration_h = parse_hms_to_hours(row.get("Tempo"))
+        if duration_h <= 0:
+            duration_h = parse_hms_to_hours(row.get("Tempo in movimento"))
+        distance_km = to_float_locale(row.get("Distanza"))
+        calories = int(round(to_float_locale(row.get("Calorie"))))
+        day_type = classify_day_type(title, workout_type)
+        sessions.append(
+            {
+                "source": "garmin",
+                "source_session_id": f"gm{idx:04d}",
+                "date": date,
+                "title": title,
+                "workout_type": workout_type,
+                "day_type": day_type,
+                "duration_h": round(duration_h, 3),
+                "distance_km": round(distance_km, 3),
+                "energy_reported_kcal": calories if calories > 0 else None,
+                "if": None,
+                "tss": None,
+                "raw": {"source_file": relpath_or_str(csv_path)},
+            }
+        )
+    return sessions
+
+
+def normalize_title(title):
+    txt = (title or "").lower()
+    txt = re.sub(r"\blatina\b", "", txt)
+    txt = re.sub(r"[^a-z0-9]+", "", txt)
+    return txt
+
+
+def choose_garmin_match(tp_session, garmin_candidates):
+    """Trova miglior match Garmin per una seduta TP della stessa data."""
+    if not garmin_candidates:
+        return None
+    tp_title = normalize_title(tp_session["title"])
+    if tp_title:
+        for candidate in garmin_candidates:
+            if normalize_title(candidate["title"]) == tp_title:
+                return candidate
+    best = None
+    best_score = 9999.0
+    for candidate in garmin_candidates:
+        dd = abs(tp_session["distance_km"] - candidate["distance_km"])
+        dt = abs(tp_session["duration_h"] - candidate["duration_h"])
+        score = dd + (dt * 2.0)
+        if score < best_score:
+            best = candidate
+            best_score = score
+    if best and (best_score <= 1.2 or len(garmin_candidates) == 1):
+        return best
+    return None
+
+
+def merge_sources(tp_sessions, garmin_sessions, weight_kg):
+    """Merge tra sessioni TP e Garmin; mantiene anche unmatched."""
+    by_date_tp = defaultdict(list)
+    by_date_gm = defaultdict(list)
+    for s in tp_sessions:
+        by_date_tp[s["date"]].append(s)
+    for s in garmin_sessions:
+        by_date_gm[s["date"]].append(s)
+
+    merged = []
+    matched_garmin_ids = set()
+    merge_stats = {"matched": 0, "tp_only": 0, "garmin_only": 0}
+
+    all_dates = sorted(set(by_date_tp.keys()) | set(by_date_gm.keys()))
+    for date in all_dates:
+        day_tp = by_date_tp.get(date, [])
+        day_gm = by_date_gm.get(date, [])
+        for tp in day_tp:
+            gm_pool = [x for x in day_gm if x["source_session_id"] not in matched_garmin_ids]
+            gm = choose_garmin_match(tp, gm_pool)
+            if gm:
+                matched_garmin_ids.add(gm["source_session_id"])
+                merge_stats["matched"] += 1
+                duration_h = tp["duration_h"] if tp["duration_h"] > 0 else gm["duration_h"]
+                distance_km = tp["distance_km"] if tp["distance_km"] > 0 else gm["distance_km"]
+                day_type = tp["day_type"] or gm["day_type"]
+                estimated_energy_kcal = estimate_energy_kcal(day_type, duration_h, weight_kg)
+                merged.append(
+                    {
+                        "date": date,
+                        "iso_week": iso_week_str(date),
+                        "title": tp["title"] or gm["title"],
+                        "workout_type": tp["workout_type"] or gm["workout_type"],
+                        "day_type": day_type,
+                        "planned_duration_h": round(duration_h, 3),
+                        "planned_distance_km": round(distance_km, 3),
+                        "estimated_energy_kcal": estimated_energy_kcal,
+                        "reported_energy_kcal": tp["energy_reported_kcal"] or gm["energy_reported_kcal"],
+                        "source": "trainingpeaks+garmin",
+                        "source_session_ids": [tp["source_session_id"], gm["source_session_id"]],
+                        "source_metrics": {
+                            "trainingpeaks": {
+                                "tss": tp["tss"],
+                                "if": tp["if"],
+                                "duration_h": tp["duration_h"],
+                                "distance_km": tp["distance_km"],
+                                "energy_kcal": tp["energy_reported_kcal"],
+                            },
+                            "garmin": {
+                                "duration_h": gm["duration_h"],
+                                "distance_km": gm["distance_km"],
+                                "energy_kcal": gm["energy_reported_kcal"],
+                            },
+                        },
+                    }
+                )
+            else:
+                merge_stats["tp_only"] += 1
+                estimated_energy_kcal = estimate_energy_kcal(tp["day_type"], tp["duration_h"], weight_kg)
+                merged.append(
+                    {
+                        "date": date,
+                        "iso_week": iso_week_str(date),
+                        "title": tp["title"],
+                        "workout_type": tp["workout_type"],
+                        "day_type": tp["day_type"],
+                        "planned_duration_h": tp["duration_h"],
+                        "planned_distance_km": tp["distance_km"],
+                        "estimated_energy_kcal": estimated_energy_kcal,
+                        "reported_energy_kcal": tp["energy_reported_kcal"],
+                        "source": "trainingpeaks",
+                        "source_session_ids": [tp["source_session_id"]],
+                        "source_metrics": {
+                            "trainingpeaks": {
+                                "tss": tp["tss"],
+                                "if": tp["if"],
+                                "duration_h": tp["duration_h"],
+                                "distance_km": tp["distance_km"],
+                                "energy_kcal": tp["energy_reported_kcal"],
+                            }
+                        },
+                    }
+                )
+        for gm in day_gm:
+            if gm["source_session_id"] in matched_garmin_ids:
+                continue
+            merge_stats["garmin_only"] += 1
+            estimated_energy_kcal = estimate_energy_kcal(gm["day_type"], gm["duration_h"], weight_kg)
+            merged.append(
+                {
+                    "date": date,
+                    "iso_week": iso_week_str(date),
+                    "title": gm["title"],
+                    "workout_type": gm["workout_type"],
+                    "day_type": gm["day_type"],
+                    "planned_duration_h": gm["duration_h"],
+                    "planned_distance_km": gm["distance_km"],
+                    "estimated_energy_kcal": estimated_energy_kcal,
+                    "reported_energy_kcal": gm["energy_reported_kcal"],
+                    "source": "garmin",
+                    "source_session_ids": [gm["source_session_id"]],
+                    "source_metrics": {
+                        "garmin": {
+                            "duration_h": gm["duration_h"],
+                            "distance_km": gm["distance_km"],
+                            "energy_kcal": gm["energy_reported_kcal"],
+                        }
+                    },
+                }
+            )
+    return merged, merge_stats
+
+
+def summarize_weeks(sessions):
     weeks = defaultdict(
         lambda: {
             "start_date": None,
@@ -196,6 +458,79 @@ def build_training_load_payload(csv_path):
                 "day_type_avg_energy_kcal": day_type_avg_kcal,
             }
         )
+    return weeks_out
+
+
+def build_training_load_payload(tp_files, garmin_files):
+    """Costruisce payload training_load da uno o entrambi i provider CSV."""
+    if not tp_files and not garmin_files:
+        raise ValueError("Nessun file CSV passato.")
+
+    weight_kg = get_current_weight_kg()
+    tp_sessions = []
+    gm_sessions = []
+    for path in tp_files:
+        tp_sessions.extend(parse_trainingpeaks_csv(path))
+    for path in garmin_files:
+        gm_sessions.extend(parse_garmin_csv(path))
+
+    if not tp_sessions and not gm_sessions:
+        raise ValueError("Nessuna sessione valida trovata nei CSV.")
+
+    if tp_sessions and gm_sessions:
+        merged, merge_stats = merge_sources(tp_sessions, gm_sessions, weight_kg)
+        source_mode = "trainingpeaks+garmin"
+    elif tp_sessions:
+        merged = []
+        for tp in tp_sessions:
+            merged.append(
+                {
+                    "date": tp["date"],
+                    "iso_week": iso_week_str(tp["date"]),
+                    "title": tp["title"],
+                    "workout_type": tp["workout_type"],
+                    "day_type": tp["day_type"],
+                    "planned_duration_h": tp["duration_h"],
+                    "planned_distance_km": tp["distance_km"],
+                    "estimated_energy_kcal": estimate_energy_kcal(tp["day_type"], tp["duration_h"], weight_kg),
+                    "reported_energy_kcal": tp["energy_reported_kcal"],
+                    "source": "trainingpeaks",
+                    "source_session_ids": [tp["source_session_id"]],
+                    "source_metrics": {"trainingpeaks": {"tss": tp["tss"], "if": tp["if"]}},
+                }
+            )
+        merge_stats = {"matched": 0, "tp_only": len(merged), "garmin_only": 0}
+        source_mode = "trainingpeaks"
+    else:
+        merged = []
+        for gm in gm_sessions:
+            merged.append(
+                {
+                    "date": gm["date"],
+                    "iso_week": iso_week_str(gm["date"]),
+                    "title": gm["title"],
+                    "workout_type": gm["workout_type"],
+                    "day_type": gm["day_type"],
+                    "planned_duration_h": gm["duration_h"],
+                    "planned_distance_km": gm["distance_km"],
+                    "estimated_energy_kcal": estimate_energy_kcal(gm["day_type"], gm["duration_h"], weight_kg),
+                    "reported_energy_kcal": gm["energy_reported_kcal"],
+                    "source": "garmin",
+                    "source_session_ids": [gm["source_session_id"]],
+                    "source_metrics": {"garmin": {"energy_kcal": gm["energy_reported_kcal"]}},
+                }
+            )
+        merge_stats = {"matched": 0, "tp_only": 0, "garmin_only": len(merged)}
+        source_mode = "garmin"
+
+    merged.sort(key=lambda x: (x["date"], x["title"]))
+    sessions = []
+    for idx, session in enumerate(merged, 1):
+        item = dict(session)
+        item["session_id"] = f"s{idx:03d}"
+        sessions.append(item)
+
+    weeks_out = summarize_weeks(sessions)
 
     aggregate_counts = Counter(s["day_type"] for s in sessions)
     aggregate_energy = Counter()
@@ -209,16 +544,26 @@ def build_training_load_payload(csv_path):
 
     payload = {
         "meta": {
-            "version": "v1.0",
+            "version": "v2.0",
             "generated_at": datetime.now().isoformat(),
-            "source_file": str(csv_path.relative_to(ROOT_DIR)),
-            "mode": "planned_only",
+            "athlete_id": get_athlete_id(),
+            "source_file": (
+                relpath_or_str(tp_files[0])
+                if tp_files
+                else relpath_or_str(garmin_files[0])
+            ),
+            "source_files": {
+                "trainingpeaks": [relpath_or_str(x) for x in tp_files],
+                "garmin": [relpath_or_str(x) for x in garmin_files],
+            },
+            "mode": source_mode,
             "weight_used_kg": round(weight_kg, 2),
         },
         "assumptions": {
             "energy_model": "MET * body_weight_kg * planned_duration_h",
             "met_by_day_type": MET_BY_DAY_TYPE,
         },
+        "merge": merge_stats,
         "summary": {
             "sessions_count": len(sessions),
             "date_range": {
@@ -236,7 +581,7 @@ def build_training_load_payload(csv_path):
     return payload
 
 
-def append_changelog_entry(source_file, payload):
+def append_changelog_entry(source_files, payload):
     """Aggiunge entry nel changelog."""
     try:
         changelog = json.loads(CHANGELOG_FILE.read_text(encoding="utf-8"))
@@ -244,7 +589,7 @@ def append_changelog_entry(source_file, payload):
         changelog = {"entries": []}
 
     details = {
-        "source_file": source_file,
+        "source_files": source_files,
         "sessions_count": payload["summary"]["sessions_count"],
         "date_from": payload["summary"]["date_range"]["from"],
         "date_to": payload["summary"]["date_range"]["to"],
@@ -263,26 +608,71 @@ def append_changelog_entry(source_file, payload):
     CHANGELOG_FILE.write_text(json.dumps(changelog, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def resolve_path(raw_path):
+    path = Path(raw_path)
+    if not path.is_absolute():
+        path = ROOT_DIR / path
+    return path
+
+
+def relpath_or_str(path):
+    """Restituisce path relativo alla root quando possibile."""
+    p = Path(path)
+    if not p.is_absolute():
+        p = ROOT_DIR / p
+    try:
+        return str(p.relative_to(ROOT_DIR))
+    except Exception:
+        return str(p)
+
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(
+        prog="import_training_load.py",
+        description="Importa TrainingPeaks e/o Garmin CSV in data/training_load.json",
+    )
+    parser.add_argument("csv", nargs="*", help="CSV path legacy (auto-detect formato)")
+    parser.add_argument("--tp", action="append", default=[], help="CSV TrainingPeaks (ripetibile)")
+    parser.add_argument("--garmin", action="append", default=[], help="CSV Garmin (ripetibile)")
+    return parser.parse_args(argv)
+
+
 def main():
-    if len(sys.argv) < 2:
-        print("Uso: python3 scripts/import_training_load.py <csv_path>")
+    args = parse_args(sys.argv[1:])
+    tp_files = [resolve_path(p) for p in args.tp]
+    garmin_files = [resolve_path(p) for p in args.garmin]
+
+    # Backward compatibility: positional CSV con auto-detect.
+    for raw in args.csv:
+        path = resolve_path(raw)
+        rows = load_csv_rows(path)
+        fmt = detect_csv_format(rows)
+        if fmt == "trainingpeaks":
+            tp_files.append(path)
+        elif fmt == "garmin":
+            garmin_files.append(path)
+        else:
+            print(f"Errore: formato CSV non supportato: {path}")
+            sys.exit(1)
+
+    if not tp_files and not garmin_files:
+        print("Uso: python3 scripts/import_training_load.py <csv_path> [--tp <file>] [--garmin <file>]")
         sys.exit(1)
 
-    csv_path = Path(sys.argv[1])
-    if not csv_path.is_absolute():
-        csv_path = ROOT_DIR / csv_path
-    if not csv_path.exists():
-        print(f"Errore: file non trovato: {csv_path}")
-        sys.exit(1)
+    for path in tp_files + garmin_files:
+        if not path.exists():
+            print(f"Errore: file non trovato: {path}")
+            sys.exit(1)
 
     try:
-        payload = build_training_load_payload(csv_path)
+        payload = build_training_load_payload(tp_files, garmin_files)
     except Exception as exc:
         print(f"Errore parsing CSV: {exc}")
         sys.exit(1)
 
+    ensure_athlete_dirs()
     TRAINING_LOAD_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    append_changelog_entry(str(csv_path.relative_to(ROOT_DIR)), payload)
+    append_changelog_entry(payload["meta"]["source_files"], payload)
 
     summary = payload["summary"]
     print(f"[OK] Training load importato: {TRAINING_LOAD_FILE}")
@@ -296,6 +686,7 @@ def main():
             kcal=summary["estimated_energy_kcal"],
         )
     )
+    print(f"  mode={payload['meta']['mode']} merge={payload.get('merge', {})}")
     print(f"  profile_costs_kcal={payload['profile_costs_kcal']}")
 
 

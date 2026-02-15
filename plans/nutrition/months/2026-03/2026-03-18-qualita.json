@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-14",
+    "generated_at": "2026-02-15",
     "category": "qualita",
     "status": "CURRENT"
   },
@@ -13,12 +13,12 @@
     "config_version": "v1.0",
     "day_profile": "qualita",
     "deficit_pct": 0.025,
-    "training_cost_kcal": 438,
+    "training_cost_kcal": 432,
     "training_cost_source": "running_plan_day",
     "phase": "specific",
     "workout_label": "test_5k",
     "session_date": "2026-03-18",
-    "ea_value_kcal_per_kg_ffm": 35.19,
+    "ea_value_kcal_per_kg_ffm": 35.29,
     "ea_guard_applied": false
   },
   "plan": {

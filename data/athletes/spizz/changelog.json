@@ -1,0 +1,254 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-02-15T18:43:33.815082",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/trainingpeaks-last-year.csv"
+          ],
+          "garmin": [
+            "sources/garmin-last-year.csv"
+          ]
+        },
+        "sessions_count": 102,
+        "date_from": "2025-05-07",
+        "date_to": "2026-02-15",
+        "planned_distance_km": 832.91,
+        "planned_duration_h": 68.19,
+        "estimated_energy_kcal": 44134,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:43:33.815869",
+      "command": "running setup",
+      "details": {
+        "athlete": "Spizz",
+        "goal_race": {
+          "name": "Pedagnalonga",
+          "date": "2026-04-26"
+        },
+        "tid_method": "polarized",
+        "aggressiveness": "aggressive",
+        "training_load_import": {
+          "mode": "trainingpeaks+garmin",
+          "sessions_count": 102,
+          "date_from": "2025-05-07",
+          "date_to": "2026-02-15"
+        },
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "data/training_load.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:47:37.804236",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412.8,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:52:23.333854",
+      "command": "zones",
+      "details": {
+        "test_date": "2026-02-15",
+        "test_time": "18:26",
+        "pace": "3:41",
+        "delta_seconds": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:57:02.035822",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412.8,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:57:37.056179",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/trainingpeaks-last-year.csv"
+          ],
+          "garmin": [
+            "sources/garmin-last-year.csv"
+          ]
+        },
+        "sessions_count": 102,
+        "date_from": "2025-05-07",
+        "date_to": "2026-02-15",
+        "planned_distance_km": 832.91,
+        "planned_duration_h": 68.19,
+        "estimated_energy_kcal": 44134,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:57:37.056491",
+      "command": "running setup",
+      "details": {
+        "athlete": "Spizz",
+        "goal_race": {
+          "name": "Pedagnalonga",
+          "date": "2026-04-26"
+        },
+        "tid_method": "polarized",
+        "aggressiveness": "aggressive",
+        "training_load_import": {
+          "mode": "trainingpeaks+garmin",
+          "sessions_count": 102,
+          "date_from": "2025-05-07",
+          "date_to": "2026-02-15"
+        },
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "data/training_load.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:58:08.631130",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412.8,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:01:50.466148",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:02:13.800967",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:02:28.127300",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:07:27.755190",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:31:12.278898",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    },
+    {
+      "timestamp": "2026-02-15T19:32:31.210705",
+      "command": "running generate",
+      "details": {
+        "from": "2026-02-16",
+        "to": "2026-04-26",
+        "goal_race": "2026-04-26",
+        "weeks": 10,
+        "total_target_km": 412,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/spizz/running_plan.json"
+        ],
+        "athlete_id": "spizz"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1036 @@
+{
+  "meta": {
+    "generated_at": "2026-02-15",
+    "category": "tempo",
+    "status": "CURRENT"
+  },
+  "inputs": {
+    "weight_kg": 70.0,
+    "ffm_kg": 60.2,
+    "bmr_kcal": 1670
+  },
+  "engine": {
+    "config_version": "v1.0",
+    "day_profile": "progressivo",
+    "deficit_pct": 0.065,
+    "training_cost_kcal": 679,
+    "training_cost_source": "running_plan_day",
+    "phase": "build",
+    "workout_label": "progressivo_classico",
+    "session_date": "2026-03-13",
+    "ea_value_kcal_per_kg_ffm": 30.0,
+    "ea_guard_applied": true
+  },
+  "plan": {
+    "ffm": 60.2,
+    "bmr": 1690,
+    "target_kcal": 2485,
+    "meals": {
+      "COLAZIONE": {
+        "target": {
+          "kcal": 422,
+          "protein": 24,
+          "fat": 10,
+          "cho": 57
+        },
+        "options": [
+          {
+            "name": "Dolce classica con fette biscottate",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 96.9,
+                "unit": "ml"
+              },
+              {
+                "type": "single",
+                "name": "Fette biscottate",
+                "amount": 46.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 22.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 292.0,
+              "protein": 7.5,
+              "fat": 8.2,
+              "cho": 48.4
+            },
+            "swap": "Fette 48g ↔ Pane integrale 52g | Mandorle ↔ Noci 10g ↔ Nocciole 8g",
+            "quando": "Colazione veloce pre-yoga, energia bilanciata pre-tempo."
+          },
+          {
+            "name": "Dolce con pane e frutta secca",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 55.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 27.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 123.0,
+              "protein": 2.2,
+              "fat": 5.4,
+              "cho": 16.4
+            },
+            "swap": "Mandorle ↔ Noci 10g ↔ Nocciole 8g",
+            "quando": "Sazietà prolungata, ideale pre-tempo progressivo."
+          },
+          {
+            "name": "Salata completa",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 69.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 32.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Formaggio spalmabile light",
+                "amount": 21.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 96.9,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 99.0,
+              "protein": 8.2,
+              "fat": 7.3,
+              "cho": 0.0
+            },
+            "swap": "Prosciutto 33g ↔ Bresaola 28g ↔ Fesa tacchino 38g",
+            "quando": "Massimo apporto proteico pre-tempo, variante salata."
+          },
+          {
+            "name": "Dolce con torta homemade",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Plum cake (senza latte/burro)",
+                "amount": 69.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 6.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 96.9,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 43.0,
+              "protein": 1.5,
+              "fat": 3.8,
+              "cho": 0.3
+            },
+            "swap": "Plum cake ↔ Ciambellone (stesse grammature)",
+            "quando": "Weekend tempo, comfort food pre-progressivo."
+          },
+          {
+            "name": "Dolce con biscotti e burro d'arachidi",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Oro Saiwa",
+                "amount": 41.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Burro d'arachidi",
+                "amount": 12.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 96.9,
+                "unit": "ml"
+              },
+              {
+                "type": "single",
+                "name": "Oro Saiwa",
+                "amount": 41.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 79.0,
+              "protein": 3.1,
+              "fat": 6.8,
+              "cho": 1.0
+            },
+            "swap": null,
+            "quando": "Versatilità dolce, energia concentrata pre-tempo."
+          }
+        ]
+      },
+      "SPUNTINO MATTINA": {
+        "target": {
+          "kcal": 198,
+          "protein": 11,
+          "fat": 4,
+          "cho": 26
+        },
+        "options": [
+          {
+            "name": "Frutta + fonte proteica/lipidica",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 126.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 147.0,
+              "protein": 2.7,
+              "fat": 5.7,
+              "cho": 20.4
+            },
+            "swap": "Mela 130g ↔ Banana 110g | Mandorle ↔ Noci ↔ Burro d'arachidi",
+            "quando": "Grab-and-go, praticità pre-pranzo tempo."
+          },
+          {
+            "name": "Yogurt dolce completo",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 106.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 7.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 23.0,
+              "protein": 0.0,
+              "fat": 0.0,
+              "cho": 6.2
+            },
+            "swap": "Banana 110g ↔ Mela 130g",
+            "quando": "Spuntino strutturato, CHO per tempo serale."
+          },
+          {
+            "name": "Crackers + proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 21.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 24.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 77.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 90.0,
+              "protein": 8.4,
+              "fat": 0.7,
+              "cho": 12.4
+            },
+            "swap": "Bresaola 25g ↔ Prosciutto 20g ↔ Formaggio spalmabile 15g",
+            "quando": "Variante salata, flessibilità proteica pre-tempo."
+          },
+          {
+            "name": "Yogurt salato proteico",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 21.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 11.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 32.0,
+              "protein": 7.1,
+              "fat": 0.4,
+              "cho": 0.1
+            },
+            "swap": "Bresaola 22g ↔ Prosciutto crudo 18g",
+            "quando": "Boost proteico moderato pre-tempo."
+          }
+        ]
+      },
+      "PRANZO": {
+        "target": {
+          "kcal": 844,
+          "protein": 47,
+          "fat": 21,
+          "cho": 113
+        },
+        "options": [
+          {
+            "name": "Pasta al tonno",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 94.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Tonno al naturale",
+                "amount": 79.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 150.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zenzero fresco",
+                "amount": 2.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 140.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 96.0,
+              "protein": 0.7,
+              "fat": 0.3,
+              "cho": 22.3
+            },
+            "swap": "Zucchine 155g ↔ Carote 125g | Tonno naturale+olio ↔ Tonno sott'olio",
+            "quando": "Pranzo bilanciato, omega-3, digestione pre-tempo."
+          },
+          {
+            "name": "Pasta al ragù",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 94.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Ragù di vitello",
+                "amount": 137.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 150.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 116.3,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Zucchine 155g ↔ Carote 125g",
+            "quando": "Comfort food, sostanzioso pre-tempo serale."
+          },
+          {
+            "name": "Riso con proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Riso basmati (crudo)",
+                "amount": 85.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pollo piastra",
+                "amount": 114.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Piselli",
+                "amount": 79.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 101.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 114.3,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 78.0,
+              "protein": 0.6,
+              "fat": 0.2,
+              "cho": 18.2
+            },
+            "swap": "Pollo 118g ↔ Salmone 98g ↔ Pesce spada 108g ↔ Uova 88g",
+            "quando": "4 scelte proteiche, flessibilità pre-tempo."
+          },
+          {
+            "name": "Tortellini carne",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Tortellini vitello",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 10.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 150.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 124.1,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Zucchine 155g ↔ Carote 125g",
+            "quando": "Velocissimo, alta digeribilità pre-tempo."
+          },
+          {
+            "name": "Pasta semplice",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 94.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 13.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Passata pomodoro",
+                "amount": 46.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 150.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 127.9,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 87.0,
+              "protein": 0.6,
+              "fat": 0.3,
+              "cho": 20.3
+            },
+            "swap": null,
+            "quando": "Leggero, facile digestione pre-tempo."
+          },
+          {
+            "name": "Piatto proteico veloce",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mozzarella bufala",
+                "amount": 85.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 40.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Scaglie grana",
+                "amount": 6.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 75.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine (friggitrice)",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 94.9,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 126.0,
+              "protein": 10.4,
+              "fat": 9.3,
+              "cho": 0.0
+            },
+            "swap": "Prosciutto 42g ↔ Bresaola 52g | Zucchine ↔ Carote",
+            "quando": "Zero cottura, fresco pre-tempo estivo."
+          }
+        ]
+      },
+      "SPUNTINO POMERIGGIO": {
+        "target": {
+          "kcal": 397,
+          "protein": 22,
+          "fat": 10,
+          "cho": 53
+        },
+        "options": [
+          {
+            "name": "Frutta + yogurt + frutta secca",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 126.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 14.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 91.0,
+              "protein": 3.2,
+              "fat": 8.0,
+              "cho": 0.7
+            },
+            "swap": null,
+            "quando": "TEMPO - bilanciamento CHO/proteine per variazioni ritmo."
+          },
+          {
+            "name": "Frutta + burro d'arachidi ⭐ TEMPO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 135.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Burro d'arachidi",
+                "amount": 16.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 103.0,
+              "protein": 4.1,
+              "fat": 8.9,
+              "cho": 1.3
+            },
+            "swap": null,
+            "quando": "TEMPO - CHO focus con proteine/grassi moderati per progressivi."
+          },
+          {
+            "name": "Frutta + frutta secca ⭐ TEMPO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 145.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 19.4,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 122.0,
+              "protein": 4.3,
+              "fat": 10.7,
+              "cho": 0.9
+            },
+            "swap": null,
+            "quando": "TEMPO - leggera, grab-and-go, no latticini."
+          },
+          {
+            "name": "Crackers + affettati",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 46.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 50.4,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 156.0,
+              "protein": 12.9,
+              "fat": 11.5,
+              "cho": 0.1
+            },
+            "swap": null,
+            "quando": "Alternativa salata se problemi digestivi CHO pre-tempo."
+          },
+          {
+            "name": "Pre-workout leggero ⭐ TEMPO CHO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 169.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 29.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 6.8,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 21.0,
+              "protein": 0.0,
+              "fat": 0.0,
+              "cho": 5.5
+            },
+            "swap": null,
+            "quando": "TEMPO - CHO focus, stomaco sensibile pre-progressivi."
+          }
+        ]
+      },
+      "SPUNTINO SERA": {
+        "target": {
+          "kcal": 99,
+          "protein": 5,
+          "fat": 2,
+          "cho": 13
+        },
+        "options": [
+          {
+            "name": "Mini emergenza",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 96.9,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Gap 45min-1h, tamponare fame post-progressivi."
+          },
+          {
+            "name": "Dolce recupero",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 82.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 58.2,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Gap 1h-1h30, tempo intenso, recovery CHO + proteine."
+          },
+          {
+            "name": "Salata recupero",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 31.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 7.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 47.0,
+              "protein": 10.3,
+              "fat": 0.6,
+              "cho": 0.1
+            },
+            "swap": null,
+            "quando": "Post-tempo, focus proteine per recovery."
+          }
+        ]
+      },
+      "CENA": {
+        "target": {
+          "kcal": 646,
+          "protein": 36,
+          "fat": 16,
+          "cho": 86
+        },
+        "options": [
+          {
+            "name": "Carne + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 227.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 203.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Pollo 135g ↔ Tacchino 120g ↔ Vitello 135g ↔ Manzo 145g",
+            "quando": "Cena classica post-tempo, recovery equilibrato."
+          },
+          {
+            "name": "Pesce + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 227.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 203.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Salmone ↔ Pesce spada ↔ Merluzzo ↔ Tonno tagliata",
+            "quando": "Omega-3 post-tempo, recovery con antinfiammatori."
+          },
+          {
+            "name": "Uova + pane + verdure/vellutata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Uova",
+                "amount": 106.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 103.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine cotte",
+                "amount": 203.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Verdure solide ↔ Vellutata 270g",
+            "quando": "Veloce, economica, vellutata comfort post-tempo."
+          },
+          {
+            "name": "Hummus + pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Hummus ceci",
+                "amount": 121.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 89.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 203.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.7,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": "Hummus ceci 125g ↔ Hummus fagioli 132g",
+            "quando": "Vegetariana, alta fibra post-tempo, recovery plant-based."
+          }
+        ]
+      }
+    }
+  }
+}

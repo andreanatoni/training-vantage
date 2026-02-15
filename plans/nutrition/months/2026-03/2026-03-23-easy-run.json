@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-14",
+    "generated_at": "2026-02-15",
     "category": "easy-run",
     "status": "CURRENT"
   },
@@ -13,12 +13,12 @@
     "config_version": "v1.0",
     "day_profile": "easy",
     "deficit_pct": 0.1,
-    "training_cost_kcal": 390,
+    "training_cost_kcal": 384,
     "training_cost_source": "running_plan_day",
     "phase": "specific",
     "workout_label": "easy_technique",
     "session_date": "2026-03-23",
-    "ea_value_kcal_per_kg_ffm": 31.47,
+    "ea_value_kcal_per_kg_ffm": 31.57,
     "ea_guard_applied": false
   },
   "plan": {

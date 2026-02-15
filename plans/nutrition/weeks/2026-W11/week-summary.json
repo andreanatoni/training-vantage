@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-14T23:07:55.121764",
+    "generated_at": "2026-02-15T10:44:39.001548",
     "iso_week": "2026-W11",
     "source_running_plan": "data/running_plan.json"
   },
@@ -9,7 +9,7 @@
     "start_date": "2026-03-09",
     "end_date": "2026-03-15",
     "phase": "specific",
-    "target_km": 43.6
+    "target_km": 42.9
   },
   "days": [
     {
@@ -17,7 +17,7 @@
       "weekday": "Monday",
       "category": "easy-run",
       "day_type": "easy",
-      "training_cost_kcal": 596,
+      "training_cost_kcal": 589,
       "phase": "specific",
       "workout_label": "easy_technique",
       "md_file": "plans/nutrition/weeks/2026-W11/2026-03-09-easy-run.md",
@@ -39,7 +39,7 @@
       "weekday": "Wednesday",
       "category": "qualita",
       "day_type": "qualita",
-      "training_cost_kcal": 774,
+      "training_cost_kcal": 767,
       "phase": "specific",
       "workout_label": "qualita_ritmo_gara",
       "md_file": "plans/nutrition/weeks/2026-W11/2026-03-11-qualita.md",
@@ -61,7 +61,7 @@
       "weekday": "Friday",
       "category": "tempo",
       "day_type": "progressivo",
-      "training_cost_kcal": 658,
+      "training_cost_kcal": 644,
       "phase": "specific",
       "workout_label": "progressivo_chiusura_gara",
       "md_file": "plans/nutrition/weeks/2026-W11/2026-03-13-tempo.md",
@@ -72,7 +72,7 @@
       "weekday": "Saturday",
       "category": "lungo",
       "day_type": "lungo",
-      "training_cost_kcal": 959,
+      "training_cost_kcal": 938,
       "phase": "specific",
       "workout_label": "lungo_blocchi_ritmo_gara",
       "md_file": "plans/nutrition/weeks/2026-W11/2026-03-14-lungo.md",

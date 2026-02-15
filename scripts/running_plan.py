@@ -17,13 +17,15 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
+from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
+
 
 ROOT = Path(__file__).parent.parent
-DATA_DIR = ROOT / "data"
-CONFIG_FILE = DATA_DIR / "RUNNING_PLAN_CONFIG.json"
-PLAN_FILE = DATA_DIR / "running_plan.json"
-CHANGELOG_FILE = DATA_DIR / "changelog.json"
-ZONES_FILE = DATA_DIR / "zones.json"
+CONFIG_FILE = data_file("RUNNING_PLAN_CONFIG.json")
+PROFILE_FILE = data_file("RUNNING_ATHLETE_PROFILE.json")
+PLAN_FILE = data_file("running_plan.json")
+CHANGELOG_FILE = data_file("changelog.json")
+ZONES_FILE = data_file("zones.json")
 
 
 DEFAULT_CONFIG = {
@@ -170,12 +172,22 @@ class GenerationArgs:
 def ensure_config():
     if CONFIG_FILE.exists():
         return
+    ensure_athlete_dirs()
     CONFIG_FILE.write_text(json.dumps(DEFAULT_CONFIG, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def load_config():
     ensure_config()
     return json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+
+
+def load_json(path: Path, default):
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return default
 
 
 def load_zones():
@@ -316,6 +328,93 @@ def split_intensity_km(workout_label: str, distance_km: float) -> dict:
     return {"low_km": low, "moderate_km": moderate, "high_km": high}
 
 
+def _split_three(total_km: float, a_pct: float, b_pct: float, c_pct: float):
+    total_i = int(round(total_km))
+    a = int(round(total_i * a_pct))
+    b = int(round(total_i * b_pct))
+    c = max(0, total_i - a - b)
+    return a, b, c
+
+
+def detailed_session_plan(day_type: str, phase: str, workout_label: str, km: float) -> str:
+    """Dettaglio operativo sintetico seduta (km/reps/recuperi)."""
+    km_i = max(0, int(round(km)))
+    if day_type == "forza":
+        if phase in ("taper", "race"):
+            return "2-3 giri: core + mobilita + glute activation (20-30')"
+        if phase == "specific":
+            return "3-4 esercizi multiarticolari + core (35-45'), RPE 6-7"
+        return "Forza generale: 4-5 esercizi + core (40-50')"
+
+    if workout_label == "test_5k":
+        warmup = max(2, int(round(km_i * 0.25)))
+        cooldown = max(1, km_i - warmup - 5)
+        return f"Risc {warmup} km + Test 5 km + Defat {cooldown} km"
+
+    if day_type == "easy":
+        return f"Corsa continua facile {km_i} km + 6 allunghi da 80-100 m"
+
+    if day_type == "qualita":
+        if workout_label == "qualita_richiamo":
+            warmup = max(2, int(round(km_i * 0.25)))
+            cooldown = max(1, int(round(km_i * 0.2)))
+            remaining = max(2, km_i - warmup - cooldown)
+            reps = max(4, min(8, int(round(remaining / 0.6))))
+            return f"Risc {warmup} km + {reps}x600 m (rec 200 m jog) + Defat {cooldown} km"
+        if workout_label == "qualita_ritmo_gara":
+            warmup = max(2, int(round(km_i * 0.2)))
+            cooldown = max(1, int(round(km_i * 0.15)))
+            remaining = max(4, km_i - warmup - cooldown)
+            blocks = max(2, min(4, int(round(remaining / 2.4))))
+            block_km = max(1, int(round(remaining / blocks)))
+            return f"Risc {warmup} km + {blocks}x{block_km} km a ritmo gara (rec 1 km L) + Defat {cooldown} km"
+        warmup = max(2, int(round(km_i * 0.2)))
+        cooldown = max(1, int(round(km_i * 0.15)))
+        remaining = max(3, km_i - warmup - cooldown)
+        rep_km = 1.0 if km_i >= 10 else 0.8
+        rec_km = 0.4
+        reps = max(4, min(8, int((remaining + rec_km) // (rep_km + rec_km))))
+        reps = max(3, reps)
+        return f"Risc {warmup} km + {reps}x{int(rep_km*1000)} m (rec {int(rec_km*1000)} m jog) + Defat {cooldown} km"
+
+    if day_type == "progressivo":
+        if workout_label == "progressivo_chiusura_gara":
+            l_km, m_km, tr_km = _split_three(km, 0.35, 0.30, 0.35)
+        elif workout_label == "progressivo_corto":
+            l_km, m_km, tr_km = _split_three(km, 0.50, 0.30, 0.20)
+        else:
+            l_km, m_km, tr_km = _split_three(km, 0.45, 0.30, 0.25)
+        return (
+            f"Progressivo: {int(round(l_km))} km L + "
+            f"{int(round(m_km))} km M + {int(round(tr_km))} km TR"
+        )
+
+    if day_type == "lungo":
+        if workout_label == "lungo_blocchi_ritmo_gara":
+            if km_i >= 16:
+                blocks, block = 3, 2
+            elif km_i >= 12:
+                blocks, block = 2, 2
+            else:
+                blocks, block = 2, 1
+            rec_each = 1
+            rec_reps = blocks
+            rg = blocks * block
+            rec_total = rec_each * rec_reps
+            easy_total = max(2, km_i - rg - rec_total)
+            easy_a = max(1, int(round(easy_total * 0.65)))
+            easy_b = max(1, easy_total - easy_a)
+            return (
+                f"Lungo: {easy_a} km L + {blocks}x{block} km ritmo gara "
+                f"(rec {rec_each} km L x{rec_reps}) + {easy_b} km L"
+            )
+        if workout_label == "lungo_ridotto":
+            return f"Lungo ridotto facile: {km_i} km L continuo"
+        return f"Lungo aerobico: {km_i} km L con ultimi 2-3 km in M (opzionale)"
+
+    return f"Seduta continua {km_i} km"
+
+
 def evaluate_tid(phase: str, sessions: list, cfg: dict) -> dict:
     """Valuta distribuzione intensita' settimanale rispetto ai guardrail TID."""
     tid_cfg = cfg["defaults"].get("intensity_distribution", {})
@@ -372,9 +471,11 @@ def refresh_session_from_label(session: dict, phase: str, zones: dict):
     """Ricalcola campi derivati quando cambia workout_label."""
     wl = session.get("workout_label", session.get("day_type", "easy"))
     day_type = session.get("day_type", "easy")
+    km = float(session.get("distance_km", 0.0))
     session["structure"] = structure_for_session(day_type, phase, wl)
+    session["session_plan"] = detailed_session_plan(day_type, phase, wl, km)
     session["pace_target"] = pace_target_for(day_type, phase, zones, wl)
-    session["intensity_km"] = split_intensity_km(wl, float(session.get("distance_km", 0.0)))
+    session["intensity_km"] = split_intensity_km(wl, km)
 
 
 def enforce_tid_for_week(phase: str, sessions: list, cfg: dict, zones: dict) -> dict:
@@ -465,20 +566,81 @@ def build_week_targets(weeks_count: int, args: GenerationArgs, cfg: dict):
     return targets
 
 
+def session_template_from_preferences(profile: dict, fallback_days: list, fallback_types: dict):
+    """Deriva template giorni seduta da preferenze profilo atleta."""
+    prefs = profile.get("preferences", {}) if isinstance(profile, dict) else {}
+    run_days = prefs.get("run_days_per_week")
+    force_days = prefs.get("strength_days_per_week")
+    long_run_day = prefs.get("long_run_day")
+
+    if run_days is None and force_days is None and not long_run_day:
+        return fallback_days, fallback_types
+
+    try:
+        run_days = max(1, min(6, int(run_days if run_days is not None else 4)))
+        force_days = max(0, min(2, int(force_days if force_days is not None else 2)))
+    except (TypeError, ValueError):
+        return fallback_days, fallback_types
+
+    long_run_day = long_run_day if long_run_day in {"Friday", "Saturday", "Sunday"} else "Saturday"
+
+    run_slots = [
+        ("Wednesday", "qualita"),
+        ("Friday", "progressivo"),
+        (long_run_day, "lungo"),
+        ("Monday", "easy"),
+        ("Sunday", "easy"),
+        ("Thursday", "easy"),
+    ]
+    selected = []
+    used = set()
+    for day, day_type in run_slots:
+        if day in used:
+            continue
+        selected.append((day, day_type))
+        used.add(day)
+        if len(selected) >= run_days:
+            break
+
+    for day in ["Tuesday", "Thursday"]:
+        if len([x for x in selected if x[1] == "forza"]) >= force_days:
+            break
+        if day not in used and force_days > 0:
+            selected.append((day, "forza"))
+            used.add(day)
+
+    day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    types = {d: t for d, t in selected}
+    session_days = [d for d in day_order if d in types]
+    return session_days, types
+
+
 def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
     week_starts = list(iter_week_starts(args.start_date, args.end_date))
     shares = cfg["defaults"]["session_shares"]
     session_days = cfg["defaults"]["session_days"]
     types_by_day = cfg["defaults"]["session_types_by_day"]
+    profile = load_json(PROFILE_FILE, {})
+    session_days, types_by_day = session_template_from_preferences(profile, session_days, types_by_day)
     weekly_cfg = cfg["defaults"]["weekly_km"]
     deload_n = int(weekly_cfg["deload_every_n_weeks"])
     zones = load_zones()
 
     targets = build_week_targets(len(week_starts), args, cfg)
     weeks = []
+    active_running_types = [types_by_day[d] for d in session_days if types_by_day.get(d) != "forza"]
+    base_share_sum = sum(float(shares.get(t, 0.0)) for t in active_running_types)
+    normalized_shares = {}
+    if base_share_sum > 0:
+        for t in set(active_running_types):
+            normalized_shares[t] = float(shares.get(t, 0.0)) / base_share_sum
+    else:
+        even = 1.0 / max(1, len(set(active_running_types)))
+        for t in set(active_running_types):
+            normalized_shares[t] = even
     for idx, wstart in enumerate(week_starts, 1):
         wend = wstart + timedelta(days=6)
-        target_km = targets[idx - 1]
+        target_km = int(round(targets[idx - 1]))
         phase = phase_for_week(wstart, wend, args.goal_race)
         is_deload_week = (idx % deload_n == 0)
         sessions = []
@@ -497,12 +659,13 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
                 km = 0.0
             elif workout_label == "test_5k":
                 # Seduta test in scarico: volumi più contenuti (riscaldamento + test + defaticamento).
-                km = round(max(6.0, min(9.0, target_km * 0.18)), 1)
+                km = float(int(round(max(6.0, min(9.0, target_km * 0.18)))))
             else:
-                share = float(shares.get(session_type, 0.25))
-                km = round(target_km * share, 1)
+                share = float(normalized_shares.get(session_type, shares.get(session_type, 0.25)))
+                km = float(int(round(target_km * share)))
 
             structure = structure_for_session(session_type, phase, workout_label)
+            detail = detailed_session_plan(session_type, phase, workout_label, km)
 
             sessions.append(
                 {
@@ -512,17 +675,29 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
                     "workout_label": workout_label,
                     "distance_km": km,
                     "structure": structure,
+                    "session_plan": detail,
                     "pace_target": pace_target_for(session_type, phase, zones, workout_label),
                     "intensity_km": split_intensity_km(workout_label, km),
                     "source": "auto-generated",
                 }
             )
 
-        planned_total = round(sum(s["distance_km"] for s in sessions if s["day_type"] != "forza"), 1)
+        planned_total = int(round(sum(s["distance_km"] for s in sessions if s["day_type"] != "forza")))
         running_sessions = [s for s in sessions if s["day_type"] != "forza"]
-        if running_sessions and planned_total != round(target_km, 1):
-            delta = round(target_km - planned_total, 1)
-            running_sessions[-1]["distance_km"] = round(running_sessions[-1]["distance_km"] + delta, 1)
+        if running_sessions and planned_total != int(round(target_km)):
+            delta = int(round(target_km - planned_total))
+            adjusted = int(round(running_sessions[-1]["distance_km"])) + delta
+            running_sessions[-1]["distance_km"] = float(max(1, adjusted))
+            running_sessions[-1]["session_plan"] = detailed_session_plan(
+                running_sessions[-1]["day_type"],
+                phase,
+                running_sessions[-1]["workout_label"],
+                running_sessions[-1]["distance_km"],
+            )
+            running_sessions[-1]["intensity_km"] = split_intensity_km(
+                running_sessions[-1]["workout_label"],
+                running_sessions[-1]["distance_km"],
+            )
 
         iso_year, iso_week, _ = wstart.isocalendar()
         tid_info = evaluate_tid(phase, sessions, cfg)
@@ -536,7 +711,7 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
                 "start_date": wstart.isoformat(),
                 "end_date": wend.isoformat(),
                 "phase": phase,
-                "target_km": round(target_km, 1),
+                "target_km": int(target_km),
                 "tid": tid_info,
                 "sessions": sessions,
             }
@@ -579,10 +754,12 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
 
 
 def save_plan(payload: dict):
+    ensure_athlete_dirs()
     PLAN_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def append_changelog(details: dict):
+    ensure_athlete_dirs()
     try:
         data = json.loads(CHANGELOG_FILE.read_text(encoding="utf-8"))
     except Exception:
@@ -599,7 +776,10 @@ def append_changelog(details: dict):
 
 def load_plan():
     if not PLAN_FILE.exists():
-        raise FileNotFoundError("running_plan.json non trovato. Esegui: ./tv running generate ...")
+        raise FileNotFoundError(
+            f"running_plan.json non trovato per atleta '{get_athlete_id()}'. "
+            "Esegui: ./tv running generate ..."
+        )
     return json.loads(PLAN_FILE.read_text(encoding="utf-8"))
 
 
@@ -608,16 +788,62 @@ def show_week(week_idx: int):
     weeks = plan.get("weeks", [])
     week = next((w for w in weeks if int(w["week_index"]) == week_idx), None)
     if not week:
-        print(f"Settimana {week_idx} non trovata in data/running_plan.json")
+        print(f"Settimana {week_idx} non trovata in {PLAN_FILE}")
         return 1
 
     print(f"PIANO RUNNING - WEEK {week['week_index']} ({week['iso_week']})")
-    print(f"Periodo: {week['start_date']} -> {week['end_date']} | Fase: {week['phase']} | Target: {week['target_km']} km")
-    for s in week["sessions"]:
-        print(
-            f"- {s['date']} {s['day_name']}: {s['day_type']} ({s.get('workout_label', s['day_type'])}) "
-            f"| {s['distance_km']} km | {s['structure']} | ritmo: {s.get('pace_target', 'N/A')}"
+    print(f"Periodo: {week['start_date']} -> {week['end_date']} | Fase: {week['phase']} | Target: {int(round(week['target_km']))} km")
+    print()
+
+    def load_tag(day_type: str, workout_label: str) -> str:
+        if day_type == "forza":
+            return "S&C"
+        if workout_label in ("qualita_vo2_threshold", "test_5k"):
+            return "HIGH"
+        if day_type == "lungo":
+            return "MED-HIGH"
+        if day_type == "progressivo":
+            return "MED"
+        return "LOW"
+
+    headers = ["#", "Data", "Giorno", "Tipo", "Load", "Km", "Ritmo"]
+    rows = []
+    for idx, s in enumerate(week["sessions"], 1):
+        km_i = int(round(float(s["distance_km"])))
+        rows.append(
+            [
+                str(idx),
+                s["date"],
+                s["day_name"][:3],
+                s["day_type"].upper(),
+                load_tag(s["day_type"], s.get("workout_label", s["day_type"])),
+                str(km_i),
+                s.get("pace_target", "N/A"),
+            ]
         )
+
+    widths = [len(h) for h in headers]
+    for r in rows:
+        for i, c in enumerate(r):
+            widths[i] = max(widths[i], len(c))
+
+    def fmt_row(cols):
+        return " | ".join(col.ljust(widths[i]) for i, col in enumerate(cols))
+
+    print(fmt_row(headers))
+    print("-+-".join("-" * w for w in widths))
+    for r in rows:
+        print(fmt_row(r))
+
+    print()
+    print("Dettaglio Sedute")
+    print("-" * 80)
+    for idx, s in enumerate(week["sessions"], 1):
+        print(f"{idx}) {s['date']} {s['day_name']} - {s['day_type'].upper()} [{s.get('workout_label', s['day_type'])}]")
+        print(f"   Focus: {s['structure']}")
+        if s.get("session_plan"):
+            print(f"   Piano: {s['session_plan']}")
+        print()
     return 0
 
 
@@ -641,10 +867,10 @@ def show_month(month_yyyy_mm: str):
         counts[s["day_type"]] += 1
 
     print(f"PIANO RUNNING - MONTH {month_yyyy_mm}")
-    print(f"Sessioni: {len(sessions)} | Totale km: {sum(float(s['distance_km']) for s in sessions):.1f}")
+    print(f"Sessioni: {len(sessions)} | Totale km: {int(round(sum(float(s['distance_km']) for s in sessions)))}")
     for day_type in ["easy", "qualita", "progressivo", "lungo", "forza"]:
         if counts[day_type] > 0:
-            print(f"- {day_type}: {counts[day_type]} sessioni | {totals[day_type]:.1f} km")
+            print(f"- {day_type}: {counts[day_type]} sessioni | {int(round(totals[day_type]))} km")
     return 0
 
 
@@ -675,7 +901,7 @@ def show_summary():
             goal=plan["planning_window"]["goal_race"] or "N/A",
         )
     )
-    print(f"Settimane: {len(weeks)} | Km totali: {sum(w['target_km'] for w in weeks):.1f}")
+    print(f"Settimane: {len(weeks)} | Km totali: {int(round(sum(w['target_km'] for w in weeks)))}")
     print(f"Settimane scarico con test 5km: {test_weeks}")
     tid_summary = plan.get("tid_summary", {})
     if tid_summary:
@@ -691,10 +917,10 @@ def show_summary():
         )
     print("Volumi mensili:")
     for ym in sorted(month_totals.keys()):
-        print(f"- {ym}: {month_totals[ym]:.1f} km")
+        print(f"- {ym}: {int(round(month_totals[ym]))} km")
     print("Taper preview:")
     for w in weeks[-3:]:
-        print(f"- W{w['week_index']} ({w['iso_week']}): {w['target_km']} km | {w['phase']}")
+        print(f"- W{w['week_index']} ({w['iso_week']}): {int(round(w['target_km']))} km | {w['phase']}")
     return 0
 
 
@@ -729,7 +955,11 @@ def main():
         gen_args = GenerationArgs(
             start_date=parse_date(args.from_date),
             end_date=parse_date(args.to_date),
-            goal_race=parse_date(args.goal_race) if args.goal_race else None,
+            goal_race=parse_date(args.goal_race) if args.goal_race else (
+                parse_date(cfg.get("planning_defaults", {}).get("goal_race_date"))
+                if cfg.get("planning_defaults", {}).get("goal_race_date")
+                else None
+            ),
             start_km=float(args.start_km),
             peak_km=float(args.peak_km),
         )
@@ -748,12 +978,13 @@ def main():
                 "weeks": len(payload["weeks"]),
                 "total_target_km": total_km,
                 "enforce_tid": bool(args.enforce_tid),
-                "updated_files": ["data/running_plan.json"],
+                "updated_files": [str(PLAN_FILE)],
+                "athlete_id": get_athlete_id(),
             }
         )
         print(
             f"[OK] running_plan.json generato: settimane={len(payload['weeks'])} "
-            f"km_totali={total_km} periodo={gen_args.start_date}->{gen_args.end_date}"
+            f"km_totali={total_km} periodo={gen_args.start_date}->{gen_args.end_date} atleta={get_athlete_id()}"
         )
         return 0
 

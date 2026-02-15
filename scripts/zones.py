@@ -15,11 +15,11 @@ Gestione zone running:
 import json
 import sys
 from datetime import datetime
-from pathlib import Path
+from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
 
 # Paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-ZONES_FILE = DATA_DIR / "zones.json"
+ZONES_FILE = data_file("zones.json")
+CHANGELOG_FILE = data_file("changelog.json")
 
 
 def parse_time(time_str):
@@ -109,12 +109,15 @@ def calculate_zones(test_time_seconds):
 
 def load_zones():
     """Carica dati zone"""
+    if not ZONES_FILE.exists():
+        return {"current": None, "history": []}
     with open(ZONES_FILE, 'r') as f:
         return json.load(f)
 
 
 def save_zones(data):
     """Salva dati zone"""
+    ensure_athlete_dirs()
     with open(ZONES_FILE, 'w') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -123,6 +126,9 @@ def show_current_zones():
     """Mostra zone attuali"""
     data = load_zones()
     current = data['current']
+    if not current:
+        print(f"Nessuna zona disponibile per atleta '{get_athlete_id()}'. Esegui: ./tv --athlete {get_athlete_id()} zones 18:26")
+        return
 
     print("╔═══════════════════════════════════════════════════════════════════╗")
     print("║                         ZONE RUNNING ATTUALI                      ║")
@@ -170,6 +176,13 @@ def update_zones(test_time_str, note=None):
     # Carica dati esistenti
     data = load_zones()
     old_current = data['current']
+    if old_current is None:
+        old_current = {
+            "test_date": datetime.now().strftime('%Y-%m-%d'),
+            "test_time": test_time_str,
+            "test_pace": pace,
+            "zones": new_zones,
+        }
 
     # Prepara nuovi dati
     today = datetime.now().strftime('%Y-%m-%d')
@@ -271,10 +284,12 @@ def update_zones(test_time_str, note=None):
 
 def update_changelog(command, details):
     """Aggiorna changelog.json"""
-    changelog_file = DATA_DIR / "changelog.json"
-
-    with open(changelog_file, 'r') as f:
-        changelog = json.load(f)
+    ensure_athlete_dirs()
+    if CHANGELOG_FILE.exists():
+        with open(CHANGELOG_FILE, 'r') as f:
+            changelog = json.load(f)
+    else:
+        changelog = {"entries": []}
 
     entry = {
         "timestamp": datetime.now().isoformat(),
@@ -284,7 +299,7 @@ def update_changelog(command, details):
 
     changelog['entries'].append(entry)
 
-    with open(changelog_file, 'w') as f:
+    with open(CHANGELOG_FILE, 'w') as f:
         json.dump(changelog, f, indent=2, ensure_ascii=False)
 
 

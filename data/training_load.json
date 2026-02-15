@@ -1,9 +1,16 @@
 {
   "meta": {
-    "version": "v1.0",
-    "generated_at": "2026-02-14T23:07:54.587703",
+    "version": "v2.0",
+    "generated_at": "2026-02-15T18:30:24.243302",
+    "athlete_id": "default",
     "source_file": "sources/workouts-2.csv",
-    "mode": "planned_only",
+    "source_files": {
+      "trainingpeaks": [
+        "sources/workouts-2.csv"
+      ],
+      "garmin": []
+    },
+    "mode": "trainingpeaks",
     "weight_used_kg": 68.5
   },
   "assumptions": {
@@ -17,6 +24,11 @@
       "progressivo": 10.5
     }
   },
+  "merge": {
+    "matched": 0,
+    "tp_only": 4,
+    "garmin_only": 0
+  },
   "summary": {
     "sessions_count": 4,
     "date_range": {
@@ -25,13 +37,13 @@
     },
     "planned_distance_km": 46.88,
     "planned_duration_h": 3.73,
-    "estimated_energy_kcal": 2518
+    "estimated_energy_kcal": 2516
   },
   "profile_costs_kcal": {
     "rest": null,
     "easy": 639.0,
-    "qualita": 356.0,
-    "lungo": 868.0,
+    "qualita": 355.0,
+    "lungo": 867.0,
     "forza": null,
     "progressivo": 655.0
   },
@@ -43,7 +55,7 @@
       "sessions_count": 4,
       "planned_distance_km": 46.88,
       "planned_duration_h": 3.73,
-      "estimated_energy_kcal": 2518,
+      "estimated_energy_kcal": 2516,
       "day_type_counts": {
         "easy": 1,
         "qualita": 1,
@@ -52,15 +64,14 @@
       },
       "day_type_avg_energy_kcal": {
         "easy": 639.0,
-        "qualita": 356.0,
+        "qualita": 355.0,
         "progressivo": 655.0,
-        "lungo": 868.0
+        "lungo": 867.0
       }
     }
   ],
   "sessions": [
     {
-      "session_id": "s001",
       "date": "2026-02-16",
       "iso_week": "2026-W08",
       "title": "13x[0.85L+0.15All]",
@@ -68,10 +79,21 @@
       "day_type": "easy",
       "planned_duration_h": 1.036,
       "planned_distance_km": 13.0,
-      "estimated_energy_kcal": 639
+      "estimated_energy_kcal": 639,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0001"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s001"
     },
     {
-      "session_id": "s002",
       "date": "2026-02-18",
       "iso_week": "2026-W08",
       "title": "5x1km RM + Rec 1'30\"",
@@ -79,10 +101,21 @@
       "day_type": "qualita",
       "planned_duration_h": 0.451,
       "planned_distance_km": 6.275,
-      "estimated_energy_kcal": 356
+      "estimated_energy_kcal": 355,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0002"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s002"
     },
     {
-      "session_id": "s003",
       "date": "2026-02-20",
       "iso_week": "2026-W08",
       "title": "3L+3x(1L+1M+1TR)",
@@ -90,10 +123,21 @@
       "day_type": "progressivo",
       "planned_duration_h": 0.911,
       "planned_distance_km": 12.0,
-      "estimated_energy_kcal": 655
+      "estimated_energy_kcal": 655,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0003"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s003"
     },
     {
-      "session_id": "s004",
       "date": "2026-02-22",
       "iso_week": "2026-W08",
       "title": "1h20' L",
@@ -101,7 +145,19 @@
       "day_type": "lungo",
       "planned_duration_h": 1.333,
       "planned_distance_km": 15.6,
-      "estimated_energy_kcal": 868
+      "estimated_energy_kcal": 867,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0004"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s004"
     }
   ]
 }

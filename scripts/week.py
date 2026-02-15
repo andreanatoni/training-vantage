@@ -13,22 +13,24 @@ Visualizza:
 
 import sys
 import json
-from pathlib import Path
-from datetime import datetime
+from athlete_context import data_file, get_athlete_id
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-RUNNING_LOG_FILE = DATA_DIR / "running-log.json"
-ZONES_FILE = DATA_DIR / "zones.json"
+RUNNING_LOG_FILE = data_file("running-log.json")
+ZONES_FILE = data_file("zones.json")
 
 
 def load_running_log():
     """Carica running log"""
+    if not RUNNING_LOG_FILE.exists():
+        raise FileNotFoundError(f"running-log non trovato per atleta '{get_athlete_id()}': {RUNNING_LOG_FILE}")
     with open(RUNNING_LOG_FILE, 'r') as f:
         return json.load(f)
 
 
 def load_zones():
     """Carica zone attuali"""
+    if not ZONES_FILE.exists():
+        raise FileNotFoundError(f"zones non trovato per atleta '{get_athlete_id()}': {ZONES_FILE}")
     with open(ZONES_FILE, 'r') as f:
         data = json.load(f)
         return data['current']['zones']
@@ -92,6 +94,8 @@ def show_week(week_num):
     print("╔═══════════════════════════════════════════════════════════════════╗")
     print(f"║              PIANO RUNNING — SETTIMANA {week_num} ({week_data['mesociclo']})                    ║")
     print("╚═══════════════════════════════════════════════════════════════════╝")
+    print()
+    print(f"Atleta: {get_athlete_id()}")
     print()
 
     # Volume totale

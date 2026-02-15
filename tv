@@ -10,6 +10,18 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Global athlete context
+ATHLETE_ID="${TV_ATHLETE_ID:-default}"
+if [ "$1" = "--athlete" ]; then
+    if [ -z "$2" ]; then
+        echo -e "${RED}Uso non valido:${NC} tv --athlete <id> <command> [args]"
+        exit 1
+    fi
+    ATHLETE_ID="$2"
+    shift 2
+fi
+export TV_ATHLETE_ID="$ATHLETE_ID"
+
 # Help
 show_help() {
     cat << EOF
@@ -17,7 +29,7 @@ show_help() {
 ║                    TRAINING VANTAGE CLI v1.0                      ║
 ╚═══════════════════════════════════════════════════════════════════╝
 
-USAGE: tv <command> [args]
+USAGE: tv [--athlete <id>] <command> [args]
 
 COMANDI DISPONIBILI (Priorità 1 — Tracking base):
 
@@ -56,6 +68,10 @@ COMANDI DISPONIBILI (Priorità 3 — Running):
       Genera piano running periodizzato per finestra temporale (mesi o blocchi lunghi)
       Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
       Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18 --enforce-tid
+
+  running setup
+      Colloquio coach interattivo (Daniels/Pfitz/Canova/Seiler/Hudson) per configurare il blocco running
+      Esempio: tv running setup
 
   running week <N>
       Mostra dettaglio settimana N dal file data/running_plan.json
@@ -110,9 +126,10 @@ COMANDI DISPONIBILI (Utility):
       Analizza export Garmin CSV (distanza/tempo/passo/FC medi)
       Esempio: tv analyze sources/storico.csv
 
-  load import <workouts.csv>
-      Importa export TrainingPeaks FUTURO (planned) in data/training_load.json
+  load import [--tp <tp.csv>] [--garmin <garmin.csv>] [<csv_legacy>]
+      Importa storico/planning da CSV TrainingPeaks e/o Garmin in data/training_load.json
       Esempio: tv load import sources/workouts-2.csv
+      Esempio: tv load import --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
 
 Per maggiori informazioni: cat CLAUDE.md
 EOF
@@ -142,7 +159,12 @@ case "$1" in
         ;;
     running)
         shift
-        python3 "$SCRIPTS_DIR/running_plan.py" "$@"
+        if [ "$1" = "setup" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/running_setup.py" "$@"
+        else
+            python3 "$SCRIPTS_DIR/running_plan.py" "$@"
+        fi
         ;;
     food)
         shift
@@ -184,7 +206,8 @@ case "$1" in
             shift
             python3 "$SCRIPTS_DIR/import_training_load.py" "$@"
         else
-            echo -e "${RED}Uso non valido. Esempio:${NC} tv load import sources/workouts-2.csv"
+            echo -e "${RED}Uso non valido. Esempi:${NC} tv load import sources/workouts-2.csv"
+            echo "                          tv load import --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv"
             exit 1
         fi
         ;;

@@ -1,0 +1,51 @@
+{
+  "current": {
+    "test_date": "2026-02-15",
+    "test_time": "18:26",
+    "test_pace": "3:41",
+    "zones": {
+      "Z1": {
+        "name": "Recovery",
+        "from": "5:19",
+        "to": null
+      },
+      "Z2": {
+        "name": "Easy",
+        "from": "4:48",
+        "to": "5:19"
+      },
+      "Z3": {
+        "name": "Moderate",
+        "from": "4:24",
+        "to": "4:48"
+      },
+      "Z4": {
+        "name": "High Aerobic",
+        "from": "4:10",
+        "to": "4:24"
+      },
+      "Z5": {
+        "name": "Threshold-",
+        "from": "3:58",
+        "to": "4:10"
+      },
+      "Z6": {
+        "name": "Threshold",
+        "from": "3:50",
+        "to": "3:58"
+      },
+      "Z7": {
+        "name": "VO2max-",
+        "from": "3:39",
+        "to": "3:29"
+      },
+      "Z8": {
+        "name": "VO2max",
+        "from": "3:29",
+        "to": "3:25"
+      }
+    },
+    "note": "setup iniziale"
+  },
+  "history": []
+}

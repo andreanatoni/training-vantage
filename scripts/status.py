@@ -14,12 +14,12 @@ import json
 import re
 from datetime import datetime, timedelta
 from pathlib import Path
+from athlete_context import athlete_plans_dir, data_file, get_athlete_id
 
 # Paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-COMP_FILE = DATA_DIR / "composition.json"
-ZONES_FILE = DATA_DIR / "zones.json"
-RUNNING_LOG_FILE = DATA_DIR / "running-log.json"
+COMP_FILE = data_file("composition.json")
+ZONES_FILE = data_file("zones.json")
+RUNNING_LOG_FILE = data_file("running-log.json")
 
 # Costanti
 RED_FLAG_FFM = 59.5
@@ -114,7 +114,7 @@ def get_composition_trend(data):
 
 def check_stale_plans():
     """Verifica piani nutrizionali STALE confrontando META con composition.json"""
-    plans_dir = Path(__file__).parent.parent / "plans" / "nutrition"
+    plans_dir = athlete_plans_dir()
 
     if not plans_dir.exists():
         return []
@@ -159,6 +159,13 @@ def check_stale_plans():
 
 def status():
     """Mostra stato completo"""
+    if not COMP_FILE.exists() or not ZONES_FILE.exists():
+        print(
+            "Dati atleta incompleti. Esegui almeno:\n"
+            f"- ./tv --athlete {get_athlete_id()} weigh <peso> <bf%>\n"
+            f"- ./tv --athlete {get_athlete_id()} zones <mm:ss>"
+        )
+        return
 
     # Carica dati
     comp_data = load_json(COMP_FILE)
@@ -193,6 +200,8 @@ def status():
     print("╔═══════════════════════════════════════════════════════════════════╗")
     print("║                     TRAINING VANTAGE STATUS                       ║")
     print("╚═══════════════════════════════════════════════════════════════════╝")
+    print()
+    print(f"Atleta: {get_athlete_id()}")
     print()
 
     # Composizione

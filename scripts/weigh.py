@@ -12,11 +12,11 @@ Registra nuova misurazione composizione corporea:
 import json
 import sys
 from datetime import datetime
-from pathlib import Path
+from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
 
 # Paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-COMP_FILE = DATA_DIR / "composition.json"
+COMP_FILE = data_file("composition.json")
+CHANGELOG_FILE = data_file("changelog.json")
 
 # Costanti
 RED_FLAG_FFM = 59.5  # kg
@@ -35,12 +35,15 @@ def calculate_bmr(ffm):
 
 def load_composition():
     """Carica dati composizione"""
+    if not COMP_FILE.exists():
+        return {"measurements": []}
     with open(COMP_FILE, 'r') as f:
         return json.load(f)
 
 
 def save_composition(data):
     """Salva dati composizione"""
+    ensure_athlete_dirs()
     with open(COMP_FILE, 'w') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -161,10 +164,12 @@ def weigh(weight, bf_pct, date=None, note=None):
 
 def update_changelog(command, details):
     """Aggiorna changelog.json"""
-    changelog_file = DATA_DIR / "changelog.json"
-
-    with open(changelog_file, 'r') as f:
-        changelog = json.load(f)
+    ensure_athlete_dirs()
+    if CHANGELOG_FILE.exists():
+        with open(CHANGELOG_FILE, 'r') as f:
+            changelog = json.load(f)
+    else:
+        changelog = {"entries": []}
 
     entry = {
         "timestamp": datetime.now().isoformat(),
@@ -174,7 +179,7 @@ def update_changelog(command, details):
 
     changelog['entries'].append(entry)
 
-    with open(changelog_file, 'w') as f:
+    with open(CHANGELOG_FILE, 'w') as f:
         json.dump(changelog, f, indent=2, ensure_ascii=False)
 
 
@@ -190,6 +195,7 @@ if __name__ == '__main__':
         note = sys.argv[3] if len(sys.argv) > 3 else None
 
         weigh(weight, bf_pct, note=note)
+        print(f"Atleta: {get_athlete_id()}")
     except ValueError as e:
         print(f"Errore: {e}")
         print("I valori devono essere numerici (es. 68.5 13.1)")

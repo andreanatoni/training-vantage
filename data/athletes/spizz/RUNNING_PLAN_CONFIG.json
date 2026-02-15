@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "version": "v1.1",
+    "updated_at": "2026-02-15"
+  },
+  "defaults": {
+    "session_days": [
+      "Tuesday",
+      "Wednesday",
+      "Friday",
+      "Saturday"
+    ],
+    "session_types_by_day": {
+      "Wednesday": "qualita",
+      "Friday": "progressivo",
+      "Saturday": "lungo",
+      "Tuesday": "forza"
+    },
+    "weekly_km": {
+      "start": 37.2,
+      "peak": 72.1,
+      "max_increase_pct": 0.11,
+      "deload_every_n_weeks": 4,
+      "deload_drop_pct": 0.15
+    },
+    "taper": {
+      "weeks": 2,
+      "drop_pct_week_minus_2": 0.2,
+      "drop_pct_week_minus_1": 0.35
+    },
+    "intensity_distribution": {
+      "build": {
+        "target_low_pct": 0.82,
+        "target_high_pct": 0.18,
+        "max_moderate_pct": 0.08,
+        "min_high_pct": 0.15
+      },
+      "specific": {
+        "target_low_pct": 0.78,
+        "target_high_pct": 0.18,
+        "max_moderate_pct": 0.12,
+        "min_high_pct": 0.15
+      },
+      "taper": {
+        "target_low_pct": 0.88,
+        "target_high_pct": 0.1,
+        "max_moderate_pct": 0.08,
+        "min_high_pct": 0.05
+      },
+      "race": {
+        "target_low_pct": 0.82,
+        "target_high_pct": 0.13,
+        "max_moderate_pct": 0.08,
+        "min_high_pct": 0.05
+      }
+    },
+    "session_shares": {
+      "easy": 0.2,
+      "qualita": 0.26,
+      "progressivo": 0.22,
+      "lungo": 0.32
+    }
+  },
+  "planning_defaults": {
+    "goal_race_name": "Pedagnalonga",
+    "goal_race_date": "2026-04-26",
+    "target_pace": "3:40/km"
+  }
+}

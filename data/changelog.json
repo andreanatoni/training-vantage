@@ -1088,6 +1088,424 @@
           "data/running_plan.json"
         ]
       }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:12.595060",
+      "command": "running setup",
+      "details": {
+        "athlete": "Andrea",
+        "goal_race": {
+          "name": "Maratona Latina",
+          "date": "2026-12-06"
+        },
+        "tid_method": "polarized",
+        "aggressiveness": "balanced",
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:12.617571",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-04-30",
+        "goal_race": "2026-12-06",
+        "weeks": 10,
+        "total_target_km": 365.6,
+        "enforce_tid": true,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:22.882057",
+      "command": "load import",
+      "details": {
+        "source_file": "sources/workouts-2.csv",
+        "sessions_count": 4,
+        "date_from": "2026-02-16",
+        "date_to": "2026-02-22",
+        "planned_distance_km": 46.88,
+        "planned_duration_h": 3.73,
+        "estimated_energy_kcal": 2518,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:22.921468",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.313025",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.460209",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-05-31",
+        "goal_race": "2026-10-18",
+        "weeks": 14,
+        "total_target_km": 542.1,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.501013",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.541538",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": true,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.581932",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.692651",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:23.735449",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-04-30",
+        "goal_race": "2026-10-18",
+        "weeks": 10,
+        "total_target_km": 365.6,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:38.473788",
+      "command": "load import",
+      "details": {
+        "source_file": "sources/workouts-2.csv",
+        "sessions_count": 4,
+        "date_from": "2026-02-16",
+        "date_to": "2026-02-22",
+        "planned_distance_km": 46.88,
+        "planned_duration_h": 3.73,
+        "estimated_energy_kcal": 2518,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:38.513402",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:38.897376",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.041718",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-05-31",
+        "goal_race": "2026-10-18",
+        "weeks": 14,
+        "total_target_km": 542.1,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.082349",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.122804",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": true,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.162360",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 200.0,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.270729",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 288.7,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T10:44:39.311489",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-04-30",
+        "goal_race": "2026-10-18",
+        "weeks": 10,
+        "total_target_km": 365.6,
+        "enforce_tid": false,
+        "updated_files": [
+          "data/running_plan.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T16:12:19.382953",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/trainingpeaks-last-year.csv"
+          ],
+          "garmin": []
+        },
+        "sessions_count": 101,
+        "date_from": "2025-05-28",
+        "date_to": "2026-02-15",
+        "planned_distance_km": 827.41,
+        "planned_duration_h": 67.74,
+        "estimated_energy_kcal": 42909,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T16:12:19.384062",
+      "command": "running setup",
+      "details": {
+        "athlete": "Andrea",
+        "goal_race": {
+          "name": "Maratona Latina",
+          "date": "2026-12-06"
+        },
+        "tid_method": "polarized",
+        "aggressiveness": "balanced",
+        "training_load_import": {
+          "mode": "trainingpeaks",
+          "sessions_count": 101,
+          "date_from": "2025-05-28",
+          "date_to": "2026-02-15"
+        },
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "data/training_load.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T16:17:00.319451",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/trainingpeaks-last-year.csv"
+          ],
+          "garmin": []
+        },
+        "sessions_count": 101,
+        "date_from": "2025-05-28",
+        "date_to": "2026-02-15",
+        "planned_distance_km": 827.41,
+        "planned_duration_h": 67.74,
+        "estimated_energy_kcal": 42909,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T16:17:00.320348",
+      "command": "running setup",
+      "details": {
+        "athlete": "Andrea",
+        "goal_race": {
+          "name": "Maratona Latina",
+          "date": "2026-12-06"
+        },
+        "tid_method": "polarized",
+        "aggressiveness": "balanced",
+        "training_load_import": {
+          "mode": "trainingpeaks",
+          "sessions_count": 101,
+          "date_from": "2025-05-28",
+          "date_to": "2026-02-15"
+        },
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "data/training_load.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-15T18:30:24.244185",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/workouts-2.csv"
+          ],
+          "garmin": []
+        },
+        "sessions_count": 4,
+        "date_from": "2026-02-16",
+        "date_to": "2026-02-22",
+        "planned_distance_km": 46.88,
+        "planned_duration_h": 3.73,
+        "estimated_energy_kcal": 2516,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
     }
   ]
 }

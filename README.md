@@ -9,6 +9,9 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 ## Quick Start
 
 ```bash
+# (opzionale) scegli atleta attivo per il comando
+./tv --athlete mario status
+
 # Mostra stato attuale
 ./tv status
 
@@ -48,16 +51,28 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 # Estrai database porzioni dal PDF standard LARN
 ./tv food extract-portions
 
-# Importa carico allenante futuro da export TrainingPeaks
+# Importa carico allenante da CSV (TrainingPeaks e/o Garmin)
 ./tv load import sources/workouts-2.csv
+./tv load import --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
 
 # Genera piano running periodizzato (multi-mese + taper)
+./tv running setup
 ./tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
 ./tv running summary
 
 # Analizza export Garmin
 ./tv analyze sources/storico.csv
 ```
+
+## Multi-Atleta
+
+- Flag globale: `./tv --athlete <id> <command> ...`
+- Se omesso, usa atleta `default` (compatibilita con layout storico).
+- Dati runtime per atleta:
+  - `data/athletes/<id>/...` (composition, zones, running_plan, training_load, config, changelog)
+  - `knowledge/athletes/<id>/running-setup-report.md`
+  - `plans/nutrition/athletes/<id>/...`
+- Dataset condivisi (food DB, porzioni, indice CREA) restano in `data/`.
 
 ---
 
@@ -87,6 +102,7 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 | `./tv week <N>` | ✅ | Mostra piano running settimana N (W1-W20) |
 | `./tv analyze <file.csv>` | ✅ | Analizza export Garmin CSV (distanza/tempo/passo/FC) |
 | `./tv running generate ...` | ✅ | Genera piano running periodizzato su finestra temporale (`data/running_plan.json`) |
+| `./tv running setup` | ✅ | Colloquio coach interattivo e configurazione profilo running |
 | `./tv running week <N>` | ✅ | Mostra dettaglio settimana dal piano running generato |
 | `./tv running month <YYYY-MM>` | ✅ | Riepilogo mensile volumi/day-type |
 | `./tv running summary` | ✅ | Riepilogo periodo + preview taper |
@@ -103,7 +119,7 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 | `./tv food import-crea ...` | ✅ | Importa schede CREA in FOOD_DB (singolo/lista/all) |
 | `./tv food rebuild-from-crea` | ✅ | Esegue backup e ricostruisce FOOD_DB + mapping + markdown da indice CREA |
 | `./tv food extract-portions` | ✅ | Estrae tabelle porzioni dal PDF in `data/PORTION_STANDARDS.json` |
-| `./tv load import <csv>` | ✅ | Importa export TrainingPeaks FUTURO in `data/training_load.json` |
+| `./tv load import [--tp ...] [--garmin ...]` | ✅ | Importa CSV TrainingPeaks e/o Garmin (anche insieme) in `data/training_load.json` |
 
 ### 📋 Pianificato
 
@@ -222,7 +238,7 @@ training-vantage/
 
 - `./tv plan <categoria>` applica una strategia centralizzata da `data/NUTRITION_ENGINE_CONFIG.json`
 - Output piano: `plans/nutrition/<categoria>.md` (human-readable) e `plans/nutrition/<categoria>.json` (machine-readable)
-- Se presente `data/training_load.json`, il motore usa i costi energetici stimati per day-profile da export TrainingPeaks futuro (`tv load import ...`)
+- Se presente `data/training_load.json`, il motore usa i costi energetici stimati per day-profile da import CSV (`tv load import ...`)
 - `./tv plan week <YYYY-Www>` usa `data/running_plan.json` e genera 7 piani giornalieri in `plans/nutrition/weeks/<YYYY-Www>/` + `week-summary.md/.json`
 - `./tv plan month <YYYY-MM>` usa `data/running_plan.json` e genera i piani giornalieri del mese in `plans/nutrition/months/<YYYY-MM>/` + `month-summary.md/.json`
 - Nei pacchetti `week/month`, ogni giorno usa il proprio `training_cost_kcal` stimato dalla seduta del `running_plan` (source: `running_plan_day`) invece di un profilo medio
@@ -236,6 +252,11 @@ training-vantage/
 ## Regola Piano Running
 
 - `./tv running generate --from ... --to ... [--goal-race ...]` crea il piano periodizzato in `data/running_plan.json`
+- `./tv running setup` crea/aggiorna:
+  - `data/RUNNING_ATHLETE_PROFILE.json`
+  - `data/RUNNING_PLAN_CONFIG.json`
+  - `data/training_load.json` (import storico CSV TrainingPeaks/Garmin richiesto durante il colloquio)
+  - `knowledge/running-setup-report.md`
 - Opzionale: `--enforce-tid` applica aggiustamenti automatici ai workout label per rispettare meglio i guardrail TID
 - Parametri default e vincoli progressione/taper stanno in `data/RUNNING_PLAN_CONFIG.json`
 - Il piano supporta pianificazione per blocchi mensili o periodi lunghi verso una gara obiettivo

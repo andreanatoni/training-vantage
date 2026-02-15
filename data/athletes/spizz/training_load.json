@@ -1,0 +1,3772 @@
+{
+  "meta": {
+    "version": "v2.0",
+    "generated_at": "2026-02-15T18:57:37.052928",
+    "athlete_id": "spizz",
+    "source_file": "sources/trainingpeaks-last-year.csv",
+    "source_files": {
+      "trainingpeaks": [
+        "sources/trainingpeaks-last-year.csv"
+      ],
+      "garmin": [
+        "sources/garmin-last-year.csv"
+      ]
+    },
+    "mode": "trainingpeaks+garmin",
+    "weight_used_kg": 70.0
+  },
+  "assumptions": {
+    "energy_model": "MET * body_weight_kg * planned_duration_h",
+    "met_by_day_type": {
+      "rest": 0.0,
+      "easy": 9.0,
+      "qualita": 11.5,
+      "lungo": 9.5,
+      "forza": 6.0,
+      "progressivo": 10.5
+    }
+  },
+  "merge": {
+    "matched": 98,
+    "tp_only": 3,
+    "garmin_only": 1
+  },
+  "summary": {
+    "sessions_count": 102,
+    "date_range": {
+      "from": "2025-05-07",
+      "to": "2026-02-15"
+    },
+    "planned_distance_km": 832.91,
+    "planned_duration_h": 68.19,
+    "estimated_energy_kcal": 44134
+  },
+  "profile_costs_kcal": {
+    "rest": null,
+    "easy": 400.1,
+    "qualita": 477.6,
+    "lungo": 555.2,
+    "forza": null,
+    "progressivo": 551.0
+  },
+  "weeks": [
+    {
+      "iso_week": "2025-W19",
+      "start_date": "2025-05-07",
+      "end_date": "2025-05-07",
+      "sessions_count": 1,
+      "planned_distance_km": 5.5,
+      "planned_duration_h": 0.45,
+      "estimated_energy_kcal": 285,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 285.0
+      }
+    },
+    {
+      "iso_week": "2025-W22",
+      "start_date": "2025-05-28",
+      "end_date": "2025-05-31",
+      "sessions_count": 3,
+      "planned_distance_km": 20.54,
+      "planned_duration_h": 1.64,
+      "estimated_energy_kcal": 1031,
+      "day_type_counts": {
+        "easy": 3
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 343.7
+      }
+    },
+    {
+      "iso_week": "2025-W23",
+      "start_date": "2025-06-02",
+      "end_date": "2025-06-02",
+      "sessions_count": 1,
+      "planned_distance_km": 9.01,
+      "planned_duration_h": 0.84,
+      "estimated_energy_kcal": 528,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 528.0
+      }
+    },
+    {
+      "iso_week": "2025-W24",
+      "start_date": "2025-06-12",
+      "end_date": "2025-06-14",
+      "sessions_count": 2,
+      "planned_distance_km": 11.5,
+      "planned_duration_h": 0.95,
+      "estimated_energy_kcal": 597,
+      "day_type_counts": {
+        "easy": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 298.5
+      }
+    },
+    {
+      "iso_week": "2025-W25",
+      "start_date": "2025-06-16",
+      "end_date": "2025-06-18",
+      "sessions_count": 2,
+      "planned_distance_km": 10.8,
+      "planned_duration_h": 0.95,
+      "estimated_energy_kcal": 597,
+      "day_type_counts": {
+        "easy": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 298.5
+      }
+    },
+    {
+      "iso_week": "2025-W26",
+      "start_date": "2025-06-26",
+      "end_date": "2025-06-26",
+      "sessions_count": 1,
+      "planned_distance_km": 5.0,
+      "planned_duration_h": 0.43,
+      "estimated_energy_kcal": 269,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 269.0
+      }
+    },
+    {
+      "iso_week": "2025-W27",
+      "start_date": "2025-06-30",
+      "end_date": "2025-07-05",
+      "sessions_count": 4,
+      "planned_distance_km": 28.0,
+      "planned_duration_h": 2.35,
+      "estimated_energy_kcal": 1575,
+      "day_type_counts": {
+        "easy": 2,
+        "progressivo": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 287.0,
+        "progressivo": 432.0,
+        "lungo": 569.0
+      }
+    },
+    {
+      "iso_week": "2025-W28",
+      "start_date": "2025-07-07",
+      "end_date": "2025-07-10",
+      "sessions_count": 2,
+      "planned_distance_km": 10.8,
+      "planned_duration_h": 0.93,
+      "estimated_energy_kcal": 586,
+      "day_type_counts": {
+        "easy": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 293.0
+      }
+    },
+    {
+      "iso_week": "2025-W29",
+      "start_date": "2025-07-14",
+      "end_date": "2025-07-14",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.47,
+      "estimated_energy_kcal": 296,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0
+      }
+    },
+    {
+      "iso_week": "2025-W30",
+      "start_date": "2025-07-23",
+      "end_date": "2025-07-23",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.47,
+      "estimated_energy_kcal": 296,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0
+      }
+    },
+    {
+      "iso_week": "2025-W33",
+      "start_date": "2025-08-13",
+      "end_date": "2025-08-14",
+      "sessions_count": 2,
+      "planned_distance_km": 11.0,
+      "planned_duration_h": 1.01,
+      "estimated_energy_kcal": 633,
+      "day_type_counts": {
+        "easy": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 316.5
+      }
+    },
+    {
+      "iso_week": "2025-W35",
+      "start_date": "2025-08-25",
+      "end_date": "2025-08-25",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.47,
+      "estimated_energy_kcal": 296,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0
+      }
+    },
+    {
+      "iso_week": "2025-W36",
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-01",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.47,
+      "estimated_energy_kcal": 296,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0
+      }
+    },
+    {
+      "iso_week": "2025-W37",
+      "start_date": "2025-09-09",
+      "end_date": "2025-09-09",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.49,
+      "estimated_energy_kcal": 323,
+      "day_type_counts": {
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W38",
+      "start_date": "2025-09-17",
+      "end_date": "2025-09-17",
+      "sessions_count": 1,
+      "planned_distance_km": 6.0,
+      "planned_duration_h": 0.47,
+      "estimated_energy_kcal": 296,
+      "day_type_counts": {
+        "easy": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0
+      }
+    },
+    {
+      "iso_week": "2025-W39",
+      "start_date": "2025-09-22",
+      "end_date": "2025-09-24",
+      "sessions_count": 2,
+      "planned_distance_km": 12.0,
+      "planned_duration_h": 0.96,
+      "estimated_energy_kcal": 619,
+      "day_type_counts": {
+        "easy": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 296.0,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W40",
+      "start_date": "2025-09-29",
+      "end_date": "2025-10-03",
+      "sessions_count": 3,
+      "planned_distance_km": 16.8,
+      "planned_duration_h": 1.43,
+      "estimated_energy_kcal": 901,
+      "day_type_counts": {
+        "easy": 3
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 300.3
+      }
+    },
+    {
+      "iso_week": "2025-W41",
+      "start_date": "2025-10-07",
+      "end_date": "2025-10-09",
+      "sessions_count": 2,
+      "planned_distance_km": 12.0,
+      "planned_duration_h": 0.98,
+      "estimated_energy_kcal": 632,
+      "day_type_counts": {
+        "easy": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 309.0,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W42",
+      "start_date": "2025-10-13",
+      "end_date": "2025-10-18",
+      "sessions_count": 4,
+      "planned_distance_km": 27.0,
+      "planned_duration_h": 2.42,
+      "estimated_energy_kcal": 1543,
+      "day_type_counts": {
+        "easy": 3,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 406.7,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W43",
+      "start_date": "2025-10-20",
+      "end_date": "2025-10-25",
+      "sessions_count": 4,
+      "planned_distance_km": 29.89,
+      "planned_duration_h": 2.49,
+      "estimated_energy_kcal": 1586,
+      "day_type_counts": {
+        "easy": 3,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 421.0,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W44",
+      "start_date": "2025-10-27",
+      "end_date": "2025-11-01",
+      "sessions_count": 4,
+      "planned_distance_km": 35.4,
+      "planned_duration_h": 2.93,
+      "estimated_energy_kcal": 1843,
+      "day_type_counts": {
+        "easy": 4
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 460.8
+      }
+    },
+    {
+      "iso_week": "2025-W45",
+      "start_date": "2025-11-03",
+      "end_date": "2025-11-09",
+      "sessions_count": 5,
+      "planned_distance_km": 32.82,
+      "planned_duration_h": 2.79,
+      "estimated_energy_kcal": 1773,
+      "day_type_counts": {
+        "easy": 4,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 362.5,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W46",
+      "start_date": "2025-11-10",
+      "end_date": "2025-11-15",
+      "sessions_count": 4,
+      "planned_distance_km": 35.0,
+      "planned_duration_h": 2.92,
+      "estimated_energy_kcal": 1862,
+      "day_type_counts": {
+        "easy": 3,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 476.0,
+        "lungo": 434.0
+      }
+    },
+    {
+      "iso_week": "2025-W47",
+      "start_date": "2025-11-17",
+      "end_date": "2025-11-22",
+      "sessions_count": 4,
+      "planned_distance_km": 31.36,
+      "planned_duration_h": 2.57,
+      "estimated_energy_kcal": 1617,
+      "day_type_counts": {
+        "easy": 4
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 404.2
+      }
+    },
+    {
+      "iso_week": "2025-W48",
+      "start_date": "2025-11-24",
+      "end_date": "2025-11-29",
+      "sessions_count": 4,
+      "planned_distance_km": 38.0,
+      "planned_duration_h": 3.16,
+      "estimated_energy_kcal": 2009,
+      "day_type_counts": {
+        "easy": 3,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 530.7,
+        "lungo": 417.0
+      }
+    },
+    {
+      "iso_week": "2025-W49",
+      "start_date": "2025-12-01",
+      "end_date": "2025-12-07",
+      "sessions_count": 5,
+      "planned_distance_km": 32.19,
+      "planned_duration_h": 2.63,
+      "estimated_energy_kcal": 1677,
+      "day_type_counts": {
+        "easy": 4,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 338.5,
+        "lungo": 323.0
+      }
+    },
+    {
+      "iso_week": "2025-W50",
+      "start_date": "2025-12-08",
+      "end_date": "2025-12-14",
+      "sessions_count": 5,
+      "planned_distance_km": 47.87,
+      "planned_duration_h": 3.79,
+      "estimated_energy_kcal": 2388,
+      "day_type_counts": {
+        "easy": 5
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 477.6
+      }
+    },
+    {
+      "iso_week": "2025-W51",
+      "start_date": "2025-12-19",
+      "end_date": "2025-12-21",
+      "sessions_count": 2,
+      "planned_distance_km": 21.0,
+      "planned_duration_h": 1.79,
+      "estimated_energy_kcal": 1131,
+      "day_type_counts": {
+        "easy": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 565.5
+      }
+    },
+    {
+      "iso_week": "2025-W52",
+      "start_date": "2025-12-22",
+      "end_date": "2025-12-27",
+      "sessions_count": 4,
+      "planned_distance_km": 26.73,
+      "planned_duration_h": 2.4,
+      "estimated_energy_kcal": 1515,
+      "day_type_counts": {
+        "easy": 4
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 378.8
+      }
+    },
+    {
+      "iso_week": "2026-W01",
+      "start_date": "2025-12-29",
+      "end_date": "2026-01-03",
+      "sessions_count": 4,
+      "planned_distance_km": 27.0,
+      "planned_duration_h": 2.16,
+      "estimated_energy_kcal": 1360,
+      "day_type_counts": {
+        "easy": 4
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 340.0
+      }
+    },
+    {
+      "iso_week": "2026-W02",
+      "start_date": "2026-01-07",
+      "end_date": "2026-01-11",
+      "sessions_count": 2,
+      "planned_distance_km": 24.0,
+      "planned_duration_h": 1.9,
+      "estimated_energy_kcal": 1232,
+      "day_type_counts": {
+        "easy": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 578.0,
+        "lungo": 654.0
+      }
+    },
+    {
+      "iso_week": "2026-W03",
+      "start_date": "2026-01-12",
+      "end_date": "2026-01-18",
+      "sessions_count": 4,
+      "planned_distance_km": 51.45,
+      "planned_duration_h": 4.11,
+      "estimated_energy_kcal": 2781,
+      "day_type_counts": {
+        "easy": 1,
+        "qualita": 1,
+        "lungo": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 653.0,
+        "qualita": 497.0,
+        "lungo": 815.5
+      }
+    },
+    {
+      "iso_week": "2026-W04",
+      "start_date": "2026-01-20",
+      "end_date": "2026-01-24",
+      "sessions_count": 4,
+      "planned_distance_km": 51.02,
+      "planned_duration_h": 4.06,
+      "estimated_energy_kcal": 2732,
+      "day_type_counts": {
+        "easy": 1,
+        "qualita": 1,
+        "lungo": 2
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 646.0,
+        "qualita": 409.0,
+        "lungo": 838.5
+      }
+    },
+    {
+      "iso_week": "2026-W05",
+      "start_date": "2026-01-26",
+      "end_date": "2026-02-01",
+      "sessions_count": 5,
+      "planned_distance_km": 51.17,
+      "planned_duration_h": 4.14,
+      "estimated_energy_kcal": 2688,
+      "day_type_counts": {
+        "easy": 4,
+        "qualita": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 581.2,
+        "qualita": 363.0
+      }
+    },
+    {
+      "iso_week": "2026-W06",
+      "start_date": "2026-02-04",
+      "end_date": "2026-02-07",
+      "sessions_count": 3,
+      "planned_distance_km": 34.0,
+      "planned_duration_h": 2.7,
+      "estimated_energy_kcal": 1932,
+      "day_type_counts": {
+        "qualita": 1,
+        "progressivo": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "qualita": 409.0,
+        "progressivo": 670.0,
+        "lungo": 853.0
+      }
+    },
+    {
+      "iso_week": "2026-W07",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-15",
+      "sessions_count": 4,
+      "planned_distance_km": 48.05,
+      "planned_duration_h": 3.5,
+      "estimated_energy_kcal": 2409,
+      "day_type_counts": {
+        "easy": 2,
+        "qualita": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 378.0,
+        "qualita": 710.0,
+        "lungo": 943.0
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "date": "2025-05-07",
+      "iso_week": "2025-W19",
+      "title": "Latina Corsa",
+      "workout_type": "Corsa",
+      "day_type": "easy",
+      "planned_duration_h": 0.453,
+      "planned_distance_km": 5.5,
+      "estimated_energy_kcal": 285,
+      "reported_energy_kcal": 364,
+      "source": "garmin",
+      "source_session_ids": [
+        "gm0099"
+      ],
+      "source_metrics": {
+        "garmin": {
+          "duration_h": 0.453,
+          "distance_km": 5.5,
+          "energy_kcal": 364
+        }
+      },
+      "session_id": "s001"
+    },
+    {
+      "date": "2025-05-28",
+      "iso_week": "2025-W22",
+      "title": "8x(4'L+1'LG)",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.667,
+      "planned_distance_km": 7.613,
+      "estimated_energy_kcal": 420,
+      "reported_energy_kcal": 790,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0001",
+        "gm0098"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 106.83,
+          "if": 1.2723418193544,
+          "duration_h": 0.667,
+          "distance_km": 7.613,
+          "energy_kcal": 790
+        },
+        "garmin": {
+          "duration_h": 0.667,
+          "distance_km": 7.61,
+          "energy_kcal": 522
+        }
+      },
+      "session_id": "s002"
+    },
+    {
+      "date": "2025-05-30",
+      "iso_week": "2025-W22",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 610,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0002",
+        "gm0097"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 84.51,
+          "if": 1.30318540241108,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": 610
+        },
+        "garmin": {
+          "duration_h": 0.506,
+          "distance_km": 6.0,
+          "energy_kcal": 406
+        }
+      },
+      "session_id": "s003"
+    },
+    {
+      "date": "2025-05-31",
+      "iso_week": "2025-W22",
+      "title": "15x(1'L+1'TR)",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.5,
+      "planned_distance_km": 6.93,
+      "estimated_energy_kcal": 315,
+      "reported_energy_kcal": 353,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0003",
+        "gm0096"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 58.36,
+          "if": 1.33700783675203,
+          "duration_h": 0.5,
+          "distance_km": 6.93,
+          "energy_kcal": 353
+        },
+        "garmin": {
+          "duration_h": 0.334,
+          "distance_km": 3.62,
+          "energy_kcal": 240
+        }
+      },
+      "session_id": "s004"
+    },
+    {
+      "date": "2025-06-02",
+      "iso_week": "2025-W23",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.838,
+      "planned_distance_km": 9.01,
+      "estimated_energy_kcal": 528,
+      "reported_energy_kcal": 900,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0004",
+        "gm0095"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 132.16,
+          "if": 1.26131968224192,
+          "duration_h": 0.838,
+          "distance_km": 9.01,
+          "energy_kcal": 900
+        },
+        "garmin": {
+          "duration_h": 0.838,
+          "distance_km": 9.01,
+          "energy_kcal": 578
+        }
+      },
+      "session_id": "s005"
+    },
+    {
+      "date": "2025-06-12",
+      "iso_week": "2025-W24",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 376,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0005",
+        "gm0094"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 33.26,
+          "if": 0.761517212247395,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.526,
+          "distance_km": 6.01,
+          "energy_kcal": 376
+        }
+      },
+      "session_id": "s006"
+    },
+    {
+      "date": "2025-06-14",
+      "iso_week": "2025-W24",
+      "title": "5km M",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.477,
+      "planned_distance_km": 5.5,
+      "estimated_energy_kcal": 301,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0006"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null,
+          "duration_h": 0.477,
+          "distance_km": 5.5,
+          "energy_kcal": null
+        }
+      },
+      "session_id": "s007"
+    },
+    {
+      "date": "2025-06-16",
+      "iso_week": "2025-W25",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 338,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0007",
+        "gm0093"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 38.32,
+          "if": 0.880802940783445,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.455,
+          "distance_km": 6.01,
+          "energy_kcal": 338
+        }
+      },
+      "session_id": "s008"
+    },
+    {
+      "date": "2025-06-18",
+      "iso_week": "2025-W25",
+      "title": "6x800m TR + Rec",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.477,
+      "planned_distance_km": 4.8,
+      "estimated_energy_kcal": 301,
+      "reported_energy_kcal": 359,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0008",
+        "gm0092"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 37.53,
+          "if": 0.844315975103914,
+          "duration_h": 0.477,
+          "distance_km": 4.8,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.484,
+          "distance_km": 5.19,
+          "energy_kcal": 359
+        }
+      },
+      "session_id": "s009"
+    },
+    {
+      "date": "2025-06-26",
+      "iso_week": "2025-W26",
+      "title": "5 km molto easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.427,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 269,
+      "reported_energy_kcal": 324,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0009",
+        "gm0091"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 27.87,
+          "if": 0.767644396981556,
+          "duration_h": 0.427,
+          "distance_km": 5.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.435,
+          "distance_km": 5.0,
+          "energy_kcal": 324
+        }
+      },
+      "session_id": "s010"
+    },
+    {
+      "date": "2025-06-30",
+      "iso_week": "2025-W27",
+      "title": "6 km (3 low + 3 moderate)",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.489,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 308,
+      "reported_energy_kcal": 384,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0010",
+        "gm0090"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 35.79,
+          "if": 0.821937682722476,
+          "duration_h": 0.489,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.487,
+          "distance_km": 6.0,
+          "energy_kcal": 384
+        }
+      },
+      "session_id": "s011"
+    },
+    {
+      "date": "2025-07-02",
+      "iso_week": "2025-W27",
+      "title": "10x400m TR rec 1'",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.422,
+      "planned_distance_km": 4.0,
+      "estimated_energy_kcal": 266,
+      "reported_energy_kcal": 322,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0011",
+        "gm0089"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 25.3,
+          "if": 0.730264195664833,
+          "duration_h": 0.422,
+          "distance_km": 4.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.437,
+          "distance_km": 4.72,
+          "energy_kcal": 322
+        }
+      },
+      "session_id": "s012"
+    },
+    {
+      "date": "2025-07-04",
+      "iso_week": "2025-W27",
+      "title": "Progressivo",
+      "workout_type": "Run",
+      "day_type": "progressivo",
+      "planned_duration_h": 0.588,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 432,
+      "reported_energy_kcal": 330,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0012",
+        "gm0088"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 29.51,
+          "if": 0.772728183972745,
+          "duration_h": 0.588,
+          "distance_km": 8.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.455,
+          "distance_km": 5.29,
+          "energy_kcal": 330
+        }
+      },
+      "session_id": "s013"
+    },
+    {
+      "date": "2025-07-05",
+      "iso_week": "2025-W27",
+      "title": "8 L + 1 M + 1 TR",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.855,
+      "planned_distance_km": 10.0,
+      "estimated_energy_kcal": 569,
+      "reported_energy_kcal": 311,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0013",
+        "gm0087"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 25.37,
+          "if": 0.75494853286057,
+          "duration_h": 0.855,
+          "distance_km": 10.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.411,
+          "distance_km": 4.48,
+          "energy_kcal": 311
+        }
+      },
+      "session_id": "s014"
+    },
+    {
+      "date": "2025-07-07",
+      "iso_week": "2025-W28",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 365,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0014",
+        "gm0086"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 39.78,
+          "if": 0.876298028193955,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.476,
+          "distance_km": 6.03,
+          "energy_kcal": 365
+        }
+      },
+      "session_id": "s015"
+    },
+    {
+      "date": "2025-07-10",
+      "iso_week": "2025-W28",
+      "title": "8x600m TR rec 1'",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.46,
+      "planned_distance_km": 4.8,
+      "estimated_energy_kcal": 290,
+      "reported_energy_kcal": 291,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0015",
+        "gm0085"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 31.78,
+          "if": 0.862218845533819,
+          "duration_h": 0.46,
+          "distance_km": 4.8,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.395,
+          "distance_km": 4.53,
+          "energy_kcal": 291
+        }
+      },
+      "session_id": "s016"
+    },
+    {
+      "date": "2025-07-14",
+      "iso_week": "2025-W29",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 367,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0016",
+        "gm0084"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.43,
+          "if": 0.892250308875486,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.467,
+          "distance_km": 6.0,
+          "energy_kcal": 367
+        }
+      },
+      "session_id": "s017"
+    },
+    {
+      "date": "2025-07-23",
+      "iso_week": "2025-W30",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 282,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0017",
+        "gm0083"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 39.86,
+          "if": 0.879004663829223,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.474,
+          "distance_km": 6.01,
+          "energy_kcal": 282
+        }
+      },
+      "session_id": "s018"
+    },
+    {
+      "date": "2025-08-13",
+      "iso_week": "2025-W33",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.542,
+      "planned_distance_km": 6.005,
+      "estimated_energy_kcal": 341,
+      "reported_energy_kcal": 421,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0018",
+        "gm0082"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 34.91,
+          "if": 0.767160204154957,
+          "duration_h": 0.542,
+          "distance_km": 6.005,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.542,
+          "distance_km": 6.01,
+          "energy_kcal": 421
+        }
+      },
+      "session_id": "s019"
+    },
+    {
+      "date": "2025-08-14",
+      "iso_week": "2025-W33",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.464,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 292,
+      "reported_energy_kcal": 326,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0019",
+        "gm0081"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 28.26,
+          "if": 0.748932012760261,
+          "duration_h": 0.464,
+          "distance_km": 5.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.464,
+          "distance_km": 5.0,
+          "energy_kcal": 326
+        }
+      },
+      "session_id": "s020"
+    },
+    {
+      "date": "2025-08-25",
+      "iso_week": "2025-W35",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 392,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0020",
+        "gm0080"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 37.89,
+          "if": 0.788591396818936,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.558,
+          "distance_km": 6.01,
+          "energy_kcal": 392
+        }
+      },
+      "session_id": "s021"
+    },
+    {
+      "date": "2025-09-01",
+      "iso_week": "2025-W36",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 316,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0021",
+        "gm0079"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 29.99,
+          "if": 0.795559771588835,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.436,
+          "distance_km": 5.0,
+          "energy_kcal": 316
+        }
+      },
+      "session_id": "s022"
+    },
+    {
+      "date": "2025-09-09",
+      "iso_week": "2025-W37",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 391,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0022",
+        "gm0078"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.74,
+          "if": 0.896211477331972,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.467,
+          "distance_km": 6.0,
+          "energy_kcal": 391
+        }
+      },
+      "session_id": "s023"
+    },
+    {
+      "date": "2025-09-17",
+      "iso_week": "2025-W38",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 366,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0023",
+        "gm0077"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.02,
+          "if": 0.882416303660261,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.472,
+          "distance_km": 6.01,
+          "energy_kcal": 366
+        }
+      },
+      "session_id": "s024"
+    },
+    {
+      "date": "2025-09-22",
+      "iso_week": "2025-W39",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 367,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0024",
+        "gm0076"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 33.43,
+          "if": 0.73421518814042,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.568,
+          "distance_km": 6.0,
+          "energy_kcal": 367
+        }
+      },
+      "session_id": "s025"
+    },
+    {
+      "date": "2025-09-24",
+      "iso_week": "2025-W39",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 314,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0025",
+        "gm0075"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 39.4,
+          "if": 0.868195109284682,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.481,
+          "distance_km": 6.01,
+          "energy_kcal": 314
+        }
+      },
+      "session_id": "s026"
+    },
+    {
+      "date": "2025-09-29",
+      "iso_week": "2025-W40",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 381,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0026",
+        "gm0074"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.52,
+          "if": 0.893244649227111,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.467,
+          "distance_km": 6.01,
+          "energy_kcal": 381
+        }
+      },
+      "session_id": "s027"
+    },
+    {
+      "date": "2025-10-01",
+      "iso_week": "2025-W40",
+      "title": "6x800m TR + Rec",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.49,
+      "planned_distance_km": 4.8,
+      "estimated_energy_kcal": 309,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0027"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null,
+          "duration_h": 0.49,
+          "distance_km": 4.8,
+          "energy_kcal": null
+        }
+      },
+      "session_id": "s028"
+    },
+    {
+      "date": "2025-10-03",
+      "iso_week": "2025-W40",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.47,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 296,
+      "reported_energy_kcal": 395,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0028",
+        "gm0073"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 33.86,
+          "if": 0.743929112310686,
+          "duration_h": 0.47,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.561,
+          "distance_km": 6.0,
+          "energy_kcal": 395
+        }
+      },
+      "session_id": "s029"
+    },
+    {
+      "date": "2025-10-07",
+      "iso_week": "2025-W41",
+      "title": "6 km D.A. easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.49,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 309,
+      "reported_energy_kcal": 322,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0029",
+        "gm0072"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 32.9,
+          "if": 0.873467930775347,
+          "duration_h": 0.49,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.398,
+          "distance_km": 5.0,
+          "energy_kcal": 322
+        }
+      },
+      "session_id": "s030"
+    },
+    {
+      "date": "2025-10-09",
+      "iso_week": "2025-W41",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 375,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0030",
+        "gm0071"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 39.62,
+          "if": 0.869853264089575,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.481,
+          "distance_km": 6.01,
+          "energy_kcal": 375
+        }
+      },
+      "session_id": "s031"
+    },
+    {
+      "date": "2025-10-13",
+      "iso_week": "2025-W42",
+      "title": "7 km D.A.",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.572,
+      "planned_distance_km": 7.0,
+      "estimated_energy_kcal": 360,
+      "reported_energy_kcal": 426,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0031",
+        "gm0070"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 48.15,
+          "if": 0.907256630611529,
+          "duration_h": 0.572,
+          "distance_km": 7.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.537,
+          "distance_km": 7.01,
+          "energy_kcal": 426
+        }
+      },
+      "session_id": "s032"
+    },
+    {
+      "date": "2025-10-15",
+      "iso_week": "2025-W42",
+      "title": "10x400m TR + Rec",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.533,
+      "planned_distance_km": 4.0,
+      "estimated_energy_kcal": 336,
+      "reported_energy_kcal": 357,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0032",
+        "gm0069"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 38.91,
+          "if": 0.834314371647906,
+          "duration_h": 0.533,
+          "distance_km": 4.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.513,
+          "distance_km": 4.58,
+          "energy_kcal": 357
+        }
+      },
+      "session_id": "s033"
+    },
+    {
+      "date": "2025-10-17",
+      "iso_week": "2025-W42",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 368,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0033",
+        "gm0068"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.99,
+          "if": 0.904212800082781,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.461,
+          "distance_km": 6.01,
+          "energy_kcal": 368
+        }
+      },
+      "session_id": "s034"
+    },
+    {
+      "date": "2025-10-18",
+      "iso_week": "2025-W42",
+      "title": "10 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.831,
+      "planned_distance_km": 10.0,
+      "estimated_energy_kcal": 524,
+      "reported_energy_kcal": 638,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0034",
+        "gm0067"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 64.02,
+          "if": 0.835404857704556,
+          "duration_h": 0.831,
+          "distance_km": 10.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.832,
+          "distance_km": 10.01,
+          "energy_kcal": 638
+        }
+      },
+      "session_id": "s035"
+    },
+    {
+      "date": "2025-10-20",
+      "iso_week": "2025-W43",
+      "title": "7 km D.A.",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.572,
+      "planned_distance_km": 7.0,
+      "estimated_energy_kcal": 360,
+      "reported_energy_kcal": 431,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0035",
+        "gm0066"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 46.82,
+          "if": 0.882016345738464,
+          "duration_h": 0.572,
+          "distance_km": 7.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.551,
+          "distance_km": 7.0,
+          "energy_kcal": 431
+        }
+      },
+      "session_id": "s036"
+    },
+    {
+      "date": "2025-10-22",
+      "iso_week": "2025-W43",
+      "title": "5x1km TR",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.521,
+      "planned_distance_km": 5.89,
+      "estimated_energy_kcal": 328,
+      "reported_energy_kcal": 356,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0036",
+        "gm0065"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.31,
+          "if": 0.846600678089376,
+          "duration_h": 0.521,
+          "distance_km": 5.89,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.516,
+          "distance_km": 5.42,
+          "energy_kcal": 356
+        }
+      },
+      "session_id": "s037"
+    },
+    {
+      "date": "2025-10-24",
+      "iso_week": "2025-W43",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 348,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0037",
+        "gm0064"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 41.3,
+          "if": 0.91157410372078,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.458,
+          "distance_km": 6.01,
+          "energy_kcal": 348
+        }
+      },
+      "session_id": "s038"
+    },
+    {
+      "date": "2025-10-25",
+      "iso_week": "2025-W43",
+      "title": "11 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.913,
+      "planned_distance_km": 11.0,
+      "estimated_energy_kcal": 575,
+      "reported_energy_kcal": 1132,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0038",
+        "gm0063"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 161.04,
+          "if": 1.3548901460429,
+          "duration_h": 0.913,
+          "distance_km": 11.0,
+          "energy_kcal": 1132
+        },
+        "garmin": {
+          "duration_h": 0.886,
+          "distance_km": 11.01,
+          "energy_kcal": 739
+        }
+      },
+      "session_id": "s039"
+    },
+    {
+      "date": "2025-10-27",
+      "iso_week": "2025-W44",
+      "title": "8 km D.A.",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.647,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 408,
+      "reported_energy_kcal": 836,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0039",
+        "gm0062"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 123.32,
+          "if": 1.40689521829514,
+          "duration_h": 0.647,
+          "distance_km": 8.0,
+          "energy_kcal": 836
+        },
+        "garmin": {
+          "duration_h": 0.631,
+          "distance_km": 8.01,
+          "energy_kcal": 506
+        }
+      },
+      "session_id": "s040"
+    },
+    {
+      "date": "2025-10-29",
+      "iso_week": "2025-W44",
+      "title": "4x1600m M",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.611,
+      "planned_distance_km": 6.4,
+      "estimated_energy_kcal": 385,
+      "reported_energy_kcal": 698,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0040",
+        "gm0061"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 124.74,
+          "if": 1.45906772912474,
+          "duration_h": 0.611,
+          "distance_km": 6.4,
+          "energy_kcal": 698
+        },
+        "garmin": {
+          "duration_h": 0.594,
+          "distance_km": 6.68,
+          "energy_kcal": 464
+        }
+      },
+      "session_id": "s041"
+    },
+    {
+      "date": "2025-10-31",
+      "iso_week": "2025-W44",
+      "title": "3x(1kmL+1kmM+1kmTR)",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.672,
+      "planned_distance_km": 9.0,
+      "estimated_energy_kcal": 423,
+      "reported_energy_kcal": 919,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0041",
+        "gm0060"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 136.89,
+          "if": 1.42379351666774,
+          "duration_h": 0.672,
+          "distance_km": 9.0,
+          "energy_kcal": 919
+        },
+        "garmin": {
+          "duration_h": 0.684,
+          "distance_km": 9.01,
+          "energy_kcal": 585
+        }
+      },
+      "session_id": "s042"
+    },
+    {
+      "date": "2025-11-01",
+      "iso_week": "2025-W44",
+      "title": "12 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.996,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 627,
+      "reported_energy_kcal": 1219,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0042",
+        "gm0059"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 167.29,
+          "if": 1.30805643374836,
+          "duration_h": 0.996,
+          "distance_km": 12.0,
+          "energy_kcal": 1219
+        },
+        "garmin": {
+          "duration_h": 0.986,
+          "distance_km": 12.01,
+          "energy_kcal": 820
+        }
+      },
+      "session_id": "s043"
+    },
+    {
+      "date": "2025-11-03",
+      "iso_week": "2025-W45",
+      "title": "7 km D.A. Easy",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.597,
+      "planned_distance_km": 7.0,
+      "estimated_energy_kcal": 376,
+      "reported_energy_kcal": 720,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0043",
+        "gm0058"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 101.57,
+          "if": 1.34841985308094,
+          "duration_h": 0.597,
+          "distance_km": 7.0,
+          "energy_kcal": 720
+        },
+        "garmin": {
+          "duration_h": 0.566,
+          "distance_km": 7.01,
+          "energy_kcal": 439
+        }
+      },
+      "session_id": "s044"
+    },
+    {
+      "date": "2025-11-05",
+      "iso_week": "2025-W45",
+      "title": "5x1km TR rec 2'",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.514,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 324,
+      "reported_energy_kcal": 554,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0044",
+        "gm0057"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 111.43,
+          "if": 1.49558046569366,
+          "duration_h": 0.514,
+          "distance_km": 5.0,
+          "energy_kcal": 554
+        },
+        "garmin": {
+          "duration_h": 0.507,
+          "distance_km": 5.36,
+          "energy_kcal": 377
+        }
+      },
+      "session_id": "s045"
+    },
+    {
+      "date": "2025-11-07",
+      "iso_week": "2025-W45",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 630,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0045",
+        "gm0056"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 94.54,
+          "if": 1.44275603738661,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": 630
+        },
+        "garmin": {
+          "duration_h": 0.463,
+          "distance_km": 6.01,
+          "energy_kcal": 387
+        }
+      },
+      "session_id": "s046"
+    },
+    {
+      "date": "2025-11-08",
+      "iso_week": "2025-W45",
+      "title": "30' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.5,
+      "planned_distance_km": 5.201,
+      "estimated_energy_kcal": 315,
+      "reported_energy_kcal": 544,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0046",
+        "gm0055"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 76.41,
+          "if": 1.34878827029593,
+          "duration_h": 0.5,
+          "distance_km": 5.201,
+          "energy_kcal": 544
+        },
+        "garmin": {
+          "duration_h": 0.427,
+          "distance_km": 5.2,
+          "energy_kcal": 341
+        }
+      },
+      "session_id": "s047"
+    },
+    {
+      "date": "2025-11-09",
+      "iso_week": "2025-W45",
+      "title": "Mezza Maratona di Sabuadia - 10k",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.691,
+      "planned_distance_km": 9.623,
+      "estimated_energy_kcal": 435,
+      "reported_energy_kcal": 984,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0047",
+        "gm0054"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 156.49,
+          "if": 1.51513975328325,
+          "duration_h": 0.691,
+          "distance_km": 9.623,
+          "energy_kcal": 984
+        },
+        "garmin": {
+          "duration_h": 0.691,
+          "distance_km": 9.62,
+          "energy_kcal": 608
+        }
+      },
+      "session_id": "s048"
+    },
+    {
+      "date": "2025-11-10",
+      "iso_week": "2025-W46",
+      "title": "7 km D.A.",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.566,
+      "planned_distance_km": 7.0,
+      "estimated_energy_kcal": 357,
+      "reported_energy_kcal": 723,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0048",
+        "gm0053"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 110.73,
+          "if": 1.46079268953979,
+          "duration_h": 0.566,
+          "distance_km": 7.0,
+          "energy_kcal": 723
+        },
+        "garmin": {
+          "duration_h": 0.527,
+          "distance_km": 7.01,
+          "energy_kcal": 409
+        }
+      },
+      "session_id": "s049"
+    },
+    {
+      "date": "2025-11-12",
+      "iso_week": "2025-W46",
+      "title": "4×2km rec 2'",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.731,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 461,
+      "reported_energy_kcal": 853,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0049",
+        "gm0052"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 149.62,
+          "if": 1.48317782612072,
+          "duration_h": 0.731,
+          "distance_km": 8.0,
+          "energy_kcal": 853
+        },
+        "garmin": {
+          "duration_h": 0.688,
+          "distance_km": 8.26,
+          "energy_kcal": 558
+        }
+      },
+      "session_id": "s050"
+    },
+    {
+      "date": "2025-11-14",
+      "iso_week": "2025-W46",
+      "title": "6L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.653,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 434,
+      "reported_energy_kcal": 820,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0050",
+        "gm0051"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 123.32,
+          "if": 1.42693491437037,
+          "duration_h": 0.653,
+          "distance_km": 8.0,
+          "energy_kcal": 820
+        },
+        "garmin": {
+          "duration_h": 0.614,
+          "distance_km": 8.01,
+          "energy_kcal": 516
+        }
+      },
+      "session_id": "s051"
+    },
+    {
+      "date": "2025-11-15",
+      "iso_week": "2025-W46",
+      "title": "12 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.969,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 610,
+      "reported_energy_kcal": 1224,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0051",
+        "gm0050"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 175.28,
+          "if": 1.3644149934623,
+          "duration_h": 0.969,
+          "distance_km": 12.0,
+          "energy_kcal": 1224
+        },
+        "garmin": {
+          "duration_h": 0.949,
+          "distance_km": 12.0,
+          "energy_kcal": 794
+        }
+      },
+      "session_id": "s052"
+    },
+    {
+      "date": "2025-11-17",
+      "iso_week": "2025-W47",
+      "title": "8 km D.A.",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.647,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 408,
+      "reported_energy_kcal": 839,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0052",
+        "gm0049"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 130.03,
+          "if": 1.47888181942508,
+          "duration_h": 0.647,
+          "distance_km": 8.0,
+          "energy_kcal": 839
+        },
+        "garmin": {
+          "duration_h": 0.603,
+          "distance_km": 8.0,
+          "energy_kcal": 519
+        }
+      },
+      "session_id": "s053"
+    },
+    {
+      "date": "2025-11-19",
+      "iso_week": "2025-W47",
+      "title": "30' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.5,
+      "planned_distance_km": 5.362,
+      "estimated_energy_kcal": 315,
+      "reported_energy_kcal": 567,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0053",
+        "gm0048"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 81.87,
+          "if": 1.39251004282513,
+          "duration_h": 0.5,
+          "distance_km": 5.362,
+          "energy_kcal": 567
+        },
+        "garmin": {
+          "duration_h": 0.431,
+          "distance_km": 5.36,
+          "energy_kcal": 358
+        }
+      },
+      "session_id": "s054"
+    },
+    {
+      "date": "2025-11-21",
+      "iso_week": "2025-W47",
+      "title": "Test 5 km",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.331,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 209,
+      "reported_energy_kcal": 506,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0054",
+        "gm0047"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 85.78,
+          "if": 1.63856082115704,
+          "duration_h": 0.331,
+          "distance_km": 5.0,
+          "energy_kcal": 506
+        },
+        "garmin": {
+          "duration_h": 0.328,
+          "distance_km": 5.01,
+          "energy_kcal": 293
+        }
+      },
+      "session_id": "s055"
+    },
+    {
+      "date": "2025-11-22",
+      "iso_week": "2025-W47",
+      "title": "13 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.088,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 685,
+      "reported_energy_kcal": 1322,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0055",
+        "gm0046"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 176.0,
+          "if": 1.26785154165222,
+          "duration_h": 1.088,
+          "distance_km": 13.0,
+          "energy_kcal": 1322
+        },
+        "garmin": {
+          "duration_h": 1.104,
+          "distance_km": 13.01,
+          "energy_kcal": 862
+        }
+      },
+      "session_id": "s056"
+    },
+    {
+      "date": "2025-11-24",
+      "iso_week": "2025-W48",
+      "title": "9x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.71,
+      "planned_distance_km": 9.0,
+      "estimated_energy_kcal": 447,
+      "reported_energy_kcal": 981,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0056",
+        "gm0045"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 158.51,
+          "if": 1.53760831210852,
+          "duration_h": 0.71,
+          "distance_km": 9.0,
+          "energy_kcal": 981
+        },
+        "garmin": {
+          "duration_h": 0.679,
+          "distance_km": 9.01,
+          "energy_kcal": 592
+        }
+      },
+      "session_id": "s057"
+    },
+    {
+      "date": "2025-11-26",
+      "iso_week": "2025-W48",
+      "title": "5x1km TR rec 1'30\"",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.451,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 284,
+      "reported_energy_kcal": 560,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0057",
+        "gm0044"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 113.57,
+          "if": 1.60031642456007,
+          "duration_h": 0.451,
+          "distance_km": 5.0,
+          "energy_kcal": 560
+        },
+        "garmin": {
+          "duration_h": 0.451,
+          "distance_km": 5.32,
+          "energy_kcal": 391
+        }
+      },
+      "session_id": "s058"
+    },
+    {
+      "date": "2025-11-28",
+      "iso_week": "2025-W48",
+      "title": "6L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.627,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 417,
+      "reported_energy_kcal": 827,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0058",
+        "gm0043"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 122.64,
+          "if": 1.41696315500781,
+          "duration_h": 0.627,
+          "distance_km": 8.0,
+          "energy_kcal": 827
+        },
+        "garmin": {
+          "duration_h": 0.618,
+          "distance_km": 8.0,
+          "energy_kcal": 537
+        }
+      },
+      "session_id": "s059"
+    },
+    {
+      "date": "2025-11-29",
+      "iso_week": "2025-W48",
+      "title": "16 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.367,
+      "planned_distance_km": 16.0,
+      "estimated_energy_kcal": 861,
+      "reported_energy_kcal": 1660,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0059",
+        "gm0042"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 234.28,
+          "if": 1.34181294053952,
+          "duration_h": 1.367,
+          "distance_km": 16.0,
+          "energy_kcal": 1660
+        },
+        "garmin": {
+          "duration_h": 1.309,
+          "distance_km": 16.01,
+          "energy_kcal": 1062
+        }
+      },
+      "session_id": "s060"
+    },
+    {
+      "date": "2025-12-01",
+      "iso_week": "2025-W49",
+      "title": "6x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.495,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 312,
+      "reported_energy_kcal": 638,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0060",
+        "gm0041"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 98.7,
+          "if": 1.48365609329663,
+          "duration_h": 0.495,
+          "distance_km": 6.0,
+          "energy_kcal": 638
+        },
+        "garmin": {
+          "duration_h": 0.457,
+          "distance_km": 6.01,
+          "energy_kcal": 382
+        }
+      },
+      "session_id": "s061"
+    },
+    {
+      "date": "2025-12-03",
+      "iso_week": "2025-W49",
+      "title": "5x1km TR rec 2'",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.493,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 311,
+      "reported_energy_kcal": 570,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0061",
+        "gm0040"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 122.01,
+          "if": 1.59462643414321,
+          "duration_h": 0.493,
+          "distance_km": 5.0,
+          "energy_kcal": 570
+        },
+        "garmin": {
+          "duration_h": 0.488,
+          "distance_km": 5.41,
+          "energy_kcal": 383
+        }
+      },
+      "session_id": "s062"
+    },
+    {
+      "date": "2025-12-05",
+      "iso_week": "2025-W49",
+      "title": "4L+2M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.486,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 628,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0062",
+        "gm0039"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 94.03,
+          "if": 1.4346760492648,
+          "duration_h": 0.486,
+          "distance_km": 6.0,
+          "energy_kcal": 628
+        },
+        "garmin": {
+          "duration_h": 0.465,
+          "distance_km": 6.01,
+          "energy_kcal": 400
+        }
+      },
+      "session_id": "s063"
+    },
+    {
+      "date": "2025-12-06",
+      "iso_week": "2025-W49",
+      "title": "30' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.5,
+      "planned_distance_km": 5.45,
+      "estimated_energy_kcal": 315,
+      "reported_energy_kcal": 367,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0063",
+        "gm0038"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 31.18,
+          "if": 0.789873896059783,
+          "duration_h": 0.5,
+          "distance_km": 5.45,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.46,
+          "distance_km": 5.45,
+          "energy_kcal": 367
+        }
+      },
+      "session_id": "s064"
+    },
+    {
+      "date": "2025-12-07",
+      "iso_week": "2025-W49",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.661,
+      "planned_distance_km": 9.735,
+      "estimated_energy_kcal": 416,
+      "reported_energy_kcal": 985,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0064",
+        "gm0037"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 162.51,
+          "if": 1.57701171902961,
+          "duration_h": 0.661,
+          "distance_km": 9.735,
+          "energy_kcal": 985
+        },
+        "garmin": {
+          "duration_h": 0.661,
+          "distance_km": 9.73,
+          "energy_kcal": 606
+        }
+      },
+      "session_id": "s065"
+    },
+    {
+      "date": "2025-12-08",
+      "iso_week": "2025-W50",
+      "title": "9x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.71,
+      "planned_distance_km": 9.0,
+      "estimated_energy_kcal": 447,
+      "reported_energy_kcal": 933,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0065",
+        "gm0036"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 136.88,
+          "if": 1.39747014097843,
+          "duration_h": 0.71,
+          "distance_km": 9.0,
+          "energy_kcal": 933
+        },
+        "garmin": {
+          "duration_h": 0.708,
+          "distance_km": 9.02,
+          "energy_kcal": 598
+        }
+      },
+      "session_id": "s066"
+    },
+    {
+      "date": "2025-12-10",
+      "iso_week": "2025-W50",
+      "title": "4×1600m TR rec 2' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.551,
+      "planned_distance_km": 7.72,
+      "estimated_energy_kcal": 347,
+      "reported_energy_kcal": 815,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0066",
+        "gm0035"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 151.2,
+          "if": 1.70076819079092,
+          "duration_h": 0.551,
+          "distance_km": 7.72,
+          "energy_kcal": 815
+        },
+        "garmin": {
+          "duration_h": 0.531,
+          "distance_km": 7.68,
+          "energy_kcal": 456
+        }
+      },
+      "session_id": "s067"
+    },
+    {
+      "date": "2025-12-12",
+      "iso_week": "2025-W50",
+      "title": "3x(1km L + 1km M + 1km TR)",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.685,
+      "planned_distance_km": 9.0,
+      "estimated_energy_kcal": 432,
+      "reported_energy_kcal": 943,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0067",
+        "gm0034"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 151.63,
+          "if": 1.5268000632018,
+          "duration_h": 0.685,
+          "distance_km": 9.0,
+          "energy_kcal": 943
+        },
+        "garmin": {
+          "duration_h": 0.657,
+          "distance_km": 9.01,
+          "energy_kcal": 608
+        }
+      },
+      "session_id": "s068"
+    },
+    {
+      "date": "2025-12-13",
+      "iso_week": "2025-W50",
+      "title": "13 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.111,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 700,
+      "reported_energy_kcal": 918,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0068",
+        "gm0033"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 79.67,
+          "if": 0.827680278565402,
+          "duration_h": 1.111,
+          "distance_km": 13.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 1.049,
+          "distance_km": 13.0,
+          "energy_kcal": 918
+        }
+      },
+      "session_id": "s069"
+    },
+    {
+      "date": "2025-12-14",
+      "iso_week": "2025-W50",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.734,
+      "planned_distance_km": 9.146,
+      "estimated_energy_kcal": 462,
+      "reported_energy_kcal": 684,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0069",
+        "gm0032"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 62.01,
+          "if": 0.876936428114948,
+          "duration_h": 0.734,
+          "distance_km": 9.146,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.734,
+          "distance_km": 9.15,
+          "energy_kcal": 684
+        }
+      },
+      "session_id": "s070"
+    },
+    {
+      "date": "2025-12-19",
+      "iso_week": "2025-W51",
+      "title": "6 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.513,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 399,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0070",
+        "gm0031"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 36.38,
+          "if": 0.835001244028662,
+          "duration_h": 0.513,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.48,
+          "distance_km": 6.01,
+          "energy_kcal": 399
+        }
+      },
+      "session_id": "s071"
+    },
+    {
+      "date": "2025-12-21",
+      "iso_week": "2025-W51",
+      "title": "15 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.282,
+      "planned_distance_km": 15.0,
+      "estimated_energy_kcal": 808,
+      "reported_energy_kcal": 1573,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0071",
+        "gm0030"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 229.25,
+          "if": 1.37777679899861,
+          "duration_h": 1.282,
+          "distance_km": 15.0,
+          "energy_kcal": 1573
+        },
+        "garmin": {
+          "duration_h": 1.217,
+          "distance_km": 15.0,
+          "energy_kcal": 1069
+        }
+      },
+      "session_id": "s072"
+    },
+    {
+      "date": "2025-12-22",
+      "iso_week": "2025-W52",
+      "title": "6x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.458,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 289,
+      "reported_energy_kcal": 362,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0072",
+        "gm0029"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 39.35,
+          "if": 0.905730770741672,
+          "duration_h": 0.458,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.442,
+          "distance_km": 6.0,
+          "energy_kcal": 362
+        }
+      },
+      "session_id": "s073"
+    },
+    {
+      "date": "2025-12-24",
+      "iso_week": "2025-W52",
+      "title": "10x400m TR + Rec",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.428,
+      "planned_distance_km": 4.0,
+      "estimated_energy_kcal": 270,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0073"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null,
+          "duration_h": 0.428,
+          "distance_km": 4.0,
+          "energy_kcal": null
+        }
+      },
+      "session_id": "s074"
+    },
+    {
+      "date": "2025-12-26",
+      "iso_week": "2025-W52",
+      "title": "8 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.684,
+      "planned_distance_km": 8.0,
+      "estimated_energy_kcal": 431,
+      "reported_energy_kcal": 552,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0074",
+        "gm0028"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 47.23,
+          "if": 0.804825977817954,
+          "duration_h": 0.684,
+          "distance_km": 8.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.665,
+          "distance_km": 8.01,
+          "energy_kcal": 552
+        }
+      },
+      "session_id": "s075"
+    },
+    {
+      "date": "2025-12-27",
+      "iso_week": "2025-W52",
+      "title": "50' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.833,
+      "planned_distance_km": 8.73,
+      "estimated_energy_kcal": 525,
+      "reported_energy_kcal": 368,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0075",
+        "gm0027"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 27.26,
+          "if": 0.707277032786568,
+          "duration_h": 0.833,
+          "distance_km": 8.73,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.501,
+          "distance_km": 5.33,
+          "energy_kcal": 368
+        }
+      },
+      "session_id": "s076"
+    },
+    {
+      "date": "2025-12-29",
+      "iso_week": "2026-W01",
+      "title": "6x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.458,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 289,
+      "reported_energy_kcal": 375,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0076",
+        "gm0026"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 40.24,
+          "if": 0.927017736485566,
+          "duration_h": 0.458,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.432,
+          "distance_km": 6.0,
+          "energy_kcal": 375
+        }
+      },
+      "session_id": "s077"
+    },
+    {
+      "date": "2026-01-01",
+      "iso_week": "2026-W01",
+      "title": "6 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.513,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 323,
+      "reported_energy_kcal": 405,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0077",
+        "gm0025"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 34.33,
+          "if": 0.789873568355014,
+          "duration_h": 0.513,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.504,
+          "distance_km": 6.01,
+          "energy_kcal": 405
+        }
+      },
+      "session_id": "s078"
+    },
+    {
+      "date": "2026-01-02",
+      "iso_week": "2026-W01",
+      "title": "Test 5 km",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.331,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 209,
+      "reported_energy_kcal": 237,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0078",
+        "gm0024"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 36.75,
+          "if": 1.01745120433327,
+          "duration_h": 0.331,
+          "distance_km": 5.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.329,
+          "distance_km": 5.01,
+          "energy_kcal": 237
+        }
+      },
+      "session_id": "s079"
+    },
+    {
+      "date": "2026-01-03",
+      "iso_week": "2026-W01",
+      "title": "10 km L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.855,
+      "planned_distance_km": 10.0,
+      "estimated_energy_kcal": 539,
+      "reported_energy_kcal": 685,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0079",
+        "gm0023"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 61.51,
+          "if": 0.838095367788276,
+          "duration_h": 0.855,
+          "distance_km": 10.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.795,
+          "distance_km": 10.01,
+          "energy_kcal": 685
+        }
+      },
+      "session_id": "s080"
+    },
+    {
+      "date": "2026-01-07",
+      "iso_week": "2026-W02",
+      "title": "12x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.917,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 578,
+      "reported_energy_kcal": 692,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0080",
+        "gm0022"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 76.65,
+          "if": 0.866815461728789,
+          "duration_h": 0.917,
+          "distance_km": 12.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.922,
+          "distance_km": 12.0,
+          "energy_kcal": 692
+        }
+      },
+      "session_id": "s081"
+    },
+    {
+      "date": "2026-01-11",
+      "iso_week": "2026-W02",
+      "title": "8L+4M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.984,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 654,
+      "reported_energy_kcal": 1263,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0081",
+        "gm0021"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 193.81,
+          "if": 1.45624833451901,
+          "duration_h": 0.984,
+          "distance_km": 12.0,
+          "energy_kcal": 1263
+        },
+        "garmin": {
+          "duration_h": 0.922,
+          "distance_km": 12.0,
+          "energy_kcal": 801
+        }
+      },
+      "session_id": "s082"
+    },
+    {
+      "date": "2026-01-12",
+      "iso_week": "2026-W03",
+      "title": "13x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.036,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 653,
+      "reported_energy_kcal": 1365,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0082",
+        "gm0020"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 208.26,
+          "if": 1.44806056202604,
+          "duration_h": 1.036,
+          "distance_km": 13.0,
+          "energy_kcal": 1365
+        },
+        "garmin": {
+          "duration_h": 1.001,
+          "distance_km": 13.0,
+          "energy_kcal": 855
+        }
+      },
+      "session_id": "s083"
+    },
+    {
+      "date": "2026-01-14",
+      "iso_week": "2026-W03",
+      "title": "5x1600m RM + Rec LG",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.617,
+      "planned_distance_km": 8.85,
+      "estimated_energy_kcal": 497,
+      "reported_energy_kcal": 809,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0083",
+        "gm0019"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 140.88,
+          "if": 1.58743571136568,
+          "duration_h": 0.617,
+          "distance_km": 8.85,
+          "energy_kcal": 809
+        },
+        "garmin": {
+          "duration_h": 0.568,
+          "distance_km": 7.68,
+          "energy_kcal": 504
+        }
+      },
+      "session_id": "s084"
+    },
+    {
+      "date": "2026-01-16",
+      "iso_week": "2026-W03",
+      "title": "8L+4M + 2TR",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.121,
+      "planned_distance_km": 14.0,
+      "estimated_energy_kcal": 745,
+      "reported_energy_kcal": 811,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0084",
+        "gm0018"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 79.9,
+          "if": 0.830784056824962,
+          "duration_h": 1.121,
+          "distance_km": 14.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 1.044,
+          "distance_km": 13.01,
+          "energy_kcal": 811
+        }
+      },
+      "session_id": "s085"
+    },
+    {
+      "date": "2026-01-18",
+      "iso_week": "2026-W03",
+      "title": "1h20' L",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.333,
+      "planned_distance_km": 15.6,
+      "estimated_energy_kcal": 886,
+      "reported_energy_kcal": 1140,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0085",
+        "gm0017"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 97.68,
+          "if": 0.81021831239882,
+          "duration_h": 1.333,
+          "distance_km": 15.6,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 1.334,
+          "distance_km": 16.22,
+          "energy_kcal": 1140
+        }
+      },
+      "session_id": "s086"
+    },
+    {
+      "date": "2026-01-20",
+      "iso_week": "2026-W04",
+      "title": "13x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.026,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 646,
+      "reported_energy_kcal": 813,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0086",
+        "gm0016"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 84.22,
+          "if": 0.875416245625948,
+          "duration_h": 1.026,
+          "distance_km": 13.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.992,
+          "distance_km": 13.01,
+          "energy_kcal": 813
+        }
+      },
+      "session_id": "s087"
+    },
+    {
+      "date": "2026-01-21",
+      "iso_week": "2026-W04",
+      "title": "3x2km RM + Rec LG",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.508,
+      "planned_distance_km": 7.02,
+      "estimated_energy_kcal": 409,
+      "reported_energy_kcal": 430,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0087",
+        "gm0015"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 45.83,
+          "if": 0.914966648539789,
+          "duration_h": 0.508,
+          "distance_km": 7.02,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.503,
+          "distance_km": 6.92,
+          "energy_kcal": 430
+        }
+      },
+      "session_id": "s088"
+    },
+    {
+      "date": "2026-01-23",
+      "iso_week": "2026-W04",
+      "title": "6L + 3M + 2TR + 1VR",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 0.937,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 623,
+      "reported_energy_kcal": 772,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0088",
+        "gm0014"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 76.29,
+          "if": 0.861810990768756,
+          "duration_h": 0.937,
+          "distance_km": 12.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.929,
+          "distance_km": 12.01,
+          "energy_kcal": 772
+        }
+      },
+      "session_id": "s089"
+    },
+    {
+      "date": "2026-01-24",
+      "iso_week": "2026-W04",
+      "title": "15L+4M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.585,
+      "planned_distance_km": 19.0,
+      "estimated_energy_kcal": 1054,
+      "reported_energy_kcal": 1281,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0089",
+        "gm0013"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 114.85,
+          "if": 0.80892486870917,
+          "duration_h": 1.585,
+          "distance_km": 19.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 1.567,
+          "distance_km": 19.01,
+          "energy_kcal": 1281
+        }
+      },
+      "session_id": "s090"
+    },
+    {
+      "date": "2026-01-26",
+      "iso_week": "2026-W05",
+      "title": "6x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.483,
+      "planned_distance_km": 6.0,
+      "estimated_energy_kcal": 304,
+      "reported_energy_kcal": 372,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0090",
+        "gm0012"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 38.35,
+          "if": 0.882274076656848,
+          "duration_h": 0.483,
+          "distance_km": 6.0,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.454,
+          "distance_km": 6.0,
+          "energy_kcal": 372
+        }
+      },
+      "session_id": "s091"
+    },
+    {
+      "date": "2026-01-28",
+      "iso_week": "2026-W05",
+      "title": "5x1km RM + Rec 1'30\"",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.451,
+      "planned_distance_km": 6.275,
+      "estimated_energy_kcal": 363,
+      "reported_energy_kcal": 337,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0091",
+        "gm0011"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 41.56,
+          "if": 0.922771956997084,
+          "duration_h": 0.451,
+          "distance_km": 6.275,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.45,
+          "distance_km": 5.37,
+          "energy_kcal": 337
+        }
+      },
+      "session_id": "s092"
+    },
+    {
+      "date": "2026-01-30",
+      "iso_week": "2026-W05",
+      "title": "30' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.5,
+      "planned_distance_km": 5.85,
+      "estimated_energy_kcal": 315,
+      "reported_energy_kcal": 398,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0092",
+        "gm0010"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 35.66,
+          "if": 0.819027624006906,
+          "duration_h": 0.5,
+          "distance_km": 5.85,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.489,
+          "distance_km": 6.0,
+          "energy_kcal": 398
+        }
+      },
+      "session_id": "s093"
+    },
+    {
+      "date": "2026-01-31",
+      "iso_week": "2026-W05",
+      "title": "20' L",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.333,
+      "planned_distance_km": 3.9,
+      "estimated_energy_kcal": 210,
+      "reported_energy_kcal": 277,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0093",
+        "gm0009"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 23.93,
+          "if": 0.815798160388607,
+          "duration_h": 0.333,
+          "distance_km": 3.9,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 0.334,
+          "distance_km": 4.08,
+          "energy_kcal": 277
+        }
+      },
+      "session_id": "s094"
+    },
+    {
+      "date": "2026-02-01",
+      "iso_week": "2026-W05",
+      "title": "Running",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 2.375,
+      "planned_distance_km": 29.142,
+      "estimated_energy_kcal": 1496,
+      "reported_energy_kcal": 2009,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0094",
+        "gm0008"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 180.94,
+          "if": 0.820327011984218,
+          "duration_h": 2.375,
+          "distance_km": 29.142,
+          "energy_kcal": null
+        },
+        "garmin": {
+          "duration_h": 2.375,
+          "distance_km": 29.14,
+          "energy_kcal": 2009
+        }
+      },
+      "session_id": "s095"
+    },
+    {
+      "date": "2026-02-04",
+      "iso_week": "2026-W06",
+      "title": "3x2km RM + Rec 2'",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.508,
+      "planned_distance_km": 7.005,
+      "estimated_energy_kcal": 409,
+      "reported_energy_kcal": 719,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0095",
+        "gm0007"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 130.6,
+          "if": 1.64971535520711,
+          "duration_h": 0.508,
+          "distance_km": 7.005,
+          "energy_kcal": 719
+        },
+        "garmin": {
+          "duration_h": 0.487,
+          "distance_km": 6.82,
+          "energy_kcal": 417
+        }
+      },
+      "session_id": "s096"
+    },
+    {
+      "date": "2026-02-06",
+      "iso_week": "2026-W06",
+      "title": "3L+3x(1L+1M+1TR)",
+      "workout_type": "Run",
+      "day_type": "progressivo",
+      "planned_duration_h": 0.911,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 670,
+      "reported_energy_kcal": 1279,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0096",
+        "gm0006"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 203.89,
+          "if": 1.51100976860591,
+          "duration_h": 0.911,
+          "distance_km": 12.0,
+          "energy_kcal": 1279
+        },
+        "garmin": {
+          "duration_h": 0.902,
+          "distance_km": 12.01,
+          "energy_kcal": 804
+        }
+      },
+      "session_id": "s097"
+    },
+    {
+      "date": "2026-02-07",
+      "iso_week": "2026-W06",
+      "title": "15L",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.282,
+      "planned_distance_km": 15.0,
+      "estimated_energy_kcal": 853,
+      "reported_energy_kcal": 1562,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0097",
+        "gm0005"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 233.17,
+          "if": 1.41660631266054,
+          "duration_h": 1.282,
+          "distance_km": 15.0,
+          "energy_kcal": 1562
+        },
+        "garmin": {
+          "duration_h": 1.168,
+          "distance_km": 15.01,
+          "energy_kcal": 994
+        }
+      },
+      "session_id": "s098"
+    },
+    {
+      "date": "2026-02-09",
+      "iso_week": "2026-W07",
+      "title": "Test 5 km",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.318,
+      "planned_distance_km": 5.0,
+      "estimated_energy_kcal": 200,
+      "reported_energy_kcal": 513,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0098",
+        "gm0004"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 93.52,
+          "if": 1.76638138818989,
+          "duration_h": 0.318,
+          "distance_km": 5.0,
+          "energy_kcal": 513
+        },
+        "garmin": {
+          "duration_h": 0.307,
+          "distance_km": 5.01,
+          "energy_kcal": 280
+        }
+      },
+      "session_id": "s099"
+    },
+    {
+      "date": "2026-02-11",
+      "iso_week": "2026-W07",
+      "title": "3x4km RM + Rec 2'",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.882,
+      "planned_distance_km": 13.05,
+      "estimated_energy_kcal": 710,
+      "reported_energy_kcal": 1210,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0099",
+        "gm0003"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 210.77,
+          "if": 1.56171957781894,
+          "duration_h": 0.882,
+          "distance_km": 13.05,
+          "energy_kcal": 1210
+        },
+        "garmin": {
+          "duration_h": 0.872,
+          "distance_km": 11.57,
+          "energy_kcal": 790
+        }
+      },
+      "session_id": "s100"
+    },
+    {
+      "date": "2026-02-13",
+      "iso_week": "2026-W07",
+      "title": "6kmL+3kmM+2kmTR+1KmVR",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 0.882,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 556,
+      "reported_energy_kcal": 1257,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0100",
+        "gm0002"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 201.99,
+          "if": 1.51927783045491,
+          "duration_h": 0.882,
+          "distance_km": 12.0,
+          "energy_kcal": 1257
+        },
+        "garmin": {
+          "duration_h": 0.882,
+          "distance_km": 12.01,
+          "energy_kcal": 795
+        }
+      },
+      "session_id": "s101"
+    },
+    {
+      "date": "2026-02-15",
+      "iso_week": "2026-W07",
+      "title": "12L+6M",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.418,
+      "planned_distance_km": 18.0,
+      "estimated_energy_kcal": 943,
+      "reported_energy_kcal": 1876,
+      "source": "trainingpeaks+garmin",
+      "source_session_ids": [
+        "tp0101",
+        "gm0001"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": 281.88,
+          "if": 1.42317741939264,
+          "duration_h": 1.418,
+          "distance_km": 18.0,
+          "energy_kcal": 1876
+        },
+        "garmin": {
+          "duration_h": 1.401,
+          "distance_km": 18.01,
+          "energy_kcal": 1233
+        }
+      },
+      "session_id": "s102"
+    }
+  ]
+}

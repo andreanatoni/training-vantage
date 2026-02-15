@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "v1.0",
-    "updated_at": "2026-02-14"
+    "version": "v1.1",
+    "updated_at": "2026-02-15"
   },
   "defaults": {
     "session_days": [
@@ -14,16 +14,16 @@
     ],
     "session_types_by_day": {
       "Monday": "easy",
-      "Tuesday": "forza",
       "Wednesday": "qualita",
-      "Thursday": "forza",
       "Friday": "progressivo",
-      "Saturday": "lungo"
+      "Saturday": "lungo",
+      "Tuesday": "forza",
+      "Thursday": "forza"
     },
     "weekly_km": {
-      "start": 36.0,
-      "peak": 58.0,
-      "max_increase_pct": 0.1,
+      "start": 37.2,
+      "peak": 67.0,
+      "max_increase_pct": 0.09,
       "deload_every_n_weeks": 4,
       "deload_drop_pct": 0.18
     },
@@ -40,29 +40,34 @@
     },
     "intensity_distribution": {
       "build": {
-        "target_low_pct": 0.8,
-        "target_high_pct": 0.2,
-        "max_moderate_pct": 0.1,
+        "target_low_pct": 0.82,
+        "target_high_pct": 0.18,
+        "max_moderate_pct": 0.08,
         "min_high_pct": 0.15
       },
       "specific": {
-        "target_low_pct": 0.75,
-        "target_high_pct": 0.2,
-        "max_moderate_pct": 0.15,
+        "target_low_pct": 0.78,
+        "target_high_pct": 0.18,
+        "max_moderate_pct": 0.12,
         "min_high_pct": 0.15
       },
       "taper": {
-        "target_low_pct": 0.85,
+        "target_low_pct": 0.88,
         "target_high_pct": 0.1,
-        "max_moderate_pct": 0.1,
+        "max_moderate_pct": 0.08,
         "min_high_pct": 0.05
       },
       "race": {
-        "target_low_pct": 0.8,
-        "target_high_pct": 0.15,
-        "max_moderate_pct": 0.1,
+        "target_low_pct": 0.82,
+        "target_high_pct": 0.13,
+        "max_moderate_pct": 0.08,
         "min_high_pct": 0.05
       }
     }
+  },
+  "planning_defaults": {
+    "goal_race_name": "Maratona Latina",
+    "goal_race_date": "2026-12-06",
+    "target_pace": "4:00/km"
   }
 }

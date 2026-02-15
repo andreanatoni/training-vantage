@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "updated_at": "2026-02-15T18:57:37.053610"
+  },
+  "athlete": {
+    "name": "Spizz",
+    "current_5k": "18:26",
+    "current_avg_km_per_week": 39.2,
+    "max_recent_km_per_week": 51.5,
+    "sleep_hours": 7.0,
+    "recovery_score": 7,
+    "injury_risk": "low"
+  },
+  "goal": {
+    "race_name": "Pedagnalonga",
+    "race_date": "2026-04-26",
+    "target_pace": "3:40/km"
+  },
+  "preferences": {
+    "run_days_per_week": 3,
+    "strength_days_per_week": 1,
+    "long_run_day": "Saturday",
+    "tid_method": "polarized",
+    "aggressiveness": "aggressive",
+    "force_twice_non_negotiable": false
+  },
+  "coach_blend_notes": [
+    "Daniels: uso zone/ritmi e lavoro qualità strutturato.",
+    "Pfitzinger: progressione volume + scarico periodico + long run centrale.",
+    "Canova: specificità ritmo gara in fase specific.",
+    "Seiler: guardrail TID per evitare eccesso zona grigia.",
+    "Hudson: margine adattivo su recupero e stress."
+  ]
+}
