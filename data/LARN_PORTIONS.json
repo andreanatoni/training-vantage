@@ -26,242 +26,30 @@
   },
   "portions": [
     {
-      "id": "latte",
-      "canonical_id": "latte",
-      "group": "LATTE_E_DERIVATI",
-      "item_label": "Latte",
-      "item": "Latte",
+      "id": "acqua_di_rubinetto_o_imbottigliata",
+      "canonical_id": "acqua_di_rubinetto_o_imbottigliata",
+      "group": "ACQUA",
+      "item_label": "Acqua di rubinetto o imbottigliata",
+      "item": "Acqua di rubinetto o imbottigliata",
       "standard": {
-        "qty": 125.0,
+        "qty": 200.0,
         "unit": "mL"
       },
       "practical": [
-        "1 Bicchiere piccolo",
-        "½ tazza media"
+        "1 Bicchiere medio (da acqua)"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Bicchiere piccolo",
+          "raw": "1 Bicchiere medio (da acqua)",
           "quantity_text": "1",
           "unit_hint": "bicchiere",
-          "item_hint": "Bicchiere piccolo"
-        },
-        {
-          "raw": "½ tazza media",
-          "quantity_text": "1/2",
-          "unit_hint": "tazza",
-          "item_hint": "tazza media"
+          "item_hint": "Bicchiere medio (da acqua)"
         }
       ],
       "source": {
         "table": 2,
-        "page": 16,
-        "row_index_in_table2": 1
-      }
-    },
-    {
-      "id": "yogurt_e_altri_latti_fermentati",
-      "canonical_id": "yogurt_e_altri_latti_fermentati",
-      "group": "LATTE_E_DERIVATI",
-      "item_label": "Yogurt e altri latti fermentati",
-      "item": "Yogurt e altri latti fermentati",
-      "standard": {
-        "qty": 125.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Vasetto standard"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Vasetto standard",
-          "quantity_text": "1",
-          "unit_hint": "vasetto",
-          "item_hint": "Vasetto standard"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 2
-      }
-    },
-    {
-      "id": "formaggi_freschi_25_di_grassi",
-      "canonical_id": "formaggi_freschi_25_di_grassi",
-      "group": "LATTE_E_DERIVATI",
-      "item_label": "Formaggi freschi (≤25% di grassi)",
-      "item": "Formaggi freschi (≤25% di grassi)",
-      "standard": {
-        "qty": 100.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Mozzarella piccola",
-        "4 ciliegine di mozzarella",
-        "4 fettine tipo formaggio fuso",
-        "2 e ½ cucchiai di formaggio spalmabile"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Mozzarella piccola",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Mozzarella piccola"
-        },
-        {
-          "raw": "4 ciliegine di mozzarella",
-          "quantity_text": "4",
-          "unit_hint": null,
-          "item_hint": "ciliegine di mozzarella"
-        },
-        {
-          "raw": "4 fettine tipo formaggio fuso",
-          "quantity_text": "4",
-          "unit_hint": "fettine",
-          "item_hint": "fettine tipo formaggio fuso"
-        },
-        {
-          "raw": "2 e ½ cucchiai di formaggio spalmabile",
-          "quantity_text": "2 e 1/2",
-          "unit_hint": null,
-          "item_hint": "cucchiai di formaggio spalmabile"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 3
-      }
-    },
-    {
-      "id": "altri_formaggi_25_di_grassi",
-      "canonical_id": "altri_formaggi_25_di_grassi",
-      "group": "LATTE_E_DERIVATI",
-      "item_label": "Altri formaggi (≥25% di grassi)",
-      "item": "Altri formaggi (≥25% di grassi)",
-      "standard": {
-        "qty": 50.0,
-        "unit": "g"
-      },
-      "practical": [
-        "2 Fettine tipo formaggio fuso",
-        "2 e ½ cubetti di parmigiano",
-        "2 cucchiai di formaggio cremoso",
-        "2 e ½ formaggini"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "2 Fettine tipo formaggio fuso",
-          "quantity_text": "2",
-          "unit_hint": "fettine",
-          "item_hint": "Fettine tipo formaggio fuso"
-        },
-        {
-          "raw": "2 e ½ cubetti di parmigiano",
-          "quantity_text": "2 e 1/2",
-          "unit_hint": null,
-          "item_hint": "cubetti di parmigiano"
-        },
-        {
-          "raw": "2 cucchiai di formaggio cremoso",
-          "quantity_text": "2",
-          "unit_hint": null,
-          "item_hint": "cucchiai di formaggio cremoso"
-        },
-        {
-          "raw": "2 e ½ formaggini",
-          "quantity_text": "2 e 1/2",
-          "unit_hint": null,
-          "item_hint": "formaggini"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 4
-      }
-    },
-    {
-      "id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
-      "canonical_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
-      "group": "CARNE_PESCE_UOVA",
-      "item_label": "Carne “bianca” fresca/ surgelata (pollo, tacchino, coniglio)",
-      "item": "Carne “bianca” fresca/ surgelata (pollo, tacchino, coniglio)",
-      "standard": {
-        "qty": 100.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Fetta di petto di pollo o tacchino",
-        "1 piccola coscia di pollo"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Fetta di petto di pollo o tacchino",
-          "quantity_text": "1",
-          "unit_hint": "fetta",
-          "item_hint": "Fetta di petto di pollo o tacchino"
-        },
-        {
-          "raw": "1 piccola coscia di pollo",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "piccola coscia di pollo"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 5
-      }
-    },
-    {
-      "id": "carne_rossa_fresca_surgelata_bovina_ovina_suina_equina",
-      "canonical_id": "carne_rossa_fresca_surgelata_bovina_ovina_suina_equina",
-      "group": "CARNE_PESCE_UOVA",
-      "item_label": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
-      "item": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
-      "standard": {
-        "qty": 100.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Fettina",
-        "1 svizzera (hamburger)",
-        "4-5 pezzi di spezzatino",
-        "1 salsiccia"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Fettina",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Fettina"
-        },
-        {
-          "raw": "1 svizzera (hamburger)",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "svizzera (hamburger)"
-        },
-        {
-          "raw": "4-5 pezzi di spezzatino",
-          "quantity_text": "4-5",
-          "unit_hint": "pezzi",
-          "item_hint": "pezzi di spezzatino"
-        },
-        {
-          "raw": "1 salsiccia",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "salsiccia"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 6
+        "page": 17,
+        "row_index_in_table2": 30
       }
     },
     {
@@ -313,44 +101,234 @@
       }
     },
     {
-      "id": "salumi",
-      "canonical_id": "salumi",
-      "group": "CARNE_PESCE_UOVA",
-      "item_label": "Salumi",
-      "item": "Salumi",
+      "id": "altri_formaggi_25_di_grassi",
+      "canonical_id": "altri_formaggi_25_di_grassi",
+      "group": "LATTE_E_DERIVATI",
+      "item_label": "Altri formaggi (≥25% di grassi)",
+      "item": "Altri formaggi (≥25% di grassi)",
       "standard": {
         "qty": 50.0,
         "unit": "g"
       },
       "practical": [
-        "3-4 Fette medie di prosciutto",
-        "5-6 fette medie di salame o di bresaola",
-        "2 fette medie di mortadella"
+        "2 Fettine tipo formaggio fuso",
+        "2 e ½ cubetti di parmigiano",
+        "2 cucchiai di formaggio cremoso",
+        "2 e ½ formaggini"
       ],
       "practical_tokens": [
         {
-          "raw": "3-4 Fette medie di prosciutto",
-          "quantity_text": "3-4",
-          "unit_hint": null,
-          "item_hint": "Fette medie di prosciutto"
+          "raw": "2 Fettine tipo formaggio fuso",
+          "quantity_text": "2",
+          "unit_hint": "fettine",
+          "item_hint": "Fettine tipo formaggio fuso"
         },
         {
-          "raw": "5-6 fette medie di salame o di bresaola",
-          "quantity_text": "5-6",
+          "raw": "2 e ½ cubetti di parmigiano",
+          "quantity_text": "2 e 1/2",
           "unit_hint": null,
-          "item_hint": "fette medie di salame o di bresaola"
+          "item_hint": "cubetti di parmigiano"
         },
         {
-          "raw": "2 fette medie di mortadella",
+          "raw": "2 cucchiai di formaggio cremoso",
           "quantity_text": "2",
           "unit_hint": null,
-          "item_hint": "fette medie di mortadella"
+          "item_hint": "cucchiai di formaggio cremoso"
+        },
+        {
+          "raw": "2 e ½ formaggini",
+          "quantity_text": "2 e 1/2",
+          "unit_hint": null,
+          "item_hint": "formaggini"
         }
       ],
       "source": {
         "table": 2,
         "page": 16,
-        "row_index_in_table2": 8
+        "row_index_in_table2": 4
+      }
+    },
+    {
+      "id": "bibite_zuccherate_con_zuccheri_aggiunti",
+      "canonical_id": "bibite_zuccherate_con_zuccheri_aggiunti",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item_label": "Bibite zuccherate (con zuccheri aggiunti)",
+      "item": "Bibite zuccherate (con zuccheri aggiunti)",
+      "standard": {
+        "qty": 150.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Bicchiere di plastica medio o 1 lattina piccola"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Bicchiere di plastica medio o 1 lattina piccola",
+          "quantity_text": "1",
+          "unit_hint": "bicchiere",
+          "item_hint": "Bicchiere di plastica medio o 1 lattina piccola"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 32
+      }
+    },
+    {
+      "id": "birra",
+      "canonical_id": "birra",
+      "group": "BEVANDE_ALCOLICHE",
+      "item_label": "Birra",
+      "item": "Birra",
+      "standard": {
+        "qty": 330.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Lattina media"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Lattina media",
+          "quantity_text": "1",
+          "unit_hint": "lattina",
+          "item_hint": "Lattina media"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 35
+      }
+    },
+    {
+      "id": "burro_strutto_e_lardo",
+      "canonical_id": "burro_strutto_e_lardo",
+      "group": "GRASSI_DA_CONDIMENTO",
+      "item_label": "Burro, strutto e lardo",
+      "item": "Burro, strutto e lardo",
+      "standard": {
+        "qty": 10.0,
+        "unit": "g"
+      },
+      "practical": [
+        "½ Noce",
+        "1 unità di confezione alberghiera",
+        "1 fetta sottile"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "½ Noce",
+          "quantity_text": "1/2",
+          "unit_hint": null,
+          "item_hint": "Noce"
+        },
+        {
+          "raw": "1 unità di confezione alberghiera",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "unità di confezione alberghiera"
+        },
+        {
+          "raw": "1 fetta sottile",
+          "quantity_text": "1",
+          "unit_hint": "fetta",
+          "item_hint": "fetta sottile"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 27
+      }
+    },
+    {
+      "id": "caffe_espresso",
+      "canonical_id": "caffe_espresso",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item_label": "Caffè espresso",
+      "item": "Caffè espresso",
+      "standard": {
+        "qty": 30.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 33
+      }
+    },
+    {
+      "id": "caffe_orzo",
+      "canonical_id": "caffe_orzo",
+      "group": "BEVANDE_ANALCOLICHE",
+      "item_label": "Caffè/orzo",
+      "item": "Caffè/orzo",
+      "standard": {
+        "qty": 30.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 33
+      }
+    },
+    {
+      "id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "canonical_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "group": "CARNE_PESCE_UOVA",
+      "item_label": "Carne “bianca” fresca/ surgelata (pollo, tacchino, coniglio)",
+      "item": "Carne “bianca” fresca/ surgelata (pollo, tacchino, coniglio)",
+      "standard": {
+        "qty": 100.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Fetta di petto di pollo o tacchino",
+        "1 piccola coscia di pollo"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Fetta di petto di pollo o tacchino",
+          "quantity_text": "1",
+          "unit_hint": "fetta",
+          "item_hint": "Fetta di petto di pollo o tacchino"
+        },
+        {
+          "raw": "1 piccola coscia di pollo",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "piccola coscia di pollo"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 5
       }
     },
     {
@@ -381,421 +359,51 @@
       }
     },
     {
-      "id": "pesce_molluschi_crostacei_freschi_surgelati",
-      "canonical_id": "pesce_molluschi_crostacei_freschi_surgelati",
+      "id": "carne_rossa_fresca_surgelata_bovina_ovina_suina_equina",
+      "canonical_id": "carne_rossa_fresca_surgelata_bovina_ovina_suina_equina",
       "group": "CARNE_PESCE_UOVA",
-      "item_label": "Pesce, molluschi, crostacei freschi/surgelati",
-      "item": "Pesce, molluschi, crostacei freschi/surgelati",
+      "item_label": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
+      "item": "Carne “rossa” fresca/surgelata (bovina, ovina, suina, equina)",
       "standard": {
-        "qty": 150.0,
+        "qty": 100.0,
         "unit": "g"
       },
       "practical": [
-        "1 Pesce piccolo",
-        "1 filetto medio",
-        "25 cozze",
-        "3 gamberoni",
-        "20 gamberetti"
+        "1 Fettina",
+        "1 svizzera (hamburger)",
+        "4-5 pezzi di spezzatino",
+        "1 salsiccia"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Pesce piccolo",
+          "raw": "1 Fettina",
           "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "Pesce piccolo"
+          "item_hint": "Fettina"
         },
         {
-          "raw": "1 filetto medio",
+          "raw": "1 svizzera (hamburger)",
           "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "filetto medio"
+          "item_hint": "svizzera (hamburger)"
         },
         {
-          "raw": "25 cozze",
-          "quantity_text": "25",
-          "unit_hint": null,
-          "item_hint": "cozze"
-        },
-        {
-          "raw": "3 gamberoni",
-          "quantity_text": "3",
-          "unit_hint": null,
-          "item_hint": "gamberoni"
-        },
-        {
-          "raw": "20 gamberetti",
-          "quantity_text": "20",
-          "unit_hint": null,
-          "item_hint": "gamberetti"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 10
-      }
-    },
-    {
-      "id": "pesce_molluschi_crostacei_conservati",
-      "canonical_id": "pesce_molluschi_crostacei_conservati",
-      "group": "CARNE_PESCE_UOVA",
-      "item_label": "Pesce, molluschi, crostacei conservati",
-      "item": "Pesce, molluschi, crostacei conservati",
-      "standard": {
-        "qty": 50.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Scatola piccola di tonno sott’olio o in salamoia sgocciolato",
-        "4-5 fette sottili di salmone affumicato"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Scatola piccola di tonno sott’olio o in salamoia sgocciolato",
-          "quantity_text": "1",
-          "unit_hint": "scatola",
-          "item_hint": "Scatola piccola di tonno sott’olio o in salamoia sgocciolato"
-        },
-        {
-          "raw": "4-5 fette sottili di salmone affumicato",
+          "raw": "4-5 pezzi di spezzatino",
           "quantity_text": "4-5",
+          "unit_hint": "pezzi",
+          "item_hint": "pezzi di spezzatino"
+        },
+        {
+          "raw": "1 salsiccia",
+          "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "fette sottili di salmone affumicato"
+          "item_hint": "salsiccia"
         }
       ],
       "source": {
         "table": 2,
         "page": 16,
-        "row_index_in_table2": 11
-      }
-    },
-    {
-      "id": "uova",
-      "canonical_id": "uova",
-      "group": "CARNE_PESCE_UOVA",
-      "item_label": "Uova",
-      "item": "Uova",
-      "standard": {
-        "qty": 50.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Uovo di gallina"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Uovo di gallina",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Uovo di gallina"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 12
-      }
-    },
-    {
-      "id": "legumi_freschi_o_in_scatola",
-      "canonical_id": "legumi_freschi_o_in_scatola",
-      "group": "LEGUMI",
-      "item_label": "Legumi freschi o in scatola",
-      "item": "Legumi freschi o in scatola",
-      "standard": {
-        "qty": 150.0,
-        "unit": "g"
-      },
-      "practical": [
-        "½ Piatto",
-        "una scatola piccola",
-        "7-8 cucchiai"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "½ Piatto",
-          "quantity_text": "1/2",
-          "unit_hint": "piatto",
-          "item_hint": "Piatto"
-        },
-        {
-          "raw": "una scatola piccola",
-          "quantity_text": null,
-          "unit_hint": "scatola",
-          "item_hint": "una scatola piccola"
-        },
-        {
-          "raw": "7-8 cucchiai",
-          "quantity_text": "7-8",
-          "unit_hint": null,
-          "item_hint": "cucchiai"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 13
-      }
-    },
-    {
-      "id": "legumi_secchi",
-      "canonical_id": "legumi_secchi",
-      "group": "LEGUMI",
-      "item_label": "Legumi secchi",
-      "item": "Legumi secchi",
-      "standard": {
-        "qty": 50.0,
-        "unit": "g"
-      },
-      "practical": [
-        "3-4 Cucchiai"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "3-4 Cucchiai",
-          "quantity_text": "3-4",
-          "unit_hint": null,
-          "item_hint": "Cucchiai"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 14
-      }
-    },
-    {
-      "id": "pasta_cous_cous_riso_mais_farro_orzo_quinoa_farine_ecc",
-      "canonical_id": "pasta_cous_cous_riso_mais_farro_orzo_quinoa_farine_ecc",
-      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
-      "item_label": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
-      "item": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
-      "standard": {
-        "qty": 80.0,
-        "unit": "g"
-      },
-      "practical": [
-        "Circa 50 penne/fusilli",
-        "6-8 cucchiai di pastina",
-        "4 cucchiai di riso/farro/orzo/ quinoa",
-        "6-8 cucchiai di farina"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "Circa 50 penne/fusilli",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "Circa 50 penne/fusilli"
-        },
-        {
-          "raw": "6-8 cucchiai di pastina",
-          "quantity_text": "6-8",
-          "unit_hint": null,
-          "item_hint": "cucchiai di pastina"
-        },
-        {
-          "raw": "4 cucchiai di riso/farro/orzo/ quinoa",
-          "quantity_text": "4",
-          "unit_hint": null,
-          "item_hint": "cucchiai di riso/farro/orzo/ quinoa"
-        },
-        {
-          "raw": "6-8 cucchiai di farina",
-          "quantity_text": "6-8",
-          "unit_hint": null,
-          "item_hint": "cucchiai di farina"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 15
-      }
-    },
-    {
-      "id": "pane",
-      "canonical_id": "pane",
-      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
-      "item_label": "Pane",
-      "item": "Pane",
-      "standard": {
-        "qty": 50.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Panino piccolo",
-        "1 piccola rosetta o michetta (vuote)",
-        "1 fetta media di pagnotta/filone",
-        "1/5 baguette",
-        "½ ciabattina/francesino/ferrarese",
-        "½ piadina",
-        "1 chapati piccolo (roti)",
-        "1 pane arabo piccolo (pita)",
-        "1 tortilla media"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Panino piccolo",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Panino piccolo"
-        },
-        {
-          "raw": "1 piccola rosetta o michetta (vuote)",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "piccola rosetta o michetta (vuote)"
-        },
-        {
-          "raw": "1 fetta media di pagnotta/filone",
-          "quantity_text": "1",
-          "unit_hint": "fetta",
-          "item_hint": "fetta media di pagnotta/filone"
-        },
-        {
-          "raw": "1/5 baguette",
-          "quantity_text": "1/5",
-          "unit_hint": null,
-          "item_hint": "baguette"
-        },
-        {
-          "raw": "½ ciabattina/francesino/ferrarese",
-          "quantity_text": "1/2",
-          "unit_hint": null,
-          "item_hint": "ciabattina/francesino/ferrarese"
-        },
-        {
-          "raw": "½ piadina",
-          "quantity_text": "1/2",
-          "unit_hint": null,
-          "item_hint": "piadina"
-        },
-        {
-          "raw": "1 chapati piccolo (roti)",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "chapati piccolo (roti)"
-        },
-        {
-          "raw": "1 pane arabo piccolo (pita)",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "pane arabo piccolo (pita)"
-        },
-        {
-          "raw": "1 tortilla media",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "tortilla media"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 16
-      }
-    },
-    {
-      "id": "sostituti_del_pane_cracker_grissini_friselle_tarallini_gallette_ecc",
-      "canonical_id": "sostituti_del_pane_cracker_grissini_friselle_tarallini_gallette_ecc",
-      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
-      "item_label": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
-      "item": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
-      "standard": {
-        "qty": 30.0,
-        "unit": "g"
-      },
-      "practical": [
-        "5 Crackers",
-        "1 frisella",
-        "3-4 tarallini",
-        "3-4 gallette"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "5 Crackers",
-          "quantity_text": "5",
-          "unit_hint": null,
-          "item_hint": "Crackers"
-        },
-        {
-          "raw": "1 frisella",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "frisella"
-        },
-        {
-          "raw": "3-4 tarallini",
-          "quantity_text": "3-4",
-          "unit_hint": null,
-          "item_hint": "tarallini"
-        },
-        {
-          "raw": "3-4 gallette",
-          "quantity_text": "3-4",
-          "unit_hint": null,
-          "item_hint": "gallette"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 17
-      }
-    },
-    {
-      "id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
-      "canonical_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
-      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
-      "item_label": "Prodotti da forno dolci (brioche, croissant, cornetti, biscotti, merendine, barrette, ecc.)",
-      "item": "Prodotti da forno dolci (brioche, croissant, cornetti, biscotti, merendine, barrette, ecc.)",
-      "standard": {
-        "qty": 30.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Brioche (o croissant) piccola o ½ brioche grande",
-        "2-3 biscotti frollini",
-        "4-5 biscotti secchi",
-        "una merendina",
-        "una barretta"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Brioche (o croissant) piccola o ½ brioche grande",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Brioche (o croissant) piccola o 1/2 brioche grande"
-        },
-        {
-          "raw": "2-3 biscotti frollini",
-          "quantity_text": "2-3",
-          "unit_hint": null,
-          "item_hint": "biscotti frollini"
-        },
-        {
-          "raw": "4-5 biscotti secchi",
-          "quantity_text": "4-5",
-          "unit_hint": null,
-          "item_hint": "biscotti secchi"
-        },
-        {
-          "raw": "una merendina",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "una merendina"
-        },
-        {
-          "raw": "una barretta",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "una barretta"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 16,
-        "row_index_in_table2": 18
+        "row_index_in_table2": 6
       }
     },
     {
@@ -847,175 +455,92 @@
       }
     },
     {
-      "id": "patate_e_altri_tuberi",
-      "canonical_id": "patate_e_altri_tuberi",
-      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
-      "item_label": "Patate e altri tuberi",
-      "item": "Patate e altri tuberi",
+      "id": "cioccolato_cioccolatini_creme_spalmabili",
+      "canonical_id": "cioccolato_cioccolatini_creme_spalmabili",
+      "group": "DOLCIUMI",
+      "item_label": "Cioccolato, cioccolatini, creme spalmabili",
+      "item": "Cioccolato, cioccolatini, creme spalmabili",
       "standard": {
-        "qty": 200.0,
+        "qty": 10.0,
         "unit": "g"
       },
       "practical": [
-        "2 Patate piccole"
+        "1 Quadretto",
+        "1 cioccolatino",
+        "1 cucchiaino colmo"
       ],
       "practical_tokens": [
         {
-          "raw": "2 Patate piccole",
-          "quantity_text": "2",
+          "raw": "1 Quadretto",
+          "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "Patate piccole"
+          "item_hint": "Quadretto"
+        },
+        {
+          "raw": "1 cioccolatino",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "cioccolatino"
+        },
+        {
+          "raw": "1 cucchiaino colmo",
+          "quantity_text": "1",
+          "unit_hint": "cucchiaino",
+          "item_hint": "cucchiaino colmo"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 41
+      }
+    },
+    {
+      "id": "formaggi_freschi_25_di_grassi",
+      "canonical_id": "formaggi_freschi_25_di_grassi",
+      "group": "LATTE_E_DERIVATI",
+      "item_label": "Formaggi freschi (≤25% di grassi)",
+      "item": "Formaggi freschi (≤25% di grassi)",
+      "standard": {
+        "qty": 100.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Mozzarella piccola",
+        "4 ciliegine di mozzarella",
+        "4 fettine tipo formaggio fuso",
+        "2 e ½ cucchiai di formaggio spalmabile"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Mozzarella piccola",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Mozzarella piccola"
+        },
+        {
+          "raw": "4 ciliegine di mozzarella",
+          "quantity_text": "4",
+          "unit_hint": null,
+          "item_hint": "ciliegine di mozzarella"
+        },
+        {
+          "raw": "4 fettine tipo formaggio fuso",
+          "quantity_text": "4",
+          "unit_hint": "fettine",
+          "item_hint": "fettine tipo formaggio fuso"
+        },
+        {
+          "raw": "2 e ½ cucchiai di formaggio spalmabile",
+          "quantity_text": "2 e 1/2",
+          "unit_hint": null,
+          "item_hint": "cucchiai di formaggio spalmabile"
         }
       ],
       "source": {
         "table": 2,
         "page": 16,
-        "row_index_in_table2": 20
-      }
-    },
-    {
-      "id": "insalate_a_foglia",
-      "canonical_id": "insalate_a_foglia",
-      "group": "VERDURE_E_ORTAGGI",
-      "item_label": "Insalate a foglia",
-      "item": "Insalate a foglia",
-      "standard": {
-        "qty": 80.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Scodella grande"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Scodella grande",
-          "quantity_text": "1",
-          "unit_hint": "scodella",
-          "item_hint": "Scodella grande"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 21
-      }
-    },
-    {
-      "id": "verdure_e_ortaggi",
-      "canonical_id": "verdure_e_ortaggi",
-      "group": "VERDURE_E_ORTAGGI",
-      "item_label": "Verdure e ortaggi",
-      "item": "Verdure e ortaggi",
-      "standard": {
-        "qty": 200.0,
-        "unit": "g"
-      },
-      "practical": [
-        "2-3 Pomodori",
-        "3-4 carote",
-        "1 peperone",
-        "1 finocchio",
-        "2 carciofi",
-        "2-3 zucchine",
-        "7-10 ravanelli",
-        "1-2 cipolle",
-        "½ piatto di spinaci",
-        "bieta",
-        "broccoli",
-        "cavolfiore",
-        "melanzane",
-        "ecc. cotti"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "2-3 Pomodori",
-          "quantity_text": "2-3",
-          "unit_hint": null,
-          "item_hint": "Pomodori"
-        },
-        {
-          "raw": "3-4 carote",
-          "quantity_text": "3-4",
-          "unit_hint": null,
-          "item_hint": "carote"
-        },
-        {
-          "raw": "1 peperone",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "peperone"
-        },
-        {
-          "raw": "1 finocchio",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "finocchio"
-        },
-        {
-          "raw": "2 carciofi",
-          "quantity_text": "2",
-          "unit_hint": null,
-          "item_hint": "carciofi"
-        },
-        {
-          "raw": "2-3 zucchine",
-          "quantity_text": "2-3",
-          "unit_hint": null,
-          "item_hint": "zucchine"
-        },
-        {
-          "raw": "7-10 ravanelli",
-          "quantity_text": "7-10",
-          "unit_hint": null,
-          "item_hint": "ravanelli"
-        },
-        {
-          "raw": "1-2 cipolle",
-          "quantity_text": "1-2",
-          "unit_hint": null,
-          "item_hint": "cipolle"
-        },
-        {
-          "raw": "½ piatto di spinaci",
-          "quantity_text": "1/2",
-          "unit_hint": "piatto",
-          "item_hint": "piatto di spinaci"
-        },
-        {
-          "raw": "bieta",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "bieta"
-        },
-        {
-          "raw": "broccoli",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "broccoli"
-        },
-        {
-          "raw": "cavolfiore",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "cavolfiore"
-        },
-        {
-          "raw": "melanzane",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "melanzane"
-        },
-        {
-          "raw": "ecc. cotti",
-          "quantity_text": null,
-          "unit_hint": null,
-          "item_hint": "ecc. cotti"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 22
+        "row_index_in_table2": 3
       }
     },
     {
@@ -1143,6 +668,162 @@
       }
     },
     {
+      "id": "insalate_a_foglia",
+      "canonical_id": "insalate_a_foglia",
+      "group": "VERDURE_E_ORTAGGI",
+      "item_label": "Insalate a foglia",
+      "item": "Insalate a foglia",
+      "standard": {
+        "qty": 80.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Scodella grande"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Scodella grande",
+          "quantity_text": "1",
+          "unit_hint": "scodella",
+          "item_hint": "Scodella grande"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 21
+      }
+    },
+    {
+      "id": "latte",
+      "canonical_id": "latte",
+      "group": "LATTE_E_DERIVATI",
+      "item_label": "Latte",
+      "item": "Latte",
+      "standard": {
+        "qty": 125.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Bicchiere piccolo",
+        "½ tazza media"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Bicchiere piccolo",
+          "quantity_text": "1",
+          "unit_hint": "bicchiere",
+          "item_hint": "Bicchiere piccolo"
+        },
+        {
+          "raw": "½ tazza media",
+          "quantity_text": "1/2",
+          "unit_hint": "tazza",
+          "item_hint": "tazza media"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 1
+      }
+    },
+    {
+      "id": "legumi_freschi_o_in_scatola",
+      "canonical_id": "legumi_freschi_o_in_scatola",
+      "group": "LEGUMI",
+      "item_label": "Legumi freschi o in scatola",
+      "item": "Legumi freschi o in scatola",
+      "standard": {
+        "qty": 150.0,
+        "unit": "g"
+      },
+      "practical": [
+        "½ Piatto",
+        "una scatola piccola",
+        "7-8 cucchiai"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "½ Piatto",
+          "quantity_text": "1/2",
+          "unit_hint": "piatto",
+          "item_hint": "Piatto"
+        },
+        {
+          "raw": "una scatola piccola",
+          "quantity_text": null,
+          "unit_hint": "scatola",
+          "item_hint": "una scatola piccola"
+        },
+        {
+          "raw": "7-8 cucchiai",
+          "quantity_text": "7-8",
+          "unit_hint": null,
+          "item_hint": "cucchiai"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 13
+      }
+    },
+    {
+      "id": "legumi_secchi",
+      "canonical_id": "legumi_secchi",
+      "group": "LEGUMI",
+      "item_label": "Legumi secchi",
+      "item": "Legumi secchi",
+      "standard": {
+        "qty": 50.0,
+        "unit": "g"
+      },
+      "practical": [
+        "3-4 Cucchiai"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "3-4 Cucchiai",
+          "quantity_text": "3-4",
+          "unit_hint": null,
+          "item_hint": "Cucchiai"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 14
+      }
+    },
+    {
+      "id": "marmellata",
+      "canonical_id": "marmellata",
+      "group": "DOLCIUMI",
+      "item_label": "Marmellata",
+      "item": "Marmellata",
+      "standard": {
+        "qty": 10.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Cucchiaino colmo"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Cucchiaino colmo",
+          "quantity_text": "1",
+          "unit_hint": "cucchiaino",
+          "item_hint": "Cucchiaino colmo"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 39
+      }
+    },
+    {
       "id": "noci_nocciole_pistacchi_mandorle_semi_di_lino_semi_di_sesamo_semi_di_zucca_ecc",
       "canonical_id": "noci_nocciole_pistacchi_mandorle_semi_di_lino_semi_di_sesamo_semi_di_zucca_ecc",
       "group": "FRUTTA_SECCA_A_GUSCIO_E_SEMI_OLEOSI",
@@ -1218,44 +899,277 @@
       }
     },
     {
-      "id": "burro_strutto_e_lardo",
-      "canonical_id": "burro_strutto_e_lardo",
-      "group": "GRASSI_DA_CONDIMENTO",
-      "item_label": "Burro, strutto e lardo",
-      "item": "Burro, strutto e lardo",
+      "id": "pane",
+      "canonical_id": "pane",
+      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
+      "item_label": "Pane",
+      "item": "Pane",
       "standard": {
-        "qty": 10.0,
+        "qty": 50.0,
         "unit": "g"
       },
       "practical": [
-        "½ Noce",
-        "1 unità di confezione alberghiera",
-        "1 fetta sottile"
+        "1 Panino piccolo",
+        "1 piccola rosetta o michetta (vuote)",
+        "1 fetta media di pagnotta/filone",
+        "1/5 baguette",
+        "½ ciabattina/francesino/ferrarese",
+        "½ piadina",
+        "1 chapati piccolo (roti)",
+        "1 pane arabo piccolo (pita)",
+        "1 tortilla media"
       ],
       "practical_tokens": [
         {
-          "raw": "½ Noce",
-          "quantity_text": "1/2",
-          "unit_hint": null,
-          "item_hint": "Noce"
-        },
-        {
-          "raw": "1 unità di confezione alberghiera",
+          "raw": "1 Panino piccolo",
           "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "unità di confezione alberghiera"
+          "item_hint": "Panino piccolo"
         },
         {
-          "raw": "1 fetta sottile",
+          "raw": "1 piccola rosetta o michetta (vuote)",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "piccola rosetta o michetta (vuote)"
+        },
+        {
+          "raw": "1 fetta media di pagnotta/filone",
           "quantity_text": "1",
           "unit_hint": "fetta",
-          "item_hint": "fetta sottile"
+          "item_hint": "fetta media di pagnotta/filone"
+        },
+        {
+          "raw": "1/5 baguette",
+          "quantity_text": "1/5",
+          "unit_hint": null,
+          "item_hint": "baguette"
+        },
+        {
+          "raw": "½ ciabattina/francesino/ferrarese",
+          "quantity_text": "1/2",
+          "unit_hint": null,
+          "item_hint": "ciabattina/francesino/ferrarese"
+        },
+        {
+          "raw": "½ piadina",
+          "quantity_text": "1/2",
+          "unit_hint": null,
+          "item_hint": "piadina"
+        },
+        {
+          "raw": "1 chapati piccolo (roti)",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "chapati piccolo (roti)"
+        },
+        {
+          "raw": "1 pane arabo piccolo (pita)",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "pane arabo piccolo (pita)"
+        },
+        {
+          "raw": "1 tortilla media",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "tortilla media"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 16
+      }
+    },
+    {
+      "id": "pasta_cous_cous_riso_mais_farro_orzo_quinoa_farine_ecc",
+      "canonical_id": "pasta_cous_cous_riso_mais_farro_orzo_quinoa_farine_ecc",
+      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
+      "item_label": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
+      "item": "Pasta, cous cous, riso, mais, farro, orzo, quinoa, farine, ecc.",
+      "standard": {
+        "qty": 80.0,
+        "unit": "g"
+      },
+      "practical": [
+        "Circa 50 penne/fusilli",
+        "6-8 cucchiai di pastina",
+        "4 cucchiai di riso/farro/orzo/ quinoa",
+        "6-8 cucchiai di farina"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "Circa 50 penne/fusilli",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "Circa 50 penne/fusilli"
+        },
+        {
+          "raw": "6-8 cucchiai di pastina",
+          "quantity_text": "6-8",
+          "unit_hint": null,
+          "item_hint": "cucchiai di pastina"
+        },
+        {
+          "raw": "4 cucchiai di riso/farro/orzo/ quinoa",
+          "quantity_text": "4",
+          "unit_hint": null,
+          "item_hint": "cucchiai di riso/farro/orzo/ quinoa"
+        },
+        {
+          "raw": "6-8 cucchiai di farina",
+          "quantity_text": "6-8",
+          "unit_hint": null,
+          "item_hint": "cucchiai di farina"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 15
+      }
+    },
+    {
+      "id": "patate_e_altri_tuberi",
+      "canonical_id": "patate_e_altri_tuberi",
+      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
+      "item_label": "Patate e altri tuberi",
+      "item": "Patate e altri tuberi",
+      "standard": {
+        "qty": 200.0,
+        "unit": "g"
+      },
+      "practical": [
+        "2 Patate piccole"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "2 Patate piccole",
+          "quantity_text": "2",
+          "unit_hint": null,
+          "item_hint": "Patate piccole"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 20
+      }
+    },
+    {
+      "id": "patatine_pop_corn_salatini",
+      "canonical_id": "patatine_pop_corn_salatini",
+      "group": "SNACK_SALATI",
+      "item_label": "Patatine, pop-corn, salatini",
+      "item": "Patatine, pop-corn, salatini",
+      "standard": {
+        "qty": 25.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Bustina monoporzione"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Bustina monoporzione",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Bustina monoporzione"
         }
       ],
       "source": {
         "table": 2,
         "page": 17,
-        "row_index_in_table2": 27
+        "row_index_in_table2": 42
+      }
+    },
+    {
+      "id": "pesce_molluschi_crostacei_conservati",
+      "canonical_id": "pesce_molluschi_crostacei_conservati",
+      "group": "CARNE_PESCE_UOVA",
+      "item_label": "Pesce, molluschi, crostacei conservati",
+      "item": "Pesce, molluschi, crostacei conservati",
+      "standard": {
+        "qty": 50.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Scatola piccola di tonno sott’olio o in salamoia sgocciolato",
+        "4-5 fette sottili di salmone affumicato"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Scatola piccola di tonno sott’olio o in salamoia sgocciolato",
+          "quantity_text": "1",
+          "unit_hint": "scatola",
+          "item_hint": "Scatola piccola di tonno sott’olio o in salamoia sgocciolato"
+        },
+        {
+          "raw": "4-5 fette sottili di salmone affumicato",
+          "quantity_text": "4-5",
+          "unit_hint": null,
+          "item_hint": "fette sottili di salmone affumicato"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 11
+      }
+    },
+    {
+      "id": "pesce_molluschi_crostacei_freschi_surgelati",
+      "canonical_id": "pesce_molluschi_crostacei_freschi_surgelati",
+      "group": "CARNE_PESCE_UOVA",
+      "item_label": "Pesce, molluschi, crostacei freschi/surgelati",
+      "item": "Pesce, molluschi, crostacei freschi/surgelati",
+      "standard": {
+        "qty": 150.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Pesce piccolo",
+        "1 filetto medio",
+        "25 cozze",
+        "3 gamberoni",
+        "20 gamberetti"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Pesce piccolo",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Pesce piccolo"
+        },
+        {
+          "raw": "1 filetto medio",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "filetto medio"
+        },
+        {
+          "raw": "25 cozze",
+          "quantity_text": "25",
+          "unit_hint": null,
+          "item_hint": "cozze"
+        },
+        {
+          "raw": "3 gamberoni",
+          "quantity_text": "3",
+          "unit_hint": null,
+          "item_hint": "gamberoni"
+        },
+        {
+          "raw": "20 gamberetti",
+          "quantity_text": "20",
+          "unit_hint": null,
+          "item_hint": "gamberetti"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 10
       }
     },
     {
@@ -1286,57 +1200,147 @@
       }
     },
     {
-      "id": "sughi_pronti_arrabbiata_ragu_ecc",
-      "canonical_id": "sughi_pronti_arrabbiata_ragu_ecc",
-      "group": "CONDIMENTI_E_SUGHI",
-      "item_label": "Sughi pronti (arrabbiata, ragù, ecc.)",
-      "item": "Sughi pronti (arrabbiata, ragù, ecc.)",
+      "id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "canonical_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
+      "item_label": "Prodotti da forno dolci (brioche, croissant, cornetti, biscotti, merendine, barrette, ecc.)",
+      "item": "Prodotti da forno dolci (brioche, croissant, cornetti, biscotti, merendine, barrette, ecc.)",
       "standard": {
-        "qty": 90.0,
+        "qty": 30.0,
         "unit": "g"
       },
       "practical": [
-        "4 Cucchiai"
+        "1 Brioche (o croissant) piccola o ½ brioche grande",
+        "2-3 biscotti frollini",
+        "4-5 biscotti secchi",
+        "una merendina",
+        "una barretta"
       ],
       "practical_tokens": [
         {
-          "raw": "4 Cucchiai",
-          "quantity_text": "4",
+          "raw": "1 Brioche (o croissant) piccola o ½ brioche grande",
+          "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "Cucchiai"
+          "item_hint": "Brioche (o croissant) piccola o 1/2 brioche grande"
+        },
+        {
+          "raw": "2-3 biscotti frollini",
+          "quantity_text": "2-3",
+          "unit_hint": null,
+          "item_hint": "biscotti frollini"
+        },
+        {
+          "raw": "4-5 biscotti secchi",
+          "quantity_text": "4-5",
+          "unit_hint": null,
+          "item_hint": "biscotti secchi"
+        },
+        {
+          "raw": "una merendina",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "una merendina"
+        },
+        {
+          "raw": "una barretta",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "una barretta"
         }
       ],
       "source": {
         "table": 2,
-        "page": 17,
-        "row_index_in_table2": 29
+        "page": 16,
+        "row_index_in_table2": 18
       }
     },
     {
-      "id": "acqua_di_rubinetto_o_imbottigliata",
-      "canonical_id": "acqua_di_rubinetto_o_imbottigliata",
-      "group": "ACQUA",
-      "item_label": "Acqua di rubinetto o imbottigliata",
-      "item": "Acqua di rubinetto o imbottigliata",
+      "id": "salumi",
+      "canonical_id": "salumi",
+      "group": "CARNE_PESCE_UOVA",
+      "item_label": "Salumi",
+      "item": "Salumi",
       "standard": {
-        "qty": 200.0,
-        "unit": "mL"
+        "qty": 50.0,
+        "unit": "g"
       },
       "practical": [
-        "1 Bicchiere medio (da acqua)"
+        "3-4 Fette medie di prosciutto",
+        "5-6 fette medie di salame o di bresaola",
+        "2 fette medie di mortadella"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Bicchiere medio (da acqua)",
-          "quantity_text": "1",
-          "unit_hint": "bicchiere",
-          "item_hint": "Bicchiere medio (da acqua)"
+          "raw": "3-4 Fette medie di prosciutto",
+          "quantity_text": "3-4",
+          "unit_hint": null,
+          "item_hint": "Fette medie di prosciutto"
+        },
+        {
+          "raw": "5-6 fette medie di salame o di bresaola",
+          "quantity_text": "5-6",
+          "unit_hint": null,
+          "item_hint": "fette medie di salame o di bresaola"
+        },
+        {
+          "raw": "2 fette medie di mortadella",
+          "quantity_text": "2",
+          "unit_hint": null,
+          "item_hint": "fette medie di mortadella"
         }
       ],
       "source": {
         "table": 2,
-        "page": 17,
-        "row_index_in_table2": 30
+        "page": 16,
+        "row_index_in_table2": 8
+      }
+    },
+    {
+      "id": "sostituti_del_pane_cracker_grissini_friselle_tarallini_gallette_ecc",
+      "canonical_id": "sostituti_del_pane_cracker_grissini_friselle_tarallini_gallette_ecc",
+      "group": "CEREALI_E_DERIVATI_PSEUDOCEREALI_E_TUBERI",
+      "item_label": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
+      "item": "Sostituti del pane (cracker, grissini, friselle, tarallini, gallette, ecc.)",
+      "standard": {
+        "qty": 30.0,
+        "unit": "g"
+      },
+      "practical": [
+        "5 Crackers",
+        "1 frisella",
+        "3-4 tarallini",
+        "3-4 gallette"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "5 Crackers",
+          "quantity_text": "5",
+          "unit_hint": null,
+          "item_hint": "Crackers"
+        },
+        {
+          "raw": "1 frisella",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "frisella"
+        },
+        {
+          "raw": "3-4 tarallini",
+          "quantity_text": "3-4",
+          "unit_hint": null,
+          "item_hint": "tarallini"
+        },
+        {
+          "raw": "3-4 gallette",
+          "quantity_text": "3-4",
+          "unit_hint": null,
+          "item_hint": "gallette"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 17
       }
     },
     {
@@ -1374,138 +1378,30 @@
       }
     },
     {
-      "id": "bibite_zuccherate_con_zuccheri_aggiunti",
-      "canonical_id": "bibite_zuccherate_con_zuccheri_aggiunti",
-      "group": "BEVANDE_ANALCOLICHE",
-      "item_label": "Bibite zuccherate (con zuccheri aggiunti)",
-      "item": "Bibite zuccherate (con zuccheri aggiunti)",
+      "id": "sughi_pronti_arrabbiata_ragu_ecc",
+      "canonical_id": "sughi_pronti_arrabbiata_ragu_ecc",
+      "group": "CONDIMENTI_E_SUGHI",
+      "item_label": "Sughi pronti (arrabbiata, ragù, ecc.)",
+      "item": "Sughi pronti (arrabbiata, ragù, ecc.)",
       "standard": {
-        "qty": 150.0,
-        "unit": "mL"
+        "qty": 90.0,
+        "unit": "g"
       },
       "practical": [
-        "1 Bicchiere di plastica medio o 1 lattina piccola"
+        "4 Cucchiai"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Bicchiere di plastica medio o 1 lattina piccola",
-          "quantity_text": "1",
-          "unit_hint": "bicchiere",
-          "item_hint": "Bicchiere di plastica medio o 1 lattina piccola"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 32
-      }
-    },
-    {
-      "id": "caffe_orzo",
-      "canonical_id": "caffe_orzo",
-      "group": "BEVANDE_ANALCOLICHE",
-      "item_label": "Caffè/orzo",
-      "item": "Caffè/orzo",
-      "standard": {
-        "qty": 30.0,
-        "unit": "mL"
-      },
-      "practical": [
-        "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka",
-          "quantity_text": "1",
+          "raw": "4 Cucchiai",
+          "quantity_text": "4",
           "unit_hint": null,
-          "item_hint": "Tazzina da caffè tipo bar 1 tazzina da caffè tipo moka"
+          "item_hint": "Cucchiai"
         }
       ],
       "source": {
         "table": 2,
         "page": 17,
-        "row_index_in_table2": 33
-      }
-    },
-    {
-      "id": "vino",
-      "canonical_id": "vino",
-      "group": "BEVANDE_ALCOLICHE",
-      "item_label": "Vino",
-      "item": "Vino",
-      "standard": {
-        "qty": 125.0,
-        "unit": "mL"
-      },
-      "practical": [
-        "1 Bicchiere (da vino)"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Bicchiere (da vino)",
-          "quantity_text": "1",
-          "unit_hint": "bicchiere",
-          "item_hint": "Bicchiere (da vino)"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 34
-      }
-    },
-    {
-      "id": "birra",
-      "canonical_id": "birra",
-      "group": "BEVANDE_ALCOLICHE",
-      "item_label": "Birra",
-      "item": "Birra",
-      "standard": {
-        "qty": 330.0,
-        "unit": "mL"
-      },
-      "practical": [
-        "1 Lattina media"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Lattina media",
-          "quantity_text": "1",
-          "unit_hint": "lattina",
-          "item_hint": "Lattina media"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 35
-      }
-    },
-    {
-      "id": "vermouth_porto_aperitivi",
-      "canonical_id": "vermouth_porto_aperitivi",
-      "group": "BEVANDE_ALCOLICHE",
-      "item_label": "Vermouth/porto/aperitivi",
-      "item": "Vermouth/porto/aperitivi",
-      "standard": {
-        "qty": 75.0,
-        "unit": "mL"
-      },
-      "practical": [
-        "1 Bicchierino da vermouth"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Bicchierino da vermouth",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "Bicchierino da vermouth"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 36
+        "row_index_in_table2": 29
       }
     },
     {
@@ -1533,67 +1429,6 @@
         "table": 2,
         "page": 17,
         "row_index_in_table2": 37
-      }
-    },
-    {
-      "id": "zucchero_miele_caramelle",
-      "canonical_id": "zucchero_miele_caramelle",
-      "group": "DOLCIUMI",
-      "item_label": "Zucchero, miele, caramelle",
-      "item": "Zucchero, miele, caramelle",
-      "standard": {
-        "qty": 5.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Cucchiaino raso",
-        "1-2 caramelle medie"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Cucchiaino raso",
-          "quantity_text": "1",
-          "unit_hint": "cucchiaino",
-          "item_hint": "Cucchiaino raso"
-        },
-        {
-          "raw": "1-2 caramelle medie",
-          "quantity_text": "1-2",
-          "unit_hint": null,
-          "item_hint": "caramelle medie"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 38
-      }
-    },
-    {
-      "id": "marmellata",
-      "canonical_id": "marmellata",
-      "group": "DOLCIUMI",
-      "item_label": "Marmellata",
-      "item": "Marmellata",
-      "standard": {
-        "qty": 10.0,
-        "unit": "g"
-      },
-      "practical": [
-        "1 Cucchiaino colmo"
-      ],
-      "practical_tokens": [
-        {
-          "raw": "1 Cucchiaino colmo",
-          "quantity_text": "1",
-          "unit_hint": "cucchiaino",
-          "item_hint": "Cucchiaino colmo"
-        }
-      ],
-      "source": {
-        "table": 2,
-        "page": 17,
-        "row_index_in_table2": 39
       }
     },
     {
@@ -1631,71 +1466,263 @@
       }
     },
     {
-      "id": "cioccolato_cioccolatini_creme_spalmabili",
-      "canonical_id": "cioccolato_cioccolatini_creme_spalmabili",
-      "group": "DOLCIUMI",
-      "item_label": "Cioccolato, cioccolatini, creme spalmabili",
-      "item": "Cioccolato, cioccolatini, creme spalmabili",
+      "id": "uova",
+      "canonical_id": "uova",
+      "group": "CARNE_PESCE_UOVA",
+      "item_label": "Uova",
+      "item": "Uova",
       "standard": {
-        "qty": 10.0,
+        "qty": 50.0,
         "unit": "g"
       },
       "practical": [
-        "1 Quadretto",
-        "1 cioccolatino",
-        "1 cucchiaino colmo"
+        "1 Uovo di gallina"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Quadretto",
+          "raw": "1 Uovo di gallina",
           "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "Quadretto"
-        },
-        {
-          "raw": "1 cioccolatino",
-          "quantity_text": "1",
-          "unit_hint": null,
-          "item_hint": "cioccolatino"
-        },
-        {
-          "raw": "1 cucchiaino colmo",
-          "quantity_text": "1",
-          "unit_hint": "cucchiaino",
-          "item_hint": "cucchiaino colmo"
+          "item_hint": "Uovo di gallina"
         }
       ],
       "source": {
         "table": 2,
-        "page": 17,
-        "row_index_in_table2": 41
+        "page": 16,
+        "row_index_in_table2": 12
       }
     },
     {
-      "id": "patatine_pop_corn_salatini",
-      "canonical_id": "patatine_pop_corn_salatini",
-      "group": "SNACK_SALATI",
-      "item_label": "Patatine, pop-corn, salatini",
-      "item": "Patatine, pop-corn, salatini",
+      "id": "verdure_e_ortaggi",
+      "canonical_id": "verdure_e_ortaggi",
+      "group": "VERDURE_E_ORTAGGI",
+      "item_label": "Verdure e ortaggi",
+      "item": "Verdure e ortaggi",
       "standard": {
-        "qty": 25.0,
+        "qty": 200.0,
         "unit": "g"
       },
       "practical": [
-        "1 Bustina monoporzione"
+        "2-3 Pomodori",
+        "3-4 carote",
+        "1 peperone",
+        "1 finocchio",
+        "2 carciofi",
+        "2-3 zucchine",
+        "7-10 ravanelli",
+        "1-2 cipolle",
+        "½ piatto di spinaci",
+        "bieta",
+        "broccoli",
+        "cavolfiore",
+        "melanzane",
+        "ecc. cotti"
       ],
       "practical_tokens": [
         {
-          "raw": "1 Bustina monoporzione",
+          "raw": "2-3 Pomodori",
+          "quantity_text": "2-3",
+          "unit_hint": null,
+          "item_hint": "Pomodori"
+        },
+        {
+          "raw": "3-4 carote",
+          "quantity_text": "3-4",
+          "unit_hint": null,
+          "item_hint": "carote"
+        },
+        {
+          "raw": "1 peperone",
           "quantity_text": "1",
           "unit_hint": null,
-          "item_hint": "Bustina monoporzione"
+          "item_hint": "peperone"
+        },
+        {
+          "raw": "1 finocchio",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "finocchio"
+        },
+        {
+          "raw": "2 carciofi",
+          "quantity_text": "2",
+          "unit_hint": null,
+          "item_hint": "carciofi"
+        },
+        {
+          "raw": "2-3 zucchine",
+          "quantity_text": "2-3",
+          "unit_hint": null,
+          "item_hint": "zucchine"
+        },
+        {
+          "raw": "7-10 ravanelli",
+          "quantity_text": "7-10",
+          "unit_hint": null,
+          "item_hint": "ravanelli"
+        },
+        {
+          "raw": "1-2 cipolle",
+          "quantity_text": "1-2",
+          "unit_hint": null,
+          "item_hint": "cipolle"
+        },
+        {
+          "raw": "½ piatto di spinaci",
+          "quantity_text": "1/2",
+          "unit_hint": "piatto",
+          "item_hint": "piatto di spinaci"
+        },
+        {
+          "raw": "bieta",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "bieta"
+        },
+        {
+          "raw": "broccoli",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "broccoli"
+        },
+        {
+          "raw": "cavolfiore",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "cavolfiore"
+        },
+        {
+          "raw": "melanzane",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "melanzane"
+        },
+        {
+          "raw": "ecc. cotti",
+          "quantity_text": null,
+          "unit_hint": null,
+          "item_hint": "ecc. cotti"
         }
       ],
       "source": {
         "table": 2,
         "page": 17,
-        "row_index_in_table2": 42
+        "row_index_in_table2": 22
+      }
+    },
+    {
+      "id": "vermouth_porto_aperitivi",
+      "canonical_id": "vermouth_porto_aperitivi",
+      "group": "BEVANDE_ALCOLICHE",
+      "item_label": "Vermouth/porto/aperitivi",
+      "item": "Vermouth/porto/aperitivi",
+      "standard": {
+        "qty": 75.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Bicchierino da vermouth"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Bicchierino da vermouth",
+          "quantity_text": "1",
+          "unit_hint": null,
+          "item_hint": "Bicchierino da vermouth"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 36
+      }
+    },
+    {
+      "id": "vino",
+      "canonical_id": "vino",
+      "group": "BEVANDE_ALCOLICHE",
+      "item_label": "Vino",
+      "item": "Vino",
+      "standard": {
+        "qty": 125.0,
+        "unit": "mL"
+      },
+      "practical": [
+        "1 Bicchiere (da vino)"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Bicchiere (da vino)",
+          "quantity_text": "1",
+          "unit_hint": "bicchiere",
+          "item_hint": "Bicchiere (da vino)"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 34
+      }
+    },
+    {
+      "id": "yogurt_e_altri_latti_fermentati",
+      "canonical_id": "yogurt_e_altri_latti_fermentati",
+      "group": "LATTE_E_DERIVATI",
+      "item_label": "Yogurt e altri latti fermentati",
+      "item": "Yogurt e altri latti fermentati",
+      "standard": {
+        "qty": 125.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Vasetto standard"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Vasetto standard",
+          "quantity_text": "1",
+          "unit_hint": "vasetto",
+          "item_hint": "Vasetto standard"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 16,
+        "row_index_in_table2": 2
+      }
+    },
+    {
+      "id": "zucchero_miele_caramelle",
+      "canonical_id": "zucchero_miele_caramelle",
+      "group": "DOLCIUMI",
+      "item_label": "Zucchero, miele, caramelle",
+      "item": "Zucchero, miele, caramelle",
+      "standard": {
+        "qty": 5.0,
+        "unit": "g"
+      },
+      "practical": [
+        "1 Cucchiaino raso",
+        "1-2 caramelle medie"
+      ],
+      "practical_tokens": [
+        {
+          "raw": "1 Cucchiaino raso",
+          "quantity_text": "1",
+          "unit_hint": "cucchiaino",
+          "item_hint": "Cucchiaino raso"
+        },
+        {
+          "raw": "1-2 caramelle medie",
+          "quantity_text": "1-2",
+          "unit_hint": null,
+          "item_hint": "caramelle medie"
+        }
+      ],
+      "source": {
+        "table": 2,
+        "page": 17,
+        "row_index_in_table2": 38
       }
     }
   ]

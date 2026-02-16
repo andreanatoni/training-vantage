@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://training-vantage.local/schemas/nutrition_base_template.schema.json",
+  "title": "Nutrition Base Template",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "settings",
+    "user_constraints",
+    "meals"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_version",
+        "schema_version",
+        "created_at",
+        "updated_at",
+        "source",
+        "owner_athlete_id"
+      ],
+      "properties": {
+        "template_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_athlete_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strict_mode",
+        "allow_option_merge",
+        "allowed_meals",
+        "excluded_meals"
+      ],
+      "properties": {
+        "strict_mode": {
+          "type": "boolean"
+        },
+        "allow_option_merge": {
+          "type": "boolean",
+          "const": false
+        },
+        "allowed_meals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "breakfast",
+              "snack_am",
+              "lunch",
+              "snack_pm",
+              "dinner"
+            ]
+          },
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "excluded_meals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "user_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hard_rules",
+        "soft_preferences",
+        "notes"
+      ],
+      "properties": {
+        "hard_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "soft_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "meals": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/meal"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "meal_id": {
+                "const": "breakfast"
+              }
+            },
+            "required": [
+              "meal_id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "meal_id": {
+                "const": "snack_am"
+              }
+            },
+            "required": [
+              "meal_id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "meal_id": {
+                "const": "lunch"
+              }
+            },
+            "required": [
+              "meal_id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "meal_id": {
+                "const": "snack_pm"
+              }
+            },
+            "required": [
+              "meal_id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "meal_id": {
+                "const": "dinner"
+              }
+            },
+            "required": [
+              "meal_id"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "meal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "meal_id",
+        "name",
+        "timing_hint",
+        "options"
+      ],
+      "properties": {
+        "meal_id": {
+          "type": "string",
+          "enum": [
+            "breakfast",
+            "snack_am",
+            "lunch",
+            "snack_pm",
+            "dinner"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timing_hint": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        }
+      }
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "option_id",
+        "title",
+        "immutable",
+        "tags",
+        "when_to_use",
+        "rules",
+        "blocks"
+      ],
+      "properties": {
+        "option_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "immutable": {
+          "type": "boolean",
+          "const": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "when_to_use": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "allow_merge_with_other_options"
+          ],
+          "properties": {
+            "allow_merge_with_other_options": {
+              "type": "boolean",
+              "const": false
+            }
+          }
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/block"
+          }
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "one_of"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "carb",
+            "protein",
+            "fat",
+            "veg",
+            "fruit",
+            "extra",
+            "beverage"
+          ]
+        },
+        "one_of": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/food_choice"
+          }
+        }
+      }
+    },
+    "food_choice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "food_db_id"
+      ],
+      "properties": {
+        "food_db_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

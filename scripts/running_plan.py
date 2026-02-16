@@ -61,6 +61,7 @@ DEFAULT_CONFIG = {
             "drop_pct_week_minus_2": 0.20,
             "drop_pct_week_minus_1": 0.35,
         },
+        "long_run_strategy": "with_race_blocks",
         "intensity_distribution": {
             "build": {
                 "target_low_pct": 0.80,
@@ -263,7 +264,7 @@ def pace_target_for(day_type: str, phase: str, zones: dict, workout_label: str) 
         return f"Z2→Z6 ({z2.get('from', 'N/A')} -> {z6.get('to', 'N/A')}/km)"
     if day_type == "lungo":
         z2 = zones.get("Z2", {})
-        if phase == "specific":
+        if workout_label == "lungo_blocchi_ritmo_gara":
             z4 = zones.get("Z4", {})
             return f"Z2 con blocchi Z4 ({z2.get('from', 'N/A')} + blocchi {z4.get('from', 'N/A')}-{z4.get('to', 'N/A')})"
         return f"Z2 stabile {z2.get('from', 'N/A')}-{z2.get('to', 'N/A')}/km"
@@ -299,8 +300,10 @@ def structure_for_session(day_type: str, phase: str, workout_label: str) -> str:
         return "L + M + TR progressivo"
 
     if day_type == "lungo":
-        if phase == "specific":
+        if workout_label == "lungo_blocchi_ritmo_gara":
             return "Lungo con inserimenti a ritmo gara"
+        if workout_label == "lungo_aerobico":
+            return "Lungo aerobico (eventuali inserimenti M)"
         if phase in ("taper", "race"):
             return "Lungo ridotto facile o sostituito da gara"
         return "Lungo aerobico (eventuali inserimenti M)"
@@ -615,6 +618,18 @@ def session_template_from_preferences(profile: dict, fallback_days: list, fallba
     return session_days, types
 
 
+def resolve_long_run_strategy(cfg: dict, profile: dict) -> str:
+    defaults = cfg.get("defaults", {}) if isinstance(cfg, dict) else {}
+    strategy = defaults.get("long_run_strategy")
+    if strategy in {"with_race_blocks", "classic_only"}:
+        return strategy
+    prefs = profile.get("preferences", {}) if isinstance(profile, dict) else {}
+    strategy = prefs.get("long_run_strategy")
+    if strategy in {"with_race_blocks", "classic_only"}:
+        return strategy
+    return "with_race_blocks"
+
+
 def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
     week_starts = list(iter_week_starts(args.start_date, args.end_date))
     shares = cfg["defaults"]["session_shares"]
@@ -622,6 +637,7 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
     types_by_day = cfg["defaults"]["session_types_by_day"]
     profile = load_json(PROFILE_FILE, {})
     session_days, types_by_day = session_template_from_preferences(profile, session_days, types_by_day)
+    long_run_strategy = resolve_long_run_strategy(cfg, profile)
     weekly_cfg = cfg["defaults"]["weekly_km"]
     deload_n = int(weekly_cfg["deload_every_n_weeks"])
     zones = load_zones()
@@ -652,6 +668,13 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
                 continue
             session_type = types_by_day.get(day_name, "easy")
             workout_label = PHASE_WORKOUT_LABEL.get(session_type, {}).get(phase, session_type)
+            if (
+                session_type == "lungo"
+                and phase == "specific"
+                and long_run_strategy == "classic_only"
+                and workout_label == "lungo_blocchi_ritmo_gara"
+            ):
+                workout_label = "lungo_aerobico"
             if is_deload_week and session_type == "qualita":
                 workout_label = "test_5k"
 
@@ -734,6 +757,7 @@ def generate_plan(args: GenerationArgs, cfg: dict, enforce_tid: bool = False):
             "generated_at": datetime.now().isoformat(),
             "generated_by": "tv running generate",
             "enforce_tid": enforce_tid,
+            "long_run_strategy": long_run_strategy,
         },
         "planning_window": {
             "from": args.start_date.isoformat(),

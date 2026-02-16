@@ -1506,6 +1506,319 @@
           "data/training_load.json"
         ]
       }
+    },
+    {
+      "timestamp": "2026-02-16T12:06:00.513032",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 296,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:06:00.662067",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:21:18.043957",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:24:40.603073",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:30:51.753305",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:45:05.194666",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T12:53:21.589772",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T13:25:05.727549",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 205,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T13:27:35.415520",
+      "command": "running setup",
+      "details": {
+        "athlete": "Matteo",
+        "goal_race": {
+          "name": "10K",
+          "date": "2026-06-16"
+        },
+        "tid_method": "balanced",
+        "aggressiveness": "balanced",
+        "long_run_strategy": "classic_only",
+        "no_history_bootstrap_mode": "auto",
+        "no_history_experience_level": "beginner",
+        "training_load_import": {
+          "mode": "manual_no_history",
+          "sessions_count": 0,
+          "date_from": null,
+          "date_to": null
+        },
+        "updated_files": [
+          "data/RUNNING_ATHLETE_PROFILE.json",
+          "data/RUNNING_PLAN_CONFIG.json",
+          "data/training_load.json",
+          "knowledge/running-setup-report.md"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-16T13:27:43.639574",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 88,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:23:33.049470",
+      "command": "food add",
+      "details": {
+        "mode": "added",
+        "food_id": "caffe_espresso",
+        "food_name": "Caffè espresso",
+        "reference": "100 ml",
+        "kcal": 2.0,
+        "protein": 0.12,
+        "cho": 0.0,
+        "fat": 0.18,
+        "fiber": 0.0,
+        "source": "DIETABIT",
+        "source_url": null,
+        "updated_files": [
+          "knowledge/food-db.md",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ],
+        "replace_target": null,
+        "replaced_name": null
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:34:41.575340",
+      "command": "food sync-dietabit",
+      "details": {
+        "dietabit_count": 0,
+        "no_merge": false,
+        "stats": {
+          "dietabit_total": 0,
+          "food_db_before": 833,
+          "identical_existing": 0,
+          "conflicting_existing": 0,
+          "missing_added": 0,
+          "missing_skipped": 0,
+          "food_db_after": 833
+        },
+        "updated_files": [
+          "data/DIETABIT_DB.json",
+          "data/DIETABIT_COMPARE_REPORT.json",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:35:59.716692",
+      "command": "food sync-dietabit",
+      "details": {
+        "dietabit_count": 1329,
+        "no_merge": false,
+        "stats": {
+          "dietabit_total": 1329,
+          "food_db_before": 833,
+          "identical_existing": 9,
+          "conflicting_existing": 76,
+          "missing_added": 1244,
+          "missing_skipped": 0,
+          "food_db_after": 2077
+        },
+        "updated_files": [
+          "data/DIETABIT_DB.json",
+          "data/DIETABIT_COMPARE_REPORT.json",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:38:25.055217",
+      "command": "food sync-dietabit",
+      "details": {
+        "dietabit_count": 1347,
+        "no_merge": false,
+        "stats": {
+          "dietabit_total": 1347,
+          "food_db_before": 2077,
+          "identical_existing": 1178,
+          "conflicting_existing": 91,
+          "missing_added": 78,
+          "missing_skipped": 0,
+          "food_db_after": 2155
+        },
+        "updated_files": [
+          "data/DIETABIT_DB.json",
+          "data/DIETABIT_COMPARE_REPORT.json",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:39:37.438751",
+      "command": "food sync-dietabit",
+      "details": {
+        "dietabit_count": 1422,
+        "no_merge": false,
+        "stats": {
+          "dietabit_total": 1422,
+          "food_db_before": 2155,
+          "identical_existing": 1331,
+          "conflicting_existing": 91,
+          "missing_added": 0,
+          "missing_skipped": 0,
+          "food_db_after": 2155
+        },
+        "updated_files": [
+          "data/DIETABIT_DB.json",
+          "data/DIETABIT_COMPARE_REPORT.json",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-16T16:56:45.497998",
+      "command": "food sync-dietabit",
+      "details": {
+        "dietabit_count": 1422,
+        "no_merge": true,
+        "stats": {
+          "dietabit_total": 1422,
+          "food_db_before": 2155,
+          "identical_existing": 1331,
+          "conflicting_existing": 91,
+          "conflicts_higher_priority_existing": 90,
+          "conflicts_same_or_lower_priority_existing": 1,
+          "missing_added": 0,
+          "missing_skipped": 0,
+          "food_db_after": 2155
+        },
+        "updated_files": [
+          "data/DIETABIT_DB.json",
+          "data/DIETABIT_COMPARE_REPORT.json",
+          "data/FOOD_DB.json",
+          "data/FOOD_DB_TO_LARN_MAPPING.json"
+        ]
+      }
     }
   ]
 }

@@ -1,0 +1,858 @@
+{
+  "meta": {
+    "generated_at": "2026-02-16",
+    "category": "lungo",
+    "status": "CURRENT"
+  },
+  "inputs": {
+    "weight_kg": 68.5,
+    "ffm_kg": 59.59,
+    "bmr_kcal": 1657
+  },
+  "engine": {
+    "config_version": "v1.0",
+    "day_profile": "lungo",
+    "deficit_pct": 0.025,
+    "training_cost_kcal": 342,
+    "training_cost_source": "running_plan_day",
+    "phase": "specific",
+    "workout_label": "lungo_aerobico",
+    "session_date": "2026-03-28",
+    "ea_value_kcal_per_kg_ffm": 38.06,
+    "ea_guard_applied": false
+  },
+  "plan": {
+    "ffm": 59.59,
+    "bmr": 1690,
+    "target_kcal": 2610,
+    "meals": {
+      "COLAZIONE": {
+        "target": {
+          "kcal": 731,
+          "protein": 40,
+          "fat": 18,
+          "cho": 100
+        },
+        "options": [
+          {
+            "name": "Dolce classica potenziata ⭐ LUNGO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 143.5,
+                "unit": "ml"
+              },
+              {
+                "type": "single",
+                "name": "Fette biscottate",
+                "amount": 81.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 43.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 17.2,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 520.0,
+              "protein": 13.2,
+              "fat": 14.4,
+              "cho": 86.9
+            },
+            "swap": null,
+            "quando": "LUNGO - massimo carico CHO pre-endurance, scorte complete."
+          },
+          {
+            "name": "Dolce pane + extra CHO ⭐ LUNGO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 95.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 47.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 17.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 76.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 216.0,
+              "protein": 4.0,
+              "fat": 9.5,
+              "cho": 28.9
+            },
+            "swap": null,
+            "quando": "LUNGO - sazietà maggiore + CHO extra da banana."
+          },
+          {
+            "name": "Salata potenziata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 52.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Formaggio spalmabile light",
+                "amount": 33.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 143.5,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 162.0,
+              "protein": 13.5,
+              "fat": 12.0,
+              "cho": 0.1
+            },
+            "swap": null,
+            "quando": "LUNGO - massimo apporto proteico, variante salata endurance."
+          },
+          {
+            "name": "Dolce torta + extra",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Plum cake (senza latte/burro)",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 14.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 143.5,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 125.0,
+              "protein": 3.2,
+              "fat": 7.9,
+              "cho": 9.9
+            },
+            "swap": null,
+            "quando": "LUNGO - comfort food + miele boost pre-endurance."
+          },
+          {
+            "name": "Dolce biscotti potenziata ⭐ LUNGO MAX CHO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Oro Saiwa",
+                "amount": 71.7,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Marmellata",
+                "amount": 33.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Caffè espresso",
+                "amount": 143.5,
+                "unit": "ml"
+              }
+            ],
+            "totals": {
+              "kcal": 148.0,
+              "protein": 2.7,
+              "fat": 6.4,
+              "cho": 20.2
+            },
+            "swap": null,
+            "quando": "LUNGO - massimo CHO loading, digestione rapida."
+          }
+        ]
+      },
+      "PRANZO": {
+        "target": {
+          "kcal": 1044,
+          "protein": 57,
+          "fat": 26,
+          "cho": 144
+        },
+        "options": [
+          {
+            "name": "Pasta al tonno potenziata ⭐ LUNGO RECOVERY",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 124.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Tonno al naturale",
+                "amount": 100.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 191.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 14.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zenzero fresco",
+                "amount": 4.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 172.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 95.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 117.0,
+              "protein": 0.9,
+              "fat": 0.3,
+              "cho": 27.4
+            },
+            "swap": null,
+            "quando": "LUNGO - recovery massimo, omega-3, CHO rapido ripristino."
+          },
+          {
+            "name": "Pasta al ragù potenziata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 124.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Ragù di vitello",
+                "amount": 176.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 191.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 143.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 95.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 65.0,
+              "protein": 0.5,
+              "fat": 0.2,
+              "cho": 15.2
+            },
+            "swap": null,
+            "quando": "LUNGO - comfort food recovery, doppia frutta CHO."
+          },
+          {
+            "name": "Riso con proteine potenziato ⭐ LUNGO",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Riso basmati (crudo)",
+                "amount": 110.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pollo piastra",
+                "amount": 143.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Piselli",
+                "amount": 100.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 129.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 143.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 76.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 98.0,
+              "protein": 0.7,
+              "fat": 0.3,
+              "cho": 22.8
+            },
+            "swap": null,
+            "quando": "LUNGO - 4 scelte proteiche, recovery completo endurance."
+          },
+          {
+            "name": "Tortellini carne potenziati",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Tortellini vitello",
+                "amount": 157.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 14.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 191.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 95.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 65.0,
+              "protein": 0.5,
+              "fat": 0.2,
+              "cho": 15.2
+            },
+            "swap": null,
+            "quando": "LUNGO - velocissimo, comfort, CHO massimi recovery."
+          },
+          {
+            "name": "Pasta semplice potenziata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Pasta secca",
+                "amount": 124.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 14.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Parmigiano",
+                "amount": 17.2,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Passata pomodoro",
+                "amount": 57.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 191.3,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 114.8,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 104.0,
+              "protein": 0.8,
+              "fat": 0.3,
+              "cho": 24.3
+            },
+            "swap": null,
+            "quando": "LUNGO - digestione facile post-endurance, CHO focus."
+          },
+          {
+            "name": "Piatto proteico veloce potenziato",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mozzarella bufala",
+                "amount": 110.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Prosciutto crudo",
+                "amount": 52.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Scaglie grana",
+                "amount": 9.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 100.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine (friggitrice)",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 11.5,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 124.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 76.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 214.0,
+              "protein": 13.9,
+              "fat": 12.2,
+              "cho": 12.3
+            },
+            "swap": null,
+            "quando": "LUNGO - zero cottura post-fatica, recovery completo."
+          }
+        ]
+      },
+      "SPUNTINO POMERIGGIO": {
+        "target": {
+          "kcal": 208,
+          "protein": 11,
+          "fat": 5,
+          "cho": 28
+        },
+        "options": [
+          {
+            "name": "Frutta + fonte proteica/lipidica",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 133.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mandorle",
+                "amount": 10.5,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 157.0,
+              "protein": 3.0,
+              "fat": 6.1,
+              "cho": 21.8
+            },
+            "swap": null,
+            "quando": "Spuntino leggero, recupero dolce senza appesantire."
+          },
+          {
+            "name": "Yogurt dolce completo",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Banana",
+                "amount": 114.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Miele",
+                "amount": 9.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 29.0,
+              "protein": 0.1,
+              "fat": 0.0,
+              "cho": 7.7
+            },
+            "swap": null,
+            "quando": "Spuntino strutturato, CHO extra recovery post-lungo."
+          },
+          {
+            "name": "Crackers + proteine",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 23.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 26.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Mela",
+                "amount": 81.2,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 96.0,
+              "protein": 9.3,
+              "fat": 0.7,
+              "cho": 13.0
+            },
+            "swap": null,
+            "quando": "Variante salata post-lungo, proteine nobili recovery."
+          },
+          {
+            "name": "Yogurt salato proteico",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Yogurt magro 0.1%",
+                "amount": 119.6,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Bresaola",
+                "amount": 23.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Crackers integrali",
+                "amount": 13.4,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 36.0,
+              "protein": 7.9,
+              "fat": 0.5,
+              "cho": 0.1
+            },
+            "swap": null,
+            "quando": "Boost proteico post-lungo, senza appesantire."
+          }
+        ]
+      },
+      "CENA": {
+        "target": {
+          "kcal": 495,
+          "protein": 26,
+          "fat": 12,
+          "cho": 68
+        },
+        "options": [
+          {
+            "name": "Carne + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 172.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Cena leggera post-lungo, completamento recovery."
+          },
+          {
+            "name": "Pesce + patate/pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Patate lesse",
+                "amount": 172.1,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Omega-3 completion recovery post-lungo, leggera."
+          },
+          {
+            "name": "Uova + pane + verdure/vellutata",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Uova",
+                "amount": 66.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 78.4,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine cotte",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Cena veloce post-lungo, vellutata comfort serale."
+          },
+          {
+            "name": "Hummus + pane + verdure",
+            "ingredients": [
+              {
+                "type": "single",
+                "name": "Hummus ceci",
+                "amount": 90.8,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Pane integrale",
+                "amount": 66.9,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Zucchine",
+                "amount": 153.0,
+                "unit": "g"
+              },
+              {
+                "type": "single",
+                "name": "Olio EVO",
+                "amount": 9.6,
+                "unit": "g"
+              }
+            ],
+            "totals": {
+              "kcal": 0,
+              "protein": 0,
+              "fat": 0,
+              "cho": 0
+            },
+            "swap": null,
+            "quando": "Vegetariana post-lungo, digestione leggera serale."
+          }
+        ]
+      }
+    }
+  }
+}

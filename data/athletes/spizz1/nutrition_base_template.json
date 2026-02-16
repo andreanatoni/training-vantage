@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "template_version": "1.0.0",
+    "schema_version": "1.0.0",
+    "created_at": "2026-02-16T15:08:26+00:00",
+    "updated_at": "2026-02-16T15:08:26+00:00",
+    "source": "manual_from_piano_base_ottimizzato",
+    "owner_athlete_id": "spizz1"
+  },
+  "settings": {
+    "strict_mode": true,
+    "allow_option_merge": false,
+    "allowed_meals": [
+      "breakfast",
+      "snack_am",
+      "lunch",
+      "snack_pm",
+      "dinner"
+    ],
+    "excluded_meals": []
+  },
+  "user_constraints": {
+    "hard_rules": [],
+    "soft_preferences": [],
+    "notes": ""
+  },
+  "meals": [
+    {
+      "meal_id": "breakfast",
+      "name": "Colazione",
+      "timing_hint": "",
+      "options": [
+        {
+          "option_id": "breakfast_opt_1",
+          "title": "Opzione 1",
+          "immutable": true,
+          "tags": [
+            "carb_based",
+            "post_workout",
+            "pre_workout",
+            "protein_based",
+            "quick_digest",
+            "sweet"
+          ],
+          "when_to_use": "Colazione pre-allenamento o mattine con digestione da facilitare.",
+          "rules": {
+            "allow_merge_with_other_options": false
+          },
+          "blocks": [
+            {
+              "role": "beverage",
+              "one_of": [
+                {
+                  "food_db_id": "caffe_espresso",
+                  "label": "Caffè espresso"
+                }
+              ]
+            },
+            {
+              "role": "carb",
+              "one_of": [
+                {
+                  "food_db_id": "fette_biscottate",
+                  "label": "Fette biscottate"
+                }
+              ]
+            },
+            {
+              "role": "extra",
+              "one_of": [
+                {
+                  "food_db_id": "marmellata",
+                  "label": "Marmellata"
+                }
+              ]
+            },
+            {
+              "role": "protein",
+              "one_of": [
+                {
+                  "food_db_id": "yogurt_greco_0_lipidi",
+                  "label": "Yogurt greco, 0% lipidi"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meal_id": "snack_am",
+      "name": "Spuntino AM",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "lunch",
+      "name": "Pranzo",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "snack_pm",
+      "name": "Spuntino PM",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "dinner",
+      "name": "Cena",
+      "timing_hint": "",
+      "options": []
+    }
+  ]
+}

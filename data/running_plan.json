@@ -1,22 +1,23 @@
 {
   "meta": {
     "version": "v1.0",
-    "generated_at": "2026-02-15T10:44:39.310562",
+    "generated_at": "2026-02-16T13:27:43.637593",
     "generated_by": "tv running generate",
-    "enforce_tid": false
+    "enforce_tid": false,
+    "long_run_strategy": "classic_only"
   },
   "planning_window": {
     "from": "2026-03-01",
-    "to": "2026-04-30",
-    "goal_race": "2026-10-18"
+    "to": "2026-03-31",
+    "goal_race": "2026-04-26"
   },
   "tid_summary": {
-    "aligned_weeks": 7,
-    "total_weeks": 10,
-    "total_running_km": 329.5,
-    "avg_low_pct": 0.73,
-    "avg_moderate_pct": 0.059,
-    "avg_high_pct": 0.162
+    "aligned_weeks": 3,
+    "total_weeks": 6,
+    "total_running_km": 64.0,
+    "avg_low_pct": 0.707,
+    "avg_moderate_pct": 0.143,
+    "avg_high_pct": 0.15
   },
   "weeks": [
     {
@@ -24,8 +25,8 @@
       "iso_week": "2026-W09",
       "start_date": "2026-02-23",
       "end_date": "2026-03-01",
-      "phase": "build",
-      "target_km": 36.1,
+      "phase": "specific",
+      "target_km": 16,
       "tid": {
         "total_running_km": 0.0,
         "low_km": 0.0,
@@ -35,10 +36,10 @@
         "moderate_pct": 0.0,
         "high_pct": 0.0,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
         "aligned": true,
         "warnings": []
@@ -50,83 +51,42 @@
       "iso_week": "2026-W10",
       "start_date": "2026-03-02",
       "end_date": "2026-03-08",
-      "phase": "build",
-      "target_km": 39.3,
+      "phase": "specific",
+      "target_km": 17,
       "tid": {
-        "total_running_km": 39.3,
-        "low_km": 30.13,
-        "moderate_km": 2.35,
-        "high_km": 6.82,
-        "low_pct": 0.767,
-        "moderate_pct": 0.06,
-        "high_pct": 0.174,
+        "total_running_km": 17.0,
+        "low_km": 12.07,
+        "moderate_km": 2.73,
+        "high_km": 2.2,
+        "low_pct": 0.71,
+        "moderate_pct": 0.161,
+        "high_pct": 0.129,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
-        "aligned": true,
-        "warnings": []
+        "aligned": false,
+        "warnings": [
+          "moderate_pct 0.161 > max 0.150 (zona grigia alta)",
+          "high_pct 0.129 < min 0.140 (stimolo alta intensita' basso)"
+        ]
       },
       "sessions": [
-        {
-          "date": "2026-03-02",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 7.9,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 7.5,
-            "moderate_km": 0.4,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-03",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
         {
           "date": "2026-03-04",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 10.2,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "workout_label": "qualita_ritmo_gara",
+          "distance_km": 6.0,
+          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
+          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
+          "pace_target": "Z5-Z6 3:48-3:48/km",
           "intensity_km": {
-            "low_km": 4.59,
-            "moderate_km": 0.51,
-            "high_km": 5.1
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-05",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
+            "low_km": 3.3,
+            "moderate_km": 1.5,
+            "high_km": 1.2
           },
           "source": "auto-generated"
         },
@@ -134,14 +94,15 @@
           "date": "2026-03-06",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 8.6,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "workout_label": "progressivo_chiusura_gara",
+          "distance_km": 5.0,
+          "structure": "Progressivo con chiusura a ritmo gara",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
           "intensity_km": {
-            "low_km": 6.45,
-            "moderate_km": 0.43,
-            "high_km": 1.72
+            "low_km": 3.25,
+            "moderate_km": 0.75,
+            "high_km": 1.0
           },
           "source": "auto-generated"
         },
@@ -150,12 +111,13 @@
           "day_name": "Saturday",
           "day_type": "lungo",
           "workout_label": "lungo_aerobico",
-          "distance_km": 12.6,
+          "distance_km": 6.0,
           "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 6 km L con ultimi 2-3 km in M (opzionale)",
           "pace_target": "Z2 stabile 4:38-5:09/km",
           "intensity_km": {
-            "low_km": 11.59,
-            "moderate_km": 1.01,
+            "low_km": 5.52,
+            "moderate_km": 0.48,
             "high_km": 0.0
           },
           "source": "auto-generated"
@@ -167,83 +129,42 @@
       "iso_week": "2026-W11",
       "start_date": "2026-03-09",
       "end_date": "2026-03-15",
-      "phase": "build",
-      "target_km": 42.9,
+      "phase": "specific",
+      "target_km": 19,
       "tid": {
-        "total_running_km": 42.9,
-        "low_km": 32.86,
-        "moderate_km": 2.56,
-        "high_km": 7.48,
-        "low_pct": 0.766,
-        "moderate_pct": 0.06,
-        "high_pct": 0.174,
+        "total_running_km": 19.0,
+        "low_km": 13.91,
+        "moderate_km": 2.89,
+        "high_km": 2.2,
+        "low_pct": 0.732,
+        "moderate_pct": 0.152,
+        "high_pct": 0.116,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
-        "aligned": true,
-        "warnings": []
+        "aligned": false,
+        "warnings": [
+          "moderate_pct 0.152 > max 0.150 (zona grigia alta)",
+          "high_pct 0.116 < min 0.140 (stimolo alta intensita' basso)"
+        ]
       },
       "sessions": [
-        {
-          "date": "2026-03-09",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 8.6,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 8.17,
-            "moderate_km": 0.43,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-10",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
         {
           "date": "2026-03-11",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 11.2,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "workout_label": "qualita_ritmo_gara",
+          "distance_km": 6.0,
+          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
+          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
+          "pace_target": "Z5-Z6 3:48-3:48/km",
           "intensity_km": {
-            "low_km": 5.04,
-            "moderate_km": 0.56,
-            "high_km": 5.6
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-12",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
+            "low_km": 3.3,
+            "moderate_km": 1.5,
+            "high_km": 1.2
           },
           "source": "auto-generated"
         },
@@ -251,14 +172,15 @@
           "date": "2026-03-13",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 9.4,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "workout_label": "progressivo_chiusura_gara",
+          "distance_km": 5.0,
+          "structure": "Progressivo con chiusura a ritmo gara",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
           "intensity_km": {
-            "low_km": 7.05,
-            "moderate_km": 0.47,
-            "high_km": 1.88
+            "low_km": 3.25,
+            "moderate_km": 0.75,
+            "high_km": 1.0
           },
           "source": "auto-generated"
         },
@@ -267,12 +189,13 @@
           "day_name": "Saturday",
           "day_type": "lungo",
           "workout_label": "lungo_aerobico",
-          "distance_km": 13.7,
+          "distance_km": 8.0,
           "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 8 km L con ultimi 2-3 km in M (opzionale)",
           "pace_target": "Z2 stabile 4:38-5:09/km",
           "intensity_km": {
-            "low_km": 12.6,
-            "moderate_km": 1.1,
+            "low_km": 7.36,
+            "moderate_km": 0.64,
             "high_km": 0.0
           },
           "source": "auto-generated"
@@ -284,85 +207,39 @@
       "iso_week": "2026-W12",
       "start_date": "2026-03-16",
       "end_date": "2026-03-22",
-      "phase": "build",
-      "target_km": 35.2,
+      "phase": "specific",
+      "target_km": 16,
       "tid": {
-        "total_running_km": 35.2,
-        "low_km": 25.34,
-        "moderate_km": 2.27,
-        "high_km": 4.69,
-        "low_pct": 0.72,
-        "moderate_pct": 0.064,
-        "high_pct": 0.133,
+        "total_running_km": 16.0,
+        "low_km": 10.52,
+        "moderate_km": 1.68,
+        "high_km": 3.8,
+        "low_pct": 0.657,
+        "moderate_pct": 0.105,
+        "high_pct": 0.237,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
-        "aligned": false,
-        "warnings": [
-          "high_pct 0.133 < min 0.150 (stimolo alta intensita' basso)"
-        ]
+        "aligned": true,
+        "warnings": []
       },
       "sessions": [
-        {
-          "date": "2026-03-16",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 7.0,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 6.65,
-            "moderate_km": 0.35,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-17",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
         {
           "date": "2026-03-18",
           "day_name": "Wednesday",
           "day_type": "qualita",
           "workout_label": "test_5k",
-          "distance_km": 6.3,
+          "distance_km": 6.0,
           "structure": "Settimana scarico: test 5km + riscaldamento/defaticamento",
+          "session_plan": "Risc 2 km + Test 5 km + Defat 1 km",
           "pace_target": "Test 5km, riferimento soglia 3:40-3:48/km",
           "intensity_km": {
-            "low_km": 2.52,
-            "moderate_km": 0.63,
-            "high_km": 3.15
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-19",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
+            "low_km": 2.4,
+            "moderate_km": 0.6,
+            "high_km": 3.0
           },
           "source": "auto-generated"
         },
@@ -370,14 +247,15 @@
           "date": "2026-03-20",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 7.7,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "workout_label": "progressivo_chiusura_gara",
+          "distance_km": 4.0,
+          "structure": "Progressivo con chiusura a ritmo gara",
+          "session_plan": "Progressivo: 1 km L + 1 km M + 2 km TR",
+          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
           "intensity_km": {
-            "low_km": 5.77,
-            "moderate_km": 0.39,
-            "high_km": 1.54
+            "low_km": 2.6,
+            "moderate_km": 0.6,
+            "high_km": 0.8
           },
           "source": "auto-generated"
         },
@@ -386,12 +264,13 @@
           "day_name": "Saturday",
           "day_type": "lungo",
           "workout_label": "lungo_aerobico",
-          "distance_km": 14.2,
+          "distance_km": 6.0,
           "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 6 km L con ultimi 2-3 km in M (opzionale)",
           "pace_target": "Z2 stabile 4:38-5:09/km",
           "intensity_km": {
-            "low_km": 10.4,
-            "moderate_km": 0.9,
+            "low_km": 5.52,
+            "moderate_km": 0.48,
             "high_km": 0.0
           },
           "source": "auto-generated"
@@ -403,83 +282,42 @@
       "iso_week": "2026-W13",
       "start_date": "2026-03-23",
       "end_date": "2026-03-29",
-      "phase": "build",
-      "target_km": 38.3,
+      "phase": "specific",
+      "target_km": 12,
       "tid": {
-        "total_running_km": 38.3,
-        "low_km": 29.43,
-        "moderate_km": 2.29,
-        "high_km": 6.68,
-        "low_pct": 0.768,
-        "moderate_pct": 0.06,
-        "high_pct": 0.174,
+        "total_running_km": 12.0,
+        "low_km": 8.75,
+        "moderate_km": 1.85,
+        "high_km": 1.4,
+        "low_pct": 0.729,
+        "moderate_pct": 0.154,
+        "high_pct": 0.117,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
-        "aligned": true,
-        "warnings": []
+        "aligned": false,
+        "warnings": [
+          "moderate_pct 0.154 > max 0.150 (zona grigia alta)",
+          "high_pct 0.117 < min 0.140 (stimolo alta intensita' basso)"
+        ]
       },
       "sessions": [
-        {
-          "date": "2026-03-23",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 7.7,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 7.31,
-            "moderate_km": 0.39,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-24",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
         {
           "date": "2026-03-25",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 10.0,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "workout_label": "qualita_ritmo_gara",
+          "distance_km": 4.0,
+          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
+          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
+          "pace_target": "Z5-Z6 3:48-3:48/km",
           "intensity_km": {
-            "low_km": 4.5,
-            "moderate_km": 0.5,
-            "high_km": 5.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-26",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
+            "low_km": 2.2,
+            "moderate_km": 1.0,
+            "high_km": 0.8
           },
           "source": "auto-generated"
         },
@@ -487,14 +325,15 @@
           "date": "2026-03-27",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 8.4,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "workout_label": "progressivo_chiusura_gara",
+          "distance_km": 3.0,
+          "structure": "Progressivo con chiusura a ritmo gara",
+          "session_plan": "Progressivo: 1 km L + 1 km M + 1 km TR",
+          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
           "intensity_km": {
-            "low_km": 6.3,
-            "moderate_km": 0.42,
-            "high_km": 1.68
+            "low_km": 1.95,
+            "moderate_km": 0.45,
+            "high_km": 0.6
           },
           "source": "auto-generated"
         },
@@ -503,12 +342,13 @@
           "day_name": "Saturday",
           "day_type": "lungo",
           "workout_label": "lungo_aerobico",
-          "distance_km": 12.2,
+          "distance_km": 5.0,
           "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 5 km L con ultimi 2-3 km in M (opzionale)",
           "pace_target": "Z2 stabile 4:38-5:09/km",
           "intensity_km": {
-            "low_km": 11.32,
-            "moderate_km": 0.98,
+            "low_km": 4.6,
+            "moderate_km": 0.4,
             "high_km": 0.0
           },
           "source": "auto-generated"
@@ -520,559 +360,26 @@
       "iso_week": "2026-W14",
       "start_date": "2026-03-30",
       "end_date": "2026-04-05",
-      "phase": "build",
-      "target_km": 41.8,
+      "phase": "specific",
+      "target_km": 8,
       "tid": {
-        "total_running_km": 41.8,
-        "low_km": 32.11,
-        "moderate_km": 2.5,
-        "high_km": 7.29,
-        "low_pct": 0.768,
-        "moderate_pct": 0.06,
-        "high_pct": 0.174,
+        "total_running_km": 0.0,
+        "low_km": 0.0,
+        "moderate_km": 0.0,
+        "high_km": 0.0,
+        "low_pct": 0.0,
+        "moderate_pct": 0.0,
+        "high_pct": 0.0,
         "target": {
-          "target_low_pct": 0.82,
+          "target_low_pct": 0.75,
           "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
+          "max_moderate_pct": 0.15,
+          "min_high_pct": 0.14
         },
         "aligned": true,
         "warnings": []
       },
-      "sessions": [
-        {
-          "date": "2026-03-30",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 8.4,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 7.98,
-            "moderate_km": 0.42,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-03-31",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-01",
-          "day_name": "Wednesday",
-          "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 10.9,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
-          "intensity_km": {
-            "low_km": 4.9,
-            "moderate_km": 0.55,
-            "high_km": 5.45
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-02",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-03",
-          "day_name": "Friday",
-          "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 9.2,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
-          "intensity_km": {
-            "low_km": 6.9,
-            "moderate_km": 0.46,
-            "high_km": 1.84
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-04",
-          "day_name": "Saturday",
-          "day_type": "lungo",
-          "workout_label": "lungo_aerobico",
-          "distance_km": 13.3,
-          "structure": "Lungo aerobico (eventuali inserimenti M)",
-          "pace_target": "Z2 stabile 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 12.33,
-            "moderate_km": 1.07,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        }
-      ]
-    },
-    {
-      "week_index": 7,
-      "iso_week": "2026-W15",
-      "start_date": "2026-04-06",
-      "end_date": "2026-04-12",
-      "phase": "build",
-      "target_km": 45.5,
-      "tid": {
-        "total_running_km": 45.5,
-        "low_km": 34.88,
-        "moderate_km": 2.72,
-        "high_km": 7.9,
-        "low_pct": 0.767,
-        "moderate_pct": 0.06,
-        "high_pct": 0.174,
-        "target": {
-          "target_low_pct": 0.82,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
-        },
-        "aligned": true,
-        "warnings": []
-      },
-      "sessions": [
-        {
-          "date": "2026-04-06",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 9.1,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 8.64,
-            "moderate_km": 0.46,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-07",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-08",
-          "day_name": "Wednesday",
-          "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 11.8,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
-          "intensity_km": {
-            "low_km": 5.31,
-            "moderate_km": 0.59,
-            "high_km": 5.9
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-09",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-10",
-          "day_name": "Friday",
-          "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 10.0,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
-          "intensity_km": {
-            "low_km": 7.5,
-            "moderate_km": 0.5,
-            "high_km": 2.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-11",
-          "day_name": "Saturday",
-          "day_type": "lungo",
-          "workout_label": "lungo_aerobico",
-          "distance_km": 14.6,
-          "structure": "Lungo aerobico (eventuali inserimenti M)",
-          "pace_target": "Z2 stabile 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 13.43,
-            "moderate_km": 1.17,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        }
-      ]
-    },
-    {
-      "week_index": 8,
-      "iso_week": "2026-W16",
-      "start_date": "2026-04-13",
-      "end_date": "2026-04-19",
-      "phase": "build",
-      "target_km": 37.3,
-      "tid": {
-        "total_running_km": 37.3,
-        "low_km": 26.9,
-        "moderate_km": 2.41,
-        "high_km": 4.99,
-        "low_pct": 0.721,
-        "moderate_pct": 0.065,
-        "high_pct": 0.134,
-        "target": {
-          "target_low_pct": 0.82,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
-        },
-        "aligned": false,
-        "warnings": [
-          "high_pct 0.134 < min 0.150 (stimolo alta intensita' basso)"
-        ]
-      },
-      "sessions": [
-        {
-          "date": "2026-04-13",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 7.5,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 7.12,
-            "moderate_km": 0.38,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-14",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-15",
-          "day_name": "Wednesday",
-          "day_type": "qualita",
-          "workout_label": "test_5k",
-          "distance_km": 6.7,
-          "structure": "Settimana scarico: test 5km + riscaldamento/defaticamento",
-          "pace_target": "Test 5km, riferimento soglia 3:40-3:48/km",
-          "intensity_km": {
-            "low_km": 2.68,
-            "moderate_km": 0.67,
-            "high_km": 3.35
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-16",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-17",
-          "day_name": "Friday",
-          "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 8.2,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
-          "intensity_km": {
-            "low_km": 6.15,
-            "moderate_km": 0.41,
-            "high_km": 1.64
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-18",
-          "day_name": "Saturday",
-          "day_type": "lungo",
-          "workout_label": "lungo_aerobico",
-          "distance_km": 14.9,
-          "structure": "Lungo aerobico (eventuali inserimenti M)",
-          "pace_target": "Z2 stabile 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 10.95,
-            "moderate_km": 0.95,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        }
-      ]
-    },
-    {
-      "week_index": 9,
-      "iso_week": "2026-W17",
-      "start_date": "2026-04-20",
-      "end_date": "2026-04-26",
-      "phase": "build",
-      "target_km": 29.8,
-      "tid": {
-        "total_running_km": 29.8,
-        "low_km": 22.85,
-        "moderate_km": 1.78,
-        "high_km": 5.17,
-        "low_pct": 0.767,
-        "moderate_pct": 0.06,
-        "high_pct": 0.173,
-        "target": {
-          "target_low_pct": 0.82,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
-        },
-        "aligned": true,
-        "warnings": []
-      },
-      "sessions": [
-        {
-          "date": "2026-04-20",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 6.0,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 5.7,
-            "moderate_km": 0.3,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-21",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-22",
-          "day_name": "Wednesday",
-          "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 7.7,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
-          "intensity_km": {
-            "low_km": 3.46,
-            "moderate_km": 0.39,
-            "high_km": 3.85
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-23",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-24",
-          "day_name": "Friday",
-          "day_type": "progressivo",
-          "workout_label": "progressivo_classico",
-          "distance_km": 6.6,
-          "structure": "L + M + TR progressivo",
-          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
-          "intensity_km": {
-            "low_km": 4.95,
-            "moderate_km": 0.33,
-            "high_km": 1.32
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-25",
-          "day_name": "Saturday",
-          "day_type": "lungo",
-          "workout_label": "lungo_aerobico",
-          "distance_km": 9.5,
-          "structure": "Lungo aerobico (eventuali inserimenti M)",
-          "pace_target": "Z2 stabile 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 8.74,
-            "moderate_km": 0.76,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        }
-      ]
-    },
-    {
-      "week_index": 10,
-      "iso_week": "2026-W18",
-      "start_date": "2026-04-27",
-      "end_date": "2026-05-03",
-      "phase": "build",
-      "target_km": 19.4,
-      "tid": {
-        "total_running_km": 19.4,
-        "low_km": 5.95,
-        "moderate_km": 0.45,
-        "high_km": 2.5,
-        "low_pct": 0.307,
-        "moderate_pct": 0.023,
-        "high_pct": 0.129,
-        "target": {
-          "target_low_pct": 0.82,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.08,
-          "min_high_pct": 0.15
-        },
-        "aligned": false,
-        "warnings": [
-          "high_pct 0.129 < min 0.150 (stimolo alta intensita' basso)"
-        ]
-      },
-      "sessions": [
-        {
-          "date": "2026-04-27",
-          "day_name": "Monday",
-          "day_type": "easy",
-          "workout_label": "easy_aerobic",
-          "distance_km": 3.9,
-          "structure": "Easy aerobico + allunghi",
-          "pace_target": "Z2 4:38-5:09/km",
-          "intensity_km": {
-            "low_km": 3.7,
-            "moderate_km": 0.2,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-28",
-          "day_name": "Tuesday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-29",
-          "day_name": "Wednesday",
-          "day_type": "qualita",
-          "workout_label": "qualita_vo2_threshold",
-          "distance_km": 15.5,
-          "structure": "Ripetute VO2/soglia con recuperi controllati",
-          "pace_target": "Z6-Z7 3:40-3:40/km",
-          "intensity_km": {
-            "low_km": 2.25,
-            "moderate_km": 0.25,
-            "high_km": 2.5
-          },
-          "source": "auto-generated"
-        },
-        {
-          "date": "2026-04-30",
-          "day_name": "Thursday",
-          "day_type": "forza",
-          "workout_label": "forza_base",
-          "distance_km": 0.0,
-          "structure": "Forza specifica corsa/calisthenics",
-          "pace_target": "N/A",
-          "intensity_km": {
-            "low_km": 0.0,
-            "moderate_km": 0.0,
-            "high_km": 0.0
-          },
-          "source": "auto-generated"
-        }
-      ]
+      "sessions": []
     }
   ]
 }

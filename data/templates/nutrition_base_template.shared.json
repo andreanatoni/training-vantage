@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "template_version": "1.0.0",
+    "schema_version": "1.0.0",
+    "created_at": "",
+    "updated_at": "",
+    "source": "manual_bootstrap",
+    "owner_athlete_id": "shared"
+  },
+  "settings": {
+    "strict_mode": true,
+    "allow_option_merge": false,
+    "allowed_meals": [
+      "breakfast",
+      "snack_am",
+      "lunch",
+      "snack_pm",
+      "dinner"
+    ],
+    "excluded_meals": []
+  },
+  "user_constraints": {
+    "hard_rules": [],
+    "soft_preferences": [],
+    "notes": ""
+  },
+  "meals": [
+    {
+      "meal_id": "breakfast",
+      "name": "Colazione",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "snack_am",
+      "name": "Spuntino AM",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "lunch",
+      "name": "Pranzo",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "snack_pm",
+      "name": "Spuntino PM",
+      "timing_hint": "",
+      "options": []
+    },
+    {
+      "meal_id": "dinner",
+      "name": "Cena",
+      "timing_hint": "",
+      "options": []
+    }
+  ]
+}

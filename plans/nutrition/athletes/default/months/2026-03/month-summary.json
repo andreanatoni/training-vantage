@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "generated_at": "2026-02-16T14:36:57.316961",
+    "athlete_id": "default",
+    "month": "2026-03",
+    "source_running_plan": "data/athletes/default/running_plan.json"
+  },
+  "month": "2026-03",
+  "days_count": 31,
+  "days": [
+    {
+      "date": "2026-03-01",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-01-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-01-rest.json"
+    },
+    {
+      "date": "2026-03-02",
+      "weekday": "Monday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-02-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-02-rest.json"
+    },
+    {
+      "date": "2026-03-03",
+      "weekday": "Tuesday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-03-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-03-rest.json"
+    },
+    {
+      "date": "2026-03-04",
+      "weekday": "Wednesday",
+      "category": "qualita",
+      "day_type": "qualita",
+      "training_cost_kcal": 411,
+      "phase": "specific",
+      "workout_label": "qualita_ritmo_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-04-qualita.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-04-qualita.json"
+    },
+    {
+      "date": "2026-03-05",
+      "weekday": "Thursday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-05-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-05-rest.json"
+    },
+    {
+      "date": "2026-03-06",
+      "weekday": "Friday",
+      "category": "tempo",
+      "day_type": "progressivo",
+      "training_cost_kcal": 342,
+      "phase": "specific",
+      "workout_label": "progressivo_chiusura_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-06-tempo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-06-tempo.json"
+    },
+    {
+      "date": "2026-03-07",
+      "weekday": "Saturday",
+      "category": "lungo",
+      "day_type": "lungo",
+      "training_cost_kcal": 411,
+      "phase": "specific",
+      "workout_label": "lungo_aerobico",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-07-lungo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-07-lungo.json"
+    },
+    {
+      "date": "2026-03-08",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-08-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-08-rest.json"
+    },
+    {
+      "date": "2026-03-09",
+      "weekday": "Monday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-09-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-09-rest.json"
+    },
+    {
+      "date": "2026-03-10",
+      "weekday": "Tuesday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-10-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-10-rest.json"
+    },
+    {
+      "date": "2026-03-11",
+      "weekday": "Wednesday",
+      "category": "qualita",
+      "day_type": "qualita",
+      "training_cost_kcal": 411,
+      "phase": "specific",
+      "workout_label": "qualita_ritmo_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-11-qualita.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-11-qualita.json"
+    },
+    {
+      "date": "2026-03-12",
+      "weekday": "Thursday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-12-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-12-rest.json"
+    },
+    {
+      "date": "2026-03-13",
+      "weekday": "Friday",
+      "category": "tempo",
+      "day_type": "progressivo",
+      "training_cost_kcal": 342,
+      "phase": "specific",
+      "workout_label": "progressivo_chiusura_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-13-tempo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-13-tempo.json"
+    },
+    {
+      "date": "2026-03-14",
+      "weekday": "Saturday",
+      "category": "lungo",
+      "day_type": "lungo",
+      "training_cost_kcal": 548,
+      "phase": "specific",
+      "workout_label": "lungo_aerobico",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-14-lungo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-14-lungo.json"
+    },
+    {
+      "date": "2026-03-15",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-15-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-15-rest.json"
+    },
+    {
+      "date": "2026-03-16",
+      "weekday": "Monday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-16-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-16-rest.json"
+    },
+    {
+      "date": "2026-03-17",
+      "weekday": "Tuesday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-17-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-17-rest.json"
+    },
+    {
+      "date": "2026-03-18",
+      "weekday": "Wednesday",
+      "category": "qualita",
+      "day_type": "qualita",
+      "training_cost_kcal": 411,
+      "phase": "specific",
+      "workout_label": "test_5k",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-18-qualita.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-18-qualita.json"
+    },
+    {
+      "date": "2026-03-19",
+      "weekday": "Thursday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-19-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-19-rest.json"
+    },
+    {
+      "date": "2026-03-20",
+      "weekday": "Friday",
+      "category": "tempo",
+      "day_type": "progressivo",
+      "training_cost_kcal": 274,
+      "phase": "specific",
+      "workout_label": "progressivo_chiusura_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-20-tempo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-20-tempo.json"
+    },
+    {
+      "date": "2026-03-21",
+      "weekday": "Saturday",
+      "category": "lungo",
+      "day_type": "lungo",
+      "training_cost_kcal": 411,
+      "phase": "specific",
+      "workout_label": "lungo_aerobico",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-21-lungo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-21-lungo.json"
+    },
+    {
+      "date": "2026-03-22",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-22-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-22-rest.json"
+    },
+    {
+      "date": "2026-03-23",
+      "weekday": "Monday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-23-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-23-rest.json"
+    },
+    {
+      "date": "2026-03-24",
+      "weekday": "Tuesday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-24-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-24-rest.json"
+    },
+    {
+      "date": "2026-03-25",
+      "weekday": "Wednesday",
+      "category": "qualita",
+      "day_type": "qualita",
+      "training_cost_kcal": 274,
+      "phase": "specific",
+      "workout_label": "qualita_ritmo_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-25-qualita.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-25-qualita.json"
+    },
+    {
+      "date": "2026-03-26",
+      "weekday": "Thursday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-26-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-26-rest.json"
+    },
+    {
+      "date": "2026-03-27",
+      "weekday": "Friday",
+      "category": "tempo",
+      "day_type": "progressivo",
+      "training_cost_kcal": 206,
+      "phase": "specific",
+      "workout_label": "progressivo_chiusura_gara",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-27-tempo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-27-tempo.json"
+    },
+    {
+      "date": "2026-03-28",
+      "weekday": "Saturday",
+      "category": "lungo",
+      "day_type": "lungo",
+      "training_cost_kcal": 342,
+      "phase": "specific",
+      "workout_label": "lungo_aerobico",
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-28-lungo.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-28-lungo.json"
+    },
+    {
+      "date": "2026-03-29",
+      "weekday": "Sunday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-29-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-29-rest.json"
+    },
+    {
+      "date": "2026-03-30",
+      "weekday": "Monday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-30-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-30-rest.json"
+    },
+    {
+      "date": "2026-03-31",
+      "weekday": "Tuesday",
+      "category": "rest",
+      "day_type": "rest",
+      "training_cost_kcal": 0,
+      "phase": null,
+      "workout_label": null,
+      "md_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-31-rest.md",
+      "json_file": "plans/nutrition/athletes/default/months/2026-03/2026-03-31-rest.json"
+    }
+  ]
+}

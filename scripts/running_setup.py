@@ -9,6 +9,9 @@ Crea/aggiorna:
 """
 
 import json
+import argparse
+import sys
+import os
 from datetime import datetime
 
 from import_training_load import (
@@ -16,58 +19,79 @@ from import_training_load import (
     build_training_load_payload,
     resolve_path as resolve_csv_path,
 )
-from athlete_context import athlete_knowledge_dir, data_file, ensure_athlete_dirs, get_athlete_id
+from athlete_context import (
+    DEFAULT_ATHLETE_ID,
+    athlete_knowledge_dir,
+    data_file,
+    ensure_athlete_dirs,
+    get_athlete_id,
+    normalize_athlete_id,
+    relpath_or_str,
+)
 
-PROFILE_FILE = data_file("RUNNING_ATHLETE_PROFILE.json")
-CONFIG_FILE = data_file("RUNNING_PLAN_CONFIG.json")
-TRAINING_LOAD_FILE = data_file("training_load.json")
-REPORT_FILE = athlete_knowledge_dir() / "running-setup-report.md"
-CHANGELOG_FILE = data_file("changelog.json")
+def runtime_paths_for_athlete(athlete_id):
+    os.environ["TV_ATHLETE_ID"] = athlete_id
+    return {
+        "profile": data_file("RUNNING_ATHLETE_PROFILE.json"),
+        "config": data_file("RUNNING_PLAN_CONFIG.json"),
+        "training_load": data_file("training_load.json"),
+        "report": athlete_knowledge_dir() / "running-setup-report.md",
+        "changelog": data_file("changelog.json"),
+    }
 
 
-def ask_text(question, default=None, allow_empty=False):
+def resolve_target_athlete_id(athlete_name):
+    current_id = normalize_athlete_id(os.environ.get("TV_ATHLETE_ID", DEFAULT_ATHLETE_ID))
+    if current_id != DEFAULT_ATHLETE_ID:
+        return current_id
+    return normalize_athlete_id(athlete_name)
+
+
+def ask_text(question, allow_empty=False):
     while True:
-        suffix = f" [{default}]" if default is not None else ""
-        ans = input(f"{question}{suffix}: ").strip()
-        if not ans and default is not None:
-            return str(default)
+        ans = input(f"{question}: ").strip()
         if ans or allow_empty:
             return ans
         print("Valore richiesto.")
 
 
-def ask_float(question, default):
+def ask_float(question):
     while True:
-        raw = ask_text(question, default=default)
+        raw = ask_text(question)
         try:
             return float(str(raw).replace(",", "."))
         except ValueError:
             print("Inserisci un numero valido.")
 
 
-def ask_int(question, default):
+def ask_int(question):
     while True:
-        raw = ask_text(question, default=default)
+        raw = ask_text(question)
         try:
             return int(raw)
         except ValueError:
             print("Inserisci un intero valido.")
 
 
-def ask_yes_no(question, default=True):
-    d = "Y/n" if default else "y/N"
-    raw = ask_text(f"{question} ({d})", default="y" if default else "n")
-    return raw.lower() in ("y", "yes", "si", "s")
+def ask_yes_no(question):
+    while True:
+        raw = ask_text(f"{question} (y/n)")
+        txt = raw.lower()
+        if txt in ("y", "yes", "si", "s"):
+            return True
+        if txt in ("n", "no"):
+            return False
+        print("Risposta non valida. Inserisci y oppure n.")
 
 
-def ask_choice(question, choices, default_idx=0):
+def ask_choice(question, choices):
+    print(question)
     labels = []
     for i, (key, desc) in enumerate(choices, 1):
-        marker = " (default)" if i - 1 == default_idx else ""
-        labels.append(f"{i}. {key} - {desc}{marker}")
+        labels.append(f"{i}. {key} - {desc}")
     print("\n".join(labels))
     while True:
-        raw = ask_text(question, default=str(default_idx + 1))
+        raw = ask_text("Seleziona opzione")
         try:
             idx = int(raw) - 1
             if 0 <= idx < len(choices):
@@ -79,7 +103,7 @@ def ask_choice(question, choices, default_idx=0):
 
 def ask_csv_paths(prompt):
     """Richiede 0..N path CSV separati da virgola."""
-    raw = ask_text(prompt, default="", allow_empty=True)
+    raw = ask_text(prompt, allow_empty=True)
     if not raw:
         return []
     parts = [x.strip() for x in raw.split(",")]
@@ -107,6 +131,36 @@ def derive_volume_defaults(training_payload):
     avg_km = round(sum(recent_window) / len(recent_window), 1) if recent_window else 0.0
     peak_km = round(max(weekly_km), 1) if weekly_km else avg_km
     return {"avg_km": avg_km, "peak_km": peak_km}
+
+
+def build_manual_training_payload(athlete_id):
+    """Payload training_load minimale quando non ci sono CSV storici."""
+    return {
+        "meta": {
+            "version": "v2.0",
+            "generated_at": datetime.now().isoformat(),
+            "athlete_id": athlete_id,
+            "source_file": None,
+            "source_files": {"trainingpeaks": [], "garmin": []},
+            "mode": "manual_no_history",
+            "weight_used_kg": None,
+        },
+        "assumptions": {
+            "energy_model": "N/A (manual setup senza storico CSV)",
+            "met_by_day_type": {},
+        },
+        "merge": {"matched": 0, "tp_only": 0, "garmin_only": 0},
+        "summary": {
+            "sessions_count": 0,
+            "date_range": {"from": None, "to": None},
+            "planned_distance_km": 0.0,
+            "planned_duration_h": 0.0,
+            "estimated_energy_kcal": 0,
+        },
+        "profile_costs_kcal": {},
+        "weeks": [],
+        "sessions": [],
+    }
 
 
 def build_weekly_template(run_days, force_days, long_run_day):
@@ -150,7 +204,30 @@ def build_weekly_template(run_days, force_days, long_run_day):
     return session_days, session_map
 
 
-def compute_weekly_km_params(current_avg_km, max_recent_km, aggressiveness):
+def estimate_no_history_defaults(run_days, experience_level):
+    """Stima prudente volume per atleta senza storico strutturato."""
+    run_days = max(2, min(6, int(run_days)))
+    if experience_level == "beginner":
+        avg_km = max(14.0, run_days * 4.0)
+        peak_km = max(avg_km + 3.0, avg_km * 1.20)
+        min_start_km = 16.0
+    elif experience_level == "trained":
+        avg_km = max(22.0, run_days * 6.0)
+        peak_km = max(avg_km + 5.0, avg_km * 1.30)
+        min_start_km = 20.0
+    else:
+        # returning: ex-runner che riparte, oppure livello intermedio senza dati storici.
+        avg_km = max(18.0, run_days * 5.0)
+        peak_km = max(avg_km + 4.0, avg_km * 1.25)
+        min_start_km = 18.0
+    return {
+        "avg_km": round(avg_km, 1),
+        "peak_km": round(peak_km, 1),
+        "min_start_km": round(min_start_km, 1),
+    }
+
+
+def compute_weekly_km_params(current_avg_km, max_recent_km, aggressiveness, min_start_km=24.0):
     if aggressiveness == "conservative":
         growth = 0.07
         peak_factor = 1.20
@@ -161,7 +238,7 @@ def compute_weekly_km_params(current_avg_km, max_recent_km, aggressiveness):
         growth = 0.09
         peak_factor = 1.30
 
-    start_km = max(24.0, round(current_avg_km * 0.95, 1))
+    start_km = max(float(min_start_km), round(current_avg_km * 0.95, 1))
     peak_km = max(start_km + 8.0, round(max(max_recent_km, current_avg_km) * peak_factor, 1))
     peak_km = min(95.0, peak_km)
     return {
@@ -195,8 +272,8 @@ def intensity_distribution_template(method):
     }
 
 
-def append_changelog(details):
-    data = load_json(CHANGELOG_FILE, {"entries": []})
+def append_setup_changelog(changelog_file, details):
+    data = load_json(changelog_file, {"entries": []})
     data.setdefault("entries", []).append(
         {
             "timestamp": datetime.now().isoformat(),
@@ -204,57 +281,92 @@ def append_changelog(details):
             "details": details,
         }
     )
-    CHANGELOG_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    changelog_file.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def main():
+def normalize_days(run_days, force_days):
+    """Normalizza giorni settimanali entro range supportati dal motore."""
+    run_in = int(run_days)
+    force_in = int(force_days)
+    run_out = max(1, min(6, run_in))
+    force_out = max(0, min(2, force_in))
+    return run_out, force_out, (run_in != run_out or force_in != force_out)
+
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(
+        prog="running_setup.py",
+        description="Colloquio coach interattivo per configurare profilo e piano running.",
+    )
+    parser.add_argument(
+        "--no-history",
+        action="store_true",
+        help="Salta import storico CSV e prosegue in modalita manuale.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(no_history=False):
     print("=== Running Setup - Colloquio Coach Integrato ===")
     print("Approcci guida: Daniels (zone), Pfitzinger (periodizzazione), Canova (specificita), Seiler (TID), Hudson (adattivita).")
-    print(f"Atleta: {get_athlete_id()}")
     print()
 
-    athlete_name = ask_text("Nome atleta", default="Andrea")
-    goal_race_name = ask_text("Gara obiettivo principale", default="Maratona Latina")
-    goal_race_date = ask_text("Data gara obiettivo (YYYY-MM-DD)", default="2026-12-06")
-    target_pace = ask_text("Ritmo target gara (es. 4:00/km)", default="4:00/km")
+    athlete_name = ask_text("Nome atleta")
+    target_athlete_id = resolve_target_athlete_id(athlete_name)
+    paths = runtime_paths_for_athlete(target_athlete_id)
+    print(f"Destinazione dati atleta: {target_athlete_id}")
+    if target_athlete_id != normalize_athlete_id(athlete_name):
+        print(
+            "Nota: target atleta forzato da --athlete/TV_ATHLETE_ID "
+            f"({target_athlete_id}), nome atleta salvato: {athlete_name}."
+        )
+    goal_race_name = ask_text("Gara obiettivo principale")
+    goal_race_date = ask_text("Data gara obiettivo (YYYY-MM-DD)")
+    target_pace = ask_text("Ritmo target gara (es. 4:00/km)")
 
     print("\nStato attuale performance:")
-    tp_paths = ask_csv_paths("CSV TrainingPeaks (uno o piu', separati da virgola; invio se nessuno)")
-    garmin_paths = ask_csv_paths("CSV Garmin (uno o piu', separati da virgola; invio se nessuno)")
-    while not tp_paths and not garmin_paths:
-        print("Inserisci almeno un CSV storico (TrainingPeaks o Garmin).")
-        tp_paths = ask_csv_paths("CSV TrainingPeaks")
-        garmin_paths = ask_csv_paths("CSV Garmin")
+    if no_history:
+        training_payload = build_manual_training_payload(target_athlete_id)
+        print("Modalita manuale forzata da flag --no-history (nessun CSV richiesto).")
+    else:
+        tp_paths = ask_csv_paths("CSV TrainingPeaks (uno o piu', separati da virgola; invio se nessuno)")
+        garmin_paths = ask_csv_paths("CSV Garmin (uno o piu', separati da virgola; invio se nessuno)")
+        while not tp_paths and not garmin_paths:
+            print("Nessun CSV storico inserito.")
+            continue_without_history = ask_yes_no("Vuoi continuare senza storico (impostazione manuale)?")
+            if continue_without_history:
+                break
+            print("Inserisci almeno un CSV storico (TrainingPeaks o Garmin).")
+            tp_paths = ask_csv_paths("CSV TrainingPeaks")
+            garmin_paths = ask_csv_paths("CSV Garmin")
 
-    tp_files = [resolve_csv_path(p) for p in tp_paths]
-    garmin_files = [resolve_csv_path(p) for p in garmin_paths]
-    for csv_file in tp_files + garmin_files:
-        if not csv_file.exists():
-            print(f"Errore: file non trovato: {csv_file}")
+    if not no_history and (tp_paths or garmin_paths):
+        tp_files = [resolve_csv_path(p) for p in tp_paths]
+        garmin_files = [resolve_csv_path(p) for p in garmin_paths]
+        for csv_file in tp_files + garmin_files:
+            if not csv_file.exists():
+                print(f"Errore: file non trovato: {csv_file}")
+                return
+
+        try:
+            training_payload = build_training_load_payload(tp_files, garmin_files)
+        except Exception as exc:
+            print(f"Errore import CSV storico: {exc}")
             return
-
-    try:
-        training_payload = build_training_load_payload(tp_files, garmin_files)
-    except Exception as exc:
-        print(f"Errore import CSV storico: {exc}")
-        return
-
-    volume_defaults = derive_volume_defaults(training_payload)
-    current_avg_km = ask_float(
-        "Volume medio attuale km/settimana (default da storico importato)",
-        default=volume_defaults["avg_km"] if volume_defaults["avg_km"] > 0 else 38,
-    )
-    max_recent_km = ask_float(
-        "Picco recente km/settimana (default da storico importato)",
-        default=volume_defaults["peak_km"] if volume_defaults["peak_km"] > 0 else 50,
-    )
-    existing_profile = load_json(PROFILE_FILE, {})
-    default_5k = existing_profile.get("athlete", {}).get("current_5k", "18:26") if isinstance(existing_profile, dict) else "18:26"
-    current_5k = ask_text("PB/ultimo test 5km (mm:ss)", default=default_5k)
+    else:
+        if not no_history:
+            training_payload = build_manual_training_payload(target_athlete_id)
+            print("Procedo in modalita manuale senza storico CSV.")
 
     print("\nDisponibilita settimanale (giorni disponibili per correre):")
-    run_days = ask_int("Quanti giorni running/sett", default=4)
-    force_days = ask_int("Quanti giorni forza/sett", default=2)
+    run_days_raw = ask_int("Quanti giorni running/sett")
+    force_days_raw = ask_int("Quanti giorni forza/sett")
+    run_days, force_days, was_clamped = normalize_days(run_days_raw, force_days_raw)
+    if was_clamped:
+        print(
+            "Valori giorni normalizzati per limiti motore: "
+            f"running {run_days_raw}->{run_days}, forza {force_days_raw}->{force_days}."
+        )
     long_run_day = ask_choice(
         "Giorno preferito per lungo",
         [
@@ -262,8 +374,63 @@ def main():
             ("Sunday", "Lungo domenicale"),
             ("Friday", "Anticipo lungo"),
         ],
-        default_idx=0,
     )
+
+    no_history_mode = training_payload.get("meta", {}).get("mode") == "manual_no_history"
+    no_history_bootstrap_mode = "manual"
+    no_history_experience_level = None
+    min_start_km = 24.0
+
+    volume_defaults = derive_volume_defaults(training_payload)
+    suggested_avg_km = volume_defaults["avg_km"] if volume_defaults["avg_km"] > 0 else None
+    suggested_peak_km = volume_defaults["peak_km"] if volume_defaults["peak_km"] > 0 else None
+
+    if no_history_mode:
+        min_start_km = 16.0
+        if suggested_avg_km is None and suggested_peak_km is None:
+            no_history_bootstrap_mode = ask_choice(
+                "Nessuno storico: come impostare il volume iniziale?",
+                [
+                    ("auto", "Stima prudente automatica (consigliato)"),
+                    ("manual", "Inserisco manualmente volume medio e picco"),
+                ],
+            )
+            if no_history_bootstrap_mode == "auto":
+                no_history_experience_level = ask_choice(
+                    "Livello attuale senza storico tracciato",
+                    [
+                        ("returning", "Ripartenza/intermedio (default consigliato)"),
+                        ("beginner", "Principiante o ritorno dopo lunga pausa"),
+                        ("trained", "Allenato con continuita ma senza dati importati"),
+                    ],
+                )
+                estimate = estimate_no_history_defaults(run_days, no_history_experience_level)
+                suggested_avg_km = estimate["avg_km"]
+                suggested_peak_km = estimate["peak_km"]
+                min_start_km = estimate["min_start_km"]
+                print(
+                    "Stima no-history: volume medio suggerito {avg:.1f} km/sett, picco recente suggerito {peak:.1f} km/sett.".format(
+                        avg=suggested_avg_km,
+                        peak=suggested_peak_km,
+                    )
+                )
+            else:
+                print("Modalita manuale: inserisci volume medio e picco recente.")
+
+    avg_label = "Volume medio attuale km/settimana"
+    peak_label = "Picco recente km/settimana"
+    if suggested_avg_km is not None:
+        avg_label += f" (suggerito: {suggested_avg_km:.1f})"
+    if suggested_peak_km is not None:
+        peak_label += f" (suggerito: {suggested_peak_km:.1f})"
+
+    current_avg_km = ask_float(
+        avg_label,
+    )
+    max_recent_km = ask_float(
+        peak_label,
+    )
+    current_5k = ask_text("PB/ultimo test 5km (mm:ss)")
 
     method = ask_choice(
         "Metodo preferito per distribuzione intensita (TID)",
@@ -272,7 +439,6 @@ def main():
             ("balanced", "Ibrido Daniels/Pfitz/Canova"),
             ("pyramidal", "Pfitz-style piramidale"),
         ],
-        default_idx=0,
     )
     aggressiveness = ask_choice(
         "Aggressivita progressione volume",
@@ -281,11 +447,17 @@ def main():
             ("balanced", "Progressione equilibrata"),
             ("aggressive", "Più spinta, richiede recupero alto"),
         ],
-        default_idx=1,
+    )
+    long_run_strategy = ask_choice(
+        "Strategia lunghi in fase specifica",
+        [
+            ("with_race_blocks", "Mix: lungo classico + lunghi con blocchi ritmo gara"),
+            ("classic_only", "Sempre lungo classico (senza blocchi ritmo gara)"),
+        ],
     )
 
-    recovery_score = ask_int("Recupero medio percepito (1-10)", default=7)
-    sleep_hours = ask_float("Ore sonno medie/notte", default=7.0)
+    recovery_score = ask_int("Recupero medio percepito (1-10)")
+    sleep_hours = ask_float("Ore sonno medie/notte")
     injury_risk = ask_choice(
         "Stato infortuni/fragilita attuale",
         [
@@ -293,18 +465,17 @@ def main():
             ("medium", "Fastidi occasionali"),
             ("high", "Fragilita o infortuni ricorrenti"),
         ],
-        default_idx=0,
     )
-    confirm_force = ask_yes_no("Confermi vincolo forza 2x/sett come non negoziabile?", default=True)
+    confirm_force = force_days >= 1
 
-    weekly = compute_weekly_km_params(current_avg_km, max_recent_km, aggressiveness)
+    weekly = compute_weekly_km_params(current_avg_km, max_recent_km, aggressiveness, min_start_km=min_start_km)
     intensity_dist = intensity_distribution_template(method)
 
     # Costruzione session template giorni rispettando run_days/force_days.
     session_days, types = build_weekly_template(run_days, force_days, long_run_day)
 
     # Load/merge config esistente
-    config = load_json(CONFIG_FILE, {})
+    config = load_json(paths["config"], {})
     config.setdefault("meta", {})
     config["meta"]["version"] = "v1.1"
     config["meta"]["updated_at"] = datetime.now().strftime("%Y-%m-%d")
@@ -323,6 +494,7 @@ def main():
     defaults["taper"].setdefault("drop_pct_week_minus_1", 0.35)
     defaults["intensity_distribution"] = intensity_dist
     defaults.setdefault("session_shares", {"easy": 0.20, "qualita": 0.26, "progressivo": 0.22, "lungo": 0.32})
+    defaults["long_run_strategy"] = long_run_strategy
 
     planning_defaults = config.setdefault("planning_defaults", {})
     planning_defaults["goal_race_name"] = goal_race_name
@@ -355,6 +527,9 @@ def main():
             "long_run_day": long_run_day,
             "tid_method": method,
             "aggressiveness": aggressiveness,
+            "long_run_strategy": long_run_strategy,
+            "no_history_bootstrap_mode": no_history_bootstrap_mode if no_history_mode else None,
+            "no_history_experience_level": no_history_experience_level if no_history_mode else None,
             "force_twice_non_negotiable": confirm_force,
         },
         "coach_blend_notes": [
@@ -388,11 +563,14 @@ def main():
         f"- Running days: {run_days}/sett",
         f"- Forza days: {force_days}/sett",
         f"- Lungo: {long_run_day}",
+        f"- Strategia lungo (fase specifica): {long_run_strategy}",
+        f"- Bootstrap no-history: {no_history_bootstrap_mode}" if no_history_mode else "- Bootstrap no-history: N/A (storico disponibile)",
+        f"- Livello no-history: {no_history_experience_level}" if no_history_mode and no_history_experience_level else "- Livello no-history: N/A",
         "",
         "## Storico Importato",
         f"- Mode: {training_payload['meta']['mode']}",
         f"- Sessioni: {training_payload['summary']['sessions_count']}",
-        f"- Periodo: {training_payload['summary']['date_range']['from']} -> {training_payload['summary']['date_range']['to']}",
+        f"- Periodo: {training_payload['summary']['date_range']['from'] or 'N/A'} -> {training_payload['summary']['date_range']['to'] or 'N/A'}",
         f"- Distanza: {training_payload['summary']['planned_distance_km']} km",
         f"- Durata: {training_payload['summary']['planned_duration_h']} h",
         f"- Merge: {training_payload.get('merge', {})}",
@@ -401,7 +579,7 @@ def main():
         f"- weekly_km.start: {weekly['start']}",
         f"- weekly_km.peak: {weekly['peak']}",
         f"- weekly_km.max_increase_pct: {weekly['max_increase_pct']}",
-        f"- force 2x non negoziabile: {confirm_force}",
+        f"- force non negoziabile (auto da giorni forza): {confirm_force}",
         "",
         "## Prossimo Passo",
         "```bash",
@@ -412,18 +590,24 @@ def main():
     ]
 
     ensure_athlete_dirs()
-    PROFILE_FILE.write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
-    CONFIG_FILE.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
-    TRAINING_LOAD_FILE.write_text(json.dumps(training_payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    append_training_load_changelog_entry(training_payload["meta"]["source_files"], training_payload)
-    REPORT_FILE.write_text("\n".join(report_lines), encoding="utf-8")
+    paths["profile"].write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
+    paths["config"].write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
+    paths["training_load"].write_text(json.dumps(training_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    if training_payload["meta"].get("mode") != "manual_no_history":
+        append_training_load_changelog_entry(training_payload["meta"]["source_files"], training_payload)
+    paths["report"].write_text("\n".join(report_lines), encoding="utf-8")
 
-    append_changelog(
+    append_setup_changelog(
+        paths["changelog"],
         {
             "athlete": athlete_name,
+            "athlete_id": target_athlete_id,
             "goal_race": {"name": goal_race_name, "date": goal_race_date},
             "tid_method": method,
             "aggressiveness": aggressiveness,
+            "long_run_strategy": long_run_strategy,
+            "no_history_bootstrap_mode": no_history_bootstrap_mode if no_history_mode else None,
+            "no_history_experience_level": no_history_experience_level if no_history_mode else None,
             "training_load_import": {
                 "mode": training_payload["meta"]["mode"],
                 "sessions_count": training_payload["summary"]["sessions_count"],
@@ -431,20 +615,21 @@ def main():
                 "date_to": training_payload["summary"]["date_range"]["to"],
             },
             "updated_files": [
-                "data/RUNNING_ATHLETE_PROFILE.json",
-                "data/RUNNING_PLAN_CONFIG.json",
-                "data/training_load.json",
-                "knowledge/running-setup-report.md",
+                relpath_or_str(paths["profile"]),
+                relpath_or_str(paths["config"]),
+                relpath_or_str(paths["training_load"]),
+                relpath_or_str(paths["report"]),
             ],
         }
     )
 
     print("\n[OK] Running setup completato.")
-    print(f"- Profile: {PROFILE_FILE}")
-    print(f"- Config:  {CONFIG_FILE}")
-    print(f"- Training Load: {TRAINING_LOAD_FILE}")
-    print(f"- Report:  {REPORT_FILE}")
+    print(f"- Profile: {paths['profile']}")
+    print(f"- Config:  {paths['config']}")
+    print(f"- Training Load: {paths['training_load']}")
+    print(f"- Report:  {paths['report']}")
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args(sys.argv[1:])
+    main(no_history=args.no_history)

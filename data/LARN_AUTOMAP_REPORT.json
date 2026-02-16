@@ -1,0 +1,3217 @@
+{
+  "generated_at": "2026-02-16T20:39:48.663696",
+  "threshold": 0.95,
+  "apply": false,
+  "foods_total": 2155,
+  "skipped_already_mapped": 1,
+  "auto_mapped_count": 232,
+  "review_queue_count": 1922,
+  "preview_auto": [
+    {
+      "food_db_id": "acqua_del_rubinetto",
+      "food_db_name": "Acqua del rubinetto",
+      "suggested_larn_portion_id": "acqua_di_rubinetto_o_imbottigliata",
+      "confidence": 0.98,
+      "reason": "water_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "acqua_di_cocco",
+      "food_db_name": "Acqua di cocco",
+      "suggested_larn_portion_id": "acqua_di_rubinetto_o_imbottigliata",
+      "confidence": 0.98,
+      "reason": "water_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "acqua_minerale",
+      "food_db_name": "Acqua minerale",
+      "suggested_larn_portion_id": "acqua_di_rubinetto_o_imbottigliata",
+      "confidence": 0.98,
+      "reason": "water_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "acqua_tonica",
+      "food_db_name": "Acqua tonica",
+      "suggested_larn_portion_id": "acqua_di_rubinetto_o_imbottigliata",
+      "confidence": 0.98,
+      "reason": "water_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_aperitivo_a_base_di_vino",
+      "food_db_name": "Bevanda alcolica, Aperitivo a base di vino",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_birra_chiara",
+      "food_db_name": "Bevanda alcolica, Birra chiara",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_brandy",
+      "food_db_name": "Bevanda alcolica, Brandy",
+      "suggested_larn_portion_id": "superalcolici",
+      "confidence": 0.98,
+      "reason": "spirits_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_marsala_all_uovo",
+      "food_db_name": "Bevanda alcolica, Marsala all'uovo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_vino_da_pasto_bianco",
+      "food_db_name": "Bevanda alcolica, Vino da pasto bianco",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_vino_da_pasto_rosso",
+      "food_db_name": "Bevanda alcolica, Vino da pasto rosso",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bevanda_alcolica_whisky",
+      "food_db_name": "Bevanda alcolica, Whisky",
+      "suggested_larn_portion_id": "superalcolici",
+      "confidence": 0.98,
+      "reason": "spirits_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "birra",
+      "food_db_name": "Birra",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "birra_bud_light",
+      "food_db_name": "Birra Bud light",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "birra_budweiser",
+      "food_db_name": "Birra Budweiser",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "birra_budweiser_light",
+      "food_db_name": "Birra Budweiser light",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "birra_light",
+      "food_db_name": "Birra light",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bresaola",
+      "food_db_name": "Bresaola",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "bresaola_della_valtellina_igp",
+      "food_db_name": "Bresaola della Valtellina IGP",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro",
+      "food_db_name": "Burro",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_d_arachidi",
+      "food_db_name": "Burro d'arachidi",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_di_anacardi",
+      "food_db_name": "Burro di anacardi",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_di_arachidi",
+      "food_db_name": "Burro di arachidi",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_di_cacao",
+      "food_db_name": "Burro di cacao",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_di_mandorle",
+      "food_db_name": "Burro di mandorle",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_light_con_sale",
+      "food_db_name": "Burro light con sale",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_light_senza_sale",
+      "food_db_name": "Burro light senza sale",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "burro_salato",
+      "food_db_name": "Burro salato",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe_tostato",
+      "food_db_name": "Caffe' tostato",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe",
+      "food_db_name": "Caffè",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe_d_orzo",
+      "food_db_name": "Caffè d'orzo",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe_decaffeinato",
+      "food_db_name": "Caffè decaffeinato",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe_espresso_decaffeinato",
+      "food_db_name": "Caffè espresso decaffeinato",
+      "suggested_larn_portion_id": "caffe_espresso",
+      "confidence": 1.0,
+      "reason": "exact_caffe_espresso",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "caffe_solubile",
+      "food_db_name": "Caffè solubile",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "cola_con_caffeina",
+      "food_db_name": "Cola con caffeina",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "cola_senza_caffeina",
+      "food_db_name": "Cola senza caffeina",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "coppa",
+      "food_db_name": "Coppa",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "crostata_con_marmellata_di_albicocche_industriale",
+      "food_db_name": "Crostata, con marmellata di albicocche, industriale",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "crostata_con_marmellata_industriale",
+      "food_db_name": "Crostata, con marmellata, industriale",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "dessert_con_yogurt_al_mirtillo",
+      "food_db_name": "Dessert con yogurt al mirtillo",
+      "suggested_larn_portion_id": "yogurt_e_altri_latti_fermentati",
+      "confidence": 0.95,
+      "reason": "fermented_dairy",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "dessert_con_yogurt_alla_pesca",
+      "food_db_name": "Dessert con yogurt alla pesca",
+      "suggested_larn_portion_id": "yogurt_e_altri_latti_fermentati",
+      "confidence": 0.95,
+      "reason": "fermented_dairy",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "dessrert_con_yogurt_alla_banana",
+      "food_db_name": "Dessrert con yogurt alla banana",
+      "suggested_larn_portion_id": "yogurt_e_altri_latti_fermentati",
+      "confidence": 0.95,
+      "reason": "fermented_dairy",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "eggnog",
+      "food_db_name": "Eggnog",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "farina_d_orzo",
+      "food_db_name": "Farina d'orzo",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "gambero_d_acqua_dolce",
+      "food_db_name": "Gambero d'acqua dolce",
+      "suggested_larn_portion_id": "acqua_di_rubinetto_o_imbottigliata",
+      "confidence": 0.98,
+      "reason": "water_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "gin",
+      "food_db_name": "Gin",
+      "suggested_larn_portion_id": "superalcolici",
+      "confidence": 0.98,
+      "reason": "spirits_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insaccato_di_tacchino_affumicato",
+      "food_db_name": "Insaccato di tacchino affumicato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata",
+      "food_db_name": "Insalata",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata_con_prosciutto_e_formaggio",
+      "food_db_name": "Insalata con prosciutto e formaggio",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata_con_uovo_e_formaggio",
+      "food_db_name": "Insalata con uovo e formaggio",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata_di_patate_con_uova",
+      "food_db_name": "Insalata di patate con uova",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata_taco",
+      "food_db_name": "Insalata taco",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "insalata_valeriana",
+      "food_db_name": "Insalata valeriana",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lardo",
+      "food_db_name": "Lardo",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lardo_di_maiale",
+      "food_db_name": "Lardo di maiale",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga",
+      "food_db_name": "Lattuga",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_asparago",
+      "food_db_name": "Lattuga asparago",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_iceberg",
+      "food_db_name": "Lattuga iceberg",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_riccia",
+      "food_db_name": "Lattuga riccia",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_romana",
+      "food_db_name": "Lattuga romana",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_rossa",
+      "food_db_name": "Lattuga rossa",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_a_cappuccio_fresca",
+      "food_db_name": "Lattuga, a cappuccio, fresca",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_da_taglio_fresca",
+      "food_db_name": "Lattuga, da taglio, fresca",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lattuga_fresca",
+      "food_db_name": "Lattuga, fresca",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "lievito_di_birra_compresso",
+      "food_db_name": "Lievito di birra, compresso",
+      "suggested_larn_portion_id": "birra",
+      "confidence": 0.98,
+      "reason": "beer_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "liquore_al_caffe",
+      "food_db_name": "Liquore al caffè",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "marmellata",
+      "food_db_name": "Marmellata",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "marmellata_d_arance",
+      "food_db_name": "Marmellata d'arance",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "marmellata_di_albicocche",
+      "food_db_name": "Marmellata di albicocche",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "marmellata_di_mele",
+      "food_db_name": "Marmellata di mele",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "merendine_con_marmellata_industriale",
+      "food_db_name": "Merendine, con marmellata, industriale",
+      "suggested_larn_portion_id": "marmellata",
+      "confidence": 0.97,
+      "reason": "jam_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "mortadella",
+      "food_db_name": "Mortadella",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "mortadella_bologna_igp",
+      "food_db_name": "Mortadella Bologna IGP",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "mortadella_di_bovini_e_suini",
+      "food_db_name": "Mortadella di bovini e suini",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "mortadella_yachtwurst",
+      "food_db_name": "Mortadella yachtwurst",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "orzo_perlato",
+      "food_db_name": "Orzo perlato",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "orzo_perlato_cotto_bollito",
+      "food_db_name": "Orzo perlato, cotto, bollito",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pancake_al_burro",
+      "food_db_name": "Pancake al burro",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pane_all_uovo",
+      "food_db_name": "Pane all'uovo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "panino_prosciutto_e_formaggio",
+      "food_db_name": "Panino prosciutto e formaggio",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "panna_da_caffetteria",
+      "food_db_name": "Panna da caffetteria",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "parmigiano_reggiano_dop",
+      "food_db_name": "Parmigiano Reggiano DOP",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pasta_all_uovo_secca",
+      "food_db_name": "Pasta all'uovo, secca",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pasta_all_uovo_secca_cotta_bollita",
+      "food_db_name": "Pasta all'uovo, secca, cotta, bollita",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pasta_fresca_all_uovo",
+      "food_db_name": "Pasta fresca all'uovo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pate_di_prosciutto",
+      "food_db_name": "Patè di prosciutto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pomodori_da_insalata_freschi",
+      "food_db_name": "Pomodori, da insalata, freschi",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto",
+      "food_db_name": "Prosciutto cotto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_affumicato",
+      "food_db_name": "Prosciutto cotto affumicato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_alta_qualita",
+      "food_db_name": "Prosciutto cotto, alta qualità",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_alta_qualita_sgrassato",
+      "food_db_name": "Prosciutto cotto, alta qualità, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_scelto",
+      "food_db_name": "Prosciutto cotto, scelto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_scelto_sgrassato",
+      "food_db_name": "Prosciutto cotto, scelto, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_cotto_sgrassato",
+      "food_db_name": "Prosciutto cotto, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo",
+      "food_db_name": "Prosciutto crudo",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_modena_dop",
+      "food_db_name": "Prosciutto crudo di Modena DOP",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_modena_dop_sgrassato",
+      "food_db_name": "Prosciutto crudo di Modena DOP, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_montagna",
+      "food_db_name": "Prosciutto crudo di montagna",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_parma_dop_sgrassato",
+      "food_db_name": "Prosciutto crudo di Parma DOP, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_pietraroja",
+      "food_db_name": "Prosciutto crudo di Pietraroja",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_san_daniele_dop",
+      "food_db_name": "Prosciutto crudo di San Daniele DOP",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_di_san_daniele_dop_sgrassato",
+      "food_db_name": "Prosciutto crudo di San Daniele DOP, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_dop_di_parma",
+      "food_db_name": "Prosciutto crudo DOP, di Parma",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_sgrassato",
+      "food_db_name": "Prosciutto crudo sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_disossato",
+      "food_db_name": "Prosciutto crudo, disossato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_disossato_sgrassato",
+      "food_db_name": "Prosciutto crudo, disossato, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_gambuccio",
+      "food_db_name": "Prosciutto crudo, gambuccio",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_nazionale",
+      "food_db_name": "Prosciutto crudo, Nazionale",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_crudo_nazionale_sgrassato",
+      "food_db_name": "Prosciutto crudo, Nazionale, sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_di_modena",
+      "food_db_name": "Prosciutto di Modena",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_di_modena_sgrassato",
+      "food_db_name": "Prosciutto di Modena sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_di_parma",
+      "food_db_name": "Prosciutto di Parma",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_di_parma_sgrassato",
+      "food_db_name": "Prosciutto di Parma sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_di_tacchino",
+      "food_db_name": "Prosciutto di tacchino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_e_verdure",
+      "food_db_name": "Prosciutto e verdure",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_san_daniele",
+      "food_db_name": "Prosciutto San Daniele",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "prosciutto_san_daniele_sgrassato",
+      "food_db_name": "Prosciutto San Daniele sgrassato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "pure_di_patate_con_burro",
+      "food_db_name": "Purè di patate (con burro)",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio",
+      "food_db_name": "Radicchio",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio_rosso_di_treviso_igp_precoce",
+      "food_db_name": "Radicchio rosso di Treviso IGP, precoce",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio_rosso_di_treviso_igp_tardivo",
+      "food_db_name": "Radicchio rosso di Treviso IGP, tardivo",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio_variegato_di_castelfranco_igp",
+      "food_db_name": "Radicchio variegato di Castelfranco IGP",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio_rosso_fresco",
+      "food_db_name": "Radicchio, rosso, fresco",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "radicchio_verde_fresco",
+      "food_db_name": "Radicchio, verde, fresco",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "rucola",
+      "food_db_name": "Rucola",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "rucola_o_ruchetta_fresca",
+      "food_db_name": "Rucola o Ruchetta, fresca",
+      "suggested_larn_portion_id": "insalate_a_foglia",
+      "confidence": 0.95,
+      "reason": "leafy_salads",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "rum",
+      "food_db_name": "Rum",
+      "suggested_larn_portion_id": "superalcolici",
+      "confidence": 0.98,
+      "reason": "spirits_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_genovese",
+      "food_db_name": "Salame \"genovese\"",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_brianza",
+      "food_db_name": "Salame Brianza",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_di_tacchino",
+      "food_db_name": "Salame di tacchino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_fabriano",
+      "food_db_name": "Salame Fabriano",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_felino",
+      "food_db_name": "Salame Felino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_italiano",
+      "food_db_name": "Salame italiano",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_milano",
+      "food_db_name": "Salame Milano",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_napoli",
+      "food_db_name": "Salame Napoli",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_nostrano",
+      "food_db_name": "Salame nostrano",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salame_ungherese",
+      "food_db_name": "Salame ungherese",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_affumicata_di_maiale_manzo_e_tacchino",
+      "food_db_name": "Salsiccia affumicata di maiale, manzo e tacchino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_affumicata_di_suino_e_bovino",
+      "food_db_name": "Salsiccia affumicata di suino e bovino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_calabria",
+      "food_db_name": "Salsiccia di Calabria",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_fegato",
+      "food_db_name": "Salsiccia di fegato",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_maiale",
+      "food_db_name": "Salsiccia di maiale",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_pollo",
+      "food_db_name": "Salsiccia di pollo",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_suino_fresca",
+      "food_db_name": "Salsiccia di suino, fresca",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_suino_fresca_cotta_in_padella",
+      "food_db_name": "Salsiccia di suino, fresca, cotta, in padella",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_suino_secca",
+      "food_db_name": "Salsiccia di suino, secca",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "salsiccia_di_vitello",
+      "food_db_name": "Salsiccia di vitello",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "santoreggia_ortense",
+      "food_db_name": "Santoreggia ortense",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "scorzonera",
+      "food_db_name": "Scorzonera",
+      "suggested_larn_portion_id": "caffe_orzo",
+      "confidence": 0.95,
+      "reason": "coffee_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "soia_yogurt",
+      "food_db_name": "Soia, yogurt",
+      "suggested_larn_portion_id": "yogurt_e_altri_latti_fermentati",
+      "confidence": 0.95,
+      "reason": "fermented_dairy",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "spaghetti_all_uovo",
+      "food_db_name": "Spaghetti all'uovo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "speck_dell_alto_adige",
+      "food_db_name": "Speck dell'Alto Adige",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "speck_dell_alto_adige_igp",
+      "food_db_name": "Speck dell'Alto Adige IGP",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.95,
+      "reason": "cold_cuts",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "spinaci_della_nuova_zelanda",
+      "food_db_name": "Spinaci della Nuova Zelanda",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "strutto",
+      "food_db_name": "Strutto",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "strutto_o_sugna",
+      "food_db_name": "Strutto o sugna",
+      "suggested_larn_portion_id": "burro_strutto_e_lardo",
+      "confidence": 0.95,
+      "reason": "butter_lard",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "succo_di_frutta_con_yogurt_scremato",
+      "food_db_name": "Succo di frutta con yogurt scremato",
+      "suggested_larn_portion_id": "yogurt_e_altri_latti_fermentati",
+      "confidence": 0.95,
+      "reason": "fermented_dairy",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "taleggio",
+      "food_db_name": "Taleggio",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_anatra_intero",
+      "food_db_name": "Uova di anatra, intero",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_albume",
+      "food_db_name": "Uova di gallina, albume",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero",
+      "food_db_name": "Uova di gallina, intero",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero_congelato",
+      "food_db_name": "Uova di gallina, intero, congelato",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero_cotto_a_frittata_o_strapazzato",
+      "food_db_name": "Uova di gallina, intero, cotto, a frittata o strapazzato",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero_cotto_alla_coque_o_sodo",
+      "food_db_name": "Uova di gallina, intero, cotto, alla coque o sodo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero_in_polvere",
+      "food_db_name": "Uova di gallina, intero, in polvere",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_tuorlo",
+      "food_db_name": "Uova di gallina, tuorlo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_tuorlo_congelato",
+      "food_db_name": "Uova di gallina, tuorlo, congelato",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_tuorlo_cotto_in_camicia",
+      "food_db_name": "Uova di gallina, tuorlo, cotto, in camicia",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_gallina_tuorlo_in_polvere",
+      "food_db_name": "Uova di gallina, tuorlo, in polvere",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_oca_intero",
+      "food_db_name": "Uova di oca, intero",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_pesce",
+      "food_db_name": "Uova di pesce",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_di_tacchina_intero",
+      "food_db_name": "Uova di tacchina, intero",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uova_strapazzate",
+      "food_db_name": "Uova strapazzate",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo",
+      "food_db_name": "Uovo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_d_anatra",
+      "food_db_name": "Uovo d'anatra",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_d_oca",
+      "food_db_name": "Uovo d'oca",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_di_quaglia",
+      "food_db_name": "Uovo di quaglia",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_di_tacchino",
+      "food_db_name": "Uovo di tacchino",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_fritto",
+      "food_db_name": "Uovo fritto",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_in_camicia",
+      "food_db_name": "Uovo in camicia",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "uovo_sodo",
+      "food_db_name": "Uovo sodo",
+      "suggested_larn_portion_id": "uova",
+      "confidence": 0.95,
+      "reason": "eggs_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_barbera",
+      "food_db_name": "Vino Barbera",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_chardonnay",
+      "food_db_name": "Vino bianco (Chardonnay)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_chenin_blanc",
+      "food_db_name": "Vino bianco (Chenin Blanc)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_fume_blanc",
+      "food_db_name": "Vino bianco (Fume Blanc)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_gewurztraminer",
+      "food_db_name": "Vino bianco (Gewurztraminer)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_moscato",
+      "food_db_name": "Vino bianco (Moscato)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_muller_thurgau",
+      "food_db_name": "Vino bianco (Muller Thurgau)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_pinot_bianco",
+      "food_db_name": "Vino bianco (Pinot Bianco)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_pinot_grigio",
+      "food_db_name": "Vino bianco (Pinot Grigio)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_riesling",
+      "food_db_name": "Vino bianco (Riesling)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_sauvignon_blanc",
+      "food_db_name": "Vino bianco (Sauvignon Blanc)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_semillon",
+      "food_db_name": "Vino bianco (Semillon)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_da_tavola",
+      "food_db_name": "Vino bianco da tavola",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_bianco_passito",
+      "food_db_name": "Vino bianco passito",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_da_cucina",
+      "food_db_name": "Vino da cucina",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_rosso_bordeaux",
+      "food_db_name": "Vino rosso (Bordeaux)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_rosso_cabernet_franc",
+      "food_db_name": "Vino rosso (Cabernet Franc)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_rosso_cabernet_sauvignon",
+      "food_db_name": "Vino rosso (Cabernet Sauvignon)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_rosso_carignano",
+      "food_db_name": "Vino rosso (Carignano)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    },
+    {
+      "food_db_id": "vino_rosso_gamay",
+      "food_db_name": "Vino rosso (Gamay)",
+      "suggested_larn_portion_id": "vino",
+      "confidence": 0.98,
+      "reason": "wine_family",
+      "action": "suggest_only"
+    }
+  ],
+  "preview_review_queue": [
+    {
+      "food_db_id": "zampone_confezionato_precotto",
+      "food_db_name": "Zampone confezionato, precotto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "zampone_modena_igp_cotto",
+      "food_db_name": "Zampone Modena IGP, cotto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "zampone",
+      "food_db_name": "Zampone",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_tacchino",
+      "food_db_name": "Wurstel di tacchino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_soia",
+      "food_db_name": "Wurstel di soia",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_puro_suino_crudo",
+      "food_db_name": "Wurstel di puro suino, crudo",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_puro_suino_cotto",
+      "food_db_name": "Wurstel di puro suino, cotto",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_pollo",
+      "food_db_name": "Wurstel di pollo",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_manzo_e_maiale",
+      "food_db_name": "Wurstel di manzo e maiale",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_manzo",
+      "food_db_name": "Wurstel di manzo",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wurstel_di_maiale",
+      "food_db_name": "Wurstel di maiale",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "siero_del_latte",
+      "food_db_name": "Siero del latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "riso_soffiato_con_miele_e_latte_intero",
+      "food_db_name": "Riso soffiato con miele e latte intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "riso_soffiato_con_latte_intero_e_banane",
+      "food_db_name": "Riso soffiato con latte intero e banane",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "riso_soffiato_con_latte_intero",
+      "food_db_name": "Riso soffiato con latte intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pure_di_patate_istantaneo",
+      "food_db_name": "Purè di patate istantaneo",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pure_di_patate",
+      "food_db_name": "Purè di patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pumpernickel_pane_di_segale",
+      "food_db_name": "Pumpernickel (pane di segale)",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pesce_latte",
+      "food_db_name": "Pesce latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_senza_buccia_cotte_bollite",
+      "food_db_name": "Patate, senza buccia, cotte, bollite",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_fritte",
+      "food_db_name": "Patate, fritte",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_crude",
+      "food_db_name": "Patate, crude",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_cotte_arrosto",
+      "food_db_name": "Patate, cotte, arrosto",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_cotte_al_microonde",
+      "food_db_name": "Patate, cotte, al microonde",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_con_buccia_cotte_bollite",
+      "food_db_name": "Patate, con buccia, cotte, bollite",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_russet",
+      "food_db_name": "Patate russet",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_rosse",
+      "food_db_name": "Patate rosse",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_novelle_crude",
+      "food_db_name": "Patate novelle, crude",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_novelle_cotte_bollite",
+      "food_db_name": "Patate novelle, cotte, bollite",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_novelle_cotte_al_microonde",
+      "food_db_name": "Patate novelle, cotte, al microonde",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_gratinate",
+      "food_db_name": "Patate gratinate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_fritte_surgelate",
+      "food_db_name": "Patate fritte surgelate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_dolci_bollite",
+      "food_db_name": "Patate dolci bollite",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_dolci_al_forno",
+      "food_db_name": "Patate dolci al forno",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_dolci",
+      "food_db_name": "Patate dolci",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_congelate",
+      "food_db_name": "Patate congelate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_con_formaggio_e_prosciutto",
+      "food_db_name": "Patate con formaggio e prosciutto",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_bollite_senza_buccia",
+      "food_db_name": "Patate bollite senza buccia",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_bollite",
+      "food_db_name": "Patate bollite",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_bianche_al_forno",
+      "food_db_name": "Patate bianche al forno",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_bianche",
+      "food_db_name": "Patate bianche",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_al_microonde_senza_sale",
+      "food_db_name": "Patate al microonde (senza sale)",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_al_microonde",
+      "food_db_name": "Patate al microonde",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_al_forno",
+      "food_db_name": "Patate al forno",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate_o_brien",
+      "food_db_name": "Patate O'Brien",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "patate",
+      "food_db_name": "Patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "panini_al_latte",
+      "food_db_name": "Panini al latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "panettone",
+      "food_db_name": "Panettone",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_toscano",
+      "food_db_name": "Pane toscano",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_integrale",
+      "food_db_name": "Pane integrale",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_grattugiato",
+      "food_db_name": "Pane grattugiato",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_formato_rosetta",
+      "food_db_name": "Pane formato rosetta",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_tipo_semintegrale",
+      "food_db_name": "Pane di tipo semintegrale",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_tipo_integrale",
+      "food_db_name": "Pane di tipo integrale",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_segale",
+      "food_db_name": "Pane di segale",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_patate",
+      "food_db_name": "Pane di patate",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_crusca_di_riso",
+      "food_db_name": "Pane di crusca di riso",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_di_crusca",
+      "food_db_name": "Pane di crusca",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_d_avena",
+      "food_db_name": "Pane d'avena",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_bianco",
+      "food_db_name": "Pane bianco",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_azzimo",
+      "food_db_name": "Pane azzimo",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_arabo",
+      "food_db_name": "Pane arabo",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_al_malto",
+      "food_db_name": "Pane al malto",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane_al_germe_di_grano",
+      "food_db_name": "Pane al germe di grano",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pane",
+      "food_db_name": "Pane",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_tesa",
+      "food_db_name": "Pancetta tesa",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_saltata_in_padella",
+      "food_db_name": "Pancetta saltata in padella",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_magretta",
+      "food_db_name": "Pancetta magretta",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_di_tacchino",
+      "food_db_name": "Pancetta di tacchino",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_cotta_al_microonde",
+      "food_db_name": "Pancetta cotta al microonde",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_arrotolata",
+      "food_db_name": "Pancetta arrotolata",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta_al_forno",
+      "food_db_name": "Pancetta al forno",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "pancetta",
+      "food_db_name": "Pancetta",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_vinacciolo",
+      "food_db_name": "Olio di vinacciolo",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_soia",
+      "food_db_name": "Olio di soia",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_sesamo",
+      "food_db_name": "Olio di sesamo",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_sesamo",
+      "food_db_name": "Olio di semi di sesamo",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_senape",
+      "food_db_name": "Olio di semi di senape",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_papavero",
+      "food_db_name": "Olio di semi di papavero",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_lino",
+      "food_db_name": "Olio di semi di lino",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_girasole_parzialmente_idrogenato",
+      "food_db_name": "Olio di semi di girasole parzialmente idrogenato",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_girasole_altamente_oleico",
+      "food_db_name": "Olio di semi di girasole altamente oleico",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_semi_di_girasole",
+      "food_db_name": "Olio di semi di girasole",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_riso",
+      "food_db_name": "Olio di riso",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_palma_kernel",
+      "food_db_name": "Olio di palma (kernel)",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_palma",
+      "food_db_name": "Olio di palma",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_oliva_extra_vergine",
+      "food_db_name": "Olio di oliva extra vergine",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_oliva",
+      "food_db_name": "Olio di oliva",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_noce",
+      "food_db_name": "Olio di noce",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_nocciola",
+      "food_db_name": "Olio di nocciola",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_mandorle_dolci",
+      "food_db_name": "Olio di mandorle dolci",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_mandorla",
+      "food_db_name": "Olio di mandorla",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_mais",
+      "food_db_name": "Olio di mais",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_karite",
+      "food_db_name": "Olio di karité",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_girasole",
+      "food_db_name": "Olio di girasole",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_germe_di_grano",
+      "food_db_name": "Olio di germe di grano",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_colza_canola",
+      "food_db_name": "Olio di colza (canola)",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_colza",
+      "food_db_name": "Olio di colza",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_cocco",
+      "food_db_name": "Olio di cocco",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_avocado",
+      "food_db_name": "Olio di avocado",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_armellina",
+      "food_db_name": "Olio di armellina",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_arachidi",
+      "food_db_name": "Olio di arachidi",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "olio_di_arachide",
+      "food_db_name": "Olio di arachide",
+      "suggested_larn_portion_id": "oli_extravergine_doliva_di_semi_di_mais_ecc",
+      "confidence": 0.93,
+      "reason": "oils_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latteria",
+      "food_db_name": "Latteria",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_umano",
+      "food_db_name": "Latte umano",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_scremato_in_polvere",
+      "food_db_name": "Latte scremato in polvere",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_scremato_1_di_grasso",
+      "food_db_name": "Latte scremato (1% di grasso)",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_scremato",
+      "food_db_name": "Latte scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_parzialmente_scremato",
+      "food_db_name": "Latte parzialmente scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_intero_alta_qualita",
+      "food_db_name": "Latte intero alta qualità",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_intero",
+      "food_db_name": "Latte intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_in_polvere",
+      "food_db_name": "Latte in polvere",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_e_cioccolato",
+      "food_db_name": "Latte e cioccolato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_e_cacao",
+      "food_db_name": "Latte e cacao",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_pastorizzato_scremato",
+      "food_db_name": "Latte di vacca, pastorizzato, scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_pastorizzato_parzialmente_scremato",
+      "food_db_name": "Latte di vacca, pastorizzato, parzialmente scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_pastorizzato_intero",
+      "food_db_name": "Latte di vacca, pastorizzato, intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_in_polvere_scremato",
+      "food_db_name": "Latte di vacca, in polvere, scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_in_polvere_parzialmente_scremato",
+      "food_db_name": "Latte di vacca, in polvere, parzialmente scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_in_polvere_intero",
+      "food_db_name": "Latte di vacca, in polvere, intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_evaporato_non_zuccherato",
+      "food_db_name": "Latte di vacca, evaporato, non zuccherato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_condensato_zuccherato",
+      "food_db_name": "Latte di vacca, condensato, zuccherato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_uht_parzialmente_scremato",
+      "food_db_name": "Latte di vacca, UHT, parzialmente scremato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_vacca_uht_intero",
+      "food_db_name": "Latte di vacca, UHT, intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_pecora",
+      "food_db_name": "Latte di pecora",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_cocco",
+      "food_db_name": "Latte di cocco",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_capra_vitamina_d_aggiunta",
+      "food_db_name": "Latte di capra (vitamina D aggiunta)",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_capra",
+      "food_db_name": "Latte di capra",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_di_bufala",
+      "food_db_name": "Latte di bufala",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_condensato",
+      "food_db_name": "Latte condensato",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "latte_al_malto",
+      "food_db_name": "Latte al malto",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "insalata_di_patate",
+      "food_db_name": "Insalata di patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "guanciale_di_maiale",
+      "food_db_name": "Guanciale di maiale",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "grasso_della_pancetta",
+      "food_db_name": "Grasso della pancetta",
+      "suggested_larn_portion_id": "salumi",
+      "confidence": 0.93,
+      "reason": "processed_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fior_di_latte",
+      "food_db_name": "Fior di latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fiocchi_di_latte_con_verdure",
+      "food_db_name": "Fiocchi di latte (con verdure)",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fiocchi_di_latte",
+      "food_db_name": "Fiocchi di latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fiocchi_d_avena_con_miele_e_latte_intero",
+      "food_db_name": "Fiocchi d'avena con miele e latte intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fiocchi_d_avena_con_latte_intero_e_banane",
+      "food_db_name": "Fiocchi d'avena con latte intero e banane",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fiocchi_d_avena_con_latte_intero",
+      "food_db_name": "Fiocchi d'avena con latte intero",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fecola_di_patate",
+      "food_db_name": "Fecola di patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "fagiolini_e_patate",
+      "food_db_name": "Fagiolini e patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "crostini_di_pane",
+      "food_db_name": "Crostini di pane",
+      "suggested_larn_portion_id": "pane",
+      "confidence": 0.93,
+      "reason": "bread_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "crocchette_di_patate_hash_browns",
+      "food_db_name": "Crocchette di patate (hash browns)",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "crocchette_di_patate_burger_king",
+      "food_db_name": "Crocchette di patate (Burger King)",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "crocchette_di_patate",
+      "food_db_name": "Crocchette di patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "crema_di_latte_12_di_lipidi",
+      "food_db_name": "Crema di latte, 12% di lipidi",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "cracker_al_latte",
+      "food_db_name": "Cracker al latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "cioccolato_al_latte_con_nocciole",
+      "food_db_name": "Cioccolato, al latte con nocciole",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "cioccolato_al_latte",
+      "food_db_name": "Cioccolato, al latte",
+      "suggested_larn_portion_id": "latte",
+      "confidence": 0.93,
+      "reason": "milk_family",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "bucce_di_patate",
+      "food_db_name": "Bucce di patate",
+      "suggested_larn_portion_id": "patate_e_altri_tuberi",
+      "confidence": 0.93,
+      "reason": "potatoes_tubers",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "zuppa_di_pollo_e_verdure",
+      "food_db_name": "Zuppa di pollo e verdure",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "waffle",
+      "food_db_name": "Waffle",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "wafer_ricoperto_di_cioccolato",
+      "food_db_name": "Wafer ricoperto di cioccolato",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "uva_succo_in_cartone",
+      "food_db_name": "Uva, succo, in cartone",
+      "suggested_larn_portion_id": "spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti",
+      "confidence": 0.92,
+      "reason": "juices_tea_tisane",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "te_foglie",
+      "food_db_name": "Tè, foglie",
+      "suggested_larn_portion_id": "spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti",
+      "confidence": 0.92,
+      "reason": "juices_tea_tisane",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "te_nero_deteinato",
+      "food_db_name": "Tè nero deteinato",
+      "suggested_larn_portion_id": "spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti",
+      "confidence": 0.92,
+      "reason": "juices_tea_tisane",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "te_nero",
+      "food_db_name": "Tè nero",
+      "suggested_larn_portion_id": "spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti",
+      "confidence": 0.92,
+      "reason": "juices_tea_tisane",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_paradiso",
+      "food_db_name": "Torta paradiso",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_margherita",
+      "food_db_name": "Torta margherita",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_fritta_alla_frutta",
+      "food_db_name": "Torta fritta alla frutta",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_fritta_alla_cliegia",
+      "food_db_name": "Torta fritta alla cliegia",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_fritta_al_limone",
+      "food_db_name": "Torta fritta al limone",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_zucca",
+      "food_db_name": "Torta di zucca",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_mirtilli",
+      "food_db_name": "Torta di mirtilli",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_mele_mcdonald_s",
+      "food_db_name": "Torta di mele (McDonald's)",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_mele",
+      "food_db_name": "Torta di mele",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_frutta",
+      "food_db_name": "Torta di frutta",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_cliegie",
+      "food_db_name": "Torta di cliegie",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_di_banane",
+      "food_db_name": "Torta di banane",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_allo_zenzero",
+      "food_db_name": "Torta allo zenzero",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_alle_pesche",
+      "food_db_name": "Torta alle pesche",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_alle_noci_pecan",
+      "food_db_name": "Torta alle noci pecan",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_alla_crema_di_cioccolato",
+      "food_db_name": "Torta alla crema di cioccolato",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_alla_crema",
+      "food_db_name": "Torta alla crema",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_al_limone",
+      "food_db_name": "Torta al limone",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_al_cocco",
+      "food_db_name": "Torta al cocco",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_al_cioccolato",
+      "food_db_name": "Torta al cioccolato",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "torta_al_burro",
+      "food_db_name": "Torta al burro",
+      "suggested_larn_portion_id": "prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc",
+      "confidence": 0.92,
+      "reason": "sweet_bakery",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tonno_sott_olio_sgocciolato",
+      "food_db_name": "Tonno sott'olio, sgocciolato",
+      "suggested_larn_portion_id": "pesce_molluschi_crostacei_conservati",
+      "confidence": 0.92,
+      "reason": "fish_seafood_conserved",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tonno_sott_olio",
+      "food_db_name": "Tonno sott'olio",
+      "suggested_larn_portion_id": "pesce_molluschi_crostacei_conservati",
+      "confidence": 0.92,
+      "reason": "fish_seafood_conserved",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tonno_bianco_sott_olio",
+      "food_db_name": "Tonno bianco sott'olio",
+      "suggested_larn_portion_id": "pesce_molluschi_crostacei_conservati",
+      "confidence": 0.92,
+      "reason": "fish_seafood_conserved",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tarassaco_o_dente_di_leone_fresco",
+      "food_db_name": "Tarassaco o dente di leone, fresco",
+      "suggested_larn_portion_id": "spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti",
+      "confidence": 0.92,
+      "reason": "juices_tea_tisane",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_sovracoscia_senza_pelle_crudo",
+      "food_db_name": "Tacchino, sovracoscia, senza pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_sovracoscia_senza_pelle_cotto_al_forno",
+      "food_db_name": "Tacchino, sovracoscia, senza pelle, cotto, al forno",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fuso_senza_pelle_crudo",
+      "food_db_name": "Tacchino, fuso, senza pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fuso_senza_pelle_cotto_al_forno",
+      "food_db_name": "Tacchino, fuso, senza pelle, cotto, al forno",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fuso_con_pelle_crudo",
+      "food_db_name": "Tacchino, fuso, con pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fuso_con_pelle_cotto_al_forno",
+      "food_db_name": "Tacchino, fuso, con pelle, cotto, al forno",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fesa_crudo",
+      "food_db_name": "Tacchino, fesa, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_fesa_cotta_al_forno",
+      "food_db_name": "Tacchino, fesa, cotta, al forno",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_coscio_con_pelle_crudo",
+      "food_db_name": "Tacchino, coscio, con pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_intero_senza_pelle_crudo",
+      "food_db_name": "Tacchino intero, senza pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_intero_senza_pelle_cotto_al_forno",
+      "food_db_name": "Tacchino intero, senza pelle, cotto, al forno",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_intero_con_pelle_crudo",
+      "food_db_name": "Tacchino intero, con pelle, crudo",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_con_verdure",
+      "food_db_name": "Tacchino con verdure",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino_arrosto",
+      "food_db_name": "Tacchino arrosto",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "tacchino",
+      "food_db_name": "Tacchino",
+      "suggested_larn_portion_id": "carne_bianca_fresca_surgelata_pollo_tacchino_coniglio",
+      "confidence": 0.92,
+      "reason": "white_meat",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "sugo_di_pesce",
+      "food_db_name": "Sugo di pesce",
+      "suggested_larn_portion_id": "sughi_pronti_arrabbiata_ragu_ecc",
+      "confidence": 0.92,
+      "reason": "sauces_ready",
+      "action": "review_queue"
+    },
+    {
+      "food_db_id": "sugo_di_funghi",
+      "food_db_name": "Sugo di funghi",
+      "suggested_larn_portion_id": "sughi_pronti_arrabbiata_ragu_ecc",
+      "confidence": 0.92,
+      "reason": "sauces_ready",
+      "action": "review_queue"
+    }
+  ],
+  "files": {
+    "mapping": "data/FOOD_DB_TO_LARN_MAPPING.json",
+    "queue": "data/LARN_MAPPING_REVIEW_QUEUE.json"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "current": {
+    "test_date": "2026-02-12",
+    "test_time": "18:15",
+    "test_pace": "3:39",
+    "zones": {
+      "Z1": {
+        "name": "Recovery",
+        "from": "5:09",
+        "to": null
+      },
+      "Z2": {
+        "name": "Easy",
+        "from": "4:38",
+        "to": "5:09"
+      },
+      "Z3": {
+        "name": "Moderate",
+        "from": "4:14",
+        "to": "4:38"
+      },
+      "Z4": {
+        "name": "High Aerobic",
+        "from": "4:00",
+        "to": "4:14"
+      },
+      "Z5": {
+        "name": "Threshold-",
+        "from": "3:48",
+        "to": "4:00"
+      },
+      "Z6": {
+        "name": "Threshold",
+        "from": "3:40",
+        "to": "3:48"
+      },
+      "Z7": {
+        "name": "VO2max-",
+        "from": "3:27",
+        "to": "3:40"
+      },
+      "Z8": {
+        "name": "VO2max",
+        "from": "3:23",
+        "to": "3:27"
+      }
+    }
+  },
+  "history": [
+    {
+      "date": "2025-11-21",
+      "time": "19:40",
+      "pace": "3:56",
+      "hr_avg": 170,
+      "note": "W6 — primo test strutturato"
+    },
+    {
+      "date": "2026-01-02",
+      "time": "19:46",
+      "pace": "3:57",
+      "hr_avg": 144,
+      "note": "W12 — FC inattendibile (senza fascia cardio, solo polso ottico). Tempo valido."
+    },
+    {
+      "date": "2026-02-09",
+      "time": "18:27",
+      "pace": "3:41",
+      "hr_avg": 174,
+      "note": "W20 scarico — miglioramento 73s da W6"
+    },
+    {
+      "date": "2026-02-12",
+      "time": "18:15",
+      "pace": "3:39",
+      "note": "Test più veloce - tracking implementation"
+    }
+  ]
+}

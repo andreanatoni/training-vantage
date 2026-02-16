@@ -1,0 +1,927 @@
+{
+  "plan_version": "v1.0",
+  "start_date": "2025-09-30",
+  "total_weeks": 32,
+  "weeks": [
+    {
+      "week": "W1",
+      "mesociclo": "M1",
+      "sessions": [
+        {
+          "date": "2025-10-13",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 7.0,
+          "structure": "7×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-15",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 4.0,
+          "structure": "10×400m",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-17",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 6.0,
+          "structure": "4L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-18",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 10.0,
+          "structure": "10L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W2",
+      "mesociclo": "M1",
+      "sessions": [
+        {
+          "date": "2025-10-20",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 7.0,
+          "structure": "7×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-22",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5×1TR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-24",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 8.0,
+          "structure": "6L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-25",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 11.0,
+          "structure": "11L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W3",
+      "mesociclo": "M1",
+      "sessions": [
+        {
+          "date": "2025-10-27",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 8.0,
+          "structure": "8×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-29",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.4,
+          "structure": "4×1600m",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-10-31",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 9.0,
+          "structure": "3×[1L+1M+1TR]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-01",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 12.0,
+          "structure": "12L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W4",
+      "mesociclo": "M1",
+      "sessions": [
+        {
+          "date": "2025-11-03",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 7.0,
+          "structure": "7×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-05",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5×1TR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-07",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 4.0,
+          "structure": "4L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-08",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 4.0,
+          "structure": "30' L (recupero)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W5",
+      "mesociclo": "M2",
+      "sessions": [
+        {
+          "date": "2025-11-10",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 7.0,
+          "structure": "7×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-12",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 8.0,
+          "structure": "4×2km rec 2' LG",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-14",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 8.0,
+          "structure": "6L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-15",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 12.0,
+          "structure": "12L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W6",
+      "mesociclo": "M2",
+      "sessions": [
+        {
+          "date": "2025-11-17",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 8.0,
+          "structure": "8×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-19",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.0,
+          "structure": "30' L (pre-test)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-21",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 5.0,
+          "structure": "5km",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-22",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 13.0,
+          "structure": "13L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W7",
+      "mesociclo": "M2",
+      "sessions": [
+        {
+          "date": "2025-11-24",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 9.0,
+          "structure": "9×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-26",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5×1km",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-28",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 8.0,
+          "structure": "6L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-11-29",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 16.0,
+          "structure": "16L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W8",
+      "mesociclo": "M2",
+      "sessions": [
+        {
+          "date": "2025-12-01",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-03",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5x1km TR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-05",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 6.0,
+          "structure": "4L+2M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-06",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 6.0,
+          "structure": "30' L (recupero)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W9",
+      "mesociclo": "M3",
+      "sessions": [
+        {
+          "date": "2025-12-08",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 9.0,
+          "structure": "9×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-10",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.4,
+          "structure": "4×1600m rec 2' LG",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-12",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 9.0,
+          "structure": "3×(1kmL+1kmM+1kmTR)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-13",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 13.0,
+          "structure": "13L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W10",
+      "mesociclo": "M3",
+      "sessions": [
+        {
+          "date": "2025-12-15",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 0.0,
+          "structure": "Tosse e raffreddore",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-17",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 0.0,
+          "structure": "Tosse e raffreddore",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-19",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 6.0,
+          "structure": "6L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-20",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 15.0,
+          "structure": "15L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W11",
+      "mesociclo": "M3",
+      "sessions": [
+        {
+          "date": "2025-12-22",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-24",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 0.0,
+          "structure": "Maltempo",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-26",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 9.0,
+          "structure": "8L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2025-12-27",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 13.0,
+          "structure": "30'L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W12",
+      "mesociclo": "M3",
+      "sessions": [
+        {
+          "date": "2025-12-29",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-01",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.0,
+          "structure": "6kmL",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-02",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 5.0,
+          "structure": "Test 5km",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-03",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 10.0,
+          "structure": "10L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W13",
+      "mesociclo": "M4",
+      "sessions": [
+        {
+          "date": "2026-01-05",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 12.0,
+          "structure": "12×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-07",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 0.0,
+          "structure": "Maltempo",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-09",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 0.0,
+          "structure": "Maltempo",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-10",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 12.0,
+          "structure": "8L+4M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W14",
+      "mesociclo": "M4",
+      "sessions": [
+        {
+          "date": "2026-01-12",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 13.0,
+          "structure": "13×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-14",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 8.0,
+          "structure": "5×1600m @Ritmo Mezza rec 2' LG",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-16",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 13.0,
+          "structure": "8kmL+4kmM+1kmTR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-17",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 16.0,
+          "structure": "1h20' L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W15",
+      "mesociclo": "M4",
+      "sessions": [
+        {
+          "date": "2026-01-19",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 13.0,
+          "structure": "13×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-21",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.0,
+          "structure": "3×2km @Ritmo Mezza rec 2'",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-23",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 12.0,
+          "structure": "6kmL+3kmM+2kmTR+1KmVR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-24",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 19.0,
+          "structure": "15kmL+4kmM",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W16",
+      "mesociclo": "M4",
+      "sessions": [
+        {
+          "date": "2026-01-26",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-28",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5×1km @TR (Z6) · rec 90″",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-30",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 6.0,
+          "structure": "30'L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-01-31",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 4.0,
+          "structure": "20'L (Attivazione)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W17",
+      "mesociclo": "M5",
+      "sessions": [
+        {
+          "date": "2026-02-02",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-04",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 6.0,
+          "structure": "3×2km @Ritmo Mezza rec 2'",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-06",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 12.0,
+          "structure": "3kmL+[3×(1kmL+1kmM+1kmTR)]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-07",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 15.0,
+          "structure": "15L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W18",
+      "mesociclo": "M5",
+      "sessions": [
+        {
+          "date": "2026-02-09",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 5.0,
+          "structure": "Test 5km",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-11",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 12.0,
+          "structure": "3x4km @Ritmo Mezza rec 2' LG",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-13",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 12.0,
+          "structure": "6kmL+3kmM+2kmTR+1KmVR",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-14",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 18.0,
+          "structure": "12L+6M",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W19",
+      "mesociclo": "M5",
+      "sessions": [
+        {
+          "date": "2026-02-16",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 10.0,
+          "structure": "10×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-18",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 10.0,
+          "structure": "4x2500m @Ritmo Mezza rec 2' Z2",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-20",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 9.0,
+          "structure": "3×(1kmL+1kmM+1kmTR)",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-21",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 15.0,
+          "structure": "15L@Z2",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "week": "W20",
+      "mesociclo": "M5",
+      "sessions": [
+        {
+          "date": "2026-02-23",
+          "day_name": "Lunedì",
+          "type": "D.A.",
+          "distance_km": 6.0,
+          "structure": "6×[0.85L+0.15All]",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-25",
+          "day_name": "Mercoledì",
+          "type": "Ripetute",
+          "distance_km": 5.0,
+          "structure": "5×1km @Ritmo Mezza rec 2' Z2",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-27",
+          "day_name": "Venerdì",
+          "type": "Progressivo",
+          "distance_km": 8.0,
+          "structure": "6kmL+2kmM",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        },
+        {
+          "date": "2026-02-28",
+          "day_name": "Sabato",
+          "type": "Lungo",
+          "distance_km": 6.0,
+          "structure": "30'L",
+          "completed": false,
+          "garmin_data": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

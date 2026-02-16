@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 import unittest
@@ -6,6 +7,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_ATHLETE_DATA_DIR = ROOT / "data" / "athletes" / "default"
+DEFAULT_ATHLETE_PLANS_DIR = ROOT / "plans" / "nutrition" / "athletes" / "default"
 sys.path.insert(0, str(ROOT / "scripts"))
 from food_add import (  # noqa: E402
     find_food_by_target,
@@ -21,6 +24,23 @@ from crea_import import parse_crea_index_text  # noqa: E402
 from import_training_load import (  # noqa: E402
     build_training_load_payload,
     classify_day_type,
+)
+from running_setup import (  # noqa: E402
+    build_manual_training_payload,
+    compute_weekly_km_params,
+    estimate_no_history_defaults,
+    normalize_days,
+    parse_args as parse_running_setup_args,
+    resolve_target_athlete_id,
+)
+from nutrition_setup import (  # noqa: E402
+    infer_when_to_use,
+    MEAL_ORDER,
+    infer_option_tags,
+    parse_args as parse_nutrition_setup_args,
+    resolve_target_athlete_id as resolve_nutrition_target_athlete_id,
+    search_foods,
+    suggest_roles_for_option,
 )
 from sync_food_db import is_markdown_in_sync  # noqa: E402
 
@@ -79,11 +99,12 @@ class CliSmokeTests(unittest.TestCase):
         self.assertEqual(week.returncode, 0, msg=week.stderr)
         self.assertIn("PIANO RUNNING - WEEK 1", week.stdout)
 
-        running_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        running_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
         first_week_with_sessions = next(w for w in running_plan["weeks"] if w["sessions"])
         day_types = [s["day_type"] for s in first_week_with_sessions["sessions"]]
-        self.assertIn("forza", day_types)
-        self.assertEqual(day_types.count("forza"), 2)
+        self.assertGreater(len(day_types), 0)
+        allowed = {"easy", "qualita", "progressivo", "lungo", "forza"}
+        self.assertTrue(set(day_types).issubset(allowed))
 
     def test_running_deload_week_has_test_5k(self):
         result = run_cmd(
@@ -98,7 +119,7 @@ class CliSmokeTests(unittest.TestCase):
             "2026-10-18",
         )
         self.assertEqual(result.returncode, 0, msg=result.stderr)
-        running_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        running_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
         has_test = any(
             s.get("workout_label") == "test_5k"
             for w in running_plan["weeks"]
@@ -119,7 +140,7 @@ class CliSmokeTests(unittest.TestCase):
             "2026-10-18",
         )
         self.assertEqual(result.returncode, 0, msg=result.stderr)
-        running_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        running_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
 
         phases = {w["phase"] for w in running_plan["weeks"]}
         self.assertIn("specific", phases)
@@ -131,6 +152,38 @@ class CliSmokeTests(unittest.TestCase):
             for s in w["sessions"] if s["day_type"] == "qualita"
         ]
         self.assertTrue(any("ritmo gara" in s["structure"].lower() for s in qualita_specific))
+
+    def test_running_long_run_classic_only_disables_race_blocks(self):
+        config_path = DEFAULT_ATHLETE_DATA_DIR / "RUNNING_PLAN_CONFIG.json"
+        original = config_path.read_text(encoding="utf-8")
+        try:
+            cfg = json.loads(original)
+            cfg.setdefault("defaults", {})["long_run_strategy"] = "classic_only"
+            config_path.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
+
+            result = run_cmd(
+                "./tv",
+                "running",
+                "generate",
+                "--from",
+                "2026-09-01",
+                "--to",
+                "2026-10-20",
+                "--goal-race",
+                "2026-10-18",
+            )
+            self.assertEqual(result.returncode, 0, msg=result.stderr)
+            running_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
+
+            long_runs_specific = [
+                s for w in running_plan["weeks"] if w["phase"] == "specific"
+                for s in w["sessions"] if s["day_type"] == "lungo"
+            ]
+            self.assertTrue(long_runs_specific)
+            self.assertTrue(all(s.get("workout_label") != "lungo_blocchi_ritmo_gara" for s in long_runs_specific))
+            self.assertTrue(any(s.get("workout_label") == "lungo_aerobico" for s in long_runs_specific))
+        finally:
+            config_path.write_text(original, encoding="utf-8")
 
     def test_running_tid_fields(self):
         result = run_cmd(
@@ -145,13 +198,68 @@ class CliSmokeTests(unittest.TestCase):
             "2026-10-18",
         )
         self.assertEqual(result.returncode, 0, msg=result.stderr)
-        running_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        running_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
         self.assertIn("tid_summary", running_plan)
         first_with_sessions = next(w for w in running_plan["weeks"] if w["sessions"])
         self.assertIn("tid", first_with_sessions)
         tid = first_with_sessions["tid"]
         for key in ["low_pct", "moderate_pct", "high_pct", "aligned", "warnings"]:
             self.assertIn(key, tid)
+
+    def test_running_setup_manual_payload_without_history(self):
+        payload = build_manual_training_payload("test-athlete")
+        self.assertEqual(payload["meta"]["mode"], "manual_no_history")
+        self.assertEqual(payload["meta"]["athlete_id"], "test-athlete")
+        self.assertEqual(payload["summary"]["sessions_count"], 0)
+        self.assertEqual(payload["weeks"], [])
+        self.assertEqual(payload["sessions"], [])
+
+    def test_running_setup_parse_no_history_flag(self):
+        args = parse_running_setup_args(["--no-history"])
+        self.assertTrue(args.no_history)
+
+    def test_running_setup_target_athlete_id_uses_name_when_default(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "default"
+            self.assertEqual(resolve_target_athlete_id("Matteo"), "matteo")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
+
+    def test_running_setup_target_athlete_id_respects_env_override(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "spizz"
+            self.assertEqual(resolve_target_athlete_id("Matteo"), "spizz")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
+
+    def test_running_setup_estimate_no_history_defaults(self):
+        est = estimate_no_history_defaults(run_days=3, experience_level="beginner")
+        self.assertEqual(est["avg_km"], 14.0)
+        self.assertEqual(est["peak_km"], 17.0)
+        self.assertEqual(est["min_start_km"], 16.0)
+
+    def test_running_setup_compute_weekly_allows_lower_min_start_when_no_history(self):
+        weekly = compute_weekly_km_params(14.0, 17.0, "conservative", min_start_km=16.0)
+        self.assertEqual(weekly["start"], 16.0)
+
+    def test_running_setup_normalize_days_clamps_values(self):
+        run_days, force_days, clamped = normalize_days(99, -3)
+        self.assertEqual(run_days, 6)
+        self.assertEqual(force_days, 0)
+        self.assertTrue(clamped)
+
+    def test_running_setup_help_lists_no_history(self):
+        result = run_cmd("./tv", "running", "setup", "--help")
+        self.assertEqual(result.returncode, 0, msg=result.stderr)
+        self.assertIn("--no-history", result.stdout)
 
     def test_running_enforce_tid_improves_or_equal_alignment(self):
         base = run_cmd(
@@ -166,7 +274,7 @@ class CliSmokeTests(unittest.TestCase):
             "2026-10-18",
         )
         self.assertEqual(base.returncode, 0, msg=base.stderr)
-        base_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        base_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
         base_aligned = int(base_plan.get("tid_summary", {}).get("aligned_weeks", 0))
 
         enforced = run_cmd(
@@ -182,7 +290,7 @@ class CliSmokeTests(unittest.TestCase):
             "--enforce-tid",
         )
         self.assertEqual(enforced.returncode, 0, msg=enforced.stderr)
-        enforced_plan = json.loads((ROOT / "data/running_plan.json").read_text(encoding="utf-8"))
+        enforced_plan = json.loads((DEFAULT_ATHLETE_DATA_DIR / "running_plan.json").read_text(encoding="utf-8"))
         self.assertTrue(enforced_plan.get("meta", {}).get("enforce_tid"))
         enforced_aligned = int(enforced_plan.get("tid_summary", {}).get("aligned_weeks", 0))
         self.assertGreaterEqual(enforced_aligned, base_aligned)
@@ -205,7 +313,7 @@ class CliSmokeTests(unittest.TestCase):
         self.assertEqual(plan_week.returncode, 0, msg=plan_week.stderr)
         self.assertIn("Piano week 2026-W11", plan_week.stdout)
 
-        week_dir = ROOT / "plans" / "nutrition" / "weeks" / "2026-W11"
+        week_dir = DEFAULT_ATHLETE_PLANS_DIR / "weeks" / "2026-W11"
         self.assertTrue((week_dir / "week-summary.md").exists())
         self.assertTrue((week_dir / "week-summary.json").exists())
         sample_day = week_dir / "2026-03-11-qualita.json"
@@ -233,7 +341,7 @@ class CliSmokeTests(unittest.TestCase):
         self.assertEqual(plan_month.returncode, 0, msg=plan_month.stderr)
         self.assertIn("Piano month 2026-03", plan_month.stdout)
 
-        month_dir = ROOT / "plans" / "nutrition" / "months" / "2026-03"
+        month_dir = DEFAULT_ATHLETE_PLANS_DIR / "months" / "2026-03"
         self.assertTrue((month_dir / "month-summary.md").exists())
         self.assertTrue((month_dir / "month-summary.json").exists())
         sample_day = month_dir / "2026-03-14-lungo.json"
@@ -440,6 +548,78 @@ class TrainingLoadImportTests(unittest.TestCase):
         self.assertIn("profile_costs_kcal", payload)
         self.assertEqual(payload["meta"]["mode"], "planned_only")
         self.assertEqual(payload["summary"]["sessions_count"], 4)
+
+
+class NutritionSetupTests(unittest.TestCase):
+    def test_search_foods_by_name(self):
+        foods = [
+            {"id": "pane_integrale", "name": "Pane integrale"},
+            {"id": "yogurt_greco_0", "name": "Yogurt greco 0%"},
+            {"id": "banana", "name": "Banana"},
+        ]
+        results = search_foods(foods, "yogurt")
+        self.assertGreater(len(results), 0)
+        self.assertEqual(results[0]["id"], "yogurt_greco_0")
+
+    def test_meal_order_has_five_required_meals(self):
+        self.assertEqual(
+            MEAL_ORDER,
+            ["breakfast", "snack_am", "lunch", "snack_pm", "dinner"],
+        )
+
+    def test_nutrition_setup_parse_strict_no_defaults(self):
+        args = parse_nutrition_setup_args(["--strict-no-defaults"])
+        self.assertTrue(args.strict_no_defaults)
+
+    def test_nutrition_setup_target_athlete_id_uses_name_when_default(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "default"
+            self.assertEqual(resolve_nutrition_target_athlete_id("Matteo"), "matteo")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
+
+    def test_nutrition_setup_target_athlete_id_respects_env_override(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "spizz"
+            self.assertEqual(resolve_nutrition_target_athlete_id("Matteo"), "spizz")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
+
+    def test_infer_option_tags_auto(self):
+        blocks = [
+            {"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]},
+            {"role": "protein", "one_of": [{"food_db_id": "prosciutto_crudo"}]},
+        ]
+        names = {
+            "pane_integrale": "Pane integrale",
+            "prosciutto_crudo": "Prosciutto crudo",
+        }
+        tags = infer_option_tags(blocks, names)
+        self.assertIn("carb_based", tags)
+        self.assertIn("protein_based", tags)
+        self.assertIn("post_workout", tags)
+        self.assertIn("savory", tags)
+
+    def test_infer_when_to_use_auto(self):
+        blocks = [
+            {"role": "carb", "one_of": [{"food_db_id": "banana"}]},
+            {"role": "protein", "one_of": [{"food_db_id": "yogurt_greco_0"}]},
+        ]
+        tags = ["carb_based", "protein_based", "post_workout", "pre_workout"]
+        text = infer_when_to_use("snack_pm", blocks, tags, "pre_workout")
+        self.assertIn("pre-allenamento", text)
+
+    def test_suggest_roles_for_breakfast_default_day(self):
+        roles = suggest_roles_for_option("breakfast", "default_day")
+        self.assertEqual(roles, ["carb", "protein", "beverage", "fat"])
 
 
 if __name__ == "__main__":

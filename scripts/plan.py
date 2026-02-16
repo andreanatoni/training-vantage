@@ -507,10 +507,10 @@ def generate_week_plan(iso_week):
     """
     Genera pacchetto nutrizionale settimanale a partire da running_plan.json.
     Output:
-      plans/nutrition/weeks/<iso_week>/*.md
-      plans/nutrition/weeks/<iso_week>/*.json
-      plans/nutrition/weeks/<iso_week>/week-summary.md
-      plans/nutrition/weeks/<iso_week>/week-summary.json
+      plans/nutrition/athletes/<id>/weeks/<iso_week>/*.md
+      plans/nutrition/athletes/<id>/weeks/<iso_week>/*.json
+      plans/nutrition/athletes/<id>/weeks/<iso_week>/week-summary.md
+      plans/nutrition/athletes/<id>/weeks/<iso_week>/week-summary.json
     """
     week = load_running_week(iso_week)
     if not week:
@@ -639,10 +639,10 @@ def generate_month_plan(month_yyyy_mm):
     """
     Genera pacchetto nutrizionale mensile a partire da running_plan.json.
     Output:
-      plans/nutrition/months/<YYYY-MM>/*.md
-      plans/nutrition/months/<YYYY-MM>/*.json
-      plans/nutrition/months/<YYYY-MM>/month-summary.md
-      plans/nutrition/months/<YYYY-MM>/month-summary.json
+      plans/nutrition/athletes/<id>/months/<YYYY-MM>/*.md
+      plans/nutrition/athletes/<id>/months/<YYYY-MM>/*.json
+      plans/nutrition/athletes/<id>/months/<YYYY-MM>/month-summary.md
+      plans/nutrition/athletes/<id>/months/<YYYY-MM>/month-summary.json
     """
     plan = load_running_plan_data()
     if not plan:

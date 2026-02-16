@@ -49,6 +49,14 @@ COMANDI DISPONIBILI (Priorità 1 — Tracking base):
 
 COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
 
+  nutrition setup-base
+      Wizard interattivo per creare/aggiornare il template base pasti atleta
+      Nota: se non usi --athlete e il contesto e' default, il Nome atleta inserito diventa la cartella target
+      Output:
+        - data/athletes/<id>/nutrition_base_template.json
+        - knowledge/athletes/<id>/nutrition-base-template.md
+      Esempio: tv nutrition setup-base
+
   plan <categoria>
       Genera piano nutrizionale quantitativo per categoria
       Categorie: rest, forza, easy-run, qualita, tempo, lungo, pizza-day, domenica
@@ -69,12 +77,14 @@ COMANDI DISPONIBILI (Priorità 3 — Running):
       Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
       Esempio: tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18 --enforce-tid
 
-  running setup
+  running setup [--no-history]
       Colloquio coach interattivo (Daniels/Pfitz/Canova/Seiler/Hudson) per configurare il blocco running
+      Nota: se non usi --athlete e il contesto e' default, il Nome atleta inserito diventa la cartella target
       Esempio: tv running setup
+      Esempio: tv running setup --no-history
 
   running week <N>
-      Mostra dettaglio settimana N dal file data/running_plan.json
+      Mostra dettaglio settimana N dal file running_plan dell'atleta corrente (data/athletes/<id>/running_plan.json)
       Esempio: tv running week 3
 
   running month <YYYY-MM>
@@ -118,6 +128,26 @@ COMANDI DISPONIBILI (Utility):
       Backup + rebuild completo FOOD_DB, mapping e markdown da data/CREA_INDEX.json
       Esempio: tv food rebuild-from-crea
 
+  food sync-dietabit [--no-merge]
+      Crawl completo Dietabit -> data/DIETABIT_DB.json, confronto con FOOD_DB e merge safe mancanti
+      Esempio: tv food sync-dietabit
+      Esempio: tv food sync-dietabit --no-merge
+
+  food auto-map-larn [--threshold 0.90] [--dry-run]
+      Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
+      Esempio: tv food auto-map-larn --dry-run
+      Esempio: tv food auto-map-larn --threshold 0.92
+
+  food map-larn <subcommand>
+      Revisione manuale one-by-one FOOD_DB -> LARN
+      Subcommands:
+        - next [--limit 20] [--offset 0] [--contains testo]
+        - set <food_db_id> <larn_portion_id> [--confidence 1.0]
+        - unset <food_db_id>
+        - larn [--contains testo]
+      Esempio: tv food map-larn next --limit 10
+      Esempio: tv food map-larn set bresaola salumi
+
   food extract-portions
       Estrae tabelle porzioni dal PDF LARN in data/PORTION_STANDARDS.json
       Esempio: tv food extract-portions
@@ -127,7 +157,7 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv analyze sources/storico.csv
 
   load import [--tp <tp.csv>] [--garmin <garmin.csv>] [<csv_legacy>]
-      Importa storico/planning da CSV TrainingPeaks e/o Garmin in data/training_load.json
+      Importa storico/planning da CSV TrainingPeaks e/o Garmin in data/athletes/<id>/training_load.json
       Esempio: tv load import sources/workouts-2.csv
       Esempio: tv load import --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
 
@@ -182,6 +212,15 @@ case "$1" in
             python3 "$SCRIPTS_DIR/crea_import.py" import-crea "$@"
         elif [ "$1" = "rebuild-from-crea" ]; then
             python3 "$SCRIPTS_DIR/rebuild_food_db_from_crea.py"
+        elif [ "$1" = "sync-dietabit" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/dietabit_sync.py" "$@"
+        elif [ "$1" = "auto-map-larn" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/auto_map_larn.py" "$@"
+        elif [ "$1" = "map-larn" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/manual_map_larn.py" "$@"
         elif [ "$1" = "extract-portions" ]; then
             python3 "$SCRIPTS_DIR/extract_standard_portions.py"
         else
@@ -192,7 +231,20 @@ case "$1" in
             echo "                           tv food crawl-index"
             echo "                           tv food import-crea --id 150030"
             echo "                           tv food rebuild-from-crea"
+            echo "                           tv food sync-dietabit"
+            echo "                           tv food auto-map-larn --dry-run"
+            echo "                           tv food map-larn next --limit 10"
             echo "                           tv food extract-portions"
+            exit 1
+        fi
+        ;;
+    nutrition)
+        shift
+        if [ "$1" = "setup-base" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/nutrition_setup.py" "$@"
+        else
+            echo -e "${RED}Uso non valido. Esempio:${NC} tv nutrition setup-base"
             exit 1
         fi
         ;;

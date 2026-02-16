@@ -48,6 +48,14 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 # Backup + rebuild completo FOOD_DB/mapping/markdown da CREA_INDEX
 ./tv food rebuild-from-crea
 
+# Crawl Dietabit completo + confronto/merge su FOOD_DB
+./tv food sync-dietabit
+./tv food sync-dietabit --no-merge
+
+# Auto-mapping porzioni LARN (regole + review queue)
+./tv food auto-map-larn --dry-run
+./tv food auto-map-larn --threshold 0.90
+
 # Estrai database porzioni dal PDF standard LARN
 ./tv food extract-portions
 
@@ -57,8 +65,13 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 
 # Genera piano running periodizzato (multi-mese + taper)
 ./tv running setup
+./tv running setup --no-history
 ./tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
 ./tv running summary
+
+# Crea template base nutrizione atleta (strutturale, senza grammature)
+./tv nutrition setup-base
+./tv nutrition setup-base --strict-no-defaults
 
 # Analizza export Garmin
 ./tv analyze sources/storico.csv
@@ -67,7 +80,9 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 ## Multi-Atleta
 
 - Flag globale: `./tv --athlete <id> <command> ...`
-- Se omesso, usa atleta `default` (compatibilita con layout storico).
+- Se omesso, i comandi usano atleta `default` su path multi-atleta (`athletes/default`), con una eccezione:
+  - `./tv running setup` usa il `Nome atleta` inserito come target cartella quando il contesto corrente e' `default`
+  - `--athlete` resta sempre prioritario come override esplicito
 - Dati runtime per atleta:
   - `data/athletes/<id>/...` (composition, zones, running_plan, training_load, config, changelog)
   - `knowledge/athletes/<id>/running-setup-report.md`
@@ -90,10 +105,11 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 
 | Comando | Stato | Descrizione |
 |---------|-------|-------------|
-| `./tv plan <cat>` | ✅ | Genera piano nutrizionale con target kcal/macro in `plans/nutrition/<cat>.md` + `.json` |
+| `./tv plan <cat>` | ✅ | Genera piano nutrizionale con target kcal/macro in `plans/nutrition/athletes/<id>/<cat>.md` + `.json` |
+| `./tv nutrition setup-base` | ✅ | Wizard interattivo per compilare template base atleta in `data/athletes/<id>/nutrition_base_template.json` + export umano in `knowledge/athletes/<id>/nutrition-base-template.md` |
 | `./tv plan --all` | ✅ | Rigenera tutti gli 8 piani (AGGIORNATI) |
-| `./tv plan week <YYYY-Www>` | ✅ | Genera pacchetto nutrizione settimanale da `data/running_plan.json` |
-| `./tv plan month <YYYY-MM>` | ✅ | Genera pacchetto nutrizione mensile da `data/running_plan.json` |
+| `./tv plan week <YYYY-Www>` | ✅ | Genera pacchetto nutrizione settimanale da `data/athletes/<id>/running_plan.json` |
+| `./tv plan month <YYYY-MM>` | ✅ | Genera pacchetto nutrizione mensile da `data/athletes/<id>/running_plan.json` |
 
 ### ✅ Completato (Priorità 3 — Running)
 
@@ -101,8 +117,8 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 |---------|-------|-------------|
 | `./tv week <N>` | ✅ | Mostra piano running settimana N (W1-W20) |
 | `./tv analyze <file.csv>` | ✅ | Analizza export Garmin CSV (distanza/tempo/passo/FC) |
-| `./tv running generate ...` | ✅ | Genera piano running periodizzato su finestra temporale (`data/running_plan.json`) |
-| `./tv running setup` | ✅ | Colloquio coach interattivo e configurazione profilo running |
+| `./tv running generate ...` | ✅ | Genera piano running periodizzato su finestra temporale (`data/athletes/<id>/running_plan.json`) |
+| `./tv running setup [--no-history]` | ✅ | Colloquio coach interattivo, selezione atleta target da nome (se contesto `default`) e configurazione profilo running |
 | `./tv running week <N>` | ✅ | Mostra dettaglio settimana dal piano running generato |
 | `./tv running month <YYYY-MM>` | ✅ | Riepilogo mensile volumi/day-type |
 | `./tv running summary` | ✅ | Riepilogo periodo + preview taper |
@@ -118,8 +134,10 @@ Utente: Andrea, runner amatoriale competitivo, preparazione maratona dicembre 20
 | `./tv food crawl-index` | ✅ | Estrae indice alfabetico CREA in `data/CREA_INDEX.json` e `knowledge/crea-index.md` |
 | `./tv food import-crea ...` | ✅ | Importa schede CREA in FOOD_DB (singolo/lista/all) |
 | `./tv food rebuild-from-crea` | ✅ | Esegue backup e ricostruisce FOOD_DB + mapping + markdown da indice CREA |
+| `./tv food sync-dietabit [--no-merge]` | ✅ | Crawl completo Dietabit in `data/DIETABIT_DB.json`, confronto con `FOOD_DB` e merge safe mancanti (`data/DIETABIT_COMPARE_REPORT.json`) |
+| `./tv food auto-map-larn [--threshold] [--dry-run]` | ✅ | Auto-mappa `FOOD_DB_TO_LARN_MAPPING` con regole deterministiche e produce queue di review (`data/LARN_MAPPING_REVIEW_QUEUE.json`) |
 | `./tv food extract-portions` | ✅ | Estrae tabelle porzioni dal PDF in `data/PORTION_STANDARDS.json` |
-| `./tv load import [--tp ...] [--garmin ...]` | ✅ | Importa CSV TrainingPeaks e/o Garmin (anche insieme) in `data/training_load.json` |
+| `./tv load import [--tp ...] [--garmin ...]` | ✅ | Importa CSV TrainingPeaks e/o Garmin (anche insieme) in `data/athletes/<id>/training_load.json` |
 
 ### 📋 Pianificato
 
@@ -230,6 +248,7 @@ training-vantage/
 ## Regola Food DB
 
 - **Source of truth nutrizionale**: `data/FOOD_DB.json`
+- Priorita' fonti per merge: `CREA > BDA > DIETABIT`
 - `knowledge/food-db.md` e' un file generato con `./tv food sync`
 - `data/FOOD_DB_TO_LARN_MAPPING.json` deve referenziare solo `food_db_id` esistenti
 - Strategia motore piani (deficit/EA/day-profile): `data/NUTRITION_ENGINE_CONFIG.json`
@@ -237,10 +256,10 @@ training-vantage/
 ## Regola Piano Nutrizione
 
 - `./tv plan <categoria>` applica una strategia centralizzata da `data/NUTRITION_ENGINE_CONFIG.json`
-- Output piano: `plans/nutrition/<categoria>.md` (human-readable) e `plans/nutrition/<categoria>.json` (machine-readable)
-- Se presente `data/training_load.json`, il motore usa i costi energetici stimati per day-profile da import CSV (`tv load import ...`)
-- `./tv plan week <YYYY-Www>` usa `data/running_plan.json` e genera 7 piani giornalieri in `plans/nutrition/weeks/<YYYY-Www>/` + `week-summary.md/.json`
-- `./tv plan month <YYYY-MM>` usa `data/running_plan.json` e genera i piani giornalieri del mese in `plans/nutrition/months/<YYYY-MM>/` + `month-summary.md/.json`
+- Output piano: `plans/nutrition/athletes/<id>/<categoria>.md` (human-readable) e `plans/nutrition/athletes/<id>/<categoria>.json` (machine-readable)
+- Se presente `data/athletes/<id>/training_load.json`, il motore usa i costi energetici stimati per day-profile da import CSV (`tv load import ...`)
+- `./tv plan week <YYYY-Www>` usa `data/athletes/<id>/running_plan.json` e genera 7 piani giornalieri in `plans/nutrition/athletes/<id>/weeks/<YYYY-Www>/` + `week-summary.md/.json`
+- `./tv plan month <YYYY-MM>` usa `data/athletes/<id>/running_plan.json` e genera i piani giornalieri del mese in `plans/nutrition/athletes/<id>/months/<YYYY-MM>/` + `month-summary.md/.json`
 - Nei pacchetti `week/month`, ogni giorno usa il proprio `training_cost_kcal` stimato dalla seduta del `running_plan` (source: `running_plan_day`) invece di un profilo medio
 - Ogni categoria (`rest`, `easy-run`, `qualita`, `tempo`, `lungo`, `forza`, `pizza-day`, `domenica`) viene mappata a un day-profile
 - Il motore applica:
@@ -248,21 +267,39 @@ training-vantage/
   - guardrail `Energy Availability` (hard floor)
   - metadata nel piano generato (`Engine Config`, `Day Profile`, `Deficit Applied`, `EA`)
 - Per cambiare priorita' future (es. mantenimento invece di cut), aggiornare il file config senza modificare il codice.
+- Base template pasti (strutturale, senza grammature):
+  - shared bootstrap: `data/templates/nutrition_base_template.shared.json`
+  - schema: `data/templates/nutrition_base_template.schema.json`
+  - copia per atleta: `data/athletes/<id>/nutrition_base_template.json`
+  - setup guidato: `./tv nutrition setup-base` (crea/aggiorna JSON e vista markdown atleta)
+    - variante: `--strict-no-defaults` per azzerare campi non strutturali prima della compilazione
+    - senza `--athlete`, se il contesto e' `default`, il `Nome atleta` inserito diventa l'`athlete_id` target (normalizzato)
+  - regole correnti: 5 pasti (`breakfast`, `snack_am`, `lunch`, `snack_pm`, `dinner`), opzioni rigide/immutabili, niente merge opzioni, mapping ingredienti obbligatorio via `food_db_id`.
+  - nel wizard i tag opzione sono auto-calcolati dal sistema in base ai blocchi alimentari selezionati (non inseriti manualmente).
+  - nel wizard anche il campo `when_to_use` viene suggerito automaticamente dal sistema in base a pasto, ruoli e tag inferiti.
+  - il wizard propone in automatico i blocchi per scenario (`pre_workout`, `post_workout`, `default_day`) con possibilita' di modifica manuale.
+  - nessun vincolo alimentare personale e' hardcodato nello shared template: i vincoli sono raccolti nel setup e salvati solo in `user_constraints` del singolo atleta.
+  - questo layer e' la base qualitativa; il bilanciamento quantitativo resta nel motore `plan`.
 
 ## Regola Piano Running
 
-- `./tv running generate --from ... --to ... [--goal-race ...]` crea il piano periodizzato in `data/running_plan.json`
+- `./tv running generate --from ... --to ... [--goal-race ...]` crea il piano periodizzato in `data/athletes/<id>/running_plan.json`
 - `./tv running setup` crea/aggiorna:
-  - `data/RUNNING_ATHLETE_PROFILE.json`
-  - `data/RUNNING_PLAN_CONFIG.json`
-  - `data/training_load.json` (import storico CSV TrainingPeaks/Garmin richiesto durante il colloquio)
-  - `knowledge/running-setup-report.md`
+  - file running nel target atleta risolto:
+    - `data/athletes/<id>/...` e `knowledge/athletes/<id>/...` (incluso `id=default`)
+- Se non passi `--athlete` e il contesto e' `default`, il `Nome atleta` inserito nel setup diventa l'`athlete_id` (normalizzato, es. `Matteo` -> `matteo`)
+- `./tv running setup --no-history` salta la richiesta CSV e forza modalita manuale (`manual_no_history`)
+  - se non ci sono volumi precedenti nel profilo, propone bootstrap `auto` (beginner/returning/trained) con stima prudente km iniziali
+  - tutti i campi restano espliciti (nessun default implicito da invio)
+- Vincolo forza nel setup:
+  - non viene chiesta conferma separata
+  - viene derivato automaticamente: se `giorni forza >= 1` allora `force_twice_non_negotiable = true`, altrimenti `false`
 - Opzionale: `--enforce-tid` applica aggiustamenti automatici ai workout label per rispettare meglio i guardrail TID
-- Parametri default e vincoli progressione/taper stanno in `data/RUNNING_PLAN_CONFIG.json`
+- Parametri default e vincoli progressione/taper stanno in `data/athletes/<id>/RUNNING_PLAN_CONFIG.json`
 - Il piano supporta pianificazione per blocchi mensili o periodi lunghi verso una gara obiettivo
 - `./tv running month` e `./tv running summary` servono per monitorare andamento volumi e taper prima della gara
 - Base metodologica allineata alle linee guida progetto (`sources/istruzioni di progetto.md`, `sources/linee-guida.md`):
-  - routine settimanale fissa con running 4x (`easy`, `qualita`, `progressivo`, `lungo`) + forza obbligatoria 2x (`Mar`, `Gio`)
+  - routine settimanale configurabile dal setup (giorni running/forza, giorno lungo, strategia lungo)
   - mesociclo 3:1 (3 carico + 1 scarico) con test 5km in settimana scarico
   - prescrizione ritmo seduta tramite zone correnti (`data/zones.json`)
   - contenuto sedute periodizzato per fase: `build`, `specific`, `taper`, `race` (non solo variazione km)

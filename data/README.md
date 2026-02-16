@@ -12,7 +12,9 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 ## Modalita' Multi-Atleta
 
 - Runtime atleta isolato in `data/athletes/<id>/`.
-- Se non passi `--athlete`, i comandi usano `data/` (atleta `default` legacy).
+- Se non passi `--athlete`, i comandi usano `data/athletes/default/` (anche per `default`), con eccezione `running setup`:
+  - quando il contesto e' `default`, il `Nome atleta` inserito diventa l'`athlete_id` target (normalizzato)
+  - `--athlete` resta prioritario come override esplicito
 - Esempio:
   - `./tv --athlete mario running setup`
   - `./tv --athlete mario running generate --from 2026-03-01 --to 2026-06-30`
@@ -23,7 +25,12 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - Nutrizione:
   - `FOOD_DB.json` = master alimenti e nutrienti.
   - `FOOD_DB_TO_LARN_MAPPING.json` = master mapping verso porzioni.
+  - `DIETABIT_DB.json` = export completo Dietabit (dataset esterno di confronto/integrazione).
+  - `DIETABIT_COMPARE_REPORT.json` = report confronto Dietabit vs FOOD_DB (identici/conflitti/aggiunte).
   - `NUTRITION_ENGINE_CONFIG.json` = centralina strategia nutrizionale (deficit, EA, macro floor, day-profile).
+  - `templates/nutrition_base_template.shared.json` = template base shared (strutturale, senza grammature).
+  - `templates/nutrition_base_template.schema.json` = schema JSON del template base.
+  - `athletes/<id>/nutrition_base_template.json` = copia template base per atleta (gusti/abitudini personali).
   - `training_load.json` = carico allenante importato da CSV TrainingPeaks e/o Garmin.
 - Running:
   - `RUNNING_ATHLETE_PROFILE.json` = profilo atleta raccolto via colloquio setup.
@@ -41,7 +48,13 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `CREA_INDEX.json`: indice completo alimenti CREA.
 - `FOOD_DB.json`: database nutrizionale (832 alimenti al momento).
 - `FOOD_DB_TO_LARN_MAPPING.json`: associazioni alimento -> porzione LARN/operativa + stato revisione.
+- `DIETABIT_DB.json`: dump categorie/alimenti Dietabit in formato FOOD_DB-like (`kcal`, `P`, `CHO`, `F` per 100 g).
+- `DIETABIT_COMPARE_REPORT.json`: esito confronto Dietabit -> FOOD_DB con preview conflitti.
+- `LARN_AUTOMAP_REPORT.json`: report ultimo passaggio auto-mapping FOOD_DB -> LARN.
+- `LARN_MAPPING_REVIEW_QUEUE.json`: coda review dei mapping a confidenza non sufficiente.
 - `NUTRITION_ENGINE_CONFIG.json`: configurazione motore nutrizionale periodizzato (obiettivi, priorita', soglie EA, mapping categorie).
+- `templates/nutrition_base_template.shared.json`: bootstrap shared del piano base 5 pasti (solo struttura/option-set).
+- `templates/nutrition_base_template.schema.json`: regole di validazione (strict mode, opzioni immutabili, no merge).
 - `PORTION_STANDARDS.json`: tabelle 1-6 estratte da `sources/Standard-Quantitativi-delle-Porzioni.pdf`.
 - `LARN_PORTIONS.json`: porzioni standard LARN strutturate (v3).
 - `OPERATIVE_PORTIONS.json`: porzioni operative con moltiplicatori/annotazioni.
@@ -65,10 +78,14 @@ Comandi principali (dalla root del repo):
 ./tv food sync
 ./tv food crawl-index
 ./tv food rebuild-from-crea
+./tv food sync-dietabit
+./tv food auto-map-larn --dry-run
 ./tv food extract-portions
 ./tv load import sources/workouts-2.csv
+./tv running setup --no-history
 ./tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
 ./tv running summary
+./tv nutrition setup-base
 ./tv plan rest
 ./tv plan week 2026-W11
 ./tv plan month 2026-03
@@ -78,25 +95,47 @@ Comandi principali (dalla root del repo):
 - `food sync`: rigenera `knowledge/food-db.md` dai JSON.
 - `crawl-index`: aggiorna indice CREA.
 - `rebuild-from-crea`: ricostruisce DB alimenti da `CREA_INDEX.json` (con backup).
+- `sync-dietabit [--no-merge]`: crawl completo Dietabit -> `DIETABIT_DB.json`, confronto con `FOOD_DB` e merge sicuro dei mancanti (se non usi `--no-merge`) + report in `DIETABIT_COMPARE_REPORT.json`.
+- `auto-map-larn [--threshold X] [--dry-run]`: mapping semiautomatico verso `LARN_PORTIONS` con regole deterministiche.
+  - applica solo suggerimenti sopra soglia (`default 0.90`)
+  - salva report in `LARN_AUTOMAP_REPORT.json`
+  - salva casi dubbi/non mappati in `LARN_MAPPING_REVIEW_QUEUE.json`
 - `extract-portions`: rigenera `PORTION_STANDARDS.json` dal PDF e pulisce il testo.
 - `load import [--tp ...] [--garmin ...]`: importa uno o piu' CSV TrainingPeaks/Garmin (anche insieme), fa merge per data/seduta e aggiorna `training_load.json` con profili energetici per day-type.
 - `running generate ...`: genera `running_plan.json` su periodi multi-settimana/mensili con logica progressione, scarico e taper.
-  - include forza obbligatoria Mar+Gio (`day_type=forza`, km=0)
+  - include sessioni `forza` secondo configurazione atleta (`day_type=forza`, km=0)
   - applica pattern 3:1 (ogni 4a settimana scarico) con `test_5k` in seduta qualita'
   - aggiunge `pace_target` da `data/zones.json` per sedute running
   - periodizza il contenuto sedute per fase (`build/specific/taper/race`), non solo il volume
   - calcola TID settimanale (`low/moderate/high`) con guardrail da `RUNNING_PLAN_CONFIG.json`
   - con flag `--enforce-tid` prova a riallineare automaticamente il mix intensita' riducendo la "zona grigia"
-- `running setup`: colloquio coach interattivo (ispirato a Daniels/Pfitz/Canova/Seiler/Hudson) con richiesta storico CSV (`TrainingPeaks`/`Garmin`) e scrittura profilo/config/report + `training_load.json`.
+- `running setup`: colloquio coach interattivo (ispirato a Daniels/Pfitz/Canova/Seiler/Hudson) con import storico CSV (`TrainingPeaks`/`Garmin`) oppure setup manuale (`--no-history`), con scrittura profilo/config/report + `training_load.json`.
+  - senza `--athlete`, se il contesto e' `default`, i file vengono scritti sotto `data/athletes/<nome-normalizzato>/` e `knowledge/athletes/<nome-normalizzato>/`.
+  - in `--no-history`, se il profilo non ha volumi pregressi, il setup puo' proporre stima `auto` del volume iniziale (beginner/returning/trained) in base ai giorni running disponibili.
+  - i campi setup richiedono input esplicito (nessun default implicito).
+  - vincolo forza derivato automaticamente: `giorni_forza >= 1` -> non negoziabile `true`.
+- template base nutrizione:
+  - bootstrap shared: `data/templates/nutrition_base_template.shared.json`
+  - inizializzazione atleta: `data/athletes/<id>/nutrition_base_template.json`
+  - schema validazione: `data/templates/nutrition_base_template.schema.json`
+  - wizard compilazione: `./tv nutrition setup-base`
+    - senza `--athlete`, se il contesto e' `default`, il `Nome atleta` inserito nel wizard diventa la cartella target
+    - opzione `--strict-no-defaults`: azzera campi non strutturali prima del wizard
+    - i tag opzione sono inferiti automaticamente dal sistema in base ai blocchi alimentari selezionati
+    - il campo `when_to_use` e' suggerito automaticamente dal sistema
+    - i blocchi sono proposti dal sistema per scenario (`pre_workout`, `post_workout`, `default_day`)
+  - export leggibile atleta: `knowledge/athletes/<id>/nutrition-base-template.md`
+  - i vincoli personali non sono hardcodati nello shared template: vengono inseriti nel wizard e salvati nel `user_constraints` del template atleta.
+  - invarianti: nessuna grammatura nel template base, 1 sola opzione per pasto, no merge tra opzioni, mapping ingredienti via `food_db_id` obbligatorio.
 - `running month` / `running summary`: analisi operativa dei volumi per controllo periodizzazione.
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
-  - `plans/nutrition/<categoria>.md` (versione leggibile)
-  - `plans/nutrition/<categoria>.json` (versione strutturata)
-- `plan week <YYYY-Www>`: genera pacchetto settimanale in `plans/nutrition/weeks/<YYYY-Www>/` partendo dalle sedute di `running_plan.json`:
+  - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)
+  - `plans/nutrition/athletes/<id>/<categoria>.json` (versione strutturata)
+- `plan week <YYYY-Www>`: genera pacchetto settimanale in `plans/nutrition/athletes/<id>/weeks/<YYYY-Www>/` partendo dalle sedute di `running_plan.json`:
   - 7 file giornalieri `.md/.json`
   - `week-summary.md` e `week-summary.json`
   - ogni giorno applica `training_cost_kcal` specifico della seduta (source `running_plan_day`) e salva metadata (`phase`, `workout_label`, `session_date`) nel JSON
-- `plan month <YYYY-MM>`: genera pacchetto mensile in `plans/nutrition/months/<YYYY-MM>/` partendo dalle sedute di `running_plan.json`:
+- `plan month <YYYY-MM>`: genera pacchetto mensile in `plans/nutrition/athletes/<id>/months/<YYYY-MM>/` partendo dalle sedute di `running_plan.json`:
   - file giornalieri `.md/.json` per tutti i giorni coperti nel mese
   - `month-summary.md` e `month-summary.json`
 

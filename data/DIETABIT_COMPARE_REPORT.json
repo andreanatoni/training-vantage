@@ -1,0 +1,2938 @@
+{
+  "meta": {
+    "generated_at": "2026-02-16T16:56:45.489983",
+    "apply_merge": false,
+    "source_priority_policy": "CREA > BDA > DIETABIT",
+    "sources": {
+      "dietabit_db": "data/DIETABIT_DB.json",
+      "food_db": "data/FOOD_DB.json",
+      "mapping_db": "data/FOOD_DB_TO_LARN_MAPPING.json"
+    }
+  },
+  "stats": {
+    "dietabit_total": 1422,
+    "food_db_before": 2155,
+    "identical_existing": 1331,
+    "conflicting_existing": 91,
+    "conflicts_higher_priority_existing": 90,
+    "conflicts_same_or_lower_priority_existing": 1,
+    "missing_added": 0,
+    "missing_skipped": 0,
+    "food_db_after": 2155
+  },
+  "added_preview": [],
+  "conflicts_preview": [
+    {
+      "dietabit_id": "aglio",
+      "dietabit_name": "Aglio",
+      "existing_id": "aglio",
+      "existing_name": "Aglio",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 149.0,
+        "P": 6.36,
+        "CHO": 33.06,
+        "F": 0.5,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 53.0,
+        "P": 8.4,
+        "CHO": 1.0,
+        "F": 0.8,
+        "Fibre": 4.3
+      }
+    },
+    {
+      "dietabit_id": "albicocche_sciroppate",
+      "dietabit_name": "Albicocche sciroppate",
+      "existing_id": "albicocche_sciroppate",
+      "existing_name": "Albicocche, sciroppate",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 83.0,
+        "P": 0.64,
+        "CHO": 21.31,
+        "F": 0.11,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 65.0,
+        "P": 0.4,
+        "CHO": 16.1,
+        "F": 0.1,
+        "Fibre": 0.9
+      }
+    },
+    {
+      "dietabit_id": "anacardi",
+      "dietabit_name": "Anacardi",
+      "existing_id": "anacardi",
+      "existing_name": "Anacardi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 553.0,
+        "P": 18.22,
+        "CHO": 30.19,
+        "F": 43.85,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 604.0,
+        "P": 15.0,
+        "CHO": 33.0,
+        "F": 46.0,
+        "Fibre": 3.0
+      }
+    },
+    {
+      "dietabit_id": "ananas_sciroppato",
+      "dietabit_name": "Ananas sciroppato",
+      "existing_id": "ananas_sciroppato",
+      "existing_name": "Ananas, sciroppato",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 60.0,
+        "P": 0.51,
+        "CHO": 15.56,
+        "F": 0.11,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 66.0,
+        "P": 0.5,
+        "CHO": 16.6,
+        "F": 0.0,
+        "Fibre": 0.7
+      }
+    },
+    {
+      "dietabit_id": "aragosta",
+      "dietabit_name": "Aragosta",
+      "existing_id": "aragosta",
+      "existing_name": "Aragosta",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 77.0,
+        "P": 16.52,
+        "CHO": 0.0,
+        "F": 0.75,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 85.0,
+        "P": 16.0,
+        "CHO": 1.0,
+        "F": 1.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "aranciata",
+      "dietabit_name": "Aranciata",
+      "existing_id": "aranciata",
+      "existing_name": "Aranciata",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 48.0,
+        "P": 0.0,
+        "CHO": 12.3,
+        "F": 0.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 38.0,
+        "P": 0.1,
+        "CHO": 10.0,
+        "F": 0.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "aringa",
+      "dietabit_name": "Aringa",
+      "existing_id": "aringa",
+      "existing_name": "Aringa",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 158.0,
+        "P": 17.96,
+        "CHO": 0.0,
+        "F": 9.04,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 216.0,
+        "P": 16.5,
+        "CHO": 0.0,
+        "F": 16.7,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "aringa_affumicata",
+      "dietabit_name": "Aringa affumicata",
+      "existing_id": "aringa_affumicata",
+      "existing_name": "Aringa, affumicata",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 217.0,
+        "P": 24.58,
+        "CHO": 0.0,
+        "F": 12.37,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 194.0,
+        "P": 19.9,
+        "CHO": 0.0,
+        "F": 12.7,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "aringa_marinata",
+      "dietabit_name": "Aringa marinata",
+      "existing_id": "aringa_marinata",
+      "existing_name": "Aringa, marinata",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 262.0,
+        "P": 14.19,
+        "CHO": 9.64,
+        "F": 18.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 199.0,
+        "P": 18.3,
+        "CHO": 0.0,
+        "F": 14.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "basilico_fresco",
+      "dietabit_name": "Basilico fresco",
+      "existing_id": "basilico_fresco",
+      "existing_name": "Basilico, fresco",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 23.0,
+        "P": 3.15,
+        "CHO": 2.65,
+        "F": 0.64,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 42.0,
+        "P": 3.1,
+        "CHO": 5.2,
+        "F": 0.8,
+        "Fibre": 1.6
+      }
+    },
+    {
+      "dietabit_id": "biscotti_wafers",
+      "dietabit_name": "Biscotti wafers",
+      "existing_id": "biscotti_wafers",
+      "existing_name": "Biscotti, wafers",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 433.0,
+        "P": 6.6,
+        "CHO": 72.4,
+        "F": 14.2,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 452.0,
+        "P": 7.1,
+        "CHO": 76.2,
+        "F": 15.0,
+        "Fibre": 1.6
+      }
+    },
+    {
+      "dietabit_id": "brie",
+      "dietabit_name": "Brie",
+      "existing_id": "brie",
+      "existing_name": "Brie",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 334.0,
+        "P": 20.75,
+        "CHO": 0.45,
+        "F": 27.68,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 320.0,
+        "P": 19.3,
+        "CHO": 0.2,
+        "F": 26.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "burro",
+      "dietabit_name": "Burro",
+      "existing_id": "burro",
+      "existing_name": "Burro",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 717.0,
+        "P": 0.85,
+        "CHO": 0.06,
+        "F": 81.11,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 758.0,
+        "P": 0.8,
+        "CHO": 1.1,
+        "F": 83.4,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "cacao_amaro_in_polvere",
+      "dietabit_name": "Cacao amaro in polvere",
+      "existing_id": "cacao_amaro_in_polvere",
+      "existing_name": "Cacao amaro, in polvere",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 228.0,
+        "P": 19.6,
+        "CHO": 57.9,
+        "F": 13.7,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 355.0,
+        "P": 20.4,
+        "CHO": 11.5,
+        "F": 25.6,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "caffe_espresso",
+      "dietabit_name": "Caffè espresso",
+      "existing_id": "caffe_espresso",
+      "existing_name": "Caffè espresso",
+      "existing_source_type": "DIETABIT",
+      "policy": "keep_existing_no_override",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "mL",
+        "label": "100 ml"
+      },
+      "dietabit_nutrients": {
+        "kcal": 2.0,
+        "P": 0.12,
+        "CHO": 0.0,
+        "F": 0.18,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 2.0,
+        "P": 0.12,
+        "CHO": 0.0,
+        "F": 0.18,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "camembert",
+      "dietabit_name": "Camembert",
+      "existing_id": "camembert",
+      "existing_name": "Camembert",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 300.0,
+        "P": 19.8,
+        "CHO": 0.46,
+        "F": 24.26,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 307.0,
+        "P": 20.9,
+        "CHO": 0.2,
+        "F": 24.7,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "caramelle_dure",
+      "dietabit_name": "Caramelle dure",
+      "existing_id": "caramelle_dure",
+      "existing_name": "Caramelle dure",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 394.0,
+        "P": 0.0,
+        "CHO": 98.0,
+        "F": 0.2,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 344.0,
+        "P": 0.0,
+        "CHO": 91.6,
+        "F": 0.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "carciofi_surgelati",
+      "dietabit_name": "Carciofi surgelati",
+      "existing_id": "carciofi_surgelati",
+      "existing_name": "Carciofi, surgelati",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 38.0,
+        "P": 2.63,
+        "CHO": 7.76,
+        "F": 0.43,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 32.0,
+        "P": 2.7,
+        "CHO": 2.5,
+        "F": 0.2,
+        "Fibre": 5.0
+      }
+    },
+    {
+      "dietabit_id": "carpa",
+      "dietabit_name": "Carpa",
+      "existing_id": "carpa",
+      "existing_name": "Carpa",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 127.0,
+        "P": 17.83,
+        "CHO": 0.0,
+        "F": 5.6,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 139.0,
+        "P": 18.9,
+        "CHO": 0.0,
+        "F": 7.1,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "castagne_bollite",
+      "dietabit_name": "Castagne bollite",
+      "existing_id": "castagne_bollite",
+      "existing_name": "Castagne, bollite",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 131.0,
+        "P": 2.0,
+        "CHO": 27.76,
+        "F": 1.38,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 130.0,
+        "P": 2.5,
+        "CHO": 26.1,
+        "F": 1.3,
+        "Fibre": 5.4
+      }
+    },
+    {
+      "dietabit_id": "castagne_secche",
+      "dietabit_name": "Castagne secche",
+      "existing_id": "castagne_secche",
+      "existing_name": "Castagne, secche",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 369.0,
+        "P": 5.01,
+        "CHO": 78.43,
+        "F": 3.91,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 315.0,
+        "P": 6.0,
+        "CHO": 62.0,
+        "F": 3.4,
+        "Fibre": 13.8
+      }
+    },
+    {
+      "dietabit_id": "cheddar",
+      "dietabit_name": "Cheddar",
+      "existing_id": "cheddar",
+      "existing_name": "Cheddar",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 403.0,
+        "P": 24.9,
+        "CHO": 1.28,
+        "F": 33.14,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 388.0,
+        "P": 26.7,
+        "CHO": 0.5,
+        "F": 31.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "cocco_essiccato",
+      "dietabit_name": "Cocco essiccato",
+      "existing_id": "cocco_essiccato",
+      "existing_name": "Cocco, essiccato",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 443.0,
+        "P": 3.35,
+        "CHO": 40.91,
+        "F": 31.69,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 669.0,
+        "P": 5.6,
+        "CHO": 16.4,
+        "F": 62.0,
+        "Fibre": 13.7
+      }
+    },
+    {
+      "dietabit_id": "coppa",
+      "dietabit_name": "Coppa",
+      "existing_id": "coppa",
+      "existing_name": "Coppa",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 401.0,
+        "P": 28.9,
+        "CHO": 0.0,
+        "F": 31.6,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 400.0,
+        "P": 28.9,
+        "CHO": 0.0,
+        "F": 31.6,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "crackers_integrali",
+      "dietabit_name": "Crackers integrali",
+      "existing_id": "crackers_integrali",
+      "existing_name": "Crackers, integrali",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 398.0,
+        "P": 7.14,
+        "CHO": 68.25,
+        "F": 10.71,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 402.0,
+        "P": 12.0,
+        "CHO": 61.7,
+        "F": 11.4,
+        "Fibre": 10.0
+      }
+    },
+    {
+      "dietabit_id": "cuore_di_pollo",
+      "dietabit_name": "Cuore di pollo",
+      "existing_id": "cuore_di_pollo",
+      "existing_name": "Cuore di pollo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 153.0,
+        "P": 15.55,
+        "CHO": 0.71,
+        "F": 9.33,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 103.0,
+        "P": 14.1,
+        "CHO": 0.2,
+        "F": 5.1,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "fagioli",
+      "dietabit_name": "Fagioli",
+      "existing_id": "fagioli",
+      "existing_name": "Fagioli",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 339.0,
+        "P": 21.25,
+        "CHO": 63.25,
+        "F": 0.9,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 326.0,
+        "P": 23.6,
+        "CHO": 47.5,
+        "F": 2.0,
+        "Fibre": 17.5
+      }
+    },
+    {
+      "dietabit_id": "farina_d_avena",
+      "dietabit_name": "Farina d'avena",
+      "existing_id": "farina_d_avena",
+      "existing_name": "Farina d'avena",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 404.0,
+        "P": 14.66,
+        "CHO": 65.7,
+        "F": 9.12,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 378.0,
+        "P": 12.6,
+        "CHO": 66.3,
+        "F": 7.1,
+        "Fibre": 7.6
+      }
+    },
+    {
+      "dietabit_id": "farina_d_orzo",
+      "dietabit_name": "Farina d'orzo",
+      "existing_id": "farina_d_orzo",
+      "existing_name": "Farina d'orzo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 345.0,
+        "P": 10.5,
+        "CHO": 74.52,
+        "F": 1.6,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 333.0,
+        "P": 10.6,
+        "CHO": 68.4,
+        "F": 1.9,
+        "Fibre": 8.5
+      }
+    },
+    {
+      "dietabit_id": "farina_di_mais",
+      "dietabit_name": "Farina di mais",
+      "existing_id": "farina_di_mais",
+      "existing_name": "Farina di mais",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 375.0,
+        "P": 5.59,
+        "CHO": 82.75,
+        "F": 1.39,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 341.0,
+        "P": 8.7,
+        "CHO": 73.5,
+        "F": 2.7,
+        "Fibre": 3.1
+      }
+    },
+    {
+      "dietabit_id": "farina_di_riso",
+      "dietabit_name": "Farina di riso",
+      "existing_id": "farina_di_riso",
+      "existing_name": "Farina di riso",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 366.0,
+        "P": 5.95,
+        "CHO": 80.13,
+        "F": 1.42,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 332.0,
+        "P": 7.3,
+        "CHO": 79.1,
+        "F": 0.5,
+        "Fibre": 1.0
+      }
+    },
+    {
+      "dietabit_id": "farina_di_segale",
+      "dietabit_name": "Farina di segale",
+      "existing_id": "farina_di_segale",
+      "existing_name": "Farina di segale",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 349.0,
+        "P": 10.88,
+        "CHO": 75.43,
+        "F": 1.52,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 342.0,
+        "P": 11.7,
+        "CHO": 67.8,
+        "F": 2.0,
+        "Fibre": 11.3
+      }
+    },
+    {
+      "dietabit_id": "farina_di_soia",
+      "dietabit_name": "Farina di soia",
+      "existing_id": "farina_di_soia",
+      "existing_name": "Farina di soia",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 436.0,
+        "P": 34.54,
+        "CHO": 35.19,
+        "F": 20.65,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 469.0,
+        "P": 36.8,
+        "CHO": 23.4,
+        "F": 23.5,
+        "Fibre": 11.2
+      }
+    },
+    {
+      "dietabit_id": "fave_fresche",
+      "dietabit_name": "Fave fresche",
+      "existing_id": "fave_fresche",
+      "existing_name": "Fave, fresche",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 72.0,
+        "P": 5.6,
+        "CHO": 11.7,
+        "F": 0.6,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 51.0,
+        "P": 5.2,
+        "CHO": 4.5,
+        "F": 0.4,
+        "Fibre": 5.0
+      }
+    },
+    {
+      "dietabit_id": "fave_secche",
+      "dietabit_name": "Fave secche",
+      "existing_id": "fave_secche",
+      "existing_name": "Fave, secche",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 341.0,
+        "P": 26.12,
+        "CHO": 58.29,
+        "F": 1.53,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 331.0,
+        "P": 21.3,
+        "CHO": 52.8,
+        "F": 2.1,
+        "Fibre": 14.7
+      }
+    },
+    {
+      "dietabit_id": "fecola_di_patate",
+      "dietabit_name": "Fecola di patate",
+      "existing_id": "fecola_di_patate",
+      "existing_name": "Fecola di patate",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 357.0,
+        "P": 6.9,
+        "CHO": 83.1,
+        "F": 0.34,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 346.0,
+        "P": 1.4,
+        "CHO": 90.7,
+        "F": 0.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "fegato_di_tacchino",
+      "dietabit_name": "Fegato di tacchino",
+      "existing_id": "fegato_di_tacchino",
+      "existing_name": "Fegato di tacchino",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 228.0,
+        "P": 17.84,
+        "CHO": 2.26,
+        "F": 16.36,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 127.0,
+        "P": 17.8,
+        "CHO": 0.5,
+        "F": 6.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "feta",
+      "dietabit_name": "Feta",
+      "existing_id": "feta",
+      "existing_name": "Feta",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 264.0,
+        "P": 14.21,
+        "CHO": 4.09,
+        "F": 21.28,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 250.0,
+        "P": 15.6,
+        "CHO": 1.5,
+        "F": 20.2,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "fichi_secchi",
+      "dietabit_name": "Fichi secchi",
+      "existing_id": "fichi_secchi",
+      "existing_name": "Fichi, secchi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 249.0,
+        "P": 3.3,
+        "CHO": 63.87,
+        "F": 0.93,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 282.0,
+        "P": 3.5,
+        "CHO": 58.0,
+        "F": 2.7,
+        "Fibre": 13.0
+      }
+    },
+    {
+      "dietabit_id": "fontina",
+      "dietabit_name": "Fontina",
+      "existing_id": "fontina",
+      "existing_name": "Fontina",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 389.0,
+        "P": 25.6,
+        "CHO": 1.55,
+        "F": 31.14,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 361.0,
+        "P": 24.5,
+        "CHO": 0.8,
+        "F": 28.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "gamberi",
+      "dietabit_name": "Gamberi",
+      "existing_id": "gamberi",
+      "existing_name": "Gamberi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 71.0,
+        "P": 13.61,
+        "CHO": 0.91,
+        "F": 1.01,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 71.0,
+        "P": 13.6,
+        "CHO": 2.9,
+        "F": 0.6,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "germogli_di_soia",
+      "dietabit_name": "Germogli di soia",
+      "existing_id": "germogli_di_soia",
+      "existing_name": "Germogli di soia",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 122.0,
+        "P": 13.09,
+        "CHO": 9.57,
+        "F": 6.7,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 54.0,
+        "P": 6.2,
+        "CHO": 3.0,
+        "F": 1.4,
+        "Fibre": 2.8
+      }
+    },
+    {
+      "dietabit_id": "gorgonzola",
+      "dietabit_name": "Gorgonzola",
+      "existing_id": "gorgonzola",
+      "existing_name": "Gorgonzola",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 353.0,
+        "P": 21.4,
+        "CHO": 2.34,
+        "F": 28.74,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 324.0,
+        "P": 19.1,
+        "CHO": 1.0,
+        "F": 27.1,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "grano_saraceno",
+      "dietabit_name": "Grano saraceno",
+      "existing_id": "grano_saraceno",
+      "existing_name": "Grano saraceno",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 343.0,
+        "P": 13.25,
+        "CHO": 71.5,
+        "F": 3.4,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 329.0,
+        "P": 12.4,
+        "CHO": 61.2,
+        "F": 3.3,
+        "Fibre": 10.0
+      }
+    },
+    {
+      "dietabit_id": "halibut",
+      "dietabit_name": "Halibut",
+      "existing_id": "halibut",
+      "existing_name": "Halibut",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 91.0,
+        "P": 18.56,
+        "CHO": 0.0,
+        "F": 1.33,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 114.0,
+        "P": 20.6,
+        "CHO": 0.0,
+        "F": 3.5,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "lardo",
+      "dietabit_name": "Lardo",
+      "existing_id": "lardo",
+      "existing_name": "Lardo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 902.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 891.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "latte_di_bufala",
+      "dietabit_name": "Latte di bufala",
+      "existing_id": "latte_di_bufala",
+      "existing_name": "Latte di bufala",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 97.0,
+        "P": 3.75,
+        "CHO": 5.18,
+        "F": 6.89,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 114.0,
+        "P": 4.5,
+        "CHO": 5.1,
+        "F": 8.5,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "latte_di_pecora",
+      "dietabit_name": "Latte di pecora",
+      "existing_id": "latte_di_pecora",
+      "existing_name": "Latte di pecora",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 108.0,
+        "P": 5.98,
+        "CHO": 5.36,
+        "F": 7.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 103.0,
+        "P": 5.3,
+        "CHO": 5.2,
+        "F": 6.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "luccio",
+      "dietabit_name": "Luccio",
+      "existing_id": "luccio",
+      "existing_name": "Luccio",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 88.0,
+        "P": 19.26,
+        "CHO": 0.0,
+        "F": 0.69,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 81.0,
+        "P": 18.7,
+        "CHO": 0.1,
+        "F": 0.6,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "mais",
+      "dietabit_name": "Mais",
+      "existing_id": "mais",
+      "existing_name": "Mais",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 365.0,
+        "P": 9.42,
+        "CHO": 74.26,
+        "F": 4.74,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 357.0,
+        "P": 9.2,
+        "CHO": 75.1,
+        "F": 3.8,
+        "Fibre": 2.0
+      }
+    },
+    {
+      "dietabit_id": "miele",
+      "dietabit_name": "Miele",
+      "existing_id": "miele",
+      "existing_name": "Miele",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 304.0,
+        "P": 0.3,
+        "CHO": 82.4,
+        "F": 0.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 304.0,
+        "P": 0.6,
+        "CHO": 80.3,
+        "F": 0.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "miglio",
+      "dietabit_name": "Miglio",
+      "existing_id": "miglio",
+      "existing_name": "Miglio",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 378.0,
+        "P": 11.02,
+        "CHO": 72.85,
+        "F": 4.22,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 343.0,
+        "P": 11.8,
+        "CHO": 64.9,
+        "F": 3.9,
+        "Fibre": 8.5
+      }
+    },
+    {
+      "dietabit_id": "muesli",
+      "dietabit_name": "Muesli",
+      "existing_id": "muesli",
+      "existing_name": "Muesli",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 340.0,
+        "P": 9.7,
+        "CHO": 77.8,
+        "F": 4.9,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 374.0,
+        "P": 9.7,
+        "CHO": 71.7,
+        "F": 6.0,
+        "Fibre": 6.4
+      }
+    },
+    {
+      "dietabit_id": "noci",
+      "dietabit_name": "Noci",
+      "existing_id": "noci",
+      "existing_name": "Noci",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 654.0,
+        "P": 15.23,
+        "CHO": 13.71,
+        "F": 65.21,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 589.0,
+        "P": 10.5,
+        "CHO": 5.5,
+        "F": 57.7,
+        "Fibre": 3.5
+      }
+    },
+    {
+      "dietabit_id": "olio_di_cocco",
+      "dietabit_name": "Olio di cocco",
+      "existing_id": "olio_di_cocco",
+      "existing_name": "Olio di cocco",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 862.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_fegato_di_merluzzo",
+      "dietabit_name": "Olio di fegato di merluzzo",
+      "existing_id": "olio_di_fegato_di_merluzzo",
+      "existing_name": "Olio di fegato di merluzzo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 902.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_germe_di_grano",
+      "dietabit_name": "Olio di germe di grano",
+      "existing_id": "olio_di_germe_di_grano",
+      "existing_name": "Olio di germe di grano",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 884.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_oliva",
+      "dietabit_name": "Olio di oliva",
+      "existing_id": "olio_di_oliva",
+      "existing_name": "Olio di oliva",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 884.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_palma",
+      "dietabit_name": "Olio di palma",
+      "existing_id": "olio_di_palma",
+      "existing_name": "Olio di palma",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 884.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_soia",
+      "dietabit_name": "Olio di soia",
+      "existing_id": "olio_di_soia",
+      "existing_name": "Olio di soia",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 884.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olio_di_vinacciolo",
+      "dietabit_name": "Olio di vinacciolo",
+      "existing_id": "olio_di_vinacciolo",
+      "existing_name": "Olio di vinacciolo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 884.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 100.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 899.0,
+        "P": 0.0,
+        "CHO": 0.0,
+        "F": 99.9,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "olive_nere",
+      "dietabit_name": "Olive nere",
+      "existing_id": "olive_nere",
+      "existing_name": "Olive, nere",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 115.0,
+        "P": 0.84,
+        "CHO": 6.26,
+        "F": 10.68,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 243.0,
+        "P": 1.6,
+        "CHO": 0.8,
+        "F": 25.1,
+        "Fibre": 3.9
+      }
+    },
+    {
+      "dietabit_id": "olive_verdi",
+      "dietabit_name": "Olive verdi",
+      "existing_id": "olive_verdi",
+      "existing_name": "Olive, verdi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 145.0,
+        "P": 1.03,
+        "CHO": 3.84,
+        "F": 15.32,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 148.0,
+        "P": 0.8,
+        "CHO": 1.0,
+        "F": 15.0,
+        "Fibre": 3.0
+      }
+    },
+    {
+      "dietabit_id": "orzo_perlato",
+      "dietabit_name": "Orzo perlato",
+      "existing_id": "orzo_perlato",
+      "existing_name": "Orzo perlato",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 352.0,
+        "P": 9.91,
+        "CHO": 77.72,
+        "F": 1.16,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 346.0,
+        "P": 9.4,
+        "CHO": 73.7,
+        "F": 1.5,
+        "Fibre": 9.2
+      }
+    },
+    {
+      "dietabit_id": "pane_bianco",
+      "dietabit_name": "Pane bianco",
+      "existing_id": "pane_bianco",
+      "existing_name": "Pane bianco",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 238.0,
+        "P": 10.66,
+        "CHO": 43.91,
+        "F": 2.15,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 268.0,
+        "P": 8.1,
+        "CHO": 59.5,
+        "F": 0.5,
+        "Fibre": 3.8
+      }
+    },
+    {
+      "dietabit_id": "pane_di_segale",
+      "dietabit_name": "Pane di segale",
+      "existing_id": "pane_di_segale",
+      "existing_name": "Pane di segale",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 258.0,
+        "P": 8.5,
+        "CHO": 48.3,
+        "F": 3.3,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 228.0,
+        "P": 8.3,
+        "CHO": 45.4,
+        "F": 1.7,
+        "Fibre": 4.6
+      }
+    },
+    {
+      "dietabit_id": "patate_fritte",
+      "dietabit_name": "Patate fritte",
+      "existing_id": "patate_fritte",
+      "existing_name": "Patate, fritte",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 314.0,
+        "P": 3.76,
+        "CHO": 38.44,
+        "F": 16.12,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 192.0,
+        "P": 3.9,
+        "CHO": 29.9,
+        "F": 6.7,
+        "Fibre": 2.2
+      }
+    },
+    {
+      "dietabit_id": "pate_di_pollo",
+      "dietabit_name": "Paté di pollo",
+      "existing_id": "pate_di_pollo",
+      "existing_name": "Patè di pollo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 158.0,
+        "P": 18.01,
+        "CHO": 4.05,
+        "F": 17.56,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 289.0,
+        "P": 11.1,
+        "CHO": 2.3,
+        "F": 26.2,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "pecorino",
+      "dietabit_name": "Pecorino",
+      "existing_id": "pecorino",
+      "existing_name": "Pecorino",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 387.0,
+        "P": 31.8,
+        "CHO": 3.63,
+        "F": 26.94,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 404.0,
+        "P": 28.8,
+        "CHO": 0.2,
+        "F": 32.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "pepe_nero",
+      "dietabit_name": "Pepe nero",
+      "existing_id": "pepe_nero",
+      "existing_name": "Pepe nero",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 251.0,
+        "P": 10.39,
+        "CHO": 63.95,
+        "F": 3.26,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 311.0,
+        "P": 11.4,
+        "CHO": 49.0,
+        "F": 3.3,
+        "Fibre": 25.9
+      }
+    },
+    {
+      "dietabit_id": "pesce_gatto",
+      "dietabit_name": "Pesce gatto",
+      "existing_id": "pesce_gatto",
+      "existing_name": "Pesce gatto",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 119.0,
+        "P": 15.23,
+        "CHO": 0.0,
+        "F": 5.94,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 92.0,
+        "P": 15.5,
+        "CHO": 0.2,
+        "F": 3.3,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "pesche_sciroppate",
+      "dietabit_name": "Pesche sciroppate",
+      "existing_id": "pesche_sciroppate",
+      "existing_name": "Pesche, sciroppate",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 72.0,
+        "P": 0.52,
+        "CHO": 18.43,
+        "F": 0.18,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 56.0,
+        "P": 0.5,
+        "CHO": 14.0,
+        "F": 0.0,
+        "Fibre": 0.9
+      }
+    },
+    {
+      "dietabit_id": "pinoli",
+      "dietabit_name": "Pinoli",
+      "existing_id": "pinoli",
+      "existing_name": "Pinoli",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 673.0,
+        "P": 13.69,
+        "CHO": 13.08,
+        "F": 68.37,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 604.0,
+        "P": 31.9,
+        "CHO": 4.0,
+        "F": 50.3,
+        "Fibre": 4.5
+      }
+    },
+    {
+      "dietabit_id": "piselli_freschi",
+      "dietabit_name": "Piselli freschi",
+      "existing_id": "piselli_freschi",
+      "existing_name": "Piselli, freschi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 81.0,
+        "P": 5.42,
+        "CHO": 14.45,
+        "F": 0.4,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 64.0,
+        "P": 5.5,
+        "CHO": 6.5,
+        "F": 0.6,
+        "Fibre": 6.3
+      }
+    },
+    {
+      "dietabit_id": "piselli_surgelati",
+      "dietabit_name": "Piselli surgelati",
+      "existing_id": "piselli_surgelati",
+      "existing_name": "Piselli, surgelati",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 77.0,
+        "P": 5.22,
+        "CHO": 13.62,
+        "F": 0.4,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 61.0,
+        "P": 5.4,
+        "CHO": 6.5,
+        "F": 0.3,
+        "Fibre": 6.3
+      }
+    },
+    {
+      "dietabit_id": "pistacchi",
+      "dietabit_name": "Pistacchi",
+      "existing_id": "pistacchi",
+      "existing_name": "Pistacchi",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 562.0,
+        "P": 20.27,
+        "CHO": 27.51,
+        "F": 45.39,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 629.0,
+        "P": 18.1,
+        "CHO": 8.1,
+        "F": 56.1,
+        "Fibre": 10.6
+      }
+    },
+    {
+      "dietabit_id": "polpo",
+      "dietabit_name": "Polpo",
+      "existing_id": "polpo",
+      "existing_name": "Polpo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 82.0,
+        "P": 14.91,
+        "CHO": 2.2,
+        "F": 1.04,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 57.0,
+        "P": 10.6,
+        "CHO": 1.4,
+        "F": 1.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "pop_corn",
+      "dietabit_name": "Pop corn",
+      "existing_id": "pop_corn",
+      "existing_name": "Pop corn",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 429.0,
+        "P": 12.6,
+        "CHO": 73.39,
+        "F": 9.5,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 408.0,
+        "P": 12.0,
+        "CHO": 77.9,
+        "F": 4.2,
+        "Fibre": 15.1
+      }
+    },
+    {
+      "dietabit_id": "prosciutto_cotto_alta_qualita_sgrassato",
+      "dietabit_name": "Prosciutto cotto alta qualità sgrassato",
+      "existing_id": "prosciutto_cotto_alta_qualita_sgrassato",
+      "existing_name": "Prosciutto cotto, alta qualità, sgrassato",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 127.0,
+        "P": 19.5,
+        "CHO": 0.9,
+        "F": 5.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 126.0,
+        "P": 19.5,
+        "CHO": 0.9,
+        "F": 5.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "provolone",
+      "dietabit_name": "Provolone",
+      "existing_id": "provolone",
+      "existing_name": "Provolone",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 351.0,
+        "P": 25.58,
+        "CHO": 2.14,
+        "F": 26.62,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 374.0,
+        "P": 28.1,
+        "CHO": 2.0,
+        "F": 28.2,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "prugne_secche",
+      "dietabit_name": "Prugne secche",
+      "existing_id": "prugne_secche",
+      "existing_name": "Prugne, secche",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 240.0,
+        "P": 2.18,
+        "CHO": 63.88,
+        "F": 0.38,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 236.0,
+        "P": 2.2,
+        "CHO": 55.0,
+        "F": 0.5,
+        "Fibre": 8.4
+      }
+    },
+    {
+      "dietabit_id": "riso_integrale",
+      "dietabit_name": "Riso integrale",
+      "existing_id": "riso_integrale",
+      "existing_name": "Riso, integrale",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 370.0,
+        "P": 7.94,
+        "CHO": 77.24,
+        "F": 2.92,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 341.0,
+        "P": 7.5,
+        "CHO": 77.4,
+        "F": 1.9,
+        "Fibre": 1.9
+      }
+    },
+    {
+      "dietabit_id": "riso_parboiled",
+      "dietabit_name": "Riso parboiled",
+      "existing_id": "riso_parboiled",
+      "existing_name": "Riso, parboiled",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 374.0,
+        "P": 7.51,
+        "CHO": 80.89,
+        "F": 1.03,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 338.0,
+        "P": 7.4,
+        "CHO": 81.3,
+        "F": 0.3,
+        "Fibre": 0.5
+      }
+    },
+    {
+      "dietabit_id": "rombo",
+      "dietabit_name": "Rombo",
+      "existing_id": "rombo",
+      "existing_name": "Rombo",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 95.0,
+        "P": 16.05,
+        "CHO": 0.0,
+        "F": 2.95,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 81.0,
+        "P": 16.3,
+        "CHO": 1.2,
+        "F": 1.3,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "salame_milano",
+      "dietabit_name": "Salame Milano",
+      "existing_id": "salame_milano",
+      "existing_name": "Salame Milano",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 384.0,
+        "P": 25.4,
+        "CHO": 1.1,
+        "F": 31.0,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 385.0,
+        "P": 25.4,
+        "CHO": 1.1,
+        "F": 31.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "salmone",
+      "dietabit_name": "Salmone",
+      "existing_id": "salmone",
+      "existing_name": "Salmone",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 142.0,
+        "P": 19.84,
+        "CHO": 0.0,
+        "F": 6.34,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 185.0,
+        "P": 18.4,
+        "CHO": 1.0,
+        "F": 12.0,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "salmone_affumicato",
+      "dietabit_name": "Salmone affumicato",
+      "existing_id": "salmone_affumicato",
+      "existing_name": "Salmone, affumicato",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 117.0,
+        "P": 18.28,
+        "CHO": 0.0,
+        "F": 4.32,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 147.0,
+        "P": 25.4,
+        "CHO": 1.2,
+        "F": 4.5,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "semola",
+      "dietabit_name": "Semola",
+      "existing_id": "semola",
+      "existing_name": "Semola",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 360.0,
+        "P": 12.68,
+        "CHO": 72.83,
+        "F": 1.05,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 346.0,
+        "P": 11.5,
+        "CHO": 76.9,
+        "F": 0.5,
+        "Fibre": 3.6
+      }
+    },
+    {
+      "dietabit_id": "spinaci_surgelati",
+      "dietabit_name": "Spinaci surgelati",
+      "existing_id": "spinaci_surgelati",
+      "existing_name": "Spinaci, surgelati",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 29.0,
+        "P": 3.63,
+        "CHO": 4.21,
+        "F": 0.57,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 15.0,
+        "P": 2.8,
+        "CHO": 0.0,
+        "F": 0.0,
+        "Fibre": 1.8
+      }
+    },
+    {
+      "dietabit_id": "storione",
+      "dietabit_name": "Storione",
+      "existing_id": "storione",
+      "existing_name": "Storione",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 105.0,
+        "P": 16.14,
+        "CHO": 0.0,
+        "F": 4.04,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 145.0,
+        "P": 19.2,
+        "CHO": 0.0,
+        "F": 7.6,
+        "Fibre": 0.0
+      }
+    },
+    {
+      "dietabit_id": "trota",
+      "dietabit_name": "Trota",
+      "existing_id": "trota",
+      "existing_name": "Trota",
+      "existing_source_type": "CREA",
+      "policy": "keep_existing_due_to_priority",
+      "dietabit_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "existing_reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "dietabit_nutrients": {
+        "kcal": 148.0,
+        "P": 20.77,
+        "CHO": 0.0,
+        "F": 6.61,
+        "Fibre": 0.0
+      },
+      "existing_nutrients": {
+        "kcal": 86.0,
+        "P": 14.7,
+        "CHO": 0.0,
+        "F": 3.0,
+        "Fibre": 0.0
+      }
+    }
+  ]
+}
