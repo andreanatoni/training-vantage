@@ -81,6 +81,11 @@ Contiene:
 - Giornaliero categoria: `./tv plan <categoria>`
 - Settimanale da running plan: `./tv plan week <YYYY-Www>`
 - Mensile da running plan: `./tv plan month <YYYY-MM>`
+- Build/migrazione meal options strutturati: `./tv plan build-options` (genera `knowledge/meal_options/*.json`)
+
+Path primario planner:
+- `./tv plan ...` legge `knowledge/meal_options/<categoria>.json`
+- fallback temporaneo ai markdown STALE (`sources/piano_*.md`) solo se il JSON manca
 
 Output:
 - `plans/nutrition/athletes/<id>/*.md`

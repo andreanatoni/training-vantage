@@ -2,8 +2,8 @@
 """
 /tv plan <categoria> [--all]
 
-Genera piano nutrizionale completo per categoria estraendo dai piani STALE validati.
-Questo e' il path primario ufficiale per la generazione piani (`./tv plan ...`).
+Genera piano nutrizionale completo per categoria usando meal_options strutturati.
+Fallback temporaneo: parsing STALE markdown se i JSON non sono presenti.
 """
 
 import sys
@@ -15,26 +15,14 @@ from datetime import datetime, timedelta
 from extract_from_stale import StalePlanParser
 from athlete_context import DATA_DIR as SHARED_DATA_DIR, athlete_plans_dir, data_file, ensure_athlete_dirs, get_athlete_id
 from integration_config import load_integration_config_strict
+from meal_options_repository import CATEGORY_SOURCES, load_plan_for_category
 
-SOURCES_DIR = Path(__file__).parent.parent / "sources"
 PLANS_DIR = athlete_plans_dir()
 COMPOSITION_FILE = data_file("composition.json")
 CHANGELOG_FILE = data_file("changelog.json")
 NUTRITION_ENGINE_CONFIG_FILE = data_file("NUTRITION_ENGINE_CONFIG.json")
 TRAINING_LOAD_FILE = data_file("training_load.json")
 RUNNING_PLAN_FILE = data_file("running_plan.json")
-
-# Mapping categoria → file sorgente STALE
-CATEGORY_SOURCES = {
-    'forza': 'piano_forza.md',
-    'easy-run': 'piano_easy_run.md',
-    'qualita': 'piano_qualita.md',
-    'tempo': 'piano_tempo.md',
-    'lungo': 'piano_lungo.md',
-    'rest': 'piano_rest.md',
-    'pizza-day': 'piano_pizza_day.md',
-    'domenica': 'piano_domenica.md'
-}
 
 VALID_CATEGORIES = list(CATEGORY_SOURCES.keys())
 RUNNING_DAY_TYPE_TO_PROFILE = {
@@ -343,22 +331,17 @@ def build_plan_json_payload(category, plan_data, body_data, engine_meta):
 
 def generate_plan(category, silent=False, engine_overrides=None, output_md_file=None, output_json_file=None):
     """Genera piano completo per categoria"""
-    # Trova file sorgente
-    source_file = CATEGORY_SOURCES.get(category)
-
-    if not source_file:
+    if category not in CATEGORY_SOURCES:
         print(f"❌ Categoria {category} non trovata in mapping")
         return False
 
-    source_path = SOURCES_DIR / source_file
-
-    if not source_path.exists():
-        print(f"❌ File sorgente non trovato: {source_path}")
-        return False
-
-    # Parse e scala
+    # Parse da JSON strutturato (fallback STALE gestito internamente)
     parser = StalePlanParser()
-    plan_data = parser.parse_plan_file(source_path)
+    try:
+        plan_data = load_plan_for_category(category, parser=parser, allow_fallback=True)
+    except Exception as exc:
+        print(f"❌ Errore caricamento meal options per categoria '{category}': {exc}")
+        return False
 
     old_bmr = plan_data['bmr']
     body_data = get_current_body_data()

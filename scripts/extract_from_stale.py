@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Estrae opzioni complete dai piani STALE esistenti.
+DEPRECATO (fallback temporaneo).
 
-Legge i piani validati (sources/piano_*.md) e estrae:
-- Tutte le opzioni per ogni pasto
-- Grammature esatte
-- Totali verificati
-- Swap equivalenti
+Parser legacy dei piani STALE markdown in sources/piano_*.md.
+Path primario corrente: knowledge/meal_options/*.json (vedi scripts/build_meal_options.py).
 """
 
 import re
 from pathlib import Path
-from food_db import FoodDB
+
+try:
+    from scripts.food_db import FoodDB
+except ModuleNotFoundError:
+    from food_db import FoodDB
 
 SOURCES_DIR = Path(__file__).parent.parent / "sources"
 

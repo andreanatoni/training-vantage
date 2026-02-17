@@ -65,6 +65,11 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
       Esempio: tv plan week 2026-W11 # genera piano nutrizione per tutta la settimana dal running_plan
       Esempio: tv plan month 2026-03 # genera piano nutrizione per il mese dal running_plan
 
+  plan build-options [--category <categoria>]
+      Migra/rigenera knowledge/meal_options/*.json da sources/piano_*.md (fallback STALE deprecato)
+      Esempio: tv plan build-options
+      Esempio: tv plan build-options --category forza
+
 COMANDI DISPONIBILI (Priorità 3 — Running):
 
   week <N>
@@ -202,7 +207,12 @@ case "$1" in
         ;;
     plan)
         shift
-        python3 "$SCRIPTS_DIR/plan.py" "$@"
+        if [ "$1" = "build-options" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/build_meal_options.py" "$@"
+        else
+            python3 "$SCRIPTS_DIR/plan.py" "$@"
+        fi
         ;;
     week)
         shift
