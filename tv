@@ -138,6 +138,18 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food auto-map-larn --dry-run
       Esempio: tv food auto-map-larn --threshold 0.92
 
+  food build-active
+      Genera subset alimenti attivi per atleta in data/athletes/<id>/FOOD_DB_ACTIVE.json
+      (estrazione da nutrition_base_template + piani nutrizione atleta)
+      Esempio: tv food build-active
+      Esempio: tv --athlete spizz food build-active
+
+  food import-mapped [--file data/food_mapped.md] [--dry-run] [--strict-complete]
+      Importa mapping massivo food_db_id|larn_portion_id in FOOD_DB_TO_LARN_MAPPING.json
+      con validazioni hard, backup automatico e report json/md.
+      Esempio: tv food import-mapped --dry-run --strict-complete
+      Esempio: tv food import-mapped --file data/food_mapped.md --strict-complete
+
   food map-larn <subcommand>
       Revisione manuale one-by-one FOOD_DB -> LARN
       Subcommands:
@@ -218,6 +230,11 @@ case "$1" in
         elif [ "$1" = "auto-map-larn" ]; then
             shift
             python3 "$SCRIPTS_DIR/auto_map_larn.py" "$@"
+        elif [ "$1" = "build-active" ]; then
+            python3 "$SCRIPTS_DIR/build_active_food_db.py"
+        elif [ "$1" = "import-mapped" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/import_mapped.py" "$@"
         elif [ "$1" = "map-larn" ]; then
             shift
             python3 "$SCRIPTS_DIR/manual_map_larn.py" "$@"
@@ -233,6 +250,8 @@ case "$1" in
             echo "                           tv food rebuild-from-crea"
             echo "                           tv food sync-dietabit"
             echo "                           tv food auto-map-larn --dry-run"
+            echo "                           tv food build-active"
+            echo "                           tv food import-mapped --dry-run --strict-complete"
             echo "                           tv food map-larn next --limit 10"
             echo "                           tv food extract-portions"
             exit 1

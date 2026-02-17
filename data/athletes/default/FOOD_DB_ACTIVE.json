@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "generated_at": "2026-02-17T12:30:38.927537",
+    "athlete_id": "default",
+    "source_files": {
+      "food_db": "data/FOOD_DB.json",
+      "nutrition_base_template": "data/athletes/default/nutrition_base_template.json",
+      "nutrition_plans_dir": "plans/nutrition/athletes/default"
+    }
+  },
+  "stats": {
+    "global_food_count": 2155,
+    "active_food_count": 17,
+    "active_ids_from_template": 0,
+    "active_ids_from_plans": 17,
+    "matched_from_plan_name_occurrences": 2102,
+    "matched_from_plan_name_unique": 17,
+    "missing_ids_in_global_db": 0,
+    "unresolved_plan_names_missing": 18,
+    "unresolved_plan_names_ambiguous": 0
+  },
+  "active_food_ids": [
+    "banana",
+    "bresaola",
+    "burro_d_arachidi",
+    "caffe_espresso",
+    "crackers_integrali",
+    "fette_biscottate",
+    "mandorle",
+    "marmellata",
+    "mela",
+    "miele",
+    "pane_integrale",
+    "piselli",
+    "prosciutto_crudo",
+    "riso_basmati_crudo",
+    "tonno_al_naturale",
+    "zenzero_fresco",
+    "zucchine"
+  ],
+  "foods": [
+    {
+      "id": "banana",
+      "name": "Banana",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 89.0,
+        "P": 1.09,
+        "CHO": 22.84,
+        "F": 0.33,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/frutta/banana/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "bresaola",
+      "name": "Bresaola",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 151.0,
+        "P": 33.1,
+        "CHO": 0.4,
+        "F": 2.0,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/salumi/bresaola/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "burro_d_arachidi",
+      "name": "Burro d'arachidi",
+      "crea_id": "009010",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 625.0,
+        "P": 24.9,
+        "CHO": 8.0,
+        "F": 53.7,
+        "Fibre": 6.0
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/009010",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "caffe_espresso",
+      "name": "Caffè espresso",
+      "reference": {
+        "amount": 100.0,
+        "unit": "mL",
+        "label": "100 ml"
+      },
+      "nutrients_per_reference": {
+        "kcal": 2.0,
+        "P": 0.12,
+        "CHO": 0.0,
+        "F": 0.18,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "crackers_integrali",
+      "name": "Crackers, integrali",
+      "crea_id": "001030",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 402.0,
+        "P": 12.0,
+        "CHO": 61.7,
+        "F": 11.4,
+        "Fibre": 10.0
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001030",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "fette_biscottate",
+      "name": "Fette biscottate",
+      "crea_id": "001500",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 387.0,
+        "P": 11.3,
+        "CHO": 75.0,
+        "F": 6.0,
+        "Fibre": 3.5
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/001500",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "mandorle",
+      "name": "Mandorle",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 575.0,
+        "P": 21.22,
+        "CHO": 21.67,
+        "F": 49.42,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/frutta-secca/mandorle/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "marmellata",
+      "name": "Marmellata",
+      "crea_id": "204500",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 227.0,
+        "P": 0.5,
+        "CHO": 58.7,
+        "F": 0.0,
+        "Fibre": 2.2
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/204500",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "mela",
+      "name": "Mela",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 48.0,
+        "P": 0.27,
+        "CHO": 12.76,
+        "F": 0.13,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/frutta/mela/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "miele",
+      "name": "Miele",
+      "crea_id": "210010",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 304.0,
+        "P": 0.6,
+        "CHO": 80.3,
+        "F": 0.0,
+        "Fibre": 0.0
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/210010",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "pane_integrale",
+      "name": "Pane integrale",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 247.0,
+        "P": 12.95,
+        "CHO": 41.29,
+        "F": 3.35,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/forno/pane-integrale/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "piselli",
+      "name": "Piselli",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 341.0,
+        "P": 24.55,
+        "CHO": 60.37,
+        "F": 1.16,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/legumi/piselli/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "prosciutto_crudo",
+      "name": "Prosciutto crudo",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 235.0,
+        "P": 27.8,
+        "CHO": 0.1,
+        "F": 13.7,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/salumi/prosciutto-crudo/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "riso_basmati_crudo",
+      "name": "Riso Basmati, crudo",
+      "crea_id": "000130",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 367.0,
+        "P": 9.0,
+        "CHO": 82.9,
+        "F": 1.9,
+        "Fibre": 1.3
+      },
+      "data_source": "CREA",
+      "source_type": "CREA",
+      "source_url": "https://www.alimentinutrizione.it/tabelle-nutrizionali/000130",
+      "last_verified_at": "2026-02-13"
+    },
+    {
+      "id": "tonno_al_naturale",
+      "name": "Tonno al naturale",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 116.0,
+        "P": 25.51,
+        "CHO": 0.0,
+        "F": 0.82,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/pesce/tonno-al-naturale/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "zenzero_fresco",
+      "name": "Zenzero fresco",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 80.0,
+        "P": 1.82,
+        "CHO": 17.77,
+        "F": 0.75,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/aromi/zenzero-fresco/",
+      "last_verified_at": "2026-02-16"
+    },
+    {
+      "id": "zucchine",
+      "name": "Zucchine",
+      "reference": {
+        "amount": 100.0,
+        "unit": "g",
+        "label": "100 g"
+      },
+      "nutrients_per_reference": {
+        "kcal": 16.0,
+        "P": 1.21,
+        "CHO": 3.35,
+        "F": 0.18,
+        "Fibre": 0.0
+      },
+      "data_source": "DIETABIT",
+      "source_type": "DIETABIT",
+      "source_url": "https://www.dietabit.it/alimenti/verdure/zucchine/",
+      "last_verified_at": "2026-02-16"
+    }
+  ],
+  "issues": {
+    "missing_ids_in_global_db": [],
+    "unresolved_plan_names_missing": [
+      "Formaggio spalmabile light",
+      "Hummus ceci",
+      "Mozzarella bufala",
+      "Olio EVO",
+      "Oro Saiwa",
+      "Parmigiano",
+      "Passata pomodoro",
+      "Pasta secca",
+      "Patate lesse",
+      "Plum cake (senza latte/burro)",
+      "Pollo piastra",
+      "Ragù di vitello",
+      "Scaglie grana",
+      "Tortellini vitello",
+      "Uova",
+      "Yogurt magro 0.1%",
+      "Zucchine (friggitrice)",
+      "Zucchine cotte"
+    ],
+    "unresolved_plan_names_ambiguous": {},
+    "matched_plan_names_unique": [
+      "Banana",
+      "Bresaola",
+      "Burro d'arachidi",
+      "Caffè espresso",
+      "Crackers integrali",
+      "Fette biscottate",
+      "Mandorle",
+      "Marmellata",
+      "Mela",
+      "Miele",
+      "Pane integrale",
+      "Piselli",
+      "Prosciutto crudo",
+      "Riso basmati (crudo)",
+      "Tonno al naturale",
+      "Zenzero fresco",
+      "Zucchine"
+    ]
+  }
+}

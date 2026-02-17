@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Optional
 
 from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
+from integration_config import get_next_race, load_integration_config_strict
 
 
 ROOT = Path(__file__).parent.parent
@@ -976,13 +977,16 @@ def main():
 
     if args.cmd == "generate":
         cfg = load_config()
+        integration = load_integration_config_strict()
+        next_race = get_next_race(integration)
+        next_race_date = next_race["date"] if next_race else None
         gen_args = GenerationArgs(
             start_date=parse_date(args.from_date),
             end_date=parse_date(args.to_date),
             goal_race=parse_date(args.goal_race) if args.goal_race else (
                 parse_date(cfg.get("planning_defaults", {}).get("goal_race_date"))
                 if cfg.get("planning_defaults", {}).get("goal_race_date")
-                else None
+                else (parse_date(next_race_date) if next_race_date else None)
             ),
             start_km=float(args.start_km),
             peak_km=float(args.peak_km),

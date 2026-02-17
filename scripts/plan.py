@@ -3,6 +3,7 @@
 /tv plan <categoria> [--all]
 
 Genera piano nutrizionale completo per categoria estraendo dai piani STALE validati.
+Questo e' il path primario ufficiale per la generazione piani (`./tv plan ...`).
 """
 
 import sys
@@ -13,6 +14,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from extract_from_stale import StalePlanParser
 from athlete_context import DATA_DIR as SHARED_DATA_DIR, athlete_plans_dir, data_file, ensure_athlete_dirs, get_athlete_id
+from integration_config import load_integration_config_strict
 
 SOURCES_DIR = Path(__file__).parent.parent / "sources"
 PLANS_DIR = athlete_plans_dir()
@@ -35,14 +37,6 @@ CATEGORY_SOURCES = {
 }
 
 VALID_CATEGORIES = list(CATEGORY_SOURCES.keys())
-DAY_TYPE_TO_CATEGORY = {
-    "rest": "rest",
-    "easy": "easy-run",
-    "qualita": "qualita",
-    "progressivo": "tempo",
-    "lungo": "lungo",
-    "forza": "forza",
-}
 RUNNING_DAY_TYPE_TO_PROFILE = {
     "rest": "rest",
     "easy": "easy",
@@ -120,18 +114,32 @@ def estimate_training_cost_kcal_from_running_session(session, body_data, config)
     if not session:
         return 0
 
+    integration = load_integration_config_strict()
+    model = integration["training_cost_model"]
     day_type = session.get("day_type", "rest")
     distance_km = float(session.get("distance_km") or 0.0)
     weight_kg = float(body_data.get("weight", 0.0))
+    day_multipliers = model.get("day_type_multipliers", {})
+    if day_type not in day_multipliers:
+        raise ValueError(f"day_type '{day_type}' missing in training_cost_model.day_type_multipliers")
+    multiplier = float(day_multipliers[day_type])
 
     if day_type in ("easy", "qualita", "progressivo", "lungo"):
-        return int(round(max(0.0, distance_km * weight_kg)))
+        base = float(model["running_kcal_per_kg_per_km"])
+        return int(round(max(0.0, distance_km * weight_kg * base * multiplier)))
 
     if day_type == "forza":
-        forza_cfg = config.get("day_profiles", {}).get("forza", {})
-        return int(forza_cfg.get("training_cost_kcal_estimate", 350))
+        return int(round(float(model["strength_base_kcal"]) * multiplier))
 
     return 0
+
+
+def category_for_day_type(day_type):
+    integration = load_integration_config_strict()
+    mapping = integration["day_type_to_nutrition_category"]
+    if day_type not in mapping:
+        raise ValueError(f"day_type '{day_type}' missing in day_type_to_nutrition_category")
+    return mapping[day_type]
 
 
 def round_to_step(value, step):
@@ -540,7 +548,7 @@ def generate_week_plan(iso_week):
         day_str = day.isoformat()
         session = session_by_date.get(day_str)
         day_type = session.get("day_type", "rest") if session else "rest"
-        category = DAY_TYPE_TO_CATEGORY.get(day_type, "rest")
+        category = category_for_day_type(day_type)
         training_cost_kcal = estimate_training_cost_kcal_from_running_session(session, body_data, config)
         day_rows.append(
             {
@@ -677,7 +685,7 @@ def generate_month_plan(month_yyyy_mm):
     for d in month_dates:
         session = session_by_date.get(d)
         day_type = session.get("day_type", "rest") if session else "rest"
-        category = DAY_TYPE_TO_CATEGORY.get(day_type, "rest")
+        category = category_for_day_type(day_type)
         training_cost_kcal = estimate_training_cost_kcal_from_running_session(session, body_data, config)
         dt = datetime.strptime(d, "%Y-%m-%d").date()
         day_rows.append(

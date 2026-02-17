@@ -1,0 +1,47 @@
+# LARN Portion IDs
+
+Totale: 43
+
+- `acqua_di_rubinetto_o_imbottigliata`
+- `altre_carni_e_frattaglie`
+- `altri_formaggi_25_di_grassi`
+- `bibite_zuccherate_con_zuccheri_aggiunti`
+- `birra`
+- `burro_strutto_e_lardo`
+- `caffe_espresso`
+- `caffe_orzo`
+- `carne_bianca_fresca_surgelata_pollo_tacchino_coniglio`
+- `carne_in_gelatina`
+- `carne_rossa_fresca_surgelata_bovina_ovina_suina_equina`
+- `cereali_per_la_colazione_e_fette_biscottate`
+- `cioccolato_cioccolatini_creme_spalmabili`
+- `formaggi_freschi_25_di_grassi`
+- `frutta_fresca`
+- `frutta_secca_disidratata`
+- `insalate_a_foglia`
+- `latte`
+- `legumi_freschi_o_in_scatola`
+- `legumi_secchi`
+- `marmellata`
+- `noci_nocciole_pistacchi_mandorle_semi_di_lino_semi_di_sesamo_semi_di_zucca_ecc`
+- `oli_extravergine_doliva_di_semi_di_mais_ecc`
+- `pane`
+- `pasta_cous_cous_riso_mais_farro_orzo_quinoa_farine_ecc`
+- `patate_e_altri_tuberi`
+- `patatine_pop_corn_salatini`
+- `pesce_molluschi_crostacei_conservati`
+- `pesce_molluschi_crostacei_freschi_surgelati`
+- `pesto_alla_genovese_alla_trapanese_ecc`
+- `prodotti_da_forno_dolci_brioche_croissant_cornetti_biscotti_merendine_barrette_ecc`
+- `salumi`
+- `sostituti_del_pane_cracker_grissini_friselle_tarallini_gallette_ecc`
+- `spremute_succhi_di_verdura_e_di_frutta_100_te_tisane_ed_altre_bibite_non_zuccherate_senza_zuccheri_aggiunti`
+- `sughi_pronti_arrabbiata_ragu_ecc`
+- `superalcolici`
+- `torte_gelati`
+- `uova`
+- `verdure_e_ortaggi`
+- `vermouth_porto_aperitivi`
+- `vino`
+- `yogurt_e_altri_latti_fermentati`
+- `zucchero_miele_caramelle`

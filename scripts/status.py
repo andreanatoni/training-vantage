@@ -15,24 +15,12 @@ import re
 from datetime import datetime, timedelta
 from pathlib import Path
 from athlete_context import athlete_plans_dir, data_file, get_athlete_id
+from integration_config import get_next_race, load_integration_config_strict
 
 # Paths
 COMP_FILE = data_file("composition.json")
 ZONES_FILE = data_file("zones.json")
 RUNNING_LOG_FILE = data_file("running-log.json")
-
-# Costanti
-RED_FLAG_FFM = 59.5
-PLAN_START_DATE = datetime(2025, 9, 30)  # Lunedì W1
-
-# Calendario gare (hardcoded per ora)
-RACES = [
-    {"name": "Roma-Ostia Half Marathon", "date": "2026-03-01", "target": "4:00/km (1:24)"},
-    {"name": "Latina HM", "date": "2026-03-29", "target": "sub 1:24 (PB)"},
-    {"name": "Mezza Roma", "date": "2026-10-18", "target": "test pre-maratona"},
-    {"name": "Maratona Latina", "date": "2026-12-06", "target": "prima maratona"},
-]
-
 
 def load_json(filepath):
     """Carica file JSON"""
@@ -40,10 +28,10 @@ def load_json(filepath):
         return json.load(f)
 
 
-def get_current_week():
+def get_current_week(plan_start_date):
     """Calcola settimana corrente nel piano"""
     today = datetime.now()
-    delta = today - PLAN_START_DATE
+    delta = today - plan_start_date
     week_num = (delta.days // 7) + 1
 
     # Determina mesociclo
@@ -61,19 +49,6 @@ def get_current_week():
         meso = "Post-piano"
 
     return week_num, meso
-
-
-def get_next_race():
-    """Trova prossima gara"""
-    today = datetime.now()
-
-    for race in RACES:
-        race_date = datetime.strptime(race['date'], '%Y-%m-%d')
-        if race_date >= today:
-            days_to_race = (race_date - today).days
-            return race['name'], race['date'], race['target'], days_to_race
-
-    return None, None, None, None
 
 
 def get_composition_trend(data):
@@ -167,6 +142,13 @@ def status():
         )
         return
 
+    integration = load_integration_config_strict()
+    status_cfg = integration["status"]
+    alerts_cfg = integration["alerts"]
+    plan_start_date = datetime.strptime(status_cfg["plan_start_date"], "%Y-%m-%d")
+    plan_total_weeks = int(status_cfg["plan_total_weeks"])
+    red_flag_ffm = float(alerts_cfg["ffm_red_flag_kg"])
+
     # Carica dati
     comp_data = load_json(COMP_FILE)
     zones_data = load_json(ZONES_FILE)
@@ -175,10 +157,10 @@ def status():
     last_meas = comp_data['measurements'][-1]
 
     # Settimana corrente
-    week_num, meso = get_current_week()
+    week_num, meso = get_current_week(plan_start_date)
 
     # Prossima gara
-    race_name, race_date, race_target, days_to_race = get_next_race()
+    next_race = get_next_race(integration)
 
     # Trend
     trend = get_composition_trend(comp_data)
@@ -186,15 +168,15 @@ def status():
     # Alerts
     alerts = []
 
-    if last_meas['ffm'] < RED_FLAG_FFM:
-        alerts.append(f"⚠️  FFM sotto soglia critica ({RED_FLAG_FFM}kg): {last_meas['ffm']:.2f}kg")
+    if last_meas['ffm'] < red_flag_ffm:
+        alerts.append(f"⚠️  FFM sotto soglia critica ({red_flag_ffm}kg): {last_meas['ffm']:.2f}kg")
 
     stale_plans = check_stale_plans()
     if stale_plans:
         alerts.append(f"⚠️  {len(stale_plans)} piani nutrizionali STALE (rigenerazione necessaria)")
 
-    if week_num > 20:
-        alerts.append(f"⚠️  Settimana {week_num} oltre piano base (W1-W20)")
+    if week_num > plan_total_weeks:
+        alerts.append(f"⚠️  Settimana {week_num} oltre piano base (W1-W{plan_total_weeks})")
 
     # Output
     print("╔═══════════════════════════════════════════════════════════════════╗")
@@ -241,10 +223,10 @@ def status():
     print("─" * 70)
     print(f"Settimana corrente: W{week_num} ({meso})")
 
-    if race_name:
-        print(f"Prossima gara:      {race_name}")
-        print(f"                    {race_date} ({days_to_race} giorni)")
-        print(f"                    Target: {race_target}")
+    if next_race:
+        print(f"Prossima gara:      {next_race['name']}")
+        print(f"                    {next_race['date']} ({next_race['days_to_race']} giorni)")
+        print(f"                    Target: {next_race['target']}")
     else:
         print("Prossima gara:      Nessuna in calendario")
     print()

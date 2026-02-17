@@ -34,6 +34,7 @@ def runtime_paths_for_athlete(athlete_id):
     return {
         "profile": data_file("RUNNING_ATHLETE_PROFILE.json"),
         "config": data_file("RUNNING_PLAN_CONFIG.json"),
+        "integration_config": data_file("INTEGRATION_CONFIG.json"),
         "training_load": data_file("training_load.json"),
         "report": athlete_knowledge_dir() / "running-setup-report.md",
         "changelog": data_file("changelog.json"),
@@ -282,6 +283,50 @@ def append_setup_changelog(changelog_file, details):
         }
     )
     changelog_file.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def build_integration_config(goal_race_name, goal_race_date, target_pace):
+    return {
+        "meta": {
+            "version": "v1.0",
+            "updated_at": datetime.now().strftime("%Y-%m-%d"),
+        },
+        "day_type_to_nutrition_category": {
+            "rest": "rest",
+            "easy": "easy-run",
+            "qualita": "qualita",
+            "progressivo": "tempo",
+            "lungo": "lungo",
+            "forza": "forza",
+        },
+        "training_cost_model": {
+            "running_kcal_per_kg_per_km": 1.0,
+            "strength_base_kcal": 350,
+            "day_type_multipliers": {
+                "rest": 1.0,
+                "easy": 1.0,
+                "qualita": 1.05,
+                "progressivo": 1.05,
+                "lungo": 1.1,
+                "forza": 1.0,
+            },
+        },
+        "race_calendar": [
+            {
+                "name": goal_race_name,
+                "date": goal_race_date,
+                "target_pace": target_pace,
+            }
+        ],
+        "alerts": {
+            "ffm_red_flag_kg": 59.5,
+            "weight_drop_warning_pct_per_week": 0.6,
+        },
+        "status": {
+            "plan_start_date": datetime.now().strftime("%Y-%m-%d"),
+            "plan_total_weeks": 20,
+        },
+    }
 
 
 def normalize_days(run_days, force_days):
@@ -592,6 +637,10 @@ def main(no_history=False):
     ensure_athlete_dirs()
     paths["profile"].write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
     paths["config"].write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
+    paths["integration_config"].write_text(
+        json.dumps(build_integration_config(goal_race_name, goal_race_date, target_pace), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     paths["training_load"].write_text(json.dumps(training_payload, ensure_ascii=False, indent=2), encoding="utf-8")
     if training_payload["meta"].get("mode") != "manual_no_history":
         append_training_load_changelog_entry(training_payload["meta"]["source_files"], training_payload)
@@ -617,6 +666,7 @@ def main(no_history=False):
             "updated_files": [
                 relpath_or_str(paths["profile"]),
                 relpath_or_str(paths["config"]),
+                relpath_or_str(paths["integration_config"]),
                 relpath_or_str(paths["training_load"]),
                 relpath_or_str(paths["report"]),
             ],
@@ -626,6 +676,7 @@ def main(no_history=False):
     print("\n[OK] Running setup completato.")
     print(f"- Profile: {paths['profile']}")
     print(f"- Config:  {paths['config']}")
+    print(f"- Integration: {paths['integration_config']}")
     print(f"- Training Load: {paths['training_load']}")
     print(f"- Report:  {paths['report']}")
 

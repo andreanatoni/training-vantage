@@ -6,7 +6,7 @@ Usage:
     python3 scripts/cli.py <command> [arguments] [options]
 
 Commands:
-    plan <profile_id>         Generate day plan for profile
+    plan <profile_id>         LEGACY path (requires --legacy)
     weigh <peso> <bf%>        Register weight measurement
     status                    Show current status dashboard
     zones [test_time]         Show/update running zones
@@ -17,8 +17,8 @@ Options (plan command):
     --debug             Show detailed stacktrace on errors
 
 Examples:
-    python3 scripts/cli.py plan rest
-    python3 scripts/cli.py plan lungo --mode realistic
+    python3 scripts/cli.py plan rest --legacy
+    python3 scripts/cli.py plan lungo --mode realistic --legacy
     python3 scripts/cli.py weigh 68.5 13.0
     python3 scripts/cli.py status
     python3 scripts/cli.py zones
@@ -906,14 +906,23 @@ def main():
         if len(sys.argv) < 3:
             print("❌ ERROR: Missing profile_id")
             print()
-            print("Usage: python3 scripts/cli.py plan <profile_id> [options]")
-            print("       python3 scripts/cli.py plan all")
+            print("Usage: python3 scripts/cli.py plan <profile_id> [options] --legacy")
+            print("       python3 scripts/cli.py plan all --legacy")
             return 1
 
         profile_id = sys.argv[2]
 
+        legacy_mode = "--legacy" in sys.argv[3:]
+
         # Check for /plan all command
         if profile_id == 'all':
+            if not legacy_mode:
+                print("❌ LEGACY COMMAND BLOCKED")
+                print()
+                print("Questo path (`python3 scripts/cli.py plan all`) e' legacy.")
+                print("Path primario supportato: `./tv plan --all`")
+                print("Se vuoi usarlo temporaneamente, aggiungi `--legacy`.")
+                return 1
             return cmd_plan_all()
 
         # Parse options
@@ -921,6 +930,7 @@ def main():
         output_json = False
         debug = False
         skip_validation = False
+        legacy_mode = False
 
         i = 3
         while i < len(sys.argv):
@@ -942,9 +952,20 @@ def main():
                 # Undocumented flag for testing
                 skip_validation = True
                 i += 1
+            elif arg == '--legacy':
+                legacy_mode = True
+                i += 1
             else:
                 print(f"❌ ERROR: Unknown option: {arg}")
                 return 1
+
+        if not legacy_mode:
+            print("❌ LEGACY COMMAND BLOCKED")
+            print()
+            print("Questo path (`python3 scripts/cli.py plan`) e' legacy.")
+            print("Path primario supportato: `./tv plan ...`")
+            print("Se vuoi usarlo temporaneamente, aggiungi `--legacy`.")
+            return 1
 
         return cmd_plan(profile_id, mode=mode, output_json=output_json, debug=debug, skip_validation=skip_validation)
     else:

@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "version": "v1.0",
+    "generated_at": "2026-02-17T12:30:38.890504",
+    "athlete_id": "spizz",
+    "source_files": {
+      "food_db": "data/FOOD_DB.json",
+      "nutrition_base_template": "data/athletes/spizz/nutrition_base_template.json",
+      "nutrition_plans_dir": "plans/nutrition/athletes/spizz"
+    }
+  },
+  "stats": {
+    "global_food_count": 2155,
+    "active_food_count": 0,
+    "active_ids_from_template": 0,
+    "active_ids_from_plans": 0,
+    "matched_from_plan_name_occurrences": 0,
+    "matched_from_plan_name_unique": 0,
+    "missing_ids_in_global_db": 0,
+    "unresolved_plan_names_missing": 0,
+    "unresolved_plan_names_ambiguous": 0
+  },
+  "active_food_ids": [],
+  "foods": [],
+  "issues": {
+    "missing_ids_in_global_db": [],
+    "unresolved_plan_names_missing": [],
+    "unresolved_plan_names_ambiguous": {},
+    "matched_plan_names_unique": []
+  }
+}
