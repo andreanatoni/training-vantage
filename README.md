@@ -117,13 +117,10 @@ Output:
 - Export revisione in Excel:
   - `data/LARN_MANUAL_MAPPING.xlsx` (colonna D con dropdown `larn_portion_id`)
 
-### Mapping LARN (Legacy Maintenance)
-- Auto suggestioni: `./tv food auto-map-larn --dry-run`
-- Revisione manuale one-by-one:
-  - `./tv food map-larn next`
-  - `./tv food map-larn set <food_db_id> <larn_portion_id>`
-  - `./tv food map-larn unset <food_db_id>`
-  - `./tv food map-larn larn`
+### Legacy Archiviato
+- Pipeline LARN one-by-one (`auto-map-larn`, `map-larn`) e' stata archiviata.
+- Artefatti e script storici sono in `archive/larn-pipeline/`.
+- Path supportato: `food import-mapped` -> `food build-catalog` -> `food validate-data`.
 
 ### Active set per atleta
 - `./tv food build-active`

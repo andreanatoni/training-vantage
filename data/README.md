@@ -25,8 +25,6 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - Nutrizione:
   - `FOOD_DB.json` = master alimenti e nutrienti.
   - `FOOD_DB_TO_LARN_MAPPING.json` = master mapping verso porzioni.
-  - `DIETABIT_DB.json` = export completo Dietabit (dataset esterno di confronto/integrazione).
-  - `DIETABIT_COMPARE_REPORT.json` = report confronto Dietabit vs FOOD_DB (identici/conflitti/aggiunte).
   - `NUTRITION_ENGINE_CONFIG.json` = centralina strategia nutrizionale (deficit, EA, macro floor, day-profile).
   - `templates/nutrition_base_template.shared.json` = template base shared (strutturale, senza grammature).
   - `templates/nutrition_base_template.schema.json` = schema JSON del template base.
@@ -49,10 +47,6 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `CREA_INDEX.json`: indice completo alimenti CREA.
 - `FOOD_DB.json`: database nutrizionale master condiviso.
 - `FOOD_DB_TO_LARN_MAPPING.json`: associazioni alimento -> porzione LARN/operativa + stato revisione.
-- `DIETABIT_DB.json`: dump categorie/alimenti Dietabit in formato FOOD_DB-like (`kcal`, `P`, `CHO`, `F` per 100 g).
-- `DIETABIT_COMPARE_REPORT.json`: esito confronto Dietabit -> FOOD_DB con preview conflitti.
-- `LARN_AUTOMAP_REPORT.json`: report ultimo passaggio auto-mapping FOOD_DB -> LARN.
-- `LARN_MAPPING_REVIEW_QUEUE.json`: coda review dei mapping a confidenza non sufficiente.
 - `LARN_MANUAL_MAPPING.xlsx`: file operativo per revisione manuale mapping con menu a tendina `larn_portion_id`.
 - `NUTRITION_ENGINE_CONFIG.json`: configurazione motore nutrizionale periodizzato (obiettivi, priorita', soglie EA, mapping categorie).
 - `templates/nutrition_base_template.shared.json`: bootstrap shared del piano base 5 pasti (solo struttura/option-set).
@@ -88,7 +82,6 @@ Comandi principali (dalla root del repo):
 ./tv food import-mapped --dry-run --strict-complete
 ./tv food build-active
 ./tv food build-catalog
-./tv food extract-portions
 ./tv load import sources/workouts-2.csv
 ./tv running setup --no-history
 ./tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
@@ -104,16 +97,14 @@ Comandi principali (dalla root del repo):
 - `food sync`: rigenera `knowledge/food-db.md` dai JSON.
 - `crawl-index`: aggiorna indice CREA.
 - `rebuild-from-crea`: ricostruisce DB alimenti da `CREA_INDEX.json` (con backup).
-- `sync-dietabit [--no-merge]`: crawl completo Dietabit -> `DIETABIT_DB.json`, confronto con `FOOD_DB` e merge sicuro dei mancanti (se non usi `--no-merge`) + report in `DIETABIT_COMPARE_REPORT.json`.
+- `sync-dietabit [--no-merge]`: crawl completo Dietabit, confronto con `FOOD_DB` e merge sicuro dei mancanti (se non usi `--no-merge`).
 - `food import-mapped [--file ...] [--dry-run] [--strict-complete]`: import massivo da file `food_db_id|larn_portion_id`.
   - validazioni hard su formato, duplicati e id non validi
   - con `--strict-complete` fallisce se non copre esattamente tutti i `food_db_id` del `FOOD_DB`
   - scrive report in `data/FOOD_MAPPED_IMPORT_REPORT.json` e `data/FOOD_MAPPED_IMPORT_REPORT.md`
   - in apply mode crea backup automatico del mapping prima della scrittura
-- comandi legacy maintenance mapping:
-  - `food auto-map-larn [--threshold X] [--dry-run]`: mapping semiautomatico verso `LARN_PORTIONS` con regole deterministiche
-  - `food map-larn <subcommand>`: revisione manuale one-by-one (`next`, `set`, `unset`, `larn`)
-- `extract-portions`: rigenera `PORTION_STANDARDS.json` dal PDF e pulisce il testo.
+- comandi legacy mapping (`food auto-map-larn`, `food map-larn`, `food extract-portions`) archiviati.
+- artefatti/report legacy sono stati spostati in `archive/larn-pipeline/`.
 - `food build-active`: genera `data/athletes/<id>/FOOD_DB_ACTIVE.json` (cache derivata non distruttiva) da:
   - `data/athletes/<id>/nutrition_base_template.json` (food_db_id espliciti)
   - `plans/nutrition/athletes/<id>/**/*.json` (food_db_id diretti e tentativo match per nome)

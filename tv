@@ -159,27 +159,6 @@ COMANDI DISPONIBILI (Utility):
       Valida coerenza strutturale di tutti i dataset (incluso FOOD_CATALOG vs sorgenti)
       Esempio: tv food validate-data
 
-COMANDI LEGACY (Maintenance):
-
-  food auto-map-larn [--threshold 0.90] [--dry-run]
-      Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
-      Esempio: tv food auto-map-larn --dry-run
-      Esempio: tv food auto-map-larn --threshold 0.92
-
-  food map-larn <subcommand>
-      Revisione manuale one-by-one FOOD_DB -> LARN
-      Subcommands:
-        - next [--limit 20] [--offset 0] [--contains testo]
-        - set <food_db_id> <larn_portion_id> [--confidence 1.0]
-        - unset <food_db_id>
-        - larn [--contains testo]
-      Esempio: tv food map-larn next --limit 10
-      Esempio: tv food map-larn set bresaola salumi
-
-  food extract-portions
-      Estrae tabelle porzioni dal PDF LARN in data/PORTION_STANDARDS.json
-      Esempio: tv food extract-portions
-
   analyze <file.csv>
       Analizza export Garmin CSV (distanza/tempo/passo/FC medi)
       Esempio: tv analyze sources/storico.csv
@@ -248,9 +227,6 @@ case "$1" in
         elif [ "$1" = "sync-dietabit" ]; then
             shift
             python3 "$SCRIPTS_DIR/dietabit_sync.py" "$@"
-        elif [ "$1" = "auto-map-larn" ]; then
-            shift
-            python3 "$SCRIPTS_DIR/auto_map_larn.py" "$@"
         elif [ "$1" = "build-active" ]; then
             python3 "$SCRIPTS_DIR/build_active_food_db.py"
         elif [ "$1" = "import-mapped" ]; then
@@ -261,11 +237,10 @@ case "$1" in
             python3 "$SCRIPTS_DIR/build_food_catalog.py" "$@"
         elif [ "$1" = "validate-data" ]; then
             python3 "$SCRIPTS_DIR/data_validator.py" data
-        elif [ "$1" = "map-larn" ]; then
-            shift
-            python3 "$SCRIPTS_DIR/manual_map_larn.py" "$@"
-        elif [ "$1" = "extract-portions" ]; then
-            python3 "$SCRIPTS_DIR/extract_standard_portions.py"
+        elif [ "$1" = "auto-map-larn" ] || [ "$1" = "map-larn" ] || [ "$1" = "extract-portions" ]; then
+            echo -e "${YELLOW}Comando legacy archiviato:${NC} '$1'"
+            echo "Usa: tv food import-mapped + tv food build-catalog + tv food validate-data"
+            exit 1
         else
             echo -e "${RED}Uso non valido. Esempi:${NC} tv food add \"Nome\" \"100 g\" 100 10 10 5 2 CREA"
             echo "                           tv food add https://www.alimentinutrizione.it/tabelle-nutrizionali/150030"
@@ -275,13 +250,10 @@ case "$1" in
             echo "                           tv food import-crea --id 150030"
             echo "                           tv food rebuild-from-crea"
             echo "                           tv food sync-dietabit"
-            echo "                           tv food auto-map-larn --dry-run"
             echo "                           tv food build-active"
             echo "                           tv food import-mapped --dry-run --strict-complete"
             echo "                           tv food build-catalog --dry-run"
             echo "                           tv food validate-data"
-            echo "                           tv food map-larn next --limit 10"
-            echo "                           tv food extract-portions"
             exit 1
         fi
         ;;
