@@ -119,5 +119,19 @@
       "kcal_step": 5,
       "grams_step": 1
     }
+  },
+  "phase_adjustments": {
+    "taper": {
+      "default": {
+        "deficit_pct_delta": -0.03,
+        "note": "Riduce il deficit in taper per priorita recupero"
+      }
+    },
+    "race": {
+      "default": {
+        "deficit_pct_override": 0.0,
+        "note": "Nessun deficit in race week"
+      }
+    }
   }
 }

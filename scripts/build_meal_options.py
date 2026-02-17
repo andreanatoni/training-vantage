@@ -1,31 +1,15 @@
 #!/usr/bin/env python3
-"""Build structured meal options JSON from legacy STALE markdown sources."""
+"""Backward-compatible wrapper for scripts.nutrition.build_meal_options."""
 
-import argparse
-try:
-    from scripts.meal_options_repository import CATEGORY_SOURCES, build_all_from_stale, build_category_from_stale
-except ModuleNotFoundError:
-    from meal_options_repository import CATEGORY_SOURCES, build_all_from_stale, build_category_from_stale
+import runpy
+import sys
+from pathlib import Path
 
-
-def parse_args(argv=None):
-    p = argparse.ArgumentParser(description="Build knowledge/meal_options/*.json from sources/piano_*.md")
-    p.add_argument("--category", choices=sorted(CATEGORY_SOURCES.keys()), help="Build only one category")
-    return p.parse_args(argv)
-
-
-def main(argv=None):
-    args = parse_args(argv)
-    if args.category:
-        path = build_category_from_stale(args.category)
-        print(f"[OK] Built meal options: {path}")
-        return
-
-    generated = build_all_from_stale()
-    print("[OK] Built meal options files:")
-    for path in generated:
-        print(f"- {path}")
-
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 if __name__ == "__main__":
-    main()
+    runpy.run_module("scripts.nutrition.build_meal_options", run_name="__main__")
+else:
+    from scripts.nutrition.build_meal_options import *  # noqa: F401,F403
