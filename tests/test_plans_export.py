@@ -52,11 +52,11 @@ class TestPlansExport(unittest.TestCase):
         """Test ingredient mapping"""
         # Test basic mappings
         self.assertEqual(map_ingredient_to_food_id('Caffè'), 'caffe_espresso')
-        self.assertEqual(map_ingredient_to_food_id('Pasta'), 'pasta_secca_di_semola')
+        self.assertEqual(map_ingredient_to_food_id('Pasta'), 'pasta_di_semola')
         self.assertEqual(map_ingredient_to_food_id('Pollo alla piastra'), 'pollo_petto_cotto_in_padella')
 
         # Test categories
-        self.assertEqual(get_ingredient_category('pasta_secca_di_semola'), 'CHO_base')
+        self.assertEqual(get_ingredient_category('pasta_di_semola'), 'CHO_base')
         self.assertEqual(get_ingredient_category('pollo_petto_cotto_in_padella'), 'protein')
         self.assertEqual(get_ingredient_category('mandorle'), 'fat')
 
@@ -65,7 +65,7 @@ class TestPlansExport(unittest.TestCase):
         calc = SwapCalculator(self.data_dir / 'FOOD_DB.json')
 
         # Iso-proteico
-        result = calc.calculate_swap('pollo_petto_cotto_in_padella', 180, 'tacchino_fesa_cotto_al_forno', 'protein')
+        result = calc.calculate_swap('pollo_petto_cotto_in_padella', 180, 'tacchino_fesa_cotta_al_forno', 'protein')
         self.assertEqual(result['swap_method'], 'iso-protein')
         self.assertGreater(result['alt_qty_g'], 0)
 

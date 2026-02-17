@@ -14,190 +14,317 @@
   },
   "limits": [
     {
-      "food_db_id": "yogurt_magro_0_1",
-      "preferred_qty_g": [100, 125, 170],
+      "food_db_id": "yogurt_bianco_scremato",
+      "preferred_qty_g": [
+        100,
+        125,
+        170
+      ],
       "max_qty_g": 170,
       "step_g": 25,
       "note": "125g = vasetto standard. Max 170g per evitare eccesso volume a colazione."
     },
     {
-      "food_db_id": "yogurt_greco_0",
-      "preferred_qty_g": [100, 125, 170],
+      "food_db_id": "yogurt_greco_0_lipidi",
+      "preferred_qty_g": [
+        100,
+        125,
+        170
+      ],
       "max_qty_g": 170,
       "step_g": 25,
       "note": "170g = vasetto monoporzione. Stesso cap di yogurt magro per coerenza."
     },
     {
-      "food_db_id": "olio_evo",
-      "preferred_qty_g": [5, 9, 10, 15],
+      "food_db_id": "olio_di_oliva_extra_vergine",
+      "preferred_qty_g": [
+        5,
+        9,
+        10,
+        15
+      ],
       "max_qty_g": 15,
       "step_g": 5,
       "note": "9g = 1 cucchiaio LARN. Max 15g per controllo grassi nei pasti principali."
     },
     {
-      "food_db_id": "pasta_secca_di_semola",
-      "preferred_qty_g": [70, 80, 90, 100, 120],
+      "food_db_id": "pasta_di_semola",
+      "preferred_qty_g": [
+        70,
+        80,
+        90,
+        100,
+        120
+      ],
       "max_qty_g": 120,
       "step_g": 10,
       "note": "80g = porzione LARN. Max 120g per controllo CHO nei giorni non-lungo."
     },
     {
       "food_db_id": "riso_basmati_crudo",
-      "preferred_qty_g": [70, 80, 90, 100, 120],
+      "preferred_qty_g": [
+        70,
+        80,
+        90,
+        100,
+        120
+      ],
       "max_qty_g": 120,
       "step_g": 10,
       "note": "80g = porzione LARN. Stesso cap pasta per coerenza CHO."
     },
     {
       "food_db_id": "pollo_petto_cotto_in_padella",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "100g = porzione LARN. Max 200g per controllo volume/digestione."
     },
     {
-      "food_db_id": "tacchino_fesa_cotto_al_forno",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "food_db_id": "tacchino_fesa_cotta_al_forno",
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "100g = porzione LARN. Stesso cap pollo (carne bianca)."
     },
     {
-      "food_db_id": "manzo_magro_fesa_crudo",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "food_db_id": "bovino_adulto_o_vitellone_fesa_crudo",
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "100g = porzione LARN. Stesso cap carni bianche."
     },
     {
       "food_db_id": "vitello_filetto_cotto_in_padella",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "100g = porzione LARN. Stesso cap carni."
     },
     {
       "food_db_id": "salmone",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "150g = porzione LARN pesce fresco. Max 200g per controllo grassi (salmone è grasso)."
     },
     {
-      "food_db_id": "merluzzo_surgelato_cotto_al_forno",
-      "preferred_qty_g": [150, 180, 200, 250],
+      "food_db_id": "merluzzo_o_nasello_surgelato_cotto_in_forno",
+      "preferred_qty_g": [
+        150,
+        180,
+        200,
+        250
+      ],
       "max_qty_g": 250,
       "step_g": 50,
       "note": "150g = porzione LARN. Più leggero del salmone, cap più alto ok."
     },
     {
-      "food_db_id": "tonno_tagliata_fresco",
-      "preferred_qty_g": [100, 150, 180, 200],
+      "food_db_id": "tonno_pinne_gialle",
+      "preferred_qty_g": [
+        100,
+        150,
+        180,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 50,
       "note": "150g = porzione LARN. Stesso cap salmone."
     },
     {
-      "food_db_id": "tonno_al_naturale_drenato",
-      "preferred_qty_g": [50, 80],
+      "food_db_id": "tonno_al_naturale",
+      "preferred_qty_g": [
+        50,
+        80
+      ],
       "max_qty_g": 80,
       "step_g": 30,
       "note": "50g = porzione LARN. Max 80g = 1 scatoletta standard sgocciolata."
     },
     {
       "food_db_id": "mandorle",
-      "preferred_qty_g": [15, 20, 30],
+      "preferred_qty_g": [
+        15,
+        20,
+        30
+      ],
       "max_qty_g": 30,
       "step_g": 5,
       "note": "30g = porzione LARN frutta secca. Densità calorica alta, max 30g ok."
     },
     {
       "food_db_id": "noci",
-      "preferred_qty_g": [15, 20, 30],
+      "preferred_qty_g": [
+        15,
+        20,
+        30
+      ],
       "max_qty_g": 30,
       "step_g": 5,
       "note": "30g = porzione LARN. Stesso cap mandorle."
     },
     {
       "food_db_id": "nocciole",
-      "preferred_qty_g": [15, 20, 30],
+      "preferred_qty_g": [
+        15,
+        20,
+        30
+      ],
       "max_qty_g": 30,
       "step_g": 5,
       "note": "30g = porzione LARN. Stesso cap frutta secca."
     },
     {
       "food_db_id": "fette_biscottate",
-      "preferred_qty_g": [30, 40, 45, 60],
+      "preferred_qty_g": [
+        30,
+        40,
+        45,
+        60
+      ],
       "max_qty_g": 60,
       "step_g": 15,
       "note": "30g = porzione LARN (circa 4 fette). Max 60g = 2 porzioni LARN ragionevole."
     },
     {
       "food_db_id": "pane_integrale",
-      "preferred_qty_g": [50, 75, 100],
+      "preferred_qty_g": [
+        50,
+        75,
+        100
+      ],
       "max_qty_g": 100,
       "step_g": 25,
       "note": "50g = porzione LARN (1 panino). Max 100g = 2 panini."
     },
     {
       "food_db_id": "pane_bianco",
-      "preferred_qty_g": [50, 75, 100],
+      "preferred_qty_g": [
+        50,
+        75,
+        100
+      ],
       "max_qty_g": 100,
       "step_g": 25,
       "note": "50g = porzione LARN. Stesso cap pane integrale."
     },
     {
       "food_db_id": "marmellata",
-      "preferred_qty_g": [10, 15, 20, 30, 40],
+      "preferred_qty_g": [
+        10,
+        15,
+        20,
+        30,
+        40
+      ],
       "max_qty_g": 40,
       "step_g": 10,
       "note": "10g = porzione LARN (1 cucchiaino colmo). Max 40g = 4 cucchiaini."
     },
     {
-      "food_db_id": "patate_senza_buccia_bollite",
-      "preferred_qty_g": [150, 200, 250, 300],
+      "food_db_id": "patate_bollite_senza_buccia",
+      "preferred_qty_g": [
+        150,
+        200,
+        250,
+        300
+      ],
       "max_qty_g": 300,
       "step_g": 50,
       "note": "200g = porzione LARN. Max 300g per controllo CHO."
     },
     {
-      "food_db_id": "uova_intere_gallina",
-      "preferred_qty_g": [50, 100, 150],
+      "food_db_id": "uova_di_gallina_intero",
+      "preferred_qty_g": [
+        50,
+        100,
+        150
+      ],
       "max_qty_g": 150,
       "step_g": 50,
       "note": "50g = 1 uovo LARN. Max 150g = 3 uova (ragionevole per pasto proteico)."
     },
     {
       "food_db_id": "mozzarella_di_bufala",
-      "preferred_qty_g": [100, 125, 150],
+      "preferred_qty_g": [
+        100,
+        125,
+        150
+      ],
       "max_qty_g": 150,
       "step_g": 25,
       "note": "100g = porzione LARN formaggi freschi. Max 150g per controllo grassi/calorie."
     },
     {
-      "food_db_id": "parmigiano_reggiano",
-      "preferred_qty_g": [10, 20, 30, 40, 50],
+      "food_db_id": "parmigiano_reggiano_dop",
+      "preferred_qty_g": [
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
       "max_qty_g": 50,
       "step_g": 10,
       "note": "50g = porzione LARN formaggi grassi. 10g = uso grattugiato. Max 50g ok."
     },
     {
       "food_db_id": "fiocchi_d_avena",
-      "preferred_qty_g": [30, 40, 50, 60],
+      "preferred_qty_g": [
+        30,
+        40,
+        50,
+        60
+      ],
       "max_qty_g": 60,
       "step_g": 10,
       "note": "30g = porzione LARN cereali colazione. Max 60g = 2 porzioni."
     },
     {
-      "food_db_id": "tortellini_vitello",
-      "preferred_qty_g": [125, 150, 175, 200],
+      "food_db_id": "tortellini_freschi",
+      "preferred_qty_g": [
+        125,
+        150,
+        175,
+        200
+      ],
       "max_qty_g": 200,
       "step_g": 25,
       "note": "125g = porzione LARN pasta ripiena. Max 200g per controllo CHO."
     },
     {
       "food_db_id": "passata_di_pomodoro",
-      "preferred_qty_g": [50, 80, 100],
+      "preferred_qty_g": [
+        50,
+        80,
+        100
+      ],
       "max_qty_g": 100,
       "step_g": 20,
       "is_ingredient": true,
@@ -205,7 +332,14 @@
     },
     {
       "food_db_id": "prosciutto_crudo",
-      "preferred_qty_g": [30, 40, 50, 80, 100, 120],
+      "preferred_qty_g": [
+        30,
+        40,
+        50,
+        80,
+        100,
+        120
+      ],
       "max_qty_g": 120,
       "snack_max_qty_g": 40,
       "meal_max_qty_g": 120,
@@ -215,7 +349,14 @@
     },
     {
       "food_db_id": "bresaola",
-      "preferred_qty_g": [30, 40, 50, 80, 100, 120],
+      "preferred_qty_g": [
+        30,
+        40,
+        50,
+        80,
+        100,
+        120
+      ],
       "max_qty_g": 120,
       "snack_max_qty_g": 40,
       "meal_max_qty_g": 120,
@@ -224,8 +365,15 @@
       "note": "50g = porzione LARN salumi. Context: snack max 40g, meal max 120g."
     },
     {
-      "food_db_id": "fesa_tacchino_affettato",
-      "preferred_qty_g": [30, 40, 50, 80, 100, 120],
+      "food_db_id": "fesa_di_tacchino_arrosto",
+      "preferred_qty_g": [
+        30,
+        40,
+        50,
+        80,
+        100,
+        120
+      ],
       "max_qty_g": 120,
       "snack_max_qty_g": 40,
       "meal_max_qty_g": 120,
@@ -234,9 +382,13 @@
       "note": "50g = porzione LARN salumi. Context: snack max 40g, meal max 120g."
     },
     {
-      "food_db_id": "formaggio_spalmabile_light",
-      "preferred_qty_g": [25, 40, 50],
-      "max_qty_g": 50,
+      "food_db_id": "formaggio_cremoso_spalmabile_light",
+      "preferred_qty_g": [
+        25,
+        40,
+        50
+      ],
+      "max_qty_g": 100,
       "snack_max_qty_g": 50,
       "meal_max_qty_g": 100,
       "step_g": 10,
@@ -245,8 +397,11 @@
     },
     {
       "food_db_id": "burro_d_arachidi",
-      "preferred_qty_g": [10, 15],
-      "max_qty_g": 15,
+      "preferred_qty_g": [
+        10,
+        15
+      ],
+      "max_qty_g": 30,
       "snack_max_qty_g": 15,
       "meal_max_qty_g": 30,
       "step_g": 5,

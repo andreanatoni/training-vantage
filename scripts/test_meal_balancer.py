@@ -43,10 +43,10 @@ def test_ingredient_mode():
     }
 
     allowed_foods = [
-        'pasta_secca_di_semola',
-        'ragu_di_vitello_40_vitello_60_passata',
+        'pasta_di_semola',
+        'salsa_di_carne_manzo',
         'passata_di_pomodoro',
-        'olio_evo',
+        'olio_di_oliva_extra_vergine',
         'zucchine_crude'
     ]
 
@@ -81,7 +81,7 @@ def test_ingredient_mode():
             else:
                 print(f"    ✅ OK: Passata {qty}g rispetta vincoli (max 100g, step 20g)")
 
-        if item['food_db_id'] == 'olio_evo':
+        if item['food_db_id'] == 'olio_di_oliva_extra_vergine':
             if qty > 15:
                 print(f"    ❌ FAIL: Olio {qty}g supera max 15g!")
             else:
@@ -133,7 +133,7 @@ def test_context_dependent():
     allowed_foods = [
         'prosciutto_crudo',
         'pane_integrale',
-        'formaggio_spalmabile_light'
+        'formaggio_cremoso_spalmabile_light'
     ]
 
     print("\n📋 Input (SNACK context):")
@@ -164,7 +164,7 @@ def test_context_dependent():
             else:
                 print(f"    ✅ OK: Prosciutto {qty}g rispetta snack_max 40g")
 
-        if item['food_db_id'] == 'formaggio_spalmabile_light':
+        if item['food_db_id'] == 'formaggio_cremoso_spalmabile_light':
             if qty > 50:
                 print(f"    ❌ FAIL: Spalmabile {qty}g supera snack_max 50g!")
             else:

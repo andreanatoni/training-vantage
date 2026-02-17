@@ -55,7 +55,7 @@ def demo_before_volume_penalty():
         'zucchine_crude',
         'fiocchi_d_avena',
         'mela',
-        'yogurt_greco_0',
+        'yogurt_greco_0_lipidi',
         'mandorle'
     ]
 
@@ -113,7 +113,7 @@ def demo_after_volume_penalty():
         'zucchine_crude',
         'fiocchi_d_avena',
         'mela',
-        'yogurt_greco_0',
+        'yogurt_greco_0_lipidi',
         'mandorle'
     ]
 

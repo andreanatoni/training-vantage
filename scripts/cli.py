@@ -6,19 +6,11 @@ Usage:
     python3 scripts/cli.py <command> [arguments] [options]
 
 Commands:
-    plan <profile_id>         LEGACY path (requires --legacy)
     weigh <peso> <bf%>        Register weight measurement
     status                    Show current status dashboard
     zones [test_time]         Show/update running zones
 
-Options (plan command):
-    --mode <mode>        Output mode: realistic|unconstrained|recommended (default: recommended)
-    --json              Output plan as JSON instead of formatted text
-    --debug             Show detailed stacktrace on errors
-
 Examples:
-    python3 scripts/cli.py plan rest --legacy
-    python3 scripts/cli.py plan lungo --mode realistic --legacy
     python3 scripts/cli.py weigh 68.5 13.0
     python3 scripts/cli.py status
     python3 scripts/cli.py zones
@@ -258,7 +250,7 @@ def build_plan(profile_id: str, data_dir: Path, debug: bool = False) -> Dict[str
         # Breakfast (colazione) - MAX 6, no veg
         'breakfast': [
             'fette_biscottate',  # carb
-            'yogurt_greco_0',  # protein
+            'yogurt_greco_0_lipidi',  # protein
             'mandorle',  # fat
             'marmellata',  # sweetener
             'mela',  # fruit
@@ -267,14 +259,14 @@ def build_plan(profile_id: str, data_dir: Path, debug: bool = False) -> Dict[str
         # Snack (spuntino) - MAX 3, no veg
         'snack': [
             'pane_integrale',  # carb
-            'yogurt_greco_0',  # protein
+            'yogurt_greco_0_lipidi',  # protein
             'mela'  # fruit
         ],
         # Main meal (pranzo/cena) - MAX 6, can have veg
         'main_meal': [
-            'pasta_secca_di_semola',  # carb
+            'pasta_di_semola',  # carb
             'pollo_petto_cotto_in_padella',  # protein
-            'olio_evo',  # fat
+            'olio_di_oliva_extra_vergine',  # fat
             'zucchine_crude',  # veg
             'passata_di_pomodoro',  # veg/ingredient
             'mela'  # fruit
@@ -620,7 +612,7 @@ def cmd_weigh(peso: float, bf_pct: float, note: str = "") -> int:
         print("=" * 80)
         print()
         print("  Delta BMR significativo → considera rigenerazione piani nutrizionali")
-        print("  Comando: python3 scripts/cli.py plan all")
+        print("  Comando: ./tv plan --all")
         print()
 
     print("=" * 80)
@@ -903,71 +895,15 @@ def main():
         return cmd_zones(test_time, note=note)
 
     elif command == 'plan':
-        if len(sys.argv) < 3:
-            print("❌ ERROR: Missing profile_id")
-            print()
-            print("Usage: python3 scripts/cli.py plan <profile_id> [options] --legacy")
-            print("       python3 scripts/cli.py plan all --legacy")
-            return 1
-
-        profile_id = sys.argv[2]
-
-        legacy_mode = "--legacy" in sys.argv[3:]
-
-        # Check for /plan all command
-        if profile_id == 'all':
-            if not legacy_mode:
-                print("❌ LEGACY COMMAND BLOCKED")
-                print()
-                print("Questo path (`python3 scripts/cli.py plan all`) e' legacy.")
-                print("Path primario supportato: `./tv plan --all`")
-                print("Se vuoi usarlo temporaneamente, aggiungi `--legacy`.")
-                return 1
-            return cmd_plan_all()
-
-        # Parse options
-        mode = 'recommended'
-        output_json = False
-        debug = False
-        skip_validation = False
-        legacy_mode = False
-
-        i = 3
-        while i < len(sys.argv):
-            arg = sys.argv[i]
-
-            if arg == '--mode':
-                if i + 1 >= len(sys.argv):
-                    print("❌ ERROR: --mode requires an argument")
-                    return 1
-                mode = sys.argv[i + 1]
-                i += 2
-            elif arg == '--json':
-                output_json = True
-                i += 1
-            elif arg == '--debug':
-                debug = True
-                i += 1
-            elif arg == '--skip-validation':
-                # Undocumented flag for testing
-                skip_validation = True
-                i += 1
-            elif arg == '--legacy':
-                legacy_mode = True
-                i += 1
-            else:
-                print(f"❌ ERROR: Unknown option: {arg}")
-                return 1
-
-        if not legacy_mode:
-            print("❌ LEGACY COMMAND BLOCKED")
-            print()
-            print("Questo path (`python3 scripts/cli.py plan`) e' legacy.")
-            print("Path primario supportato: `./tv plan ...`")
-            print("Se vuoi usarlo temporaneamente, aggiungi `--legacy`.")
-            return 1
-
-        return cmd_plan(profile_id, mode=mode, output_json=output_json, debug=debug, skip_validation=skip_validation)
+        print("❌ COMMAND DEPRECATED")
+        print()
+        print("`python3 scripts/cli.py plan` non e' piu' supportato.")
+        print("Usa il path ufficiale:")
+        print("  ./tv plan <categoria>")
+        print("  ./tv plan --all")
+        print("  ./tv plan week <YYYY-Www>")
+        print("  ./tv plan month <YYYY-MM>")
+        return 1
     else:
         print(f"❌ ERROR: Unknown command: {command}")
         print()

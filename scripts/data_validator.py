@@ -138,7 +138,7 @@ def validate_food_db(data_dir: Path, report: ValidationReport) -> Dict:
     return food_db_index
 
 
-def validate_larn_portions(data_dir: Path, report: ValidationReport) -> Set[str]:
+def validate_larn_portions(data_dir: Path, report: ValidationReport) -> Tuple[Set[str], Dict[str, Dict[str, Any]]]:
     """
     Validate LARN_PORTIONS.json
 
@@ -150,9 +150,10 @@ def validate_larn_portions(data_dir: Path, report: ValidationReport) -> Set[str]
     """
     larn = load_json(data_dir / 'LARN_PORTIONS.json', report, 'LARN_PORTIONS')
     if not larn:
-        return set()
+        return set(), {}
 
     seen_ids = set()
+    larn_index = {}
 
     for portion in larn.get('portions', []):
         # Note: actual file uses 'id', not 'portion_id'
@@ -166,6 +167,7 @@ def validate_larn_portions(data_dir: Path, report: ValidationReport) -> Set[str]
             report.add_error('LARN_PORTIONS', f"Duplicate id: {portion_id}")
         else:
             seen_ids.add(portion_id)
+            larn_index[portion_id] = portion
 
         # Check standard (not standard_qty)
         standard = portion.get('standard', {})
@@ -189,7 +191,7 @@ def validate_larn_portions(data_dir: Path, report: ValidationReport) -> Set[str]
             if v_unit and v_unit != unit:
                 report.add_warning('LARN_PORTIONS', f"{portion_id}: variant unit '{v_unit}' differs from standard '{unit}'")
 
-    return seen_ids
+    return seen_ids, larn_index
 
 
 def validate_operative_portions(data_dir: Path, report: ValidationReport) -> Set[str]:
@@ -235,7 +237,7 @@ def validate_operative_portions(data_dir: Path, report: ValidationReport) -> Set
 
 
 def validate_mapping(data_dir: Path, report: ValidationReport,
-                     food_db_ids: Set[str], larn_ids: Set[str], operative_ids: Set[str]):
+                     food_db_ids: Set[str], larn_ids: Set[str], operative_ids: Set[str]) -> Dict[str, Dict[str, Any]]:
     """
     Validate FOOD_DB_TO_LARN_MAPPING.json
 
@@ -246,7 +248,9 @@ def validate_mapping(data_dir: Path, report: ValidationReport,
     """
     mapping_data = load_json(data_dir / 'FOOD_DB_TO_LARN_MAPPING.json', report, 'FOOD_DB_TO_LARN_MAPPING')
     if not mapping_data:
-        return
+        return {}
+
+    mapping_index = {}
 
     # Note: actual file uses 'mapping', not 'mappings'
     for entry in mapping_data.get('mapping', []):
@@ -259,6 +263,8 @@ def validate_mapping(data_dir: Path, report: ValidationReport,
 
         if food_id not in food_db_ids:
             report.add_error('FOOD_DB_TO_LARN_MAPPING', f"Dangling food_db_id: {food_id} (not found in FOOD_DB)")
+        else:
+            mapping_index[food_id] = entry
 
         # Check at least one portion mapping
         larn_portion_id = entry.get('larn_portion_id')
@@ -275,8 +281,10 @@ def validate_mapping(data_dir: Path, report: ValidationReport,
         if operational_portion_id and operational_portion_id not in operative_ids:
             report.add_error('FOOD_DB_TO_LARN_MAPPING', f"{food_id}: operational_portion_id '{operational_portion_id}' not found in OPERATIVE_PORTIONS")
 
+    return mapping_index
 
-def validate_personal_limits(data_dir: Path, report: ValidationReport, food_db_ids: Set[str]):
+
+def validate_personal_limits(data_dir: Path, report: ValidationReport, food_db_ids: Set[str]) -> Tuple[Dict[str, Dict[str, Any]], int]:
     """
     Validate PERSONAL_LIMITS.json
 
@@ -289,7 +297,10 @@ def validate_personal_limits(data_dir: Path, report: ValidationReport, food_db_i
     """
     limits = load_json(data_dir / 'PERSONAL_LIMITS.json', report, 'PERSONAL_LIMITS')
     if not limits:
-        return
+        return {}, 0
+
+    limits_index = {}
+    limits_total = len(limits.get('limits', []))
 
     for entry in limits.get('limits', []):
         food_id = entry.get('food_db_id')
@@ -301,6 +312,8 @@ def validate_personal_limits(data_dir: Path, report: ValidationReport, food_db_i
 
         if food_id not in food_db_ids:
             report.add_error('PERSONAL_LIMITS', f"Unknown food_db_id: {food_id} (not in FOOD_DB)")
+        else:
+            limits_index[food_id] = entry
 
         # Check max_qty_g
         max_qty = entry.get('max_qty_g')
@@ -330,6 +343,115 @@ def validate_personal_limits(data_dir: Path, report: ValidationReport, food_db_i
                 report.add_error('PERSONAL_LIMITS', f"{food_id}: snack_max_qty_g {snack_max} > max_qty_g {max_qty}")
             if meal_max and meal_max > max_qty:
                 report.add_error('PERSONAL_LIMITS', f"{food_id}: meal_max_qty_g {meal_max} > max_qty_g {max_qty}")
+
+    return limits_index, limits_total
+
+
+def validate_food_catalog(data_dir: Path,
+                         report: ValidationReport,
+                         food_db_index: Dict[str, Dict[str, Any]],
+                         mapping_index: Dict[str, Dict[str, Any]],
+                         larn_index: Dict[str, Dict[str, Any]],
+                         personal_limits_index: Dict[str, Dict[str, Any]],
+                         personal_limits_total: int):
+    """
+    Validate FOOD_CATALOG.json as derived/coherent view.
+
+    Checks:
+    - file exists and has meta.derived=true
+    - stats consistent with source datasets
+    - exact 1:1 coverage on FOOD_DB ids (no missing/extra/duplicates)
+    - food reference/nutrients consistent with FOOD_DB
+    - portion mapping consistent with FOOD_DB_TO_LARN_MAPPING + LARN_PORTIONS
+    - personal_limits snapshot coherent with PERSONAL_LIMITS
+    """
+    catalog = load_json(data_dir / 'FOOD_CATALOG.json', report, 'FOOD_CATALOG')
+    if not catalog:
+        return
+
+    meta = catalog.get('meta', {})
+    if not meta.get('derived'):
+        report.add_error('FOOD_CATALOG', "meta.derived must be true")
+
+    foods = catalog.get('foods')
+    if not isinstance(foods, list):
+        report.add_error('FOOD_CATALOG', "foods must be a list")
+        return
+
+    stats = catalog.get('stats', {})
+    expected_food_count = len(food_db_index)
+    expected_mapping_count = len(mapping_index)
+    expected_larn_count = len(larn_index)
+    expected_limits_count = personal_limits_total
+
+    if stats.get('foods_total') != expected_food_count:
+        report.add_error('FOOD_CATALOG', f"stats.foods_total={stats.get('foods_total')} expected {expected_food_count}")
+    if stats.get('catalog_foods_total') != len(foods):
+        report.add_error('FOOD_CATALOG', f"stats.catalog_foods_total={stats.get('catalog_foods_total')} expected {len(foods)}")
+    if stats.get('mappings_total') != expected_mapping_count:
+        report.add_error('FOOD_CATALOG', f"stats.mappings_total={stats.get('mappings_total')} expected {expected_mapping_count}")
+    if stats.get('larn_portions_total') != expected_larn_count:
+        report.add_error('FOOD_CATALOG', f"stats.larn_portions_total={stats.get('larn_portions_total')} expected {expected_larn_count}")
+    if stats.get('limits_total') != expected_limits_count:
+        report.add_error('FOOD_CATALOG', f"stats.limits_total={stats.get('limits_total')} expected {expected_limits_count}")
+
+    seen = set()
+    missing_mapping_count = 0
+    invalid_mapping_count = 0
+
+    for row in foods:
+        food_id = row.get('id')
+        if not food_id:
+            report.add_error('FOOD_CATALOG', "food row missing id")
+            continue
+        if food_id in seen:
+            report.add_error('FOOD_CATALOG', f"duplicate food id: {food_id}")
+            continue
+        seen.add(food_id)
+
+        source_food = food_db_index.get(food_id)
+        if not source_food:
+            report.add_error('FOOD_CATALOG', f"unknown food id: {food_id}")
+            continue
+
+        if row.get('reference') != source_food.get('reference'):
+            report.add_error('FOOD_CATALOG', f"{food_id}: reference mismatch vs FOOD_DB")
+        if row.get('nutrients_per_reference') != source_food.get('nutrients_per_reference'):
+            report.add_error('FOOD_CATALOG', f"{food_id}: nutrients_per_reference mismatch vs FOOD_DB")
+
+        source_mapping = mapping_index.get(food_id)
+        source_larn = source_mapping.get('larn_portion_id') if source_mapping else None
+        portion = row.get('portion') or {}
+        catalog_larn = portion.get('larn_portion_id')
+
+        if source_mapping is None:
+            missing_mapping_count += 1
+        elif not source_larn or source_larn not in larn_index:
+            invalid_mapping_count += 1
+
+        if catalog_larn != source_larn:
+            report.add_error('FOOD_CATALOG', f"{food_id}: portion.larn_portion_id mismatch vs mapping source")
+
+        if source_larn and source_larn in larn_index:
+            larn_portion = larn_index[source_larn]
+            if portion.get('standard') != larn_portion.get('standard'):
+                report.add_error('FOOD_CATALOG', f"{food_id}: portion.standard mismatch vs LARN")
+
+        source_limit = personal_limits_index.get(food_id)
+        if row.get('personal_limits') != source_limit:
+            report.add_error('FOOD_CATALOG', f"{food_id}: personal_limits mismatch vs PERSONAL_LIMITS")
+
+    missing_foods = set(food_db_index.keys()) - seen
+    extra_foods = seen - set(food_db_index.keys())
+    if missing_foods:
+        report.add_error('FOOD_CATALOG', f"missing ids vs FOOD_DB: {list(sorted(missing_foods))[:5]}...")
+    if extra_foods:
+        report.add_error('FOOD_CATALOG', f"extra ids not in FOOD_DB: {list(sorted(extra_foods))[:5]}...")
+
+    if stats.get('missing_mapping_count') != missing_mapping_count:
+        report.add_error('FOOD_CATALOG', f"stats.missing_mapping_count={stats.get('missing_mapping_count')} expected {missing_mapping_count}")
+    if stats.get('invalid_larn_mapping_count') != invalid_mapping_count:
+        report.add_error('FOOD_CATALOG', f"stats.invalid_larn_mapping_count={stats.get('invalid_larn_mapping_count')} expected {invalid_mapping_count}")
 
 
 def validate_day_profiles(data_dir: Path, report: ValidationReport) -> Tuple[Set[str], Set[str]]:
@@ -463,10 +585,11 @@ def validate_food_groups(data_dir: Path, report: ValidationReport,
             seen_food_ids.add(food_id)
             food_group_map[food_id] = group
 
-    # Check if all FOOD_DB items have a group
+    # In full-db mode FOOD_DB can be much larger than active planning set:
+    # keep this as warning so validator remains useful without forcing 1:1 coverage.
     unmapped = food_db_ids - seen_food_ids
     if unmapped:
-        report.add_error('FOOD_GROUPS', f"Unmapped foods (no group assigned): {list(unmapped)[:5]}...")
+        report.add_warning('FOOD_GROUPS', f"Unmapped foods (no group assigned): {list(unmapped)[:5]}...")
 
     return food_group_map
 
@@ -574,7 +697,7 @@ def validate_all(data_dir: Path) -> ValidationReport:
 
     # 2. LARN_PORTIONS
     print("   Validating LARN_PORTIONS.json...")
-    larn_ids = validate_larn_portions(data_dir, report)
+    larn_ids, larn_index = validate_larn_portions(data_dir, report)
 
     # 3. OPERATIVE_PORTIONS
     print("   Validating OPERATIVE_PORTIONS.json...")
@@ -582,29 +705,41 @@ def validate_all(data_dir: Path) -> ValidationReport:
 
     # 4. FOOD_DB_TO_LARN_MAPPING
     print("   Validating FOOD_DB_TO_LARN_MAPPING.json...")
-    validate_mapping(data_dir, report, food_db_ids_set, larn_ids, operative_ids)
+    mapping_index = validate_mapping(data_dir, report, food_db_ids_set, larn_ids, operative_ids)
 
     # 5. PERSONAL_LIMITS
     print("   Validating PERSONAL_LIMITS.json...")
-    validate_personal_limits(data_dir, report, food_db_ids_set)
+    personal_limits_index, personal_limits_total = validate_personal_limits(data_dir, report, food_db_ids_set)
 
-    # 6. DAY_PROFILES
+    # 6. FOOD_CATALOG
+    print("   Validating FOOD_CATALOG.json...")
+    validate_food_catalog(
+        data_dir=data_dir,
+        report=report,
+        food_db_index=food_db_index,
+        mapping_index=mapping_index,
+        larn_index=larn_index,
+        personal_limits_index=personal_limits_index,
+        personal_limits_total=personal_limits_total,
+    )
+
+    # 7. DAY_PROFILES
     print("   Validating DAY_PROFILES.json...")
     profile_ids, distribution_refs = validate_day_profiles(data_dir, report)
 
-    # 7. MEAL_DISTRIBUTION
+    # 8. MEAL_DISTRIBUTION
     print("   Validating MEAL_DISTRIBUTION.json...")
     validate_meal_distribution(data_dir, report, distribution_refs)
 
-    # 8. FOOD_GROUPS
+    # 9. FOOD_GROUPS
     print("   Validating FOOD_GROUPS.json...")
     food_group_map = validate_food_groups(data_dir, report, food_db_ids_set)
 
-    # 9. MEAL_TEMPLATES
+    # 10. MEAL_TEMPLATES
     print("   Validating MEAL_TEMPLATES.json...")
     validate_meal_templates(data_dir, report, food_group_map, food_db_ids_set)
 
-    # 10. REALISM_RULES
+    # 11. REALISM_RULES
     print("   Validating REALISM_RULES.json...")
     validate_realism_rules(data_dir, report)
 

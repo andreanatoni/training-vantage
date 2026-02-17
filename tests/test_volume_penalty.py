@@ -47,7 +47,7 @@ def test_volume_penalty_prefers_fiber_dense():
         'zucchine_crude',       # veg: 1.1g fiber per 100g
         'fiocchi_d_avena',      # carb: 10g fiber per 100g (fiber-dense!)
         'mela',                 # fruit: 2g fiber per 100g
-        'yogurt_greco_0',       # protein
+        'yogurt_greco_0_lipidi',       # protein
         'mandorle'              # fat + fiber
     ]
 
@@ -131,7 +131,7 @@ def test_only_veg_available_still_valid():
         'zucchine_crude',               # veg (only fiber source!)
         'pollo_petto_cotto_in_padella', # protein
         'pane_bianco',                  # carb (low fiber)
-        'olio_evo'                      # fat
+        'olio_di_oliva_extra_vergine'                      # fat
     ]
 
     try:
@@ -197,11 +197,11 @@ def test_ingredient_excluded_from_volume():
     }
 
     allowed_foods = [
-        'pasta_secca_di_semola',
+        'pasta_di_semola',
         'pollo_petto_cotto_in_padella',
         'passata_di_pomodoro',  # ingredient (veg group but is_ingredient=true)
         'zucchine_crude',       # veg
-        'olio_evo'
+        'olio_di_oliva_extra_vergine'
     ]
 
     result = builder.balancer.balance_meal(

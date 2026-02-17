@@ -164,7 +164,7 @@ class BeamState:
 # ============================================================================
 
 class MealBalancerData:
-    """Carica e gestisce i 5 JSON files"""
+    """Carica dataset nutrizionali, con supporto opzionale a FOOD_CATALOG derivato."""
 
     def __init__(self, data_dir: Path):
         self.data_dir = data_dir
@@ -175,6 +175,8 @@ class MealBalancerData:
         self.mapping = self._load_json('FOOD_DB_TO_LARN_MAPPING.json')
         self.operative_portions = self._load_json('OPERATIVE_PORTIONS.json')
         self.personal_limits = self._load_json('PERSONAL_LIMITS.json')
+        self.food_catalog = self._load_json_optional('FOOD_CATALOG.json')
+        self.catalog_active = False
 
         # Build indexes for fast lookup
         self._build_indexes()
@@ -189,14 +191,36 @@ class MealBalancerData:
             print(f"Error loading {filename}: {e}")
             sys.exit(1)
 
+    def _load_json_optional(self, filename: str) -> Optional[Dict]:
+        """Load optional JSON file; return None if missing/invalid."""
+        filepath = self.data_dir / filename
+        if not filepath.exists():
+            return None
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    def _is_catalog_usable(self) -> bool:
+        """Catalog is usable only if complete and structurally coherent."""
+        if not self.food_catalog:
+            return False
+        foods = self.food_catalog.get('foods')
+        stats = self.food_catalog.get('stats', {})
+        meta = self.food_catalog.get('meta', {})
+        if not isinstance(foods, list) or not foods:
+            return False
+        if not meta.get('derived'):
+            return False
+        if stats.get('missing_mapping_count', 1) != 0:
+            return False
+        if stats.get('invalid_larn_mapping_count', 1) != 0:
+            return False
+        return True
+
     def _build_indexes(self):
         """Build fast lookup indexes"""
-        # FOOD_DB index
-        self.food_db_index = {
-            food['id']: food
-            for food in self.food_db['foods']
-        }
-
         # LARN index (include variants)
         self.larn_index = {}
         for portion in self.larn_portions['portions']:
@@ -212,16 +236,53 @@ class MealBalancerData:
             for portion in self.operative_portions['portions']
         }
 
-        # MAPPING index
-        self.mapping_index = {
-            entry['food_db_id']: entry
-            for entry in self.mapping['mapping']
-        }
-
         # PERSONAL_LIMITS index
         self.personal_limits_index = {
             limit['food_db_id']: limit
             for limit in self.personal_limits['limits']
+        }
+
+        if self._is_catalog_usable():
+            # Preferred path: use derived catalog as single merged source for food+mapping.
+            self.catalog_active = True
+            self.food_db_index = {}
+            self.mapping_index = {}
+
+            for food in self.food_catalog.get('foods', []):
+                food_id = food.get('id')
+                if not food_id:
+                    continue
+
+                self.food_db_index[food_id] = {
+                    'id': food_id,
+                    'name': food.get('name'),
+                    'reference': food.get('reference'),
+                    'nutrients_per_reference': food.get('nutrients_per_reference'),
+                }
+
+                portion = food.get('portion') or {}
+                mapping = food.get('mapping') or {}
+                self.mapping_index[food_id] = {
+                    'food_db_id': food_id,
+                    'larn_portion_id': portion.get('larn_portion_id'),
+                    'larn_variant_id': None,
+                    'operational_portion_id': None,
+                    'review_status': mapping.get('review_status'),
+                    'mapping_confidence': mapping.get('mapping_confidence'),
+                    'mapping_source': mapping.get('mapping_source'),
+                    'last_reviewed_at': mapping.get('last_reviewed_at'),
+                    'note': mapping.get('note'),
+                }
+            return
+
+        # Legacy path: use original files directly.
+        self.food_db_index = {
+            food['id']: food
+            for food in self.food_db['foods']
+        }
+        self.mapping_index = {
+            entry['food_db_id']: entry
+            for entry in self.mapping['mapping']
         }
 
 
@@ -429,13 +490,13 @@ class MealBalancer:
             Quantità snappata a valore pratico
 
         Examples:
-            >>> snap_to_realistic_qty('yogurt_greco_0', 156.2, 'realistic')
+            >>> snap_to_realistic_qty('yogurt_greco_0_lipidi', 156.2, 'realistic')
             170.0  # snap a preferred_qty [100, 125, 170], 170 più vicino
 
-            >>> snap_to_realistic_qty('pasta_secca_di_semola', 83.7, 'realistic')
+            >>> snap_to_realistic_qty('pasta_di_semola', 83.7, 'realistic')
             85.0  # no preferred vicino < 20%, snap a 5g
 
-            >>> snap_to_realistic_qty('olio_evo', 12.3, 'unconstrained')
+            >>> snap_to_realistic_qty('olio_di_oliva_extra_vergine', 12.3, 'unconstrained')
             12.5  # snap a 2.5g (unconstrained più preciso)
         """
         personal_limit = self.data.personal_limits_index.get(food_db_id)
@@ -516,7 +577,7 @@ class MealBalancer:
                 # 50g+ skipped (supera snack_max 40g)
             ]
 
-            >>> generate_quantity_candidates('olio_evo', 'meal', 'unconstrained')
+            >>> generate_quantity_candidates('olio_di_oliva_extra_vergine', 'meal', 'unconstrained')
             [
                 (0, None, []),
                 (2.25, 0.25, []),     # 9g × 0.25
@@ -736,7 +797,7 @@ class MealBalancer:
 
         Args:
             target: Target nutrizionali (es. kcal 450, P 25, CHO 60, F 12, Fibre 8)
-            food_ids: Lista alimenti da considerare (es. ['yogurt_greco_0', 'mandorle'])
+            food_ids: Lista alimenti da considerare (es. ['yogurt_greco_0_lipidi', 'mandorle'])
             meal_context: "meal" o "snack"
             mode: "realistic" (rispetta caps) o "unconstrained" (può violare)
             beam_width: Numero stati da tenere per iterazione (default 300)
@@ -751,12 +812,12 @@ class MealBalancer:
             >>> # COLAZIONE: 5 alimenti, target 450 kcal
             >>> target = NutrientValues(kcal=450, P=25, CHO=60, F=12, Fibre=8)
             >>> foods = ['caffe_espresso', 'fette_biscottate', 'marmellata',
-            ...          'yogurt_greco_0', 'mandorle']
+            ...          'yogurt_greco_0_lipidi', 'mandorle']
             >>> state = beam_search(target, foods, 'meal', 'realistic', 300)
             >>>
             >>> # Risultato ottimale:
             >>> state.items = [
-            ...     FoodItem('yogurt_greco_0', qty=170g, multiplier=1.36),  # 170g vasetto
+            ...     FoodItem('yogurt_greco_0_lipidi', qty=170g, multiplier=1.36),  # 170g vasetto
             ...     FoodItem('fette_biscottate', qty=30g, multiplier=1.0),  # 4 fette
             ...     FoodItem('marmellata', qty=20g, multiplier=2.0),        # 2 cucchiai
             ...     FoodItem('mandorle', qty=15g, multiplier=0.5),          # mezza porzione
@@ -1069,7 +1130,7 @@ class MealBalancer:
                 - "snack": spuntino (context-dependent usa snack_max)
             allowed_food_db_ids: Lista alimenti consentiti (opzionale)
                 - Se None → usa tutti gli alimenti in FOOD_DB
-                - Es: ['yogurt_greco_0', 'mandorle', 'fette_biscottate']
+                - Es: ['yogurt_greco_0_lipidi', 'mandorle', 'fette_biscottate']
 
         Returns:
             Dict con struttura:
@@ -1116,14 +1177,14 @@ class MealBalancer:
             ...         'caffe_espresso',
             ...         'fette_biscottate',
             ...         'marmellata',
-            ...         'yogurt_greco_0',
+            ...         'yogurt_greco_0_lipidi',
             ...         'mandorle'
             ...     ]
             ... )
             >>>
             >>> # Output:
             >>> result['best_match_realistic']['items'] = [
-            ...     {'food_db_id': 'yogurt_greco_0', 'qty': {'amount': 170, 'unit': 'g'},
+            ...     {'food_db_id': 'yogurt_greco_0_lipidi', 'qty': {'amount': 170, 'unit': 'g'},
             ...      'multiplier': 1.36, 'macros': {'kcal': 170, 'P': 17, ...}},
             ...     {'food_db_id': 'fette_biscottate', 'qty': {'amount': 30, 'unit': 'g'},
             ...      'multiplier': 1.0, 'macros': {'kcal': 120, 'P': 3.6, ...}},
@@ -1155,7 +1216,7 @@ class MealBalancer:
             ...     allowed_food_db_ids=[
             ...         'prosciutto_crudo',           # context-dependent
             ...         'pane_integrale',
-            ...         'formaggio_spalmabile_light'  # context-dependent
+            ...         'formaggio_cremoso_spalmabile_light'  # context-dependent
             ...     ]
             ... )
             >>>
@@ -1163,7 +1224,7 @@ class MealBalancer:
             >>> result['best_match_realistic']['items'] = [
             ...     {'food_db_id': 'prosciutto_crudo', 'qty': {'amount': 40, 'unit': 'g'},
             ...      'multiplier': 0.8},  # snack_max 40g (NOT 120g meal_max)
-            ...     {'food_db_id': 'formaggio_spalmabile_light', 'qty': {'amount': 50, 'unit': 'g'},
+            ...     {'food_db_id': 'formaggio_cremoso_spalmabile_light', 'qty': {'amount': 50, 'unit': 'g'},
             ...      'multiplier': 2.0},  # snack_max 50g
             ...     {'food_db_id': 'pane_integrale', 'qty': {'amount': 50, 'unit': 'g'},
             ...      'multiplier': 1.0}
@@ -1186,10 +1247,10 @@ class MealBalancer:
             ...     target={'kcal': 650, 'P': 35, 'CHO': 85, 'F': 18, 'Fibre': 10},
             ...     meal_context='meal',
             ...     allowed_food_db_ids=[
-            ...         'pasta_secca_di_semola',
-            ...         'ragu_di_vitello_40_vitello_60_passata',
+            ...         'pasta_di_semola',
+            ...         'salsa_di_carne_manzo',
             ...         'passata_di_pomodoro',  # is_ingredient=true
-            ...         'olio_evo',
+            ...         'olio_di_oliva_extra_vergine',
             ...         'zucchine_crude'
             ...     ]
             ... )
@@ -1197,13 +1258,13 @@ class MealBalancer:
             >>> # Passata usa step libero (20g, 40g, 60g, 80g, 100g)
             >>> # NON vincolato a 200g × multiplier (porzione operativa)
             >>> result['best_match_realistic']['items'] = [
-            ...     {'food_db_id': 'pasta_secca_di_semola', 'qty': {'amount': 100, 'unit': 'g'},
+            ...     {'food_db_id': 'pasta_di_semola', 'qty': {'amount': 100, 'unit': 'g'},
             ...      'multiplier': 1.25},
-            ...     {'food_db_id': 'ragu_di_vitello_40_vitello_60_passata',
+            ...     {'food_db_id': 'salsa_di_carne_manzo',
             ...      'qty': {'amount': 100, 'unit': 'g'}, 'multiplier': 0.5},
             ...     {'food_db_id': 'passata_di_pomodoro', 'qty': {'amount': 80, 'unit': 'g'},
             ...      'multiplier': None, 'is_ingredient': True},  # step 20g
-            ...     {'food_db_id': 'olio_evo', 'qty': {'amount': 15, 'unit': 'g'},
+            ...     {'food_db_id': 'olio_di_oliva_extra_vergine', 'qty': {'amount': 15, 'unit': 'g'},
             ...      'multiplier': 1.67},
             ...     {'food_db_id': 'zucchine_crude', 'qty': {'amount': 200, 'unit': 'g'},
             ...      'multiplier': 1.0}
@@ -1356,6 +1417,7 @@ def main():
     # Test info
     print("\n📊 Data Summary:")
     print(f"  - FOOD_DB: {len(data.food_db_index)} foods")
+    print(f"  - FOOD_CATALOG active: {'yes' if data.catalog_active else 'no (legacy indexes)'}")
     print(f"  - LARN_PORTIONS: {len(data.larn_index)} portions (+ variants)")
     print(f"  - OPERATIVE_PORTIONS: {len(data.operative_index)} portions")
     print(f"  - MAPPING: {len(data.mapping_index)} mappings")
@@ -1383,7 +1445,7 @@ def main():
             'caffe_espresso',
             'fette_biscottate',
             'marmellata',
-            'yogurt_greco_0',
+            'yogurt_greco_0_lipidi',
             'mandorle'
         ]
     )

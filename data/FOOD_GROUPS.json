@@ -4,61 +4,201 @@
     "purpose": "Classificazione alimenti in gruppi logici per meal template validation",
     "version": "v1.1",
     "last_updated": "2026-02-12",
-    "groups_available": ["carb", "protein", "fat", "veg", "fruit", "sweetener", "beverage"],
+    "groups_available": [
+      "carb",
+      "protein",
+      "fat",
+      "veg",
+      "fruit",
+      "sweetener",
+      "beverage"
+    ],
     "notes": "Ogni alimento appartiene a 1 solo gruppo. Se manca, considerato 'unknown'. v1.1: marmellata/miele spostati da 'fruit' a 'sweetener' (semantica corretta)."
   },
   "food_groups": [
-    {"food_db_id": "pasta_secca_di_semola", "group": "carb"},
-    {"food_db_id": "riso_basmati_crudo", "group": "carb"},
-    {"food_db_id": "pane_integrale", "group": "carb"},
-    {"food_db_id": "pane_bianco", "group": "carb"},
-    {"food_db_id": "fette_biscottate", "group": "carb"},
-    {"food_db_id": "crackers_integrali", "group": "carb"},
-    {"food_db_id": "tortellini_vitello", "group": "carb"},
-    {"food_db_id": "fiocchi_d_avena", "group": "carb"},
-    {"food_db_id": "patate_senza_buccia_bollite", "group": "carb"},
-
-    {"food_db_id": "yogurt_greco_0", "group": "protein"},
-    {"food_db_id": "yogurt_magro_0_1", "group": "protein"},
-    {"food_db_id": "pollo_petto_cotto_in_padella", "group": "protein"},
-    {"food_db_id": "tacchino_fesa_cotto_al_forno", "group": "protein"},
-    {"food_db_id": "manzo_magro_fesa_crudo", "group": "protein"},
-    {"food_db_id": "vitello_filetto_cotto_in_padella", "group": "protein"},
-    {"food_db_id": "salmone", "group": "protein"},
-    {"food_db_id": "merluzzo_surgelato_cotto_al_forno", "group": "protein"},
-    {"food_db_id": "tonno_tagliata_fresco", "group": "protein"},
-    {"food_db_id": "tonno_al_naturale_drenato", "group": "protein"},
-    {"food_db_id": "prosciutto_crudo", "group": "protein"},
-    {"food_db_id": "bresaola", "group": "protein"},
-    {"food_db_id": "fesa_tacchino_affettato", "group": "protein"},
-    {"food_db_id": "uova_intere_gallina", "group": "protein"},
-    {"food_db_id": "mozzarella_di_bufala", "group": "protein"},
-    {"food_db_id": "parmigiano_reggiano", "group": "protein"},
-    {"food_db_id": "formaggio_spalmabile_light", "group": "protein"},
-    {"food_db_id": "ragu_di_vitello_40_vitello_60_passata", "group": "protein"},
-
-    {"food_db_id": "olio_evo", "group": "fat"},
-    {"food_db_id": "mandorle", "group": "fat"},
-    {"food_db_id": "noci", "group": "fat"},
-    {"food_db_id": "nocciole", "group": "fat"},
-    {"food_db_id": "burro_d_arachidi", "group": "fat"},
-
-    {"food_db_id": "zucchine_crude", "group": "veg"},
-    {"food_db_id": "insalata_mista", "group": "veg"},
-    {"food_db_id": "carote_crude", "group": "veg"},
-    {"food_db_id": "pomodori_ciliegino", "group": "veg"},
-    {"food_db_id": "passata_di_pomodoro", "group": "veg"},
-
-    {"food_db_id": "mela", "group": "fruit"},
-    {"food_db_id": "banana", "group": "fruit"},
-    {"food_db_id": "kiwi", "group": "fruit"},
-    {"food_db_id": "arancia", "group": "fruit"},
-    {"food_db_id": "fragole", "group": "fruit"},
-    {"food_db_id": "mirtilli", "group": "fruit"},
-
-    {"food_db_id": "marmellata", "group": "sweetener"},
-    {"food_db_id": "miele", "group": "sweetener"},
-
-    {"food_db_id": "caffe_espresso", "group": "beverage"}
+    {
+      "food_db_id": "pasta_di_semola",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "riso_basmati_crudo",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "pane_integrale",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "pane_bianco",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "fette_biscottate",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "crackers_integrali",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "tortellini_freschi",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "fiocchi_d_avena",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "patate_bollite_senza_buccia",
+      "group": "carb"
+    },
+    {
+      "food_db_id": "yogurt_greco_0_lipidi",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "yogurt_bianco_scremato",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "pollo_petto_cotto_in_padella",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "tacchino_fesa_cotta_al_forno",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "bovino_adulto_o_vitellone_fesa_crudo",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "vitello_filetto_cotto_in_padella",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "salmone",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "merluzzo_o_nasello_surgelato_cotto_in_forno",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "tonno_pinne_gialle",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "tonno_al_naturale",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "prosciutto_crudo",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "bresaola",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "fesa_di_tacchino_arrosto",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "uova_di_gallina_intero",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "mozzarella_di_bufala",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "parmigiano_reggiano_dop",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "formaggio_cremoso_spalmabile_light",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "salsa_di_carne_manzo",
+      "group": "protein"
+    },
+    {
+      "food_db_id": "olio_di_oliva_extra_vergine",
+      "group": "fat"
+    },
+    {
+      "food_db_id": "mandorle",
+      "group": "fat"
+    },
+    {
+      "food_db_id": "noci",
+      "group": "fat"
+    },
+    {
+      "food_db_id": "nocciole",
+      "group": "fat"
+    },
+    {
+      "food_db_id": "burro_d_arachidi",
+      "group": "fat"
+    },
+    {
+      "food_db_id": "zucchine_crude",
+      "group": "veg"
+    },
+    {
+      "food_db_id": "insalata",
+      "group": "veg"
+    },
+    {
+      "food_db_id": "carote_crude",
+      "group": "veg"
+    },
+    {
+      "food_db_id": "pomodorini_ciliegino_freschi",
+      "group": "veg"
+    },
+    {
+      "food_db_id": "passata_di_pomodoro",
+      "group": "veg"
+    },
+    {
+      "food_db_id": "mela",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "banana",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "kiwi",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "arancia",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "fragole_fresche",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "mirtilli_freschi",
+      "group": "fruit"
+    },
+    {
+      "food_db_id": "marmellata",
+      "group": "sweetener"
+    },
+    {
+      "food_db_id": "miele",
+      "group": "sweetener"
+    },
+    {
+      "food_db_id": "caffe_espresso",
+      "group": "beverage"
+    }
   ]
 }

@@ -11,7 +11,7 @@
     },
     "meal_context": "meal",
     "allowed_food_db_ids": [
-      "yogurt_magro_0_1",
+      "yogurt_bianco_scremato",
       "fette_biscottate",
       "marmellata"
     ]
@@ -27,7 +27,7 @@
     "notes_must_explain": [
       "Target P non raggiunto",
       "Causa strutturale (vincolo matematico)",
-      "Soluzione alternativa (es: sostituire con yogurt_greco_0)"
+      "Soluzione alternativa (es: sostituire con yogurt_greco_0_lipidi)"
     ]
   },
   "notes": "Test failure mode: sistema DEVE fallire gracefully, spiegare perché (vincolo strutturale), proporre soluzione (yogurt greco). NO giudizi tipo 'troppo ambizioso'."

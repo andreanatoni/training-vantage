@@ -77,11 +77,11 @@ def test_floor_applied_when_lower():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata'],
                 'spuntino_mattina': ['mandorle', 'mela'],  # Floor should apply here
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             }
         )
 
@@ -162,11 +162,11 @@ def test_no_floor_no_change():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata', 'mandorle'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'mandorle'],
                 'spuntino_mattina': ['mandorle', 'mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             }
         )
 
@@ -231,11 +231,11 @@ def test_unreachable_does_not_crash():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata', 'mandorle'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'mandorle'],
                 'spuntino_mattina': ['mela', 'marmellata'],  # Very low P foods
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             }
         )
 

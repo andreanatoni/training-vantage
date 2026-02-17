@@ -68,6 +68,8 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `running_plan.json`: output piano running generato (settimane, sessioni, fase, target km).
 - `INTEGRATION_CONFIG.json`: configurazione strict per atleta usata da `status`, `plan week/month` e fallback `goal_race` in `running generate`.
 - `FOOD_DB_ACTIVE.json`: sottoinsieme per-atleta derivato da template/piani per lavorare su alimenti realmente usati.
+- `FOOD_CATALOG.json`: vista derivata shadow unificata (food + mapping + porzione + limiti), non source-of-truth.
+  - `meal_balancer` la usa automaticamente quando e' valida/completa; altrimenti fallback ai dataset legacy.
 - `strength-progress.json`: progressione forza.
 - `zones.json`: zone di allenamento correnti + storico.
 - `changelog.json`: log tecnico delle operazioni script/CLI.
@@ -88,6 +90,7 @@ Comandi principali (dalla root del repo):
 ./tv food map-larn next --limit 20
 ./tv food map-larn set bresaola salumi
 ./tv food build-active
+./tv food build-catalog
 ./tv food extract-portions
 ./tv load import sources/workouts-2.csv
 ./tv running setup --no-history
@@ -121,6 +124,12 @@ Comandi principali (dalla root del repo):
 - `food build-active`: genera `data/athletes/<id>/FOOD_DB_ACTIVE.json` (cache derivata non distruttiva) da:
   - `data/athletes/<id>/nutrition_base_template.json` (food_db_id espliciti)
   - `plans/nutrition/athletes/<id>/**/*.json` (food_db_id diretti e tentativo match per nome)
+- `food build-catalog [--dry-run] [--no-strict]`: genera `data/FOOD_CATALOG.json` come vista derivata shadow da:
+  - `data/FOOD_DB.json`
+  - `data/FOOD_DB_TO_LARN_MAPPING.json`
+  - `data/LARN_PORTIONS.json`
+  - `data/PERSONAL_LIMITS.json`
+- `food validate-data`: esegue validazione strutturale globale dei dataset e coerenza `FOOD_CATALOG` rispetto alle sorgenti.
 - `load import [--tp ...] [--garmin ...]`: importa uno o piu' CSV TrainingPeaks/Garmin (anche insieme), fa merge per data/seduta e aggiorna `training_load.json` con profili energetici per day-type.
 - `running generate ...`: genera `running_plan.json` su periodi multi-settimana/mensili con logica progressione, scarico e taper.
   - include sessioni `forza` secondo configurazione atleta (`day_type=forza`, km=0)

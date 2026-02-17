@@ -69,7 +69,7 @@ Contiene:
 
 ### Path primario
 - Path supportato: `./tv plan ...`
-- `python3 scripts/cli.py plan ...` e' legacy e richiede `--legacy`
+- `python3 scripts/cli.py plan ...` e' deprecato e non supportato (usa `./tv plan ...`)
 
 ### Setup base
 - `./tv nutrition setup-base` crea/aggiorna:
@@ -116,6 +116,14 @@ Output:
 - `./tv food build-active`
 - Genera `data/athletes/<id>/FOOD_DB_ACTIVE.json` da template+piani atleta
 - E' una cache derivata (non sostituisce `FOOD_DB.json`)
+
+### Catalogo derivato (shadow)
+- `./tv food build-catalog`
+- Genera `data/FOOD_CATALOG.json` come vista derivata da `FOOD_DB + FOOD_DB_TO_LARN_MAPPING + LARN_PORTIONS + PERSONAL_LIMITS`
+- `meal_balancer` lo usa automaticamente quando e' valido/completo (fallback automatico ai file legacy se manca o e' incoerente)
+- Non sostituisce i file sorgente: resta una vista derivata per semplificazione progressiva
+- `./tv food validate-data` valida coerenza completa dataset, incluso allineamento `FOOD_CATALOG` vs file sorgente
+
 
 ## Struttura Progetto (Essenziale)
 

@@ -61,7 +61,7 @@ def test_forbidden_food_ids():
     print("\n🧪 Test: Pasta at colazione (hard blocked via forbidden_food_ids)")
 
     # Colazione with pasta → MUST FAIL (even though pasta is valid 'carb')
-    invalid_foods = ['pasta_secca_di_semola', 'yogurt_greco_0', 'marmellata']
+    invalid_foods = ['pasta_di_semola', 'yogurt_greco_0_lipidi', 'marmellata']
 
     try:
         builder.validate_meal_template('colazione', invalid_foods)

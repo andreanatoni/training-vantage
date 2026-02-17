@@ -28,17 +28,17 @@ def demo_valid_colazione():
     builder = PlanBuilder(data_dir)
 
     print("\n✅ Valid colazione: carb + protein + fat + fruit")
-    print("   Foods: yogurt_greco_0, fette_biscottate, marmellata, mandorle\n")
+    print("   Foods: yogurt_greco_0_lipidi, fette_biscottate, marmellata, mandorle\n")
 
     try:
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata', 'mandorle'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'mandorle'],
                 'spuntino_mattina': ['mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'insalata_mista', 'olio_evo']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'insalata', 'olio_di_oliva_extra_vergine']
             }
         )
 
@@ -67,9 +67,9 @@ def demo_invalid_colazione_no_protein():
             allowed_foods_per_meal={
                 'colazione': ['fette_biscottate', 'marmellata'],  # NO PROTEIN!
                 'spuntino_mattina': ['mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'insalata_mista', 'olio_evo']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'insalata', 'olio_di_oliva_extra_vergine']
             }
         )
 
@@ -91,17 +91,17 @@ def demo_invalid_colazione_has_veg():
     builder = PlanBuilder(data_dir)
 
     print("\n❌ Invalid colazione: has vegetables (FORBIDDEN)")
-    print("   Foods: yogurt_greco_0, fette_biscottate, zucchine_crude\n")
+    print("   Foods: yogurt_greco_0_lipidi, fette_biscottate, zucchine_crude\n")
 
     try:
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'zucchine_crude'],  # VEG FORBIDDEN!
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'zucchine_crude'],  # VEG FORBIDDEN!
                 'spuntino_mattina': ['mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'insalata_mista', 'olio_evo']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'insalata', 'olio_di_oliva_extra_vergine']
             }
         )
 

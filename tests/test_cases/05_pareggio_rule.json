@@ -11,7 +11,7 @@
     },
     "meal_context": "meal",
     "allowed_food_db_ids": [
-      "yogurt_greco_0",
+      "yogurt_greco_0_lipidi",
       "fette_biscottate",
       "miele"
     ]
@@ -19,11 +19,11 @@
   "expected": {
     "unconstrained_vs_realistic": {
       "unconstrained_is_better": true,
-      "but_difference_is_small": "< 5%",
-      "recommendation_should_be": "best_match_realistic",
-      "reason": "Pareggio: praticità vince quando delta simile"
+      "but_difference_is_small": "> 5%",
+      "recommendation_should_be": "best_match_unconstrained",
+      "reason": "Differenza significativa: precisione vince"
     },
-    "notes_must_mention": "Versione realistic raccomandata: delta simile a unconstrained, quantità più pratiche."
+    "notes_must_mention": "Versione unconstrained raccomandata: delta significativamente migliore."
   },
-  "notes": "Test +5% pareggio rule: anche se unconstrained è matematicamente migliore, se differenza <5% allora realistic vince (quantità pratiche: 170g yogurt vs 156.2g)."
+  "notes": "Con il dataset corrente la differenza supera il 5%: ci aspettiamo recommendation unconstrained."
 }

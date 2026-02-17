@@ -214,7 +214,7 @@ class PlanBuilder:
 
         Example:
             >>> # Valid colazione
-            >>> validate_meal_template('colazione', ['yogurt_greco_0', 'fette_biscottate', 'marmellata'])
+            >>> validate_meal_template('colazione', ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata'])
             # No error
 
             >>> # Invalid: missing protein
@@ -222,7 +222,7 @@ class PlanBuilder:
             ValueError: colazione: missing required group 'protein'
 
             >>> # Invalid: has veg (forbidden)
-            >>> validate_meal_template('colazione', ['yogurt_greco_0', 'fette_biscottate', 'zucchine_crude'])
+            >>> validate_meal_template('colazione', ['yogurt_greco_0_lipidi', 'fette_biscottate', 'zucchine_crude'])
             ValueError: colazione: forbidden group 'veg' present
         """
         template = self.template_map.get(meal_id)
@@ -333,8 +333,8 @@ class PlanBuilder:
 
         Example:
             >>> # Invalid: pasta at colazione (forbidden_food_ids)
-            >>> validate_must_include_against_template('colazione', ['pasta_secca_di_semola'])
-            ValueError: colazione: must_include food 'pasta_secca_di_semola' is forbidden
+            >>> validate_must_include_against_template('colazione', ['pasta_di_semola'])
+            ValueError: colazione: must_include food 'pasta_di_semola' is forbidden
         """
         template = self.template_map.get(meal_id)
         if not template:
@@ -495,11 +495,11 @@ class PlanBuilder:
             >>> plan = builder.build_day_plan(
             ...     profile_id='rest',
             ...     allowed_foods_per_meal={
-            ...         'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata'],
+            ...         'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata'],
             ...         'spuntino_mattina': ['mandorle', 'mela'],
-            ...         'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella'],
+            ...         'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella'],
             ...         'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-            ...         'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo']
+            ...         'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine']
             ...     }
             ... )
         """
@@ -619,7 +619,7 @@ class PlanBuilder:
                     floor_note = (
                         f"Protein floor {P_floor_g}g non raggiunto ({actual_P:.1f}g). "
                         f"Causa: allowed_foods insufficienti / caps personali. "
-                        f"Azione: aggiungere fonte proteica (es. yogurt_greco_0, albumi, pollo) "
+                        f"Azione: aggiungere fonte proteica (es. yogurt_greco_0_lipidi, albumi, pollo) "
                         f"o aumentare max_qty."
                     )
                     result['notes'].append(floor_note)
@@ -696,11 +696,11 @@ def main():
     plan_rest = builder.build_day_plan(
         profile_id='rest',
         allowed_foods_per_meal={
-            'colazione': ['caffe_espresso', 'yogurt_greco_0', 'fette_biscottate', 'marmellata', 'mandorle'],
+            'colazione': ['caffe_espresso', 'yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'mandorle'],
             'spuntino_mattina': ['mela', 'mandorle'],
-            'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'olio_evo', 'zucchine_crude', 'parmigiano_reggiano'],
+            'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'olio_di_oliva_extra_vergine', 'zucchine_crude', 'parmigiano_reggiano_dop'],
             'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-            'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+            'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
         }
     )
 
@@ -712,10 +712,10 @@ def main():
         profile_id='lungo',
         allowed_foods_per_meal={
             'colazione': ['caffe_espresso', 'fette_biscottate', 'miele', 'banana'],
-            'post_lungo': ['yogurt_greco_0', 'banana', 'mandorle'],
-            'pranzo': ['riso_basmati_crudo', 'tacchino_fesa_cotto_al_forno', 'olio_evo', 'carote_crude', 'parmigiano_reggiano'],
+            'post_lungo': ['yogurt_greco_0_lipidi', 'banana', 'mandorle'],
+            'pranzo': ['riso_basmati_crudo', 'tacchino_fesa_cotta_al_forno', 'olio_di_oliva_extra_vergine', 'carote_crude', 'parmigiano_reggiano_dop'],
             'spuntino_pomeriggio': ['fette_biscottate', 'marmellata'],
-            'cena': ['merluzzo_surgelato_cotto_al_forno', 'patate_senza_buccia_bollite', 'olio_evo', 'zucchine_crude']
+            'cena': ['merluzzo_o_nasello_surgelato_cotto_in_forno', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'zucchine_crude']
         }
     )
 

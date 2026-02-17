@@ -13,10 +13,24 @@
       "rules": {
         "min_items": 2,
         "max_items": 6,
-        "required_groups": ["carb", "protein"],
-        "optional_groups": ["fat", "fruit", "sweetener", "beverage"],
-        "forbidden_groups": ["veg"],
-        "forbidden_food_ids": ["pasta_secca_di_semola", "riso_basmati_crudo", "tortellini_vitello"],
+        "required_groups": [
+          "carb",
+          "protein"
+        ],
+        "optional_groups": [
+          "fat",
+          "fruit",
+          "sweetener",
+          "beverage"
+        ],
+        "forbidden_groups": [
+          "veg"
+        ],
+        "forbidden_food_ids": [
+          "pasta_di_semola",
+          "riso_basmati_crudo",
+          "tortellini_freschi"
+        ],
         "max_per_group": {
           "fat": 2,
           "protein": 2,
@@ -34,8 +48,15 @@
       "rules": {
         "min_items": 3,
         "max_items": 6,
-        "required_groups": ["protein", "veg"],
-        "optional_groups": ["carb", "fat", "fruit"],
+        "required_groups": [
+          "protein",
+          "veg"
+        ],
+        "optional_groups": [
+          "carb",
+          "fat",
+          "fruit"
+        ],
         "forbidden_groups": [],
         "forbidden_food_ids": [],
         "max_per_group": {
@@ -53,8 +74,14 @@
       "rules": {
         "min_items": 3,
         "max_items": 6,
-        "required_groups": ["protein", "veg"],
-        "optional_groups": ["carb", "fat"],
+        "required_groups": [
+          "protein",
+          "veg"
+        ],
+        "optional_groups": [
+          "carb",
+          "fat"
+        ],
         "forbidden_groups": [],
         "forbidden_food_ids": [],
         "max_per_group": {
@@ -73,7 +100,13 @@
         "min_items": 1,
         "max_items": 3,
         "required_groups": [],
-        "optional_groups": ["protein", "carb", "fat", "fruit", "sweetener"],
+        "optional_groups": [
+          "protein",
+          "carb",
+          "fat",
+          "fruit",
+          "sweetener"
+        ],
         "forbidden_groups": [],
         "forbidden_food_ids": [],
         "max_per_group": {
@@ -93,7 +126,13 @@
         "min_items": 1,
         "max_items": 3,
         "required_groups": [],
-        "optional_groups": ["protein", "carb", "fat", "fruit", "sweetener"],
+        "optional_groups": [
+          "protein",
+          "carb",
+          "fat",
+          "fruit",
+          "sweetener"
+        ],
         "forbidden_groups": [],
         "forbidden_food_ids": [],
         "max_per_group": {
@@ -112,9 +151,18 @@
       "rules": {
         "min_items": 2,
         "max_items": 4,
-        "required_groups": ["protein", "carb"],
-        "optional_groups": ["fat", "fruit", "sweetener"],
-        "forbidden_groups": ["veg"],
+        "required_groups": [
+          "protein",
+          "carb"
+        ],
+        "optional_groups": [
+          "fat",
+          "fruit",
+          "sweetener"
+        ],
+        "forbidden_groups": [
+          "veg"
+        ],
         "forbidden_food_ids": [],
         "max_per_group": {
           "fat": 1,

@@ -147,11 +147,11 @@ def test_context_propagation():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata'],
                 'spuntino_mattina': ['prosciutto_crudo', 'pane_integrale'],  # snack context
-                'pranzo': ['prosciutto_crudo', 'pane_integrale', 'insalata_mista'],  # meal context
+                'pranzo': ['prosciutto_crudo', 'pane_integrale', 'insalata'],  # meal context
                 'spuntino_pomeriggio': ['mandorle'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             }
         )
 

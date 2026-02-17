@@ -35,11 +35,11 @@ def demo_without_must_include():
         target={'kcal': 600, 'P': 40, 'CHO': 70, 'F': 15, 'Fibre': 8},
         meal_context='meal',
         allowed_food_db_ids=[
-            'pasta_secca_di_semola',
+            'pasta_di_semola',
             'pollo_petto_cotto_in_padella',
             'zucchine_crude',
-            'olio_evo',
-            'parmigiano_reggiano'
+            'olio_di_oliva_extra_vergine',
+            'parmigiano_reggiano_dop'
         ]
     )
 
@@ -80,11 +80,11 @@ def demo_with_must_include():
         target={'kcal': 600, 'P': 40, 'CHO': 70, 'F': 15, 'Fibre': 8},
         meal_context='meal',
         allowed_food_db_ids=[
-            'pasta_secca_di_semola',
+            'pasta_di_semola',
             'pollo_petto_cotto_in_padella',
             'zucchine_crude',
-            'olio_evo',
-            'parmigiano_reggiano'
+            'olio_di_oliva_extra_vergine',
+            'parmigiano_reggiano_dop'
         ],
         must_include_food_db_ids=['pollo_petto_cotto_in_padella']  # ← FORCED
     )
@@ -133,11 +133,11 @@ def demo_use_case_macros_target():
         target={'kcal': 700, 'P': 50, 'CHO': 80, 'F': 20, 'Fibre': 10},
         meal_context='meal',
         allowed_food_db_ids=[
-            'pasta_secca_di_semola',
+            'pasta_di_semola',
             'pollo_petto_cotto_in_padella',
             'zucchine_crude',
-            'olio_evo',
-            'parmigiano_reggiano'
+            'olio_di_oliva_extra_vergine',
+            'parmigiano_reggiano_dop'
         ],
         must_include_food_db_ids=['pollo_petto_cotto_in_padella']
     )

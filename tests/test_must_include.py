@@ -42,11 +42,11 @@ def test_valid_must_include():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata', 'mandorle'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'mandorle'],
                 'spuntino_mattina': ['mandorle', 'mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo', 'parmigiano_reggiano'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine', 'parmigiano_reggiano_dop'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             },
             must_include_foods_per_meal={
                 'pranzo': ['pollo_petto_cotto_in_padella']  # ← MUST include
@@ -118,11 +118,11 @@ def test_must_include_not_in_allowed():
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata'],
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata'],
                 'spuntino_mattina': ['mandorle', 'mela'],
-                'pranzo': ['pasta_secca_di_semola', 'zucchine_crude', 'olio_evo', 'parmigiano_reggiano'],  # NO pollo
+                'pranzo': ['pasta_di_semola', 'zucchine_crude', 'olio_di_oliva_extra_vergine', 'parmigiano_reggiano_dop'],  # NO pollo
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             },
             must_include_foods_per_meal={
                 'pranzo': ['pollo_petto_cotto_in_padella']  # ← NOT in allowed!
@@ -176,20 +176,20 @@ def test_must_include_violates_template():
     data_dir = base_dir / 'data'
     builder = PlanBuilder(data_dir)
 
-    print("\n🧪 Test: must_include=['pasta_secca_di_semola'] at colazione (forbidden)")
+    print("\n🧪 Test: must_include=['pasta_di_semola'] at colazione (forbidden)")
 
     try:
         plan = builder.build_day_plan(
             profile_id='rest',
             allowed_foods_per_meal={
-                'colazione': ['yogurt_greco_0', 'fette_biscottate', 'marmellata', 'pasta_secca_di_semola'],  # pasta allowed
+                'colazione': ['yogurt_greco_0_lipidi', 'fette_biscottate', 'marmellata', 'pasta_di_semola'],  # pasta allowed
                 'spuntino_mattina': ['mandorle', 'mela'],
-                'pranzo': ['pasta_secca_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_evo'],
+                'pranzo': ['pasta_di_semola', 'pollo_petto_cotto_in_padella', 'zucchine_crude', 'olio_di_oliva_extra_vergine'],
                 'spuntino_pomeriggio': ['pane_integrale', 'prosciutto_crudo'],
-                'cena': ['salmone', 'patate_senza_buccia_bollite', 'olio_evo', 'insalata_mista']
+                'cena': ['salmone', 'patate_bollite_senza_buccia', 'olio_di_oliva_extra_vergine', 'insalata']
             },
             must_include_foods_per_meal={
-                'colazione': ['pasta_secca_di_semola']  # ← FORBIDDEN at colazione!
+                'colazione': ['pasta_di_semola']  # ← FORBIDDEN at colazione!
             }
         )
 
@@ -205,7 +205,7 @@ def test_must_include_violates_template():
         checks = [
             'forbidden' in error_msg.lower() or 'template' in error_msg.lower(),
             'colazione' in error_msg.lower(),
-            'pasta_secca_di_semola' in error_msg
+            'pasta_di_semola' in error_msg
         ]
 
         if all(checks):
@@ -323,11 +323,11 @@ def test_must_include_integrity():
         target={'kcal': 600, 'P': 40, 'CHO': 70, 'F': 15, 'Fibre': 8},
         meal_context='meal',
         allowed_food_db_ids=[
-            'pasta_secca_di_semola',
+            'pasta_di_semola',
             'pollo_petto_cotto_in_padella',
             'zucchine_crude',
-            'olio_evo',
-            'parmigiano_reggiano'
+            'olio_di_oliva_extra_vergine',
+            'parmigiano_reggiano_dop'
         ],
         must_include_food_db_ids=['pollo_petto_cotto_in_padella']
     )

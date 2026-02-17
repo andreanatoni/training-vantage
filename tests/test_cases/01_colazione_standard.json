@@ -14,19 +14,19 @@
       "caffe_espresso",
       "fette_biscottate",
       "marmellata",
-      "yogurt_greco_0",
+      "yogurt_greco_0_lipidi",
       "mandorle"
     ]
   },
   "expected": {
     "realistic_should_have": [
-      "yogurt_greco_0",
+      "yogurt_greco_0_lipidi",
       "fette_biscottate",
       "marmellata",
       "mandorle"
     ],
     "realistic_should_not_exceed": {
-      "yogurt_greco_0": 170,
+      "yogurt_greco_0_lipidi": 170,
       "marmellata": 40,
       "mandorle": 30
     },

@@ -291,7 +291,7 @@ if __name__ == '__main__':
 
     # Test 1: Iso-proteico (Pollo → Tacchino)
     print("\n1. ISO-PROTEICO: Pollo 180g → Tacchino")
-    result = calc.calculate_swap('pollo_petto_cotto_in_padella', 180, 'tacchino_fesa_cotto_al_forno', 'protein')
+    result = calc.calculate_swap('pollo_petto_cotto_in_padella', 180, 'tacchino_fesa_cotta_al_forno', 'protein')
     print(f"   Pollo 180g ({result['base_nutrients']['P']:.1f}g P/100g) → Tacchino {result['alt_qty_g']}g ({result['alt_nutrients']['P']:.1f}g P/100g)")
     print(f"   Method: {result['swap_method']}")
 
@@ -315,13 +315,13 @@ if __name__ == '__main__':
 
     # Test 5: Fixed (Pasta - CHO base)
     print("\n5. FIXED: Pasta 90g (CHO base non cambia)")
-    result = calc.calculate_swap('pasta_secca_di_semola', 90, 'riso_basmati_crudo', 'CHO_base')
+    result = calc.calculate_swap('pasta_di_semola', 90, 'riso_basmati_crudo', 'CHO_base')
     print(f"   Pasta 90g → Riso {result['alt_qty_g']}g")
     print(f"   Method: {result['swap_method']}")
 
     # Test 6: Olio condizionale (Tonno naturale vs sott'olio)
     print("\n6. OLIO CONDIZIONALE: Tonno naturale + Olio 12g vs Tonno sott'olio")
-    alt_oil = calc.calculate_conditional_oil(12, 'tonno_al_naturale_drenato', 'tonno_sott_olio_sgocciolato', 75)
+    alt_oil = calc.calculate_conditional_oil(12, 'tonno_al_naturale', 'tonno_sott_olio_sgocciolato', 75)
     print(f"   Tonno naturale 75g + Olio 12g")
     print(f"   → Tonno sott'olio 75g + Olio {alt_oil}g")
 

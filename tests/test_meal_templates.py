@@ -59,7 +59,7 @@ def test_forbidden_groups():
     print("\n🧪 Test: Colazione with veg (MUST FAIL)")
 
     # Colazione con veg → DEVE fallire
-    invalid_foods = ['yogurt_greco_0', 'fette_biscottate', 'zucchine_crude']
+    invalid_foods = ['yogurt_greco_0_lipidi', 'fette_biscottate', 'zucchine_crude']
 
     try:
         builder.validate_meal_template('colazione', invalid_foods)
@@ -112,7 +112,7 @@ def test_valid_case():
 
     # Colazione valida: tutti i gruppi corretti
     valid_foods = [
-        'yogurt_greco_0',       # protein
+        'yogurt_greco_0_lipidi',       # protein
         'fette_biscottate',     # carb
         'marmellata',           # fruit
         'mandorle',             # fat
@@ -154,11 +154,11 @@ def test_valid_pranzo():
 
     # Pranzo valido
     valid_foods = [
-        'pasta_secca_di_semola',        # carb
+        'pasta_di_semola',        # carb
         'pollo_petto_cotto_in_padella', # protein
         'zucchine_crude',               # veg
-        'olio_evo',                     # fat
-        'parmigiano_reggiano'           # protein
+        'olio_di_oliva_extra_vergine',                     # fat
+        'parmigiano_reggiano_dop'           # protein
     ]
 
     try:
@@ -196,9 +196,9 @@ def test_invalid_pranzo_no_veg():
 
     # Pranzo senza veg → DEVE fallire
     invalid_foods = [
-        'pasta_secca_di_semola',        # carb
+        'pasta_di_semola',        # carb
         'pollo_petto_cotto_in_padella', # protein
-        'olio_evo'                      # fat
+        'olio_di_oliva_extra_vergine'                      # fat
     ]
 
     try:

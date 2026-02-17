@@ -35,7 +35,7 @@ def demo_floor_reachable():
 
     print("\n🎯 Snack target (calculated): kcal 200, P 10, CHO 25, F 8, Fibre 3")
     print("🎯 Protein floor: 15g (bumps P target from 10g → 15g)")
-    print("📋 Allowed foods: mandorle, yogurt_greco_0 (good protein sources)")
+    print("📋 Allowed foods: mandorle, yogurt_greco_0_lipidi (good protein sources)")
 
     # Simulate floor adjustment
     original_P = 10
@@ -46,7 +46,7 @@ def demo_floor_reachable():
     result = balancer.balance_meal(
         target={'kcal': 200, 'P': P_floor, 'CHO': 25, 'F': 8, 'Fibre': 3},
         meal_context='snack',
-        allowed_food_db_ids=['mandorle', 'yogurt_greco_0']
+        allowed_food_db_ids=['mandorle', 'yogurt_greco_0_lipidi']
     )
 
     recommended = result[result['recommendation']]
@@ -127,7 +127,7 @@ def demo_floor_unreachable():
         print(f"\n   📋 Note (orchestrator-generated):")
         print(f"      'Protein floor {P_floor}g non raggiunto ({actual_P:.1f}g).")
         print(f"       Causa: allowed_foods insufficienti / caps personali.")
-        print(f"       Azione: aggiungere fonte proteica (es. yogurt_greco_0, albumi, pollo)")
+        print(f"       Azione: aggiungere fonte proteica (es. yogurt_greco_0_lipidi, albumi, pollo)")
         print(f"               o aumentare max_qty.'")
 
         print(f"\n   💡 Solution: Add protein source (yogurt, mandorle, prosciutto) to allowed_foods")
@@ -159,7 +159,7 @@ def demo_runner_use_case():
 
     print("\n🎯 Target: kcal 350, P 15 (calculated), CHO 50, F 10, Fibre 5")
     print("🎯 Protein floor kicks in: 15g → 20g (runner needs protein!)")
-    print("📋 Allowed foods: banana, yogurt_greco_0, mandorle, miele")
+    print("📋 Allowed foods: banana, yogurt_greco_0_lipidi, mandorle, miele")
 
     P_floor = 20
     original_P = 15
@@ -169,7 +169,7 @@ def demo_runner_use_case():
     result = balancer.balance_meal(
         target={'kcal': 350, 'P': P_floor, 'CHO': 50, 'F': 10, 'Fibre': 5},
         meal_context='snack',
-        allowed_food_db_ids=['banana', 'yogurt_greco_0', 'mandorle', 'miele']
+        allowed_food_db_ids=['banana', 'yogurt_greco_0_lipidi', 'mandorle', 'miele']
     )
 
     recommended = result[result['recommendation']]

@@ -252,12 +252,12 @@ class RegressionTester:
         # Check olio max
         olio = None
         for item in realistic['items']:
-            if item['food_db_id'] == 'olio_evo':
+            if item['food_db_id'] == 'olio_di_oliva_extra_vergine':
                 olio = item
                 break
 
         if olio:
-            max_olio = expected['realistic_must_respect']['olio_evo']
+            max_olio = expected['realistic_must_respect']['olio_di_oliva_extra_vergine']
             qty_olio = olio['qty']['amount']
 
             checks.append({
@@ -297,6 +297,7 @@ class RegressionTester:
     def _validate_pareggio_rule(self, expected, realistic, unconstrained, result) -> List[Dict]:
         """Validate pareggio rule test"""
         checks = []
+        rule = expected.get('unconstrained_vs_realistic', {})
 
         # Calculate errors
         error_realistic = self._calculate_total_error(realistic['delta'])
@@ -309,19 +310,22 @@ class RegressionTester:
             'message': f"Unconstrained {error_unconstrained:.1f} < Realistic {error_realistic:.1f}"
         })
 
-        # Check difference is small (<5%)
+        # Check difference threshold from expected
         if error_unconstrained > 0:
             increase_pct = ((error_realistic - error_unconstrained) / error_unconstrained) * 100
+            expect_small = '<' in str(rule.get('but_difference_is_small', '< 5%'))
+            threshold = 5.0
             checks.append({
-                'check': 'Difference < 5% (pareggio)',
-                'passed': increase_pct < 5.0,
+                'check': 'Difference threshold check',
+                'passed': (increase_pct < threshold) if expect_small else (increase_pct > threshold),
                 'message': f"Increase: {increase_pct:.1f}%"
             })
 
-        # Check recommendation is realistic
+        # Check recommendation
+        expected_recommendation = rule.get('recommendation_should_be', 'best_match_realistic')
         checks.append({
-            'check': 'Recommendation is realistic',
-            'passed': result['recommendation'] == 'best_match_realistic',
+            'check': f"Recommendation is {expected_recommendation}",
+            'passed': result['recommendation'] == expected_recommendation,
             'message': f"Recommendation: {result['recommendation']}"
         })
 

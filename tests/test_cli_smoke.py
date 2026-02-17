@@ -443,7 +443,7 @@ class FoodAddParserTests(unittest.TestCase):
         self.assertAlmostEqual(parsed["fat"], 0.0)
 
     def test_make_food_id(self):
-        self.assertEqual(make_food_id("Yogurt greco, 0% lipidi"), "yogurt_greco_0_lipidi")
+        self.assertEqual(make_food_id("Yogurt greco, 0% lipidi"), "yogurt_greco_0_lipidi_lipidi")
         self.assertEqual(make_food_id("Ragù di vitello"), "ragu_di_vitello")
 
     def test_parse_reference(self):
@@ -495,10 +495,10 @@ class FoodAddParserTests(unittest.TestCase):
 
     def test_find_food_by_target(self):
         foods = [
-            {"id": "yogurt_greco_0", "name": "Yogurt greco 0%"},
+            {"id": "yogurt_greco_0_lipidi", "name": "Yogurt greco 0%"},
             {"id": "pane_integrale", "name": "Pane integrale"},
         ]
-        by_id = find_food_by_target(foods, "yogurt_greco_0")
+        by_id = find_food_by_target(foods, "yogurt_greco_0_lipidi")
         by_name = find_food_by_target(foods, "Pane integrale")
         self.assertEqual(by_id["name"], "Yogurt greco 0%")
         self.assertEqual(by_name["id"], "pane_integrale")
@@ -554,12 +554,12 @@ class NutritionSetupTests(unittest.TestCase):
     def test_search_foods_by_name(self):
         foods = [
             {"id": "pane_integrale", "name": "Pane integrale"},
-            {"id": "yogurt_greco_0", "name": "Yogurt greco 0%"},
+            {"id": "yogurt_greco_0_lipidi", "name": "Yogurt greco 0%"},
             {"id": "banana", "name": "Banana"},
         ]
         results = search_foods(foods, "yogurt")
         self.assertGreater(len(results), 0)
-        self.assertEqual(results[0]["id"], "yogurt_greco_0")
+        self.assertEqual(results[0]["id"], "yogurt_greco_0_lipidi")
 
     def test_meal_order_has_five_required_meals(self):
         self.assertEqual(
@@ -611,7 +611,7 @@ class NutritionSetupTests(unittest.TestCase):
     def test_infer_when_to_use_auto(self):
         blocks = [
             {"role": "carb", "one_of": [{"food_db_id": "banana"}]},
-            {"role": "protein", "one_of": [{"food_db_id": "yogurt_greco_0"}]},
+            {"role": "protein", "one_of": [{"food_db_id": "yogurt_greco_0_lipidi"}]},
         ]
         tags = ["carb_based", "protein_based", "post_workout", "pre_workout"]
         text = infer_when_to_use("snack_pm", blocks, tags, "pre_workout")

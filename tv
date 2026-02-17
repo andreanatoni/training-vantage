@@ -150,6 +150,15 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food import-mapped --dry-run --strict-complete
       Esempio: tv food import-mapped --file data/food_mapped.md --strict-complete
 
+  food build-catalog [--dry-run] [--no-strict]
+      Costruisce data/FOOD_CATALOG.json come vista derivata shadow da FOOD_DB + mapping + LARN + PERSONAL_LIMITS.
+      Esempio: tv food build-catalog
+      Esempio: tv food build-catalog --dry-run
+
+  food validate-data
+      Valida coerenza strutturale di tutti i dataset (incluso FOOD_CATALOG vs sorgenti)
+      Esempio: tv food validate-data
+
   food map-larn <subcommand>
       Revisione manuale one-by-one FOOD_DB -> LARN
       Subcommands:
@@ -235,6 +244,11 @@ case "$1" in
         elif [ "$1" = "import-mapped" ]; then
             shift
             python3 "$SCRIPTS_DIR/import_mapped.py" "$@"
+        elif [ "$1" = "build-catalog" ]; then
+            shift
+            python3 "$SCRIPTS_DIR/build_food_catalog.py" "$@"
+        elif [ "$1" = "validate-data" ]; then
+            python3 "$SCRIPTS_DIR/data_validator.py" data
         elif [ "$1" = "map-larn" ]; then
             shift
             python3 "$SCRIPTS_DIR/manual_map_larn.py" "$@"
@@ -252,6 +266,8 @@ case "$1" in
             echo "                           tv food auto-map-larn --dry-run"
             echo "                           tv food build-active"
             echo "                           tv food import-mapped --dry-run --strict-complete"
+            echo "                           tv food build-catalog --dry-run"
+            echo "                           tv food validate-data"
             echo "                           tv food map-larn next --limit 10"
             echo "                           tv food extract-portions"
             exit 1

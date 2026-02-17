@@ -11,10 +11,10 @@
     },
     "meal_context": "meal",
     "allowed_food_db_ids": [
-      "pasta_secca_di_semola",
-      "ragu_di_vitello_40_vitello_60_passata",
+      "pasta_di_semola",
+      "salsa_di_carne_manzo",
       "passata_di_pomodoro",
-      "olio_evo",
+      "olio_di_oliva_extra_vergine",
       "zucchine_crude"
     ]
   },
@@ -29,7 +29,7 @@
     },
     "realistic_must_respect": {
       "passata_di_pomodoro": 100,
-      "olio_evo": 15
+      "olio_di_oliva_extra_vergine": 15
     }
   },
   "notes": "Test critico per ingredient mode: passata DEVE usare quantità discrete (20, 40, 60, 80, 100) NON 200×multiplier. Multiplier deve essere null. Olio max 15g."
