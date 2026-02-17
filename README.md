@@ -73,6 +73,7 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 ### Path primario
 - Path supportato: `./tv plan ...`
 - `python3 scripts/cli.py plan ...` e' deprecato e non supportato (usa `./tv plan ...`)
+- stack planner storico (`piano_base_parser`, `option_generator`, `category_plan_generator`, ecc.) e' in `scripts/legacy/planner/` (maintenance-only, non path runtime principale)
 
 ### Setup base
 - `./tv nutrition setup-base` crea/aggiorna:
