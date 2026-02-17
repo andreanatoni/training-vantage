@@ -141,6 +141,11 @@ Output:
 training-vantage/
 ├── tv
 ├── scripts/
+│   ├── nutrition/
+│   ├── running/
+│   ├── tracking/
+│   ├── food/
+│   └── common/
 ├── data/
 │   ├── athletes/<id>/
 │   └── templates/
