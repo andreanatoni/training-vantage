@@ -69,7 +69,7 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `INTEGRATION_CONFIG.json`: configurazione strict per atleta usata da `status`, `plan week/month` e fallback `goal_race` in `running generate`.
 - `FOOD_DB_ACTIVE.json`: sottoinsieme per-atleta derivato da template/piani per lavorare su alimenti realmente usati.
 - `FOOD_CATALOG.json`: vista derivata shadow unificata (food + mapping + porzione + limiti), non source-of-truth.
-  - `meal_balancer` la usa automaticamente quando e' valida/completa; altrimenti fallback ai dataset legacy.
+  - `meal_balancer` la usa in strict mode; se manca/incoerente il runtime fallisce.
 - `strength-progress.json`: progressione forza.
 - `zones.json`: zone di allenamento correnti + storico.
 - `changelog.json`: log tecnico delle operazioni script/CLI.

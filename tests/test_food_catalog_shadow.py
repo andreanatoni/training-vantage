@@ -1,6 +1,10 @@
 import json
+import tempfile
 import unittest
 from pathlib import Path
+import shutil
+import io
+from contextlib import redirect_stdout, redirect_stderr
 from scripts.meal_balancer import MealBalancerData
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +35,17 @@ class FoodCatalogShadowTests(unittest.TestCase):
         sample = data.mapping_index.get("caffe_espresso")
         self.assertIsNotNone(sample, "Expected mapped entry for caffe_espresso via FOOD_CATALOG")
         self.assertTrue(sample.get("larn_portion_id"), "larn_portion_id should be present in catalog-derived mapping")
+
+    def test_meal_balancer_fails_without_catalog(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir(parents=True, exist_ok=True)
+            # Copy only unrelated file to ensure strict requirement on FOOD_CATALOG.
+            shutil.copy(FOOD_DB, data_dir / "FOOD_DB.json")
+            sink = io.StringIO()
+            with redirect_stdout(sink), redirect_stderr(sink):
+                with self.assertRaises(SystemExit):
+                    MealBalancerData(data_dir)
 
 
 if __name__ == "__main__":

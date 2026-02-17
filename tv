@@ -139,7 +139,7 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food sync-dietabit --no-merge
 
   food auto-map-larn [--threshold 0.90] [--dry-run]
-      Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
+      [LEGACY MAINTENANCE] Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
       Esempio: tv food auto-map-larn --dry-run
       Esempio: tv food auto-map-larn --threshold 0.92
 
@@ -165,7 +165,7 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food validate-data
 
   food map-larn <subcommand>
-      Revisione manuale one-by-one FOOD_DB -> LARN
+      [LEGACY MAINTENANCE] Revisione manuale one-by-one FOOD_DB -> LARN
       Subcommands:
         - next [--limit 20] [--offset 0] [--contains testo]
         - set <food_db_id> <larn_portion_id> [--confidence 1.0]

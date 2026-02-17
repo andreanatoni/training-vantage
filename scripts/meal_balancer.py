@@ -164,19 +164,19 @@ class BeamState:
 # ============================================================================
 
 class MealBalancerData:
-    """Carica dataset nutrizionali, con supporto opzionale a FOOD_CATALOG derivato."""
+    """Carica dataset nutrizionali in strict mode da FOOD_CATALOG derivato."""
 
     def __init__(self, data_dir: Path):
         self.data_dir = data_dir
 
-        # Load files
-        self.food_db = self._load_json('FOOD_DB.json')
-        self.larn_portions = self._load_json('LARN_PORTIONS.json')
-        self.mapping = self._load_json('FOOD_DB_TO_LARN_MAPPING.json')
-        self.operative_portions = self._load_json('OPERATIVE_PORTIONS.json')
-        self.personal_limits = self._load_json('PERSONAL_LIMITS.json')
-        self.food_catalog = self._load_json_optional('FOOD_CATALOG.json')
-        self.catalog_active = False
+        # Runtime source of truth: derived unified catalog
+        self.food_catalog = self._load_json('FOOD_CATALOG.json')
+        self.catalog_active = True
+        if not self._is_catalog_usable():
+            raise SystemExit(
+                "[ERR] FOOD_CATALOG.json missing/incoerente per meal_balancer strict mode. "
+                "Esegui: ./tv food build-catalog && ./tv food validate-data"
+            )
 
         # Build indexes for fast lookup
         self._build_indexes()
@@ -190,17 +190,6 @@ class MealBalancerData:
         except Exception as e:
             print(f"Error loading {filename}: {e}")
             sys.exit(1)
-
-    def _load_json_optional(self, filename: str) -> Optional[Dict]:
-        """Load optional JSON file; return None if missing/invalid."""
-        filepath = self.data_dir / filename
-        if not filepath.exists():
-            return None
-        try:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception:
-            return None
 
     def _is_catalog_usable(self) -> bool:
         """Catalog is usable only if complete and structurally coherent."""
@@ -221,69 +210,54 @@ class MealBalancerData:
 
     def _build_indexes(self):
         """Build fast lookup indexes"""
-        # LARN index (include variants)
+        self.food_db_index = {}
+        self.mapping_index = {}
+        self.personal_limits_index = {}
+        self.catalog_portion_by_food = {}
         self.larn_index = {}
-        for portion in self.larn_portions['portions']:
-            self.larn_index[portion['id']] = portion
-            # Add variants
-            if 'variants' in portion:
-                for variant in portion['variants']:
-                    self.larn_index[variant['id']] = variant
+        self.operative_index = {}
 
-        # OPERATIVE index
-        self.operative_index = {
-            portion['id']: portion
-            for portion in self.operative_portions['portions']
-        }
+        for food in self.food_catalog.get('foods', []):
+            food_id = food.get('id')
+            if not food_id:
+                continue
 
-        # PERSONAL_LIMITS index
-        self.personal_limits_index = {
-            limit['food_db_id']: limit
-            for limit in self.personal_limits['limits']
-        }
+            self.food_db_index[food_id] = {
+                'id': food_id,
+                'name': food.get('name'),
+                'reference': food.get('reference'),
+                'nutrients_per_reference': food.get('nutrients_per_reference'),
+            }
 
-        if self._is_catalog_usable():
-            # Preferred path: use derived catalog as single merged source for food+mapping.
-            self.catalog_active = True
-            self.food_db_index = {}
-            self.mapping_index = {}
-
-            for food in self.food_catalog.get('foods', []):
-                food_id = food.get('id')
-                if not food_id:
-                    continue
-
-                self.food_db_index[food_id] = {
-                    'id': food_id,
-                    'name': food.get('name'),
-                    'reference': food.get('reference'),
-                    'nutrients_per_reference': food.get('nutrients_per_reference'),
+            portion = food.get('portion') or {}
+            self.catalog_portion_by_food[food_id] = portion
+            larn_id = portion.get('larn_portion_id')
+            if larn_id and larn_id not in self.larn_index:
+                self.larn_index[larn_id] = {
+                    'id': larn_id,
+                    'standard': portion.get('standard'),
+                    'practical': portion.get('practical', []),
+                    'group': portion.get('group'),
+                    'item_label': portion.get('item_label'),
+                    'source': portion.get('source'),
                 }
 
-                portion = food.get('portion') or {}
-                mapping = food.get('mapping') or {}
-                self.mapping_index[food_id] = {
-                    'food_db_id': food_id,
-                    'larn_portion_id': portion.get('larn_portion_id'),
-                    'larn_variant_id': None,
-                    'operational_portion_id': None,
-                    'review_status': mapping.get('review_status'),
-                    'mapping_confidence': mapping.get('mapping_confidence'),
-                    'mapping_source': mapping.get('mapping_source'),
-                    'last_reviewed_at': mapping.get('last_reviewed_at'),
-                    'note': mapping.get('note'),
-                }
-            return
+            mapping = food.get('mapping') or {}
+            self.mapping_index[food_id] = {
+                'food_db_id': food_id,
+                'larn_portion_id': larn_id,
+                'larn_variant_id': None,
+                'operational_portion_id': None,
+                'review_status': mapping.get('review_status'),
+                'mapping_confidence': mapping.get('mapping_confidence'),
+                'mapping_source': mapping.get('mapping_source'),
+                'last_reviewed_at': mapping.get('last_reviewed_at'),
+                'note': mapping.get('note'),
+            }
 
-        # Legacy path: use original files directly.
-        self.food_db_index = {
-            food['id']: food
-            for food in self.food_db['foods']
-        }
-        self.mapping_index = {
-            entry['food_db_id']: entry
-            for entry in self.mapping['mapping']
-        }
+            personal_limit = food.get('personal_limits')
+            if isinstance(personal_limit, dict):
+                self.personal_limits_index[food_id] = personal_limit
 
 
 # ============================================================================
@@ -397,19 +371,16 @@ class MealBalancer:
 
             return result
 
-        # PRIORITÀ 2: LARN portion
+        # PRIORITÀ 2: LARN portion (from FOOD_CATALOG derived view)
         if mapping_entry:
             larn_id = mapping_entry.get('larn_portion_id')
-            variant_id = mapping_entry.get('larn_variant_id')
+            portion = self.data.catalog_portion_by_food.get(food_db_id) or {}
+            standard = portion.get('standard') or {}
 
-            # Se c'è variant, usa quello invece del base
-            portion_id = variant_id if variant_id else larn_id
-
-            if portion_id and portion_id in self.data.larn_index:
-                portion = self.data.larn_index[portion_id]
+            if larn_id and standard.get('qty') and standard.get('unit'):
                 result['mode'] = 'larn'
-                result['standard_qty'] = portion['standard']['qty']
-                result['unit'] = portion['standard']['unit']
+                result['standard_qty'] = standard['qty']
+                result['unit'] = standard['unit']
 
                 # Yogurt: extra multiplier 0.8
                 if 'yogurt' in food_db_id:
@@ -1417,7 +1388,7 @@ def main():
     # Test info
     print("\n📊 Data Summary:")
     print(f"  - FOOD_DB: {len(data.food_db_index)} foods")
-    print(f"  - FOOD_CATALOG active: {'yes' if data.catalog_active else 'no (legacy indexes)'}")
+    print(f"  - FOOD_CATALOG strict mode: {'yes' if data.catalog_active else 'no'}")
     print(f"  - LARN_PORTIONS: {len(data.larn_index)} portions (+ variants)")
     print(f"  - OPERATIVE_PORTIONS: {len(data.operative_index)} portions")
     print(f"  - MAPPING: {len(data.mapping_index)} mappings")
