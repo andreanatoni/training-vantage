@@ -138,11 +138,6 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food sync-dietabit
       Esempio: tv food sync-dietabit --no-merge
 
-  food auto-map-larn [--threshold 0.90] [--dry-run]
-      [LEGACY MAINTENANCE] Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
-      Esempio: tv food auto-map-larn --dry-run
-      Esempio: tv food auto-map-larn --threshold 0.92
-
   food build-active
       Genera subset alimenti attivi per atleta in data/athletes/<id>/FOOD_DB_ACTIVE.json
       (estrazione da nutrition_base_template + piani nutrizione atleta)
@@ -164,8 +159,15 @@ COMANDI DISPONIBILI (Utility):
       Valida coerenza strutturale di tutti i dataset (incluso FOOD_CATALOG vs sorgenti)
       Esempio: tv food validate-data
 
+COMANDI LEGACY (Maintenance):
+
+  food auto-map-larn [--threshold 0.90] [--dry-run]
+      Auto-mappa FOOD_DB su LARN_PORTIONS con regole deterministiche + review queue
+      Esempio: tv food auto-map-larn --dry-run
+      Esempio: tv food auto-map-larn --threshold 0.92
+
   food map-larn <subcommand>
-      [LEGACY MAINTENANCE] Revisione manuale one-by-one FOOD_DB -> LARN
+      Revisione manuale one-by-one FOOD_DB -> LARN
       Subcommands:
         - next [--limit 20] [--offset 0] [--contains testo]
         - set <food_db_id> <larn_portion_id> [--confidence 1.0]

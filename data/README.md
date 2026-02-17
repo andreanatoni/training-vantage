@@ -85,10 +85,7 @@ Comandi principali (dalla root del repo):
 ./tv food crawl-index
 ./tv food rebuild-from-crea
 ./tv food sync-dietabit
-./tv food auto-map-larn --dry-run
 ./tv food import-mapped --dry-run --strict-complete
-./tv food map-larn next --limit 20
-./tv food map-larn set bresaola salumi
 ./tv food build-active
 ./tv food build-catalog
 ./tv food extract-portions
@@ -108,19 +105,14 @@ Comandi principali (dalla root del repo):
 - `crawl-index`: aggiorna indice CREA.
 - `rebuild-from-crea`: ricostruisce DB alimenti da `CREA_INDEX.json` (con backup).
 - `sync-dietabit [--no-merge]`: crawl completo Dietabit -> `DIETABIT_DB.json`, confronto con `FOOD_DB` e merge sicuro dei mancanti (se non usi `--no-merge`) + report in `DIETABIT_COMPARE_REPORT.json`.
-- `auto-map-larn [--threshold X] [--dry-run]`: mapping semiautomatico verso `LARN_PORTIONS` con regole deterministiche.
-  - applica solo suggerimenti sopra soglia (`default 0.90`)
-  - salva report in `LARN_AUTOMAP_REPORT.json`
-  - salva casi dubbi/non mappati in `LARN_MAPPING_REVIEW_QUEUE.json`
-- `food map-larn <subcommand>`: revisione manuale mapping one-by-one.
-  - `next`: lista voci in pending review
-  - `set/unset`: applica/rimuove mapping singolo
-  - `larn`: elenco `larn_portion_id` disponibili
 - `food import-mapped [--file ...] [--dry-run] [--strict-complete]`: import massivo da file `food_db_id|larn_portion_id`.
   - validazioni hard su formato, duplicati e id non validi
   - con `--strict-complete` fallisce se non copre esattamente tutti i `food_db_id` del `FOOD_DB`
   - scrive report in `data/FOOD_MAPPED_IMPORT_REPORT.json` e `data/FOOD_MAPPED_IMPORT_REPORT.md`
   - in apply mode crea backup automatico del mapping prima della scrittura
+- comandi legacy maintenance mapping:
+  - `food auto-map-larn [--threshold X] [--dry-run]`: mapping semiautomatico verso `LARN_PORTIONS` con regole deterministiche
+  - `food map-larn <subcommand>`: revisione manuale one-by-one (`next`, `set`, `unset`, `larn`)
 - `extract-portions`: rigenera `PORTION_STANDARDS.json` dal PDF e pulisce il testo.
 - `food build-active`: genera `data/athletes/<id>/FOOD_DB_ACTIVE.json` (cache derivata non distruttiva) da:
   - `data/athletes/<id>/nutrition_base_template.json` (food_db_id espliciti)

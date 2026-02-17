@@ -104,18 +104,20 @@ Output:
 - CREA: `food crawl-index`, `food import-crea`, `food rebuild-from-crea`
 - Dietabit: `food sync-dietabit [--no-merge]`
 
-### Mapping LARN
-- Auto suggestioni: `./tv food auto-map-larn --dry-run`
+### Mapping LARN (Path Attivo)
 - Import massivo da file mappato:
   - `./tv food import-mapped --dry-run --strict-complete`
   - `./tv food import-mapped --file data/food_mapped.md --strict-complete`
+- Export revisione in Excel:
+  - `data/LARN_MANUAL_MAPPING.xlsx` (colonna D con dropdown `larn_portion_id`)
+
+### Mapping LARN (Legacy Maintenance)
+- Auto suggestioni: `./tv food auto-map-larn --dry-run`
 - Revisione manuale one-by-one:
   - `./tv food map-larn next`
   - `./tv food map-larn set <food_db_id> <larn_portion_id>`
   - `./tv food map-larn unset <food_db_id>`
   - `./tv food map-larn larn`
-- Export revisione in Excel:
-  - `data/LARN_MANUAL_MAPPING.xlsx` (colonna D con dropdown `larn_portion_id`)
 
 ### Active set per atleta
 - `./tv food build-active`
