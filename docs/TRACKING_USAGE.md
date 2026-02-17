@@ -1,5 +1,9 @@
 # Training Vantage - Tracking Commands
 
+> NOTE
+> I comandi `python3 scripts/cli.py ...` sono legacy.
+> Entry point ufficiale: `./tv ...` (es. `./tv weigh`, `./tv status`, `./tv zones`).
+
 **Version**: 2.1 (Phase 1 - Tracking Base)
 **Date**: 2026-02-12
 

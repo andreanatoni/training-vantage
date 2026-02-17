@@ -1,5 +1,9 @@
 # Training Vantage CLI - Usage Guide
 
+> NOTE
+> `python3 scripts/cli.py` e' legacy/archiviato.
+> Entry point ufficiale: `./tv`.
+
 **Version**: 2.0
 **Status**: Production-ready
 **Date**: 2026-02-12
