@@ -3,6 +3,7 @@ import os
 import subprocess
 import sys
 import unittest
+import importlib.util
 from pathlib import Path
 
 
@@ -59,7 +60,7 @@ class CliSmokeTests(unittest.TestCase):
     def test_help(self):
         result = run_cmd("./tv", "help")
         self.assertEqual(result.returncode, 0, msg=result.stderr)
-        self.assertIn("USAGE: tv <command> [args]", result.stdout)
+        self.assertIn("USAGE: tv [--athlete <id>] <command> [args]", result.stdout)
 
     def test_status(self):
         result = run_cmd("./tv", "status")
@@ -367,6 +368,8 @@ class CliSmokeTests(unittest.TestCase):
         self.assertIn("food import-crea", result.stdout)
 
     def test_food_extract_portions(self):
+        if importlib.util.find_spec("pdfplumber") is None:
+            self.skipTest("pdfplumber not installed in test environment")
         result = run_cmd("./tv", "food", "extract-portions")
         self.assertEqual(result.returncode, 0, msg=result.stderr)
         self.assertIn("PORTION_STANDARDS.json", result.stdout)
@@ -443,7 +446,7 @@ class FoodAddParserTests(unittest.TestCase):
         self.assertAlmostEqual(parsed["fat"], 0.0)
 
     def test_make_food_id(self):
-        self.assertEqual(make_food_id("Yogurt greco, 0% lipidi"), "yogurt_greco_0_lipidi_lipidi")
+        self.assertEqual(make_food_id("Yogurt greco, 0% lipidi"), "yogurt_greco_0_lipidi")
         self.assertEqual(make_food_id("Ragù di vitello"), "ragu_di_vitello")
 
     def test_parse_reference(self):
@@ -541,12 +544,12 @@ class TrainingLoadImportTests(unittest.TestCase):
         self.assertEqual(classify_day_type("13x[0.85L+0.15All]", "Run"), "easy")
 
     def test_build_training_load_payload(self):
-        payload = build_training_load_payload(ROOT / "sources/workouts-2.csv")
+        payload = build_training_load_payload([ROOT / "sources/workouts-2.csv"], [])
         self.assertIn("meta", payload)
         self.assertIn("summary", payload)
         self.assertIn("sessions", payload)
         self.assertIn("profile_costs_kcal", payload)
-        self.assertEqual(payload["meta"]["mode"], "planned_only")
+        self.assertEqual(payload["meta"]["mode"], "trainingpeaks")
         self.assertEqual(payload["summary"]["sessions_count"], 4)
 
 
