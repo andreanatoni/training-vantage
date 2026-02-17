@@ -6,8 +6,7 @@ Status: CURRENT
 Engine Config: v1.0
 Day Profile: rest
 Deficit Applied: 13.5%
-Training Cost: 0 kcal (running_plan_day)
-Session Date: 2026-03-29
+Training Cost: 0 kcal (config)
 EA: 30.7 kcal/kg FFM
 -->
 

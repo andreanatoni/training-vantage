@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-16",
+    "generated_at": "2026-02-17",
     "category": "rest",
     "status": "CURRENT"
   },
@@ -31,7 +31,7 @@
           "kcal": 366,
           "protein": 22,
           "fat": 10,
-          "cho": 46
+          "cho": 47
         },
         "options": [
           {
@@ -58,7 +58,7 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -69,10 +69,10 @@
               }
             ],
             "totals": {
-              "kcal": 238.0,
-              "protein": 6.1,
-              "fat": 6.5,
-              "cho": 39.9
+              "kcal": 366.0,
+              "protein": 12.6,
+              "fat": 9.8,
+              "cho": 46.1
             },
             "swap": "Fette 45g ↔ Pane integrale 50g | Mandorle ↔ Noci 9g ↔ Nocciole 7g",
             "quando": "Colazione rilassante rest day, energia equilibrata."
@@ -83,7 +83,7 @@
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 45.0,
+                "amount": 44.9,
                 "unit": "g"
               },
               {
@@ -95,7 +95,7 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -106,10 +106,10 @@
               }
             ],
             "totals": {
-              "kcal": 98.0,
-              "protein": 1.8,
-              "fat": 4.2,
-              "cho": 13.2
+              "kcal": 365.0,
+              "protein": 12.0,
+              "fat": 10.0,
+              "cho": 45.9
             },
             "swap": "Mandorle ↔ Noci 9g ↔ Nocciole 7g",
             "quando": "Sazietà prolungata rest day, maggiore fibra."
@@ -120,7 +120,7 @@
               {
                 "type": "single",
                 "name": "Pane integrale",
-                "amount": 57.7,
+                "amount": 57.6,
                 "unit": "g"
               },
               {
@@ -143,10 +143,10 @@
               }
             ],
             "totals": {
-              "kcal": 81.0,
-              "protein": 6.7,
-              "fat": 6.0,
-              "cho": 0.0
+              "kcal": 366.0,
+              "protein": 20.3,
+              "fat": 8.5,
+              "cho": 25.9
             },
             "swap": "Prosciutto 31g ↔ Bresaola 26g ↔ Fesa tacchino 35g",
             "quando": "Massimo apporto proteico rest day, variante salata."
@@ -157,13 +157,13 @@
               {
                 "type": "single",
                 "name": "Plum cake (senza latte/burro)",
-                "amount": 57.7,
+                "amount": 57.6,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -180,10 +180,10 @@
               }
             ],
             "totals": {
-              "kcal": 32.0,
-              "protein": 1.1,
-              "fat": 2.8,
-              "cho": 0.2
+              "kcal": 366.0,
+              "protein": 11.8,
+              "fat": 8.6,
+              "cho": 48.0
             },
             "swap": "Plum cake ↔ Ciambellone (stesse grammature)",
             "quando": "Weekend rest, comfort food rilassante."
@@ -206,7 +206,7 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -223,10 +223,10 @@
               }
             ],
             "totals": {
-              "kcal": 64.0,
-              "protein": 2.5,
-              "fat": 5.5,
-              "cho": 0.8
+              "kcal": 366.0,
+              "protein": 12.1,
+              "fat": 9.0,
+              "cho": 31.7
             },
             "swap": null,
             "quando": "Versatilità dolce rest day, energia concentrata."
@@ -235,10 +235,10 @@
       },
       "SPUNTINO MATTINA": {
         "target": {
-          "kcal": 146,
-          "protein": 8,
-          "fat": 3,
-          "cho": 18
+          "kcal": 147,
+          "protein": 9,
+          "fat": 4,
+          "cho": 19
         },
         "options": [
           {
@@ -247,7 +247,7 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 93.3,
+                "amount": 93.2,
                 "unit": "g"
               },
               {
@@ -258,10 +258,10 @@
               }
             ],
             "totals": {
-              "kcal": 106.0,
-              "protein": 2.0,
-              "fat": 3.9,
-              "cho": 15.1
+              "kcal": 147.0,
+              "protein": 2.6,
+              "fat": 4.1,
+              "cho": 22.8
             },
             "swap": "Mela 110g ↔ Banana 95g | Mandorle ↔ Noci ↔ Burro d'arachidi",
             "quando": "Grab-and-go rest day, zero stress preparazione."
@@ -272,13 +272,13 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 80.5,
+                "amount": 80.4,
                 "unit": "g"
               },
               {
@@ -289,10 +289,10 @@
               }
             ],
             "totals": {
-              "kcal": 16.0,
-              "protein": 0.0,
-              "fat": 0.0,
-              "cho": 4.1
+              "kcal": 148.0,
+              "protein": 5.7,
+              "fat": 0.3,
+              "cho": 30.9
             },
             "swap": "Banana 95g ↔ Mela 110g",
             "quando": "Spuntino strutturato rest day, dolcezza naturale."
@@ -320,10 +320,10 @@
               }
             ],
             "totals": {
-              "kcal": 66.0,
-              "protein": 5.9,
-              "fat": 0.4,
-              "cho": 9.5
+              "kcal": 147.0,
+              "protein": 9.1,
+              "fat": 3.4,
+              "cho": 18.6
             },
             "swap": "Bresaola 20g ↔ Prosciutto 16g ↔ Formaggio spalmabile 12g",
             "quando": "Variante salata rest day, proteine moderate."
@@ -334,7 +334,7 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -351,10 +351,10 @@
               }
             ],
             "totals": {
-              "kcal": 21.0,
-              "protein": 4.5,
-              "fat": 0.3,
-              "cho": 0.1
+              "kcal": 147.0,
+              "protein": 9.5,
+              "fat": 0.8,
+              "cho": 15.6
             },
             "swap": "Bresaola 16g ↔ Prosciutto crudo 13g",
             "quando": "Boost proteico leggero rest day."
@@ -363,10 +363,10 @@
       },
       "PRANZO": {
         "target": {
-          "kcal": 695,
+          "kcal": 696,
           "protein": 41,
-          "fat": 16,
-          "cho": 87
+          "fat": 17,
+          "cho": 88
         },
         "options": [
           {
@@ -375,7 +375,7 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 78.0,
+                "amount": 77.9,
                 "unit": "g"
               },
               {
@@ -405,15 +405,15 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 114.5,
+                "amount": 114.4,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 78.0,
-              "protein": 0.6,
-              "fat": 0.2,
-              "cho": 18.2
+              "kcal": 695.0,
+              "protein": 39.4,
+              "fat": 17.5,
+              "cho": 89.3
             },
             "swap": "Zucchine 145g ↔ Carote 115g | Tonno naturale+olio ↔ Tonno sott'olio",
             "quando": "Pranzo bilanciato rest day, omega-3 recovery."
@@ -424,7 +424,7 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 78.0,
+                "amount": 77.9,
                 "unit": "g"
               },
               {
@@ -453,10 +453,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 696.0,
+              "protein": 38.3,
+              "fat": 17.0,
+              "cho": 92.2
             },
             "swap": "Zucchine 145g ↔ Carote 115g",
             "quando": "Comfort food rest day, sostanzioso rilassante."
@@ -473,7 +473,7 @@
               {
                 "type": "single",
                 "name": "Pollo piastra",
-                "amount": 93.3,
+                "amount": 93.2,
                 "unit": "g"
               },
               {
@@ -485,7 +485,7 @@
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 80.5,
+                "amount": 80.4,
                 "unit": "g"
               },
               {
@@ -497,15 +497,15 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 93.3,
+                "amount": 93.2,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 63.0,
-              "protein": 0.5,
-              "fat": 0.2,
-              "cho": 14.8
+              "kcal": 696.0,
+              "protein": 39.2,
+              "fat": 16.8,
+              "cho": 91.2
             },
             "swap": "Pollo 110g ↔ Salmone 90g ↔ Pesce spada 100g ↔ Uova 82g",
             "quando": "4 scelte proteiche rest day, flessibilità totale."
@@ -545,10 +545,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 696.0,
+              "protein": 17.8,
+              "fat": 17.2,
+              "cho": 105.9
             },
             "swap": "Zucchine 145g ↔ Carote 115g",
             "quando": "Velocissimo rest day, comfort food rilassante."
@@ -559,7 +559,7 @@
               {
                 "type": "single",
                 "name": "Pasta secca",
-                "amount": 78.0,
+                "amount": 77.9,
                 "unit": "g"
               },
               {
@@ -589,15 +589,15 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 72.0,
-              "protein": 0.5,
-              "fat": 0.2,
-              "cho": 16.9
+              "kcal": 696.0,
+              "protein": 19.5,
+              "fat": 17.0,
+              "cho": 107.0
             },
             "swap": null,
             "quando": "Leggero rest day, digestione facile rilassante."
@@ -644,15 +644,15 @@
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 78.0,
+                "amount": 77.9,
                 "unit": "g"
               }
             ],
             "totals": {
-              "kcal": 100.0,
-              "protein": 8.2,
-              "fat": 7.4,
-              "cho": 0.0
+              "kcal": 695.0,
+              "protein": 38.5,
+              "fat": 17.1,
+              "cho": 64.6
             },
             "swap": "Prosciutto 38g ↔ Bresaola 48g | Zucchine ↔ Carote",
             "quando": "Zero cottura rest day, alternativa fresca."
@@ -661,10 +661,10 @@
       },
       "SPUNTINO POMERIGGIO": {
         "target": {
-          "kcal": 146,
-          "protein": 8,
-          "fat": 3,
-          "cho": 18
+          "kcal": 147,
+          "protein": 9,
+          "fat": 4,
+          "cho": 19
         },
         "options": [
           {
@@ -673,7 +673,7 @@
               {
                 "type": "single",
                 "name": "Mela",
-                "amount": 93.3,
+                "amount": 93.2,
                 "unit": "g"
               },
               {
@@ -684,10 +684,10 @@
               }
             ],
             "totals": {
-              "kcal": 106.0,
-              "protein": 2.0,
-              "fat": 3.9,
-              "cho": 15.1
+              "kcal": 147.0,
+              "protein": 2.6,
+              "fat": 4.1,
+              "cho": 22.8
             },
             "swap": null,
             "quando": "Spuntino leggero rest day, energia dolce."
@@ -698,13 +698,13 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Banana",
-                "amount": 80.5,
+                "amount": 80.4,
                 "unit": "g"
               },
               {
@@ -715,10 +715,10 @@
               }
             ],
             "totals": {
-              "kcal": 16.0,
-              "protein": 0.0,
-              "fat": 0.0,
-              "cho": 4.1
+              "kcal": 148.0,
+              "protein": 5.7,
+              "fat": 0.3,
+              "cho": 30.9
             },
             "swap": null,
             "quando": "Spuntino strutturato rest day, completezza."
@@ -746,10 +746,10 @@
               }
             ],
             "totals": {
-              "kcal": 66.0,
-              "protein": 5.9,
-              "fat": 0.4,
-              "cho": 9.5
+              "kcal": 147.0,
+              "protein": 9.1,
+              "fat": 3.4,
+              "cho": 18.6
             },
             "swap": null,
             "quando": "Variante salata rest day, proteine moderate."
@@ -760,7 +760,7 @@
               {
                 "type": "single",
                 "name": "Yogurt magro 0.1%",
-                "amount": 106.0,
+                "amount": 105.9,
                 "unit": "g"
               },
               {
@@ -777,10 +777,10 @@
               }
             ],
             "totals": {
-              "kcal": 21.0,
-              "protein": 4.5,
-              "fat": 0.3,
-              "cho": 0.1
+              "kcal": 147.0,
+              "protein": 9.5,
+              "fat": 0.8,
+              "cho": 15.6
             },
             "swap": null,
             "quando": "Boost proteico leggero pomeriggio rest."
@@ -791,8 +791,8 @@
         "target": {
           "kcal": 476,
           "protein": 28,
-          "fat": 11,
-          "cho": 64
+          "fat": 12,
+          "cho": 65
         },
         "options": [
           {
@@ -801,13 +801,13 @@
               {
                 "type": "single",
                 "name": "Patate lesse",
-                "amount": 169.5,
+                "amount": 169.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 152.6,
+                "amount": 152.5,
                 "unit": "g"
               },
               {
@@ -818,10 +818,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 476.0,
+              "protein": 28.2,
+              "fat": 12.1,
+              "cho": 63.9
             },
             "swap": "Pollo 115g ↔ Tacchino 105g ↔ Vitello 115g ↔ Manzo 125g",
             "quando": "Cena classica rest day, maggiore di giorni allenamento."
@@ -832,13 +832,13 @@
               {
                 "type": "single",
                 "name": "Patate lesse",
-                "amount": 169.5,
+                "amount": 169.4,
                 "unit": "g"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 152.6,
+                "amount": 152.5,
                 "unit": "g"
               },
               {
@@ -849,10 +849,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 476.0,
+              "protein": 28.6,
+              "fat": 12.4,
+              "cho": 62.9
             },
             "swap": "Salmone ↔ Pesce spada ↔ Merluzzo ↔ Tonno tagliata",
             "quando": "Omega-3 rest day, recovery settimanale generale."
@@ -863,7 +863,7 @@
               {
                 "type": "single",
                 "name": "Uova",
-                "amount": 80.5,
+                "amount": 80.4,
                 "unit": "g"
               },
               {
@@ -875,7 +875,7 @@
               {
                 "type": "single",
                 "name": "Zucchine cotte",
-                "amount": 152.6,
+                "amount": 152.5,
                 "unit": "g"
               },
               {
@@ -886,10 +886,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 476.0,
+              "protein": 20.0,
+              "fat": 12.7,
+              "cho": 64.3
             },
             "swap": "Verdure solide ↔ Vellutata 230g",
             "quando": "Cena veloce rest day, vellutata comfort serale."
@@ -912,7 +912,7 @@
               {
                 "type": "single",
                 "name": "Zucchine",
-                "amount": 152.6,
+                "amount": 152.5,
                 "unit": "g"
               },
               {
@@ -923,10 +923,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 476.0,
+              "protein": 20.9,
+              "fat": 12.5,
+              "cho": 63.9
             },
             "swap": "Hummus ceci 105g ↔ Hummus fagioli 110g",
             "quando": "Vegetariana rest day, alta fibra, digestione leggera."

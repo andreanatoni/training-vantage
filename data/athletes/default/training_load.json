@@ -1,36 +1,163 @@
 {
   "meta": {
     "version": "v2.0",
-    "generated_at": "2026-02-16T13:23:41.594228",
+    "generated_at": "2026-02-17T20:06:07.977474",
     "athlete_id": "default",
-    "source_file": null,
+    "source_file": "sources/workouts-2.csv",
     "source_files": {
-      "trainingpeaks": [],
+      "trainingpeaks": [
+        "sources/workouts-2.csv"
+      ],
       "garmin": []
     },
-    "mode": "manual_no_history",
-    "weight_used_kg": null
+    "mode": "trainingpeaks",
+    "weight_used_kg": 68.5
   },
   "assumptions": {
-    "energy_model": "N/A (manual setup senza storico CSV)",
-    "met_by_day_type": {}
+    "energy_model": "MET * body_weight_kg * planned_duration_h",
+    "met_by_day_type": {
+      "rest": 0.0,
+      "easy": 9.0,
+      "qualita": 11.5,
+      "lungo": 9.5,
+      "forza": 6.0,
+      "progressivo": 10.5
+    }
   },
   "merge": {
     "matched": 0,
-    "tp_only": 0,
+    "tp_only": 4,
     "garmin_only": 0
   },
   "summary": {
-    "sessions_count": 0,
+    "sessions_count": 4,
     "date_range": {
-      "from": null,
-      "to": null
+      "from": "2026-02-16",
+      "to": "2026-02-22"
     },
-    "planned_distance_km": 0.0,
-    "planned_duration_h": 0.0,
-    "estimated_energy_kcal": 0
+    "planned_distance_km": 46.88,
+    "planned_duration_h": 3.73,
+    "estimated_energy_kcal": 2516
   },
-  "profile_costs_kcal": {},
-  "weeks": [],
-  "sessions": []
+  "profile_costs_kcal": {
+    "rest": null,
+    "easy": 639.0,
+    "qualita": 355.0,
+    "lungo": 867.0,
+    "forza": null,
+    "progressivo": 655.0
+  },
+  "weeks": [
+    {
+      "iso_week": "2026-W08",
+      "start_date": "2026-02-16",
+      "end_date": "2026-02-22",
+      "sessions_count": 4,
+      "planned_distance_km": 46.88,
+      "planned_duration_h": 3.73,
+      "estimated_energy_kcal": 2516,
+      "day_type_counts": {
+        "easy": 1,
+        "qualita": 1,
+        "progressivo": 1,
+        "lungo": 1
+      },
+      "day_type_avg_energy_kcal": {
+        "easy": 639.0,
+        "qualita": 355.0,
+        "progressivo": 655.0,
+        "lungo": 867.0
+      }
+    }
+  ],
+  "sessions": [
+    {
+      "date": "2026-02-16",
+      "iso_week": "2026-W08",
+      "title": "13x[0.85L+0.15All]",
+      "workout_type": "Run",
+      "day_type": "easy",
+      "planned_duration_h": 1.036,
+      "planned_distance_km": 13.0,
+      "estimated_energy_kcal": 639,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0001"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s001"
+    },
+    {
+      "date": "2026-02-18",
+      "iso_week": "2026-W08",
+      "title": "5x1km RM + Rec 1'30\"",
+      "workout_type": "Run",
+      "day_type": "qualita",
+      "planned_duration_h": 0.451,
+      "planned_distance_km": 6.275,
+      "estimated_energy_kcal": 355,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0002"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s002"
+    },
+    {
+      "date": "2026-02-20",
+      "iso_week": "2026-W08",
+      "title": "3L+3x(1L+1M+1TR)",
+      "workout_type": "Run",
+      "day_type": "progressivo",
+      "planned_duration_h": 0.911,
+      "planned_distance_km": 12.0,
+      "estimated_energy_kcal": 655,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0003"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s003"
+    },
+    {
+      "date": "2026-02-22",
+      "iso_week": "2026-W08",
+      "title": "1h20' L",
+      "workout_type": "Run",
+      "day_type": "lungo",
+      "planned_duration_h": 1.333,
+      "planned_distance_km": 15.6,
+      "estimated_energy_kcal": 867,
+      "reported_energy_kcal": null,
+      "source": "trainingpeaks",
+      "source_session_ids": [
+        "tp0004"
+      ],
+      "source_metrics": {
+        "trainingpeaks": {
+          "tss": null,
+          "if": null
+        }
+      },
+      "session_id": "s004"
+    }
+  ]
 }

@@ -1,0 +1,22 @@
+# Food Mapped Import Report
+
+- generated_at: 2026-02-17T17:16:14.806302
+- source_file: `/Users/andreanatoni/Desktop/projects/training-vantage/data/food_mapped.md`
+- dry_run: False
+- strict_complete: True
+
+## Summary
+
+- parsed_rows: 2155
+- food_db_total: 2155
+- larn_total: 43
+- parse_errors: 0
+- duplicate_food_ids: 0
+- invalid_food_ids: 0
+- invalid_larn_ids: 0
+- missing_food_ids: 0
+- extra_food_ids: 0
+- upsert_created: 0
+- upsert_updated: 2155
+- upsert_unchanged: 0
+

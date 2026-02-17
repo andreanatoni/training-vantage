@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-16",
+    "generated_at": "2026-02-17",
     "category": "qualita",
     "status": "CURRENT"
   },
@@ -13,12 +13,12 @@
     "config_version": "v1.0",
     "day_profile": "qualita",
     "deficit_pct": 0.025,
-    "training_cost_kcal": 274,
+    "training_cost_kcal": 288,
     "training_cost_source": "running_plan_day",
     "phase": "specific",
     "workout_label": "qualita_ritmo_gara",
     "session_date": "2026-03-25",
-    "ea_value_kcal_per_kg_ffm": 37.94,
+    "ea_value_kcal_per_kg_ffm": 37.71,
     "ea_guard_applied": false
   },
   "plan": {
@@ -29,9 +29,9 @@
       "COLAZIONE": {
         "target": {
           "kcal": 431,
-          "protein": 23,
-          "fat": 10,
-          "cho": 59
+          "protein": 24,
+          "fat": 11,
+          "cho": 60
         },
         "options": [
           {
@@ -69,10 +69,10 @@
               }
             ],
             "totals": {
-              "kcal": 305.0,
-              "protein": 7.8,
-              "fat": 8.7,
-              "cho": 50.4
+              "kcal": 430.0,
+              "protein": 15.1,
+              "fat": 12.3,
+              "cho": 57.3
             },
             "swap": "Fette 50g ↔ Pane integrale 55g | Mandorle ↔ Noci 11g ↔ Nocciole 9g",
             "quando": "Colazione veloce pre-yoga, CHO per qualità serale."
@@ -106,10 +106,10 @@
               }
             ],
             "totals": {
-              "kcal": 131.0,
-              "protein": 2.4,
-              "fat": 5.8,
-              "cho": 17.3
+              "kcal": 431.0,
+              "protein": 14.4,
+              "fat": 12.6,
+              "cho": 57.8
             },
             "swap": "Mandorle ↔ Noci 11g ↔ Nocciole 9g",
             "quando": "Sazietà prolungata, ideale pre-qualità intensità."
@@ -143,10 +143,10 @@
               }
             ],
             "totals": {
-              "kcal": 104.0,
-              "protein": 8.6,
-              "fat": 7.7,
-              "cho": 0.0
+              "kcal": 432.0,
+              "protein": 25.5,
+              "fat": 10.6,
+              "cho": 32.3
             },
             "swap": "Prosciutto 35g ↔ Bresaola 30g ↔ Fesa tacchino 40g",
             "quando": "Massimo apporto proteico pre-qualità, variante salata."
@@ -174,10 +174,10 @@
               }
             ],
             "totals": {
-              "kcal": 42.0,
-              "protein": 1.5,
-              "fat": 3.7,
-              "cho": 0.3
+              "kcal": 431.0,
+              "protein": 14.6,
+              "fat": 10.8,
+              "cho": 59.0
             },
             "swap": "Plum cake ↔ Ciambellone (stesse grammature)",
             "quando": "Weekend qualità, comfort food pre-intensità."
@@ -211,10 +211,10 @@
               }
             ],
             "totals": {
-              "kcal": 84.0,
-              "protein": 3.3,
-              "fat": 7.2,
-              "cho": 1.1
+              "kcal": 431.0,
+              "protein": 14.9,
+              "fat": 11.1,
+              "cho": 39.3
             },
             "swap": null,
             "quando": "Versatilità dolce, energia concentrata pre-qualità."
@@ -224,9 +224,9 @@
       "SPUNTINO MATTINA": {
         "target": {
           "kcal": 178,
-          "protein": 9,
-          "fat": 4,
-          "cho": 23
+          "protein": 10,
+          "fat": 5,
+          "cho": 24
         },
         "options": [
           {
@@ -246,10 +246,10 @@
               }
             ],
             "totals": {
-              "kcal": 126.0,
-              "protein": 2.4,
+              "kcal": 177.0,
+              "protein": 3.0,
               "fat": 5.0,
-              "cho": 17.1
+              "cho": 26.2
             },
             "swap": "Mela 110g ↔ Banana 95g | Mandorle ↔ Noci ↔ Burro d'arachidi",
             "quando": "Grab-and-go, praticità pre-pranzo qualità."
@@ -277,10 +277,10 @@
               }
             ],
             "totals": {
-              "kcal": 20.0,
-              "protein": 0.0,
-              "fat": 0.0,
-              "cho": 5.4
+              "kcal": 179.0,
+              "protein": 6.5,
+              "fat": 0.4,
+              "cho": 36.7
             },
             "swap": "Banana 95g ↔ Mela 110g",
             "quando": "Spuntino strutturato, CHO puri per qualità."
@@ -308,10 +308,10 @@
               }
             ],
             "totals": {
-              "kcal": 78.0,
-              "protein": 7.3,
-              "fat": 0.5,
-              "cho": 10.7
+              "kcal": 177.0,
+              "protein": 10.5,
+              "fat": 3.9,
+              "cho": 21.5
             },
             "swap": "Bresaola 22g ↔ Prosciutto 18g ↔ Formaggio spalmabile 12g",
             "quando": "Variante salata, proteine moderate pre-qualità."
@@ -339,10 +339,10 @@
               }
             ],
             "totals": {
-              "kcal": 26.0,
-              "protein": 5.7,
-              "fat": 0.3,
-              "cho": 0.1
+              "kcal": 178.0,
+              "protein": 11.0,
+              "fat": 0.9,
+              "cho": 17.8
             },
             "swap": "Bresaola 18g ↔ Prosciutto crudo 15g",
             "quando": "Boost proteico leggero pre-qualità intensità."
@@ -351,10 +351,10 @@
       },
       "PRANZO": {
         "target": {
-          "kcal": 836,
+          "kcal": 837,
           "protein": 46,
-          "fat": 20,
-          "cho": 115
+          "fat": 21,
+          "cho": 116
         },
         "options": [
           {
@@ -398,10 +398,10 @@
               }
             ],
             "totals": {
-              "kcal": 98.0,
-              "protein": 0.7,
-              "fat": 0.3,
-              "cho": 22.8
+              "kcal": 837.0,
+              "protein": 46.9,
+              "fat": 21.4,
+              "cho": 110.7
             },
             "swap": "Zucchine 150g ↔ Carote 120g | Tonno naturale+olio ↔ Tonno sott'olio",
             "quando": "Pranzo bilanciato, omega-3, digestione pre-qualità."
@@ -441,10 +441,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 838.0,
+              "protein": 46.0,
+              "fat": 21.0,
+              "cho": 113.7
             },
             "swap": "Zucchine 150g ↔ Carote 120g",
             "quando": "Comfort food, sostanzioso pre-qualità serale."
@@ -490,10 +490,10 @@
               }
             ],
             "totals": {
-              "kcal": 75.0,
-              "protein": 0.6,
-              "fat": 0.2,
-              "cho": 17.5
+              "kcal": 836.0,
+              "protein": 46.2,
+              "fat": 20.7,
+              "cho": 112.9
             },
             "swap": "Pollo 115g ↔ Salmone 95g ↔ Pesce spada 105g ↔ Uova 85g",
             "quando": "4 scelte proteiche, flessibilità pre-qualità."
@@ -533,10 +533,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 836.0,
+              "protein": 21.4,
+              "fat": 21.0,
+              "cho": 131.2
             },
             "swap": "Zucchine 150g ↔ Carote 120g",
             "quando": "Velocissimo, alta digeribilità pre-qualità."
@@ -582,10 +582,10 @@
               }
             ],
             "totals": {
-              "kcal": 88.0,
-              "protein": 0.6,
-              "fat": 0.3,
-              "cho": 20.5
+              "kcal": 838.0,
+              "protein": 23.7,
+              "fat": 20.7,
+              "cho": 131.8
             },
             "swap": null,
             "quando": "Leggero, facile digestione pre-qualità."
@@ -637,10 +637,10 @@
               }
             ],
             "totals": {
-              "kcal": 118.0,
-              "protein": 9.8,
-              "fat": 8.7,
-              "cho": 0.0
+              "kcal": 836.0,
+              "protein": 45.8,
+              "fat": 20.6,
+              "cho": 78.5
             },
             "swap": "Prosciutto 40g ↔ Bresaola 50g | Zucchine ↔ Carote",
             "quando": "Zero cottura, fresco pre-qualità estiva."
@@ -649,10 +649,10 @@
       },
       "SPUNTINO POMERIGGIO": {
         "target": {
-          "kcal": 456,
+          "kcal": 457,
           "protein": 24,
-          "fat": 11,
-          "cho": 62
+          "fat": 12,
+          "cho": 63
         },
         "options": [
           {
@@ -678,10 +678,10 @@
               }
             ],
             "totals": {
-              "kcal": 108.0,
-              "protein": 3.8,
-              "fat": 9.5,
-              "cho": 0.8
+              "kcal": 457.0,
+              "protein": 16.2,
+              "fat": 10.7,
+              "cho": 72.3
             },
             "swap": null,
             "quando": "QUALITÀ - massimo CHO loading pre-ripetute/soglia."
@@ -703,10 +703,10 @@
               }
             ],
             "totals": {
-              "kcal": 119.0,
-              "protein": 4.8,
-              "fat": 10.3,
-              "cho": 1.5
+              "kcal": 457.0,
+              "protein": 7.7,
+              "fat": 10.2,
+              "cho": 81.7
             },
             "swap": null,
             "quando": "CHO massimi con proteine moderate, energia pura."
@@ -728,10 +728,10 @@
               }
             ],
             "totals": {
-              "kcal": 150.0,
-              "protein": 5.3,
-              "fat": 13.2,
-              "cho": 1.1
+              "kcal": 458.0,
+              "protein": 7.1,
+              "fat": 13.3,
+              "cho": 81.6
             },
             "swap": null,
             "quando": "QUALITÀ - CHO focus, no latticini, grab-and-go."
@@ -753,10 +753,10 @@
               }
             ],
             "totals": {
-              "kcal": 177.0,
-              "protein": 14.7,
-              "fat": 13.1,
-              "cho": 0.1
+              "kcal": 456.0,
+              "protein": 26.9,
+              "fat": 12.8,
+              "cho": 32.4
             },
             "swap": null,
             "quando": "Solo se problemi digestivi con CHO alti pre-qualità."
@@ -784,10 +784,10 @@
               }
             ],
             "totals": {
-              "kcal": 23.0,
-              "protein": 0.0,
-              "fat": 0.0,
-              "cho": 6.1
+              "kcal": 457.0,
+              "protein": 6.1,
+              "fat": 4.0,
+              "cho": 110.4
             },
             "swap": null,
             "quando": "QUALITÀ - massima energia CHO, stomaco sensibile."
@@ -797,9 +797,9 @@
       "SPUNTINO SERA": {
         "target": {
           "kcal": 127,
-          "protein": 6,
-          "fat": 2,
-          "cho": 17
+          "protein": 7,
+          "fat": 3,
+          "cho": 18
         },
         "options": [
           {
@@ -812,12 +812,7 @@
                 "unit": "g"
               }
             ],
-            "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
-            },
+            "totals": null,
             "swap": null,
             "quando": "Gap 45min-1h, tamponare fame post-intenso."
           },
@@ -838,10 +833,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 127.0,
+              "protein": 5.6,
+              "fat": 0.4,
+              "cho": 24.4
             },
             "swap": null,
             "quando": "Gap 1h-1h30, qualità intenso, recovery glicogeno + proteine."
@@ -863,10 +858,10 @@
               }
             ],
             "totals": {
-              "kcal": 58.0,
-              "protein": 12.6,
-              "fat": 0.8,
-              "cho": 0.2
+              "kcal": 127.0,
+              "protein": 15.6,
+              "fat": 1.9,
+              "cho": 6.3
             },
             "swap": null,
             "quando": "Post-qualità, focus proteine per recupero intenso."
@@ -877,7 +872,7 @@
         "target": {
           "kcal": 634,
           "protein": 34,
-          "fat": 16,
+          "fat": 17,
           "cho": 88
         },
         "options": [
@@ -904,10 +899,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 635.0,
+              "protein": 35.1,
+              "fat": 15.8,
+              "cho": 87.7
             },
             "swap": "Pollo 125g ↔ Tacchino 115g ↔ Vitello 125g ↔ Manzo 135g",
             "quando": "Cena classica post-qualità, recovery intenso ottimale."
@@ -935,10 +930,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 634.0,
+              "protein": 35.7,
+              "fat": 16.2,
+              "cho": 86.5
             },
             "swap": "Salmone ↔ Pesce spada ↔ Merluzzo ↔ Tonno tagliata",
             "quando": "Omega-3 post-qualità, recovery con antinfiammatori naturali."
@@ -972,10 +967,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 633.0,
+              "protein": 25.4,
+              "fat": 17.0,
+              "cho": 88.4
             },
             "swap": "Verdure solide ↔ Vellutata 260g",
             "quando": "Veloce, economica, vellutata comfort post-qualità."
@@ -1009,10 +1004,10 @@
               }
             ],
             "totals": {
-              "kcal": 0,
-              "protein": 0,
-              "fat": 0,
-              "cho": 0
+              "kcal": 634.0,
+              "protein": 26.4,
+              "fat": 16.1,
+              "cho": 86.7
             },
             "swap": "Hummus ceci 120g ↔ Hummus fagioli 125g",
             "quando": "Vegetariana, alta fibra post-qualità, recovery plant-based."

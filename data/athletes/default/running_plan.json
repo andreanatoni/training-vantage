@@ -1,23 +1,23 @@
 {
   "meta": {
     "version": "v1.0",
-    "generated_at": "2026-02-16T14:37:13.447705",
+    "generated_at": "2026-02-17T20:06:10.411931",
     "generated_by": "tv running generate",
     "enforce_tid": false,
     "long_run_strategy": "classic_only"
   },
   "planning_window": {
     "from": "2026-03-01",
-    "to": "2026-03-31",
-    "goal_race": "2026-04-26"
+    "to": "2026-04-30",
+    "goal_race": "2026-10-18"
   },
   "tid_summary": {
-    "aligned_weeks": 3,
-    "total_weeks": 6,
-    "total_running_km": 64.0,
-    "avg_low_pct": 0.707,
-    "avg_moderate_pct": 0.143,
-    "avg_high_pct": 0.15
+    "aligned_weeks": 10,
+    "total_weeks": 10,
+    "total_running_km": 146.0,
+    "avg_low_pct": 0.695,
+    "avg_moderate_pct": 0.065,
+    "avg_high_pct": 0.24
   },
   "weeks": [
     {
@@ -25,7 +25,7 @@
       "iso_week": "2026-W09",
       "start_date": "2026-02-23",
       "end_date": "2026-03-01",
-      "phase": "specific",
+      "phase": "build",
       "target_km": 16,
       "tid": {
         "total_running_km": 0.0,
@@ -36,10 +36,10 @@
         "moderate_pct": 0.0,
         "high_pct": 0.0,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
         "aligned": true,
         "warnings": []
@@ -51,42 +51,39 @@
       "iso_week": "2026-W10",
       "start_date": "2026-03-02",
       "end_date": "2026-03-08",
-      "phase": "specific",
+      "phase": "build",
       "target_km": 17,
       "tid": {
         "total_running_km": 17.0,
-        "low_km": 12.07,
-        "moderate_km": 2.73,
-        "high_km": 2.2,
-        "low_pct": 0.71,
-        "moderate_pct": 0.161,
-        "high_pct": 0.129,
+        "low_km": 11.97,
+        "moderate_km": 1.03,
+        "high_km": 4.0,
+        "low_pct": 0.704,
+        "moderate_pct": 0.061,
+        "high_pct": 0.235,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
-        "aligned": false,
-        "warnings": [
-          "moderate_pct 0.161 > max 0.150 (zona grigia alta)",
-          "high_pct 0.129 < min 0.140 (stimolo alta intensita' basso)"
-        ]
+        "aligned": true,
+        "warnings": []
       },
       "sessions": [
         {
           "date": "2026-03-04",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_ritmo_gara",
+          "workout_label": "qualita_vo2_threshold",
           "distance_km": 6.0,
-          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
-          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
-          "pace_target": "Z5-Z6 3:48-3:48/km",
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
           "intensity_km": {
-            "low_km": 3.3,
-            "moderate_km": 1.5,
-            "high_km": 1.2
+            "low_km": 2.7,
+            "moderate_km": 0.3,
+            "high_km": 3.0
           },
           "source": "auto-generated"
         },
@@ -94,14 +91,14 @@
           "date": "2026-03-06",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_chiusura_gara",
+          "workout_label": "progressivo_classico",
           "distance_km": 5.0,
-          "structure": "Progressivo con chiusura a ritmo gara",
+          "structure": "L + M + TR progressivo",
           "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
-          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
           "intensity_km": {
-            "low_km": 3.25,
-            "moderate_km": 0.75,
+            "low_km": 3.75,
+            "moderate_km": 0.25,
             "high_km": 1.0
           },
           "source": "auto-generated"
@@ -129,42 +126,39 @@
       "iso_week": "2026-W11",
       "start_date": "2026-03-09",
       "end_date": "2026-03-15",
-      "phase": "specific",
+      "phase": "build",
       "target_km": 19,
       "tid": {
         "total_running_km": 19.0,
-        "low_km": 13.91,
-        "moderate_km": 2.89,
-        "high_km": 2.2,
-        "low_pct": 0.732,
-        "moderate_pct": 0.152,
-        "high_pct": 0.116,
+        "low_km": 13.81,
+        "moderate_km": 1.19,
+        "high_km": 4.0,
+        "low_pct": 0.727,
+        "moderate_pct": 0.063,
+        "high_pct": 0.211,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
-        "aligned": false,
-        "warnings": [
-          "moderate_pct 0.152 > max 0.150 (zona grigia alta)",
-          "high_pct 0.116 < min 0.140 (stimolo alta intensita' basso)"
-        ]
+        "aligned": true,
+        "warnings": []
       },
       "sessions": [
         {
           "date": "2026-03-11",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_ritmo_gara",
+          "workout_label": "qualita_vo2_threshold",
           "distance_km": 6.0,
-          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
-          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
-          "pace_target": "Z5-Z6 3:48-3:48/km",
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
           "intensity_km": {
-            "low_km": 3.3,
-            "moderate_km": 1.5,
-            "high_km": 1.2
+            "low_km": 2.7,
+            "moderate_km": 0.3,
+            "high_km": 3.0
           },
           "source": "auto-generated"
         },
@@ -172,14 +166,14 @@
           "date": "2026-03-13",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_chiusura_gara",
+          "workout_label": "progressivo_classico",
           "distance_km": 5.0,
-          "structure": "Progressivo con chiusura a ritmo gara",
+          "structure": "L + M + TR progressivo",
           "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
-          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
           "intensity_km": {
-            "low_km": 3.25,
-            "moderate_km": 0.75,
+            "low_km": 3.75,
+            "moderate_km": 0.25,
             "high_km": 1.0
           },
           "source": "auto-generated"
@@ -207,21 +201,21 @@
       "iso_week": "2026-W12",
       "start_date": "2026-03-16",
       "end_date": "2026-03-22",
-      "phase": "specific",
+      "phase": "build",
       "target_km": 16,
       "tid": {
         "total_running_km": 16.0,
-        "low_km": 10.52,
-        "moderate_km": 1.68,
+        "low_km": 10.92,
+        "moderate_km": 1.28,
         "high_km": 3.8,
-        "low_pct": 0.657,
-        "moderate_pct": 0.105,
+        "low_pct": 0.682,
+        "moderate_pct": 0.08,
         "high_pct": 0.237,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
         "aligned": true,
         "warnings": []
@@ -247,14 +241,14 @@
           "date": "2026-03-20",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_chiusura_gara",
+          "workout_label": "progressivo_classico",
           "distance_km": 4.0,
-          "structure": "Progressivo con chiusura a ritmo gara",
-          "session_plan": "Progressivo: 1 km L + 1 km M + 2 km TR",
-          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 1 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
           "intensity_km": {
-            "low_km": 2.6,
-            "moderate_km": 0.6,
+            "low_km": 3.0,
+            "moderate_km": 0.2,
             "high_km": 0.8
           },
           "source": "auto-generated"
@@ -282,42 +276,39 @@
       "iso_week": "2026-W13",
       "start_date": "2026-03-23",
       "end_date": "2026-03-29",
-      "phase": "specific",
-      "target_km": 12,
+      "phase": "build",
+      "target_km": 17,
       "tid": {
-        "total_running_km": 12.0,
-        "low_km": 8.75,
-        "moderate_km": 1.85,
-        "high_km": 1.4,
-        "low_pct": 0.729,
-        "moderate_pct": 0.154,
-        "high_pct": 0.117,
+        "total_running_km": 17.0,
+        "low_km": 11.97,
+        "moderate_km": 1.03,
+        "high_km": 4.0,
+        "low_pct": 0.704,
+        "moderate_pct": 0.061,
+        "high_pct": 0.235,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
-        "aligned": false,
-        "warnings": [
-          "moderate_pct 0.154 > max 0.150 (zona grigia alta)",
-          "high_pct 0.117 < min 0.140 (stimolo alta intensita' basso)"
-        ]
+        "aligned": true,
+        "warnings": []
       },
       "sessions": [
         {
           "date": "2026-03-25",
           "day_name": "Wednesday",
           "day_type": "qualita",
-          "workout_label": "qualita_ritmo_gara",
-          "distance_km": 4.0,
-          "structure": "Blocchi a ritmo gara (HM/Maratona) con recuperi controllati",
-          "session_plan": "Risc 2 km + 2x2 km a ritmo gara (rec 1 km L) + Defat 1 km",
-          "pace_target": "Z5-Z6 3:48-3:48/km",
+          "workout_label": "qualita_vo2_threshold",
+          "distance_km": 6.0,
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
           "intensity_km": {
-            "low_km": 2.2,
-            "moderate_km": 1.0,
-            "high_km": 0.8
+            "low_km": 2.7,
+            "moderate_km": 0.3,
+            "high_km": 3.0
           },
           "source": "auto-generated"
         },
@@ -325,20 +316,320 @@
           "date": "2026-03-27",
           "day_name": "Friday",
           "day_type": "progressivo",
-          "workout_label": "progressivo_chiusura_gara",
-          "distance_km": 3.0,
-          "structure": "Progressivo con chiusura a ritmo gara",
-          "session_plan": "Progressivo: 1 km L + 1 km M + 1 km TR",
-          "pace_target": "Z2→Z5 (4:38 -> 4:00/km)",
+          "workout_label": "progressivo_classico",
+          "distance_km": 5.0,
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
           "intensity_km": {
-            "low_km": 1.95,
-            "moderate_km": 0.45,
-            "high_km": 0.6
+            "low_km": 3.75,
+            "moderate_km": 0.25,
+            "high_km": 1.0
           },
           "source": "auto-generated"
         },
         {
           "date": "2026-03-28",
+          "day_name": "Saturday",
+          "day_type": "lungo",
+          "workout_label": "lungo_aerobico",
+          "distance_km": 6.0,
+          "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 6 km L con ultimi 2-3 km in M (opzionale)",
+          "pace_target": "Z2 stabile 4:38-5:09/km",
+          "intensity_km": {
+            "low_km": 5.52,
+            "moderate_km": 0.48,
+            "high_km": 0.0
+          },
+          "source": "auto-generated"
+        }
+      ]
+    },
+    {
+      "week_index": 6,
+      "iso_week": "2026-W14",
+      "start_date": "2026-03-30",
+      "end_date": "2026-04-05",
+      "phase": "build",
+      "target_km": 18,
+      "tid": {
+        "total_running_km": 18.0,
+        "low_km": 12.89,
+        "moderate_km": 1.11,
+        "high_km": 4.0,
+        "low_pct": 0.716,
+        "moderate_pct": 0.062,
+        "high_pct": 0.222,
+        "target": {
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
+        },
+        "aligned": true,
+        "warnings": []
+      },
+      "sessions": [
+        {
+          "date": "2026-04-01",
+          "day_name": "Wednesday",
+          "day_type": "qualita",
+          "workout_label": "qualita_vo2_threshold",
+          "distance_km": 6.0,
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "intensity_km": {
+            "low_km": 2.7,
+            "moderate_km": 0.3,
+            "high_km": 3.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-03",
+          "day_name": "Friday",
+          "day_type": "progressivo",
+          "workout_label": "progressivo_classico",
+          "distance_km": 5.0,
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "intensity_km": {
+            "low_km": 3.75,
+            "moderate_km": 0.25,
+            "high_km": 1.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-04",
+          "day_name": "Saturday",
+          "day_type": "lungo",
+          "workout_label": "lungo_aerobico",
+          "distance_km": 7.0,
+          "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 7 km L con ultimi 2-3 km in M (opzionale)",
+          "pace_target": "Z2 stabile 4:38-5:09/km",
+          "intensity_km": {
+            "low_km": 6.44,
+            "moderate_km": 0.56,
+            "high_km": 0.0
+          },
+          "source": "auto-generated"
+        }
+      ]
+    },
+    {
+      "week_index": 7,
+      "iso_week": "2026-W15",
+      "start_date": "2026-04-06",
+      "end_date": "2026-04-12",
+      "phase": "build",
+      "target_km": 20,
+      "tid": {
+        "total_running_km": 20.0,
+        "low_km": 14.73,
+        "moderate_km": 1.27,
+        "high_km": 4.0,
+        "low_pct": 0.737,
+        "moderate_pct": 0.064,
+        "high_pct": 0.2,
+        "target": {
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
+        },
+        "aligned": true,
+        "warnings": []
+      },
+      "sessions": [
+        {
+          "date": "2026-04-08",
+          "day_name": "Wednesday",
+          "day_type": "qualita",
+          "workout_label": "qualita_vo2_threshold",
+          "distance_km": 6.0,
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "intensity_km": {
+            "low_km": 2.7,
+            "moderate_km": 0.3,
+            "high_km": 3.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-10",
+          "day_name": "Friday",
+          "day_type": "progressivo",
+          "workout_label": "progressivo_classico",
+          "distance_km": 5.0,
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "intensity_km": {
+            "low_km": 3.75,
+            "moderate_km": 0.25,
+            "high_km": 1.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-11",
+          "day_name": "Saturday",
+          "day_type": "lungo",
+          "workout_label": "lungo_aerobico",
+          "distance_km": 9.0,
+          "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 9 km L con ultimi 2-3 km in M (opzionale)",
+          "pace_target": "Z2 stabile 4:38-5:09/km",
+          "intensity_km": {
+            "low_km": 8.28,
+            "moderate_km": 0.72,
+            "high_km": 0.0
+          },
+          "source": "auto-generated"
+        }
+      ]
+    },
+    {
+      "week_index": 8,
+      "iso_week": "2026-W16",
+      "start_date": "2026-04-13",
+      "end_date": "2026-04-19",
+      "phase": "build",
+      "target_km": 17,
+      "tid": {
+        "total_running_km": 17.0,
+        "low_km": 11.67,
+        "moderate_km": 1.33,
+        "high_km": 4.0,
+        "low_pct": 0.686,
+        "moderate_pct": 0.078,
+        "high_pct": 0.235,
+        "target": {
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
+        },
+        "aligned": true,
+        "warnings": []
+      },
+      "sessions": [
+        {
+          "date": "2026-04-15",
+          "day_name": "Wednesday",
+          "day_type": "qualita",
+          "workout_label": "test_5k",
+          "distance_km": 6.0,
+          "structure": "Settimana scarico: test 5km + riscaldamento/defaticamento",
+          "session_plan": "Risc 2 km + Test 5 km + Defat 1 km",
+          "pace_target": "Test 5km, riferimento soglia 3:40-3:48/km",
+          "intensity_km": {
+            "low_km": 2.4,
+            "moderate_km": 0.6,
+            "high_km": 3.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-17",
+          "day_name": "Friday",
+          "day_type": "progressivo",
+          "workout_label": "progressivo_classico",
+          "distance_km": 5.0,
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 2 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "intensity_km": {
+            "low_km": 3.75,
+            "moderate_km": 0.25,
+            "high_km": 1.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-18",
+          "day_name": "Saturday",
+          "day_type": "lungo",
+          "workout_label": "lungo_aerobico",
+          "distance_km": 6.0,
+          "structure": "Lungo aerobico (eventuali inserimenti M)",
+          "session_plan": "Lungo aerobico: 6 km L con ultimi 2-3 km in M (opzionale)",
+          "pace_target": "Z2 stabile 4:38-5:09/km",
+          "intensity_km": {
+            "low_km": 5.52,
+            "moderate_km": 0.48,
+            "high_km": 0.0
+          },
+          "source": "auto-generated"
+        }
+      ]
+    },
+    {
+      "week_index": 9,
+      "iso_week": "2026-W17",
+      "start_date": "2026-04-20",
+      "end_date": "2026-04-26",
+      "phase": "build",
+      "target_km": 13,
+      "tid": {
+        "total_running_km": 13.0,
+        "low_km": 9.4,
+        "moderate_km": 0.8,
+        "high_km": 2.8,
+        "low_pct": 0.723,
+        "moderate_pct": 0.062,
+        "high_pct": 0.215,
+        "target": {
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
+        },
+        "aligned": true,
+        "warnings": []
+      },
+      "sessions": [
+        {
+          "date": "2026-04-22",
+          "day_name": "Wednesday",
+          "day_type": "qualita",
+          "workout_label": "qualita_vo2_threshold",
+          "distance_km": 4.0,
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 4x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "intensity_km": {
+            "low_km": 1.8,
+            "moderate_km": 0.2,
+            "high_km": 2.0
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-24",
+          "day_name": "Friday",
+          "day_type": "progressivo",
+          "workout_label": "progressivo_classico",
+          "distance_km": 4.0,
+          "structure": "L + M + TR progressivo",
+          "session_plan": "Progressivo: 2 km L + 1 km M + 1 km TR",
+          "pace_target": "Z2→Z6 (4:38 -> 3:48/km)",
+          "intensity_km": {
+            "low_km": 3.0,
+            "moderate_km": 0.2,
+            "high_km": 0.8
+          },
+          "source": "auto-generated"
+        },
+        {
+          "date": "2026-04-25",
           "day_name": "Saturday",
           "day_type": "lungo",
           "workout_label": "lungo_aerobico",
@@ -356,30 +647,47 @@
       ]
     },
     {
-      "week_index": 6,
-      "iso_week": "2026-W14",
-      "start_date": "2026-03-30",
-      "end_date": "2026-04-05",
-      "phase": "specific",
-      "target_km": 8,
+      "week_index": 10,
+      "iso_week": "2026-W18",
+      "start_date": "2026-04-27",
+      "end_date": "2026-05-03",
+      "phase": "build",
+      "target_km": 9,
       "tid": {
-        "total_running_km": 0.0,
-        "low_km": 0.0,
-        "moderate_km": 0.0,
-        "high_km": 0.0,
-        "low_pct": 0.0,
-        "moderate_pct": 0.0,
-        "high_pct": 0.0,
+        "total_running_km": 9.0,
+        "low_km": 4.05,
+        "moderate_km": 0.45,
+        "high_km": 4.5,
+        "low_pct": 0.45,
+        "moderate_pct": 0.05,
+        "high_pct": 0.5,
         "target": {
-          "target_low_pct": 0.75,
-          "target_high_pct": 0.18,
-          "max_moderate_pct": 0.15,
-          "min_high_pct": 0.14
+          "target_low_pct": 0.8,
+          "target_high_pct": 0.15,
+          "max_moderate_pct": 0.12,
+          "min_high_pct": 0.12
         },
         "aligned": true,
         "warnings": []
       },
-      "sessions": []
+      "sessions": [
+        {
+          "date": "2026-04-29",
+          "day_name": "Wednesday",
+          "day_type": "qualita",
+          "workout_label": "qualita_vo2_threshold",
+          "distance_km": 9.0,
+          "structure": "Ripetute VO2/soglia con recuperi controllati",
+          "session_plan": "Risc 2 km + 5x800 m (rec 400 m jog) + Defat 1 km",
+          "pace_target": "Z6-Z7 3:40-3:40/km",
+          "intensity_km": {
+            "low_km": 4.05,
+            "moderate_km": 0.45,
+            "high_km": 4.5
+          },
+          "source": "auto-generated"
+        }
+      ]
     }
   ]
 }

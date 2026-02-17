@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-02-16T14:36:55.647024",
+    "generated_at": "2026-02-17T20:06:09.050836",
     "athlete_id": "default",
     "iso_week": "2026-W11",
     "source_running_plan": "data/athletes/default/running_plan.json"
@@ -40,7 +40,7 @@
       "weekday": "Wednesday",
       "category": "qualita",
       "day_type": "qualita",
-      "training_cost_kcal": 411,
+      "training_cost_kcal": 432,
       "phase": "specific",
       "workout_label": "qualita_ritmo_gara",
       "md_file": "plans/nutrition/athletes/default/weeks/2026-W11/2026-03-11-qualita.md",
@@ -62,7 +62,7 @@
       "weekday": "Friday",
       "category": "tempo",
       "day_type": "progressivo",
-      "training_cost_kcal": 342,
+      "training_cost_kcal": 360,
       "phase": "specific",
       "workout_label": "progressivo_chiusura_gara",
       "md_file": "plans/nutrition/athletes/default/weeks/2026-W11/2026-03-13-tempo.md",
@@ -73,7 +73,7 @@
       "weekday": "Saturday",
       "category": "lungo",
       "day_type": "lungo",
-      "training_cost_kcal": 548,
+      "training_cost_kcal": 603,
       "phase": "specific",
       "workout_label": "lungo_aerobico",
       "md_file": "plans/nutrition/athletes/default/weeks/2026-W11/2026-03-14-lungo.md",
