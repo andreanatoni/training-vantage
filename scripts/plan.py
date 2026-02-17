@@ -3,7 +3,6 @@
 /tv plan <categoria> [--all]
 
 Genera piano nutrizionale completo per categoria usando meal_options strutturati.
-Fallback temporaneo: parsing STALE markdown se i JSON non sono presenti.
 """
 
 import sys
@@ -350,9 +349,9 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         print(f"❌ Categoria {category} non trovata in mapping")
         return False
 
-    # Parse da JSON strutturato (fallback STALE gestito internamente)
+    # Parse da JSON strutturato (obbligatorio)
     try:
-        plan_data = load_plan_for_category(category, allow_fallback=True)
+        plan_data = load_plan_for_category(category)
     except Exception as exc:
         print(f"❌ Errore caricamento meal options per categoria '{category}': {exc}")
         return False
@@ -363,7 +362,7 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
     config = load_nutrition_engine_config()
 
     if not old_bmr:
-        print(f"❌ BMR non trovato nel piano STALE")
+        print(f"❌ BMR non trovato nel piano base strutturato")
         return False
 
     plan_scaled = scale_plan_to_bmr(plan_data, current_bmr)

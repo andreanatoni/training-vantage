@@ -14,7 +14,8 @@ try:
 except ModuleNotFoundError:
     from food_db import FoodDB
 
-SOURCES_DIR = Path(__file__).parent.parent / "sources"
+ROOT = Path(__file__).parent.parent.parent
+SOURCES_DIR = ROOT / "sources"
 
 
 class StalePlanParser:

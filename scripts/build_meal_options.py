@@ -2,7 +2,10 @@
 """Build structured meal options JSON from legacy STALE markdown sources."""
 
 import argparse
-from meal_options_repository import CATEGORY_SOURCES, build_all_from_stale, build_category_from_stale
+try:
+    from scripts.meal_options_repository import CATEGORY_SOURCES, build_all_from_stale, build_category_from_stale
+except ModuleNotFoundError:
+    from meal_options_repository import CATEGORY_SOURCES, build_all_from_stale, build_category_from_stale
 
 
 def parse_args(argv=None):

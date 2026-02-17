@@ -85,7 +85,7 @@ Contiene:
 
 Path primario planner:
 - `./tv plan ...` legge `knowledge/meal_options/<categoria>.json`
-- fallback temporaneo ai markdown STALE (`sources/piano_*.md`) solo se il JSON manca
+- se manca il JSON fallisce con errore e richiede `./tv plan build-options`
 
 Output:
 - `plans/nutrition/athletes/<id>/*.md`

@@ -15,9 +15,20 @@ class MealOptionsRepositoryTests(unittest.TestCase):
             self.assertTrue(path.exists(), f"Missing meal options file for {category}")
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertIn("plan", payload)
-            plan = load_plan_for_category(category, allow_fallback=False)
+            plan = load_plan_for_category(category)
             self.assertIn("meals", plan)
             self.assertIn("target_kcal", plan)
+
+    def test_load_fails_when_structured_file_missing(self):
+        category = "forza"
+        path = MEAL_OPTIONS_DIR / f"{category}.json"
+        backup = path.read_text(encoding="utf-8")
+        path.unlink()
+        try:
+            with self.assertRaises(FileNotFoundError):
+                load_plan_for_category(category)
+        finally:
+            path.write_text(backup, encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -8,13 +8,19 @@ ricalcola totali, genera markdown completo.
 
 from pathlib import Path
 from datetime import datetime
-from extract_from_stale import StalePlanParser
-from food_db import FoodDB
 import json
 
-SOURCES_DIR = Path(__file__).parent.parent / "sources"
-PLANS_DIR = Path(__file__).parent.parent / "plans" / "nutrition"
-DATA_DIR = Path(__file__).parent.parent / "data"
+try:
+    from scripts.legacy.extract_from_stale import StalePlanParser
+    from scripts.food_db import FoodDB
+except ModuleNotFoundError:
+    from legacy.extract_from_stale import StalePlanParser
+    from food_db import FoodDB
+
+ROOT = Path(__file__).parent.parent.parent
+SOURCES_DIR = ROOT / "sources"
+PLANS_DIR = ROOT / "plans" / "nutrition"
+DATA_DIR = ROOT / "data"
 COMPOSITION_FILE = DATA_DIR / "composition.json"
 
 

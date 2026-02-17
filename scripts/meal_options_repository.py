@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repository helpers for structured meal options."""
+"""Repository helpers for structured meal options (strict mode, no runtime fallback)."""
 
 import json
 from copy import deepcopy
@@ -7,9 +7,9 @@ from datetime import datetime
 from pathlib import Path
 
 try:
-    from scripts.extract_from_stale import StalePlanParser
+    from scripts.legacy.extract_from_stale import StalePlanParser
 except ModuleNotFoundError:
-    from extract_from_stale import StalePlanParser
+    from legacy.extract_from_stale import StalePlanParser
 
 ROOT = Path(__file__).parent.parent
 SOURCES_DIR = ROOT / "sources"
@@ -83,12 +83,10 @@ def build_all_from_stale(parser: StalePlanParser = None) -> list[Path]:
     return out
 
 
-def load_plan_for_category(category: str, parser: StalePlanParser = None, allow_fallback: bool = True) -> dict:
+def load_plan_for_category(category: str) -> dict:
     """
-    Load structured plan for category.
-
-    Preferred path: knowledge/meal_options/<category>.json
-    Fallback path: parse sources/piano_<category>.md when allowed.
+    Load structured plan for category from knowledge/meal_options/<category>.json.
+    No fallback to STALE markdown in runtime.
     """
     path = _meal_options_path(category)
     if path.exists():
@@ -96,16 +94,7 @@ def load_plan_for_category(category: str, parser: StalePlanParser = None, allow_
         _validate_payload(payload)
         return deepcopy(payload["plan"])
 
-    if not allow_fallback:
-        raise FileNotFoundError(f"File meal options non trovato: {path}")
-
-    parser = parser or StalePlanParser()
-    source_path = _source_path(category)
-    if not source_path.exists():
-        raise FileNotFoundError(f"File sorgente fallback non trovato: {source_path}")
-    print(
-        f"[WARN] meal_options/{category}.json mancante. "
-        f"Uso fallback STALE da {source_path.name} (deprecato). "
+    raise FileNotFoundError(
+        f"File meal options non trovato: {path}. "
         "Esegui: ./tv plan build-options"
     )
-    return parser.parse_plan_file(source_path)

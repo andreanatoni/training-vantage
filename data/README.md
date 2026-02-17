@@ -162,7 +162,7 @@ Comandi principali (dalla root del repo):
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
   - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)
   - `plans/nutrition/athletes/<id>/<categoria>.json` (versione strutturata)
-  - legge il repository strutturato `knowledge/meal_options/<categoria>.json` (fallback STALE deprecato se manca)
+  - legge il repository strutturato `knowledge/meal_options/<categoria>.json` (obbligatorio)
 - `plan build-options [--category <categoria>]`: rigenera `knowledge/meal_options/*.json` dai file legacy `sources/piano_*.md`.
 - `plan week <YYYY-Www>`: genera pacchetto settimanale in `plans/nutrition/athletes/<id>/weeks/<YYYY-Www>/` partendo dalle sedute di `running_plan.json`:
   - 7 file giornalieri `.md/.json`
