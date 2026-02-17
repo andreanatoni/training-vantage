@@ -12,7 +12,6 @@ import math
 from copy import deepcopy
 from pathlib import Path
 from datetime import datetime, timedelta
-from extract_from_stale import StalePlanParser
 from athlete_context import DATA_DIR as SHARED_DATA_DIR, athlete_plans_dir, data_file, ensure_athlete_dirs, get_athlete_id
 from integration_config import load_integration_config_strict
 from meal_options_repository import CATEGORY_SOURCES, load_plan_for_category
@@ -172,7 +171,7 @@ def get_plan_adjustment(category, body_data, config, profile_cost_overrides=None
     }
 
 
-def apply_secondary_scaling(plan_data, ratio, parser):
+def apply_secondary_scaling(plan_data, ratio):
     """Applica un secondo scaling (post-BMR) su target e ingredienti."""
     if ratio <= 0:
         return plan_data
@@ -189,9 +188,25 @@ def apply_secondary_scaling(plan_data, ratio, parser):
         for option in meal_data['options']:
             for ing in option['ingredients']:
                 ing['amount'] = round(ing['amount'] * ratio, 1)
-            option['totals'] = parser._recalculate_totals(option['ingredients'])
+            if option.get('totals'):
+                option['totals'] = {
+                    'kcal': round(option['totals']['kcal'] * ratio, 0),
+                    'protein': round(option['totals']['protein'] * ratio, 1),
+                    'fat': round(option['totals']['fat'] * ratio, 1),
+                    'cho': round(option['totals']['cho'] * ratio, 1),
+                }
 
     return scaled
+
+
+def scale_plan_to_bmr(plan_data, new_bmr):
+    """Scala piano completo al nuovo BMR (prima del motore deficit/EA)."""
+    old_bmr = plan_data.get('bmr')
+    if not old_bmr:
+        raise ValueError("BMR non presente nel piano base")
+    ratio = new_bmr / old_bmr
+    print(f"Scaling: BMR {old_bmr} → {new_bmr} (ratio: {ratio:.3f})")
+    return apply_secondary_scaling(plan_data, ratio)
 
 
 def format_ingredient_line(ing_data):
@@ -336,9 +351,8 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         return False
 
     # Parse da JSON strutturato (fallback STALE gestito internamente)
-    parser = StalePlanParser()
     try:
-        plan_data = load_plan_for_category(category, parser=parser, allow_fallback=True)
+        plan_data = load_plan_for_category(category, allow_fallback=True)
     except Exception as exc:
         print(f"❌ Errore caricamento meal options per categoria '{category}': {exc}")
         return False
@@ -352,7 +366,7 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         print(f"❌ BMR non trovato nel piano STALE")
         return False
 
-    plan_scaled = parser.scale_plan(plan_data, current_bmr)
+    plan_scaled = scale_plan_to_bmr(plan_data, current_bmr)
     training_profile_costs = load_training_profile_costs()
     explicit_adjustment_override = None
     if engine_overrides and "training_cost_kcal" in engine_overrides:
@@ -379,7 +393,7 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         ea_guard_applied = True
 
     secondary_ratio = adjusted_kcal / pre_adjust_kcal if pre_adjust_kcal > 0 else 1.0
-    plan_final = apply_secondary_scaling(plan_scaled, secondary_ratio, parser)
+    plan_final = apply_secondary_scaling(plan_scaled, secondary_ratio)
     plan_final['ffm'] = round(body_data['ffm'], 2)
 
     ea_value = (adjusted_kcal - adjustment['training_cost_kcal']) / body_data['ffm']
