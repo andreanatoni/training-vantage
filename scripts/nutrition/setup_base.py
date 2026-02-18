@@ -29,8 +29,6 @@ except ModuleNotFoundError:
     )
 
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-ROOT_DIR = SCRIPT_DIR.parent
 SHARED_TEMPLATE_FILE = SHARED_DATA_DIR / "templates" / "nutrition_base_template.shared.json"
 FOOD_DB_FILE = SHARED_DATA_DIR / "FOOD_DB.json"
 

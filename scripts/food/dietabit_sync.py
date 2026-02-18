@@ -31,7 +31,7 @@ except ModuleNotFoundError:
     from food.food_add import make_food_id
 
 
-ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 KNOWLEDGE_DIR = ROOT / "knowledge"
 FOOD_DB_JSON = DATA_DIR / "FOOD_DB.json"

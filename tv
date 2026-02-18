@@ -197,7 +197,7 @@ case "$1" in
         ;;
     week)
         shift
-        python3 "$SCRIPTS_DIR/week.py" "$@"
+        python3 -m scripts.running.week "$@"
         ;;
     running)
         shift
@@ -218,15 +218,15 @@ case "$1" in
         elif [ "$1" = "check" ]; then
             python3 -m scripts.food.sync_food_db --check
         elif [ "$1" = "crawl-index" ]; then
-            python3 "$SCRIPTS_DIR/crea_import.py" crawl-index
+            python3 -m scripts.food.crea_import crawl-index
         elif [ "$1" = "import-crea" ]; then
             shift
-            python3 "$SCRIPTS_DIR/crea_import.py" import-crea "$@"
+            python3 -m scripts.food.crea_import import-crea "$@"
         elif [ "$1" = "rebuild-from-crea" ]; then
-            python3 "$SCRIPTS_DIR/rebuild_food_db_from_crea.py"
+            python3 -m scripts.food.rebuild_food_db_from_crea
         elif [ "$1" = "sync-dietabit" ]; then
             shift
-            python3 "$SCRIPTS_DIR/dietabit_sync.py" "$@"
+            python3 -m scripts.food.dietabit_sync "$@"
         elif [ "$1" = "build-active" ]; then
             python3 -m scripts.food.build_active_food_db
         elif [ "$1" = "import-mapped" ]; then
@@ -263,7 +263,7 @@ case "$1" in
         shift
         if [ "$1" = "setup-base" ]; then
             shift
-            python3 "$SCRIPTS_DIR/nutrition_setup.py" "$@"
+            python3 -m scripts.nutrition.setup_base "$@"
         else
             echo -e "${RED}Uso non valido. Esempio:${NC} tv nutrition setup-base"
             exit 1
@@ -271,13 +271,13 @@ case "$1" in
         ;;
     analyze)
         shift
-        python3 "$SCRIPTS_DIR/analyze.py" "$@"
+        python3 -m scripts.running.analyze "$@"
         ;;
     load)
         shift
         if [ "$1" = "import" ]; then
             shift
-            python3 "$SCRIPTS_DIR/import_training_load.py" "$@"
+            python3 -m scripts.running.import_training_load "$@"
         else
             echo -e "${RED}Uso non valido. Esempi:${NC} tv load import sources/workouts-2.csv"
             echo "                          tv load import --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv"

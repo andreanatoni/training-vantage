@@ -14,7 +14,7 @@ import sys
 import os
 from datetime import datetime
 
-from scripts.import_training_load import (
+from scripts.running.import_training_load import (
     append_changelog_entry as append_training_load_changelog_entry,
     build_training_load_payload,
     resolve_path as resolve_csv_path,

@@ -275,11 +275,20 @@ def scale_plan_to_bmr(plan_data, new_bmr):
 
 def format_ingredient_line(ing_data):
     """Formatta linea ingrediente"""
-    if ing_data['type'] == 'single':
-        return f"- {ing_data['name']}: {ing_data['amount']:.0f} {ing_data['unit']}"
-    elif ing_data['type'] == 'alternatives':
-        items_str = ' OR '.join(ing_data['items'])
-        return f"- {items_str}: {ing_data['amount']:.0f} {ing_data['unit']}"
+    ing_type = ing_data.get('type')
+    name = ing_data.get('name', 'Ingrediente')
+    amount = float(ing_data.get('amount', 0))
+    unit = ing_data.get('unit', 'g')
+
+    if ing_type == 'single':
+        return f"- {name}: {amount:.0f} {unit}"
+    if ing_type == 'alternatives':
+        items_str = ' OR '.join(ing_data.get('items', []))
+        return f"- {items_str}: {amount:.0f} {unit}"
+    if ing_type == 'custom_recipe':
+        return f"- {name} (ricetta custom): {amount:.0f} {unit}"
+
+    return f"- {name}: {amount:.0f} {unit}"
 
 
 def generate_plan_markdown(category, plan_data, current_bmr, engine_meta=None):

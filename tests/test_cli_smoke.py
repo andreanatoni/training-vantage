@@ -21,8 +21,8 @@ from scripts.food.food_add import (  # noqa: E402
     parse_reference,
     to_float,
 )
-from scripts.crea_import import parse_crea_index_text  # noqa: E402
-from scripts.import_training_load import (  # noqa: E402
+from scripts.food.crea_import import parse_crea_index_text  # noqa: E402
+from scripts.running.import_training_load import (  # noqa: E402
     build_training_load_payload,
     classify_day_type,
 )
@@ -34,7 +34,7 @@ from scripts.running.running_setup import (  # noqa: E402
     parse_args as parse_running_setup_args,
     resolve_target_athlete_id,
 )
-from scripts.nutrition_setup import (  # noqa: E402
+from scripts.nutrition.setup_base import (  # noqa: E402
     infer_when_to_use,
     MEAL_ORDER,
     infer_option_tags,

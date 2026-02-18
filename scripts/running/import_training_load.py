@@ -3,10 +3,10 @@
 Importa storico/planning da CSV TrainingPeaks e/o Garmin in training_load.json.
 
 Esempi:
-  python3 scripts/import_training_load.py sources/workouts-2.csv
-  python3 scripts/import_training_load.py --tp sources/workouts-2.csv
-  python3 scripts/import_training_load.py --garmin sources/garmin-last-year.csv
-  python3 scripts/import_training_load.py --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
+  python3 -m scripts.running.import_training_load sources/workouts-2.csv
+  python3 -m scripts.running.import_training_load --tp sources/workouts-2.csv
+  python3 -m scripts.running.import_training_load --garmin sources/garmin-last-year.csv
+  python3 -m scripts.running.import_training_load --tp sources/trainingpeaks-last-year.csv --garmin sources/garmin-last-year.csv
 """
 
 import argparse
@@ -24,7 +24,7 @@ except ModuleNotFoundError:
     from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
 
 
-ROOT_DIR = Path(__file__).parent.parent
+ROOT_DIR = Path(__file__).resolve().parents[2]
 COMPOSITION_FILE = data_file("composition.json")
 TRAINING_LOAD_FILE = data_file("training_load.json")
 CHANGELOG_FILE = data_file("changelog.json")
@@ -659,7 +659,7 @@ def main():
             sys.exit(1)
 
     if not tp_files and not garmin_files:
-        print("Uso: python3 scripts/import_training_load.py <csv_path> [--tp <file>] [--garmin <file>]")
+        print("Uso: python3 -m scripts.running.import_training_load <csv_path> [--tp <file>] [--garmin <file>]")
         sys.exit(1)
 
     for path in tp_files + garmin_files:
