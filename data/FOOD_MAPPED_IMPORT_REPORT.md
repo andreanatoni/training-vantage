@@ -1,9 +1,9 @@
 # Food Mapped Import Report
 
-- generated_at: 2026-02-17T17:16:14.806302
+- generated_at: 2026-02-18T12:05:27.451960
 - source_file: `/Users/andreanatoni/Desktop/projects/training-vantage/data/food_mapped.md`
 - dry_run: False
-- strict_complete: True
+- strict_complete: False
 
 ## Summary
 
@@ -17,6 +17,6 @@
 - missing_food_ids: 0
 - extra_food_ids: 0
 - upsert_created: 0
-- upsert_updated: 2155
-- upsert_unchanged: 0
+- upsert_updated: 0
+- upsert_unchanged: 2155
 

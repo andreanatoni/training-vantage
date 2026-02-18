@@ -26,31 +26,36 @@
                 "type": "single",
                 "name": "Caffè espresso",
                 "amount": 100.0,
-                "unit": "ml"
+                "unit": "ml",
+                "food_db_id": "caffe_espresso"
               },
               {
                 "type": "single",
                 "name": "Fette biscottate",
                 "amount": 42.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "fette_biscottate"
               },
               {
                 "type": "single",
                 "name": "Marmellata",
                 "amount": 20.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "marmellata"
               },
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mandorle"
               }
             ],
             "totals": {
@@ -69,25 +74,29 @@
                 "type": "single",
                 "name": "Pane integrale",
                 "amount": 50.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "pane_integrale"
               },
               {
                 "type": "single",
                 "name": "Marmellata",
                 "amount": 24.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "marmellata"
               },
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mandorle"
               }
             ],
             "totals": {
@@ -106,25 +115,29 @@
                 "type": "single",
                 "name": "Pane integrale",
                 "amount": 63.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "pane_integrale"
               },
               {
                 "type": "single",
                 "name": "Prosciutto crudo",
                 "amount": 28.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "prosciutto_crudo"
               },
               {
                 "type": "single",
-                "name": "Formaggio spalmabile light",
+                "name": "Formaggio cremoso spalmabile light",
                 "amount": 18.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "formaggio_cremoso_spalmabile_light"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
                 "amount": 100.0,
-                "unit": "ml"
+                "unit": "ml",
+                "food_db_id": "caffe_espresso"
               }
             ],
             "totals": {
@@ -140,28 +153,32 @@
             "name": "Dolce torta ridotta",
             "ingredients": [
               {
-                "type": "single",
+                "type": "custom_recipe",
                 "name": "Plum cake (senza latte/burro)",
                 "amount": 63.0,
-                "unit": "g"
+                "unit": "g",
+                "recipe_id": "plum_cake_senza_latte_burro"
               },
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
                 "amount": 5.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mandorle"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
                 "amount": 100.0,
-                "unit": "ml"
+                "unit": "ml",
+                "food_db_id": "caffe_espresso"
               }
             ],
             "totals": {
@@ -178,33 +195,38 @@
             "ingredients": [
               {
                 "type": "single",
-                "name": "Oro Saiwa",
+                "name": "Biscotti frollini",
                 "amount": 37.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "biscotti_frollini"
               },
               {
                 "type": "single",
                 "name": "Burro d'arachidi",
                 "amount": 11.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "burro_d_arachidi"
               },
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               },
               {
                 "type": "single",
                 "name": "Caffè espresso",
                 "amount": 100.0,
-                "unit": "ml"
+                "unit": "ml",
+                "food_db_id": "caffe_espresso"
               },
               {
                 "type": "single",
-                "name": "Oro Saiwa",
+                "name": "Biscotti frollini",
                 "amount": 37.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "biscotti_frollini"
               }
             ],
             "totals": {
@@ -233,13 +255,15 @@
                 "type": "single",
                 "name": "Mela",
                 "amount": 85.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mela"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
                 "amount": 6.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mandorle"
               }
             ],
             "totals": {
@@ -256,21 +280,24 @@
             "ingredients": [
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               },
               {
                 "type": "single",
                 "name": "Banana",
                 "amount": 60.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "banana"
               },
               {
                 "type": "single",
                 "name": "Miele",
                 "amount": 2.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "miele"
               }
             ],
             "totals": {
@@ -289,13 +316,15 @@
                 "type": "single",
                 "name": "Crackers integrali",
                 "amount": 12.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "crackers_integrali"
               },
               {
                 "type": "single",
                 "name": "Bresaola",
                 "amount": 15.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "bresaola"
               }
             ],
             "totals": {
@@ -314,7 +343,8 @@
                 "type": "single",
                 "name": "Mela",
                 "amount": 130.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mela"
               }
             ],
             "totals": null,
@@ -347,13 +377,15 @@
                 "type": "single",
                 "name": "Mela",
                 "amount": 120.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mela"
               },
               {
                 "type": "single",
                 "name": "Mandorle",
                 "amount": 7.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mandorle"
               }
             ],
             "totals": {
@@ -372,13 +404,15 @@
                 "type": "single",
                 "name": "Banana",
                 "amount": 100.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "banana"
               },
               {
                 "type": "single",
-                "name": "Yogurt magro 0.1%",
+                "name": "Yogurt da latte scremato",
                 "amount": 125.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "yogurt_da_latte_scremato"
               }
             ],
             "totals": {
@@ -397,19 +431,22 @@
                 "type": "single",
                 "name": "Crackers integrali",
                 "amount": 18.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "crackers_integrali"
               },
               {
                 "type": "single",
                 "name": "Bresaola",
                 "amount": 18.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "bresaola"
               },
               {
                 "type": "single",
                 "name": "Mela",
                 "amount": 60.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mela"
               }
             ],
             "totals": {
@@ -428,13 +465,15 @@
                 "type": "single",
                 "name": "Mela",
                 "amount": 150.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "mela"
               },
               {
                 "type": "single",
-                "name": "Acqua",
+                "name": "Acqua minerale",
                 "amount": 300.0,
-                "unit": "ml"
+                "unit": "ml",
+                "food_db_id": "acqua_minerale"
               }
             ],
             "totals": null,
@@ -456,27 +495,31 @@
             "ingredients": [
               {
                 "type": "single",
-                "name": "Pollo piastra",
+                "name": "Petto di pollo",
                 "amount": 80.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "petto_di_pollo"
               },
               {
                 "type": "single",
-                "name": "Patate lesse",
+                "name": "Patate bollite",
                 "amount": 170.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "patate_bollite"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
                 "amount": 200.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "zucchine"
               },
               {
                 "type": "single",
-                "name": "Olio EVO",
+                "name": "Olio di oliva extra vergine",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "olio_di_oliva_extra_vergine"
               }
             ],
             "totals": {
@@ -492,28 +535,32 @@
             "name": "Vellutata comfort ⭐ COMPENSATIVA",
             "ingredients": [
               {
-                "type": "single",
+                "type": "custom_recipe",
                 "name": "Vellutata zucchine/carote",
                 "amount": 300.0,
-                "unit": "g"
+                "unit": "g",
+                "recipe_id": "vellutata_zucchine_carote"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
                 "amount": 90.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "pane_integrale"
               },
               {
                 "type": "single",
                 "name": "Bresaola",
                 "amount": 40.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "bresaola"
               },
               {
                 "type": "single",
-                "name": "Olio EVO",
+                "name": "Olio di oliva extra vergine",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "olio_di_oliva_extra_vergine"
               }
             ],
             "totals": {
@@ -530,27 +577,31 @@
             "ingredients": [
               {
                 "type": "single",
-                "name": "Uova",
+                "name": "Uova di gallina intero",
                 "amount": 75.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "uova_di_gallina_intero"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
                 "amount": 80.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "pane_integrale"
               },
               {
                 "type": "single",
-                "name": "Zucchine cotte",
+                "name": "Zucchine cotte bollite",
                 "amount": 200.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "zucchine_cotte_bollite"
               },
               {
                 "type": "single",
-                "name": "Olio EVO",
+                "name": "Olio di oliva extra vergine",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "olio_di_oliva_extra_vergine"
               }
             ],
             "totals": {
@@ -566,28 +617,32 @@
             "name": "Hummus leggero",
             "ingredients": [
               {
-                "type": "single",
+                "type": "custom_recipe",
                 "name": "Hummus ceci",
                 "amount": 90.0,
-                "unit": "g"
+                "unit": "g",
+                "recipe_id": "hummus_ceci"
               },
               {
                 "type": "single",
                 "name": "Pane integrale",
                 "amount": 70.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "pane_integrale"
               },
               {
                 "type": "single",
                 "name": "Zucchine",
                 "amount": 200.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "zucchine"
               },
               {
                 "type": "single",
-                "name": "Olio EVO",
+                "name": "Olio di oliva extra vergine",
                 "amount": 8.0,
-                "unit": "g"
+                "unit": "g",
+                "food_db_id": "olio_di_oliva_extra_vergine"
               }
             ],
             "totals": {

@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "athlete_id": "default",
+    "version": "v1",
+    "generated_by": "manual_bootstrap"
+  },
+  "recipes": [
+    {
+      "id": "hummus_ceci",
+      "name": "Hummus ceci"
+    },
+    {
+      "id": "plum_cake_senza_latte_burro",
+      "name": "Plum cake (senza latte/burro)"
+    },
+    {
+      "id": "ragu_di_vitello",
+      "name": "Ragù di vitello"
+    },
+    {
+      "id": "vellutata_zucchine_carote",
+      "name": "Vellutata zucchine/carote"
+    },
+    {
+      "id": "zucchine_carote_peperoni",
+      "name": "Zucchine + Carote + Peperoni"
+    },
+    {
+      "id": "zucchine_carote_miste",
+      "name": "Zucchine + Carote miste"
+    }
+  ]
+}

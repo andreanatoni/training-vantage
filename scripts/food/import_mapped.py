@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Import mapping file (food_db_id|larn_portion_id) into FOOD_DB_TO_LARN_MAPPING."""
+"""Import mapping file (food_db_id|larn_portion_id[|display_name]) into FOOD_DB_TO_LARN_MAPPING.
+
+Accepts 2-column (legacy) or 3-column format.  When the third column is present
+it is collected into data/FOOD_NAME_BRIDGE.json."""
 
 import argparse
 import json
@@ -17,6 +20,7 @@ LARN_JSON = DATA_DIR / "LARN_PORTIONS.json"
 MAPPING_JSON = DATA_DIR / "FOOD_DB_TO_LARN_MAPPING.json"
 REPORT_JSON = DATA_DIR / "FOOD_MAPPED_IMPORT_REPORT.json"
 REPORT_MD = DATA_DIR / "FOOD_MAPPED_IMPORT_REPORT.md"
+BRIDGE_JSON = DATA_DIR / "FOOD_NAME_BRIDGE.json"
 
 
 def now_iso():
@@ -26,6 +30,7 @@ def now_iso():
 def parse_mapping_lines(path: Path):
     rows = []
     errors = []
+    display_names = {}  # food_db_id -> display_name (from optional 3rd column)
     for line_no, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         txt = raw.strip()
         if not txt:
@@ -33,15 +38,18 @@ def parse_mapping_lines(path: Path):
         if txt.startswith("#"):
             continue
         parts = [p.strip() for p in txt.split("|")]
-        if len(parts) != 2:
+        if len(parts) not in (2, 3):
             errors.append({"line": line_no, "raw": raw, "error": "invalid_format"})
             continue
-        fid, lid = parts
+        fid, lid = parts[0], parts[1]
+        dname = parts[2] if len(parts) == 3 else None
         if not fid or not lid:
             errors.append({"line": line_no, "raw": raw, "error": "empty_token"})
             continue
         rows.append({"line": line_no, "food_db_id": fid, "larn_portion_id": lid})
-    return rows, errors
+        if dname:
+            display_names[fid] = dname
+    return rows, errors, display_names
 
 
 def load_json(path: Path):
@@ -106,7 +114,7 @@ def run(input_file: Path, dry_run: bool, strict_complete: bool):
     food_by_id = {f.get("id"): f for f in food_db.get("foods", []) if f.get("id")}
     valid_larn = {p.get("id") for p in larn_db.get("portions", []) if p.get("id")}
 
-    rows, parse_errors = parse_mapping_lines(input_file)
+    rows, parse_errors, display_names = parse_mapping_lines(input_file)
 
     # duplicates
     ctr = Counter(r["food_db_id"] for r in rows)
@@ -220,6 +228,19 @@ def run(input_file: Path, dry_run: bool, strict_complete: bool):
             else:
                 upsert_updated += 1
 
+    # --- Write FOOD_NAME_BRIDGE.json if display_names present ---
+    if display_names and ok and not dry_run:
+        bridge = {
+            "meta": {
+                "generated_at": now_iso(),
+                "source": str(input_file),
+                "total_entries": len(display_names),
+            },
+            "names": {fid: display_names[fid] for fid in sorted(display_names)},
+        }
+        BRIDGE_JSON.write_text(json.dumps(bridge, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[BRIDGE] Written {len(display_names)} display names → {BRIDGE_JSON.name}")
+
     report = {
         "generated_at": now_iso(),
         "source_file": str(input_file),
@@ -239,6 +260,7 @@ def run(input_file: Path, dry_run: bool, strict_complete: bool):
             "upsert_created": upsert_created,
             "upsert_updated": upsert_updated,
             "upsert_unchanged": upsert_unchanged,
+            "display_names_found": len(display_names),
         },
         "parse_errors_preview": [f"line={e['line']} error={e['error']} raw={e['raw']}" for e in parse_errors[:50]],
         "duplicate_food_ids_preview": duplicate_food_ids[:50],

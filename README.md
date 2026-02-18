@@ -80,6 +80,9 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
   - `data/athletes/<id>/nutrition_base_template.json`
   - `knowledge/athletes/<id>/nutrition-base-template.md`
 - Template senza grammature, opzioni rigide (no merge), mapping ingredienti via `food_db_id`
+- Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
+  - `data/athletes/<id>/CUSTOM_RECIPES.json`
+  - in `knowledge/meal_options/*.json`: usare `type: custom_recipe` + `recipe_id` valido
 
 ### Generazione piani
 - Giornaliero categoria: `./tv plan <categoria>`

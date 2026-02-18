@@ -1266,6 +1266,21 @@ class MealBalancer:
         # Se non specificati, usa tutti gli alimenti disponibili
         if not allowed_food_db_ids:
             allowed_food_db_ids = list(self.data.food_db_index.keys())
+        else:
+            unknown = [fid for fid in allowed_food_db_ids if fid not in self.data.food_db_index]
+            if unknown:
+                raise ValueError(
+                    f"food_db_id non trovati in FOOD_DB: {unknown}. "
+                    "Verifica ID con: ./tv food validate-data"
+                )
+
+        if must_include_food_db_ids:
+            unknown_must_include = [fid for fid in must_include_food_db_ids if fid not in self.data.food_db_index]
+            if unknown_must_include:
+                raise ValueError(
+                    f"must_include food_db_id non trovati in FOOD_DB: {unknown_must_include}. "
+                    "Verifica ID con: ./tv food validate-data"
+                )
 
         # Optimize unconstrained (ignora PERSONAL_LIMITS)
         items_uncon, totals_uncon, violations_uncon = self.optimize_for_food_set(

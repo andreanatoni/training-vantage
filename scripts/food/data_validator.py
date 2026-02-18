@@ -16,6 +16,7 @@ Returns:
 import json
 import sys
 import argparse
+import os
 from pathlib import Path
 from typing import Dict, List, Tuple, Set, Any
 
@@ -629,6 +630,122 @@ def validate_realism_rules(data_dir: Path, report: ValidationReport):
         report.add_error('REALISM_RULES', f"apply_only_in_mode must be 'realistic', 'unconstrained', or 'both' (got: {mode})")
 
 
+def validate_meal_options_bridge(data_dir: Path, report: ValidationReport,
+                                  food_db_ids: Set[str]):
+    """
+    Validate meal_options ingredients against FOOD_NAME_BRIDGE and FOOD_DB.
+
+    Checks:
+    - If ingredient has food_db_id → it must exist in FOOD_DB
+    - If ingredient has food_db_id → it must exist in FOOD_NAME_BRIDGE
+    - If name differs from bridge display_name → warning (variant, not error)
+    """
+    bridge_path = data_dir / "FOOD_NAME_BRIDGE.json"
+    if not bridge_path.exists():
+        report.add_warning("MEAL_OPTIONS", "FOOD_NAME_BRIDGE.json not found, skipping bridge validation")
+        return
+
+    bridge = load_json(bridge_path, report, "FOOD_NAME_BRIDGE")
+    bridge_names = bridge.get("names", {})
+
+    athlete_id = os.environ.get("TV_ATHLETE_ID", "default")
+    custom_recipes_path = data_dir / "athletes" / athlete_id / "CUSTOM_RECIPES.json"
+    if not custom_recipes_path.exists():
+        custom_recipes_path = data_dir / "CUSTOM_RECIPES.json"
+
+    custom_recipe_ids = set()
+    if custom_recipes_path.exists():
+        custom_recipes = load_json(custom_recipes_path, report, f"CUSTOM_RECIPES/{custom_recipes_path.name}")
+        seen_recipe_ids = set()
+        for rec in custom_recipes.get("recipes", []):
+            rid = rec.get("id")
+            if not rid:
+                report.add_error("CUSTOM_RECIPES", "recipe without id")
+                continue
+            if rid in seen_recipe_ids:
+                report.add_error("CUSTOM_RECIPES", f"duplicate recipe id: {rid}")
+                continue
+            seen_recipe_ids.add(rid)
+            custom_recipe_ids.add(rid)
+    else:
+        report.add_warning(
+            "MEAL_OPTIONS",
+            "CUSTOM_RECIPES.json not found (athlete/global). "
+            "Ingredienti compositi richiederanno errore finché non definito."
+        )
+
+    meal_options_dir = data_dir.parent / "knowledge" / "meal_options"
+    if not meal_options_dir.exists():
+        report.add_warning("MEAL_OPTIONS", f"Directory not found: {meal_options_dir}")
+        return
+
+    total_checked = 0
+    total_no_fid = 0
+    total_custom_recipe = 0
+    name_mismatches = []
+
+    for json_file in sorted(meal_options_dir.glob("*.json")):
+        data = load_json(json_file, report, f"MEAL_OPTIONS/{json_file.name}")
+        if not data:
+            continue
+
+        for meal_data in data.get("plan", {}).get("meals", {}).values():
+            for option in meal_data.get("options", []):
+                for ing in option.get("ingredients", []):
+                    fid = ing.get("food_db_id")
+                    name = ing.get("name", "")
+
+                    if not fid:
+                        ing_type = ing.get("type")
+                        recipe_id = ing.get("recipe_id")
+
+                        if ing_type != "custom_recipe":
+                            total_no_fid += 1
+                            report.add_error(
+                                "MEAL_OPTIONS",
+                                f"{json_file.name}: ingrediente '{name}' senza food_db_id. "
+                                "Usa food_db_id oppure type='custom_recipe'+recipe_id."
+                            )
+                            continue
+
+                        if not recipe_id:
+                            total_no_fid += 1
+                            report.add_error(
+                                "MEAL_OPTIONS",
+                                f"{json_file.name}: custom_recipe '{name}' senza recipe_id"
+                            )
+                            continue
+
+                        total_custom_recipe += 1
+                        if recipe_id not in custom_recipe_ids:
+                            report.add_error(
+                                "MEAL_OPTIONS",
+                                f"{json_file.name}: recipe_id '{recipe_id}' non trovato in CUSTOM_RECIPES"
+                            )
+                        continue
+
+                    total_checked += 1
+
+                    if fid not in food_db_ids:
+                        report.add_error("MEAL_OPTIONS",
+                                         f"{json_file.name}: food_db_id '{fid}' not in FOOD_DB (ingredient: {name})")
+
+                    if fid not in bridge_names:
+                        report.add_error("MEAL_OPTIONS",
+                                         f"{json_file.name}: food_db_id '{fid}' not in FOOD_NAME_BRIDGE (ingredient: {name})")
+                    elif bridge_names[fid] != name:
+                        name_mismatches.append((json_file.name, name, fid, bridge_names[fid]))
+
+    for fn, name, fid, expected in name_mismatches:
+        report.add_warning("MEAL_OPTIONS",
+                           f"{fn}: name '{name}' differs from bridge '{expected}' (id={fid}) — variant?")
+
+    print(
+        f"   → {total_checked} ingredienti con food_db_id, "
+        f"{total_custom_recipe} custom_recipe, {total_no_fid} senza food_db_id"
+    )
+
+
 def validate_all(data_dir: Path, validate_catalog: bool = False) -> ValidationReport:
     """
     Validate all data files
@@ -690,6 +807,10 @@ def validate_all(data_dir: Path, validate_catalog: bool = False) -> ValidationRe
     # 10. REALISM_RULES
     print("   Validating REALISM_RULES.json...")
     validate_realism_rules(data_dir, report)
+
+    # 11. MEAL_OPTIONS ↔ FOOD_NAME_BRIDGE
+    print("   Validating MEAL_OPTIONS ↔ FOOD_NAME_BRIDGE...")
+    validate_meal_options_bridge(data_dir, report, food_db_ids_set)
 
     return report
 
