@@ -4,6 +4,7 @@ import subprocess
 import sys
 import unittest
 import importlib.util
+from contextlib import contextmanager
 from pathlib import Path
 
 
@@ -61,6 +62,7 @@ from scripts.food.sync_food_db import is_markdown_in_sync  # noqa: E402
 from scripts.nutrition.plan import (  # noqa: E402
     _build_or_combinations,
     _extract_food_ids_from_template_option,
+    load_plan_for_category_with_athlete_template,
 )
 
 
@@ -72,6 +74,21 @@ def run_cmd(*args):
         capture_output=True,
         check=False,
     )
+
+
+@contextmanager
+def without_default_template():
+    template_path = DEFAULT_ATHLETE_DATA_DIR / "nutrition_base_template.json"
+    existed = template_path.exists()
+    backup = template_path.read_text(encoding="utf-8") if existed else None
+    try:
+        if existed:
+            template_path.unlink()
+        yield
+    finally:
+        if existed:
+            template_path.parent.mkdir(parents=True, exist_ok=True)
+            template_path.write_text(backup, encoding="utf-8")
 
 
 class CliSmokeTests(unittest.TestCase):
@@ -328,9 +345,10 @@ class CliSmokeTests(unittest.TestCase):
         )
         self.assertEqual(gen.returncode, 0, msg=gen.stderr)
 
-        plan_week = run_cmd("./tv", "plan", "week", "2026-W11")
-        self.assertEqual(plan_week.returncode, 0, msg=plan_week.stderr)
-        self.assertIn("Piano week 2026-W11", plan_week.stdout)
+        with without_default_template():
+            plan_week = run_cmd("./tv", "plan", "week", "2026-W11")
+            self.assertEqual(plan_week.returncode, 0, msg=plan_week.stderr)
+            self.assertIn("Piano week 2026-W11", plan_week.stdout)
 
         week_dir = DEFAULT_ATHLETE_PLANS_DIR / "weeks" / "2026-W11"
         self.assertTrue((week_dir / "week-summary.md").exists())
@@ -356,9 +374,10 @@ class CliSmokeTests(unittest.TestCase):
         )
         self.assertEqual(gen.returncode, 0, msg=gen.stderr)
 
-        plan_month = run_cmd("./tv", "plan", "month", "2026-03")
-        self.assertEqual(plan_month.returncode, 0, msg=plan_month.stderr)
-        self.assertIn("Piano month 2026-03", plan_month.stdout)
+        with without_default_template():
+            plan_month = run_cmd("./tv", "plan", "month", "2026-03")
+            self.assertEqual(plan_month.returncode, 0, msg=plan_month.stderr)
+            self.assertIn("Piano month 2026-03", plan_month.stdout)
 
         month_dir = DEFAULT_ATHLETE_PLANS_DIR / "months" / "2026-03"
         self.assertTrue((month_dir / "month-summary.md").exists())
@@ -572,6 +591,31 @@ class TrainingLoadImportTests(unittest.TestCase):
 
 
 class NutritionSetupTests(unittest.TestCase):
+    def test_planner_fails_if_template_exists_but_not_ready(self):
+        template_path = DEFAULT_ATHLETE_DATA_DIR / "nutrition_base_template.json"
+        existed = template_path.exists()
+        backup = template_path.read_text(encoding="utf-8") if existed else None
+        try:
+            invalid_template = {
+                "meta": {"template_version": "1.0.0"},
+                "meals": [
+                    {"meal_id": "breakfast", "options": []},
+                    {"meal_id": "snack_am", "options": []},
+                    {"meal_id": "lunch", "options": []},
+                    {"meal_id": "snack_pm", "options": []},
+                    {"meal_id": "dinner", "options": []},
+                ],
+            }
+            template_path.parent.mkdir(parents=True, exist_ok=True)
+            template_path.write_text(json.dumps(invalid_template), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_plan_for_category_with_athlete_template("rest")
+        finally:
+            if existed:
+                template_path.write_text(backup, encoding="utf-8")
+            elif template_path.exists():
+                template_path.unlink()
+
     def test_extract_food_ids_from_template_option(self):
         option = {
             "blocks": [

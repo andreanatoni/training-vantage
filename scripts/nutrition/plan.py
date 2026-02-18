@@ -222,25 +222,38 @@ def load_plan_for_category_with_athlete_template(category: str):
     """
     base_plan = load_plan_for_category(category)
     template = _load_athlete_nutrition_template()
-    if not template:
+    if not NUTRITION_BASE_TEMPLATE_FILE.exists():
         return base_plan, "knowledge_fallback"
+    if not template:
+        raise ValueError(
+            "Template atleta presente ma non leggibile. "
+            "Correggi con: ./tv nutrition setup-base --edit"
+        )
 
     meals = template.get("meals", [])
     if not isinstance(meals, list) or not meals:
-        return base_plan, "knowledge_fallback"
+        raise ValueError(
+            "Template atleta presente ma non valido (meals mancante/vuoto). "
+            "Correggi con: ./tv nutrition setup-base --edit"
+        )
 
     balancer = MealBalancer(MealBalancerData(SHARED_DATA_DIR))
     converted = deepcopy(base_plan)
     converted_meals = {}
-    converted_count = 0
+    errors = []
 
     for plan_meal_name, plan_meal_data in base_plan.get("meals", {}).items():
         template_meal_id = PLAN_TO_TEMPLATE_MEAL.get(plan_meal_name)
         template_meal = next((m for m in meals if m.get("meal_id") == template_meal_id), None)
         if not template_meal:
+            errors.append(f"{plan_meal_name}: meal_id '{template_meal_id}' assente nel template atleta")
             converted_meals[plan_meal_name] = plan_meal_data
             continue
         template_options = template_meal.get("options", [])
+        if not template_options:
+            errors.append(f"{plan_meal_name}: nessuna opzione nel template atleta")
+            converted_meals[plan_meal_name] = plan_meal_data
+            continue
         built_options = []
         for option in template_options:
             try:
@@ -255,17 +268,21 @@ def load_plan_for_category_with_athlete_template(category: str):
             except Exception:
                 continue
         if built_options:
-            converted_count += 1
             converted_meals[plan_meal_name] = {
                 "target": plan_meal_data.get("target", {}),
                 "options": built_options,
             }
         else:
+            errors.append(f"{plan_meal_name}: opzioni presenti ma non planner-ready")
             converted_meals[plan_meal_name] = plan_meal_data
 
     converted["meals"] = converted_meals
-    if converted_count == 0:
-        return base_plan, "knowledge_fallback"
+    if errors:
+        raise ValueError(
+            "Template atleta presente ma non planner-ready. "
+            "Correggi con: ./tv nutrition setup-base --edit\n- "
+            + "\n- ".join(errors[:8])
+        )
     return converted, "athlete_template"
 
 

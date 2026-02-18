@@ -167,7 +167,8 @@ Comandi principali (dalla root del repo):
   - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)
   - `plans/nutrition/athletes/<id>/<categoria>.json` (versione strutturata)
   - sorgente primaria opzioni: `data/athletes/<id>/nutrition_base_template.json`
-  - fallback esplicito: `knowledge/meal_options/<categoria>.json` (baseline condivisa)
+  - fallback esplicito: `knowledge/meal_options/<categoria>.json` (solo se template atleta assente)
+  - strict mode: se template atleta esiste ma non e' planner-ready, il comando fallisce con errore e non usa fallback
   - OR nativo: per ogni blocco `one_of` viene scelta una sola alternativa; il planner valuta piu combinazioni e tiene quella con match migliore.
 - `plan build-options [--category <categoria>]`: rigenera `knowledge/meal_options/*.json` dai file legacy `sources/piano_*.md`.
 - `plan week <YYYY-Www>`: genera pacchetto settimanale in `plans/nutrition/athletes/<id>/weeks/<YYYY-Www>/` partendo dalle sedute di `running_plan.json`:

@@ -112,8 +112,9 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 
 Sorgente planner (ordine):
 1. `data/athletes/<id>/nutrition_base_template.json` (primaria, per-atleta)
-2. fallback esplicito `knowledge/meal_options/<categoria>.json` (se template mancante/incompleto)
+2. fallback esplicito `knowledge/meal_options/<categoria>.json` (solo se template atleta assente)
 3. gestione OR nativa nei blocchi template: il planner valuta combinazioni `one_of` (1 scelta per blocco) e usa la combinazione con match migliore al target pasto.
+4. se template atleta esiste ma non e' planner-ready, `./tv plan ...` fallisce in strict mode con errore esplicito (niente fallback silenzioso).
 
 Path primario planner:
 - `./tv plan ...` usa in priorita il template atleta e usa `knowledge/meal_options/<categoria>.json` come fallback target/struttura.
