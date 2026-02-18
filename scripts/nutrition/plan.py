@@ -8,6 +8,7 @@ Genera piano nutrizionale completo per categoria usando meal_options strutturati
 import sys
 import json
 import math
+import itertools
 from copy import deepcopy
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -20,6 +21,7 @@ from scripts.athlete_context import (
 )
 from scripts.integration_config import load_integration_config_strict
 from scripts.nutrition.meal_options_repository import CATEGORY_SOURCES, load_plan_for_category
+from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 
 PLANS_DIR = athlete_plans_dir()
 COMPOSITION_FILE = data_file("composition.json")
@@ -28,6 +30,7 @@ NUTRITION_ENGINE_CONFIG_FILE = data_file("NUTRITION_ENGINE_CONFIG.json")
 TRAINING_LOAD_FILE = data_file("training_load.json")
 RUNNING_PLAN_FILE = data_file("running_plan.json")
 REPO_ROOT = Path(__file__).resolve().parents[2]
+NUTRITION_BASE_TEMPLATE_FILE = data_file("nutrition_base_template.json")
 
 VALID_CATEGORIES = list(CATEGORY_SOURCES.keys())
 RUNNING_DAY_TYPE_TO_PROFILE = {
@@ -38,6 +41,232 @@ RUNNING_DAY_TYPE_TO_PROFILE = {
     "lungo": "lungo",
     "forza": "forza",
 }
+
+TEMPLATE_TO_PLAN_MEAL = {
+    "breakfast": "COLAZIONE",
+    "snack_am": "SPUNTINO MATTINA",
+    "lunch": "PRANZO",
+    "snack_pm": "SPUNTINO POMERIGGIO",
+    "dinner": "CENA",
+}
+
+PLAN_TO_TEMPLATE_MEAL = {v: k for k, v in TEMPLATE_TO_PLAN_MEAL.items()}
+
+
+def _meal_context_for_template_meal(meal_id: str) -> str:
+    if meal_id in {"snack_am", "snack_pm"}:
+        return "snack"
+    return "meal"
+
+
+def _extract_food_ids_from_template_option(option: dict) -> tuple[list[str], list[str]]:
+    blocks = option.get("blocks", [])
+    allowed = []
+    must_include = []
+    seen_allowed = set()
+    seen_must = set()
+    for block in blocks:
+        one_of = block.get("one_of", [])
+        block_ids = [i.get("food_db_id") for i in one_of if i.get("food_db_id")]
+        for fid in block_ids:
+            if fid not in seen_allowed:
+                seen_allowed.add(fid)
+                allowed.append(fid)
+        if block_ids:
+            first = block_ids[0]
+            if first not in seen_must:
+                seen_must.add(first)
+                must_include.append(first)
+    return allowed, must_include
+
+
+def _dedupe_keep_order(values):
+    out = []
+    seen = set()
+    for value in values:
+        if not value or value in seen:
+            continue
+        seen.add(value)
+        out.append(value)
+    return out
+
+
+def _build_or_combinations(template_option: dict, max_combinations: int = 128) -> list[list[str]]:
+    """
+    OR nativo: genera combinazioni con una scelta per blocco (one_of).
+    Ogni elemento ritornato e' una lista di food_db_id (uno per blocco).
+    """
+    blocks = template_option.get("blocks", [])
+    if not blocks:
+        return []
+
+    per_block = []
+    for block in blocks:
+        choices = _dedupe_keep_order(
+            [item.get("food_db_id") for item in block.get("one_of", [])]
+        )
+        if not choices:
+            return []
+        per_block.append(choices)
+
+    combos = []
+    for product_item in itertools.product(*per_block):
+        combos.append(_dedupe_keep_order(list(product_item)))
+        if len(combos) >= max_combinations:
+            break
+    return combos
+
+
+def _score_delta(delta: dict) -> float:
+    return (
+        abs(float(delta.get("kcal_pct", 0.0))) * 5.0
+        + abs(float(delta.get("P_pct", 0.0))) * 4.0
+        + abs(float(delta.get("CHO_pct", 0.0))) * 3.0
+        + abs(float(delta.get("F_pct", 0.0))) * 2.0
+        + abs(float(delta.get("Fibre_pct", 0.0))) * 1.0
+    )
+
+
+def _build_option_from_template_with_balancer(
+    balancer: MealBalancer,
+    template_option: dict,
+    meal_target: dict,
+    meal_context: str,
+):
+    combinations = _build_or_combinations(template_option)
+    if not combinations:
+        return None
+
+    target = {
+        "kcal": float(meal_target.get("kcal", 0)),
+        "P": float(meal_target.get("protein", 0)),
+        "CHO": float(meal_target.get("cho", 0)),
+        "F": float(meal_target.get("fat", 0)),
+    }
+
+    best = None
+    best_score = float("inf")
+    for combo in combinations:
+        try:
+            result = balancer.balance_meal(
+                target=target,
+                meal_context=meal_context,
+                allowed_food_db_ids=combo,
+                must_include_food_db_ids=combo,
+            )
+        except Exception:
+            continue
+        picked_key = result.get("recommendation", "best_match_realistic")
+        picked = result.get(picked_key) or result.get("best_match_realistic") or {}
+        score = _score_delta(picked.get("delta", {}))
+        if score < best_score:
+            best_score = score
+            best = {
+                "picked": picked,
+                "picked_key": picked_key,
+                "combo": combo,
+            }
+
+    if not best:
+        return None
+    picked = best["picked"]
+
+    items = picked.get("items", [])
+    ingredients = []
+    for item in items:
+        qty = item.get("qty", {})
+        amount = float(qty.get("amount", 0) or 0)
+        if amount <= 0:
+            continue
+        ingredients.append(
+            {
+                "type": "single",
+                "name": item.get("name", item.get("food_db_id", "Food")),
+                "amount": amount,
+                "unit": qty.get("unit", "g"),
+                "food_db_id": item.get("food_db_id"),
+            }
+        )
+
+    totals = picked.get("totals", {})
+    return {
+        "name": template_option.get("title", "Opzione"),
+        "ingredients": ingredients,
+        "totals": {
+            "kcal": float(totals.get("kcal", 0)),
+            "protein": float(totals.get("P", 0)),
+            "fat": float(totals.get("F", 0)),
+            "cho": float(totals.get("CHO", 0)),
+        },
+        "swap": "",
+        "quando": template_option.get("when_to_use", ""),
+        "rules_trace": template_option.get("rules_trace", {}),
+        "or_block_combo_selected": best["combo"],
+        "or_block_match_mode": best["picked_key"],
+        "or_block_combinations_tested": len(combinations),
+    }
+
+
+def _load_athlete_nutrition_template():
+    if not NUTRITION_BASE_TEMPLATE_FILE.exists():
+        return None
+    try:
+        return json.loads(NUTRITION_BASE_TEMPLATE_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def load_plan_for_category_with_athlete_template(category: str):
+    """
+    Priorita': template atleta (setup-base) -> fallback esplicito knowledge/meal_options.
+    """
+    base_plan = load_plan_for_category(category)
+    template = _load_athlete_nutrition_template()
+    if not template:
+        return base_plan, "knowledge_fallback"
+
+    meals = template.get("meals", [])
+    if not isinstance(meals, list) or not meals:
+        return base_plan, "knowledge_fallback"
+
+    balancer = MealBalancer(MealBalancerData(SHARED_DATA_DIR))
+    converted = deepcopy(base_plan)
+    converted_meals = {}
+    converted_count = 0
+
+    for plan_meal_name, plan_meal_data in base_plan.get("meals", {}).items():
+        template_meal_id = PLAN_TO_TEMPLATE_MEAL.get(plan_meal_name)
+        template_meal = next((m for m in meals if m.get("meal_id") == template_meal_id), None)
+        if not template_meal:
+            converted_meals[plan_meal_name] = plan_meal_data
+            continue
+        template_options = template_meal.get("options", [])
+        built_options = []
+        for option in template_options:
+            try:
+                built = _build_option_from_template_with_balancer(
+                    balancer=balancer,
+                    template_option=option,
+                    meal_target=plan_meal_data.get("target", {}),
+                    meal_context=_meal_context_for_template_meal(template_meal_id),
+                )
+                if built and built.get("ingredients"):
+                    built_options.append(built)
+            except Exception:
+                continue
+        if built_options:
+            converted_count += 1
+            converted_meals[plan_meal_name] = {
+                "target": plan_meal_data.get("target", {}),
+                "options": built_options,
+            }
+        else:
+            converted_meals[plan_meal_name] = plan_meal_data
+
+    converted["meals"] = converted_meals
+    if converted_count == 0:
+        return base_plan, "knowledge_fallback"
+    return converted, "athlete_template"
 
 
 def get_current_bmr():
@@ -311,6 +540,7 @@ def generate_plan_markdown(category, plan_data, current_bmr, engine_meta=None):
                 src=engine_meta.get("training_cost_source", "config"),
             )
         )
+        lines.append(f"Plan Source: {engine_meta.get('plan_source', 'knowledge_fallback')}")
         if engine_meta.get("phase"):
             lines.append(f"Running Phase: {engine_meta.get('phase')}")
         if engine_meta.get("workout_label"):
@@ -421,7 +651,8 @@ def build_plan_json_payload(category, plan_data, body_data, engine_meta):
             "session_date": engine_meta.get("session_date"),
             "phase_adjustment": engine_meta.get("phase_adjustment"),
             "ea_value_kcal_per_kg_ffm": round(float(engine_meta.get("ea_value", 0.0)), 2),
-            "ea_guard_applied": bool(engine_meta.get("ea_guard_applied", False))
+            "ea_guard_applied": bool(engine_meta.get("ea_guard_applied", False)),
+            "plan_source": engine_meta.get("plan_source", "knowledge_fallback"),
         },
         "plan": plan_data
     }
@@ -433,9 +664,9 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         print(f"❌ Categoria {category} non trovata in mapping")
         return False
 
-    # Parse da JSON strutturato (obbligatorio)
+    # Sorgente primaria: nutrition_base_template atleta; fallback esplicito: knowledge/meal_options
     try:
-        plan_data = load_plan_for_category(category)
+        plan_data, plan_source = load_plan_for_category_with_athlete_template(category)
     except Exception as exc:
         print(f"❌ Errore caricamento meal options per categoria '{category}': {exc}")
         return False
@@ -488,6 +719,7 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
         'deficit_pct': adjustment['deficit_pct'],
         'training_cost_kcal': adjustment['training_cost_kcal'],
         'training_cost_source': adjustment['training_cost_source'],
+        'plan_source': plan_source,
         'phase': phase,
         'workout_label': engine_overrides.get('workout_label') if engine_overrides else None,
         'session_date': engine_overrides.get('session_date') if engine_overrides else None,
@@ -516,10 +748,11 @@ def generate_plan(category, silent=False, engine_overrides=None, output_md_file=
 
     if not silent:
         guard_msg = " | EA-GUARD" if ea_guard_applied else ""
+        source_msg = "template-atleta" if plan_source == "athlete_template" else "knowledge-fallback"
         print(
             f"✓ Piano {category}: {plan_final['target_kcal']} kcal | "
             f"EA {ea_value:.1f} | {num_options} opzioni → "
-            f"{output_md_file} + {output_json_file}{guard_msg}"
+            f"{output_md_file} + {output_json_file}{guard_msg} | source={source_msg}"
         )
 
     return True

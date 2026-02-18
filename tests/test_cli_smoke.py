@@ -58,6 +58,10 @@ from scripts.nutrition.rules_engine import (  # noqa: E402
     suggest_blocks,
 )
 from scripts.food.sync_food_db import is_markdown_in_sync  # noqa: E402
+from scripts.nutrition.plan import (  # noqa: E402
+    _build_or_combinations,
+    _extract_food_ids_from_template_option,
+)
 
 
 def run_cmd(*args):
@@ -568,6 +572,55 @@ class TrainingLoadImportTests(unittest.TestCase):
 
 
 class NutritionSetupTests(unittest.TestCase):
+    def test_extract_food_ids_from_template_option(self):
+        option = {
+            "blocks": [
+                {
+                    "role": "carb",
+                    "one_of": [
+                        {"food_db_id": "pane_integrale"},
+                        {"food_db_id": "fette_biscottate"},
+                    ],
+                },
+                {
+                    "role": "protein",
+                    "one_of": [
+                        {"food_db_id": "yogurt_greco_0_lipidi"},
+                    ],
+                },
+            ]
+        }
+        allowed, must_include = _extract_food_ids_from_template_option(option)
+        self.assertEqual(
+            allowed,
+            ["pane_integrale", "fette_biscottate", "yogurt_greco_0_lipidi"],
+        )
+        self.assertEqual(must_include, ["pane_integrale", "yogurt_greco_0_lipidi"])
+
+    def test_build_or_combinations_one_choice_per_block(self):
+        option = {
+            "blocks": [
+                {
+                    "role": "carb",
+                    "one_of": [
+                        {"food_db_id": "pane_integrale"},
+                        {"food_db_id": "fette_biscottate"},
+                    ],
+                },
+                {
+                    "role": "protein",
+                    "one_of": [
+                        {"food_db_id": "yogurt_greco_0_lipidi"},
+                        {"food_db_id": "uova_di_gallina_intero"},
+                    ],
+                },
+            ]
+        }
+        combos = _build_or_combinations(option, max_combinations=10)
+        self.assertEqual(len(combos), 4)
+        self.assertIn(["pane_integrale", "yogurt_greco_0_lipidi"], combos)
+        self.assertIn(["fette_biscottate", "uova_di_gallina_intero"], combos)
+
     def test_rules_engine_suggest_blocks_from_profile(self):
         profile = {
             "profile": {"goal": "performance"},

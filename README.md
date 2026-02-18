@@ -110,9 +110,14 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - Settimanale da running plan: `./tv plan week <YYYY-Www>`
 - Mensile da running plan: `./tv plan month <YYYY-MM>`
 
+Sorgente planner (ordine):
+1. `data/athletes/<id>/nutrition_base_template.json` (primaria, per-atleta)
+2. fallback esplicito `knowledge/meal_options/<categoria>.json` (se template mancante/incompleto)
+3. gestione OR nativa nei blocchi template: il planner valuta combinazioni `one_of` (1 scelta per blocco) e usa la combinazione con match migliore al target pasto.
+
 Path primario planner:
-- `./tv plan ...` legge `knowledge/meal_options/<categoria>.json`
-- `knowledge/meal_options/*.json` e' l'unica source-of-truth (runtime/build/migrazioni), versionata
+- `./tv plan ...` usa in priorita il template atleta e usa `knowledge/meal_options/<categoria>.json` come fallback target/struttura.
+- `knowledge/meal_options/*.json` resta baseline condivisa versionata.
 - implementazione dominio: `scripts/nutrition/*.py`
 
 Output:
