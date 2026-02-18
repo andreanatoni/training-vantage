@@ -65,10 +65,6 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
       Esempio: tv plan week 2026-W11 # genera piano nutrizione per tutta la settimana dal running_plan
       Esempio: tv plan month 2026-03 # genera piano nutrizione per il mese dal running_plan
 
-  plan build-options [--category <categoria>]
-      Migra/rigenera knowledge/meal_options/*.json da sources/piano_*.md (required by ./tv plan)
-      Esempio: tv plan build-options
-      Esempio: tv plan build-options --category forza
 
 COMANDI DISPONIBILI (Priorità 3 — Running):
 
@@ -151,13 +147,16 @@ COMANDI DISPONIBILI (Utility):
       Esempio: tv food import-mapped --file data/food_mapped.md --strict-complete
 
   food build-catalog [--dry-run] [--no-strict]
-      Costruisce data/FOOD_CATALOG.json come vista derivata shadow da FOOD_DB + mapping + LARN + PERSONAL_LIMITS.
+      Costruisce data/FOOD_CATALOG.json come cache/report derivata opzionale
+      da FOOD_DB + mapping + LARN + PERSONAL_LIMITS.
       Esempio: tv food build-catalog
       Esempio: tv food build-catalog --dry-run
 
-  food validate-data
-      Valida coerenza strutturale di tutti i dataset (incluso FOOD_CATALOG vs sorgenti)
+  food validate-data [--with-catalog]
+      Valida coerenza strutturale dataset canonici.
+      Usa --with-catalog per validare anche FOOD_CATALOG derivato opzionale.
       Esempio: tv food validate-data
+      Esempio: tv food validate-data --with-catalog
 
   analyze <file.csv>
       Analizza export Garmin CSV (distanza/tempo/passo/FC medi)
@@ -189,8 +188,9 @@ case "$1" in
     plan)
         shift
         if [ "$1" = "build-options" ]; then
-            shift
-            python3 -m scripts.nutrition.build_meal_options "$@"
+            echo -e "${YELLOW}Comando legacy archiviato:${NC} 'plan build-options'"
+            echo "knowledge/meal_options/*.json e' l'unica source-of-truth (runtime/build/migrazioni)."
+            exit 1
         else
             python3 -m scripts.nutrition.plan "$@"
         fi
@@ -236,10 +236,12 @@ case "$1" in
             shift
             python3 -m scripts.food.build_food_catalog "$@"
         elif [ "$1" = "validate-data" ]; then
-            python3 -m scripts.food.data_validator data
+            shift
+            python3 -m scripts.food.data_validator data "$@"
         elif [ "$1" = "auto-map-larn" ] || [ "$1" = "map-larn" ] || [ "$1" = "extract-portions" ]; then
             echo -e "${YELLOW}Comando legacy archiviato:${NC} '$1'"
-            echo "Usa: tv food import-mapped + tv food build-catalog + tv food validate-data"
+            echo "Usa: tv food import-mapped + tv food validate-data"
+            echo "Opzionale: tv food build-catalog"
             exit 1
         else
             echo -e "${RED}Uso non valido. Esempi:${NC} tv food add \"Nome\" \"100 g\" 100 10 10 5 2 CREA"

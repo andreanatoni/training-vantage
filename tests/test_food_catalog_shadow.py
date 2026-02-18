@@ -28,24 +28,28 @@ class FoodCatalogShadowTests(unittest.TestCase):
         self.assertEqual(stats.get("missing_mapping_count"), 0)
         self.assertEqual(stats.get("invalid_larn_mapping_count"), 0)
 
-    def test_meal_balancer_uses_catalog_when_available(self):
+    def test_meal_balancer_uses_canonical_sources(self):
         data = MealBalancerData(ROOT / "data")
-        self.assertTrue(data.catalog_active, "MealBalancer should activate FOOD_CATALOG when valid")
         self.assertEqual(len(data.food_db_index), len(json.loads(FOOD_DB.read_text(encoding="utf-8")).get("foods", [])))
         sample = data.mapping_index.get("caffe_espresso")
-        self.assertIsNotNone(sample, "Expected mapped entry for caffe_espresso via FOOD_CATALOG")
-        self.assertTrue(sample.get("larn_portion_id"), "larn_portion_id should be present in catalog-derived mapping")
+        self.assertIsNotNone(sample, "Expected mapped entry for caffe_espresso via canonical mapping")
+        self.assertTrue(sample.get("larn_portion_id"), "larn_portion_id should be present in canonical mapping")
 
-    def test_meal_balancer_fails_without_catalog(self):
+    def test_meal_balancer_works_without_catalog(self):
         with tempfile.TemporaryDirectory() as tmp:
             data_dir = Path(tmp) / "data"
             data_dir.mkdir(parents=True, exist_ok=True)
-            # Copy only unrelated file to ensure strict requirement on FOOD_CATALOG.
+            # Copy canonical files only (no FOOD_CATALOG).
             shutil.copy(FOOD_DB, data_dir / "FOOD_DB.json")
+            shutil.copy(ROOT / "data" / "FOOD_DB_TO_LARN_MAPPING.json", data_dir / "FOOD_DB_TO_LARN_MAPPING.json")
+            shutil.copy(ROOT / "data" / "LARN_PORTIONS.json", data_dir / "LARN_PORTIONS.json")
+            shutil.copy(ROOT / "data" / "PERSONAL_LIMITS.json", data_dir / "PERSONAL_LIMITS.json")
+            shutil.copy(ROOT / "data" / "OPERATIVE_PORTIONS.json", data_dir / "OPERATIVE_PORTIONS.json")
             sink = io.StringIO()
             with redirect_stdout(sink), redirect_stderr(sink):
-                with self.assertRaises(SystemExit):
-                    MealBalancerData(data_dir)
+                data = MealBalancerData(data_dir)
+            self.assertFalse(data.catalog_active, "Catalog should be optional and inactive when missing")
+            self.assertGreater(len(data.food_db_index), 0)
 
 
 if __name__ == "__main__":

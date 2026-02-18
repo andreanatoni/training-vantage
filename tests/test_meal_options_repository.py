@@ -2,19 +2,11 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.nutrition.meal_options_repository import (
-    CATEGORY_SOURCES,
-    MEAL_OPTIONS_DIR,
-    build_all_from_stale,
-    load_plan_for_category,
-)
+from scripts.nutrition.meal_options_repository import CATEGORY_SOURCES, MEAL_OPTIONS_DIR, load_plan_for_category
 
 
 class MealOptionsRepositoryTests(unittest.TestCase):
-    def test_build_and_load_structured_meal_options(self):
-        generated = build_all_from_stale()
-        self.assertEqual(len(generated), len(CATEGORY_SOURCES))
-
+    def test_load_structured_meal_options(self):
         for category in CATEGORY_SOURCES:
             path = MEAL_OPTIONS_DIR / f"{category}.json"
             self.assertTrue(path.exists(), f"Missing meal options file for {category}")

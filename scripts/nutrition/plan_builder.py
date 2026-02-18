@@ -22,12 +22,8 @@ ROBUSTEZZA v1:
 """
 
 import json
-import sys
 from pathlib import Path
 from typing import Dict, List, Any, Optional
-
-# Add parent dir to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 
@@ -685,7 +681,7 @@ class PlanBuilder:
 
 def main():
     """Example usage"""
-    base_dir = Path(__file__).parent.parent
+    base_dir = Path(__file__).resolve().parents[2]
     data_dir = base_dir / 'data'
 
     builder = PlanBuilder(data_dir)

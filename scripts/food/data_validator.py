@@ -15,6 +15,7 @@ Returns:
 
 import json
 import sys
+import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple, Set, Any
 
@@ -316,7 +317,12 @@ def validate_food_catalog(data_dir: Path,
     - portion fields coherent with LARN_PORTIONS (when present)
     - personal_limits snapshot coherent with PERSONAL_LIMITS
     """
-    catalog = load_json(data_dir / 'FOOD_CATALOG.json', report, 'FOOD_CATALOG')
+    catalog_path = data_dir / 'FOOD_CATALOG.json'
+    if not catalog_path.exists():
+        report.add_warning('FOOD_CATALOG', "File not found (optional derived cache)")
+        return
+
+    catalog = load_json(catalog_path, report, 'FOOD_CATALOG')
     if not catalog:
         return
 
@@ -623,7 +629,7 @@ def validate_realism_rules(data_dir: Path, report: ValidationReport):
         report.add_error('REALISM_RULES', f"apply_only_in_mode must be 'realistic', 'unconstrained', or 'both' (got: {mode})")
 
 
-def validate_all(data_dir: Path) -> ValidationReport:
+def validate_all(data_dir: Path, validate_catalog: bool = False) -> ValidationReport:
     """
     Validate all data files
 
@@ -651,16 +657,19 @@ def validate_all(data_dir: Path) -> ValidationReport:
     print("   Validating PERSONAL_LIMITS.json...")
     personal_limits_index, personal_limits_total = validate_personal_limits(data_dir, report, food_db_ids_set)
 
-    # 5. FOOD_CATALOG
-    print("   Validating FOOD_CATALOG.json...")
-    validate_food_catalog(
-        data_dir=data_dir,
-        report=report,
-        food_db_index=food_db_index,
-        larn_index=larn_index,
-        personal_limits_index=personal_limits_index,
-        personal_limits_total=personal_limits_total,
-    )
+    # 5. FOOD_CATALOG (optional derived cache)
+    if validate_catalog:
+        print("   Validating FOOD_CATALOG.json...")
+        validate_food_catalog(
+            data_dir=data_dir,
+            report=report,
+            food_db_index=food_db_index,
+            larn_index=larn_index,
+            personal_limits_index=personal_limits_index,
+            personal_limits_total=personal_limits_total,
+        )
+    else:
+        print("   Skipping FOOD_CATALOG.json (optional). Use --with-catalog to validate it.")
 
     # 6. DAY_PROFILES
     print("   Validating DAY_PROFILES.json...")
@@ -687,14 +696,17 @@ def validate_all(data_dir: Path) -> ValidationReport:
 
 def main():
     """CLI entry point"""
-    default_data_dir = Path(__file__).resolve().parents[2] / "data"
-    data_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else default_data_dir
+    parser = argparse.ArgumentParser(description="Validate nutrition/food datasets")
+    parser.add_argument("data_dir", nargs="?", default=str(Path(__file__).resolve().parents[2] / "data"))
+    parser.add_argument("--with-catalog", action="store_true", help="Validate optional derived FOOD_CATALOG.json")
+    args = parser.parse_args()
+    data_dir = Path(args.data_dir)
 
     if not data_dir.exists():
         print(f"❌ ERROR: Data directory not found: {data_dir}")
         sys.exit(1)
 
-    report = validate_all(data_dir)
+    report = validate_all(data_dir, validate_catalog=bool(args.with_catalog))
     report.print_report()
 
     sys.exit(1 if report.has_errors() else 0)

@@ -15,7 +15,7 @@ from pathlib import Path
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.plan_builder import PlanBuilder
+from scripts.nutrition.plan_builder import PlanBuilder
 
 
 def test_volume_penalty_prefers_fiber_dense():

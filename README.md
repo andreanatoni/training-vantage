@@ -85,11 +85,10 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - Giornaliero categoria: `./tv plan <categoria>`
 - Settimanale da running plan: `./tv plan week <YYYY-Www>`
 - Mensile da running plan: `./tv plan month <YYYY-MM>`
-- Build/migrazione meal options strutturati: `./tv plan build-options` (genera `knowledge/meal_options/*.json`)
 
 Path primario planner:
 - `./tv plan ...` legge `knowledge/meal_options/<categoria>.json`
-- se manca il JSON fallisce con errore e richiede `./tv plan build-options`
+- `knowledge/meal_options/*.json` e' l'unica source-of-truth (runtime/build/migrazioni), versionata
 - implementazione dominio: `scripts/nutrition/*.py`
 
 Output:
@@ -119,7 +118,8 @@ Output:
 ### Legacy Archiviato
 - Pipeline LARN one-by-one (`auto-map-larn`, `map-larn`) e' stata archiviata.
 - Artefatti e script storici sono in `archive/larn-pipeline/`.
-- Path supportato: `food import-mapped` -> `food build-catalog` -> `food validate-data`.
+- Path supportato: `food import-mapped` -> `food validate-data`.
+- `food build-catalog` resta disponibile come cache/report derivata opzionale.
 
 ### Active set per atleta
 - `./tv food build-active`
@@ -128,10 +128,11 @@ Output:
 
 ### Catalogo derivato (shadow)
 - `./tv food build-catalog`
-- Genera `data/FOOD_CATALOG.json` come vista derivata da `FOOD_DB + FOOD_DB_TO_LARN_MAPPING + LARN_PORTIONS + PERSONAL_LIMITS`
-- `meal_balancer` lo usa in strict mode (se manca/incoerente il runtime fallisce)
+- Genera `data/FOOD_CATALOG.json` come vista derivata opzionale da `FOOD_DB + FOOD_DB_TO_LARN_MAPPING + LARN_PORTIONS + PERSONAL_LIMITS`
+- `meal_balancer` usa i dataset canonici a runtime (catalog opzionale)
 - Non sostituisce i file sorgente: resta una vista derivata per semplificazione progressiva
-- `./tv food validate-data` valida coerenza completa dataset, incluso allineamento `FOOD_CATALOG` vs file sorgente
+- `./tv food validate-data` valida i dataset canonici
+- `./tv food validate-data --with-catalog` valida anche allineamento `FOOD_CATALOG` vs file sorgente (opzionale)
 
 
 ## Struttura Progetto (Essenziale)
