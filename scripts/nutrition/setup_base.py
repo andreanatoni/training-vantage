@@ -17,6 +17,11 @@ try:
         normalize_athlete_id,
         relpath_or_str,
     )
+    from scripts.nutrition.rules_engine import (
+        evaluate_safety,
+        suggest_blocks,
+        suggest_scenario_for_meal,
+    )
 except ModuleNotFoundError:
     from athlete_context import (
         DEFAULT_ATHLETE_ID,
@@ -27,10 +32,12 @@ except ModuleNotFoundError:
         normalize_athlete_id,
         relpath_or_str,
     )
+    from rules_engine import evaluate_safety, suggest_blocks, suggest_scenario_for_meal
 
 
 SHARED_TEMPLATE_FILE = SHARED_DATA_DIR / "templates" / "nutrition_base_template.shared.json"
 FOOD_DB_FILE = SHARED_DATA_DIR / "FOOD_DB.json"
+NUTRITION_PROFILE_FILE = "NUTRITION_PROFILE.json"
 
 MEAL_ORDER = ["breakfast", "snack_am", "lunch", "snack_pm", "dinner"]
 MEAL_LABELS = {
@@ -201,6 +208,55 @@ def load_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_required_nutrition_profile(path):
+    if not path.exists():
+        raise ValueError(
+            "Profilo nutrizione mancante. Esegui prima: ./tv nutrition setup-profile"
+        )
+
+    payload = load_json(path)
+    if not isinstance(payload, dict):
+        raise ValueError("NUTRITION_PROFILE.json non valido (root deve essere object).")
+
+    profile = payload.get("profile")
+    body_core = payload.get("body_core")
+    training = payload.get("training_context")
+
+    if not isinstance(profile, dict):
+        raise ValueError("NUTRITION_PROFILE.json non valido: manca 'profile'.")
+    if not isinstance(body_core, dict):
+        raise ValueError("NUTRITION_PROFILE.json non valido: manca 'body_core'.")
+    if not isinstance(training, dict):
+        raise ValueError("NUTRITION_PROFILE.json non valido: manca 'training_context'.")
+
+    required_profile = ["goal"]
+    required_body = ["sex", "age_years", "height_cm", "weight_kg"]
+    required_training = [
+        "running_days_per_week",
+        "strength_days_per_week",
+        "typical_training_time",
+    ]
+
+    missing = []
+    for key in required_profile:
+        if profile.get(key) in (None, ""):
+            missing.append(f"profile.{key}")
+    for key in required_body:
+        if body_core.get(key) in (None, ""):
+            missing.append(f"body_core.{key}")
+    for key in required_training:
+        if training.get(key) in (None, ""):
+            missing.append(f"training_context.{key}")
+
+    if missing:
+        raise ValueError(
+            "NUTRITION_PROFILE.json incompleto. Campi mancanti: "
+            + ", ".join(missing)
+        )
+
+    return payload
+
+
 def load_foods():
     data = load_json(FOOD_DB_FILE)
     foods = data.get("foods", [])
@@ -332,12 +388,26 @@ def suggest_roles_for_option(meal_id, scenario):
     return meal_defaults.get(scenario, meal_defaults.get("default_day", ["carb", "protein"]))
 
 
-def choose_roles(meal_id):
-    scenario = ask_choice("Scenario opzione", SCENARIO_CHOICES)
-    suggested_roles = suggest_roles_for_option(meal_id, scenario)
+def choose_roles(meal_id, nutrition_profile):
+    scenario_suggestion = suggest_scenario_for_meal(nutrition_profile, meal_id)
+    scenario = scenario_suggestion["scenario"]
+    print(
+        "Scenario suggerito dal sistema: "
+        f"{scenario} ({scenario_suggestion['reason']})"
+    )
+    if ask_yes_no("Vuoi cambiare scenario?", default=False):
+        scenario = ask_choice("Scenario opzione", SCENARIO_CHOICES)
+
+    suggestion = suggest_blocks(nutrition_profile, meal_id, scenario)
+    suggested_roles = suggestion["roles"]
     print(f"Blocchi suggeriti: {', '.join(suggested_roles)}")
+    if suggestion.get("reasons"):
+        for reason in suggestion["reasons"]:
+            print(f"- Motivo: {reason}")
+    if suggestion.get("source_refs"):
+        print(f"- Fonti: {', '.join(suggestion['source_refs'])}")
     if not ask_yes_no("Vuoi modificare manualmente i blocchi suggeriti?", default=False):
-        return scenario, suggested_roles
+        return scenario, suggested_roles, suggestion
 
     blocks_count = ask_int("Quanti blocchi per questa opzione", min_value=1, max_value=8)
     roles = []
@@ -345,7 +415,7 @@ def choose_roles(meal_id):
         print(f"\nBlocco {block_idx}/{blocks_count}")
         role = ask_choice("Ruolo blocco", ROLE_OPTIONS)
         roles.append(role)
-    return scenario, roles
+    return scenario, roles, suggestion
 
 
 def ask_food_choices(foods, role):
@@ -384,9 +454,9 @@ def ask_food_choices(foods, role):
         print("Selezione vuota, riprova.")
 
 
-def build_option(foods, meal_id, idx, food_name_by_id):
+def build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile):
     print(f"\nCompilazione {MEAL_LABELS[meal_id]} - Opzione {idx}")
-    scenario, roles = choose_roles(meal_id)
+    scenario, roles, suggestion = choose_roles(meal_id, nutrition_profile)
     blocks = []
     for block_idx, role in enumerate(roles, start=1):
         print(f"\nBlocco {block_idx}/{len(roles)}")
@@ -405,6 +475,12 @@ def build_option(foods, meal_id, idx, food_name_by_id):
         "when_to_use": when_to_use,
         "rules": {
             "allow_merge_with_other_options": False,
+        },
+        "rules_trace": {
+            "scenario": scenario,
+            "reasoning": suggestion.get("reasons", []),
+            "source_refs": suggestion.get("source_refs", []),
+            "rules_doc": suggestion.get("rules_doc"),
         },
         "blocks": blocks,
     }
@@ -434,6 +510,11 @@ def render_markdown(template, athlete_id):
                 lines.append(f"  Tags: {', '.join(option['tags'])}")
             if option.get("when_to_use"):
                 lines.append(f"  Quando usarla: {option['when_to_use']}")
+            trace = option.get("rules_trace") or {}
+            if trace.get("scenario"):
+                lines.append(f"  Scenario: `{trace.get('scenario')}`")
+            if trace.get("source_refs"):
+                lines.append(f"  Fonti: {', '.join(trace.get('source_refs'))}")
             for block in option.get("blocks", []):
                 items = [f"`{i.get('food_db_id', '')}`" for i in block.get("one_of", [])]
                 joined = " OR ".join(items) if items else "_vuoto_"
@@ -442,7 +523,7 @@ def render_markdown(template, athlete_id):
     return "\n".join(lines).rstrip() + "\n"
 
 
-def build_structure_from_scratch(template, foods, food_name_by_id):
+def build_structure_from_scratch(template, foods, food_name_by_id, nutrition_profile):
     print("\nStruttura base pasti (numero opzioni per pasto)")
     meals = []
     for meal_id in MEAL_ORDER:
@@ -455,12 +536,12 @@ def build_structure_from_scratch(template, foods, food_name_by_id):
             "options": [],
         }
         for idx in range(1, count + 1):
-            meal["options"].append(build_option(foods, meal_id, idx, food_name_by_id))
+            meal["options"].append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
         meals.append(meal)
     template["meals"] = meals
 
 
-def edit_existing_options(template, foods, food_name_by_id):
+def edit_existing_options(template, foods, food_name_by_id, nutrition_profile):
     for meal in template.get("meals", []):
         meal_id = meal.get("meal_id")
         if meal_id not in MEAL_ORDER:
@@ -472,7 +553,7 @@ def edit_existing_options(template, foods, food_name_by_id):
             if ask_yes_no("Nessuna opzione presente. Vuoi aggiungerne ora?", default=True):
                 count = ask_int(f"Quante opzioni vuoi per {name}", min_value=1, max_value=20)
                 for idx in range(1, count + 1):
-                    options.append(build_option(foods, meal_id, idx, food_name_by_id))
+                    options.append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
             meal["options"] = options
             continue
         if not ask_yes_no(f"Vuoi ricompilare le opzioni di {name}?", default=False):
@@ -480,7 +561,7 @@ def edit_existing_options(template, foods, food_name_by_id):
         count = ask_int(f"Nuovo numero opzioni per {name}", min_value=1, max_value=20)
         new_options = []
         for idx in range(1, count + 1):
-            new_options.append(build_option(foods, meal_id, idx, food_name_by_id))
+            new_options.append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
         meal["options"] = new_options
 
 
@@ -545,6 +626,24 @@ def main(argv=None):
 
     template_json_file = paths["template_json"]
     template_md_file = paths["template_md"]
+    nutrition_profile_file = data_file(NUTRITION_PROFILE_FILE)
+
+    try:
+        nutrition_profile = load_required_nutrition_profile(nutrition_profile_file)
+    except ValueError as exc:
+        print(f"Errore: {exc}")
+        return 1
+    safety = evaluate_safety(nutrition_profile)
+    if safety.get("warnings"):
+        print("\n[WARN] Safety checks profilo:")
+        for warn in safety["warnings"]:
+            print(f"- {warn}")
+    if safety.get("consult_professional"):
+        print("\n[STOP] Trigger safety hard rilevato.")
+        for err in safety.get("hard_stop", []):
+            print(f"- {err}")
+        print("Consulta un professionista prima di proseguire con il setup nutrizione.")
+        return 1
 
     if template_json_file.exists():
         template = load_json(template_json_file)
@@ -563,14 +662,19 @@ def main(argv=None):
     template.setdefault("meta", {})
     template["meta"]["owner_athlete_id"] = target_athlete_id
     template["meta"]["source"] = "setup_wizard"
+    template["meta"]["profile_ref"] = {
+        "path": relpath_or_str(nutrition_profile_file),
+        "goal": nutrition_profile.get("profile", {}).get("goal"),
+        "profile_generated_at": nutrition_profile.get("meta", {}).get("generated_at"),
+    }
     if not template["meta"].get("created_at"):
         template["meta"]["created_at"] = iso_now()
     template["meta"]["updated_at"] = iso_now()
 
     if args.edit and template.get("meals"):
-        edit_existing_options(template, foods, food_name_by_id)
+        edit_existing_options(template, foods, food_name_by_id, nutrition_profile)
     else:
-        build_structure_from_scratch(template, foods, food_name_by_id)
+        build_structure_from_scratch(template, foods, food_name_by_id, nutrition_profile)
     collect_user_constraints(template)
 
     template_json_file.parent.mkdir(parents=True, exist_ok=True)

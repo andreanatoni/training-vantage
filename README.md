@@ -82,6 +82,10 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - `./tv nutrition setup-base` crea/aggiorna:
   - `data/athletes/<id>/nutrition_base_template.json`
   - `knowledge/athletes/<id>/nutrition-base-template.md`
+- Richiede `NUTRITION_PROFILE.json` atleta valido (creato con `./tv nutrition setup-profile`)
+- Applica rules engine conservativo e trigger safety:
+  - regole operative: `knowledge/nutrition-rules.md`
+  - trigger safety: `data/NUTRITION_SAFETY_TRIGGERS.json`
 - Template senza grammature, opzioni rigide (no merge), mapping ingredienti via `food_db_id`
 - Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
   - `data/athletes/<id>/CUSTOM_RECIPES.json`

@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "version": "1.0",
+    "purpose": "Trigger safety conservativi per escalation professionista."
+  },
+  "hard_stop": {
+    "body_fat_pct_min": 5.0,
+    "ffm_kg_min": 40.0
+  },
+  "warnings": [
+    {
+      "field": "body_water_pct",
+      "min": 45.0
+    },
+    {
+      "field": "visceral_fat_level",
+      "max": 15
+    },
+    {
+      "field": "subcutaneous_fat_pct",
+      "max": 30.0
+    }
+  ],
+  "policy": {
+    "on_hard_stop": "block_setup_and_refer_professional",
+    "on_warning": "continue_with_warning"
+  }
+}

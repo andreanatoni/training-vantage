@@ -36,6 +36,7 @@ from scripts.running.running_setup import (  # noqa: E402
 )
 from scripts.nutrition.setup_base import (  # noqa: E402
     infer_when_to_use,
+    load_required_nutrition_profile,
     MEAL_ORDER,
     infer_option_tags,
     parse_args as parse_nutrition_setup_args,
@@ -46,6 +47,11 @@ from scripts.nutrition.setup_base import (  # noqa: E402
 from scripts.nutrition.setup_profile import (  # noqa: E402
     parse_args as parse_nutrition_profile_args,
     resolve_target_athlete_id as resolve_nutrition_profile_target_athlete_id,
+)
+from scripts.nutrition.rules_engine import (  # noqa: E402
+    evaluate_safety,
+    suggest_scenario_for_meal,
+    suggest_blocks,
 )
 from scripts.food.sync_food_db import is_markdown_in_sync  # noqa: E402
 
@@ -558,6 +564,88 @@ class TrainingLoadImportTests(unittest.TestCase):
 
 
 class NutritionSetupTests(unittest.TestCase):
+    def test_rules_engine_suggest_blocks_from_profile(self):
+        profile = {
+            "profile": {"goal": "performance"},
+            "training_context": {
+                "running_days_per_week": 5,
+                "strength_days_per_week": 2,
+                "typical_training_time": "evening",
+            },
+        }
+        out = suggest_blocks(profile, "dinner", "post_workout")
+        self.assertIn("protein", out["roles"])
+        self.assertIn("carb", out["roles"])
+        self.assertTrue(out["reasons"])
+
+    def test_rules_engine_suggest_scenario_evening_dinner_post(self):
+        profile = {
+            "training_context": {
+                "running_days_per_week": 4,
+                "strength_days_per_week": 1,
+                "typical_training_time": "evening",
+            }
+        }
+        out = suggest_scenario_for_meal(profile, "dinner")
+        self.assertEqual(out["scenario"], "post_workout")
+
+    def test_rules_engine_hard_stop_on_very_low_bf(self):
+        profile = {
+            "advanced_bia": {
+                "body_fat_pct": 4.0,
+                "ffm_kg": 60.0,
+            }
+        }
+        out = evaluate_safety(profile)
+        self.assertTrue(out["consult_professional"])
+        self.assertGreater(len(out["hard_stop"]), 0)
+
+    def test_setup_base_profile_loader_accepts_minimum_valid_payload(self):
+        from tempfile import TemporaryDirectory
+
+        payload = {
+            "profile": {"goal": "performance"},
+            "body_core": {
+                "sex": "male",
+                "age_years": 36,
+                "height_cm": 175.0,
+                "weight_kg": 68.6,
+            },
+            "training_context": {
+                "running_days_per_week": 4,
+                "strength_days_per_week": 2,
+                "typical_training_time": "evening",
+            },
+        }
+        with TemporaryDirectory() as tmp:
+            p = Path(tmp) / "NUTRITION_PROFILE.json"
+            p.write_text(json.dumps(payload), encoding="utf-8")
+            loaded = load_required_nutrition_profile(p)
+            self.assertEqual(loaded["profile"]["goal"], "performance")
+
+    def test_setup_base_profile_loader_rejects_missing_goal(self):
+        from tempfile import TemporaryDirectory
+
+        payload = {
+            "profile": {},
+            "body_core": {
+                "sex": "male",
+                "age_years": 36,
+                "height_cm": 175.0,
+                "weight_kg": 68.6,
+            },
+            "training_context": {
+                "running_days_per_week": 4,
+                "strength_days_per_week": 2,
+                "typical_training_time": "evening",
+            },
+        }
+        with TemporaryDirectory() as tmp:
+            p = Path(tmp) / "NUTRITION_PROFILE.json"
+            p.write_text(json.dumps(payload), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_required_nutrition_profile(p)
+
     def test_search_foods_by_name(self):
         foods = [
             {"id": "pane_integrale", "name": "Pane integrale"},

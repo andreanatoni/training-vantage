@@ -50,6 +50,7 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `FOOD_DB_TO_LARN_MAPPING.json`: associazioni alimento -> porzione LARN/operativa + stato revisione.
 - `LARN_MANUAL_MAPPING.xlsx`: file operativo per revisione manuale mapping con menu a tendina `larn_portion_id`.
 - `NUTRITION_ENGINE_CONFIG.json`: configurazione motore nutrizionale periodizzato (obiettivi, priorita', soglie EA, mapping categorie).
+- `NUTRITION_SAFETY_TRIGGERS.json`: trigger safety per escalation professionista in fase setup nutrizione.
 - `templates/nutrition_base_template.shared.json`: bootstrap shared del piano base 5 pasti (solo struttura/option-set).
 - `templates/nutrition_base_template.schema.json`: regole di validazione (strict mode, opzioni immutabili, no merge).
 - `athletes/<id>/NUTRITION_PROFILE.json`: profilo nutrizione atleta per personalizzazione del setup pasti.
@@ -136,6 +137,7 @@ Comandi principali (dalla root del repo):
 - template base nutrizione:
   - bootstrap shared: `data/templates/nutrition_base_template.shared.json`
   - inizializzazione atleta: `data/athletes/<id>/nutrition_base_template.json`
+  - prerequisito strict: `data/athletes/<id>/NUTRITION_PROFILE.json` valido
   - schema validazione: `data/templates/nutrition_base_template.schema.json`
   - wizard compilazione: `./tv nutrition setup-base`
     - senza `--athlete`, se il contesto e' `default`, il `Nome atleta` inserito nel wizard diventa la cartella target
@@ -151,6 +153,10 @@ Comandi principali (dalla root del repo):
   - output JSON: `data/athletes/<id>/NUTRITION_PROFILE.json`
   - output leggibile: `knowledge/athletes/<id>/nutrition-profile.md`
   - include core obbligatorio + blocco BIA avanzato opzionale
+- setup base usa rules engine + trigger safety:
+  - regole operative: `knowledge/nutrition-rules.md`
+  - trigger: `data/NUTRITION_SAFETY_TRIGGERS.json`
+  - su trigger hard: setup bloccato e richiesta consulto professionale
 - `running month` / `running summary`: analisi operativa dei volumi per controllo periodizzazione.
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
   - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)
