@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v1.0",
-    "updated_at": "2026-02-17"
+    "updated_at": "2026-02-18"
   },
   "day_type_to_nutrition_category": {
     "rest": "rest",
@@ -25,9 +25,24 @@
   },
   "race_calendar": [
     {
-      "name": "10K",
-      "date": "2026-06-16",
-      "target_pace": "3:59/km"
+      "name": "Roma-Ostia Half Marathon",
+      "date": "2026-03-01",
+      "target": "4:00/km (1:24)"
+    },
+    {
+      "name": "Latina Half Marathon",
+      "date": "2026-03-29",
+      "target": "sub 1:24 (PB)"
+    },
+    {
+      "name": "Mezza Roma",
+      "date": "2026-10-18",
+      "target": "test pre-maratona"
+    },
+    {
+      "name": "Maratona Latina",
+      "date": "2026-12-06",
+      "target": "prima maratona"
     }
   ],
   "alerts": {
