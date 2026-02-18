@@ -666,6 +666,10 @@ class NutritionSetupTests(unittest.TestCase):
         args = parse_nutrition_setup_args(["--strict-no-defaults"])
         self.assertTrue(args.strict_no_defaults)
 
+    def test_nutrition_setup_parse_manual_override_flag(self):
+        args = parse_nutrition_setup_args(["--allow-manual-block-overrides"])
+        self.assertTrue(args.allow_manual_block_overrides)
+
     def test_nutrition_setup_profile_help(self):
         result = run_cmd("./tv", "nutrition", "setup-profile", "--help")
         self.assertEqual(result.returncode, 0, msg=result.stderr)

@@ -120,6 +120,11 @@ def parse_args(argv=None):
             "(excluded_meals, user_constraints, timing/tag/when_to_use)."
         ),
     )
+    parser.add_argument(
+        "--allow-manual-block-overrides",
+        action="store_true",
+        help="Abilita modifica manuale completa dei blocchi (modalita avanzata).",
+    )
     return parser.parse_args(argv)
 
 
@@ -388,7 +393,7 @@ def suggest_roles_for_option(meal_id, scenario):
     return meal_defaults.get(scenario, meal_defaults.get("default_day", ["carb", "protein"]))
 
 
-def choose_roles(meal_id, nutrition_profile):
+def choose_roles(meal_id, nutrition_profile, allow_manual_block_overrides=False):
     scenario_suggestion = suggest_scenario_for_meal(nutrition_profile, meal_id)
     scenario = scenario_suggestion["scenario"]
     print(
@@ -406,6 +411,15 @@ def choose_roles(meal_id, nutrition_profile):
             print(f"- Motivo: {reason}")
     if suggestion.get("source_refs"):
         print(f"- Fonti: {', '.join(suggestion['source_refs'])}")
+    if not ask_yes_no("Confermi i blocchi proposti dal sistema?", default=True):
+        scenario = ask_choice("Scenario opzione", SCENARIO_CHOICES)
+        suggestion = suggest_blocks(nutrition_profile, meal_id, scenario)
+        suggested_roles = suggestion["roles"]
+        print(f"Nuovi blocchi suggeriti: {', '.join(suggested_roles)}")
+
+    if not allow_manual_block_overrides:
+        return scenario, suggested_roles, suggestion
+
     if not ask_yes_no("Vuoi modificare manualmente i blocchi suggeriti?", default=False):
         return scenario, suggested_roles, suggestion
 
@@ -454,9 +468,13 @@ def ask_food_choices(foods, role):
         print("Selezione vuota, riprova.")
 
 
-def build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile):
+def build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile, allow_manual_block_overrides=False):
     print(f"\nCompilazione {MEAL_LABELS[meal_id]} - Opzione {idx}")
-    scenario, roles, suggestion = choose_roles(meal_id, nutrition_profile)
+    scenario, roles, suggestion = choose_roles(
+        meal_id,
+        nutrition_profile,
+        allow_manual_block_overrides=allow_manual_block_overrides,
+    )
     blocks = []
     for block_idx, role in enumerate(roles, start=1):
         print(f"\nBlocco {block_idx}/{len(roles)}")
@@ -478,6 +496,7 @@ def build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile):
         },
         "rules_trace": {
             "scenario": scenario,
+            "roles_final": roles,
             "reasoning": suggestion.get("reasons", []),
             "source_refs": suggestion.get("source_refs", []),
             "rules_doc": suggestion.get("rules_doc"),
@@ -513,8 +532,14 @@ def render_markdown(template, athlete_id):
             trace = option.get("rules_trace") or {}
             if trace.get("scenario"):
                 lines.append(f"  Scenario: `{trace.get('scenario')}`")
+            if trace.get("roles_final"):
+                lines.append(f"  Blocchi finali: {', '.join(trace.get('roles_final', []))}")
             if trace.get("source_refs"):
                 lines.append(f"  Fonti: {', '.join(trace.get('source_refs'))}")
+            if trace.get("reasoning"):
+                lines.append("  Rationale:")
+                for reason in trace.get("reasoning", []):
+                    lines.append(f"  - {reason}")
             for block in option.get("blocks", []):
                 items = [f"`{i.get('food_db_id', '')}`" for i in block.get("one_of", [])]
                 joined = " OR ".join(items) if items else "_vuoto_"
@@ -523,7 +548,13 @@ def render_markdown(template, athlete_id):
     return "\n".join(lines).rstrip() + "\n"
 
 
-def build_structure_from_scratch(template, foods, food_name_by_id, nutrition_profile):
+def build_structure_from_scratch(
+    template,
+    foods,
+    food_name_by_id,
+    nutrition_profile,
+    allow_manual_block_overrides=False,
+):
     print("\nStruttura base pasti (numero opzioni per pasto)")
     meals = []
     for meal_id in MEAL_ORDER:
@@ -536,12 +567,27 @@ def build_structure_from_scratch(template, foods, food_name_by_id, nutrition_pro
             "options": [],
         }
         for idx in range(1, count + 1):
-            meal["options"].append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
+            meal["options"].append(
+                build_option(
+                    foods,
+                    meal_id,
+                    idx,
+                    food_name_by_id,
+                    nutrition_profile,
+                    allow_manual_block_overrides=allow_manual_block_overrides,
+                )
+            )
         meals.append(meal)
     template["meals"] = meals
 
 
-def edit_existing_options(template, foods, food_name_by_id, nutrition_profile):
+def edit_existing_options(
+    template,
+    foods,
+    food_name_by_id,
+    nutrition_profile,
+    allow_manual_block_overrides=False,
+):
     for meal in template.get("meals", []):
         meal_id = meal.get("meal_id")
         if meal_id not in MEAL_ORDER:
@@ -553,7 +599,16 @@ def edit_existing_options(template, foods, food_name_by_id, nutrition_profile):
             if ask_yes_no("Nessuna opzione presente. Vuoi aggiungerne ora?", default=True):
                 count = ask_int(f"Quante opzioni vuoi per {name}", min_value=1, max_value=20)
                 for idx in range(1, count + 1):
-                    options.append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
+                    options.append(
+                        build_option(
+                            foods,
+                            meal_id,
+                            idx,
+                            food_name_by_id,
+                            nutrition_profile,
+                            allow_manual_block_overrides=allow_manual_block_overrides,
+                        )
+                    )
             meal["options"] = options
             continue
         if not ask_yes_no(f"Vuoi ricompilare le opzioni di {name}?", default=False):
@@ -561,7 +616,16 @@ def edit_existing_options(template, foods, food_name_by_id, nutrition_profile):
         count = ask_int(f"Nuovo numero opzioni per {name}", min_value=1, max_value=20)
         new_options = []
         for idx in range(1, count + 1):
-            new_options.append(build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile))
+            new_options.append(
+                build_option(
+                    foods,
+                    meal_id,
+                    idx,
+                    food_name_by_id,
+                    nutrition_profile,
+                    allow_manual_block_overrides=allow_manual_block_overrides,
+                )
+            )
         meal["options"] = new_options
 
 
@@ -672,9 +736,21 @@ def main(argv=None):
     template["meta"]["updated_at"] = iso_now()
 
     if args.edit and template.get("meals"):
-        edit_existing_options(template, foods, food_name_by_id, nutrition_profile)
+        edit_existing_options(
+            template,
+            foods,
+            food_name_by_id,
+            nutrition_profile,
+            allow_manual_block_overrides=args.allow_manual_block_overrides,
+        )
     else:
-        build_structure_from_scratch(template, foods, food_name_by_id, nutrition_profile)
+        build_structure_from_scratch(
+            template,
+            foods,
+            food_name_by_id,
+            nutrition_profile,
+            allow_manual_block_overrides=args.allow_manual_block_overrides,
+        )
     collect_user_constraints(template)
 
     template_json_file.parent.mkdir(parents=True, exist_ok=True)

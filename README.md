@@ -86,6 +86,8 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - Applica rules engine conservativo e trigger safety:
   - regole operative: `knowledge/nutrition-rules.md`
   - trigger safety: `data/NUTRITION_SAFETY_TRIGGERS.json`
+- Flusso default: sistema propone scenario+blocchi e l'utente conferma.
+- Override manuale completo blocchi solo in modalita avanzata: `--allow-manual-block-overrides`
 - Template senza grammature, opzioni rigide (no merge), mapping ingredienti via `food_db_id`
 - Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
   - `data/athletes/<id>/CUSTOM_RECIPES.json`
