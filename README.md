@@ -36,6 +36,9 @@ CLI per gestione integrata di:
 # Setup profilo nutrizione atleta (core + BIA avanzata opzionale)
 ./tv nutrition setup-profile
 
+# Validazione pre-flight template nutrizione atleta
+./tv nutrition validate-template
+
 # Piani nutrizione
 ./tv plan rest
 ./tv plan --all
@@ -91,6 +94,7 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - Bootstrap rapido opzioni: `--autodraft` (genera 1 opzione bozza per ogni pasto)
 - In `--autodraft` parte una review guidata per ogni pasto: `accetta` / `sostituisci` / `rigenera`
 - Quality gate finale: niente salvataggio se blocchi/trace sono incompleti
+- Pre-flight planner: `./tv nutrition validate-template`
 - Template senza grammature, opzioni rigide (no merge), mapping ingredienti via `food_db_id`
 - Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
   - `data/athletes/<id>/CUSTOM_RECIPES.json`

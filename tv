@@ -67,6 +67,10 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
         - knowledge/athletes/<id>/nutrition-profile.md
       Esempio: tv nutrition setup-profile
 
+  nutrition validate-template [--json]
+      Validazione pre-flight del nutrition_base_template atleta (planner-ready)
+      Esempio: tv nutrition validate-template
+
   plan <categoria>
       Genera piano nutrizionale quantitativo per categoria
       Categorie: rest, forza, easy-run, qualita, tempo, lungo, pizza-day, domenica
@@ -277,9 +281,13 @@ case "$1" in
         elif [ "$1" = "setup-profile" ]; then
             shift
             python3 -m scripts.nutrition.setup_profile "$@"
+        elif [ "$1" = "validate-template" ]; then
+            shift
+            python3 -m scripts.nutrition.validate_template "$@"
         else
             echo -e "${RED}Uso non valido. Esempi:${NC} tv nutrition setup-base"
             echo "                          tv nutrition setup-profile"
+            echo "                          tv nutrition validate-template"
             exit 1
         fi
         ;;

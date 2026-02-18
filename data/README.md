@@ -92,6 +92,7 @@ Comandi principali (dalla root del repo):
 ./tv running summary
 ./tv nutrition setup-base
 ./tv nutrition setup-profile
+./tv nutrition validate-template
 ./tv plan rest
 ./tv plan week 2026-W11
 ./tv plan month 2026-03
@@ -153,6 +154,9 @@ Comandi principali (dalla root del repo):
   - output JSON: `data/athletes/<id>/NUTRITION_PROFILE.json`
   - output leggibile: `knowledge/athletes/<id>/nutrition-profile.md`
   - include core obbligatorio + blocco BIA avanzato opzionale
+- validazione template atleta:
+  - `./tv nutrition validate-template`
+  - verifica pre-flight planner-ready (struttura meal/options/blocks, rules_trace, food_db_id validi)
 - setup base usa rules engine + trigger safety:
   - regole operative: `knowledge/nutrition-rules.md`
   - trigger: `data/NUTRITION_SAFETY_TRIGGERS.json`

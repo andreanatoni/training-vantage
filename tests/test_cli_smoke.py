@@ -53,6 +53,9 @@ from scripts.nutrition.setup_profile import (  # noqa: E402
     parse_args as parse_nutrition_profile_args,
     resolve_target_athlete_id as resolve_nutrition_profile_target_athlete_id,
 )
+from scripts.nutrition.validate_template import (  # noqa: E402
+    validate_template_payload,
+)
 from scripts.nutrition.rules_engine import (  # noqa: E402
     evaluate_safety,
     suggest_scenario_for_meal,
@@ -591,6 +594,59 @@ class TrainingLoadImportTests(unittest.TestCase):
 
 
 class NutritionSetupTests(unittest.TestCase):
+    def test_nutrition_validate_template_help(self):
+        result = run_cmd("./tv", "nutrition", "validate-template", "--help")
+        self.assertEqual(result.returncode, 0, msg=result.stderr)
+        self.assertIn("planner-ready", result.stdout)
+
+    def test_validate_template_payload_happy_path(self):
+        valid_food_ids = {"pane_integrale", "yogurt_greco_0_lipidi", "mela"}
+        template = {
+            "meals": [
+                {
+                    "meal_id": "breakfast",
+                    "options": [
+                        {
+                            "option_id": "breakfast_opt_1",
+                            "tags": [],
+                            "rules_trace": {
+                                "scenario": "default_day",
+                                "reasoning": ["x"],
+                                "source_refs": ["knowledge/nutrition-rules.md"],
+                                "rules_doc": "knowledge/nutrition-rules.md",
+                                "roles_final": ["carb", "protein"],
+                            },
+                            "blocks": [
+                                {"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]},
+                                {"role": "protein", "one_of": [{"food_db_id": "yogurt_greco_0_lipidi"}]},
+                            ],
+                        }
+                    ],
+                },
+                {"meal_id": "snack_am", "options": [{"option_id": "snack_am_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["fruit"]}, "blocks": [{"role": "fruit", "one_of": [{"food_db_id": "mela"}]}]}]},
+                {"meal_id": "lunch", "options": [{"option_id": "lunch_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]}]}]},
+                {"meal_id": "snack_pm", "options": [{"option_id": "snack_pm_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["fruit"]}, "blocks": [{"role": "fruit", "one_of": [{"food_db_id": "mela"}]}]}]},
+                {"meal_id": "dinner", "options": [{"option_id": "dinner_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["protein"]}, "blocks": [{"role": "protein", "one_of": [{"food_db_id": "yogurt_greco_0_lipidi"}]}]}]},
+            ]
+        }
+        errors, warnings = validate_template_payload(template, valid_food_ids)
+        self.assertEqual(errors, [])
+        self.assertEqual(warnings, [])
+
+    def test_validate_template_payload_detects_unknown_food(self):
+        valid_food_ids = {"pane_integrale"}
+        template = {
+            "meals": [
+                {"meal_id": "breakfast", "options": [{"option_id": "breakfast_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "food_missing"}]}]}]},
+                {"meal_id": "snack_am", "options": [{"option_id": "snack_am_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]}]}]},
+                {"meal_id": "lunch", "options": [{"option_id": "lunch_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]}]}]},
+                {"meal_id": "snack_pm", "options": [{"option_id": "snack_pm_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]}]}]},
+                {"meal_id": "dinner", "options": [{"option_id": "dinner_opt_1", "tags": [], "rules_trace": {"scenario": "default_day", "reasoning": ["x"], "source_refs": ["s"], "rules_doc": "d", "roles_final": ["carb"]}, "blocks": [{"role": "carb", "one_of": [{"food_db_id": "pane_integrale"}]}]}]},
+            ]
+        }
+        errors, _warnings = validate_template_payload(template, valid_food_ids)
+        self.assertTrue(any("food_db_id sconosciuto" in e for e in errors))
+
     def test_planner_fails_if_template_exists_but_not_ready(self):
         template_path = DEFAULT_ATHLETE_DATA_DIR / "nutrition_base_template.json"
         existed = template_path.exists()
