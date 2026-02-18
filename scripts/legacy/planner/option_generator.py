@@ -20,7 +20,7 @@ from scripts.ingredient_mapper import (
     get_ingredient_category
 )
 from scripts.swap_calculator import SwapCalculator
-from scripts.meal_balancer import MealBalancerData, MealBalancer
+from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 from scripts.generation_logger import get_logger
 
 
@@ -230,7 +230,7 @@ class OptionGenerator:
 
 if __name__ == '__main__':
     # Test option generator
-    from scripts.piano_base_parser import parse_piano_base
+    from scripts.legacy.planner.piano_base_parser import parse_piano_base
 
     data_dir = Path('data')
     piano_base_path = Path('sources/piano_base_ottimizzato.md')

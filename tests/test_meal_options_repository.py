@@ -2,7 +2,12 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.meal_options_repository import CATEGORY_SOURCES, MEAL_OPTIONS_DIR, build_all_from_stale, load_plan_for_category
+from scripts.nutrition.meal_options_repository import (
+    CATEGORY_SOURCES,
+    MEAL_OPTIONS_DIR,
+    build_all_from_stale,
+    load_plan_for_category,
+)
 
 
 class MealOptionsRepositoryTests(unittest.TestCase):

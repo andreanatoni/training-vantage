@@ -19,12 +19,12 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.piano_base_parser import parse_piano_base
+from scripts.legacy.planner.piano_base_parser import parse_piano_base
 from scripts.ingredient_mapper import map_ingredient_to_food_id, get_ingredient_category
 from scripts.swap_calculator import SwapCalculator
-from scripts.option_generator import OptionGenerator
-from scripts.category_plan_generator import CategoryPlanGenerator
-from scripts.markdown_exporter import MarkdownExporter
+from scripts.legacy.planner.option_generator import OptionGenerator
+from scripts.legacy.planner.category_plan_generator import CategoryPlanGenerator
+from scripts.legacy.planner.markdown_exporter import MarkdownExporter
 
 
 class TestPlansExport(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from scripts.data_validator import validate_all
+from scripts.food.data_validator import validate_all
 
 
 ROOT = Path(__file__).resolve().parents[1]

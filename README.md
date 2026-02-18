@@ -90,9 +90,7 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 Path primario planner:
 - `./tv plan ...` legge `knowledge/meal_options/<categoria>.json`
 - se manca il JSON fallisce con errore e richiede `./tv plan build-options`
-- layer tecnico:
-  - wrapper compatibili: `scripts/plan.py`, `scripts/build_meal_options.py`
-  - implementazione dominio: `scripts/nutrition/*.py`
+- implementazione dominio: `scripts/nutrition/*.py`
 
 Output:
 - `plans/nutrition/athletes/<id>/*.md`

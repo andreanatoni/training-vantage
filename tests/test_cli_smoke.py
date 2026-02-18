@@ -10,8 +10,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ATHLETE_DATA_DIR = ROOT / "data" / "athletes" / "default"
 DEFAULT_ATHLETE_PLANS_DIR = ROOT / "plans" / "nutrition" / "athletes" / "default"
-sys.path.insert(0, str(ROOT / "scripts"))
-from food_add import (  # noqa: E402
+sys.path.insert(0, str(ROOT))
+from scripts.food.food_add import (  # noqa: E402
     find_food_by_target,
     find_similar_food_names,
     format_similarity_table,
@@ -21,12 +21,12 @@ from food_add import (  # noqa: E402
     parse_reference,
     to_float,
 )
-from crea_import import parse_crea_index_text  # noqa: E402
-from import_training_load import (  # noqa: E402
+from scripts.crea_import import parse_crea_index_text  # noqa: E402
+from scripts.import_training_load import (  # noqa: E402
     build_training_load_payload,
     classify_day_type,
 )
-from running_setup import (  # noqa: E402
+from scripts.running.running_setup import (  # noqa: E402
     build_manual_training_payload,
     compute_weekly_km_params,
     estimate_no_history_defaults,
@@ -34,7 +34,7 @@ from running_setup import (  # noqa: E402
     parse_args as parse_running_setup_args,
     resolve_target_athlete_id,
 )
-from nutrition_setup import (  # noqa: E402
+from scripts.nutrition_setup import (  # noqa: E402
     infer_when_to_use,
     MEAL_ORDER,
     infer_option_tags,
@@ -43,7 +43,7 @@ from nutrition_setup import (  # noqa: E402
     search_foods,
     suggest_roles_for_option,
 )
-from sync_food_db import is_markdown_in_sync  # noqa: E402
+from scripts.food.sync_food_db import is_markdown_in_sync  # noqa: E402
 
 
 def run_cmd(*args):

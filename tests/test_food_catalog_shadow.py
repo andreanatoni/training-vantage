@@ -5,7 +5,7 @@ from pathlib import Path
 import shutil
 import io
 from contextlib import redirect_stdout, redirect_stderr
-from scripts.meal_balancer import MealBalancerData
+from scripts.nutrition.meal_balancer import MealBalancerData
 
 ROOT = Path(__file__).resolve().parents[1]
 FOOD_CATALOG = ROOT / "data" / "FOOD_CATALOG.json"

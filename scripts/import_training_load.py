@@ -18,7 +18,10 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
+try:
+    from scripts.athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
+except ModuleNotFoundError:
+    from athlete_context import data_file, ensure_athlete_dirs, get_athlete_id
 
 
 ROOT_DIR = Path(__file__).parent.parent

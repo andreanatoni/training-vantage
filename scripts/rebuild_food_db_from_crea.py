@@ -17,8 +17,12 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from food_add import make_food_id, parse_crea_url
-from sync_food_db import sync_food_db_files
+try:
+    from scripts.food.food_add import make_food_id, parse_crea_url
+    from scripts.food.sync_food_db import sync_food_db_files
+except ModuleNotFoundError:
+    from food.food_add import make_food_id, parse_crea_url
+    from food.sync_food_db import sync_food_db_files
 
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"

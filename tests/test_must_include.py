@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.plan_builder import PlanBuilder
-from scripts.meal_balancer import MealBalancerData, MealBalancer
+from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 
 
 def test_valid_must_include():
@@ -245,7 +245,7 @@ def test_must_include_impossible_target():
 
     try:
         # Build single meal plan (easier to test)
-        from scripts.meal_balancer import MealBalancer, MealBalancerData
+        from scripts.nutrition.meal_balancer import MealBalancer, MealBalancerData
 
         balancer_data = MealBalancerData(data_dir)
         balancer = MealBalancer(balancer_data)

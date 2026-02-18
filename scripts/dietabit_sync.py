@@ -25,7 +25,10 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 from urllib.parse import urljoin
 
-from food_add import make_food_id
+try:
+    from scripts.food.food_add import make_food_id
+except ModuleNotFoundError:
+    from food.food_add import make_food_id
 
 
 ROOT = Path(__file__).parent.parent

@@ -22,7 +22,7 @@ from typing import Dict, List, Any
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.meal_balancer import MealBalancerData, MealBalancer
+from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 
 
 class RegressionTester:

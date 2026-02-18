@@ -15,7 +15,10 @@ from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin
 
-from food_add import SimilarFoodError, add_food_everywhere, make_food_id, parse_crea_url
+try:
+    from scripts.food.food_add import SimilarFoodError, add_food_everywhere, make_food_id, parse_crea_url
+except ModuleNotFoundError:
+    from food.food_add import SimilarFoodError, add_food_everywhere, make_food_id, parse_crea_url
 
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"

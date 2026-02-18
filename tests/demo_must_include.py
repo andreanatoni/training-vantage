@@ -12,7 +12,7 @@ from pathlib import Path
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.meal_balancer import MealBalancer, MealBalancerData
+from scripts.nutrition.meal_balancer import MealBalancer, MealBalancerData
 
 
 def demo_without_must_include():

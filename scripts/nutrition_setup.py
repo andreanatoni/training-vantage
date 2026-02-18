@@ -7,15 +7,26 @@ from datetime import datetime, timezone
 from pathlib import Path
 import os
 
-from athlete_context import (
-    DEFAULT_ATHLETE_ID,
-    DATA_DIR as SHARED_DATA_DIR,
-    athlete_knowledge_dir,
-    data_file,
-    ensure_athlete_dirs,
-    normalize_athlete_id,
-    relpath_or_str,
-)
+try:
+    from scripts.athlete_context import (
+        DEFAULT_ATHLETE_ID,
+        DATA_DIR as SHARED_DATA_DIR,
+        athlete_knowledge_dir,
+        data_file,
+        ensure_athlete_dirs,
+        normalize_athlete_id,
+        relpath_or_str,
+    )
+except ModuleNotFoundError:
+    from athlete_context import (
+        DEFAULT_ATHLETE_ID,
+        DATA_DIR as SHARED_DATA_DIR,
+        athlete_knowledge_dir,
+        data_file,
+        ensure_athlete_dirs,
+        normalize_athlete_id,
+        relpath_or_str,
+    )
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent

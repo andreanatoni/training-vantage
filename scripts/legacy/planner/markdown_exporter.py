@@ -163,7 +163,7 @@ if __name__ == '__main__':
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-    from scripts.category_plan_generator import CategoryPlanGenerator
+    from scripts.legacy.planner.category_plan_generator import CategoryPlanGenerator
 
     data_dir = Path('data')
     piano_base_path = Path('sources/piano_base_ottimizzato.md')

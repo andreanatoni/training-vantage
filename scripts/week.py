@@ -13,7 +13,10 @@ Visualizza:
 
 import sys
 import json
-from athlete_context import data_file, get_athlete_id
+try:
+    from scripts.athlete_context import data_file, get_athlete_id
+except ModuleNotFoundError:
+    from athlete_context import data_file, get_athlete_id
 
 RUNNING_LOG_FILE = data_file("running-log.json")
 ZONES_FILE = data_file("zones.json")

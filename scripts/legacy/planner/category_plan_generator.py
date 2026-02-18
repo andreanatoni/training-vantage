@@ -13,8 +13,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from scripts.piano_base_parser import parse_piano_base
-from scripts.option_generator import OptionGenerator
+from scripts.legacy.planner.piano_base_parser import parse_piano_base
+from scripts.legacy.planner.option_generator import OptionGenerator
 from scripts.generation_logger import get_logger
 
 

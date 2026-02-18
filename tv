@@ -176,23 +176,23 @@ EOF
 case "$1" in
     weigh)
         shift
-        python3 "$SCRIPTS_DIR/weigh.py" "$@"
+        python3 -m scripts.tracking.weigh "$@"
         ;;
     status)
         shift
-        python3 "$SCRIPTS_DIR/status.py" "$@"
+        python3 -m scripts.tracking.status "$@"
         ;;
     zones)
         shift
-        python3 "$SCRIPTS_DIR/zones.py" "$@"
+        python3 -m scripts.tracking.zones "$@"
         ;;
     plan)
         shift
         if [ "$1" = "build-options" ]; then
             shift
-            python3 "$SCRIPTS_DIR/build_meal_options.py" "$@"
+            python3 -m scripts.nutrition.build_meal_options "$@"
         else
-            python3 "$SCRIPTS_DIR/plan.py" "$@"
+            python3 -m scripts.nutrition.plan "$@"
         fi
         ;;
     week)
@@ -203,20 +203,20 @@ case "$1" in
         shift
         if [ "$1" = "setup" ]; then
             shift
-            python3 "$SCRIPTS_DIR/running_setup.py" "$@"
+            python3 -m scripts.running.running_setup "$@"
         else
-            python3 "$SCRIPTS_DIR/running_plan.py" "$@"
+            python3 -m scripts.running.running_plan "$@"
         fi
         ;;
     food)
         shift
         if [ "$1" = "add" ]; then
             shift
-            python3 "$SCRIPTS_DIR/food_add.py" "$@"
+            python3 -m scripts.food.food_add "$@"
         elif [ "$1" = "sync" ]; then
-            python3 "$SCRIPTS_DIR/sync_food_db.py"
+            python3 -m scripts.food.sync_food_db
         elif [ "$1" = "check" ]; then
-            python3 "$SCRIPTS_DIR/sync_food_db.py" --check
+            python3 -m scripts.food.sync_food_db --check
         elif [ "$1" = "crawl-index" ]; then
             python3 "$SCRIPTS_DIR/crea_import.py" crawl-index
         elif [ "$1" = "import-crea" ]; then
@@ -228,15 +228,15 @@ case "$1" in
             shift
             python3 "$SCRIPTS_DIR/dietabit_sync.py" "$@"
         elif [ "$1" = "build-active" ]; then
-            python3 "$SCRIPTS_DIR/build_active_food_db.py"
+            python3 -m scripts.food.build_active_food_db
         elif [ "$1" = "import-mapped" ]; then
             shift
-            python3 "$SCRIPTS_DIR/import_mapped.py" "$@"
+            python3 -m scripts.food.import_mapped "$@"
         elif [ "$1" = "build-catalog" ]; then
             shift
-            python3 "$SCRIPTS_DIR/build_food_catalog.py" "$@"
+            python3 -m scripts.food.build_food_catalog "$@"
         elif [ "$1" = "validate-data" ]; then
-            python3 "$SCRIPTS_DIR/data_validator.py" data
+            python3 -m scripts.food.data_validator data
         elif [ "$1" = "auto-map-larn" ] || [ "$1" = "map-larn" ] || [ "$1" = "extract-portions" ]; then
             echo -e "${YELLOW}Comando legacy archiviato:${NC} '$1'"
             echo "Usa: tv food import-mapped + tv food build-catalog + tv food validate-data"

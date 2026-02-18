@@ -10,7 +10,7 @@ from pathlib import Path
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from meal_balancer import MealBalancerData, MealBalancer
+from scripts.nutrition.meal_balancer import MealBalancerData, MealBalancer
 
 def test_ingredient_mode():
     """

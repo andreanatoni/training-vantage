@@ -24,7 +24,7 @@ from pathlib import Path
 # Add parent dir to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scripts.data_validator import validate_all
+from scripts.food.data_validator import validate_all
 
 
 def test_baseline_all_ok():
