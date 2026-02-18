@@ -88,6 +88,9 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
   - trigger safety: `data/NUTRITION_SAFETY_TRIGGERS.json`
 - Flusso default: sistema propone scenario+blocchi e l'utente conferma.
 - Override manuale completo blocchi solo in modalita avanzata: `--allow-manual-block-overrides`
+- Bootstrap rapido opzioni: `--autodraft` (genera 1 opzione bozza per ogni pasto)
+- In `--autodraft` parte una review guidata per ogni pasto: `accetta` / `sostituisci` / `rigenera`
+- Quality gate finale: niente salvataggio se blocchi/trace sono incompleti
 - Template senza grammature, opzioni rigide (no merge), mapping ingredienti via `food_db_id`
 - Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
   - `data/athletes/<id>/CUSTOM_RECIPES.json`

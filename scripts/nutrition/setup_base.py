@@ -48,6 +48,74 @@ MEAL_LABELS = {
     "dinner": "Cena",
 }
 ROLE_OPTIONS = ["carb", "protein", "fat", "veg", "fruit", "extra", "beverage"]
+ROLE_HINTS = {
+    "carb": [
+        "pane",
+        "riso",
+        "pasta",
+        "fiocchi",
+        "avena",
+        "patate",
+        "gallett",
+        "farro",
+        "orzo",
+        "quinoa",
+    ],
+    "protein": [
+        "pollo",
+        "tacchino",
+        "uovo",
+        "tonno",
+        "salmone",
+        "yogurt",
+        "fiocchi di latte",
+        "bresaola",
+        "legumi",
+        "tofu",
+    ],
+    "fat": [
+        "olio",
+        "mandor",
+        "noci",
+        "pistac",
+        "burro di arachidi",
+        "semi",
+        "avocado",
+    ],
+    "veg": [
+        "zucchine",
+        "insalata",
+        "spinaci",
+        "carote",
+        "pomod",
+        "broccoli",
+        "verdur",
+    ],
+    "fruit": [
+        "banana",
+        "mela",
+        "pera",
+        "frutta",
+        "arancia",
+        "kiwi",
+        "frutti",
+    ],
+    "beverage": [
+        "caffe",
+        "tisana",
+        "te",
+        "latte",
+        "acqua",
+        "bevanda",
+    ],
+    "extra": [
+        "marmellata",
+        "miele",
+        "cacao",
+        "spezie",
+        "senape",
+    ],
+}
 SCENARIO_CHOICES = [
     ("pre_workout", "Allenamento vicino"),
     ("post_workout", "Recupero post allenamento"),
@@ -124,6 +192,11 @@ def parse_args(argv=None):
         "--allow-manual-block-overrides",
         action="store_true",
         help="Abilita modifica manuale completa dei blocchi (modalita avanzata).",
+    )
+    parser.add_argument(
+        "--autodraft",
+        action="store_true",
+        help="Genera automaticamente 1 opzione bozza per ogni pasto da profilo+regole.",
     )
     return parser.parse_args(argv)
 
@@ -297,6 +370,28 @@ def search_foods(foods, query, limit=25):
         score -= len(name) / 1000.0
         ranked.append((score, food))
     ranked.sort(key=lambda row: row[0], reverse=True)
+    return [row[1] for row in ranked[:limit]]
+
+
+def auto_pick_foods_for_role(foods, role, limit=2):
+    hints = ROLE_HINTS.get(role, [])
+    ranked = []
+    for food in foods:
+        name = food["name"].lower()
+        food_id = food["id"].lower()
+        score = 0
+        for hint in hints:
+            if hint in name:
+                score += 3
+            if hint in food_id:
+                score += 2
+        if score > 0:
+            score -= len(name) / 1000.0
+            ranked.append((score, food))
+    ranked.sort(key=lambda row: row[0], reverse=True)
+    if not ranked:
+        # Fallback conservativo: primi alimenti disponibili
+        return foods[:limit]
     return [row[1] for row in ranked[:limit]]
 
 
@@ -505,6 +600,186 @@ def build_option(foods, meal_id, idx, food_name_by_id, nutrition_profile, allow_
     }
 
 
+def build_option_autodraft(foods, meal_id, idx, food_name_by_id, nutrition_profile):
+    scenario_info = suggest_scenario_for_meal(nutrition_profile, meal_id)
+    scenario = scenario_info["scenario"]
+    suggestion = suggest_blocks(nutrition_profile, meal_id, scenario)
+    roles = suggestion["roles"]
+    blocks = []
+    for role in roles:
+        picks = auto_pick_foods_for_role(foods, role, limit=2)
+        one_of = [{"food_db_id": p["id"], "label": p["name"]} for p in picks]
+        blocks.append({"role": role, "one_of": one_of})
+
+    tags = infer_option_tags(blocks, food_name_by_id)
+    when_to_use = infer_when_to_use(meal_id, blocks, tags, scenario)
+    return {
+        "option_id": f"{meal_id}_opt_{idx}",
+        "title": f"Opzione {idx}",
+        "immutable": True,
+        "tags": tags,
+        "when_to_use": when_to_use,
+        "rules": {
+            "allow_merge_with_other_options": False,
+        },
+        "rules_trace": {
+            "scenario": scenario,
+            "roles_final": roles,
+            "reasoning": suggestion.get("reasons", []),
+            "source_refs": suggestion.get("source_refs", []),
+            "rules_doc": suggestion.get("rules_doc"),
+            "autodraft": True,
+        },
+        "blocks": blocks,
+    }
+
+
+def refresh_option_derived_fields(option, meal_id, food_name_by_id):
+    trace = option.get("rules_trace") or {}
+    scenario = trace.get("scenario", "default_day")
+    blocks = option.get("blocks", [])
+    tags = infer_option_tags(blocks, food_name_by_id)
+    when_to_use = infer_when_to_use(meal_id, blocks, tags, scenario)
+    option["tags"] = tags
+    option["when_to_use"] = when_to_use
+    trace["roles_final"] = [b.get("role") for b in blocks if b.get("role")]
+    option["rules_trace"] = trace
+
+
+def option_is_complete(option):
+    blocks = option.get("blocks", [])
+    if not blocks:
+        return False
+    for block in blocks:
+        one_of = block.get("one_of", [])
+        if not one_of:
+            return False
+        if any(not item.get("food_db_id") for item in one_of):
+            return False
+    return True
+
+
+def summarize_option(option):
+    lines = []
+    lines.append(f"Opzione: {option.get('title', 'N/A')} ({option.get('option_id', 'N/A')})")
+    trace = option.get("rules_trace") or {}
+    if trace.get("scenario"):
+        lines.append(f"Scenario: {trace.get('scenario')}")
+    for idx, block in enumerate(option.get("blocks", []), start=1):
+        labels = [item.get("label", item.get("food_db_id", "")) for item in block.get("one_of", [])]
+        lines.append(f"{idx}. {block.get('role', 'extra')}: " + (" OR ".join(labels) if labels else "(vuoto)"))
+    return "\n".join(lines)
+
+
+def review_autodraft_option(meal_id, option, foods, food_name_by_id, nutrition_profile):
+    option_index = 1
+    raw_id = str(option.get("option_id", ""))
+    if raw_id.startswith(f"{meal_id}_opt_"):
+        try:
+            option_index = int(raw_id.split("_")[-1])
+        except ValueError:
+            option_index = 1
+    while True:
+        print("\nReview opzione autodraft")
+        print(summarize_option(option))
+        action = ask_choice(
+            "Azione",
+            [
+                ("accept", "Accetta opzione"),
+                ("replace", "Sostituisci alimenti di un blocco"),
+                ("regenerate", "Rigenera opzione"),
+            ],
+        )
+
+        if action == "accept":
+            if option_is_complete(option):
+                return option
+            print("Opzione incompleta: completa almeno 1 alimento per blocco.")
+            continue
+
+        if action == "replace":
+            blocks = option.get("blocks", [])
+            if not blocks:
+                print("Nessun blocco disponibile.")
+                continue
+            for idx, block in enumerate(blocks, start=1):
+                print(f"{idx}. {block.get('role', 'extra')}")
+            pick = ask_int("Quale blocco vuoi modificare", min_value=1, max_value=len(blocks))
+            target = blocks[pick - 1]
+            target["one_of"] = ask_food_choices(foods, target.get("role", "extra"))
+            refresh_option_derived_fields(option, meal_id, food_name_by_id)
+            continue
+
+        # regenerate
+        option = build_option_autodraft(
+            foods,
+            meal_id,
+            option_index,
+            food_name_by_id,
+            nutrition_profile,
+        )
+
+
+def review_autodraft_template(template, foods, food_name_by_id, nutrition_profile):
+    print("\nReview guidata autodraft: accetta/sostituisci/rigenera per ogni pasto.")
+    for meal in template.get("meals", []):
+        meal_id = meal.get("meal_id")
+        if meal_id not in MEAL_ORDER:
+            continue
+        options = meal.get("options", [])
+        if not options:
+            continue
+        print(f"\n=== {meal.get('name', meal_id)} ===")
+        # Autodraft v1: una sola opzione per pasto
+        options[0] = review_autodraft_option(
+            meal_id,
+            options[0],
+            foods,
+            food_name_by_id,
+            nutrition_profile,
+        )
+        meal["options"] = options
+
+
+def validate_template_quality(template):
+    errors = []
+    for meal in template.get("meals", []):
+        meal_id = meal.get("meal_id", "unknown")
+        for option in meal.get("options", []):
+            option_id = option.get("option_id", "unknown")
+            trace = option.get("rules_trace") or {}
+            required_trace = ["scenario", "reasoning", "source_refs", "rules_doc", "roles_final"]
+            for key in required_trace:
+                value = trace.get(key)
+                if value in (None, "", []):
+                    errors.append(f"{meal_id}/{option_id}: rules_trace.{key} mancante")
+            if not option_is_complete(option):
+                errors.append(f"{meal_id}/{option_id}: blocchi incompleti")
+    return errors
+
+
+def backfill_template_traces(template, food_name_by_id):
+    for meal in template.get("meals", []):
+        meal_id = meal.get("meal_id", "unknown")
+        for option in meal.get("options", []):
+            trace = option.setdefault("rules_trace", {})
+            if not trace.get("scenario"):
+                trace["scenario"] = "default_day"
+            if not trace.get("roles_final"):
+                trace["roles_final"] = [
+                    b.get("role") for b in option.get("blocks", []) if b.get("role")
+                ]
+            if not trace.get("reasoning"):
+                trace["reasoning"] = [
+                    "Trace legacy/backfill: opzione mantenuta e normalizzata dal setup.",
+                ]
+            if not trace.get("source_refs"):
+                trace["source_refs"] = ["knowledge/nutrition-rules.md"]
+            if not trace.get("rules_doc"):
+                trace["rules_doc"] = "knowledge/nutrition-rules.md"
+            refresh_option_derived_fields(option, meal_id, food_name_by_id)
+
+
 def render_markdown(template, athlete_id):
     lines = []
     lines.append("# Nutrition Base Template")
@@ -577,6 +852,29 @@ def build_structure_from_scratch(
                     allow_manual_block_overrides=allow_manual_block_overrides,
                 )
             )
+        meals.append(meal)
+    template["meals"] = meals
+
+
+def build_structure_autodraft(template, foods, food_name_by_id, nutrition_profile):
+    print("\nAutodraft attivo: genero 1 opzione bozza per ciascun pasto.")
+    meals = []
+    for meal_id in MEAL_ORDER:
+        meal_name = MEAL_LABELS[meal_id]
+        meal = {
+            "meal_id": meal_id,
+            "name": meal_name,
+            "timing_hint": "",
+            "options": [
+                build_option_autodraft(
+                    foods,
+                    meal_id,
+                    1,
+                    food_name_by_id,
+                    nutrition_profile,
+                )
+            ],
+        }
         meals.append(meal)
     template["meals"] = meals
 
@@ -744,13 +1042,37 @@ def main(argv=None):
             allow_manual_block_overrides=args.allow_manual_block_overrides,
         )
     else:
-        build_structure_from_scratch(
-            template,
-            foods,
-            food_name_by_id,
-            nutrition_profile,
-            allow_manual_block_overrides=args.allow_manual_block_overrides,
-        )
+        if args.autodraft:
+            build_structure_autodraft(
+                template,
+                foods,
+                food_name_by_id,
+                nutrition_profile,
+            )
+            review_autodraft_template(
+                template,
+                foods,
+                food_name_by_id,
+                nutrition_profile,
+            )
+        else:
+            build_structure_from_scratch(
+                template,
+                foods,
+                food_name_by_id,
+                nutrition_profile,
+                allow_manual_block_overrides=args.allow_manual_block_overrides,
+            )
+    backfill_template_traces(template, food_name_by_id)
+    quality_errors = validate_template_quality(template)
+    if quality_errors:
+        print("\n[ERR] Quality gate template fallito:")
+        for err in quality_errors[:20]:
+            print(f"- {err}")
+        if len(quality_errors) > 20:
+            print(f"- ... altri {len(quality_errors) - 20} errori")
+        return 1
+
     collect_user_constraints(template)
 
     template_json_file.parent.mkdir(parents=True, exist_ok=True)

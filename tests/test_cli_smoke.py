@@ -35,6 +35,9 @@ from scripts.running.running_setup import (  # noqa: E402
     resolve_target_athlete_id,
 )
 from scripts.nutrition.setup_base import (  # noqa: E402
+    auto_pick_foods_for_role,
+    backfill_template_traces,
+    build_option_autodraft,
     infer_when_to_use,
     load_required_nutrition_profile,
     MEAL_ORDER,
@@ -43,6 +46,7 @@ from scripts.nutrition.setup_base import (  # noqa: E402
     resolve_target_athlete_id as resolve_nutrition_target_athlete_id,
     search_foods,
     suggest_roles_for_option,
+    validate_template_quality,
 )
 from scripts.nutrition.setup_profile import (  # noqa: E402
     parse_args as parse_nutrition_profile_args,
@@ -669,6 +673,82 @@ class NutritionSetupTests(unittest.TestCase):
     def test_nutrition_setup_parse_manual_override_flag(self):
         args = parse_nutrition_setup_args(["--allow-manual-block-overrides"])
         self.assertTrue(args.allow_manual_block_overrides)
+
+    def test_nutrition_setup_parse_autodraft_flag(self):
+        args = parse_nutrition_setup_args(["--autodraft"])
+        self.assertTrue(args.autodraft)
+
+    def test_auto_pick_foods_for_role_prefers_role_hints(self):
+        foods = [
+            {"id": "pane_integrale", "name": "Pane integrale"},
+            {"id": "pollo_petto_cotto", "name": "Pollo petto cotto"},
+            {"id": "olio_oliva", "name": "Olio di oliva"},
+        ]
+        picks = auto_pick_foods_for_role(foods, "protein", limit=1)
+        self.assertEqual(picks[0]["id"], "pollo_petto_cotto")
+
+    def test_build_option_autodraft_has_rules_trace_and_blocks(self):
+        foods = [
+            {"id": "pane_integrale", "name": "Pane integrale"},
+            {"id": "pollo_petto_cotto", "name": "Pollo petto cotto"},
+            {"id": "olio_oliva", "name": "Olio di oliva"},
+            {"id": "caffe_espresso", "name": "Caffe espresso"},
+            {"id": "banana", "name": "Banana"},
+            {"id": "zucchine_crude", "name": "Zucchine crude"},
+        ]
+        profile = {
+            "profile": {"goal": "performance"},
+            "training_context": {
+                "running_days_per_week": 4,
+                "strength_days_per_week": 1,
+                "typical_training_time": "morning",
+            },
+        }
+        names = {f["id"]: f["name"] for f in foods}
+        opt = build_option_autodraft(foods, "breakfast", 1, names, profile)
+        self.assertTrue(opt["blocks"])
+        self.assertTrue(opt["rules_trace"]["autodraft"])
+        self.assertIn("scenario", opt["rules_trace"])
+
+    def test_backfill_template_traces_restores_missing_trace(self):
+        tpl = {
+            "meals": [
+                {
+                    "meal_id": "breakfast",
+                    "options": [
+                        {
+                            "option_id": "breakfast_opt_1",
+                            "blocks": [
+                                {"role": "carb", "one_of": [{"food_db_id": "pane_integrale", "label": "Pane"}]},
+                            ],
+                        }
+                    ],
+                }
+            ]
+        }
+        names = {"pane_integrale": "Pane integrale"}
+        backfill_template_traces(tpl, names)
+        trace = tpl["meals"][0]["options"][0]["rules_trace"]
+        self.assertIn("scenario", trace)
+        self.assertIn("reasoning", trace)
+
+    def test_validate_template_quality_flags_missing_trace(self):
+        tpl = {
+            "meals": [
+                {
+                    "meal_id": "breakfast",
+                    "options": [
+                        {
+                            "option_id": "breakfast_opt_1",
+                            "blocks": [{"role": "carb", "one_of": []}],
+                            "rules_trace": {},
+                        }
+                    ],
+                }
+            ]
+        }
+        errors = validate_template_quality(tpl)
+        self.assertGreater(len(errors), 0)
 
     def test_nutrition_setup_profile_help(self):
         result = run_cmd("./tv", "nutrition", "setup-profile", "--help")

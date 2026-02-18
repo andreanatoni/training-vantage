@@ -52,6 +52,7 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
   nutrition setup-base
       Wizard interattivo per creare/aggiornare il template base pasti atleta
       Prerequisito: eseguire prima nutrition setup-profile per creare NUTRITION_PROFILE.json
+      Flag utili: --autodraft, --allow-manual-block-overrides
       Nota: se non usi --athlete e il contesto e' default, il Nome atleta inserito diventa la cartella target
       Output:
         - data/athletes/<id>/nutrition_base_template.json

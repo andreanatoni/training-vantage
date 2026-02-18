@@ -159,6 +159,9 @@ Comandi principali (dalla root del repo):
   - su trigger hard: setup bloccato e richiesta consulto professionale
   - default: suggerimento scenario+blocchi con conferma utente
   - override manuale blocchi disponibile con `--allow-manual-block-overrides`
+  - `--autodraft`: crea una bozza iniziale (1 opzione/pasto) da regole+profilo
+  - review guidata autodraft: `accetta/sostituisci/rigenera`
+  - quality gate finale: blocchi e `rules_trace` devono essere completi
 - `running month` / `running summary`: analisi operativa dei volumi per controllo periodizzazione.
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
   - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)
