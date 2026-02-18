@@ -29,6 +29,7 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
   - `templates/nutrition_base_template.shared.json` = template base shared (strutturale, senza grammature).
   - `templates/nutrition_base_template.schema.json` = schema JSON del template base.
   - `athletes/<id>/nutrition_base_template.json` = copia template base per atleta (gusti/abitudini personali).
+  - `athletes/<id>/NUTRITION_PROFILE.json` = profilo nutrizione atleta (core + contesto + BIA opzionale).
   - `training_load.json` = carico allenante importato da CSV TrainingPeaks e/o Garmin.
 - Running:
   - `RUNNING_ATHLETE_PROFILE.json` = profilo atleta raccolto via colloquio setup.
@@ -51,6 +52,7 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `NUTRITION_ENGINE_CONFIG.json`: configurazione motore nutrizionale periodizzato (obiettivi, priorita', soglie EA, mapping categorie).
 - `templates/nutrition_base_template.shared.json`: bootstrap shared del piano base 5 pasti (solo struttura/option-set).
 - `templates/nutrition_base_template.schema.json`: regole di validazione (strict mode, opzioni immutabili, no merge).
+- `athletes/<id>/NUTRITION_PROFILE.json`: profilo nutrizione atleta per personalizzazione del setup pasti.
 - `PORTION_STANDARDS.json`: tabelle 1-6 estratte da `sources/Standard-Quantitativi-delle-Porzioni.pdf`.
 - `LARN_PORTIONS.json`: porzioni standard LARN strutturate (v3).
 - `OPERATIVE_PORTIONS.json`: porzioni operative con moltiplicatori/annotazioni.
@@ -88,6 +90,7 @@ Comandi principali (dalla root del repo):
 ./tv running generate --from 2026-03-01 --to 2026-06-30 --goal-race 2026-10-18
 ./tv running summary
 ./tv nutrition setup-base
+./tv nutrition setup-profile
 ./tv plan rest
 ./tv plan week 2026-W11
 ./tv plan month 2026-03
@@ -143,6 +146,11 @@ Comandi principali (dalla root del repo):
   - export leggibile atleta: `knowledge/athletes/<id>/nutrition-base-template.md`
   - i vincoli personali non sono hardcodati nello shared template: vengono inseriti nel wizard e salvati nel `user_constraints` del template atleta.
   - invarianti: nessuna grammatura nel template base, 1 sola opzione per pasto, no merge tra opzioni, mapping ingredienti via `food_db_id` obbligatorio.
+- profilo nutrizione atleta:
+  - wizard: `./tv nutrition setup-profile`
+  - output JSON: `data/athletes/<id>/NUTRITION_PROFILE.json`
+  - output leggibile: `knowledge/athletes/<id>/nutrition-profile.md`
+  - include core obbligatorio + blocco BIA avanzato opzionale
 - `running month` / `running summary`: analisi operativa dei volumi per controllo periodizzazione.
 - `plan <categoria>`: genera piano quantitativo applicando configurazione in `NUTRITION_ENGINE_CONFIG.json` (deficit day-type + guardrail EA) con output:
   - `plans/nutrition/athletes/<id>/<categoria>.md` (versione leggibile)

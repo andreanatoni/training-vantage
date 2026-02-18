@@ -43,6 +43,10 @@ from scripts.nutrition.setup_base import (  # noqa: E402
     search_foods,
     suggest_roles_for_option,
 )
+from scripts.nutrition.setup_profile import (  # noqa: E402
+    parse_args as parse_nutrition_profile_args,
+    resolve_target_athlete_id as resolve_nutrition_profile_target_athlete_id,
+)
 from scripts.food.sync_food_db import is_markdown_in_sync  # noqa: E402
 
 
@@ -573,6 +577,37 @@ class NutritionSetupTests(unittest.TestCase):
     def test_nutrition_setup_parse_strict_no_defaults(self):
         args = parse_nutrition_setup_args(["--strict-no-defaults"])
         self.assertTrue(args.strict_no_defaults)
+
+    def test_nutrition_setup_profile_help(self):
+        result = run_cmd("./tv", "nutrition", "setup-profile", "--help")
+        self.assertEqual(result.returncode, 0, msg=result.stderr)
+        self.assertIn("core + BIA avanzata", result.stdout)
+
+    def test_nutrition_setup_profile_parse_force(self):
+        args = parse_nutrition_profile_args(["--force"])
+        self.assertTrue(args.force)
+
+    def test_nutrition_setup_profile_target_athlete_id_uses_name_when_default(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "default"
+            self.assertEqual(resolve_nutrition_profile_target_athlete_id("Matteo"), "matteo")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
+
+    def test_nutrition_setup_profile_target_athlete_id_respects_env_override(self):
+        original = os.environ.get("TV_ATHLETE_ID")
+        try:
+            os.environ["TV_ATHLETE_ID"] = "spizz"
+            self.assertEqual(resolve_nutrition_profile_target_athlete_id("Matteo"), "spizz")
+        finally:
+            if original is None:
+                os.environ.pop("TV_ATHLETE_ID", None)
+            else:
+                os.environ["TV_ATHLETE_ID"] = original
 
     def test_nutrition_setup_target_athlete_id_uses_name_when_default(self):
         original = os.environ.get("TV_ATHLETE_ID")

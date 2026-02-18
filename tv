@@ -57,6 +57,14 @@ COMANDI DISPONIBILI (Priorità 2 — Nutrizione):
         - knowledge/athletes/<id>/nutrition-base-template.md
       Esempio: tv nutrition setup-base
 
+  nutrition setup-profile
+      Wizard interattivo per profilazione nutrizione atleta (core + BIA avanzata opzionale)
+      Nota: se non usi --athlete e il contesto e' default, il Nome atleta inserito diventa la cartella target
+      Output:
+        - data/athletes/<id>/NUTRITION_PROFILE.json
+        - knowledge/athletes/<id>/nutrition-profile.md
+      Esempio: tv nutrition setup-profile
+
   plan <categoria>
       Genera piano nutrizionale quantitativo per categoria
       Categorie: rest, forza, easy-run, qualita, tempo, lungo, pizza-day, domenica
@@ -264,8 +272,12 @@ case "$1" in
         if [ "$1" = "setup-base" ]; then
             shift
             python3 -m scripts.nutrition.setup_base "$@"
+        elif [ "$1" = "setup-profile" ]; then
+            shift
+            python3 -m scripts.nutrition.setup_profile "$@"
         else
-            echo -e "${RED}Uso non valido. Esempio:${NC} tv nutrition setup-base"
+            echo -e "${RED}Uso non valido. Esempi:${NC} tv nutrition setup-base"
+            echo "                          tv nutrition setup-profile"
             exit 1
         fi
         ;;

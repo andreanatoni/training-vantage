@@ -33,6 +33,9 @@ CLI per gestione integrata di:
 # Setup template nutrizione base atleta
 ./tv nutrition setup-base
 
+# Setup profilo nutrizione atleta (core + BIA avanzata opzionale)
+./tv nutrition setup-profile
+
 # Piani nutrizione
 ./tv plan rest
 ./tv plan --all
@@ -83,6 +86,15 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 - Ingredienti compositi (non presenti in `FOOD_DB`) via custom recipe:
   - `data/athletes/<id>/CUSTOM_RECIPES.json`
   - in `knowledge/meal_options/*.json`: usare `type: custom_recipe` + `recipe_id` valido
+
+### Setup profilo atleta
+- `./tv nutrition setup-profile` crea/aggiorna:
+  - `data/athletes/<id>/NUTRITION_PROFILE.json`
+  - `knowledge/athletes/<id>/nutrition-profile.md`
+- Include:
+  - core obbligatorio (`sex`, `age_years`, `height_cm`, `weight_kg`)
+  - contesto allenamento (`running_days_per_week`, `strength_days_per_week`, `typical_training_time`)
+  - blocco avanzato BIA opzionale (BF, FFM, BMR Katch, muscolo, acqua, ecc.)
 
 ### Generazione piani
 - Giornaliero categoria: `./tv plan <categoria>`
