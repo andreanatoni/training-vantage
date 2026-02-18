@@ -73,7 +73,7 @@ Se in `NUTRITION_ENGINE_CONFIG.json` e' presente `phase_adjustments`, il deficit
 ### Path primario
 - Path supportato: `./tv plan ...`
 - `python3 scripts/cli.py plan ...` e' deprecato e non supportato (usa `./tv plan ...`)
-- stack planner storico (`piano_base_parser`, `option_generator`, `category_plan_generator`, ecc.) e' in `scripts/legacy/planner/` (maintenance-only, non path runtime principale)
+- stack planner storico (`piano_base_parser`, `option_generator`, `category_plan_generator`, ecc.) e' archiviato in `archive/legacy-scripts/planner/` (fuori runtime)
 
 ### Setup base
 - `./tv nutrition setup-base` crea/aggiorna:
@@ -122,7 +122,7 @@ Output:
 - Pipeline LARN one-by-one (`auto-map-larn`, `map-larn`) e' stata archiviata.
 - Artefatti e script storici sono in `archive/larn-pipeline/`.
 - Path supportato: `food import-mapped` -> `food validate-data`.
-- `food build-catalog` resta disponibile come cache/report derivata opzionale.
+- `food build-catalog` resta disponibile come read-model/cache derivato opzionale.
 
 ### Active set per atleta
 - `./tv food build-active`
@@ -133,7 +133,7 @@ Output:
 - `./tv food build-catalog`
 - Genera `data/FOOD_CATALOG.json` come vista derivata opzionale da `FOOD_DB + FOOD_DB_TO_LARN_MAPPING + LARN_PORTIONS + PERSONAL_LIMITS`
 - `meal_balancer` usa i dataset canonici a runtime (catalog opzionale)
-- Non sostituisce i file sorgente: resta una vista derivata per semplificazione progressiva
+- Non sostituisce i file sorgente: resta una vista derivata per reporting, query e nomi umanamente leggibili (`name`)
 - `./tv food validate-data` valida i dataset canonici
 - `./tv food validate-data --with-catalog` valida anche allineamento `FOOD_CATALOG` vs file sorgente (opzionale)
 

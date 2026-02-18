@@ -1939,6 +1939,171 @@
         ],
         "athlete_id": "default"
       }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:12.322566",
+      "command": "load import",
+      "details": {
+        "source_files": {
+          "trainingpeaks": [
+            "sources/workouts-2.csv"
+          ],
+          "garmin": []
+        },
+        "sessions_count": 4,
+        "date_from": "2026-02-16",
+        "date_to": "2026-02-22",
+        "planned_distance_km": 46.88,
+        "planned_duration_h": 3.73,
+        "estimated_energy_kcal": 2516,
+        "updated_files": [
+          "data/training_load.json"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:12.466982",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 88,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:13.195435",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 88,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:13.643371",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-05-31",
+        "goal_race": "2026-10-18",
+        "weeks": 14,
+        "total_target_km": 240,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:13.848101",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 128,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:14.018508",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 128,
+        "enforce_tid": true,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:14.156944",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-03-31",
+        "goal_race": "2026-04-26",
+        "weeks": 6,
+        "total_target_km": 88,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:14.559202",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 128,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:14.705791",
+      "command": "running generate",
+      "details": {
+        "from": "2026-09-01",
+        "to": "2026-10-20",
+        "goal_race": "2026-10-18",
+        "weeks": 8,
+        "total_target_km": 128,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
+    },
+    {
+      "timestamp": "2026-02-18T12:50:15.017297",
+      "command": "running generate",
+      "details": {
+        "from": "2026-03-01",
+        "to": "2026-04-30",
+        "goal_race": "2026-10-18",
+        "weeks": 10,
+        "total_target_km": 162,
+        "enforce_tid": false,
+        "updated_files": [
+          "/Users/andreanatoni/Desktop/projects/training-vantage/data/athletes/default/running_plan.json"
+        ],
+        "athlete_id": "default"
+      }
     }
   ]
 }

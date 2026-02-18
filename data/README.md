@@ -63,7 +63,8 @@ Se lavori su questi file, considera questa documentazione come riferimento opera
 - `INTEGRATION_CONFIG.json`: configurazione strict per atleta usata da `status`, `plan week/month` e fallback `goal_race` in `running generate`.
 - `FOOD_DB_ACTIVE.json`: sottoinsieme per-atleta derivato da template/piani per lavorare su alimenti realmente usati.
 - `FOOD_CATALOG.json`: vista derivata shadow unificata (food + mapping + porzione + limiti), non source-of-truth.
-  - `meal_balancer` la usa in strict mode; se manca/incoerente il runtime fallisce.
+  - `meal_balancer` non dipende dal catalogo per il runtime core: usa i file canonici.
+  - utile come read-model per query/report e nome umanamente leggibile (`name`).
 - `strength-progress.json`: progressione forza.
 - `zones.json`: zone di allenamento correnti + storico.
 - `changelog.json`: log tecnico delle operazioni script/CLI.
@@ -113,7 +114,8 @@ Comandi principali (dalla root del repo):
   - `data/FOOD_DB_TO_LARN_MAPPING.json`
   - `data/LARN_PORTIONS.json`
   - `data/PERSONAL_LIMITS.json`
-- `food validate-data`: esegue validazione strutturale globale dei dataset e coerenza `FOOD_CATALOG` rispetto alle sorgenti.
+- `food validate-data`: esegue validazione strutturale globale dei dataset canonici.
+- `food validate-data --with-catalog`: aggiunge anche la coerenza `FOOD_CATALOG` rispetto alle sorgenti.
 - `load import [--tp ...] [--garmin ...]`: importa uno o piu' CSV TrainingPeaks/Garmin (anche insieme), fa merge per data/seduta e aggiorna `training_load.json` con profili energetici per day-type.
 - `running generate ...`: genera `running_plan.json` su periodi multi-settimana/mensili con logica progressione, scarico e taper.
   - include sessioni `forza` secondo configurazione atleta (`day_type=forza`, km=0)
